@@ -45,7 +45,7 @@ if __name__ == "__main__":
     
     # Show
     # show words
-    wte.log.info("Printing words: %d words", len(treemap.store))
-    for label, words in treemap.store.items():
-        print(label.ljust(40), words)
+    #wte.log.info("Printing words: %d words", len(treemap.store))
+    #for label, words in treemap.store.items():
+    #    print(label.ljust(40), words)
     

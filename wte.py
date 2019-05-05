@@ -1319,7 +1319,7 @@ def one_file(label = "cat"):
     Save to the test/<label>.json
     """
     log.info("Word: %s", label)
-    src_file = "./test/" + label + ".txt"
+    src_file = os.path.join(TXT_FOLDER, label + ".txt")
     log.info("Loading from: %s", src_file)
     text = get_contents(src_file)
 
