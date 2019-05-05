@@ -19,7 +19,7 @@ if __name__ == "__main__":
     
     # Parse
     # parse
-    treemap = wt.parse_dump(local_file, limit=10000, is_save_txt=True, is_save_json=True)
+    treemap = wt.parse_dump(local_file, limit=1000, is_save_txt=True, is_save_json=True)
     
     # Save
     # save to json
