@@ -988,9 +988,14 @@ def get_label_type_helper(li):
 
     # Concat
     biglst = list(list1) + list(list2) + list(list3)
+    print (biglst)
 
-    if len(biglst) >= 2:
+    if len(biglst) == 1:
+        return biglst[:1]
+
+    elif len(biglst) >= 2:
         return biglst[:2]
+
     else:
         return []
 

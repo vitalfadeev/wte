@@ -10,8 +10,8 @@ import wte
 
 
 if __name__ == "__main__":
-    #wte.one_file("cat")
-    #exit(0)
+    wte.one_file("cat")
+    exit(0)
     
     # Download
     wt = wte.Wikitionary()
