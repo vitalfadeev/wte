@@ -50,3 +50,6 @@ Wikitionary word description extractor. Parse the article from the dump of the h
         print(label.ljust(40), words)
     
 
+See also: 
+* main.py  
+* importing into the pyCharm [https://github.com/vitalfadeev/wte/wiki/7-happy-steps-for-importing-project-into-the-pyCharm]
