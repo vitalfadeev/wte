@@ -52,4 +52,4 @@ Wikitionary word description extractor. Parse the article from the dump of the h
 
 See also: 
 * main.py  
-* importing into the pyCharm [https://github.com/vitalfadeev/wte/wiki/7-happy-steps-for-importing-project-into-the-pyCharm]
+* importing into the pyCharm [https://github.com/vitalfadeev/wikoo/wiki/7-happy-steps-for-importing-project-into-the-pyCharm]
