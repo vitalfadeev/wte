@@ -118,6 +118,9 @@ def en_noun(t, label):
             # word
             p.append(p2)
     
+    elif p1 == "s":
+        p.append(head + "s")
+
     elif p1 == "es":
         # add es
         p.append(head + "es")
@@ -131,7 +134,7 @@ def en_noun(t, label):
 
     for k,a in t.args.items():
         if not a.is_named():
-            if k == 0 or k == 1:
+            if k == 0:
                 continue
             
             p.append(a.as_string())
@@ -306,3 +309,18 @@ def present_participle_of(t, label):
 def head(t, label):
     # {{head|en|verb form}}
     pass
+
+def lb(t, label):
+    """
+    out: (lang, [labels, ...])
+    """
+    lang = t.arg("lang")
+    lang = lang if lang is not None else t.arg(0)
+
+    labels = []
+    pcount = t.get_positional_args_count()
+
+    for i in range(pcount):
+        labels.append(t.arg(i))
+
+    return (lang, labels)

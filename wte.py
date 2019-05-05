@@ -144,10 +144,12 @@ class Word:
     """
     def __init__(self):
         self.LabelName = ""             #
+        self.LabelType = None           #
         self.LanguageCode = ""          # (EN,FR,…)
         self.Type = ""                  #  = noun,verb… see = WORD_TYPES
         self.TypeLabelName = ""         # chatt for verb of chat
-        self.ExplainationExample = [ ]  # (explaination1||Example1) (A wheeled vehicle that moves independently||She drove her car to the mall..)
+        self.Explaination = None        #
+        self.ExplainationExamples = None
         self.IsMaleVariant = None
         self.IsFemaleVariant = None
         self.MaleVariant = None         # ""
@@ -289,6 +291,32 @@ class TreeMap:
 
     def load_from_pickle(self, pickle_filename):
         self.store = load_from_pickle(pickle_filename)
+
+    def add_words(self, label, words):
+        """
+        Add words 'words' to the store.
+        :param label: label
+        :param words: words list
+        """
+        if words:
+            storage = self.store.get(label, None)
+
+            if storage is None:
+                if len(words) == 1:
+                    self.store[label] = words[0]
+                else:
+                    self.store[label] = words
+
+            elif isinstance(storage, Word):
+                if len(words) == 1:
+                    stored_word = storage
+                    self.store[label] = [stored_word] + words
+
+            elif isinstance(storage, list):
+                storage += words
+
+            else:
+                assert 0, "unsupported"
 
 
 def create_storage(folder_name):
@@ -495,55 +523,56 @@ class Wikitionary:
         Out:
             treemap - sorteddict with words, like a: {'chat': [Word, Word, Word]}
         """
+
         # dump_file = "./ru/ruwiktionary-latest-pages-articles.xml.bz2"
+
         self.count = 0
         self.treemap = TreeMap()
+        self.limit = limit
         self.is_save_txt = is_save_txt
         self.is_save_json = is_save_json
-        
-        def callback(label, text):
-            # keep english words only
-            if not is_english(label):
-                log_non_english.warning("%s: non english chars ... [SKIP]", label.ljust(WORD_JUST))
-                return
-            
-            # save txt
-            if self.is_save_txt:
-                put_contents(os.path.join(TXT_FOLDER, sanitize_filename(label) + ".txt"), text)
-            
-            # main step
-            words = parse_text(label, text)
-            
-            if words:
-                storage = self.treemap.get(label, None)
-                if storage is None:
-                    storage = []
-                    self.treemap[label] = storage
-                storage += words
-                
-            else:
-                log_no_words.warning("%s: no words ... [SKIP]", label.ljust(WORD_JUST))
 
-            # json
-            if is_save_json:
-                save_to_json(words, os.path.join(TXT_FOLDER, sanitize_filename(label)+".json"))
-            
-            # counter
-            self.count += 1
-            
-            if self.count % 100 == 0:
-                log.info("%d", self.count)
+        #
+        try:
+            read_dump(dump_file, self.callback)
+        except IterStopException:
+            return self.treemap
 
-            # limit
-            if limit and (self.count >= limit):
-                log.warning("Limit reached: %d ... [EXIT]", self.count)
-                raise IterStopException()
-
-        try: read_dump(dump_file, callback)
-        except IterStopException: return self.treemap
-        
         return self.treemap
 
+    def callback(self, label, text):
+        # keep english words only
+        if not is_english(label):
+            log_non_english.warning("%s: non english chars ... [SKIP]", label.ljust(WORD_JUST))
+            return
+
+        # save txt
+        if self.is_save_txt:
+            put_contents(os.path.join(TXT_FOLDER, sanitize_filename(label) + ".txt"), text)
+
+        # main step
+        words = parse_text(label, text)
+
+        # store words
+        if words:
+            self.treemap.add_words(label, words)
+        else:
+            log_no_words.warning("%s: no words ... [SKIP]", label.ljust(WORD_JUST))
+
+        # json
+        if self.is_save_json:
+            save_to_json(words, os.path.join(TXT_FOLDER, sanitize_filename(label)+".json"))
+
+        # counter
+        self.count += 1
+
+        if self.count % 100 == 0:
+            log.info("%d", self.count)
+
+        # limit
+        if self.limit and (self.count >= self.limit):
+            log.warning("Limit reached: %d ... [EXIT]", self.count)
+            raise IterStopException()
 
 def read_dump(dump_file, text_callback):
     """
@@ -700,36 +729,293 @@ def cleanup(s):
     return s
 
 
-def get_explainations(section, label):
+def extract_from_sqb(s, startpos=0):
     """
-    Find explainations in section 'section'
-    
-    out: [...]
+    in:  "Any text [[Felidae]]"
+    out: ["Felidae"]
+
+    in:  "Any text [[Felidae]] [[another]]"
+    out: ["Felidae", "another"]
+
+    in:  "Any text "
+    out: []
     """
-    explainations = []
-    
-    for li in section.find_lists():
-        #print(li.data)
-        #print(li, li.is_empty(), li.has_templates_only())
-        # ... scan list
-        if li.has_templates_only():
-            # check subtemplate
-            for sub in li.find_lists():
-                if sub.has_templates_only():
-                    continue
-                else:
-                    # OK. add
-                    explainations.append(sub.get_text())
+
+    result = []
+
+    i = startpos
+    l = len(s)
+
+    while i < l:
+        op = s.find("[[", i)
+
+        if op == -1:
+            break
         else:
-            if li.base.endswith(":"):
-                # skip example
-                pass
+            cl = s.find("]]", op+2)
+
+            if cl == -1:
+                break
             else:
-                # OK. add
-                explainations.append(li.get_text())
-        
-    return explainations
+                result.append( s[op+2:cl] )
+
+                i = cl+2
+
+    return result
+
+def extract_from_rb(s, startpos=0):
+    """
+    in:  "Any text (Felidae)"
+    out: ["Felidae"]
+
+    in:  "Any text (Felidae) (another)"
+    out: ["Felidae", "another"]
+
+    in:  "Any text "
+    out: []
+    """
+
+    result = []
+
+    i = startpos
+    l = len(s)
+
+    while i < l:
+        op = s.find("(", i)
+
+        if op == -1:
+            break
+        else:
+            cl = s.find(")", op+1)
+
+            if cl == -1:
+                break
+            else:
+                result.append( s[op+1:cl] )
+
+                i = cl+1
+
+    return result
+
+def extract_from_fb(s):
+    """
+    in:  "Any text {{Felidae}}"
+    out: "Felidae"
+
+    in:  "Any text {{Felidae}} {{another}}"
+    out: "Felidae"
+
+    in:  "Any text "
+    out: None
+    """
+    op = s.find("{{")
+
+    if op == -1:
+        return None
+    else:
+        cl = s.find("}}", op+2)
+
+        if cl == -1:
+            return None
+        else:
+            return s[op+2:cl]
+
+def expand_template_lb(li, label):
+    """
+    out: [label, label, ...]
+    """
+    # {{lb|en|nautical|transitive}}
+    for t in li.find_templates():
+        if t.name in ("lb", "lbl", "label"):
+            (lang, labels) = templates.lb(t, label)
+            return labels
+
+    return []
+
+def convert_to_alnum(s):
+    return "".join( (c if c.isalnum() else "_" for c in s ) )
+
+def deduplicate(s, char='_'):
+    """
+    in:  "abc__def"
+    out: "abc_def"
+
+    in:  "abc_def"
+    out: "abc_def"
+
+    in:  "abc_____def"
+    out: "abc_def"
+    """
+    dup = char + char
+
+    while dup in s:
+        s = s.replace(dup, char)
+
+    return s
+
+def extract_words_from_brackets(s, o='(', c=')', startpos=0):
+    """
+    in:  "abc (def) xyz", '(', ')'
+    out: ["def"]
+
+    in:  "abc {def} xyz", '{', '}'
+    out: ["def"]
+
+    in:  "abc {def xyz", '{', '}'
+    out: ["def xyz"]
+
+    in:  "abc def xyz", '{', '}'
+    out: []
+    """
+    result = []
+
+    i = startpos
+    l = len(s)
+
+    olen = len(o)
+    clen = len(c)
+
+    opened = []
+    closed = []
+
+    while i < l:
+        if s.startswith(o, i):
+            opened.append(i)
+            i += olen
+
+        elif s.startswith(c, i):
+            closed.append(i)
+            i += clen
+
+            if len(opened) == len(closed):
+                inner = s[opened[0]:closed[-1]]
+                inner = inner.replace(o, ' ')
+                inner = inner.replace(c, ' ')
+                result = inner.split(' ')
+                return result
+
+        else:
+            i += 1
+
+    if len(opened) > len(closed):
+        # broken, [[ without ]]
+        inner = s[opened[0]:] # to end
+        inner = inner.replace(o, ' ')
+        inner = inner.replace(c, ' ')
+        result = inner.split(' ')
+        return result
+
+    return [] # no brackets
+
+def extract_words_from_li(li):
+    """
+    in:  LI("{{name}a}b}c}}")
+    out: ["name", "a", "b", "c"]
+    """
+    result = []
+
+    # case 1
+    # extract from {{...}}
+    for t in li.find_templates():
+        ws = t.as_list()
+        result += ws
+
+    # case 2
+    # extract from [[...]]
+    ws = extract_from_sqb(li.raw)
+    result += ws
+
+    # case 3
+    # extract from (...)
+    ws = extract_from_rb(li.raw)
+    result += ws
+
+    return result
+
+def get_label_type_helper(li):
+    # LabelType
+
+    # List1
+    # find all {{...}}
+    list1 = ( t.as_list() for t in li.find_templates() )
+
+    # convert non [A-Z0-9] to '_'
+    list1 = ( "_".join( ( convert_to_alnum(a) for a in ls ) ) for ls in list1 )
+
+    # deduplicate __
+    list1 = ( deduplicate(s, '_') for s in list1 )
+
+    # to UPPERCASE
+    list1 = ( s.upper() for s in list1 )
+
+    # strip tail _
+    list1 = ( s.rstrip('_') for s in list1 )
+
+    # List2
+    # extract all from [[...]]
+    list2 = extract_from_sqb(li.raw)
+
+    # convert non [A-Z0-9] to '_'
+    list2 = ( convert_to_alnum( s ) for s in list2 )
+
+    # deduplicate __
+    list2 = ( deduplicate(s, '_') for s in list2 )
+
+    # strip tail _
+    list2 = ( s.rstrip('_') for s in list2 )
+
+    # to Propercase
+    list2 = ( s[0].upper() + s[1:].lower() for s in list2 if s )
+
+    # List 3
+    # extract all words from [ ( { ) ] }
+    list3 = re.split(r'\[|\]|\(|\)|\{|\}|\||\s', li.raw)
+
+    # convert non [A-Z0-9] to '_'
+    list3 = ( convert_to_alnum( s ) for s in list3 )
+
+    # deduplicate __
+    list3 = ( deduplicate(s, '_') for s in list3 )
+
+    # strip tail _
+    list3 = ( s.rstrip('_') for s in list3 )
+
+    # keep only with length >= 3
+    list3 = ( w for w in list3 if len(w) >= 3 )
+
+    # to lower
+    list3 = ( s.lower() for s in list3 if s )
+
+    # Concat
+    biglst = list(list1) + list(list2) + list(list3)
+
+    if len(biglst) >= 2:
+        return biglst[:2]
+    else:
+        return []
+
+def get_label_type(li):
+    label_type = get_label_type_helper(li)
+
+    if label_type:
+        return "-".join(label_type)
+
+    return None
+
+def get_explaination_li(section, label):
+    for li in section.find_lists():
+        if li.base == "#":
+            yield li
+
+def get_explaination(li):
+    return li.raw
     
+def get_explaination_example(li):
+    for child in li.find_lists():
+        return child.raw
+
+    return None
+
 def get_alternatives(section):
     """
     Find alternatives in section 'section'
@@ -1206,98 +1492,116 @@ def get_words(label, text):
         is_english_found = True
     
         # common alternatives
-        alternatives = get_alternatives(english_section).get("en", None)
+        alternatives = get_alternatives(english_section)
 
         # common translations
         #translations = get_translations(english_section, label)
 
         # by types
         is_type_found = False
-        
+
         for section in english_section.find_sections_recursive( supported_titles ):
             is_type_found = True
-            
-            #print(english_section, section)
-            # word
-            word = Word()
-            words.append(word)
-            
-            # label
-            word.LabelName = label
-            
-            # lang
-            word.LanguageCode = "en"
-            
-            # type
-            word.Type = WORD_TYPES().detect_type(section.title)
-            word.TypeLabelName = section.title
-            
+
+            # word type
+            wtype = WORD_TYPES().detect_type(section.title)
+            wtype_name = section.title
+
+            is_explaination_found = False
+
             # explainations
-            word.ExplainationExample = [
-                    {"cln":cleanup(expl), "raw":expl} for expl in get_explainations(section, label)
-                ]
-        
-            # alternatives
-            # type alternatives
-            #type_alternatives = get_alternatives(section)
-            word.AlternativeFormsOther = alternatives
+            for li in get_explaination_li(section, label):
+                is_explaination_found = True
 
-            # relates
-            related = get_related(section, label)
-            word.RelatedTerms = related.get("en", related.get(None, None))
-            
-            # translations
-            type_translations = get_translations(section, label)
-            if type_translations:
-                translations = type_translations
-                word.add_translation("en", translations.get("en", None))
-                word.add_translation("en", translations.get(None, None))
-                word.add_translation("fr", translations.get("fr", None))
-                word.add_translation("de", translations.get("de", None))
-                word.add_translation("es", translations.get("es", None))
-                word.add_translation("ru", translations.get("ru", None))
-                word.add_translation("cn", translations.get("cn", None))
-                word.add_translation("pt", translations.get("pt", None))
-                word.add_translation("ja", translations.get("ja", None))
+                # word
+                word = Word()
+                words.append(word)
+
+                # label
+                word.LabelName = label
+
+                # lang
+                word.LanguageCode = "en"
+
+                # type
+                word.Type = wtype
+                word.TypeLabelName = wtype_name
+
+                # label type
+                word.LabelType = get_label_type(li)
+
+                # explainations
+                word.Explaination = get_explaination(li)
+
+                # explaination example
+                word.ExplainationExamples = get_explaination_example(li)
+
+                # alternatives
+                # type alternatives
+                #type_alternatives = get_alternatives(section)
+                word.AlternativeFormsOther = alternatives
+
+                # relates
+                related = get_related(section, label)
+                word.RelatedTerms = related.get("en", related.get(None, None))
+
+                # translations
+                type_translations = get_translations(section, label)
+                if type_translations:
+                    translations = type_translations
+                    word.add_translation("en", translations.get("en", None))
+                    word.add_translation("en", translations.get(None, None))
+                    word.add_translation("fr", translations.get("fr", None))
+                    word.add_translation("de", translations.get("de", None))
+                    word.add_translation("es", translations.get("es", None))
+                    word.add_translation("ru", translations.get("ru", None))
+                    word.add_translation("cn", translations.get("cn", None))
+                    word.add_translation("pt", translations.get("pt", None))
+                    word.add_translation("ja", translations.get("ja", None))
+                else:
+                    log.warning("%s: translations not found: for %s", label.ljust(WORD_JUST), section.title)
+
+                # translations
+                word.Synonyms = get_synonyms(section, label).get("en", None)
+
+                # conjugations
+                word.Conjugation = get_conjugations(section, label)
+
+                # male | female
+                if is_male_variant(section, label):
+                    word.IsMaleVariant = True
+
+                if is_female_variant(section, label):
+                    word.IsFemaleVariant = True
+
+                # singular | plural
+                if is_singular(section, label):
+                    word.IsSingleVariant = True
+
+                # single variant
+                single = get_singular_variant(section, label)
+
+                if single is not None:
+                    word.SingleVariant = single
+
+                # plural variant
+                plural = get_plural_variant(section, label)
+
+                if plural is not None:
+                    word.PluralVariant = plural
+
+                # verb
+                word.IsVerbPresent  = is_verb_present(section, label)
+                word.IsVerbPast     = is_verb_past(section, label)
+                word.IsVerbFutur    = is_verb_futur(section, label)
+
             else:
-                log.warning("%s: translations not found: for %s", label.ljust(WORD_JUST), section.title)
-            
-            # translations
-            word.Synonyms = get_synonyms(section, label).get("en", None)
-            
-            # conjugations
-            word.Conjugation = get_conjugations(section, label)
-            
-            # male | female
-            if is_male_variant(section, label):
-                word.IsMaleVariant = True
+                if not is_explaination_found:
+                    log.warning("%s: no explainations for type: %s... [SKIP]", label.ljust(WORD_JUST), wtype_name)
 
-            if is_female_variant(section, label):
-                word.IsFemaleVariant = True
-
-            # singular | plural
-            if is_singular(section, label):
-                word.IsSingleVariant = True
-            
-            # single variant
-            single = get_singular_variant(section, label)
-            
-            if single is not None:
-                word.SingleVariant = single
-            
-            # plural variant
-            plural = get_plural_variant(section, label)
-            
-            if plural is not None:
-                word.PluralVariant = plural
-                
-            # verb
-            word.IsVerbPresent  = is_verb_present(section, label)
-            word.IsVerbPast     = is_verb_past(section, label)
-            word.IsVerbFutur    = is_verb_futur(section, label)
-            
-        if not is_type_found:
-            log_non_english.warning("%s: type section not found... [SKIP]", label.ljust(WORD_JUST))
+        else:
+            if not is_type_found:
+                log_non_english.warning("%s: type section not found... [SKIP]", label.ljust(WORD_JUST))
 
     if not is_english_found:
         log_non_english.warning("%s: English section not found... [SKIP]", label.ljust(WORD_JUST))

@@ -10,7 +10,7 @@ import wte
 
 
 if __name__ == "__main__":
-    #wikidict.one_file("Czechia")
+    #wte.one_file("cat")
     #exit(0)
     
     # Download
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     
     # Parse
     # parse
-    treemap = wt.parse_dump(local_file, limit=10, is_save_txt=True, is_save_json=True)
+    treemap = wt.parse_dump(local_file, limit=10000, is_save_txt=True, is_save_json=True)
     
     # Save
     # save to json

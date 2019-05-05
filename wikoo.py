@@ -114,11 +114,13 @@ class Title:
     """
     Class for storing section title. Like a ==English==
     """
-    def __init__(self, title, level):
+    def __init__(self, title, level, spos=None, epos=None):
         self.title = title.strip()
         self.level = level
         self.parent = None
-        
+        self.spos = spos
+        self.epos = epos
+
     def is_empty(self):
         """
         Check for this title is empty string.
@@ -131,7 +133,7 @@ class Title:
         return "Title("+self.title+")"
         
         
-def find_li_end(text, startpos=0):
+def find_base_end(text, startpos=0):
     """
     Find end of the base of the list item.
     
@@ -152,10 +154,10 @@ def find_li_end(text, startpos=0):
             
     return i
         
-assert find_li_end("#") == 1
-assert find_li_end("#\n") == 1
-assert find_li_end("# #\n") == 1
-assert find_li_end("###\n") == 3
+assert find_base_end("#") == 1
+assert find_base_end("#\n") == 1
+assert find_base_end("# #\n") == 1
+assert find_base_end("###\n") == 3
 
 def parse_li(text, start, end):
     """
@@ -184,12 +186,15 @@ class LI:
         LI(item 2)
       LI(item 3)
     """
-    def __init__(self, base):
+    def __init__(self, base, spos=None, epos=None):
         self.base = base
         self.childs = []
         self.data = []
         self.parent = None
-        
+        self.raw = ""
+        self.spos = spos
+        self.epos = epos
+
     def find_lists(self):
         for child in self.childs:
             if isinstance(child, LI):
@@ -320,13 +325,16 @@ class Template:
     """
     Class for storing template like a {{name|arg1|arg2}}.
     """
-    def __init__(self, inner, name, args):
+    def __init__(self, inner, name, args, args_ordered):
         self.inner = inner
         self.name = name
         self.args = args # {1=, 2=, lang=}
+        self.args_ordered = args_ordered
         self.parent = None
         self.childs = []
-        
+        self.spos = 0
+        self.epos = 0
+
     def add_child(self, child):
         child.parent = self
         self.childs.append(child)
@@ -392,6 +400,9 @@ class Template:
         
         return acount
 
+    def as_list(self):
+        return [self.name] + [ a.raw for a in self.args_ordered ]
+
     def __repr__(self):
         args = "|" + "|".join([repr(a) for a in self.args]) if self.args else ""
         return "Template("+self.name + args + ")"
@@ -418,7 +429,9 @@ class Arg:
         self.value = value
         self.raw = raw
         self.endpos = endpos
-        
+        self.spos = 0
+        self.epos = 0
+
     def as_string(self):
         """
         Return value as string.
@@ -434,6 +447,9 @@ class Arg:
         
     def as_list(self):
         return self.value
+
+    def as_raw(self):
+        return self.raw
         
     def is_named(self):
         """
@@ -449,7 +465,7 @@ class Arg:
     def __repr__(self):
         s = "".join([ repr(d) for d in self.value ]) if self.value else ""
         
-        if self.is_named:
+        if self.is_named():
             s = self.name + "=" + s
             
         return "Arg(" + s + ")"
@@ -622,6 +638,7 @@ def parse_template(inner):
     i = len(name) + 1
     l = len(inner)
     args = {}
+    args_ordered = []
     acount = 0
     
     while i < l:
@@ -632,9 +649,10 @@ def parse_template(inner):
             acount += 1
             
         args[a.name] = a
+        args_ordered.append(a)
         i = a.endpos + 1
     
-    return Template(inner, name, args)
+    return Template(inner, name, args, args_ordered)
 
 
 assert get_template_arg("{{a}}").as_string() == "{{a}}"
@@ -659,10 +677,12 @@ class CRLF:
     """
     Class for storing CRLF.
     """
-    def __init__(self):
+    def __init__(self, spos=None, epos=None):
         self.childs = []
         self.parent = None
-        
+        self.spos = spos
+        self.epos = epos
+
     def add_child(self, child):
         child.parent = self
         self.childs.append(child)
@@ -686,7 +706,7 @@ def tokenize_text(text, startpos=0):
     # tokenize
     # =  - title,       find_title_end()    - if found: title
     #      section,     find_section_end()  - if found: section
-    # #  - list_item,   find_li_end()       - if found: list_item
+    # #  - list_item,   find_base_end()     - if found: list_item
     # *  - list_item,   find_list_end()     - if found: list_item
     # {{ - template,    find_template_end() - if found: template
     #  
@@ -709,7 +729,7 @@ def tokenize_text(text, startpos=0):
             
             # title
             if string_start != i:
-                yield Text(text[string_start:i])
+                yield Text(text[string_start:i], spos=string_start, epos=i)
 
             #
             level = get_title_level(text, i)
@@ -723,7 +743,7 @@ def tokenize_text(text, startpos=0):
                 title = parse_title(text, level, i, end)
                 title = title.strip()
                 # emit Title(title), emit Section(title)
-                yield Title(title, level)
+                yield Title(title, level, spos=i, epos=end)
                 i = end
                 string_start = i                
             
@@ -732,12 +752,12 @@ def tokenize_text(text, startpos=0):
 
             # list item
             if string_start != i:
-                yield Text(text[string_start:i])
+                yield Text(text[string_start:i], spos=string_start, epos=i)
 
             #
-            end = find_li_end(text, i)
+            end = find_base_end(text, i)
             base = parse_li(text, i, end)
-            yield LI(base)
+            yield LI(base, spos=i, epos=end)
             i = end
             string_start = i
             
@@ -746,12 +766,12 @@ def tokenize_text(text, startpos=0):
 
             # list item
             if string_start != i:
-                yield Text(text[string_start:i])
+                yield Text(text[string_start:i], spos=string_start, epos=i)
 
             #
-            end = find_li_end(text, i)
+            end = find_base_end(text, i)
             base = parse_li(text, i, end)
-            yield LI(base)
+            yield LI(base, spos=i, epos=end)
             i = end
             string_start = i
                 
@@ -760,7 +780,7 @@ def tokenize_text(text, startpos=0):
 
             # template
             if string_start != i:
-                yield Text(text[string_start:i])
+                yield Text(text[string_start:i], spos=string_start, epos=i)
 
             #
             end = find_template_end(text, i)
@@ -782,10 +802,11 @@ def tokenize_text(text, startpos=0):
 
             # template
             if string_start != i:
-                yield Text(text[string_start:i])
+                yield Text(text[string_start:i], spos=string_start, epos=i)
 
-            yield CRLF()
-            i += 1
+            end = i + len("\n")
+            yield CRLF(spos=i, epos=end)
+            i = end
             string_start = i
             
         else:
@@ -794,7 +815,7 @@ def tokenize_text(text, startpos=0):
 
     # tail text
     if string_start != i:
-        yield Text(text[string_start:])
+        yield Text(text[string_start:], spos=string_start, epos=l)
 
 
 class Section:
@@ -807,7 +828,9 @@ class Section:
         self.level = title.level
         self.childs = []
         self.parent = None
-        
+        self.spos = 0
+        self.epos = 0
+
     def is_empty(self):
         return len(self.title.strip()) == 0 and len(self.childs) == 0
 
@@ -1154,12 +1177,14 @@ class Text:
     """
     Class for storing text.
     """
-    def __init__(self, s):
+    def __init__(self, s, spos=None, epos=None):
         assert not isinstance(s, Text)
         self.s = s
         self.childs = []
         self.parent = None    
-        
+        self.spos = spos
+        self.epos = epos
+
     def is_empty(self):
         if len(self.s.strip()) == 0:
             if all([c.is_empty() for c in self.childs]):
@@ -1189,24 +1214,24 @@ def find_li_end_tokenized(li, generator):
     
         if isinstance(t, CRLF):
             # li end
-            #li.add_data( t )
+            li.epos = t.spos
             break
 
         elif isinstance(t, Template):
             # Template
             #print("TEMPLATE:", parent)
             li.add_data( t )
-            
+            li.epos = t.epos
+
         elif isinstance(t, Text):
             # text
             # go to container: Section
             li.add_data( t )
-            
+            li.epos = t.epos
+
         else:
             assert 0, "unsupported"
-        
-    return li
-    
+
 
 def parse(text):
     """
@@ -1250,7 +1275,8 @@ def parse(text):
             parent = section
             
         elif isinstance(t, LI):
-            t = find_li_end_tokenized(t, generator)
+            find_li_end_tokenized(t, generator)
+            t.raw = text[t.spos:t.epos]
 
             # List            
             if isinstance(parent, LI):
