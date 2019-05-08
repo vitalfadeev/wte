@@ -7,7 +7,8 @@ import json
 import requests
 import ijson
 import pywikibot
-from  pywikibot import Claim
+from pywikibot import Claim
+from pywikibot.site import DataSite
 from blist import sorteddict
 
 
@@ -261,11 +262,6 @@ class DumpPage(pywikibot.ItemPage):
                 }
 
 
-from pywikibot.site import DataSite
-from pywikibot.site import BaseSite
-from pywikibot.site import Namespace
-
-
 class DumpDataSite(DataSite):
     def loadcontent(self, identification):
         return self.dump_data
@@ -301,6 +297,8 @@ def run(outfile, lang="en"):
     site = pywikibot.Site("wikidata", 'wikidata')
     repo = site.data_repository()
     repo._simple_request = DumpWrapperFactory
+
+    print("Result in the:", outfile)
 
     with requests.get('https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2', stream=True) as req:
       with bz2.open(req.raw, "r") as fin:
