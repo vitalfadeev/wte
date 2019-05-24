@@ -135,21 +135,6 @@ def is_singular(section):
     # case 3
     for t in section.find_objects(Template, recursive=True):
         if t.name == "fi-verb form of":
-            mapping = {"1s": ["1", "singular"],
-                       "2s": ["2", "singular"],
-                       "3s": ["3", "singular"],
-                       "1p": ["1", "plural"],
-                       "2p": ["2", "plural"],
-                       "3p": ["3", "plural"],
-                       "p": ["plural"],
-                       "plural": ["plural"],
-                       "s": ["singular"],
-                       "pass": ["passive"],
-                       "cond": ["conditional"],
-                       "potn": ["potential"],
-                       "impr": ["imperative"],
-                       "pres": ["present"],
-                       "past": ["past"]}
             for a in t.args():
                 k = a.get_name()
 
@@ -184,21 +169,6 @@ def is_plural(section):
     # case 2
     for t in section.find_objects(Template, recursive=True):
         if t.name == "fi-verb form of":
-            mapping = {"1s": ["1", "singular"],
-                       "2s": ["2", "singular"],
-                       "3s": ["3", "singular"],
-                       "1p": ["1", "plural"],
-                       "2p": ["2", "plural"],
-                       "3p": ["3", "plural"],
-                       "p": ["plural"],
-                       "plural": ["plural"],
-                       "s": ["singular"],
-                       "pass": ["passive"],
-                       "cond": ["conditional"],
-                       "potn": ["potential"],
-                       "impr": ["imperative"],
-                       "pres": ["present"],
-                       "past": ["past"]}
             for a in t.args():
                 k = a.get_name()
 
@@ -234,21 +204,6 @@ def is_verb_present(section):
     # case 2
     for t in section.find_objects(Template, recursive=True):
         if t.name == "fi-verb form of":
-            mapping = {"1s": ["1", "singular"],
-                       "2s": ["2", "singular"],
-                       "3s": ["3", "singular"],
-                       "1p": ["1", "plural"],
-                       "2p": ["2", "plural"],
-                       "3p": ["3", "plural"],
-                       "p": ["plural"],
-                       "plural": ["plural"],
-                       "s": ["singular"],
-                       "pass": ["passive"],
-                       "cond": ["conditional"],
-                       "potn": ["potential"],
-                       "impr": ["imperative"],
-                       "pres": ["present"],
-                       "past": ["past"]}
             for a in t.args():
                 k = a.get_name()
 
@@ -284,28 +239,13 @@ def is_verb_past(section):
     for t in section.find_objects(Template, recursive=True):
         if t.name == "inflection of":
             # {{inflection of|do||past|part|lang=en}}
-            a3 = t.arg(3, text)
+            a3 = t.arg(2)
             if a3 == "past":
                 return True
 
     # case 3
     for t in section.find_objects(Template, recursive=True):
         if t.name == "fi-verb form of":
-            mapping = {"1s": ["1", "singular"],
-                       "2s": ["2", "singular"],
-                       "3s": ["3", "singular"],
-                       "1p": ["1", "plural"],
-                       "2p": ["2", "plural"],
-                       "3p": ["3", "plural"],
-                       "p": ["plural"],
-                       "plural": ["plural"],
-                       "s": ["singular"],
-                       "pass": ["passive"],
-                       "cond": ["conditional"],
-                       "potn": ["potential"],
-                       "impr": ["imperative"],
-                       "pres": ["present"],
-                       "past": ["past"]}
             for a in t.args():
                 k = a.get_name()
 

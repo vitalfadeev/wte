@@ -1,8 +1,10 @@
-from wte import Word, WORD_TYPES
-from helpers import create_storage, put_contents, get_contents, sanitize_filename, unique
-from wikoo import get_label_type
-from wikoo import Li, Template
-import templates
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+from wte import Word, KEYS, WORD_TYPES, get_label_type
+from wikoo import Li, Template, Section, Link
+from loggers import log, log_non_english, log_no_words, log_unsupported
+from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_section_not_found
 
 
 # This dictionary maps section titles in articles to parts-of-speech.  There
@@ -26,217 +28,23 @@ word_type_sections = {
 }
 
 
-def get_translations(section, label, text):
-    """
-    Find translations in section 'section'
-
-    out: {en:[..], de:[...]}
-    """
-    result = []
-
+def is_singular(section):
     # case 1
-    # =====Translations=====
-    # {{trans-top|members of the species ''Equus ferus''}}
-    # * ...
-    # {{trans-bottom}}
-    #for obj in section.find_objects_between_templates(Li, "trans-top", "trans-bottom"):
-    #    if isinstance(obj, Li):
-    #        for t in obj.find_objects(Template):
     for t in section.find_objects(Template, recursive=True):
-                # {{t-simple|za|max|langname=Zhuang}}
-                if t.name == "t-simple":
-                    lang = t.arg(1, text)
-                    term = t.arg(2, text)
-
-                    if term:
-                        result.append((lang, term))
-
-                elif t.name.lower() == "t+":
-                    # {{t+|zu|ihhashi|c5|c6}}
-                    lang = t.arg(1, text)
-                    term = t.arg(2, text)
-
-                    if term:
-                        result.append((lang, term))
-
-                elif t.name.lower() == "t":
-                    # {{t|ude|муи }}
-                    lang = t.arg(1, text)
-                    term = t.arg(2, text)
-
-                    if term:
-                        result.append((lang, term))
+        if t.name.find("singular") != -1:
+            return True
 
     # case 2
-    # * {{t|en|cat}}
-    """
-    for t in section.find_templates_in_parents():
-        # {{t-simple|za|max|langname=Zhuang}}
-        if t.name.lower() == "t-simple":
+    for t in section.find_objects(Template, recursive=True):
+        if t.name == "head":
             lang = t.arg(0)
-            term = t.arg(1)
-
-            if term:
-                result.append((lang, term))
-
-        elif t.name.lower() == "t+":
-            # {{t+|zu|ihhashi|c5|c6}}
-            lang = t.arg(0)
-            term = t.arg(1)
-
-            if term:
-                result.append((lang, term))
-
-        elif t.name.lower() == "t":
-            # {{t|ude|муи }}
-            lang = t.arg(0)
-            term = t.arg(1)
-
-            if term:
-                result.append((lang, term))
-    """
-
-    #
-    bylang = {}
-
-    for lang, term in result:
-        cln = term.replace("[", "").replace("]", "")
-
-        if lang in bylang:
-            bylang[lang].append(cln)
-        else:
-            bylang[lang] = []
-            bylang[lang].append(cln)
-
-    for k,v in bylang.items():
-        bylang[k] = unique(v)
-
-    return bylang
-
-
-def get_conjugations(section, label, text):
-    """
-    Find conjugations in section 'section'
-    It find templates like the {{en-conj}}, {{en-verb}} and analize its.
-
-    out: [...]
-    out: None
-    """
-
-    """
-    ==English==
-    ===Etymology 1===
-    ====Verb====
-    =====Conjugation=====
-    {{en-conj|do|did|done|doing|does}}
-
-    In: section Verb
-
-    Out:
-        [ basic, simple_past, past_participle, present_participle, simple_present_third_person ]
-    """
-
-    result = []
-
-    # here is section ====Verb====
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "en-conj":
-            result += templates.en_conj(t, label, text)
-
-        elif t.name == "en-verb":
-            (third, present_participle, simple_past, past_participle) = templates.en_verb(t, label, text)
-            result.append(third)
-            result.append(present_participle)
-            result.append(simple_past)
-            result.append(past_participle)
-
-    # unique
-    result = unique(result)
-
-    return result if result else None
-
-
-def is_male_variant(section, label, text):
-    """
-    Detect for thw word is male varant.
-    Take section 'section' as argument.
-    Find templates like the {{ang-noun}} and analize its.
-
-    out: True | False
-    """
-    # From {{inh|en|enm|cat}}, {{m|enm|catte}},
-    # from {{inh|en|ang|catt||male cat}}, {{m|ang|catte||female cat}},
-    # from {{inh|en|gem-pro|*kattuz}}.
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "ang-noun":
-            (head, gender, plural, plural2) = templates.ang_noun(t, label, text)
-
-            if gender == "m":
-                return True
-
-    return None
-
-def is_female_variant(section, label, text):
-    # From {{inh|en|enm|cat}}, {{m|enm|catte}},
-    # from {{inh|en|ang|catt||male cat}}, {{m|ang|catte||female cat}},
-    # from {{inh|en|gem-pro|*kattuz}}.
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "ang-noun":
-            (head, gender, plural, plural2) = templates.ang_noun(t, label, text)
-
-            if gender == "f":
-                return True
-
-    return None
-
-
-def is_singular(section, label, text):
-    # case 1
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "en-noun" and False: # disabled
-            # case 1
-            (s, p, is_uncountable) = templates.en_noun(t, label, text)
-
-            if p:
-                return True
-
-        elif t.name == "head":
-            # case 2
-            lang = t.arg(1, text)
-            flag = t.arg(2, text)
+            flag = t.arg(1)
             if flag == "noun plural form":
                 return True
 
-        elif t.name in ("feminine singular of", "masculine singular of", "neuter singular of",
-                        "en-third-person singular of", "en-third person singular of",
-                        "singular of", "singular form of",
-                        "en-archaic second-person singular of",
-                        "second-person singular of",
-                        "en-second-person singular past of",
-                        "en-second person singular past of",
-                        "second-person singular past of",
-                        "second person singular past of",
-                        "en-archaic third-person singular of"
-                        ):
-            # case 3
-            return True
-
-        elif t.name == "fi-verb form of":
-            mapping = {"1s": ["1", "singular"],
-                       "2s": ["2", "singular"],
-                       "3s": ["3", "singular"],
-                       "1p": ["1", "plural"],
-                       "2p": ["2", "plural"],
-                       "3p": ["3", "plural"],
-                       "p": ["plural"],
-                       "plural": ["plural"],
-                       "s": ["singular"],
-                       "pass": ["passive"],
-                       "cond": ["conditional"],
-                       "potn": ["potential"],
-                       "impr": ["imperative"],
-                       "pres": ["present"],
-                       "past": ["past"]}
+    # case 3
+    for t in section.find_objects(Template, recursive=True):
+        if t.name == "fi-verb form of":
             for a in t.args():
                 k = a.get_name()
 
@@ -253,108 +61,24 @@ def is_singular(section, label, text):
                 if v in ("1s", "2s", "3s", "s"):
                     return True
 
-        elif t.name in ("fi-form of", "conjugation of"):
-            # case 4
-            for a in t.args():
-                k = a.get_name()
-
-                if k is None:
-                    continue
-
-                k = k.name.strip()
-
-                if k in ("1", "2", "3", "suffix", "suffix2", "suffix3",
-                         "c", "n", "type", "lang"):
-                    continue
-
-                v = t.arg(k, text)
-
-                if not v or v == "-":
-                    continue
-
-                if v in ("first-person", "first person", "1p"):
-                    v = "1"
-                elif v in ("second-person", "second person", "2p"):
-                    v = "2"
-                elif v in ("third-person", "third person", "3p"):
-                    v = "3"
-                elif v == "connegative present":
-                    v = "present connegative"
-                elif v in ("singural", "s"):
-                    v = "singular"
-                elif v in ("p,"):
-                    v = "plural"
-                elif v == "pres":
-                    v = "present"
-                elif v == "imperfect":
-                    v = "past"
-                if k != "case":
-                    if v not in ("1", "2", "3", "impersonal",
-                                 "first-person singular",
-                                 "first-person plural",
-                                 "second-person singular",
-                                 "second-person plural",
-                                 "third-person singular",
-                                 "third-person plural",
-                                 "first, second, and third person",
-                                 "singular or plural",
-                                 "plural", "singular", "present", "past",
-                                 "imperative", "present connegative",
-                                 "indicative connegative",
-                                 "indicative present",
-                                 "indicative past",
-                                 "potential present",
-                                 "conditional present",
-                                 "potential present connegative",
-                                 "connegative", "partitive", "optative",
-                                 "eventive",
-                                 "singular and plural", "passive",
-                                 "indicative", "conditional", "potential"):
-                        #print(word, "FI-FORM UNRECOGNIZED", v, str(t))
-                        pass
-
-                if v in ("singular and plural", "singular or plural"):
-                    return True
-                elif v == "first-person singular":
-                    return True
-                elif v == "second-person singular":
-                    return True
-                elif v == "third-person singular":
-                    return True
+    # case 4
+    for t in section.find_objects(Template, recursive=True):
+        if t.name in ("fi-form of", "conjugation of"):
+            if v.find("singular") != -1:
+                return True
 
     return None
 
 
-def is_plural(section, label, text):
-    # {{plural of|cat|lang=en}}
+def is_plural(section):
+    # case 1
     for t in section.find_objects(Template, recursive=True):
-        if t.name in ("plural of", "feminine plural of",
-                      "masculine plural of",
-                      "neuter plural of",
-                      "nominative plural of",
-                      "alternative plural of",
-                      "plural form of",
-                      "en-irregular plural of",
-                      ):
-            # case 1
+        if t.name.find("plural") != -1:
             return True
 
-        elif t.name == "fi-verb form of":
-            mapping = {"1s": ["1", "singular"],
-                       "2s": ["2", "singular"],
-                       "3s": ["3", "singular"],
-                       "1p": ["1", "plural"],
-                       "2p": ["2", "plural"],
-                       "3p": ["3", "plural"],
-                       "p": ["plural"],
-                       "plural": ["plural"],
-                       "s": ["singular"],
-                       "pass": ["passive"],
-                       "cond": ["conditional"],
-                       "potn": ["potential"],
-                       "impr": ["imperative"],
-                       "pres": ["present"],
-                       "past": ["past"]}
+    # case 2
+    for t in section.find_objects(Template, recursive=True):
+        if t.name == "fi-verb form of":
             for a in t.args():
                 k = a.get_name()
 
@@ -371,106 +95,25 @@ def is_plural(section, label, text):
                 if v in ("1p", "2p", "3p", "p", "plural"):
                     return True
 
-        elif t.name in ("fi-form of", "conjugation of"):
-            # case 3
-            for a in t.args():
-
-                k = a.get_name()
-
-                if k is None:
-                    continue
-
-                k = k.name.strip()
-
-                if k in ("1", "2", "3", "suffix", "suffix2", "suffix3",
-                         "c", "n", "type", "lang"):
-                    continue
-
-                v = t.arg(k, text)
-
-                if not v or v == "-":
-                    continue
-
-                if v in ("first-person", "first person", "1p"):
-                    v = "1"
-                elif v in ("second-person", "second person", "2p"):
-                    v = "2"
-                elif v in ("third-person", "third person", "3p"):
-                    v = "3"
-                elif v == "connegative present":
-                    v = "present connegative"
-                elif v in ("singural", "s"):
-                    v = "singular"
-                elif v in ("p,"):
-                    v = "plural"
-                elif v == "pres":
-                    v = "present"
-                elif v == "imperfect":
-                    v = "past"
-                if k != "case":
-                    if v not in ("1", "2", "3", "impersonal",
-                                 "first-person singular",
-                                 "first-person plural",
-                                 "second-person singular",
-                                 "second-person plural",
-                                 "third-person singular",
-                                 "third-person plural",
-                                 "first, second, and third person",
-                                 "singular or plural",
-                                 "plural", "singular", "present", "past",
-                                 "imperative", "present connegative",
-                                 "indicative connegative",
-                                 "indicative present",
-                                 "indicative past",
-                                 "potential present",
-                                 "conditional present",
-                                 "potential present connegative",
-                                 "connegative", "partitive", "optative",
-                                 "eventive",
-                                 "singular and plural", "passive",
-                                 "indicative", "conditional", "potential"):
-                        #print(word, "FI-FORM UNRECOGNIZED", v, str(t))
-                        pass
-                if v in ("singular and plural", "singular or plural"):
-                    return True
-                elif v == "first-person plural":
-                    return True
-                elif v == "second-person plural":
-                    return True
-                elif v == "third-person plural":
-                    return True
+    # case 3
+    for t in section.find_objects(Template, recursive=True):
+        if t.name in ("fi-form of", "conjugation of"):
+            v = t.arg("pl")
+            if v and v.find("plural") != -1:
+                return True
 
     return None
 
 
-def is_verb_present(section, label, text):
-    # {{present participle of}}
+def is_verb_present(section):
+    # case 1
     for t in section.find_objects(Template, recursive=True):
-        if t.name in ("present participle of", "gerund of",
-                      "present tense of", "present of",
-                      "en-third-person singular of",
-                      "en-third person singular of",
-                      "en-archaic second-person singular of",
-                      "second-person singular of",
-                      ):
+        if t.name.find("present") != -1:
             return True
 
-        elif t.name == "fi-verb form of":
-            mapping = {"1s": ["1", "singular"],
-                       "2s": ["2", "singular"],
-                       "3s": ["3", "singular"],
-                       "1p": ["1", "plural"],
-                       "2p": ["2", "plural"],
-                       "3p": ["3", "plural"],
-                       "p": ["plural"],
-                       "plural": ["plural"],
-                       "s": ["singular"],
-                       "pass": ["passive"],
-                       "cond": ["conditional"],
-                       "potn": ["potential"],
-                       "impr": ["imperative"],
-                       "pres": ["present"],
-                       "past": ["past"]}
+    # case 2
+    for t in section.find_objects(Template, recursive=True):
+        if t.name == "fi-verb form of":
             for a in t.args():
                 k = a.get_name()
 
@@ -487,115 +130,32 @@ def is_verb_present(section, label, text):
                 if v in ("pres"):
                     return True
 
-        elif t.name in ("fi-form of", "conjugation of"):
-            # case 3
-            for a in t.args():
-
-                k = a.get_name()
-
-                if k is None:
-                    continue
-
-                k = k.name.strip()
-
-                if k in ("1", "2", "3", "suffix", "suffix2", "suffix3",
-                         "c", "n", "type", "lang"):
-                    continue
-
-                v = t.arg(k, text)
-
-                if not v or v == "-":
-                    continue
-
-                if v in ("first-person", "first person", "1p"):
-                    v = "1"
-                elif v in ("second-person", "second person", "2p"):
-                    v = "2"
-                elif v in ("third-person", "third person", "3p"):
-                    v = "3"
-                elif v == "connegative present":
-                    v = "present connegative"
-                elif v in ("singural", "s"):
-                    v = "singular"
-                elif v in ("p,"):
-                    v = "plural"
-                elif v == "pres":
-                    v = "present"
-                elif v == "imperfect":
-                    v = "past"
-                if k != "case":
-                    if v not in ("1", "2", "3", "impersonal",
-                                 "first-person singular",
-                                 "first-person plural",
-                                 "second-person singular",
-                                 "second-person plural",
-                                 "third-person singular",
-                                 "third-person plural",
-                                 "first, second, and third person",
-                                 "singular or plural",
-                                 "plural", "singular", "present", "past",
-                                 "imperative", "present connegative",
-                                 "indicative connegative",
-                                 "indicative present",
-                                 "indicative past",
-                                 "potential present",
-                                 "conditional present",
-                                 "potential present connegative",
-                                 "connegative", "partitive", "optative",
-                                 "eventive",
-                                 "singular and plural", "passive",
-                                 "indicative", "conditional", "potential"):
-                        #print(word, "FI-FORM UNRECOGNIZED", v, str(t))
-                        pass
-                if v in ("pres", "connegative present",
-                         "potential present connegative",
-                         "potential present",
-                         "conditional present",
-                         "indicative present"):
-                    return True
-
-
-
+    # case 3
+    for t in section.find_objects(Template, recursive=True):
+        if t.name in ("fi-form of", "conjugation of"):
+            value = t.arg("tense")
+            if value and value.find("present") != -1:
+                return True
     return None
 
 
-def is_verb_past(section, label, text):
-    # {{en-past of}}
+def is_verb_past(section):
+    # case 1
     for t in section.find_objects(Template, recursive=True):
-        if t.name in ("en-past of", "en-simple past of",
-                      "past of", "past sense of",
-                      "past tense of",
-                      "en-simple past of", "en-past of",
-                      "past participle of",
-                      "en-second-person singular past of",
-                      "en-second person singular past of",
-                      "second-person singular past of",
-                      "second person singular past of",
-                      ):
+        if t.name.find("past") != -1:
             return True
 
-        elif t.name == "inflection of":
+    # case 2
+    for t in section.find_objects(Template, recursive=True):
+        if t.name == "inflection of":
             # {{inflection of|do||past|part|lang=en}}
-            a3 = t.arg(3, text)
+            a3 = t.arg(2)
             if a3 == "past":
                 return True
 
-        elif t.name == "fi-verb form of":
-            mapping = {"1s": ["1", "singular"],
-                       "2s": ["2", "singular"],
-                       "3s": ["3", "singular"],
-                       "1p": ["1", "plural"],
-                       "2p": ["2", "plural"],
-                       "3p": ["3", "plural"],
-                       "p": ["plural"],
-                       "plural": ["plural"],
-                       "s": ["singular"],
-                       "pass": ["passive"],
-                       "cond": ["conditional"],
-                       "potn": ["potential"],
-                       "impr": ["imperative"],
-                       "pres": ["present"],
-                       "past": ["past"]}
+    # case 3
+    for t in section.find_objects(Template, recursive=True):
+        if t.name == "fi-verb form of":
             for a in t.args():
                 k = a.get_name()
 
@@ -612,431 +172,844 @@ def is_verb_past(section, label, text):
                 if v in ("past"):
                     return True
 
-        elif t.name in ("fi-form of", "conjugation of"):
-            # case 3
-            for a in t.args():
-
-                k = a.get_name()
-
-                if k is None:
-                    continue
-
-                k = k.name.strip()
-
-                if k in ("1", "2", "3", "suffix", "suffix2", "suffix3",
-                         "c", "n", "type", "lang"):
-                    continue
-
-                v = t.arg(k, text)
-
-                if not v or v == "-":
-                    continue
-
-                if v in ("first-person", "first person", "1p"):
-                    v = "1"
-                elif v in ("second-person", "second person", "2p"):
-                    v = "2"
-                elif v in ("third-person", "third person", "3p"):
-                    v = "3"
-                elif v == "connegative present":
-                    v = "present connegative"
-                elif v in ("singural", "s"):
-                    v = "singular"
-                elif v in ("p,"):
-                    v = "plural"
-                elif v == "pres":
-                    v = "present"
-                elif v == "imperfect":
-                    v = "past"
-                if k != "case":
-                    if v not in ("1", "2", "3", "impersonal",
-                                 "first-person singular",
-                                 "first-person plural",
-                                 "second-person singular",
-                                 "second-person plural",
-                                 "third-person singular",
-                                 "third-person plural",
-                                 "first, second, and third person",
-                                 "singular or plural",
-                                 "plural", "singular", "present", "past",
-                                 "imperative", "present connegative",
-                                 "indicative connegative",
-                                 "indicative present",
-                                 "indicative past",
-                                 "potential present",
-                                 "conditional present",
-                                 "potential present connegative",
-                                 "connegative", "partitive", "optative",
-                                 "eventive",
-                                 "singular and plural", "passive",
-                                 "indicative", "conditional", "potential"):
-                        #print(word, "FI-FORM UNRECOGNIZED", v, str(t))
-                        pass
-                if v in ("past", "indicative past"):
-                    return True
-
-    return None
-
-
-def is_verb_futur(section, label, text):
-    return None
-
-
-def get_singular_variant(section, label, text):
-    return None
-
-
-def get_plural_variant(section, label, text):
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "ang-noun":
-            (head, gender, plural, plural2) = templates.ang_noun(t, label, text)
-
-            if plural is not None:
-                return unique(plural)
-
-        elif t.name == "en-noun":
-            (single, plural, is_uncountable) = templates.en_noun(t, label, text)
-
-            if plural:
-                return unique(plural)
-
-    return None
-
-
-def get_alternatives(section, label, text):
-    """
-    Find alternatives in section 'section'
-
-    out: {en:[..], de:[...]}
-    """
-    # ==English== section here
-    # ===Alternative forms===
-    # * {{l|en|hower}} {{qualifier|obsolete}}
-
-    result = []
-
-    for sec in section.find_section("alternative forms", recursive=True):
-        for t in sec.find_objects(Template, recursive=True):
-            # * {{l|en|hower}}
-            if t.name == "l":
-                lang = t.arg(1, text)
-                term = t.arg(2, text)
-
-                if term:
-                    result.append((lang, term))
-
-    for t in section.find_objects(Template, recursive=True):
-        if t.name in ("alternative form of", "alt form", "alt form of",
-                      "alternative spelling of", "aspirate mutation of",
-                      "alternate spelling of", "altspelling", "standspell",
-                      "standard spelling of", "soft mutation of",
-                      "hard mutation of", "mixed mutation of", "lenition of",
-                      "alt form", "altform", "alt-form",
-                      "apocopic form of", "altcaps",
-                      "alternative name of", "honoraltcaps",
-                      "alternative capitalisation of",
-                      "alternative capitalization of", "alternate form of",
-                      "alternative case form of", "alt-sp",
-                      "standard form of", "alternative typography of",
-                      "elongated form of", "alternative name of",
-                      "uncommon spelling of",
-                      "combining form of",
-                      "caret notation of",
-                      "alternative term for", "altspell",
-
-                      "eye dialect of", "eye dialect", "eye-dialect of",
-                      "pronunciation spelling",
-                      "pronunciation respelling of",
-                      "pronunciation spelling of",
-
-                      "obsolete spelling of", "obsolete form of",
-                      "obsolete typography of", "rareform",
-                      "superseded spelling of", "former name of",
-                      "archaic spelling of", "dated spelling of",
-                      "archaic form of", "dated form of",
-
-                      "informal spelling of", "informal form of",
-
-                      "euphemistic form of", "euphemistic spelling of",
-
-                      "deliberate misspelling of", "misconstruction of",
-                      "misspelling of", "common misspelling of",
-                      "nonstandard form of", "nonstandard spelling of",
-
-                      "rare form of", "rare spelling of",
-
-                      "initialism of", "abbreviation of", "short for",
-                      "acronym of", "clipping of", "clip", "clipping",
-                      "short form of", "ellipsis of", "ellipse of",
-                      "short of", "abbreviation", "abb", "contraction of"):
-            lang = t.arg(1, text)
-            term = t.arg(2, text)
-
-            if term:
-                result.append((lang, term))
-
-    #
-    result = [ term for (lang, term) in result if lang == "en" or lang is None ]
-
-    return result if result else None
-
-
-def get_related(section, label, text):
-    """
-    Find related terms in section 'section'
-
-    out: {en:[..], de:[...]}
-    """
-    # print(dir(t))
-    # {{rel-top|related terms}}
-    #   * {{l|en|knight}}
-    #
-    # {{rel-top|related terms}}
-    # * {{l|en|knight}}
-
-    # s = "{{rel-top|related terms}}"
-    # lst = self.get_list_after_string(parsed, s)
-
-    result = []
-
-    found = False
-    pos = 0
-
-    # case 1
-    # {{rel-top|related terms}}
-    # * {{l|en|knight}}, {{l|en|cavalier}}, {{l|en|cavalry}}, {{l|en|chivalry}}
-    # * {{l|en|equid}}, {{l|en|equine}}
-    # * {{l|en|gee}}, {{l|en|haw}}, {{l|en|giddy-up}}, {{l|en|whoa}}
-    # * {{l|en|hoof}}, {{l|en|mane}}, {{l|en|tail}}, {{l|en|withers}}
-    # {{rel-bottom}}
-
-    # get next list
-    # get templates {{l|...}}
-
-    generator = section.find_objects((Template, Li), recursive=True)
-    for obj in generator:
-        if isinstance(obj, Template) and obj.name == "rel-top":
-            # OK. start
-            for obj in generator:
-                if isinstance(obj, Template) and obj.name == "rel-bottom":
-                    break
-                else:
-                    if isinstance(obj, Li):
-                        for t in obj.find_objects(Template):
-                            if t.name == "l":
-                                lang = t.arg(1, text)
-                                term = t.arg(2, text)
-
-                                if term:
-                                    result.append((lang, term))
-            break
-
-    # case 2
-    # {{rel-top|related terms}}
-    for sec in section.find_section("related terms", recursive=True):
-        for t in sec.find_objects(Template, recursive=True):
-            # * {{l|en|hower}}
-            if t.name == "l":
-                lang = t.arg(1, text)
-                term = t.arg(2, text)
-
-                if term:
-                    result.append((lang, term))
-
-    # case 3
-    # {{en-simple past of|do}}
-    for t in section.find_objects(Template, recursive=True):
-        # * {{l|en|hower}}
-        if t.name == "en-simple past of":
-            lang = t.arg("lang", text)
-            term = t.arg(1, text)
-
-            if term:
-                result.append((lang, term))
-
-        elif t.name == "present participle of":
-            # {{present participle of|do}}
-            lang = t.arg("lang", text)
-            term = t.arg(1, text)
-
-            if term:
-                result.append((lang, term))
-
-        elif t.name == "en-third-person singular of":
-            # {{en-third-person singular of|do}}
-            lang = t.arg("lang", text)
-            term = t.arg(1, text)
-
-            if term:
-                result.append((lang, term))
-
-        elif t.name == "inflection of":
-            # {{inflection of|do||past|part|lang=en}}
-            lang = t.arg("lang", text)
-            term = t.arg(1, text)
-
-            if term:
-                result.append((lang, term))
-
     # case 4
-    # get from parents
-    """
-    for t in section.find_templates_in_parents():
-        if t.name == "m":
-            # {{m|en|doe|t=female deer}}
-            lang = t.arg(1, text)
-            term = t.arg(2, text)
-
-            if term:
-                result.append((lang, term))
-
-    """
-
-    #
-    bylang = {}
-
-    #
-    for lang, term in result:
-        if lang in bylang:
-            bylang[lang].append(term)
-        else:
-            bylang[lang] = []
-            bylang[lang].append(term)
-
-    for k,v in bylang.items():
-        bylang[k] = unique(v)
-
-    result = unique( bylang.get("en", []) + bylang.get(None, []) )
-
-    return result if result else None
-
-
-def get_synonyms(section, label, text):
-    """
-    Find synonyms in section 'section'
-
-    out: {en:[..], de:[...]}
-    """
-
-    """
-    ==English==
-    ===Etymology 1===
-    ====Noun====
-    =====Synonyms=====
-    * {{sense|animal}} {{l|en|horsie}}, {{l|en|nag}}, {{l|en|steed}}, {{l|en|prad}}
-    * {{sense|gymnastic equipment}} {{l|en|pommel horse}}, {{l|en|vaulting horse}}
-    * {{sense|chess piece}} {{l|en|knight}}
-    * {{sense|illegitimate study aid}} {{l|en|dobbin}}, {{l|en|pony}}, {{l|en|trot}}
-
-    ====Synonyms====
-    * {{sense|period of sixty minutes|a season or moment}} {{l|en|stound}} {{qualifier|obsolete}}
-    """
-
-    result = []
-
-    # here is section like a ====Noun==== or ====Verb====
-    # find section =====Synonyms=====
-    for sec in section.find_section("synonyms", recursive=True):
-        for t in sec.find_objects(Template, recursive=True):
-            # find {{sense|animal}} | {{l|en|horsie}}
-            # remove brackets like a [[...]]
-            # remove templates
-            # get example
-            if 0 and t.name == "sense":  # disabled, because words only
-                lang = t.arg(1, text)
-                term = t.arg(2, text)
-
-                if term:
-                    result.append((lang, term))
-
-            elif t.name == "l":
-                lang = t.arg(1, text)
-                term = t.arg(2, text)
-
-                if term:
-                    result.append((lang, term))
-
-    # case 2
-
     for t in section.find_objects(Template, recursive=True):
-        if t.name in ("syn", "syn2", "syn3", "syn4", "syn5", "syn1",
-                          "syn2-u", "syn3-u", "syn4-u", "syn5-u"):
-            lang = t.arg("lang", text)
-            for a in t.args():
-                result.append(  (lang, a.get_value(text) ) )
+        if t.name in ("fi-form of", "conjugation of"):
+            value = t.arg("tense")
+            if value and value.find("past") != -1:
+                return True
 
-    # filter "en"
-    result = [ term for (lang, term) in result if lang == "en" or lang is None ]
-    result = unique(result)
-
-    return result if result else None
+    return None
 
 
-def get_words(article, label, text):
-    lang = "fr"
+# Type of speech sections
+tos_sections = {
+    WORD_TYPES.NOUN: [
+        # "abbreviation",
+        # "acronym",
+        # "adjective",
+        # "initialism",
+        "noun",
+        "noun 1",
+        "noun 2",
+        "pronoun",
+        "proper noun"
+    ],
+    WORD_TYPES.ADJECTIVE: [
+        "abbreviation",
+        "adjective",
+    ],
+    WORD_TYPES.VERB: [
+        "verb"
+    ],
+    WORD_TYPES.ADVERB: [
+        "adverb"
+    ],
+    WORD_TYPES.PREDICATIVE: [
+        "predicative"
+    ],
+    WORD_TYPES.CONJUNCTION: [
+        "conjugation"
+    ],
+    WORD_TYPES.PREPOSITION: [
+        "preposition"
+    ],
+    WORD_TYPES.PRONOUN: [
+        "pronoun"
+    ],
+    WORD_TYPES.INTERJECTION: [
+        "interjection",
+        "interjection 1",
+        "interjection 2",
+    ],
+    WORD_TYPES.PARTICLE: [
+        "particle"
+    ],
+    WORD_TYPES.ARTICLE: [
+        "article"
+    ],
+    WORD_TYPES.NUMERAL: [
+        "number",
+        "numeral"
+    ]
+}
 
-    # mine info
+# translation sections
+translation_sections = [
+    "translations"
+]
+
+# synonym sections
+synonym_sections = [
+    "synonyms",
+    "synonym"
+]
+
+# conjugation sections
+conjugation_sections = [
+    "conjugation"
+]
+
+# antonymy_sections
+antonymy_sections = [
+    "antonyms"
+]
+
+# hypernymy_sections
+hypernymy_sections = [
+    "hypernyms"
+]
+
+# hyponymy_sections
+hyponymy_sections = [
+    "hyponyms"
+]
+
+# meronymy_sections
+meronymy_sections = [
+    "meronyms"
+]
+
+# holonymy_sections
+holonymy_sections = [
+    "holonyms"
+]
+
+# troponymy_sections
+troponymy_sections = [
+    "troponyms"
+]
+
+# alternative_forms_sections
+alternative_forms_sections = [
+    "alternative forms"
+]
+
+# related_sections
+related_sections = [
+    "related terms"
+]
+
+# coordinate_sections
+coordinate_sections = [
+    "coordinate terms"
+]
+
+word_type_sections = {
+    "nombre": WORD_TYPES.NOUN,
+    "adjetivo": WORD_TYPES.ADJECTIVE,
+    "verbo": WORD_TYPES.VERB,
+    "adverbio": WORD_TYPES.ADVERB,
+    # "prädikativ":           WORD_TYPES.PREDICATIVE,
+    "conjunción": WORD_TYPES.CONJUNCTION,
+    "preposición": WORD_TYPES.PREPOSITION,
+    "pronombre": WORD_TYPES.PRONOUN,
+    "interjección": WORD_TYPES.INTERJECTION,
+    "partícula": WORD_TYPES.PARTICLE,
+    "artículo": WORD_TYPES.ARTICLE,
+    # "числительное":         WORD_TYPES.NUMERAL,
+}
+
+
+# section rules
+# section_rules = {
+# "english"       : section_english_cb,
+# "noun"          : section_noun_cb,
+# "verb"          : section_verb_cb,
+# "adj"           : section_adj_cb,
+##"translingual"  : translingual_cb,
+# }
+
+# template rules
+# template_rules = {
+# "en-noun"   : noun_cb,
+# "id-noun"   : noun_cb,
+# "enm-noun"  : noun_cb,
+# "fr-noun"   : noun_cb,
+# "fro-noun"  : noun_cb,
+# "ro-noun"   : noun_cb,
+# "ga-noun"   : noun_cb,
+# "gd-noun"   : noun_cb,
+# "nrf-noun"  : noun_cb,
+# "en-adj"    : adj_cb,
+# "en-verb"   : verb_cb,
+# "inh"       : inh_cb,
+# "t"         : translation_cb,
+# "t+"        : translation_cb,
+# "t-simple"  : translation_cb,
+# "syn"       : synonym_cb,
+# "syn2"      : synonym_cb,
+# "syn3"      : synonym_cb,
+# "syn4"      : synonym_cb,
+# "syn5"      : synonym_cb,
+# "syn1"      : synonym_cb,
+# "syn2-u"    : synonym_cb,
+# "syn3-u"    : synonym_cb,
+# "syn4-u"    : synonym_cb,
+# "syn5-u"    : synonym_cb,
+# "l"         : l_cb,
+# "sense"     : sense_cb,
+# "lb"        : label_cb,
+# "lbl"       : label_cb,
+# "label"     : label_cb,
+
+# "alter"                     : alter_cb,
+# "alternative form of"       : alter_cb,
+# "alt form"                  : alter_cb,
+# "alt form of"               : alter_cb,
+# "alternative spelling of"   : alter_cb,
+# "aspirate mutation of"      : alter_cb,
+# "alternate spelling of"     : alter_cb,
+# "altspelling"               : alter_cb,
+# "standspell"                : alter_cb,
+# "standard spelling of"      : alter_cb,
+# "soft mutation of"          : alter_cb,
+# "hard mutation of"          : alter_cb,
+# "mixed mutation of"         : alter_cb,
+# "lenition of"               : alter_cb,
+# "alt form"                  : alter_cb,
+# "altform"                   : alter_cb,
+# "alt-form"                  : alter_cb,
+# "apocopic form of"          : alter_cb,
+# "altcaps"                   : alter_cb,
+# "alternative name of"       : alter_cb,
+# "honoraltcaps"              : alter_cb,
+# "alternative capitalisation of" : alter_cb,
+# "alternative capitalization of" : alter_cb,
+# "alternate form of"         : alter_cb,
+# "alternative case form of"  : alter_cb,
+# "alt-sp"                    : alter_cb,
+# "standard form of"          : alter_cb,
+# "alternative typography of" : alter_cb,
+# "elongated form of"         : alter_cb,
+# "alternative name of"       : alter_cb,
+# "uncommon spelling of"      : alter_cb,
+# "combining form of"         : alter_cb,
+# "caret notation of"         : alter_cb,
+# "alternative term for"      : alter_cb,
+# "altspell"                  : alter_cb,
+# "eye dialect of"            : alter_cb,
+# "eye dialect"               : alter_cb,
+# "eye-dialect of"            : alter_cb,
+# "pronunciation spelling"    : alter_cb,
+# "pronunciation respelling of" : alter_cb,
+# "pronunciation spelling of" : alter_cb,
+# "obsolete spelling of"      : alter_cb,
+# "obsolete form of"          : alter_cb,
+# "obsolete typography of"    : alter_cb,
+# "rareform"                  : alter_cb,
+# "superseded spelling of"    : alter_cb,
+# "former name of"            : alter_cb,
+# "archaic spelling of"       : alter_cb,
+# "dated spelling of"         : alter_cb,
+# "archaic form of"           : alter_cb,
+# "dated form of"             : alter_cb,
+# "informal spelling of"      : alter_cb,
+# "informal form of"          : alter_cb,
+# "euphemistic form of"       : alter_cb,
+# "euphemistic spelling of"   : alter_cb,
+# "deliberate misspelling of" : alter_cb,
+# "misconstruction of"        : alter_cb,
+# "misspelling of"            : alter_cb,
+# "common misspelling of"     : alter_cb,
+# "nonstandard form of"       : alter_cb,
+# "nonstandard spelling of"   : alter_cb,
+# "rare form of"              : alter_cb,
+# "rare spelling of"          : alter_cb,
+# "initialism of"             : alter_cb,
+# "abbreviation of"           : alter_cb,
+# "short for"                 : alter_cb,
+# "acronym of"                : alter_cb,
+# "clipping of"               : alter_cb,
+# "clip"                      : alter_cb,
+# "clipping"                  : alter_cb,
+# "short form of"             : alter_cb,
+# "ellipsis of"               : alter_cb,
+# "ellipse of"                : alter_cb,
+# "short of"                  : alter_cb,
+# "abbreviation"              : alter_cb,
+# "abb"                       : alter_cb,
+# "contraction of"            : alter_cb,
+
+# "en-past of"                            : verb_past_cb,
+# "en-simple past of"                     : verb_past_cb,
+# "past of"                               : verb_past_cb,
+# "past sense of"                         : verb_past_cb,
+# "past tense of"                         : verb_past_cb,
+# "en-simple past of"                     : verb_past_cb,
+# "en-past of"                            : verb_past_cb,
+# "past participle of"                    : verb_past_cb,
+# "en-second-person singular past of"     : [verb_past_cb, (KEYS.SINGULAR, True)],
+# "en-second person singular past of"     : [verb_past_cb, (KEYS.SINGULAR, True)],
+# "second-person singular past of"        : [verb_past_cb, (KEYS.SINGULAR, True)],
+# "second person singular past of"        : [verb_past_cb, (KEYS.SINGULAR, True)],
+
+# "present participle of"                 : verb_present_cb,
+# "gerund of"                             : verb_present_cb,
+# "present tense of"                      : verb_present_cb,
+# "present of"                            : verb_present_cb,
+# "en-third-person singular of"           : verb_present_cb,
+# "en-third person singular of"           : verb_present_cb,
+# "en-archaic second-person singular of"  : verb_present_cb,
+# "second-person singular of"             : verb_present_cb,
+
+# "plural of"                             : plural_cb,
+# "feminine plural of"                    : plural_cb,
+# "masculine plural of"                   : plural_cb,
+# "neuter plural of"                      : plural_cb,
+# "nominative plural of"                  : plural_cb,
+# "alternative plural of"                 : plural_cb,
+# "plural form of"                        : plural_cb,
+# "en-irregular plural of"                : plural_cb,
+
+# "feminine singular of"                  : singular_cb,
+# "masculine singular of"                 : singular_cb,
+# "neuter singular of"                    : singular_cb,
+# "en-third-person singular of"           : singular_cb,
+# "en-third person singular of"           : singular_cb,
+# "singular of"                           : singular_cb,
+# "singular form of"                      : singular_cb,
+# "en-archaic second-person singular of"  : singular_cb,
+# "second-person singular of"             : singular_cb,
+# "en-second-person singular past of"     : singular_cb,
+# "en-second person singular past of"     : singular_cb,
+# "second-person singular past of"        : singular_cb,
+# "second person singular past of"        : singular_cb,
+# "en-archaic third-person singular of"   : singular_cb,
+
+# "fi-verb form of"  : fi_verb_form_of_cb,
+# "fi-form of"       : fi_form_of_cb,
+# "conjugation of"   : fi_form_of_cb,
+# }
+
+
+def t_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def en_conj_cb(t):
+    basic_form = t.arg(0)
+    simple_past_form = t.arg(1)
+    past_participle = t.arg(2)
+    present_participle = t.arg(3)
+    simple_present_third_person_form = t.arg(4)
+    yield (None, basic_form)
+    yield (None, simple_past_form)
+    yield (None, past_participle)
+    yield (None, present_participle)
+    yield (None, simple_present_third_person_form)
+
+
+def en_conj_simple_cb(t):
+    None
+
+
+conjugation_templates = {
+    "en-conj": en_conj_cb,
+    # "en-conj-simple"    : en_conj_simple_cb,
+}
+
+
+def L_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def jump_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def l_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def lb_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def m_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def soplink_cb(t):
+    lang = None
+    term = t.arg(0)
+    yield (lang, term)
+
+
+def w_cb(t):
+    lang = None
+    term = t.arg(0)
+    if term == t.arg("lang"):
+        term = t.arg(1)
+    yield (lang, term)
+
+
+def pedia_cb(t):
+    lang = None
+    term = t.arg(0)
+    yield (lang, term)
+
+
+def wikipedia_cb(t):
+    lang = None
+    term = t.arg(0)
+    yield (lang, term)
+
+
+def wikispecies_cb(t):
+    lang = None
+    term = t.arg(0)
+    yield (lang, term)
+
+
+def synonym_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+translations_templates = {
+    "t": t_cb,
+    "t*": t_cb,
+    "t+": t_cb,
+    "t+check": t_cb,
+    "t+tt": t_cb,
+    "t-check": t_cb,
+    "t-check-egy": t_cb,
+    "t-egy": t_cb,
+    "t-f": t_cb,
+    "t-image": t_cb,
+    "t-needed": t_cb,
+    "t-sile": t_cb,
+    "t-simple": t_cb,
+    "t-tpi": t_cb,
+}
+
+synonyms_templates = {
+    "l": l_cb,
+    "label": l_cb,
+    "lb": lb_cb,
+    "s": synonym_cb,
+    "syn": synonym_cb,
+    "synonym of": synonym_cb,
+}
+
+antonymy_templates = {
+    "L": L_cb,  # {{l|en|[[God]] be [[with]] [[you]]}} | {{l|en|go|went}} | {{l|cs|háček}}
+    "jump": jump_cb,  # {{jump|fr|combover|s|a}}
+    "l": l_cb,  # {{l|cs|háček}} | {{l|en|go|went}} - word go section #went
+    "lb": lb_cb,  # {{label|en|foobarbazbip}}
+    "m": m_cb,  # {{m|en|word}}
+    "soplink": soplink_cb,  # {{soplink|foo|/|bar|baz|-} → foo/bar baz-
+    "w": w_cb,
+    # *{{w|William Shakespeare|Shakespeare}} | *{{w|William Shakespeare|Shakespeare|lang=fr}} | *{{w|lang=fr|William Shakespeare|Shakespeare}}
+    "wikipedia": wikipedia_cb  # {{wikipedia|article|link title}}
+}
+
+
+def word_Hypernyms_cb(t):
+    term = t.name.split(" ")[0]
+    yield (None, term)
+
+
+hypernymy_templates = {
+    "l": l_cb,
+    "lb": lb_cb,
+    "m": m_cb,
+    "pedia": pedia_cb,
+    "w": w_cb,
+    "wikipedia": wikipedia_cb,
+    "wikispecies": wikispecies_cb
+}
+
+hyponym_templates = {
+    "l": l_cb,
+    "lb": lb_cb,
+    "m": m_cb,
+    "pedia": pedia_cb,
+    "w": w_cb,
+    "wikipedia": wikipedia_cb,
+    "wikispecies": wikispecies_cb
+}
+
+meronymy_templates = {
+    "l": l_cb,
+    "m": m_cb,
+}
+
+holonymy_templates = {
+    "l": l_cb,
+    "lb": lb_cb,
+}
+
+troponymy_templates = {
+    "l": l_cb,
+}
+
+
+def alter_cb(t):
+    lang = t.arg(0)
+    args = list(t.args())
+    if len(args) > 1:
+        for a in args[1:]:
+            term = a.get_value()
+            if len(term.strip()) == 0:
+                break
+            yield (lang, term)
+
+
+def alternative_form_of_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def cog_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def en_adj_cb(t):
+    None
+
+
+def form_of_cb(t):
+    lang = None
+    term = t.arg(2)
+    yield (lang, term)
+
+
+def given_name_cb(t):
+    lang = None
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def head_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def pedlink_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+def rhymes_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+alternative_forms_templates = {
+    "alter": alter_cb,
+    "alternative form of": alternative_form_of_cb,
+    "cog": cog_cb,
+    # "en-adj"    : en_adj_cb,
+    "en-conj": en_conj_cb,
+    # "fi-alt-personal",
+    "form of": form_of_cb,  # {{form of|en|alternative form|word}}
+    "given name": given_name_cb,  # {{given name|en|male}}.
+    "head": head_cb,
+    "l": l_cb,
+    "label": l_cb,
+    "lb": lb_cb,
+    "link": l_cb,
+    "m": m_cb,
+    "m-self": l_cb,
+    "pedlink": pedlink_cb,
+    "rhymes": rhymes_cb,
+    "w": w_cb,
+    "wikipedia": wikipedia_cb,
+    "wikispecies": wikispecies_cb,
+}
+
+
+def rootsee_cb(t):
+    lang = t.arg(0)
+    term = t.arg(1)
+    yield (lang, term)
+
+
+related_terms_templates = {
+    "cog": cog_cb,
+    "l": l_cb,
+    "lb": lb_cb,
+    "link": l_cb,
+    "m": m_cb,
+    "pedia": pedia_cb,
+    "rootsee": rootsee_cb,
+    "w": w_cb,
+    "wikipedia": wikipedia_cb,
+    "wikispecies": wikispecies_cb,
+}
+
+coordinate_templates = {
+    # "coefficient",
+    "jump": jump_cb,
+    "l": l_cb,
+    "l-self": l_cb,
+    "lb": lb_cb,
+    "m": m_cb,
+    "w": w_cb,
+    "wikipedia": wikipedia_cb,
+}
+
+
+def en_noun(t, label):
+    """
+    {{en-noun}}
+    {{en-noun|es}}
+    {{en-noun|...}}
+    {{en-noun|...|...}}
+
+    out: (single, [plural], is_uncountable)
+    """
+    s = label
+    p = []
+    is_uncountable = False
+
+    # http://en.wiktionary.org/wiki/Template:en-noun
+    head = t.arg("head")
+    head = head if head else label
+    p1 = t.arg(0)
+    p2 = t.arg(1)
+
+    if p1 == "-":
+        # uncountable
+        is_uncountable = True
+
+        if p2 == "s":
+            # ends by s
+            p.append(head + "s")
+
+        elif p2 is not None:
+            # word
+            p.append(p2)
+
+    elif p1 == "s":
+        p.append(head + "s")
+
+    elif p1 == "es":
+        # add es
+        p.append(head + "es")
+
+    elif p1 is not None:
+        # use term
+        p.append(p1)
+
+    elif p1 is None and p2 is None:
+        p.append(head + "s")
+
+    for i, a in enumerate(t.args()):
+        key = a.get_name()
+        if not key:
+            if i == 0:
+                continue
+
+            p.append(a.get_value())
+
+    return (s, p, is_uncountable)
+
+
+def try_well_formed_structure(tree, label):
+    def is_lang_section(sec):
+        return True if sec.name in lang_sections else False
+
+    def is_tos_section(sec):
+        for wt, tos_section_names in tos_sections.items():
+            if sec.name in tos_section_names:
+                return True
+        return False
+
+    def get_word_type(sec):
+        for wt, tos_section_names in tos_sections.items():
+            if sec.name in tos_section_names:
+                return wt
+        return None
+
+    def get_singular_variant(sec):
+        for t in section.find_objects(Template, recursive=True):
+            if t.name == "en-noun":
+                (s, p, is_uncountable) = en_noun(t)
+                return s
+        return None
+
+    def get_plural_variant(sec):
+        for t in section.find_objects(Template, recursive=True):
+            if t.name == "en-noun":
+                (s, p, is_uncountable) = en_noun(t)
+                if is_uncountable:
+                    return None
+                return p
+        return None
+
+    def get_male_variant(sec):
+        for t in section.find_objects(Template, recursive=True):
+            if t.name in ("masculine plural past participle of", "masculine plural of"):
+                return True
+        return None
+
+    def mine_helper(section, section_names, section_templates, word, word_method, allow_multilang=False):
+        if section.name in section_names:
+            for t in section.find_objects(Template, recursive=True):
+                callback = section_templates.get(t.name, None)
+                if callback:
+                    for lang, term in callback(t):
+                        if allow_multilang or lang is None or lang == "en":
+                            method_to_call = getattr(word, word_method)
+                            result = method_to_call(lang, term)
+
+    #
     words = []
 
-    # word for each type: verb, noun, enverb
-    # word for each explaination
+    # flags
+    is_lang_section_found = False
+    is_tos_section_found = False
 
-    # for each lang title
-    for lang_title in lang_sections:
+    # find language section
+    for lang_section in tree.find_top_objects(Section, is_lang_section):
+        is_lang_section_found = True
+        is_tos_section_found = False
 
-        # find lang
-        for lang_section in article.find_section(lang_title, recursive=True):
+        # find type-of-speech section
+        for tos_section in lang_section.find_top_objects(Section, is_tos_section):
+            is_tos_section_found = True
 
-            # for each type
-            for (wt_title, wt_id) in word_type_sections.items():
+            word = Word()
+            words.append(word)
+            word.LabelName = label
+            word.LanguageCode = "en"
+            word.Type = get_word_type(tos_section)
 
-                # find type sections
-                for wt_section in lang_section.find_section(wt_title, recursive=True):
+            # find value sections
+            for section in tos_section.find_objects(Section, recursive=True):
+                # OK. TOS section found
+                # Translations
+                mine_helper(section, translation_sections, translations_templates, word, "add_translation",
+                            allow_multilang=True)
 
-                    def create_word():
-                        word = Word()
-                        word.LabelName              = label
-                        word.LabelType              = get_label_type(expl, text)
-                        word.LanguageCode           = lang
-                        word.Type                   = wt_id
-                        word.Explaination           = expl.get_raw(text).replace("\n", "\\n")
-                        word.ExplainationExamples   = None
-                        word.IsMaleVariant          = is_male_variant(wt_section, label, text)
-                        word.IsFemaleVariant        = is_female_variant(wt_section, label, text)
-                        word.MaleVariant            = None
-                        word.FemaleVariant          = None
-                        word.IsSingleVariant        = is_singular(wt_section, label, text)
-                        word.IsPluralVariant        = is_plural(wt_section, label, text)
-                        word.SingleVariant          = get_singular_variant(wt_section, label, text)
-                        word.PluralVariant          = get_plural_variant(wt_section, label, text)
-                        word.AlternativeFormsOther  = get_alternatives(wt_section, label, text)
-                        word.RelatedTerms           = get_related(wt_section, label, text)
-                        word.IsVerbPast             = is_verb_present(wt_section, label, text)
-                        word.IsVerbPresent          = is_verb_past(wt_section, label, text)
-                        word.IsVerbFutur            = is_verb_futur(wt_section, label, text)
-                        word.Conjugation            = get_conjugations(wt_section, label, text)
-                        word.Synonyms               = get_synonyms(wt_section, label, text)
-                        translations                = get_translations(wt_section, label, text)
-                        word.Translation_EN         = translations.get("en", None)
-                        word.Translation_FR         = translations.get("fr", None)
-                        word.Translation_DE         = translations.get("de", None)
-                        word.Translation_IT         = translations.get("it", None)
-                        word.Translation_ES         = translations.get("es", None)
-                        word.Translation_RU         = translations.get("ru", None)
-                        word.Translation_PT         = translations.get("pt", None)
+                # Synonymy
+                mine_helper(section, synonym_sections, synonyms_templates, word, "add_synonym")
 
-                        return word
+                # Conjugation
+                mine_helper(section, conjugation_sections, conjugation_templates, word, "add_conjugation")
 
-                    # find explainations
-                    is_expl_found = False
+                # Antonymy
+                mine_helper(section, antonymy_sections, antonymy_templates, word, "add_antonym")
 
-                    for expl in wt_section.get_explainations():
-                        is_expl_found = True
-                        yield create_word()
+                # Hypernymy
+                if section.name in hypernymy_sections:
+                    for t in section.find_objects(Template, recursive=True):
+                        if t.name.find("Hypernyms") != -1:
+                            term = t.name.split(" ")[0]
+                            word.add_hypernym(None, term)
 
-                    if not is_expl_found:
-                        expl = Li(-1, 0)
-                        # just word, without explaination
-                        #assert 0, "no explaination"
-                        yield create_word()
+                mine_helper(section, hypernymy_sections, hypernymy_templates, word, "add_hypernym")
 
+                # Hyponymy
+                mine_helper(section, hyponymy_sections, hyponym_templates, word, "add_hyponym")
+
+                # Meronymy
+                mine_helper(section, meronymy_sections, meronymy_templates, word, "add_meronym")
+
+                # Holonymy
+                mine_helper(section, holonymy_sections, holonymy_templates, word, "add_holonym")
+
+                # Troponymy
+                mine_helper(section, troponymy_sections, troponymy_templates, word, "add_troponym")
+
+                # Otherwise
+                pass
+
+                # AlternativeFormsOther
+                mine_helper(section, alternative_forms_sections, alternative_forms_templates, word,
+                            "add_alternative_form")
+
+                # RelatedTerms
+                mine_helper(section, related_sections, related_terms_templates, word, "add_related")
+
+                # Coordinate
+                mine_helper(section, coordinate_sections, coordinate_templates, word, "add_coordinate")
+
+                # IsMale        # "g|m" "g|m-p"
+                for t in section.find_objects(Template, recursive=True):
+                    if t.name == "g":
+                        values = [a.get_value() for a in t.args()]
+                        word.IsMale = ("m" in values) or ("m-p" in values)
+                        break
+                    elif t.name in ("masculine plural past participle of", "masculine plural of"):
+                        word.IsMale = True
+                        break
+
+                # IsFeminine    # "g|f" "g|m|f" "g|f-p"
+                for t in section.find_objects(Template, recursive=True):
+                    if t.name == "g":
+                        values = [a.get_value() for a in t.args()]
+                        word.IsMale = ("f" in values) or ("f-p" in values)
+                        break
+
+                # IsSingle
+                word.IsSingle = is_singular(section)
+
+                # IsPlural
+                word.IsPlural = is_plural(section)
+
+                # IsVerbPresent
+                word.IsVerbPresent = is_verb_present(section)
+
+                # IsVerbPast
+                word.IsVerbPast = is_verb_past(section)
+
+                # IsVerbFutur
+
+                # SingleVariant
+                word.SingleVariant = get_singular_variant(section)
+
+                # PluralVariant
+                word.PluralVariant = get_plural_variant(section)
+
+                # MaleVariant
+                word.MaleVariant = get_male_variant(section)
+
+                # FemaleVariant
+                pass
+
+            # Explainations
+            word.Explainations = []
+            for li in tos_section.find_objects(Li, recursive=False):
+                word.Explainations.append(li)
+
+            # split by explainations
+            if hasattr(word, "Explainations") and word.Explainations:
+                for li in word.Explainations:
+                    w = word.clone()
+                    w.LabelType = get_label_type(li)
+                    w.add_explaniation(li.get_raw(), li.get_text())
+                    words.append(w)
+                words.remove(word)
+
+        break
+
+    if not is_lang_section_found:
+        log_lang_section_not_found.warning("%s", label)
+
+    if not is_tos_section_found:
+        log_tos_section_not_found.warning("%s", label)
+
+    return words
