@@ -206,17 +206,14 @@ class Template(Container):
 
     def get_text(self):
         # extract template
-        if self.name == "langue":
-            return str(arg(0))
-        else:
-            #items = [self.name] + [ a.get_text() for a in self.args() ]
-            #return "{{" + "|".join( items ) + "}}"
-            s = self.arg(1)
-            if s is None:
-                s = self.arg(0)
-            if s is None:
-                s = ""
-            return s
+        #items = [self.name] + [ a.get_text() for a in self.args() ]
+        #return "{{" + "|".join( items ) + "}}"
+        s = self.arg(1)
+        if s is None:
+            s = self.arg(0)
+        if s is None:
+            s = ""
+        return s
 
     def __repr__(self):
         return "Template(" + self.name + ")"
@@ -879,7 +876,8 @@ def read_html(text, spos):
                                 epos = epos2 + len("</nowiki>")
                                 is_self_closed = True
                             else:
-                                assert 0, "<nowiki> without </nowiki>" 
+                                #assert 0, "<nowiki> without </nowiki>" 
+                                raise NotHtml()
 
                         # code fix
                         if tag == "code" and not is_self_closed:
@@ -1307,7 +1305,7 @@ def read_header(text, spos):
                     (epos, level2) = read_header_level(text, i)
                     if level == level2:
                         header.name = header.get_text()
-                        header.raw = text[spos+len("\n")+level:i].strip().lower()
+                        header.raw = text[spos:epos]
                         return (epos, header) # OK
                         
                     else:
@@ -1753,8 +1751,8 @@ def pack_sections(root):
             section = Section()
             section.level = get_header_level(header)
             section.header = header
-            section.name = header.get_text().strip().lower()
-            #section.name = header.get_raw().strip().lower()
+            #section.name = header.get_text().strip().lower()
+            section.name = header.get_raw().strip().strip('=').strip().lower()
 
             section.add_child(header)
 

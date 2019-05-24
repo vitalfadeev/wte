@@ -702,9 +702,9 @@ def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, 
         log.warn("non alnum char (%s, %s)... [SKIP]", lang, label)
         return []
 
-    if not is_ascii(label):
-        log.warn("non ascii char (%s, %s)... [SKIP]", lang, label)
-        return []
+#    if not is_ascii(label):
+#        log.warn("non ascii char (%s, %s)... [SKIP]", lang, label)
+#        return []
 
     # save txt
     if is_save_txt:
@@ -723,6 +723,11 @@ def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, 
 
     words = phase3(lang, tree, label)
     #words = phase4(lang, mined, label)
+
+    if not words:
+        log.warn("no words extracted (%s, %s)... [SKIP]", lang, label)
+        return []
+
     flag  = postprocess(words, label)
     
     return  words
@@ -807,9 +812,9 @@ def phase3(lang, tree, label):
     mined = tree
     
     lang_module = importlib.import_module(lang)
-    words = lang_module.try_well_formed_structure(tree, label)
+    words = lang_module.try_well_formed_structure(tree, label, lang)
     
-    if 0:
+    if 0 and len(words) == 0:
         words = try_not_well_formed(tree)
 
     if 0:
@@ -989,8 +994,9 @@ def phase4(lang, mined, label):
     
 def postprocess(words, label):
     flag = None
-    import sql
-    sql.SQLWriteDB( sql.DBWikictionary, {label:words} )
+    if words:
+        import sql
+        sql.SQLWriteDB( sql.DBWikictionary, {label:words} )
     return flag
 
 
@@ -1011,7 +1017,7 @@ def one_file(lang, label):
     words = process(lang, label, text)
 
     # postprocess
-    flag  = postprocess(words)
+    flag  = postprocess(words, label)
 
     # pack
     treemap = TreeMap()

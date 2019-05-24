@@ -3,13 +3,10 @@
 import wte
 
 
-def test_cat():
-    wte.one_file("en", "cat")
-
-def test_one(label, lang="en"):
+def test_one(label, lang):
     wte.one_file(label, lang)
 
-def test_dump(lang="en"):
+def test_dump(lang):
     wte.mainfunc(lang=lang, limit=0, is_save_txt=False, is_save_json=False)
 
 def test_read():
@@ -20,6 +17,7 @@ def test_read():
     rows = sql.SQLReadDB(sql.DBWikictionary, {"LabelName": "free"})
     print(rows)
 
-#test_one("en", "cat")
-test_dump("en")
+#test_one("fr", "do")
+#test_one("fr", "cat")
+test_dump("fr")
 #test_read()
