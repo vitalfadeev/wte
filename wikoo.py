@@ -1307,6 +1307,7 @@ def read_header(text, spos):
                     (epos, level2) = read_header_level(text, i)
                     if level == level2:
                         header.name = header.get_text()
+                        header.raw = text[spos+len("\n")+level:i].strip().lower()
                         return (epos, header) # OK
                         
                     else:
@@ -1753,7 +1754,8 @@ def pack_sections(root):
             section.level = get_header_level(header)
             section.header = header
             section.name = header.get_text().strip().lower()
-            
+            #section.name = header.get_raw().strip().lower()
+
             section.add_child(header)
 
             if parent.level < section.level:

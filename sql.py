@@ -20,7 +20,11 @@ def get_new_id(DB):
     c.execute(sql)
     rows = c.fetchall()
 
-    get_new_id = rows[0][0]
+    if rows and rows[0][0]:
+        get_new_id = rows[0][0] + 1
+
+    else:
+        get_new_id = 1
 
     return get_new_id
 
