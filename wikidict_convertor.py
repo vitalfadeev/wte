@@ -91,7 +91,7 @@ def convert(page, lang):
     desc = page.descriptions.get(lang, None)
        
     # claims    
-    claims    = page.claims
+    claims = page.claims
 
     #
     instance_of_list = claims.get(INSTANCE_OF_ID, None)

@@ -1,1357 +1,1811 @@
-# module wikoo
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 
-def find_first(s, lst, startpos=0):
-    """
-    Find in string 's', each item passed in list 'lst', and return nearest.
+# Layout:    https://en.wiktionary.org/wiki/Wiktionary:Entry_layout
+# Templates: https://en.wiktionary.org/wiki/Wiktionary:Templates
+# Semantic:  https://en.wiktionary.org/wiki/Wiktionary:Semantic_relations
+# Examples:  https://en.wiktionary.org/wiki/Wiktionary:Example_sentences
+#            https://en.wiktionary.org/wiki/Template:examples-right
+
+# Algorithm:
+# - read text
+# - tokenize templates: {{ }}
+# - tokenize preformatted: <space>...
+# - tokenize tables: {| |}
+# - tokenize format elements: links [[ ]], '' '', _( )_
+# - tokenize headrs: == ==
+# - tokenize lists: #, *
+# - tokenize sections: <Header>, <Header>
+
+
+# = =       ->  = =
+# {{ }}     -> {{ }}
+# = {{ =    -> = =
+# = {{ }} = -> {{ }} = =
+# = {{ = }} -> = =
+# = = {{ }} -> = = {{ }}
+# {{ = }} = -> {{ }}
+# =         ->
+# = {{      ->
+# = {{ }}   -> {{ }}
+
+# # List\n   -> # List\n
+# # {{ }}\n  -> {{ }}    # List {{ }}\n
+# # {{\n}}\n -> {{\n}}   # {{\n}}\n
+# # {{\nEOF  -> # {{\n
+# # {{\n# 2  -> # {{\n   # 2
+# # {{\n## 2 -> ## 2     # {{\n## 2
+
+
+# a[0..65536] -> []
+#
+# a = [None]*65536
+
+# opened = [] # pos: marker
+# expect = [] # pos: (opened_pos, marker)
+
+# test open
+# test expect
+
+import xml.parsers.expat
+import re
+
+from loggers import log, log_non_english, log_no_words, log_unsupported
+from helpers import get_contents, is_ascii
+
+
+wiki_entities = {
+    "&nbsp;"    : " ",
+    "&eacute;"  : "É",
+    "&iquest;"  : "¿",
+    "&iexcl;"   : "¡",
+    "&laquo;"   : "«",
+    "&raquo;"   : "»",
+    "&lsaquo;"  : "‹",
+    "&rsaquo;"  : "›",
+}
+
+
+class Context:
+    label = ""
+    tag = ""
+    attr = ""
     
-    in:  "{{name|arg1}}", ["{{", "|"]
-    out: (0, "{{")
-    
-    in:  "{{name|arg1}}", ["}}", "|"]
-    out: (6, "|")
-    
-    in:  "name", ["}}", "|"]
-    out: (-1, None)
-    """
-    minpos = -1
-    token = None
-    
-    for test in lst:
-        pos = s.find(test, startpos)
-        
-        if pos != -1:
-            if minpos == -1 or pos < minpos:
-                minpos = pos
-                token = test
-                
-    return (minpos, token)
-    
-assert find_first("{{abc}}", ["{{", "}}"]) == (0, "{{")
-assert find_first("abc}}", ["{{", "}}"]) == (3, "}}")
-assert find_first("abc", ["{{", "}}"]) == (-1, None)
 
-
-def get_title_level(text, startpos=0):
-    """
-    Return sectin titile level.
-    It count '='.
-    
-    in: "=== The title ==="
-    out: 3
-    """
-    i = startpos
-    l = len(text)
-    
-    while i < l and text[i] == "=":
-        i += 1
-
-    level = i - startpos
-     
-    return level
-
-def find_title_end(text, level, startpos=0):
-    """
-    Find title end.
-    It find '=' and test level.
-    
-    in:  "=== The title ==="
-    out: 17
-    
-    in:  "=== The title"
-    out: None
-    """
-    i = startpos
-    l = len(text)
-    
-    while i < l:
-        if text[i] == "=":
-            # end, need check level
-            end_level = get_title_level(text, i)
-            if end_level == level:
-                # OK
-                return i + level # next char after last char
-            else:
-                # FAIL. levels not equal
-                return None
-            
-        elif text[i] == "\n":
-            # FAIL. EOL. title end not found
-            return None
-            
-        else:
-            i += 1
-            
-    return None # FAIL. end reached, title end not found
-
-
-text = "=== The title ==="
-level = get_title_level(text)
-assert get_title_level(text) == 3
-text = "=1="
-assert get_title_level(text) == 1
-text = "=== The title ==="
-level = get_title_level(text)
-assert find_title_end(text, level, level) == len(text)
-text = "=== The title =="
-level = get_title_level(text)
-assert find_title_end(text, level, level) is None
-text = "== The title ==="
-level = get_title_level(text)
-assert find_title_end(text, level, level) is None
-text = "== The title"
-level = get_title_level(text)
-assert find_title_end(text, level, level) is None
-text = "="
-level = get_title_level(text)
-assert find_title_end(text, level, level) is None
-
-def parse_title(text, level, startpos, endpos):
-    return text[startpos+level:endpos-level]
-
-assert parse_title("=== 123 ===", get_title_level("=== 123 ==="), 0, len("=== 123 ===")) == " 123 "
-
-class Title:
-    """
-    Class for storing section title. Like a ==English==
-    """
-    def __init__(self, title, level, spos=None, epos=None):
-        self.title = title.strip()
-        self.level = level
-        self.parent = None
-        self.spos = spos
-        self.epos = epos
-
-    def is_empty(self):
-        """
-        Check for this title is empty string.
-        
-        out: True | False
-        """
-        return len(self.title.strip()) == 0
-
-    def __repr__(self):
-        return "Title("+self.title+")"
-        
-        
-def find_base_end(text, startpos=0):
-    """
-    Find end of the base of the list item.
-    
-    in:  "# list item text"
-    out: 1
-    
-    in:  "### list item text"
-    out: 3 
-    """
-    i = startpos
-    l = len(text)
-    
-    while i < l:
-        if text[i] in "#*:":
-            i += 1
-        else:
-            break
-            
-    return i
-        
-assert find_base_end("#") == 1
-assert find_base_end("#\n") == 1
-assert find_base_end("# #\n") == 1
-assert find_base_end("###\n") == 3
-
-def parse_li(text, start, end):
-    """
-    Return list text from 'start' to 'end'.
-    
-    in:  "# list", 2, 6
-    out: "list"
-    """
-    return text[start:end]
-
-assert parse_li("# list", 0, len("# list")) == "# list"
-
-
-class LI:
-    """
-    Class for storing list item. Like a '# list item text here'
-    It contained child list items.
-    
-    Text:
-      # item-1
-      ## item-2
-      # item-3
-      
-    Objects:
-      LI(item 1)
-        LI(item 2)
-      LI(item 3)
-    """
-    def __init__(self, base, spos=None, epos=None):
-        self.base = base
+class Container:
+    def __init__(self):
+        self.name = ""
         self.childs = []
-        self.data = []
         self.parent = None
         self.raw = ""
-        self.spos = spos
-        self.epos = epos
 
-    def find_lists(self):
+    def add_child(self, child):
+        # add. keep ordered
+        if child.parent is not None:
+            child.parent.remove_child(child)
+
+        child.parent = self
+
+        self.childs.append(child)
+
+    def remove_child(self, child):
+        try: self.childs.remove(child)
+        except ValueError: pass
+        
+    def add_cdata(self, s):
+        if self.childs and isinstance(self.childs[-1], String): 
+            self.childs[-1].raw += s
+        else: 
+            self.add_child( String(s) )
+
+    def get_text(self):
+        return " ".join( c.get_text() for c in self.childs )
+
+    def get_raw(self):
+        return self.raw
+
+    def find_objects(self, cls, recursive=False, exclude=None):
+        for c in self.childs:
+            if isinstance(c, cls):
+                if exclude is None or not isinstance(c, exclude):
+                    yield c
+
+            if recursive:
+                if exclude is None or not isinstance(c, exclude):
+                    for obj in c.find_objects(cls, recursive):
+                        yield obj
+
+    def find_section(self, name, recursive=False):
+        for section in self.find_objects(Section, recursive):
+            if section.name == name:
+                yield section
+
+    def find_top_objects(self, cls, callback):
+        for c in self.childs:
+            is_found = False
+            
+            if isinstance(c, cls):
+                if callback(c):
+                    is_found = True
+                    yield c
+
+            if not is_found:
+                for obj in c.find_top_objects(cls, callback):
+                    yield obj
+
+    def find_until(self, cls, recursive=False):
+        for c in self.childs:
+            if isinstance(c, cls):
+                break
+            else:
+                yield c
+
+            # in depth
+            if recursive:
+                c.find_until(cls, recursive)
+
+    def find_objects_between_templates(self, objtype, name1, name2):
+        # {{"trans-top"}}, {{"trans-bottom"}}
+        generator = self.find_objects((Template, objtype), recursive=True)
+
+        for t1 in generator:
+            if isinstance(t1, Template) and t1.name == name1:
+                # OK. found 1
+                for obj in generator:
+                    if isinstance(obj, Template) and obj.name == name2:
+                        # END.
+                        return
+                    else:
+                        if isinstance(obj, objtype):
+                            # OK
+                            yield obj
+
+    def get_explainations(self):
         for child in self.childs:
-            if isinstance(child, LI):
+            if isinstance(child, Li):
                 yield child
-        
-    def is_empty(self):
-        return self.base.strip() and all(d.is_empty() for d in self.data) and len(self.childs) == 0
-
-    def add_child(self, child):
-        child.parent = self
-        self.childs.append(child)
-
-    def add_data(self, item):
-        item.parent = self
-        self.data.append(item)
-
-    def has_templates_only(self):
-        """
-        Check for list item contain Templates only. 
-        Like a: # {{l|en|example}}
-        
-        for: # {{l|en|example}}
-        out: True
-        
-        for: The text: # {{l|en|example}}
-        out: False
-        """
-        for d in self.data:
-            if isinstance(d, Template):
-                # OK. has template
-                continue
-                
-            elif isinstance(d, Text) and d.is_empty():
-                # OK. ignore empty
-                continue
-                
-            else:
-                # FAIL. not Template and not empty
-                return False
-                
-        # all OK
-        return True
-        
-    def find_templates(self):
-        """
-        Find all templates from list item.
-        
-        for: # {{abc}}
-        out: [Template(abc)]
-        """
-        for t in self.data:
-            if isinstance(t, Template):
-                yield t
-
-    def get_text(self):
-        """
-        Return list item data in text form.
-        """
-        return self.base + "".join( [d.get_text() for d in self.data] )
-        
-    def __repr__(self):
-        return "LI("+self.base+")"
-
-def find_template_end(text, startpos=0):
-    """
-    in:  "{{123}}"
-    out: 8
-    
-    in:  "{{123"
-    out: None
-    """    
-    opened = 0
-    closed = 0
-    i = startpos
-    l = len(text)
-    lastclosed = i
-    
-    while i < l:
-        (pos, token) = find_first(text, ["{{", "}}"], i)
-        
-        if pos == -1:
-            # not found more
-            i = l
-            break
-            
-        else:
-            # found
-            # check what
-            if token == "{{":
-                opened += 1
-                i = pos + 2
-                
-            elif token == "}}":
-                closed += 1
-                i = pos + 2
-                lastclosed = i
-
-                if opened == closed:
-                    return i # OK.
-                
-            else:
-                assert 0, "unsupported"
-
-    if closed and opened > closed:
-        return lastclosed # OK. template and bloken subtemplate inside
-    else:
-        return None # FAIL. broken template. without "}}"
-
-assert find_template_end("{{abc}}") == 7
-assert find_template_end("{{abc}} ") == 7
-assert find_template_end("{{abc{{def}}}}") == 14
-assert find_template_end("{{abc {def} }}") == 14
-assert find_template_end("{{abc {def} }") is None
-assert find_template_end("{{abc") is None
-assert find_template_end("{{abc|{{sub} }}") == len("{{abc|{{sub} }}")
-
-
-def get_template_inner(text, i, end):    
-    """
-    in:  "{{abc}}"
-    out: abc
-    """
-    inner = text[i+2:end-2]
-    return inner
-    
-
-class Template:
-    """
-    Class for storing template like a {{name|arg1|arg2}}.
-    """
-    def __init__(self, inner, name, args, args_ordered):
-        self.inner = inner
-        self.name = name
-        self.args = args # {1=, 2=, lang=}
-        self.args_ordered = args_ordered
-        self.parent = None
-        self.childs = []
-        self.spos = 0
-        self.epos = 0
-
-    def add_child(self, child):
-        child.parent = self
-        self.childs.append(child)
-        
-    def is_empty(self):
-        return False
-        
-    def get_text(self):
-        return ""
-        
-    def arg(self, key, default_value=None):
-        """
-        Return argument value.
-        The 'key' can be 'int' or 'str'. 
-        'int' - for positional arg. 
-        'str' - for named arg.
-        
-        for: {{name|cat|cats}}
-        in:  0
-        out: "cat"
-        
-        for: {{name|cat|cats}}
-        in:  1
-        out: "cats"
-        
-        for: {{name|cat|cats|lang=en}}
-        in:  "lang"
-        out: "end"
-
-        for: {{name|cat|cats}}
-        in:  3
-        out: None
-        
-        for: {{name|cat|cats}}
-        in:  "lang"
-        out: None        
-        """
-        a = self.args.get(key, None)
-        
-        if a is None:
-            return default_value
-        else:
-            return a.as_string()
-            
-    def get_positional_args_count(self):
-        """
-        Return positional arguments count.
-        
-        for: {{name|cat|cats}}
-        out: 2
-        
-        for: {{name}}
-        out: 0
-        
-        for: {{name|lang=en}}
-        out: 0
-        """
-        acount = 0
-        
-        for k,a in self.args.items():
-            if not a.is_named():
-                acount += 1
-        
-        return acount
-
-    def as_list(self):
-        return [self.name] + [ a.raw for a in self.args_ordered ]
 
     def __repr__(self):
-        args = "|" + "|".join([repr(a) for a in self.args]) if self.args else ""
-        return "Template("+self.name + args + ")"
+        return "Container()"
 
-def get_template_name(inner):
-    """
-    in:  "tname"
-         "tname|a"
-    out: tname
-    """
-    pos = inner.find("|")
-    
-    if pos == -1:
-        return inner
-    else:
-        return inner[:pos]
 
-class Arg:
-    """
-    Class for storing Arg.
-    """
-    def __init__(self, name, value, raw, endpos=None):
-        self.name = name
-        self.value = value
+class Article(Container):
+    def __repr__(self):
+        return "Article()"
+
+
+class Template(Container):
+    def args(self):
+        for a in self.find_objects(Arg):
+            yield a
+
+    def arg(self, pos):
+        args = list( self.args() )
+
+        if isinstance(pos, int):
+            # positional arg
+            if pos < len(args):
+                # OK
+                return args[pos].get_value()
+            else:
+                # FAIL
+                return None
+
+        elif isinstance(pos, str):
+            # named arg
+            for a in args:
+                if a.get_name() == pos:
+                    # OK
+                    return a.get_value()
+            else:
+                # FAIL
+                return None
+
+        else:
+            assert 0, "unsupported"
+
+    def get_text(self):
+        # extract template
+        if self.name == "langue":
+            return str(arg(0))
+        else:
+            #items = [self.name] + [ a.get_text() for a in self.args() ]
+            #return "{{" + "|".join( items ) + "}}"
+            s = self.arg(1)
+            if s is None:
+                s = self.arg(0)
+            if s is None:
+                s = ""
+            return s
+
+    def __repr__(self):
+        return "Template(" + self.name + ")"
+
+
+class String(Container):
+    def __init__(self, raw=""):
+        super().__init__()
         self.raw = raw
-        self.endpos = endpos
-        self.spos = 0
-        self.epos = 0
 
-    def as_string(self):
-        """
-        Return value as string.
-        
-        for: {{noun|{{a}}}} - '{{a}}' is this current argument
-        out: {{a}}
-        
-        for: {{noun|a}} - 'a' is this current argument
-        out: a
-        """
+    def get_text(self):
         return self.raw
-        #return "".join(self.value)
-        
-    def as_list(self):
-        return self.value
 
-    def as_raw(self):
-        return self.raw
-        
-    def is_named(self):
-        """
-        Check for argument is named.
-        
-        out: Trhe | False
-        """
-        if isinstance(self.name, str) and not self.name.isnumeric():
-            return True
-        else:
-            return False
-        
     def __repr__(self):
-        s = "".join([ repr(d) for d in self.value ]) if self.value else ""
-        
-        if self.is_named():
-            s = self.name + "=" + s
-            
+        return "String('" + self.raw.replace("\n", "\\n") + "')"
+
+class Html(Container):
+    def __init__(self, *args, **kvargs):
+        super().__init__(*args, **kvargs)
+        self.attrs = []
+
+    def get_text(self):
+        return "".join( c.get_text() for c in self.childs )
+
+    def __repr__(self):
+        return "Html("+self.name+", "+repr(self.attrs)+")"
+
+
+class Preformatted(Container):
+    def __repr__(self):
+        return "Preformatted()"
+
+class Link(Container):
+    def __repr__(self):
+        return "Link()"
+
+class Table(Container):
+    def __repr__(self):
+        return "Table()"
+
+class Italic(Container):
+    def __repr__(self):
+        return "Italic()"
+
+class Bold(Container):
+    def __repr__(self):
+        return "Bold()"
+
+class Header(Container):
+    def __init__(self, *args, **kvargs):
+        super().__init__(*args, **kvargs)
+        self.level = 0
+
+    def __repr__(self):
+        return "Header(" + self.get_text() + ")"
+
+# class H1(Header):
+    # def __repr__(self):
+        # return "H1(" + self.get_text() + ")"
+
+# class H2(Header):
+    # def __repr__(self):
+        # return "H2(" + self.get_text() + ")"
+
+# class H3(Header):
+    # def __repr__(self):
+        # return "H3(" + self.get_text() + ")"
+
+# class H4(Header):
+    # def __repr__(self):
+        # return "H4(" + self.get_text() + ")"
+
+# class H5(Header):
+    # def __repr__(self):
+        # return "H5(" + self.get_text() + ")"
+
+# class H6(Header):
+    # def __repr__(self):
+        # return "H6(" + self.get_text() + ")"
+
+# class H7(Header):
+    # def __repr__(self):
+        # return "H7(" + self.get_text() + ")"
+
+class Comment(Container):
+    def __repr__(self):
+        return "Comment()"
+
+class Li(Container):
+    def __init__(self, *args, **kvargs):
+        super().__init__(*args, **kvargs)
+        self.level = 0
+        self.base = ""
+
+    def get_text(self):
+        return "".join( c.get_text() for c in self.childs if not isinstance(c, Li) )
+
+    def __repr__(self):
+        s = self.raw
+        if len(s) > 24:
+            s = s[:24] + "..."
+        return "Li(" + s.replace("\n", "\\n") + ")"
+
+class LiOrdered(Li):
+    def __repr__(self):
+        return "LiOrdered()"
+
+class LiUnordered(Li):
+    def __repr__(self):
+        return "LiUnordered()"
+
+class Section(Container):
+    def __init__(self, *args, **kvars):
+        super().__init__(*args, **kvars)
+        self.level = 0
+        self.header = None
+        self.name = ""
+
+    def __repr__(self):
+        return "Section(" + self.name + ", level:" + str(self.level) + ")"
+
+class Arg(Container):
+    def get_name(self):
+        text = self.get_text()
+        eqpos = text.find("=")
+
+        if eqpos != -1:
+            return text[:eqpos]
+        else:
+            return None
+
+    def get_value(self):
+        text = self.get_text()
+        eqpos = text.find("=")
+
+        if eqpos != -1:
+            return text[eqpos+1:]
+        else:
+            return text
+
+    def __repr__(self):
+        s = self.get_name()
+        if s is None:
+            s = self.get_text()
+        if len(s) > 24:
+            s = s[:24] + "..."
         return "Arg(" + s + ")"
 
-        
-def get_template_arg(inner, startpos=0):
-    """
-    in:  "abc"
-    out: Arg(abc)
 
-    in:  "abc|a"
-    out: Arg(abc)
+class Mined(Container):
+    def __init__(self, key, data, source, *args, **kvars):
+        super().__init__(*args, **kvars)
+        self.key = key, data, source
+        self.data = data
+        self.source = source
 
-    in:  ""
-    out: None
-    """
-    i = startpos
-    l = len(inner)
-    
-    strpos = startpos
-    rawpos = startpos
-    
-    data = []
-    
-    # check is named
-    eqpos = inner.find("=", i)
-    if eqpos == -1:
-        # positional
-        name = None
+    def __repr__(self):
+        s = repr(self.key) + ": " + repr(self.data)
+        if len(s) > 60:
+            s = s[:60] + "..."
+        return "Mined(" + s + ")"    
+
+
+def dump(root, level=0, types=None):
+    #print( "  "*level, root, ":", root.raw.replace("\n", "\\n"))
+    print( "  "*level, root, ":")
+    #print( "  "*level, root, ":", root.get_text().replace("\n", "\\n"))
+
+    for child in root.childs:
+        if types and isinstance(child, types):
+            dump(child, level+1, types)
+
+def dump_sections(root, level=0):
+    dump(root, level=0, types=(Section))
+
+##### Comment #####
+def find_comment_end(text, spos):
+    pos = text.find("-->", spos)
+    if pos != -1:
+        return pos + len("-->")
     else:
-        # = found
-        # check name
-        prob_name = inner[i:eqpos]
-        
-        if prob_name.strip().isalnum():
-            # named
-            name = prob_name.strip()
-            i = eqpos + 1 #  i + len(name=)
-            strpos = i
-            rawpos = i
-        else:
-            # positional
-            name = None
+        return len(text)
+
+
+##### Quoted strings #####
+def read_dq_string(text, spos):
+    i = spos
     
-    # data
-    while i < l:
-        (pos, token) = find_first(inner, ["|", "{{"], i)
+    if text[i] == '"':
+        i += 1
         
-        if pos == -1:
-            # no more
-            i = l
-            break
-            
-        elif token == "|":
-            raw = inner[rawpos:pos]
-            s = inner[strpos:pos]
-            data.append(s)
-            return Arg(name, data, raw, pos) # OK
-            
-        elif token == "{{":
-            # sub template | just text
-            end = find_template_end(inner, pos)
-            
-            if end is None:
-                # not template
-                # just text
-                i = pos + 2
-                continue
+        pos = text.find("\"", i)
+        
+        while pos != -1:
+            if pos > 0 and text[pos-1] != '\\':
+                epos = pos+1
+                return epos # OK
                 
-            else:
-                # sub template
-                subtemplate_inner = get_template_inner(inner, i, end)
-                subt = parse_template(subtemplate_inner)
-                data.append(subt)
-                i = end
-                strpos = end
-
-    #
-    if i == startpos:
-        return None # FAIL. no args
-
-    if strpos < i:
-        # add tail str
-        s = inner[strpos:]
-        data.append(s)
+            pos = text.find("\"", pos + 1)
         
-    raw = inner[rawpos:]
-        
-    return Arg(name, data, raw, i) # OK. last arg
-            
+    return None
 
-        ####
-"""
-        if inner[i] == "|":
-            s = inner[strpos:i]
-            data.append(s)
-            return Arg(name, data, i) # OK
-            
-        elif inner.startswith("{{", i):
-            # sub template | just text
-            end = find_template_end(inner, i)
-            
-            if end is None:
-                # just text
-                i += 1
+assert read_dq_string('"abc"', 0) == len('"abc"')
+
+
+def read_sq_string(text, spos):
+    i = spos
+    
+    if text[i] == '\'':
+        i += 1
+        
+        pos = text.find('\'', i)
+        
+        while pos != -1:
+            if pos > 0 and text[pos-1] != '\\':
+                epos = pos+1
+                return epos # OK
                 
-            else:
-                # sub template
-                subtemplate_inner = get_template_inner(inner, i, end)
-                subt = parse_template(subtemplate_inner)
-                data.append(subt)
-                i = end
-                strpos = end
-            
-        else:
-            i += 1
-    
-    #
-    if i == startpos:
-        return None # FAIL. no args
-
-    if strpos < i:
-        # add tail str
-        s = inner[strpos:]
-        data.append(s)
+            pos = text.find('\'', pos + 1)
         
-    return Arg(name, data, i) # OK. last arg
-"""
+    return None
 
-assert isinstance(get_template_arg("abc"), Arg)
-assert get_template_arg("abc").value == ["abc"]
-assert isinstance(get_template_arg("abc|a"), Arg)
-assert get_template_arg("abc|a").value == ["abc"]
-assert isinstance(get_template_arg("abc|a", 4), Arg)
-assert get_template_arg("abc|a", 4).value == ["a"]
-assert get_template_arg("abc|a", 6) is None
-assert get_template_arg("abc").as_string() == "abc"
-assert get_template_arg("k=v").is_named()
-assert get_template_arg("k=v").name == "k"
-assert get_template_arg("k=v").value == ["v"]
-assert get_template_arg("k=v").as_string() == "v"
-assert get_template_arg("a|{{a}}").as_string() == "a"
-
-def parse_template(inner):
-    """
-    Parse string 'inner' and return Template object.
-    
-    for: "{{abc}}"
-    in:  "abc"
-    out: "Template(abc)"
-    
-    for: "{{abc|a}}"
-    in:  "abc|a"
-    out: "Template(abc, Arg(a))"
-    """
-    # template_inner
-    # get name
-    # get arg
-    #   each arg:
-    #     get name= 
-    #       if names then is_named
-    #     get value
-    #       [str, "{{", "...", "}}"] - parse_template("{{", "...", "}}")
-    #       [str, Template()]
-    
-    # name
-    name = get_template_name(inner)
-    
-    # args
-    i = len(name) + 1
-    l = len(inner)
-    args = {}
-    args_ordered = []
-    acount = 0
-    
-    while i < l:
-        a = get_template_arg(inner, i)
-        
-        if a.name is None:
-            a.name = acount
-            acount += 1
-            
-        args[a.name] = a
-        args_ordered.append(a)
-        i = a.endpos + 1
-    
-    return Template(inner, name, args, args_ordered)
+assert read_sq_string("'abc'", 0) == len("'abc'")
 
 
-assert get_template_arg("{{a}}").as_string() == "{{a}}"
-assert get_template_arg("{{a}").as_string() == "{{a}"
-assert get_template_arg("{{a {{b}}}}").as_string() == "{{a {{b}}}}"
-assert get_template_arg("{{a|b}}").as_string() == "{{a|b}}"
-
-assert isinstance(parse_template("abc"), Template)
-assert len(parse_template("abc").args) == 0
-assert isinstance(parse_template("abc|a"), Template)
-assert parse_template("abc|a").args
-assert isinstance(parse_template("abc|a").args[0], Arg)
-assert parse_template("abc|a").args[0].value == ["a"]
-
-assert len(parse_template("abc|a|b").args) == 2
-assert isinstance(parse_template("abc|a|b").args[1], Arg)
-assert parse_template("abc|a|b").args[1].value == ["b"]
-assert len(parse_template("abc|a|b|").args) == 2
-
-
-class CRLF:
-    """
-    Class for storing CRLF.
-    """
-    def __init__(self, spos=None, epos=None):
-        self.childs = []
-        self.parent = None
-        self.spos = spos
-        self.epos = epos
-
-    def add_child(self, child):
-        child.parent = self
-        self.childs.append(child)
-        
-    def is_empty(self):
-        return True
-
-    def __repr__(self):
-        return "CRLF"
-        
+class NotName(Exception): None
+class NotEQ(Exception): None
+class NotAttribute(Exception): None
+class NotTag(Exception): None
+class NotFoundClosedTag(Exception): None
+class NotHtml(Exception): None
+class NotTemplate(Exception): None
+class NotTemplateName(Exception): None
+class NotTemplateArg(Exception): None
+class NotParsed(Exception): None
+class NotComment(Exception): None
+class NotLink(Exception): None
+class NotLinkArg(Exception): None
+class NotHeader(Exception): None
+class NotList(Exception): None
 
 
-def tokenize_text(text, startpos=0):
-    """
-    Parse string 'text' and generate tokens.
-    It is generagor.
-    
-    in:  "==English==\n{{en-noun}}"
-    out: [Section(English), Template(en-noun)]
-    """
-    # tokenize
-    # =  - title,       find_title_end()    - if found: title
-    #      section,     find_section_end()  - if found: section
-    # #  - list_item,   find_base_end()     - if found: list_item
-    # *  - list_item,   find_list_end()     - if found: list_item
-    # {{ - template,    find_template_end() - if found: template
-    #  
-    # unnamed section
-    # Section(title, childs)
-    #   Section(title, childs)
-    #     Template(name, args, childs)
-    #     str
-    #     LI(base, level, childs)
-    #       str
-    #       Template(name, args, childs)
-    i = startpos
+###### HTML parsing ######
+def read_html_attr_name(text, spos):
+    i = spos
     l = len(text)
-    string_start = i
-    begin_of_line = True
+    c = text[i]
+    
+    if c.isalpha() and is_ascii(text[i]):
+        i += 1
+        
+        while i < l:
+            c = text[i]
+            
+            if c.isalnum() and is_ascii(text[i]):
+                i += 1
+                
+            elif c == '=':
+                return i # OK
+                
+            elif c == ' ':
+                return i # OK
+        
+            elif c == '>':
+                return i # OK
+        
+            elif text.startswith("/>", i):
+                return i # OK
+                
+            else:
+                raise NotName()
+                return i # FAIL
+                
+        return i # OK. end reached
+        
+    raise NotName()
+    return i # FAIL
+
+assert read_html_attr_name('name="value"', 0) == 'name="value"'.find("=")
+assert read_html_attr_name('name = "value"', 0) == 'name = "value"'.find(" ")
+assert 'name = "value"'[0:read_html_attr_name('name = "value"', 0)] == "name"
+try: read_html_attr_name('"value"', 0)
+except NotName: pass
+try: read_html_attr_name('2', 0)
+except NotName: pass
+
+
+def read_html_attr_eq(text, spos):
+    i = spos
+    l = len(text)
+
+    if i < l:
+        if text[i] == '=':
+            return i + 1 # OK
+            
+    raise NotEQ()
+    return None # FAIL
+
+assert read_html_attr_eq('=', 0) == len('=')
+
+try: read_html_attr_eq(' ', 0)
+except NotEQ: pass
+
+try: read_html_attr_eq(' = ', 0)
+except NotEQ: pass
+
+try: read_html_attr_eq('a', 0)
+except NotEQ: pass
+
+
+def read_html_attr_spaces(text, spos):
+    i = spos
+    l = len(text)
     
     while i < l:
-        if begin_of_line and text[i] == "=":
-            begin_of_line = False
+        if text[i] == ' ':
+            i += 1 # OK
+        else:
+            break # OK
+    
+    return i # OK
+
+assert read_html_attr_spaces(' ', 0) == len(' ')
+assert read_html_attr_spaces(' = ', 0) == len(' ')
+assert read_html_attr_spaces('', 0) == len('')
+
+
+def read_html_attr_value(text, spos):
+    i = spos
+    l = len(text)
+    
+    while i < l:
+        c = text[i]
+        
+        if c == '"':                
+            epos = read_dq_string(text, i)
             
-            # title
-            if string_start != i:
-                yield Text(text[string_start:i], spos=string_start, epos=i)
-
-            #
-            level = get_title_level(text, i)
-            end = find_title_end(text, level, i+level)
-
-            if end is None:
-                # FAIL. no end. it is not title. it just string
-                i += 1
-            else:
-                # OK
-                title = parse_title(text, level, i, end)
-                title = title.strip()
-                # emit Title(title), emit Section(title)
-                yield Title(title, level, spos=i, epos=end)
-                i = end
-                string_start = i                
-            
-        elif begin_of_line and text[i] == "#":
-            begin_of_line = False
-
-            # list item
-            if string_start != i:
-                yield Text(text[string_start:i], spos=string_start, epos=i)
-
-            #
-            end = find_base_end(text, i)
-            base = parse_li(text, i, end)
-            yield LI(base, spos=i, epos=end)
-            i = end
-            string_start = i
-            
-        elif begin_of_line and text[i] == "*":
-            begin_of_line = False
-
-            # list item
-            if string_start != i:
-                yield Text(text[string_start:i], spos=string_start, epos=i)
-
-            #
-            end = find_base_end(text, i)
-            base = parse_li(text, i, end)
-            yield LI(base, spos=i, epos=end)
-            i = end
-            string_start = i
+            # fix
+            if Context.label == "manas" and Context.tag == "td" and Context.attr == "style":
+                tdepos = text.find("</td>", i)
+                if tdepos != -1:
+                    epos = tdepos
                 
-        elif text.startswith("{{", i):
-            begin_of_line = False
+            return epos # OK
+        
+        elif c == "'":
+            epos = read_sq_string(text, i)
+            return epos # OK
+        
+        elif c == ' ':
+            return i # OK
+    
+        elif c == '>':
+            return i # OK
+    
+        elif text.startswith('/>', i):
+            return i # OK
+    
+        else:
+            i += 1
+    
+    return i # OK
 
-            # template
-            if string_start != i:
-                yield Text(text[string_start:i], spos=string_start, epos=i)
+assert read_html_attr_value('123', 0) == len('123')
+assert read_html_attr_value('"123"', 0) == len('"123"')
+assert read_html_attr_value('\'123\'', 0) == len('\'123\'')
+assert read_html_attr_value('123 ', 0)== len('123')
+assert read_html_attr_value('"123', 0) is None
+assert read_html_attr_value('123"', 0) is None
 
-            #
-            end = find_template_end(text, i)
+    
+def read_html_tag_attribute(text, spos):
+    i = spos
+    l = len(text)
+    
+    while i < l:
+        c = text[i]
+        
+        if c.isalnum() and is_ascii(c):
+            # attr name
+            try: epos = read_html_attr_name(text, i)
+            except NotName: break
+            aname = text[i:epos]
+            Context.attr = aname
             
-            if end is None:
-                # FAIL. broken template. it is the string
-                i += 1
-            else:
-                # OK
-                template_inner = get_template_inner(text, i, end)
-                # parse recursive for subtemplates
-                template = parse_template(template_inner)
-                yield template
-                i = end
-                string_start = i
-                
-        elif text.startswith("\n", i):
-            begin_of_line = True
-
-            # template
-            if string_start != i:
-                yield Text(text[string_start:i], spos=string_start, epos=i)
-
-            end = i + len("\n")
-            yield CRLF(spos=i, epos=end)
-            i = end
-            string_start = i
+            # skip spaces
+            epos = read_html_attr_spaces(text, epos)
+            
+            # =
+            try: epos = read_html_attr_eq(text, epos)
+            except NotEQ: return (epos, aname, None)
+            eq = text[i:epos]
+            
+            # skip spaces
+            epos = read_html_attr_spaces(text, epos)
+            
+            # attr value
+            vpos = epos
+            epos = read_html_attr_value(text, epos)
+            avalue = text[vpos:epos]
+            
+            return (epos, aname, avalue)
             
         else:
-            begin_of_line = False            
+            break
+        
+    raise NotAttribute()
+    return None
+
+assert read_html_tag_attribute("a = 123 ", 0) == (len("a = 123"), "a", "123") 
+assert read_html_tag_attribute("a=123 ", 0) == (len("a=123"), "a", "123") 
+assert read_html_tag_attribute("a= 123 ", 0) == (len("a= 123"), "a", "123") 
+assert read_html_tag_attribute("a", 0) == (len("a"), "a", None) 
+#assert read_html_tag_attribute("a=", 0) == (len("a="), "a", '') 
+assert read_html_tag_attribute("a='asd'", 0) == (len("a='asd'"), "a", "'asd'") 
+assert read_html_tag_attribute("a=\"asd\"", 0) == (len("a=\"asd\""), "a", "\"asd\"") 
+
+try: read_html_tag_attribute("1=a", 0)
+except NotAttribute: pass
+
+try: read_html_tag_attribute(">=a", 0)
+except NotAttribute: pass
+
+try: read_html_tag_attribute("<=a", 0)
+except NotAttribute: pass
+
+                
+def read_html_tag_attributes(text, spos):
+    i = spos
+    l = len(text)
+    
+    attrs = []
+    
+    while i < l:
+        c = text[i]
+        
+        try: 
+            (epos, aname, avalue) = read_html_tag_attribute(text, i)
+            attrs.append( (epos, aname, avalue) )
+            epos = read_html_attr_spaces(text, epos)
+            i = epos
+        except:
+            break
+        
+    epos = i
+    
+    return (epos, attrs)
+                
+#assert read_html_tag_attributes("a = 123 ", 0) == (len("a = 123"), [(len("a = 123"), "a", "123")])
+#assert read_html_tag_attributes("a=1 b=2", 0) == (len("a=1 b=2"), [(len("a=1"), "a", "1"), (len("a=1 b=2"), "b", "2")])
+#assert read_html_tag_attributes("a=1 b", 0) == (len("a=1 b"), [(len("a=1"), "a", "1"), (len("a=1 b"), "b", None)])
+#assert read_html_tag_attributes("a=1 1", 0) == (len("a=1 "), [(len("a=1"), "a", "1")])
+#assert read_html_tag_attributes("a=1 >", 0) == (len("a=1 "), [(len("a=1"), "a", "1")])
+
+
+def read_html_tag_name(text, spos):
+    i = spos
+    l = len(text)
+
+    while i < l:
+        c = text[i]
+        
+        if text[i].isalpha() and is_ascii(text[i]):
+            # first alpha only
+            i += 1
+            
+            while i < l:
+                c = text[i]
+                
+                if c.isalnum() and is_ascii(c):
+                    # alplha or numbers
+                    i += 1
+                    
+                elif c == ' ':
+                    return i # OK
+                    
+                elif c == '>':
+                    return i # OK
+                    
+                elif text.startswith('/>', i):
+                    return i # OK
+                    
+                else:
+                    raise NotTag() # FAIL        
+                    
+        else:
+            raise NotTag() # FAIL        
+    
+    return i # OK
+    
+assert read_html_tag_name("link>", 0) == len("link")
+assert read_html_tag_name("link", 0) == len("link")
+assert read_html_tag_name("link ", 0) == len("link")
+assert read_html_tag_name("h1 ", 0) == len("h1")
+assert read_html_tag_name("", 0) == len("")
+
+try: read_html_tag_name("<link>", 0)
+except NotTag: pass
+
+try: read_html_tag_name("1", 0)
+except NotTag: pass
+
+try: read_html_tag_name("=", 0)
+except NotTag: pass
+
+try: read_html_tag_name(" ", 0)
+except NotTag: pass
+
+    
+def read_html_tag(text, spos):
+    i = spos
+    l = len(text)
+    
+    log.debug("read_html_tag(): next block: %s", text[i:i+40])
+    
+    attrs = []
+    
+    if text[i] == "<":
+        i += 1
+
+        # tag name
+        epos = read_html_tag_name(text, i)
+        tag = text[i:epos]
+        i = epos
+        
+        Context.tag = tag
+
+        while i < l:
+            c = text[i] 
+            
+            if c == " ":
+                # skip spaces
+                i += 1
+                
+            elif c.isalpha() and is_ascii(c):
+                # read attrs
+                (epos, attrs) = read_html_tag_attributes(text, i)
+                if epos > i:
+                    i = epos
+                else:
+                    i += 1
+                
+            elif c == '>':
+                epos = i + len(">")
+                is_self_closed = False
+                return (epos, tag, attrs, is_self_closed) # OK
+                
+            elif text.startswith("/>", i):
+                epos = i + len("/>")
+                is_self_closed = True
+                return (epos, tag, attrs, is_self_closed) # OK
+                
+            else:
+                log.debug("read_html_tag(): non ascii symbol: %s: next block: %s", repr(c), repr(text[i:i+20]))
+                raise NotTag() # FAIL
+                
+    raise NotTag() # FAIL
+
+
+assert read_html_tag("<br>", 0) == (len("<br>"), "br", [], False)
+assert read_html_tag("<br/>", 0) == (len("<br/>"), "br", [], True)
+assert read_html_tag("<br />", 0) == (len("<br />"), "br", [], True)
+
+try: read_html_tag("< br />", 0)
+except NotTag: pass
+
+assert read_html_tag("<br />", 0) == (len("<br />"), "br", [], True)
+assert read_html_tag("<br clear=both/>", 0) == (len("<br clear=both/>"), "br", [(len("<br clear=both"), "clear", "both")], True)
+assert read_html_tag("<br clear=\"both\"/>", 0) == (len("<br clear=\"both\"/>"), "br", [(len("<br clear=\"both\""), "clear", "\"both\"")], True)
+assert read_html_tag("<br clear>", 0) == (len("<br clear>"), "br", [(len("<br clear"), "clear", None)], False)
+assert read_html_tag("<br clear/>", 0) == (len("<br clear/>"), "br", [(len("<br clear"), "clear", None)], True)
+assert read_html_tag("<br clear=>", 0) == (len("<br clear=>"), "br", [(len("<br clear="), "clear", "")], False)
+assert read_html_tag("<br clear =>", 0) == (len("<br clear =>"), "br", [(len("<br clear ="), "clear", "")], False)
+
+try: read_html_tag("<br clear=", 0)
+except NotTag: pass
+
+try: read_html_tag("<br clear", 0)
+except NotTag: pass
+
+try: read_html_tag("<неаски>", 0)
+except NotTag: pass
+
+
+def find_closed_tag(text, tag, spos):
+    pos = text.find("</" + tag + ">", spos)
+
+    if pos != -1:
+        return pos
+    else:
+        raise NotFoundClosedTag()
+    
+assert find_closed_tag("<a> 123 </a>", "a", 0) == "<a> 123 </a>".find("</a>")
+
+try: find_closed_tag("<a> 123 </a>", "b", 0)
+except NotFoundClosedTag: pass
+
+
+def read_html_comment(text, spos):
+    i = spos
+    l = len(text)
+    
+    if text.startswith("<!--", i):
+        # strip comment
+        epos = find_comment_end(text, i)
+        comment = Comment()
+        comment.raw = text[i:epos]
+        return (epos, comment) # OK
+    
+    raise NotComment
+
+
+def read_html(text, spos):
+    i = spos
+    l = len(text)
+    
+    if text[i] == "<":
+        opened = []
+
+        single_tags = ["br"]
+        allowed_unclosed_tags = ["cite"]
+        htmlobj = Container()
+        current = htmlobj
+        
+        while i < l:            
+            try:
+                c = text[i]
+                
+                if text.startswith("<!--", i):
+                    # strip comment
+                    log.debug("read_html(): read_html_comment()")
+                    (epos, comment) = read_html_comment(text, i)
+                    i = epos
+                    
+                elif c == '<' and not text.startswith("</", i): # start tag <...>
+                    # read tag
+                    log.debug("read_html(): read_html_tag()")
+                    (epos, tag, attrs, is_self_closed) = read_html_tag(text, i)
+                    
+                    obj = Html()
+                    obj.name = tag.strip().lower()
+                    obj.attrs = attrs
+                    
+                    current.add_child( obj )
+                    
+                    if tag in single_tags:
+                        if len(opened) == 0:
+                            htmlobj.epos = epos
+                            return (epos, htmlobj.childs[0]) # OK
+                        i = epos
+                        
+                    else:
+                        current = obj
+                        
+                        # nowiki fix
+                        if tag == "nowiki" and not is_self_closed:
+                            epos2 = text.find("</nowiki>", epos)
+                            if epos2 != -1:
+                                current.add_cdata( text[epos:epos2] )
+                                epos = epos2 + len("</nowiki>")
+                                is_self_closed = True
+                            else:
+                                assert 0, "<nowiki> without </nowiki>" 
+
+                        # code fix
+                        if tag == "code" and not is_self_closed:
+                            epos2 = text.find("</code>", epos)
+                            if epos2 != -1:
+                                current.add_cdata( text[epos:epos2] )
+                                epos = epos2 + len("</code>")
+                                is_self_closed = True
+                            else:
+                                assert 0, "<code> without </code>" 
+
+                        # pre fix
+                        if tag == "pre" and not is_self_closed:
+                            epos2 = text.find("</pre>", epos)
+                            if epos2 != -1:
+                                current.add_cdata( text[epos:epos2] )
+                                epos = epos2 + len("</pre>")
+                                is_self_closed = True
+                            else:
+                                assert 0, "<pre> without </pre>" 
+
+                        # self closed check
+                        if is_self_closed:
+                            if len(opened) == 0:
+                                htmlobj.epos = epos
+                                return (epos, htmlobj.childs[0]) # OK                        
+                        else:
+                            opened.append(tag)
+                            
+                        i = epos
+
+                elif text.startswith("</", i): # close tag </...>
+                    # read close tag
+                    log.debug("read_html(): read_html_tag_name()")
+                    epos = read_html_tag_name(text, i+len("</"))
+                    
+                    # spaces
+                    epos = read_html_attr_spaces(text, epos)
+                    
+                    if text[epos] == '>':
+                        tag = text[i+len("</"):epos]
+                        
+                        #if opened[-1] == tag: 
+                        if tag in opened: 
+                            opened.pop()
+                            current = current.parent
+                            
+                            if len(opened) == 0:
+                                epos += len(">")
+                                htmlobj.epos = epos
+                                return (epos, htmlobj.childs[0]) # OK
+                            
+                        else: 
+                            log.error("opened: %s", repr(opened))
+                            log.error("Closed tag '%s' without opened... [skip tag]", tag)
+
+                            if len(opened) == 0:
+                                #epos += len(">")
+                                #htmlobj.epos = epos
+                                #return (epos, htmlobj.childs[0]) # OK
+                                raise NotTag() # FAIL
+                            
+                        i = epos + len('>')
+                        
+                    else:
+                        raise NotTag() # FAIL
+                    
+                elif text.startswith('{{', i):
+                    # read template
+                    log.debug("read_html(): read_template()")
+                    (epos, template) = read_template(text, i)
+                    current.add_child( template )
+                    i = epos
+                    
+                elif text.startswith('[[', i):
+                    # read template
+                    log.debug("read_html(): read_link()")
+                    (epos, link) = read_link(text, i)
+                    current.add_child( link )
+                    i = epos
+                    
+                else:
+                    # character data
+                    current.add_cdata(c)
+                    i += 1
+                    
+            except NotTag:
+                # character data
+                current.add_cdata(c)
+                i += 1
+                    
+            except NotTemplate: 
+                # character data
+                current.add_cdata(c)
+                i += 1
+                
+            except NotLink: 
+                # character data
+                current.add_cdata(c)
+                i += 1
+                
+            except NotComment: 
+                # character data
+                current.add_cdata(c)
+                i += 1
+                
+    raise NotHtml() # FAIL
+
+assert isinstance( read_html("<a></a>", 0), tuple )
+assert read_html("<a></a>", 0)[0] == len("<a></a>")
+assert isinstance(read_html("<a></a>", 0)[1], Html)
+assert read_html("<a></a>", 0)[1].name == 'a'
+assert read_html("<a>123</a>", 0)[1].get_text() == "123"
+assert read_html("<a> 123 </a>", 0)[1].get_text() == " 123 "
+assert read_html("<a><b>123</b></a>", 0)[1].get_text() == "123"
+assert read_html("<a></a><b></b>", 0)[0] == len("<a></a>")
+
+res = read_html("<outer> <a> 123 </a> <!--{{tpl}}--> <b> 456 </b> </outer>", 0)
+assert res[0] == len("<outer> <a> 123 </a> <!--{{tpl}}--> <b> 456 </b> </outer>")
+assert res[1].get_text() == "  123    456  "
+
+
+###### Template parsing ######
+def read_template_name(text, spos):
+    i = spos
+    l = len(text)
+    
+    while i < l:
+        c = text[i]
+        
+        if c == '|':
+            epos = i
+            return epos # OK
+            
+        elif text.startswith('}}', i):
+            epos = i
+            return epos # OK
+            
+        else:
+            i += 1
+        
+    raise NotTemplateName()
+
+
+def read_template_arg(text, spos):
+    i = spos
+    l = len(text)
+    
+    arg = Arg()
+    cdata = []
+    
+    while i < l:
+        c = text[i]
+        
+        try: 
+            if c == '|': # next arg 
+                epos = i
+                return (epos, arg) # OK
+                
+            elif text.startswith('}}', i): # end
+                epos = i
+                return (epos, arg) # OK
+                
+            elif text.startswith("<!--", i):
+                # strip comment
+                log.debug("read_template_arg(): read_html_comment()")
+                (epos, comment) = read_html_comment(text, i)
+                i = epos                
+
+            elif c == '<': # html
+                # read html
+                log.debug("read_template_arg(): read_html()")
+                (epos, html) = read_html(text, i)
+                arg.add_child( html )
+                i = epos
+                
+            elif text.startswith('{{', i): # subtemplate
+                # read template
+                log.debug("read_template_arg(): read_template()")
+                (epos, template) = read_template(text, i)
+                arg.add_child( template )
+                i = epos
+                
+            elif text.startswith('[[', i): # link
+                # read Link
+                log.debug("read_template_arg(): read_link()")
+                (epos, link) = read_link(text, i)
+                arg.add_child( link)
+                i = epos
+                
+            else:
+                # cdata
+                arg.add_cdata(c)
+                i += 1
+            
+        except NotComment:
+            # cdata
+            arg.add_cdata(c)
             i += 1
 
-    # tail text
-    if string_start != i:
-        yield Text(text[string_start:], spos=string_start, epos=l)
+        except NotTemplate:
+            # cdata
+            arg.add_cdata(c)
+            i += 1
 
-
-class Section:
-    """
-    Class for storing section.
-    """
-    def __init__(self, title):
-        self.title_object = title
-        self.title = title.title
-        self.level = title.level
-        self.childs = []
-        self.parent = None
-        self.spos = 0
-        self.epos = 0
-
-    def is_empty(self):
-        return len(self.title.strip()) == 0 and len(self.childs) == 0
-
-    def add_child(self, child):
-        child.parent = self
-        self.childs.append(child)
-        
-    def find_lists(self):
-        """
-        Find LI objects in this section.
-        
-        for: 
-             ==English==
-             # item1
-             # item2
-        out: [LI(# item1), LI(# item2)]
-        """
-        for child in self.childs:
-            if isinstance(child, LI):
-                yield child
-        
-    def find_section(self, title, ignore_case=True):
-        """
-        Find Section object with the title 'title' in this section.
-        
-        for: 
-             ==English==
-             ===Noun===
-        in: "Noun"
-        out: [Section(Noun)]
-        
-        for: 
-             ==English==
-             ===Noun===
-             ===Noun===
-        in: "Noun"
-        out: [Section(Noun), Section(Noun)]
-        """
-        if ignore_case:
-            title = title.lower()
-    
-        for child in self.childs:
-            if isinstance(child, Section):
-                if (ignore_case and child.title.lower() == title) or (child.title == title):
-                    yield child
-        
-        return None
-        
-    def find_section_recursive(self, title, ignore_case=True):
-        """
-        Find Section object with the title 'title' in this section and all subsections. Recursive.
-        
-        for: 
-             ==English==
-             ===Etymology===
-             ====Noun====
-        in: "Noun"
-        out: [Section(Noun)]
-        
-        for: 
-             ==English==
-             ===Etymology===
-             ====Noun====
-             ====Noun====
-        in: "Noun"
-        out: [Section(Noun), Section(Noun)]
-        """
-        if ignore_case:
-            title = title.lower()
-
-        # check childs
-        for child in self.childs:
-            if isinstance(child, Section):
-                # check title
-                if ignore_case:
-                    # case insense
-                    if child.title.lower() == title:
-                        yield  child
-                else:
-                    # case sense
-                    if child.title == title:
-                        yield  child
-
-        # recursive. in width
-        for child in self.childs:
-            if isinstance(child, Section):
-                for subsec in child.find_section_recursive(title, ignore_case):
-                    yield subsec
-        
-    def find_sections(self, titles, ignore_case=True):
-        """
-        Find Section object with the on of title in 'titles' list. In this section.
-        
-        for: 
-             ==English==
-             ===Noun===
-             ===Verb===
-        in: ["Noun", "Verb"]
-        out: [Section(Noun), Section(Verb)]
-        
-        for: 
-             ==English==
-             ===Noun===
-             ===Noun===
-             ===Verb===
-        in: ["Noun", "Verb"]
-        out: [Section(Noun), Section(Noun), Section(Verb)]
-        """
-        assert isinstance(titles, (list, tuple)), "titles must be list ot tuple"
-        
-        if ignore_case:
-            titles = [t.lower() for t in titles]
-
-        for child in self.childs:
-            if isinstance(child, Section):
-                if ignore_case:
-                    # witout case
-                    if child.title.lower() in titles:
-                        yield child
-                else:
-                    # with case
-                    if child.title in titles:
-                        yield child
-        
-        return None
-        
-    def find_sections_recursive(self, titles, ignore_case=True):
-        """
-        Find Section object with the on of title in 'titles' list. In this section and all subsections. Recursive.
-        
-        for: 
-             ==English==
-             ===Noun===
-             ===Sub===
-             ====Verb====
-        in: ["Noun", "Verb"]
-        out: [Section(Noun), Section(Verb)]
-        
-        for: 
-             ==English==
-             ===Sub===
-             ====Noun====
-             ====Noun====
-             ====Verb====
-        in: ["Noun", "Verb"]
-        out: [Section(Noun), Section(Noun), Section(Verb)]
-        """
-        assert isinstance(titles, (list, tuple)), "titles must be list ot tuple"
-
-        if ignore_case:
-            titles = list(map(str.lower, titles))
-
-        # check childs
-        for child in self.childs:
-            if isinstance(child, Section):
-                # check title
-                if ignore_case:
-                    # case insense
-                    if child.title.lower() in titles:
-                        yield  child
-                else:
-                    # case sense
-                    if child.title in titles:
-                        yield  child
-
-        # recursive. in width
-        for child in self.childs:
-            if isinstance(child, Section):
-                for subsec in child.find_sections_recursive(titles, ignore_case):
-                    yield subsec
-        
-    def find_templates(self):
-        """
-        Find templates in this section.
-        
-        for:
-            ==English==
-            {{en-noun}}
-            {{l|en|this}}
-        out: [Template(en-noun), Template(l)]
-        """
-        for child in self.childs:
-            if isinstance(child, Template):
-                yield child
-
-    def find_templates_recursive(self, startfrom=None):
-        """
-        Find templates in this section and in all subsections. Recursive.
-        In LI (list items) searched also.
-        
-        for:
-            ==English==
-            ===Noun===
-            {{en-noun}}
-            {{l|en|this}}
-        out: [Template(en-noun), Template(l)]
-        """
-        if startfrom is None:
-            startfrom = self
-        
-        for child in startfrom.childs:
-            if isinstance(child, Template):
-                yield child
-
-            if hasattr(child, "childs"):
-                for c in self.find_templates_recursive(child):
-                    yield c
-                    
-        # LI patch
-        if isinstance(startfrom, LI):
-            for child in startfrom.data:
-                if isinstance(child, Template):
-                    yield child
-
-    def find_templates_recursive_no_subsections(self, startfrom=None):
-        """
-        Find templates in this section and in all subsections. Recursive.
-        In LI (list items) searched also.
-        
-        for:
-            ==English==
-            ===Noun===
-            {{en-noun}}
-            {{l|en|this}}
-        out: [Template(en-noun), Template(l)]
-        """
-        if startfrom is None:
-            startfrom = self
-        
-        for child in startfrom.childs:
-            if isinstance(child, Template):
-                yield child
-
-            if not isinstance(child , Section):
-                if hasattr(child, "childs"):
-                    for c in self.find_templates_recursive_no_subsections(child):
-                        yield c
-                    
-        # LI patch
-        if isinstance(startfrom, LI):
-            for child in startfrom.data:
-                if isinstance(child, Template):
-                    yield child
-
-
-    def find_templates_in_parents(self):
-        """
-        Find templates in parents
-        
-        for:
-           ==English==
-           {{t|en|cat}}
-           
-           ===Noun===
-           {{t|en|cat2}}
-           
-        self: Section(Noun)
-        out: [Template(cat)]
-        """
-        
-        parent = self.parent
-        
-        while parent:
-            if isinstance(parent, Section):
-                for t in parent.find_templates_recursive_no_subsections():
-                    yield t
-                    
-            parent = parent.parent
-    
-
-    def find_objects(self, types):
-        """
-        Find all object of type 'type'
-        
-        in:  [(Template, LI)]
-        out: [Template(en-noun), Template(l), LI(# item1)]
-        """
-        for obj in self.childs:
-            if isinstance(obj, types):
-                yield obj
-
-    def find_objects_between_templates(self, template1, template2, arg1=None):
-        """
-        Find all objects between template 'template1' and 'template2'.
-        Optional check forst argument of template1 'arg1'.
-
-        for:
-            {{rel-top|related terms}}
-            * {{l|en|knight}}, {{l|en|cavalier}}, {{l|en|cavalry}}, {{l|en|chivalry}}
-            * {{l|en|equid}}, {{l|en|equine}}
-            * {{l|en|gee}}, {{l|en|haw}}, {{l|en|giddy-up}}, {{l|en|whoa}}
-            * {{l|en|hoof}}, {{l|en|mane}}, {{l|en|tail}}, {{l|en|withers}}
-            {{rel-bottom}}
-        out: [LI(), Template(l), Template(l), ...]
-        """
-        # {{rel-top|related terms}}
-        # * {{l|en|knight}}, {{l|en|cavalier}}, {{l|en|cavalry}}, {{l|en|chivalry}}
-        # * {{l|en|equid}}, {{l|en|equine}}
-        # * {{l|en|gee}}, {{l|en|haw}}, {{l|en|giddy-up}}, {{l|en|whoa}}
-        # * {{l|en|hoof}}, {{l|en|mane}}, {{l|en|tail}}, {{l|en|withers}}
-        # {{rel-bottom}}
-        generator = (c for c in self.childs)
-
-        for c in generator:
-            #if isinstance(c, Template):
-            #    print(c)
-            if isinstance(c, Template) and c.name == template1:
-                # FOUND Template 1
-                # check arg1
-                if arg1 is None  or  len(c.args) >= 1  and c.args[0].as_string() == arg1:
-                    pass # OK
-                else:
-                    continue # skip
-                    
-                # find objects
-                for obj in generator:
-                    if isinstance(obj, Template) and obj.name == template2:
-                        # END. FOUND Template 2
-                        break
-                    else:
-                        yield obj
-                        
-                # first block only
-                break
-
-    def find_objects_between_templates_recursive(self, template1, template2, arg1=None):
-        """
-        Recursive version of the [find_objects_between_templates()]
-        """
-        for c in self.childs:
-            if isinstance(c, Section):
-                for o in c.find_objects_between_templates(template1, template2, arg1):
-                    yield o
-
-                # recurse
-                for o in c.find_objects_between_templates_recursive(template1, template2, arg1):
-                    yield o
-    
-    def __repr__(self):
-        return "Section(" + repr(self.title) + ")"
-    
-
-class Text:
-    """
-    Class for storing text.
-    """
-    def __init__(self, s, spos=None, epos=None):
-        assert not isinstance(s, Text)
-        self.s = s
-        self.childs = []
-        self.parent = None    
-        self.spos = spos
-        self.epos = epos
-
-    def is_empty(self):
-        if len(self.s.strip()) == 0:
-            if all([c.is_empty() for c in self.childs]):
-                return True
-        
-        return False
-        
-    def add_child(self, child):
-        child.parent = self
-        self.childs.append(child)
-        
-    def get_text(self):
-        """
-        Retrun raw text of this source.
-        """
-        return self.s
-        #return "".join( [repr(c) for c in self.childs] )
-
-    def __repr__(self):
-        return "Text(" + self.s.replace("\n", "\\n") + ")"
-
-
-def find_li_end_tokenized(li, generator):
-    parent = li
-
-    for t in generator:
-    
-        if isinstance(t, CRLF):
-            # li end
-            li.epos = t.spos
-            break
-
-        elif isinstance(t, Template):
-            # Template
-            #print("TEMPLATE:", parent)
-            li.add_data( t )
-            li.epos = t.epos
-
-        elif isinstance(t, Text):
-            # text
-            # go to container: Section
-            li.add_data( t )
-            li.epos = t.epos
-
-        else:
-            assert 0, "unsupported"
-
-
-def parse(text):
-    """
-    Parse text 'text' and return object tree.
-    
-    in:  text
-    out: <Section>
-    """
-    root = Section(Title("", 0))
-    parent = root
-    generator = tokenize_text(text)
-
-    for t in generator:
-        # Section 
-        #  Section
-        #    Text
-        #    Template
-        #    Text
-        #    List
-        #      LI
-        #      LI
-        #      LI
-        #    Text
-        
-        if isinstance(t, Title):
-            # title, section
-            section = Section(t)
-                
-            # select section
-            while not isinstance(parent, Section):
-                parent = parent.parent
-                
-            # select parent section
-            while parent.level >= section.level:
-                parent = parent.parent
-                
-            # create
-            parent.add_child( section )
+        except NotHtml: 
+            # cdata
+            arg.add_cdata(c)
+            i += 1
             
+    raise NotTemplateArg()
+
+assert repr(read_template_arg("1|", 0)) == "(1, Arg(1))"
+assert read_template_arg("1|", 0)[1].get_text() == "1"
+assert repr(read_template_arg("1}}", 0)) == "(1, Arg(1))"
+assert read_template_arg("1}}", 0)[1].get_text() == "1"
+assert read_template_arg("<a>1</a>|", 0)[1].get_text() == "1"
+assert read_template_arg("<a>|", 0)[1].get_text() == "<a>"
+
+try: read_template_arg("1", 0)
+except NotTemplateArg: pass
+
+
+def read_template(text, spos):
+    i = spos
+    l = len(text)
+    
+    if text.startswith("{{", i):    
+        i += len("{{")
+        
+        template = Template()
+
+        # name
+        try: 
+            epos = read_template_name(text, i)
+            name = text[i:epos]
+            template.name = name.strip()
+                
             #
-            parent = section
-            
-        elif isinstance(t, LI):
-            find_li_end_tokenized(t, generator)
-            t.raw = text[t.spos:t.epos]
+            while i < l:
+                c = text[i]
 
-            # List            
-            if isinstance(parent, LI):
-                # in list
-                if t.base == parent.base:
-                    # in same level
-                    parent.parent.add_child( t )
-                    parent = t
+                if c == '|':
+                    i += 1
+                    log.debug("read_template(): read_template_arg()")
+                    (epos, arg) = read_template_arg(text, i)
+                    template.add_child( arg )
+                    i = epos
                     
+                elif text.startswith('}}', i):
+                    epos = i + len('}}')
+                    template.raw = text[spos:epos]
+                    return (epos, template) # OK
+                
                 else:
-                    # different levels
-                    if t.base.startswith( parent.base ):
-                        # the child
-                        # new sub list
-                        parent.add_child( t )
-                        parent = t
-                        
-                    else:
-                        # the parent
-                        # find parent
-                        while isinstance(parent, LI) and not t.base.startswith( parent.base ):
-                            parent = parent.parent
-                            
-                        if isinstance(parent, LI) and t.base.startswith( parent.base ):
-                            parent = parent.parent
-                            
-                        parent.add_child( t )
-                        parent = t
+                    i += 1
+                    
+            raise NotTemplate # FAIL
+                
+        except NotTemplateName:
+            raise NotTemplate # FAIL
+
+        except NotTemplateArg:
+            raise NotTemplate # FAIL
+
+    raise NotTemplate # FAIL
+
+
+res = read_html("<a>{{tpl}}</a>", 0)
+#assert res[0] == len("<a>{{tpl}}</a>")
+#assert res[1].get_text() == "{{tpl}}"
+assert isinstance(res[1], Html)
+assert isinstance(res[1].childs[0], Template)
+assert res[1].childs[0].name == "tpl"
+
+try: read_html("{{tpl}}", 0)
+except NotHtml: pass
+
+try: read_template("<a>{{tpl}}</a>", 0)
+except NotTemplate: pass
+
+assert read_template("{{tpl|<a></a>}}", 0)[0] == len("{{tpl|<a></a>}}")
+assert isinstance(read_template("{{tpl|<a></a>}}", 0)[1], Template)
+assert repr( read_template("{{tpl|<a></a>}}", 0) ) == "(15, Template(tpl))"
+
+
+##### Link parsing #####
+def read_link_arg(text, spos):
+    i = spos
+    l = len(text)
+    
+    arg = Arg()
+    cdata = []
+    
+    while i < l:
+        c = text[i]
+        
+        try: 
+            if c == '|': # next arg 
+                epos = i
+                return (epos, arg) # OK
+                
+            elif text.startswith(']]', i): # end
+                epos = i
+                return (epos, arg) # OK
+                
+            elif text.startswith('{{', i): # subtemplate
+                # read template
+                (epos, template) = read_template(text, i)
+                arg.add_child( template )
+                i = epos
+                
+            elif text.startswith("<!--", i):
+                # strip comment
+                (epos, comment) = read_html_comment(text, i)
+                i = epos                
+
+            elif c == '<': # html
+                # read html
+                (epos, html) = read_html(text, i)
+                arg.add_child( html )
+                i = epos
                 
             else:
-                # new list
-                # go to container: Section | LI
-                while parent and not isinstance(parent, (Section, LI)):
-                    parent = parent.parent
-                
-                parent.add_child( t )
-                parent = t              
-        
-        elif isinstance(t, Template):
-            # Template
-            while not isinstance(parent, (Section, Text)):
-                parent = parent.parent
+                # cdata
+                arg.add_cdata(c)
+                i += 1
             
-            parent.add_child( t )
-            parent = t
-            
-        elif isinstance(t, Text):
-            # text
-            # go to container: Section
-            while parent and not isinstance(parent, Section):
-                parent = parent.parent
-                
-            parent.add_child( t )
-            parent = t
-            
-        elif isinstance(t, CRLF):
-            # text
-            pass
-            
-        else:
-            assert 0, "unsupported"
+        except NotComment:
+            # cdata
+            arg.add_cdata(c)
+            i += 1
 
+        except NotTemplate:
+            # cdata
+            arg.add_cdata(c)
+            i += 1
+
+        except NotHtml: 
+            # cdata
+            arg.add_cdata(c)
+            i += 1
+            
+    raise NotLinkArg()
+
+
+def read_link(text, spos):
+    i = spos
+    l = len(text)
+    
+    if text.startswith("[[", i):    
+        i += len("[[")
+        
+        link = Link()
+
+        # name
+        try: 
+            while i < l:
+                c = text[i]
+                
+                if c == '|':
+                    i += 1
+                    (epos, arg) = read_link_arg(text, i)
+                    link.add_child( arg )
+                    i = epos
+                    
+                elif text.startswith(']]', i):
+                    epos = i + len(']]')
+                    return (epos, link) # OK
+                
+                else:
+                    (epos, arg) = read_link_arg(text, i)
+                    link.add_child( arg )
+                    i = epos
+                    
+            raise NotLink # FAIL
+                
+        except NotLinkArg:
+            raise NotLink # FAIL
+
+    raise NotLink # FAIL
+
+assert repr(read_link("[[ ]]", 0)) == "(5, Link())"
+assert read_link("[[ http://wikipedia.org/wiki/cat ]]", 0)[0] == len("[[ http://wikipedia.org/wiki/cat ]]")
+assert read_link("[[ http://wikipedia.org/wiki/cat ]]", 0)[1].get_text() == " http://wikipedia.org/wiki/cat "
+assert read_link("[[ http://wikipedia.org/wiki/cat | abc ]]", 0)[1].get_text() == " http://wikipedia.org/wiki/cat   abc "
+
+try: read_html("<font size=4%></font size>", 0)
+except NotHtml: pass
+
+
+###### Header parsing ######
+def read_header_level(text, spos):
+    i = spos
+    l = len(text)
+    
+    while i < l and text[i] == '=':
+        i += 1
+        
+    epos = i
+    level = i - spos
+    
+    return (epos, level)
+
+
+def read_header(text, spos):
+    i = spos
+    l = len(text)
+    
+    if text.startswith("\n=", i):        
+        i += len("\n")
+        (epos, level) = read_header_level(text, i)
+
+        header = Header()
+        current = header
+        header.level = level # level
+        
+        i = epos
+        
+        while i < l:
+            c = text[i]
+            
+            try: 
+                if c == '=':
+                    (epos, level2) = read_header_level(text, i)
+                    if level == level2:
+                        header.name = header.get_text()
+                        return (epos, header) # OK
+                        
+                    else:
+                        # character data
+                        current.add_cdata(c)
+                        i += 1                    
+
+                elif c == '\n':
+                    raise NotHeader()
+
+                elif text.startswith("<!--", i):
+                    # strip comment
+                    (epos, comment) = read_html_comment(text, i)
+                    i = epos                
+                    
+                elif c == '<':
+                    # HTML
+                    (epos, html) = read_html(text, i)
+                    current.add_child(html)
+                    i = epos
+
+                elif text.startswith('{{', i):
+                    # Template
+                    (epos, template) = read_template(text, i)
+                    current.add_child(template)
+                    i = epos
+                
+                elif text.startswith('[[', i):
+                    # Link
+                    (epos, link) = read_link(text, i)
+                    current.add_child(link)
+                    i = epos
+                
+                else:
+                    # character data
+                    current.add_cdata(c)
+                    i += 1
+                    
+            except NotComment:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotHtml:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotTemplate:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotLink:
+                # character data
+                current.add_cdata(c)
+                i += 1
+                        
+    raise NotHeader()
+
+
+###### List parsing ######
+def read_list_level(text, spos):
+    i = spos
+    l = len(text)
+    
+    while i < l and text[i] in "#*:":
+        i += 1
+        
+    epos = i
+    level = i - spos
+    
+    return (epos, level)
+
+
+def read_list(text, spos):
+    i = spos
+    l = len(text)
+    
+    if text.startswith("\n#", i) or text.startswith("\n*", i):
+        i += len("\n")
+        (epos, level) = read_list_level(text, i)
+
+        li = Li()
+        current = li
+        li.level = level # level
+        li.base = text[i:epos] # base
+        
+        i = epos
+        
+        while i < l:
+            c = text[i]
+            
+            try: 
+                if c == '\n':
+                    # end of the list
+                    epos = i
+                    li.raw = text[spos+len("\n"):epos]
+                    return (epos, li) # OK
+
+                elif text.startswith("<!--", i):
+                    # strip comment
+                    log.debug("read_list(): read_html_comment()")
+                    (epos, comment) = read_html_comment(text, i)
+                    i = epos                
+                    
+                elif c == '<':
+                    # HTML
+                    log.debug("read_list(): read_html()")
+                    (epos, html) = read_html(text, i)
+                    current.add_child(html)
+                    i = epos
+
+                elif text.startswith('{{', i):
+                    # Template
+                    log.debug("read_list(): read_template()")
+                    (epos, template) = read_template(text, i)
+                    current.add_child(template)
+                    i = epos
+                
+                elif text.startswith('[[', i):
+                    # Link
+                    log.debug("read_list(): read_link()")
+                    (epos, link) = read_link(text, i)
+                    current.add_child(link)
+                    i = epos
+                
+                else:
+                    # character data
+                    current.add_cdata(c)
+                    i += 1
+                    
+            except NotComment:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotHtml:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotTemplate:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotLink:
+                # character data
+                current.add_cdata(c)
+                i += 1
+    
+            except NotList:
+                # character data
+                current.add_cdata(c)
+                i += 1
+    
+        epos = i
+        li.raw = text[spos+len("\n"):epos]
+        return (epos, li)
+        
+    raise NotList()
+    
+
+###### Text parsing ######
+def tagizer(text, spos=0):
+    i = spos
+    l = len(text)
+
+    root = Section()
+    current = root
+        
+    opened = []
+    closed = []
+    
+    while i < l:
+        c = text[i]
+        #print(i, end="")
+        #print(c.replace("\n", "\\n"), end="")
+
+        try: 
+            if text.startswith("<!--", i):
+                # strip comment
+                log.debug("read_html_comment()")
+                (epos, comment) = read_html_comment(text, i)
+                i = epos                
+                
+            elif c == '<':
+                # HTML
+                log.debug("read_html()")
+                (epos, html) = read_html(text, i)
+                current.add_child(html)
+                i = epos
+
+            elif text.startswith('{{', i):
+                # Template
+                log.debug("read_template()")
+                (epos, template) = read_template(text, i)
+                current.add_child(template)
+                i = epos
+            
+            elif text.startswith('[[', i):
+                # Link
+                log.debug("read_link()")
+                (epos, link) = read_link(text, i)
+                current.add_child(link)
+                i = epos
+            
+            elif text.startswith('\n=', i):
+                # Header
+                log.debug("read_header()")
+                (epos, header) = read_header(text, i)
+                current.add_child(header)
+                i = epos
+            
+            elif text.startswith('\n#', i):
+                # Li
+                log.debug("read_list()")
+                (epos, li) = read_list(text, i)
+                current.add_child(li)
+                i = epos
+            
+            elif text.startswith('\n*', i):
+                # Li
+                log.debug("read_list()")
+                (epos, li) = read_list(text, i)
+                current.add_child(li)
+                i = epos
+            
+            else:
+                # character data
+                current.add_cdata(c)
+                i += 1
+                
+        except NotComment:
+            # character data
+            current.add_cdata(c)
+            i += 1
+        
+        except NotHtml:
+            # character data
+            current.add_cdata(c)
+            i += 1
+        
+        except NotTemplate:
+            # character data
+            current.add_cdata(c)
+            i += 1
+        
+        except NotLink:
+            # character data
+            current.add_cdata(c)
+            i += 1
+        
+        except NotHeader:
+            # character data
+            current.add_cdata(c)
+            i += 1
+        
+    epos = i
+    return (epos, root) # OK
+    #raise NotParsed # FAIL
+
+assert repr(tagizer("<a>123</a>")) == "(10, Section(, level:0))"
+assert tagizer("<a>123</a>")[1].get_text() == "123"
+assert tagizer("<a> 123 </a>")[1].childs[0].childs[0].raw == " 123 "
+
+res = tagizer("=={{-ru-}}==\n")
+res = tagizer("=={{language|ru}}==\n")
+res = tagizer("=={{language|{{-ru-|-r-}} }}==\n")
+res = tagizer("{{language|{{-ru-|-r-}} }}\n")
+res = tagizer("<!-- -->{{language|{{-ru-|<!-- -->}} }}\n")
+res = tagizer("<!-- -->{{language|{{-ru-|<!-- [[ ]] -->}} }}\n")
+res = tagizer("<!-- -->{{language|{{-ru-|<!-- [[ ]] -->}}| [[ http://wiki/get?a&b=1 ]] }}\n")
+
+res = tagizer("\n==English==")
+res = tagizer("\n=={{English}}==")
+res = tagizer("\n=={{-ru-}}==")
+
+res = tagizer("\n# list 1")
+res = tagizer("\n* list 1")
+res = tagizer("\n# list 1\n# list 2")
+res = tagizer("\n# list 1{{t\n|en=\n|ru=}}\n# list 2")
+
+
+# res = tagizer("""
+# ## "<span title="he, she or it">it</span> is robbed, <span title=he, she or it">it</span> is stolen, it is plundered, <span title="he, she or it">it</span> is carried&nbsp;off"
+# """)
+
+
+def pack_lists(root):
+    def is_child_li(parent, li):
+        pa_base = parent.base
+        li_base = li.base
+        
+        if li_base.startswith(pa_base):
+            if li_base == pa_base:
+                return False
+            else:
+                return True
+        else:
+            return False
+
+    childs = root.childs.copy()
+    parent = None
+    
+    for c in childs: # first li of the block
+        if isinstance(c, Li):
+            if parent is None:
+                parent = c
+                
+            elif not isinstance(parent, Li):
+                parent = c
+                
+            else:
+                if is_child_li(parent, c):
+                    parent.add_child(c)
+                    parent = c
+                    
+                else:
+                    while not is_child_li(parent, c):
+                        parent = parent.parent
+                        if not isinstance(parent, Li):
+                            break
+                        
+                    if isinstance(parent, Li):
+                        parent.add_child(c)
+                        
+                    parent = c
+                    
     return root
 
 
-def dump_section(sec, level=0, show_sections_only=None):
-    """
-    Print formatted tree of object 'sec'
-    """
-    #print( "  "*level, type(sec) )
-    if show_sections_only is not None:
-        if show_sections_only and isinstance(sec, Section):
-            print( "  "*level, repr(sec).replace("\n", "") )
+res = tagizer("\n# list 1{{t\n|en=\n|ru=}}\n# list 2")
+res = tagizer("\n# list 1{{t\n|en=\n|ru=}}\n## list 2\n##* list 2-1\n\n# list 3")
+pack_lists( res[1] )
+
+text = """
+# An animal of the family [[Felidae]]:
+#* {{quote-book|lang=en|year=2011|author=Karl Kruszelnicki|title=Brain Food|isbn=1466828129|page=53|passage=Mammals need two genes to make the taste receptor for sugar. Studies in various '''cats''' (tigers, cheetahs and domestic cats) showed that one of these genes has mutated and no longer works.}}
+#: {{syn|en|felid}}
+## A domesticated [[subspecies]] (''[[Felis silvestris catus]]'') of [[feline]] animal, commonly kept as a house [[pet]]. {{defdate|from 8<sup>th</sup>c.}}
+##* {{RQ:WBsnt IvryGt|II}}
+##*: At twilight in the summer there is never anybody to fearвЂ”man, woman, or '''cat'''вЂ”in the chambers and at that hour the mice come out. They do not eat parchment or foolscap or red tape, but they eat the luncheon crumbs.
+##: {{syn|en|puss|pussy|malkin|kitty|pussy-cat|grimalkin|Thesaurus:cat}}
+## Any similar animal of the family [[Felidae]], which includes [[lion]]s, [[tiger]]s, bobcats, etc.
+##* '''1977''', Peter Hathaway Capstick, ''Death in the Long Grass: A Big Game Hunter's Adventures in the African Bush'', St. Martin's Press, 44.
+##*: I grabbed it and ran over to the lion from behind, the '''cat''' still chewing thoughtfully on Silent's arm.
+##* '''1985''' January, George Laycock, "Our American Lion", in Boy Scouts of America, ''Boy's Life'', 28.
+##*: If you should someday round a corner on the hiking trail and come face to face with a mountain lion, you would probably never forget the mighty '''cat'''.
+##* '''2014''', Dale Mayer, ''Rare Find. A Psychic Visions Novel'', Valley Publishing.
+##*: She felt privileged to be here, living the experience inside the majestic '''cat''' [i.e. a tiger]; privileged to be part of their bond, even for only a few hours.
+# A person:
+## {{lb|en|offensive}} A spiteful or angry [[woman]]. {{defdate|from earlier 13<sup>th</sup>c.}}
+##* '''1835''' September, anonymous, "The Pigs", in ''The New-England Magazine'', Vol. 9, 156.
+##*: But, ere one rapid moon its tale has told, / He finds his prize вЂ” a '''cat''' вЂ” a slut вЂ” a scold.
+##: {{syn|en|bitch}}
+## An enthusiast or player of [[jazz]].
+##* {{quote-song|lang=en|year=2008|author={{w|Nick Cave and the Bad Seeds}}|title=Hold on to Yourself|passage=I turn on the radio / There's some '''cat''' on the saxophone / Laying down a litany of excuses}}
+## {{lb|en|slang}} A person (usually male).
+##* {{quote-song
+|lang=en
+|title=Starman
+|album=The Rise and Fall of Ziggy Stardust and the Spiders from Mars
+|artist=David Bowie
+|year=1972
+|passage=Didn't know what time it was the lights were low / I leaned back on my radio / Some '''cat''' was layin' down some rock'n'roll 'lotta soul, he said}}
+##* '''1973''' December, "Books Noted", discussing ''A Dialogue'' (by James Baldwin and Nikki Giovanni), in ''Black World'', Johnson Publishing Company, 77.
+##*: BALDWIN: That's what we were talking about before. And by the way, you did not have to tell me that you think your father is a groovy '''cat'''; I knew that.
+##* {{quote-song|lang=en|artist={{w|Shaquille O'Neal}}|title=Fiend|year=1998|album=Respect|passage=What fags are true I know what Mack's might do<br/>I'm quite familiar with '''cats''' like you<br>Provoke to get me give me a good reason to smoke me<br>Try to break me but never wrote me)}}
+##* {{quote-song|lang=en|year=2006|lyricist=Masta Ace|title=Sick of it all|album=Pariah|passage=I am sick of rappers claiming they hot when they really not<br/>I am sick of rappers bragging about shit they ainвЂ™t really got<br/>These '''cats''' stay rapping about cars they donвЂ™t own<br/>I am sick of rappers bragging about models they donвЂ™t bone.[вЂ¦]<br/>And I am sick of all these '''cats''' with no talent<br/>That never lived in the hood but yet their lyrics be so violent.}}
+##: {{syn|en|bloke|chap|cove|dude|fellow|fella|guy}}
+## {{lb|en|slang}} A [[prostitute]]. {{defdate|from at least early 15<sup>th</sup>c.}}
+##* '''1999''', Carl P. Eby, ''Hemingway's Fetishism. Psychoanalysis and the Mirror of Manhood'', State University of New York Press, 124.
+##*: вЂњTell me. Willie said there was a '''cat''' in love with you. That isn't true, is it?вЂќ вЂњYes. It's true,вЂќ Hudson corrects her, letting her think that by вЂњcatвЂќ he means prostitute.
+# {{lb|en|nautical}} A strong tackle used to hoist an anchor to the [[cathead]] of a ship.
+#* '''2009''', Olof A. Eriksen, ''Constitution - All Sails Up and Flying'', Outskirts Press, 134.
+#*: Overhaul down & hook the '''cat''', haul taut. Walk away the '''cat'''. When up, pass the '''cat''' head stopper. Hook the fish in & fish the anchor.
+# {{lb|en|chiefly|nautical}} {{non-gloss definition|Short form of}} [[cat-o'-nine-tails]].
+#* {{quote-book|lang=en|year=1839|section=testimony by {{w|Henry L. Pinckney}} (Assembly No. 335)|title=Documents of the Assembly of the State of New York|page=44|passage={{...}}he whipped a black man for disobedience of his orders fifty lashes; and again whipped him with a '''cat''', which he wound with wire, about the same number of stripes;{{...}}he used this '''cat''' on one other man, and then destroyed the '''cat''' wound with wire.}}
+# {{lb|en|archaic}} A sturdy merchant sailing vessel {{qualifier|now only in "[[catboat]]"}}.
+# {{lb|en|archaic|uncountable}} The game of "[[trap and ball]]" (also called "cat and dog").
+## The trap of the game of "trap and ball".
+# {{lb|en|archaic}} The pointed piece of wood that is struck in the game of [[tipcat]].
+# {{lb|en|slang|vulgar|African American Vernacular English}} A [[vagina]], a [[vulva]]; the female external genitalia.
+#* {{quote-book|lang=en|year=1969|author=Iceberg Slim|title=Pimp: The Story of My Life|publisher=Holloway House Publishing|passage="What the hell, so this broad's got a prematurely-gray '''cat'''."}}
+#* {{quote-book|lang=en|year=2005|author=Carolyn Chambers Sanders|title=Sins & Secrets|publisher=Hachette Digital|passage=As she came up, she tried to put her '''cat''' in his face for some licking.}}
+#* {{quote-book|lang=en|year=2007|author=Franklin White|title=Money for Good|publisher=Simon and Schuster|page=64|passage=I had a notion to walk over to her, rip her apron off, sling her housecoat open and put my finger inside her '''cat''' to see if she was wet or freshly fucked because the dream I had earlier was beginning to really annoy me.}}
+# A [[double]] [[tripod]] (for holding a [[plate]], etc.) with six feet, of which three rest on the ground, in whatever position it is placed.
+# {{lb|en|historical}} A [[wheel]]ed [[shelter]], used in the [[Middle Ages]] as a [[siege]] weapon to allow [[assailant]]s to approach enemy [[defence]]s.
+#: {{syn|en|tortoise|Welsh cat}}
+
+"""
+res = tagizer(text, 0)
+res = pack_lists( res[1] )
+#dump( res, 0, (Section, Li) )
+#exit(1)
+#print( res )
+
+
+def get_header_level(header):
+    if isinstance(header, Header):
+        return header.level
+        
+    elif isinstance(header, Html):
+        if header.name == "h1":
+            return 1
+        elif header.name == "h2":
+            return 2
+        elif header.name == "h3":
+            return 3
+        elif header.name == "h4":
+            return 4
+        elif header.name == "h5":
+            return 5
+        elif header.name == "h6":
+            return 6
+        elif header.name == "h7":
+            return 7
+
     else:
-        print( "  "*level, repr(sec).replace("\n", "") )
-    
-    for child in sec.childs:
-        dump_section( child, level + 1, show_sections_only )
+        assert 0, "unsupported header"
+
+
+def pack_sections(root):
+    # build tree by levels
+
+    # subsections
+    top_section = root
+    top_section.level = 0
+    parent = top_section
+
+    # walk over childs and put to new sections tree
+    childs = root.childs.copy()
+    generator = (c for c in childs)
+
+    for e in generator:
+        #if isinstance(e, Header) or (isinstance(e, Html) and e.name in ["h1", "h2", "h3", "h4", "h5", "h6", "h7"]):
+        if isinstance(e, Header):
+            header = e
+        
+            # find next same level or higher
+            section = Section()
+            section.level = get_header_level(header)
+            section.header = header
+            section.name = header.get_text().strip().lower()
+            
+            section.add_child(header)
+
+            if parent.level < section.level:
+                # child section
+                parent.add_child( section )
+                parent = section
+
+            elif parent.level == section.level:
+                # same level section
+                parent.parent.add_child( section )
+                parent = section
+
+            else:
+                # top section
+                # find parent
+                while parent.level >= section.level:
+                    parent = parent.parent
+
+                parent.add_child( section )
+                parent = section
+        
+        else:
+            parent.add_child(e)
+            
+        # recursive 
+        pack_sections( e )
+            
+    # return new tree
+    return top_section
+
+
+res = tagizer("""
+==English==
+{{head}}
+
+===Noun===
+{{en-noun|s}}
+
+====Translations====
+{{t|ru|term}}
+
+===Verb===
+{{en-verb|s}}
+
+""")
+#dump( pack_sections( res[1] ) )
+
+res = tagizer("""
+=={{-ru-}}==
+""")
+#dump( pack_sections( res[1] ) )
+
+def parse(text):
+    (epos, tree) = tagizer(text)
+    return tree

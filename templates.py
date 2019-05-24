@@ -16,7 +16,7 @@ Templates:
 """
 
 
-def en_conj(t, label):
+def en_conj(t, label, text):
     """
     {{en-conj|basic form|simple past form|past participle|present participle|simple present third-person form}} 
     
@@ -32,14 +32,14 @@ def en_conj(t, label):
     """
     result = []
     
-    acount = len(t.args)
+    acount = len(t.childs) - 1 # without name
     
     if acount == 1:
         pass
         
     elif acount == 2:
-        param1 = t.arg(0)
-        param2 = t.arg(1)
+        param1 = t.arg(1, text)
+        param2 = t.arg(2, text)
         
         if param2 == "e":
             result.append( param1+param2 )
@@ -70,25 +70,25 @@ def en_conj(t, label):
             result.append( param1+"es" )
             
     else:
-        for k,a in t.args.items():
-            result.append( a.as_string() )
+        for a in t.args():
+            result.append( a.get_value(text) )
     
     return result
 
-def ang_noun(t, label):
+def ang_noun(t, label, text):
     # head  - alt term
     # 1     - f | m
     # 2     - plural form
     # pl2   - second plural
     
-    head = t.arg(0)
-    p1   = t.arg(1)
-    p2   = t.arg("head")
-    pl2  = t.arg("pl2")
+    head = t.arg(1, text)
+    p1   = t.arg(2, text)
+    p2   = t.arg("head", text)
+    pl2  = t.arg("pl2", text)
     
     return (head, p1, p2, pl2)
     
-def en_noun(t, label):
+def en_noun(t, label, text):
     """
     {{en-noun}}
     {{en-noun|es}}
@@ -102,9 +102,10 @@ def en_noun(t, label):
     is_uncountable = False
     
     # http://en.wiktionary.org/wiki/Template:en-noun
-    head = t.arg("head", label)
-    p1 = t.arg(0)
-    p2 = t.arg(1)
+    head = t.arg("head", text)
+    head = head if head else label
+    p1 = t.arg(1, text)
+    p2 = t.arg(2, text)
     
     if p1 == "-":
         # uncountable
@@ -132,16 +133,17 @@ def en_noun(t, label):
     elif p1 is None and p2 is None:
         p.append(head+"s")
 
-    for k,a in t.args.items():
-        if not a.is_named():
-            if k == 0:
+    for i, a in enumerate(t.childs):
+        key = a.get_name(text)
+        if not key:
+            if i == 0:
                 continue
             
-            p.append(a.as_string())
+            p.append(a.get_value(text))
                     
     return (s, p, is_uncountable)
 
-def en_verb(t, label):
+def en_verb(t, label, text):
     """
     Out:
         (label_third, label_present_participle, label_simple_past, label_past_participle)
@@ -154,7 +156,7 @@ def en_verb(t, label):
     label_past_participle    = None
     
     # http://en.wiktionary.org/wiki/Template:en-verb
-    acount = t.get_positional_args_count()
+    acount = len(t.childs) - 1
 
     if acount == 0:
         label_third              = label + "s"
@@ -162,7 +164,7 @@ def en_verb(t, label):
         label_simple_past        = label + "ed"
         label_past_participle    = label + "ed"
     elif acount == 1:
-        param1 = t.arg(0)
+        param1 = t.arg(1, text)
         if "d" == param1:
             label_third              = label + "s"
             label_present_participle = label + "ing"
@@ -180,8 +182,8 @@ def en_verb(t, label):
             label_past_participle    = param1 + "ed"
         
     elif acount == 2:
-        param1 = t.arg(0)
-        param2 = t.arg(1)
+        param1 = t.arg(1, text)
+        param2 = t.arg(2, text)
         if "es" == param2:
             label_third              = param1 + "es"
             label_present_participle = param1 + "ing"
@@ -204,9 +206,9 @@ def en_verb(t, label):
             label_past_participle    = label  + "d"
             
     elif acount == 3:
-        param1 = t.arg(0)
-        param2 = t.arg(1)
-        param3 = t.arg(2)
+        param1 = t.arg(1, text)
+        param2 = t.arg(2, text)
+        param3 = t.arg(3, text)
         if "es" == param3:
             label_third              = param1 + param2 + "es"
             label_present_participle = param1 + param2 + "ing"
@@ -237,25 +239,26 @@ def en_verb(t, label):
             label_past_participle    = param3
         
     elif acount == 4:
-        param1 = t.arg(0)
-        param2 = t.arg(1)
-        param3 = t.arg(2)
-        param4 = t.arg(3)
+        param1 = t.arg(1, text)
+        param2 = t.arg(2, text)
+        param3 = t.arg(3, text)
+        param4 = t.arg(4, text)
         label_third              = param1
         label_present_participle = param2
         label_simple_past        = param3
         label_past_participle    = param4
     
-    for key, a in t.args.items():
-        if isinstance(key, str):
+    for a in t.childs:
+        key = a.get_name(text)
+        if key:
             if key.startswith("pres"):
-                label_present_participle = a.as_string()
+                label_present_participle = a.get_value(text)
             elif key == "past2":
                 if acount == 3:
-                    label_simple_past = a.as_string()
-                    label_past_participle = a.as_string()
+                    label_simple_past = a.get_value(text)
+                    label_past_participle = a.get_value(text)
                 else:
-                    label_simple_past = a.as_string()
+                    label_simple_past = a.get_value(text)
                 
     return (label_third, label_present_participle, label_simple_past, label_past_participle)
 
