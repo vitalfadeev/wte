@@ -19,5 +19,5 @@ def test_read():
 
 #test_one("fr", "do")
 #test_one("fr", "cat")
-test_dump("fr")
+test_dump("en")
 #test_read()

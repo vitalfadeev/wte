@@ -861,18 +861,24 @@ def try_well_formed_structure(tree, label, language):
         # "{{s|nom|fr|num=1}}",
         for (lang, name) in find_tos_section_name_in_header_template(sec.header):
             if lang == language:
-                if name in tos_section_names:
-                    return True
+                for wt, tos_section_names in tos_sections.items():
+                    if name in tos_section_names:
+                        return True
             elif lang is None:
-                if name in tos_section_names:
-                    return True
+                for wt, tos_section_names in tos_sections.items():
+                    if name in tos_section_names:
+                        return True
         return False
 
     def is_tos_section(sec):
         for wt, tos_section_names in tos_sections.items():
             if sec.name in tos_section_names:
                 return True
-        return False
+
+        if is_tos_section_templated(sec):
+            return True
+        else:
+            return False
 
     def get_word_type(sec):
         for wt, tos_section_names in tos_sections.items():
