@@ -9,10 +9,25 @@ import wte
 DBWikictionary = sqlite3.connect("Wikictionary.db")
 
 
-def SQLInitDB( conn ):
+def get_new_id(DB):
+    c = DB.cursor()
+
+    sql = """
+    SELECT max(id) as id 
+      FROM wikictionary
+    """
+
+    c.execute(sql)
+    rows = c.fetchall()
+
+    get_new_id = rows[0][0]
+
+    return get_new_id
+
+def SQLInitDB():
     sql = """
     CREATE TABLE IF NOT EXISTS wikictionary (
-        id BIGINT PRIMARY KEY AUTOINCREMENT,
+        id              BIGINT,
         LabelName       text,
         LabelType       text,
         LanguageCode    text,
@@ -59,13 +74,21 @@ def SQLInitDB( conn ):
     
 
 def SQLWriteDB( DB, worddict ):
+    """
+    SQLReadDB( DBWikictionary, {"cat":[Word, Word, Word]} )
+    """
     # prepare    
     for label, words in worddict.items():
         for word in words:
             fields = []
             values = []
             placeholders = []
-            
+
+            newid = get_new_id(DB)
+            fields.append("id")
+            values.append(newid)
+            placeholders.append("?")
+
             for name in word.get_fields():
                 value = getattr(word, name)
                 
@@ -92,8 +115,9 @@ def SQLWriteDB( DB, worddict ):
 
     
 def SQLReadDB( DB, DictSearch ):
-    # DictSearch = {"id":1, "LabelName":"cat", "Type":"noun"}
-
+    """
+    rows = SQLReadDB( DBWikictionary, {"id":1, "LabelName":"cat", "Type":"noun"} )
+    """
     fields = []
     placeholders = []
     values = []
@@ -114,9 +138,10 @@ def SQLReadDB( DB, DictSearch ):
         {}
     """.format( ",".join(expressions) )
 
-    result = c.execute(sql, values)
+    c.execute(sql, values)
+    rows = c.fetchall()
 
-    return result
+    return rows
     
 
 """
@@ -228,4 +253,4 @@ def SQLReadDB( DB, DictSearch )
 """
 
 
-SQLInitDB( DBWikictionary )
+SQLInitDB()
