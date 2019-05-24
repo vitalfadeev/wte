@@ -145,7 +145,30 @@ def SQLReadDB( DB, DictSearch ):
     c.execute(sql, values)
     rows = c.fetchall()
 
-    return rows
+    result = []
+
+    for row in rows:
+        import wte
+        import json
+        word = wte.Word()
+
+        for idx, col in enumerate(c.description):
+            cname = col[0]
+            cvalue = row[idx]
+
+            if cvalue and  cname in ("Synonymy", "Antonymy",
+                                     "Hypernymy", "Hyponymy", "Meronymy", "Holonymy",
+                                     "Troponymy", "Otherwise", "AlternativeFormsOther",
+                                     "RelatedTerms", "Coordinate", "Translation_EN",
+                                     "Translation_FR", "Translation_DE", "Translation_IT",
+                                     "Translation_ES", "Translation_RU", "Translation_PT"):
+                cvalue = json.loads(cvalue)
+
+            setattr(word, cname, cvalue)
+
+        result.append(word)
+
+    return result
     
 
 """
