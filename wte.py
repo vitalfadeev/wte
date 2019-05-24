@@ -990,7 +990,7 @@ def phase4(lang, mined, label):
 def postprocess(words, label):
     flag = None
     import sql
-    sql.SQLWriteDB( {label:words} )
+    sql.SQLWriteDB( sql.DBWikictionary, {label:words} )
     return flag
 
 
@@ -1024,7 +1024,7 @@ def one_file(lang, label):
 
     log.info("Saving to DB")
     import sql
-    sql.SQLWriteDB( treemap )
+    sql.SQLWriteDB( sql.DBWikictionary, treemap )
 
     log.info("Status: words:%d", len(treemap[label]))
     for w in treemap[label]:
