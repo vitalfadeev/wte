@@ -117,7 +117,7 @@ class Container:
 
     def find_section(self, name, recursive=False):
         for section in self.find_objects(Section, recursive):
-            if section.name == name:
+            if section.has_name(name):
                 yield section
 
     def find_top_objects(self, cls, callback):
@@ -331,6 +331,31 @@ class Section(Container):
         self.level = 0
         self.header = None
         self.name = ""
+        
+    def has_name(self, expected_name, expected_lang=None):
+        # case 1: .name
+        if self.name == expected_name:
+            return True
+            
+        # case 2: templated
+        if self.header:
+            for t in self.header.find_objects(Template, recursive=True):
+                # case 2.1: {{expected_name}}
+                if t.name == expected_name:
+                    return True
+                    
+                # case 2.2: {{s|expected_name}}
+                a1 = t.arg(0)
+                if a1 and a1.strip().slower() == expected_name:
+                    # test lang
+                    if expected_lang:
+                        lang = t.arg(1)
+                        if lang is None:
+                            return True
+                        else:
+                            if lang == expected_lang:
+                                return True        
+        return False
 
     def __repr__(self):
         return "Section(" + self.name + ", level:" + str(self.level) + ")"
@@ -341,7 +366,7 @@ class Arg(Container):
         eqpos = text.find("=")
 
         if eqpos != -1:
-            return text[:eqpos]
+            return text[:eqpos].strip()
         else:
             return None
 
@@ -350,9 +375,9 @@ class Arg(Container):
         eqpos = text.find("=")
 
         if eqpos != -1:
-            return text[eqpos+1:]
+            return text[eqpos+1:].strip()
         else:
-            return text
+            return text.strip("\n")
 
     def __repr__(self):
         s = self.get_name()
@@ -1114,7 +1139,7 @@ def read_template(text, spos):
         try: 
             epos = read_template_name(text, i)
             name = text[i:epos]
-            template.name = name.strip()
+            template.name = name.strip().lower()
                 
             #
             while i < l:
@@ -1385,7 +1410,7 @@ def read_list(text, spos):
     i = spos
     l = len(text)
     
-    if text.startswith("\n#", i) or text.startswith("\n*", i):
+    if text.startswith("\n#", i) or text.startswith("\n*", i) or text.startswith("\n:", i):
         i += len("\n")
         (epos, level) = read_list_level(text, i)
 
@@ -1529,6 +1554,13 @@ def tagizer(text, spos=0):
                 i = epos
             
             elif text.startswith('\n*', i):
+                # Li
+                log.debug("read_list()")
+                (epos, li) = read_list(text, i)
+                current.add_child(li)
+                i = epos
+            
+            elif text.startswith('\n:', i):
                 # Li
                 log.debug("read_list()")
                 (epos, li) = read_list(text, i)
@@ -1730,7 +1762,7 @@ def get_header_level(header):
         assert 0, "unsupported header"
 
 
-def pack_sections(root):
+def pack_sections(root, section_templates=None):
     # build tree by levels
 
     # subsections
@@ -1743,7 +1775,6 @@ def pack_sections(root):
     generator = (c for c in childs)
 
     for e in generator:
-        #if isinstance(e, Header) or (isinstance(e, Html) and e.name in ["h1", "h2", "h3", "h4", "h5", "h6", "h7"]):
         if isinstance(e, Header):
             header = e
         
@@ -1753,6 +1784,37 @@ def pack_sections(root):
             section.header = header
             #section.name = header.get_text().strip().lower()
             section.name = header.get_raw().strip().strip('=').strip().lower()
+
+            section.add_child(header)
+
+            if parent.level < section.level:
+                # child section
+                parent.add_child( section )
+                parent = section
+
+            elif parent.level == section.level:
+                # same level section
+                parent.parent.add_child( section )
+                parent = section
+
+            else:
+                # top section
+                # find parent
+                while parent.level >= section.level:
+                    parent = parent.parent
+
+                parent.add_child( section )
+                parent = section
+        
+        elif section_templates and isinstance(e, Template) and e.name in section_templates:
+            header = e
+        
+            # find next same level or higher
+            section = Section()
+            section.level = 4 # hardcoded
+            section.header = header
+            #section.name = header.get_text().strip().lower()
+            section.name = e.name
 
             section.add_child(header)
 

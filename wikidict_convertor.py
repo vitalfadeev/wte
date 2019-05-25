@@ -10,14 +10,22 @@ import pywikibot
 from pywikibot import Claim
 from pywikibot.site import DataSite
 from blist import sorteddict
+import sql
+from loggers import log_wikidata
 
 
 class ItemClass:
     def __init__(self):
         self.LabelName = None
         self.LanguageCode = None
+        self.CodeInWiki = None
         self.Description = None
-        self.AlsoKnownAs = None
+        #self.AlsoKnownAs = None
+        self.AlsoKnownAs1 = None
+        self.AlsoKnownAs2 = None
+        self.AlsoKnownAs3 = None
+        self.AlsoKnownAs4 = None
+        self.AlsoKnownAs5 = None
         self.SelfUrl = None
         self.WikipediaURL = None
         self.DescriptionUrl = None
@@ -32,11 +40,39 @@ class ItemClass:
         self.Translation_RU = None
         self.Translation_PT = None
  
+    def get_fields(self):
+        reserved = [
+            "sql_table", 'get_fields', 'add_explaniation', 
+            'add_related', 'add_synonym', 'add_translation', 'clone', 
+            'save_to_json', 'save_to_pickle', "Excpla", "Explainations"
+            ]
+
+        result = []
+        
+        for name in dir(self):
+            if callable(name) or name.startswith("_") \
+                or name.startswith("add_") or name.startswith("save_") or name.startswith("as_"):
+                pass # skip
+            elif name in reserved:
+                pass # skip    
+            else:
+                result.append(name)
+        
+        return result
+            
     def save_to_json(self, filename):
         save_to_json(self, filename)
 
+    def save_to_sql(self, db):
+        # id = save_to_sql(DBWikiData)
+        SQLWriteDB( db, self )
+        pass
+
     def as_json(self):
         return json.dumps(self, cls=ItemClassEncoder, sort_keys=False, indent=4, ensure_ascii=False)
+        
+    def __repr__(self):
+        return "ItemClass("+self.LabelName+")"
 
 
 class ItemClassEncoder(json.JSONEncoder):
@@ -85,6 +121,8 @@ def convert(page, lang):
     id_       = str(page.id)
     label     = page.labels.get(lang, None)
     aliases   = page.aliases.get(lang, [])
+    aliases   = [ str(a.encode('utf-16', 'surrogatepass').decode('utf-16').encode('utf-8')) for a in aliases ] # decode surrogates: '\ud83c\udde7\ud83c\uddea'
+    
     wikipedia = "https://en.wikipedia.org/wiki/" + page.getSitelink('enwiki')
     
     # description
@@ -146,11 +184,15 @@ def convert(page, lang):
     
     #
     # https://www.wikidata.org/wiki/Special:EntityData/Q300918.json
-    w.Id = id_
     w.LabelName = label
+    w.CodeInWiki = id_
     w.LanguageCode = lang
     w.Description = desc
-    w.AlsoKnownAs = aliases
+    w.AlsoKnownAs1 = aliases[0] if len(aliases) > 0 else None
+    w.AlsoKnownAs2 = aliases[1] if len(aliases) > 1 else None
+    w.AlsoKnownAs3 = aliases[2] if len(aliases) > 2 else None
+    w.AlsoKnownAs4 = aliases[3] if len(aliases) > 3 else None
+    w.AlsoKnownAs5 = aliases[4] if len(aliases) > 4 else None
     w.SelfUrl = "https://www.wikidata.org/wiki/" + id_
     w.WikipediaURL = wikipedia
     w.DescriptionUrl = description_url
@@ -298,17 +340,16 @@ def run(outfile, lang="en"):
     repo = site.data_repository()
     repo._simple_request = DumpWrapperFactory
 
-    print("Result in the:", outfile)
+    log_wikidata.info("Result in the: %s", outfile)
 
     with requests.get('https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2', stream=True) as req:
-      with bz2.open(req.raw, "r") as fin:
+      with bz2.open(req.raw, "rt", encoding="utf-8") as fin:
         with open(outfile, "w", encoding="utf-8") as fout:
             fout.write("[\n")
 
             try:
                 for i, data in enumerate(ijson.items(fin, "item")):
                     try:
-                        print(i, data["id"])
                         data.update({"pageid":1,"ns":0,"title":data["id"],"lastrevid":931882328,"modified":"2019-05-03T10:37:50Z"})
                         dump_wrapper.dumpdata = {data["id"]:data}
                         item = pywikibot.ItemPage(repo, data["id"])
@@ -317,20 +358,24 @@ def run(outfile, lang="en"):
                         words = convert(item, lang)
                         
                         for w in words:
+                            log_wikidata.info(w.LabelName)
                             js = w.as_json()
                             
                             if i == 0: 
-                                fout.write(js.encode('utf-16','surrogatepass').decode('utf-16'))
+                                fout.write(js)
                             else:
                                 fout.write(",\n")
-                                fout.write(js.encode('utf-16','surrogatepass').decode('utf-16'))
+                                fout.write(js)
+                                
+                            sql.SQLWriteDB(sql.DBWikiData, {data["id"]:words})
+
                                 
                     except pywikibot.exceptions.NoPage:
-                        print("no page... [SKIP]")
+                        log_wikidata.warn("no page... [SKIP]")
                         pass
             
             except ijson.common.IncompleteJSONError:
-                print("unexpected end of file")
+                log_wikidata.error("unexpected end of file")
                 pass         
                 
             fout.write("\n]\n")
@@ -338,4 +383,7 @@ def run(outfile, lang="en"):
 
 if __name__ == "__main__":
     run("./wikidict-out.json", "fr")
+
+
+# aéroport de Berlin-Tegel -  Compressed file ended before the end-of-stream marker was reached
 

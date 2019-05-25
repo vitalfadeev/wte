@@ -124,7 +124,6 @@ class Word:
     Main word class.
     Here stored info about word.
     """
-
     def __init__(self):
         self.LabelName = ""  #
         self.LabelType = None  #
@@ -315,7 +314,7 @@ class Word:
             
     def get_fields(self):
         reserved = [
-            'get_fields', 'add_explaniation', 
+            "sql_table", 'get_fields', 'add_explaniation', 
             'add_related', 'add_synonym', 'add_translation', 'clone', 
             'save_to_json', 'save_to_pickle', "Excpla", "Explainations"
             ]
@@ -611,7 +610,7 @@ class XMLParser:
         """
         if self.inpage:
             if tag == "page":
-                self.page_callback(self.lang, self.title, self.text, self.limit, self.is_save_txt, self.is_save_json, self.is_save_xml)
+                self.page_callback(self.lang, self.title, self.text, self.limit, self.is_save_txt, self.is_save_json, self.is_save_xml, self.is_save_templates)
                 self.inpage = False
 
             elif tag == "title":
@@ -620,7 +619,7 @@ class XMLParser:
             elif tag == "text":
                 self.intext = False
 
-    def parse(self, file_stream, page_callback, lang="en", limit=10, is_save_txt=False, is_save_json=False, is_save_xml=False):
+    def parse(self, file_stream, page_callback, lang="en", limit=10, is_save_txt=False, is_save_json=False, is_save_xml=False, is_save_templates=False):
         """
         Parse xml stream 'file_stream', and run callback 'page_callback'
 
@@ -635,6 +634,7 @@ class XMLParser:
         self.is_save_txt = is_save_txt
         self.is_save_json = is_save_json
         self.is_save_xml = is_save_xml
+        self.is_save_templates = is_save_templates
 
         log.info("Processing...")
         self._parser.ParseFile(file_stream)
@@ -683,15 +683,15 @@ def get_label_type(expl):
         return ""
 
 
-def preprocess(lang, callback, limit=0, is_save_txt=False, is_save_json=False):
+def preprocess(lang, callback, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False):
     dump_file = download(lang)
     
     with bz2.open(dump_file, "r") as xml_stream:
         parser = XMLParser()
-        parser.parse(xml_stream, callback, lang=lang, limit=limit, is_save_txt=is_save_txt, is_save_json=is_save_json) # call process() here
+        parser.parse(xml_stream, callback, lang=lang, limit=limit, is_save_txt=is_save_txt, is_save_json=is_save_json, is_save_templates=is_save_templates) # call process() here
 
 
-def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, is_save_xml=False):
+def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, is_save_xml=False, is_save_templates=False):
     log.info("process(%s, %s)", lang, label)
     
     # setup context
@@ -712,10 +712,11 @@ def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, 
 
     # process
     tree  = phase1(text)
-    tree  = phase2(tree)
+    tree  = phase2(lang, tree)
+    #wikoo.dump(tree, 0, (Section, Li))
 
     # debug. save tmplates and sections
-    if 0:
+    if is_save_templates:
         for s in tree.find_objects(Section, recursive=True):
             for t in s.find_objects(Template, recursive=True, exclude=Section):
                 helpers.add_template(s, t)
@@ -740,11 +741,12 @@ def phase1(text):
     return tree
     
 
-def phase2(tree):
+def phase2(lang, tree):
     log.debug("phase2()")
+    lang_module = importlib.import_module(lang)
 
     tree = wikoo.pack_lists(tree)
-    tree = wikoo.pack_sections(tree)
+    tree = wikoo.pack_sections(tree, lang_module.section_templates)
     return tree
 
 
@@ -1038,7 +1040,7 @@ def one_file(lang, label):
     log.info("Done!")
 
 
-def mainfunc(lang="en", limit=0, is_save_txt=False, is_save_json=False):
+def mainfunc(lang="en", limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False):
     # prepare:
     #   in: lang
     #      - download
@@ -1089,4 +1091,4 @@ def mainfunc(lang="en", limit=0, is_save_txt=False, is_save_json=False):
     #     - save to json
     #     - save to sql
     #
-    preprocess(lang, process, limit, is_save_txt, is_save_json) # next code in process()
+    preprocess(lang, process, limit, is_save_txt, is_save_json, is_save_templates) # next code in process()

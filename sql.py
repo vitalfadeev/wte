@@ -4,18 +4,21 @@
 import sqlite3
 import json
 import wte
+import wikidict_convertor
 
 
 DBWikictionary = sqlite3.connect("Wikictionary.db")
+DBWikiData = sqlite3.connect("WikiData.db")
 
 
 def get_new_id(DB):
     c = DB.cursor()
+    sql_table = "wikictionary" if DB == DBWikictionary else "wikidata"
 
     sql = """
     SELECT max(id) as id 
-      FROM wikictionary
-    """
+      FROM {}
+    """.format(sql_table)
 
     c.execute(sql)
     rows = c.fetchall()
@@ -77,12 +80,60 @@ def SQLInitDB():
     c.execute(sql)
     
     # indexes
-    
+
+
+    sql = """
+    CREATE TABLE IF NOT EXISTS wikidata (
+        id              BIGINT,
+        LabelName       text,
+        CodeInWiki      text,
+        LanguageCode    text,
+        Description     text,
+        AlsoKnownAs1    text,
+        AlsoKnownAs2    text,
+        AlsoKnownAs3    text,
+        AlsoKnownAs4    text,
+        AlsoKnownAs5    text,
+        SelfUrl         text,
+        WikipediaURL    text,
+        DescriptionUrl  text,        
+        Instance_of     text,
+        Subclass_of     text,
+        Part_of         text,
+        Translation_EN  text,    
+        Translation_FR  text,
+        Translation_DE  text,
+        Translation_IT  text,
+        Translation_ES  text,
+        Translation_RU  text,
+        Translation_PT  text
+    ) 
+    """
+
+    c = DBWikiData.cursor()
+    c.execute(sql)
+
+    # indexes
+    # index
+    #PrimaryIndex
+    #LabelName
+    #CodeInWiki(like
+    #Q300918)
+    #LanguageCode(EN, FR,…)
+    #AlsoKnownAs1
+    #AlsoKnownAs2
+    #AlsoKnownAs3
+    #AlsoKnownAs4
+    #AlsoKnownAs5
+
 
 def SQLWriteDB( DB, worddict ):
     """
-    SQLReadDB( DBWikictionary, {"cat":[Word, Word, Word]} )
+    SQLWriteDB( DBWikictionary, {label:[word, word,...]} )
     """
+    sql_table = "wikictionary" if DB == DBWikictionary else "wikidata"
+    cls_encoder = wikidict_convertor.ItemClassEncoder if DB == DBWikiData else wte.WordsEncoder
+
     # prepare    
     for label, words in worddict.items():
         for word in words:
@@ -98,9 +149,12 @@ def SQLWriteDB( DB, worddict ):
             for name in word.get_fields():
                 value = getattr(word, name)
                 
-                if value:                
+                if value:
+                    # list to JSON                    
                     if isinstance(value, list):
-                        value = json.dumps(value, cls=wte.WordsEncoder, sort_keys=False, indent=4, ensure_ascii=False)
+                        value = json.dumps(value, cls=cls_encoder, sort_keys=False, indent=4, ensure_ascii=False)
+                    elif isinstance(value, dict):
+                        value = json.dumps(value, cls=cls_encoder, sort_keys=False, indent=4, ensure_ascii=False)
                     
                     fields.append(name)
                     values.append(value)
@@ -109,12 +163,15 @@ def SQLWriteDB( DB, worddict ):
             # insert
             c = DB.cursor()
             sql = """
-            INSERT INTO wikictionary 
+            INSERT INTO {}
                 ({})
                 VALUES
                 ({})
-            """.format(",".join(fields), ",".join(placeholders))
-            #print(sql)
+            """.format(
+                sql_table, 
+                ",".join(fields), 
+                ",".join(placeholders)
+                )
             c.execute(sql, values)
             
         DB.commit()
@@ -124,6 +181,8 @@ def SQLReadDB( DB, DictSearch ):
     """
     rows = SQLReadDB( DBWikictionary, {"id":1, "LabelName":"cat", "Type":"noun"} )
     """
+    sql_table = "wikictionary" if DB == DBWikictionary else "wikidata"
+    
     fields = []
     placeholders = []
     values = []
@@ -139,43 +198,63 @@ def SQLReadDB( DB, DictSearch ):
 
     sql = """
     SELECT * 
-      FROM wikictionary 
+      FROM {}
      WHERE 
         {}
-    """.format( ",".join(expressions) )
+    """.format( 
+        sql_table,
+        ",".join(expressions) 
+        )
 
     c.execute(sql, values)
     rows = c.fetchall()
 
     result = []
 
-    for row in rows:
-        import wte
-        import json
-        word = wte.Word()
+    if DB == DBWikictionary:
+        for row in rows:
+            import wte
+            import json
+            word = wte.Word()
 
-        for idx, col in enumerate(c.description):
-            cname = col[0]
-            cvalue = row[idx]
+            for idx, col in enumerate(c.description):
+                cname = col[0]
+                cvalue = row[idx]
 
-            if cvalue and  cname in ("Synonymy", "Antonymy",
-                                     "Hypernymy", "Hyponymy", "Meronymy", "Holonymy",
-                                     "Troponymy", "Otherwise", "AlternativeFormsOther",
-                                     "RelatedTerms", "Coordinate", "Translation_EN",
-                                     "Translation_FR", "Translation_DE", "Translation_IT",
-                                     "Translation_ES", "Translation_RU", "Translation_PT"):
-                cvalue = json.loads(cvalue)
+                if cvalue and  cname in ("Synonymy", "Antonymy",
+                                         "Hypernymy", "Hyponymy", "Meronymy", "Holonymy",
+                                         "Troponymy", "Otherwise", "AlternativeFormsOther",
+                                         "RelatedTerms", "Coordinate", "Translation_EN",
+                                         "Translation_FR", "Translation_DE", "Translation_IT",
+                                         "Translation_ES", "Translation_RU", "Translation_PT"):
+                    cvalue = json.loads(cvalue)
 
-            setattr(word, cname, cvalue)
+                setattr(word, cname, cvalue)
 
-        result.append(word)
+            result.append(word)
+
+    else:
+        for row in rows:
+            import wikidict_convertor
+            import json
+            word = wikidict_convertor.ItemClass()
+
+            for idx, col in enumerate(c.description):
+                cname = col[0]
+                cvalue = row[idx]
+
+                if cvalue and  cname in ("DescriptionUrl",
+                                         "Instance_of", "Subclass_of", "Part_of"):
+                    cvalue = json.loads(cvalue)
+
+                setattr(word, cname, cvalue)
+
+            result.append(word)
 
     return result
     
 
 """
-DBWikiData = sqlite3.connect("WikiData.db")
-
 PrimaryIndex  (long integer start at 10^7) * 3 
 LabelName
 CodeInWiki (like Q300918)

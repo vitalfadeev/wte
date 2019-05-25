@@ -11,6 +11,7 @@ from helpers import merge_two_dicts, check_flag
 # This dictionary maps section titles in articles to parts-of-speech.  There
 # is a lot of variety and misspellings, and this tries to deal with those.
 lang_sections = ["french",  "{{-fr-}}", "{{langue|fr}}", "langue"]
+section_templates = []
 
 # Type of speech sections
 tos_sections = {
@@ -608,9 +609,9 @@ singular_flags = [
 ]
 
 plural_flags = [
-    "singular",
-    "singulière",
-    "singulier"
+    "plural",
+    "plurielle",
+    "pluriel"
 ]
 
 present_flags = [
@@ -828,6 +829,8 @@ def try_well_formed_structure(tree, label, language):
             name = t.name
             lang = t.arg(0)
             if name:
+                name = name.lower() if name else name
+                lang = lang.lower() if lang else lang
                 yield(lang, name)
                 
     def is_lang_section_templated(sec):
@@ -855,6 +858,8 @@ def try_well_formed_structure(tree, label, language):
             name = t.arg(0)
             lang = t.arg(1)
             if name:
+                name = name.lower() if name else name
+                lang = lang.lower() if lang else lang
                 yield(lang, name)
                 
     def is_tos_section_templated(sec):
