@@ -165,6 +165,24 @@ class Container:
             if isinstance(child, Li):
                 yield child
 
+    def find_terms(self, in_links=False, in_templates=None, lang_keys=None, term_keys=None):
+        """
+        for (lang, term) in section.find_terms(in_links=True, tnames=["syn"], lang_keys=["lang", 1], term_keys=[0]):
+            print ( lang, term )
+        """
+        # case 1: [[...]]
+        if in_links:
+            for link in self.find_objects(Link, recursive=True):
+                term = link.get_text()
+                yield (None, term)
+
+        # case 2: {{tname|en|term}}
+        if in_templates:
+            for t in self.find_objects(Template, recursive=True):
+                if t.has_name(in_templates):
+                    for (lang, term) in t.find_terms(lang_keys, term_keys):
+                        yield (lang, term)
+
     def __repr__(self):
         return "Container()"
 
@@ -184,22 +202,22 @@ class Template(Container):
 
         if isinstance(pos, int):
             # positional arg
-            if pos < len(args):
-                # OK
-                return args[pos].get_value()
+            i = 0
+            for a in args:
+                if a.get_name() is None:
+                    if pos == i:
+                        return args[pos].get_value() # OK
+                    i += 1
             else:
-                # FAIL
-                return None
+                return None # FAIL
 
         elif isinstance(pos, str):
             # named arg
             for a in args:
                 if a.get_name() == pos:
-                    # OK
-                    return a.get_value()
+                    return a.get_value() # OK
             else:
-                # FAIL
-                return None
+                return None # FAIL
 
         else:
             assert 0, "unsupported"
@@ -214,6 +232,36 @@ class Template(Container):
         if s is None:
             s = ""
         return s
+
+    def find_arg(self, lang_keys):
+        for k in lang_keys:
+            value = self.arg(k)
+            if value is not None:
+                yield value
+
+    def find_terms(self, lang_keys, term_keys):
+        """
+        for (lang, term) in t.find_terms(lang_keys, term_keys):
+            yield (lang, term)
+        """
+        # find first valid lang
+        lang = None
+        for l in self.find_arg(lang_keys):
+            lang = l
+            break
+
+        # find all terms
+        for term in self.find_arg(term_keys):
+            yield (lang, term)
+
+    def has_name(self, names):
+        if isinstance(names, (list, tuple)):
+            if self.name in names:
+                return True
+        elif self.name == names:
+            return True
+
+        return False
 
     def __repr__(self):
         return "Template(" + self.name + ")"
@@ -331,31 +379,6 @@ class Section(Container):
         self.level = 0
         self.header = None
         self.name = ""
-        
-    def has_name(self, expected_name, expected_lang=None):
-        # case 1: .name
-        if self.name == expected_name:
-            return True
-            
-        # case 2: templated
-        if self.header:
-            for t in self.header.find_objects(Template, recursive=True):
-                # case 2.1: {{expected_name}}
-                if t.name == expected_name:
-                    return True
-                    
-                # case 2.2: {{s|expected_name}}
-                a1 = t.arg(0)
-                if a1 and a1.strip().slower() == expected_name:
-                    # test lang
-                    if expected_lang:
-                        lang = t.arg(1)
-                        if lang is None:
-                            return True
-                        else:
-                            if lang == expected_lang:
-                                return True        
-        return False
 
     def __repr__(self):
         return "Section(" + self.name + ", level:" + str(self.level) + ")"
@@ -1762,7 +1785,7 @@ def get_header_level(header):
         assert 0, "unsupported header"
 
 
-def pack_sections(root, section_templates=None):
+def pack_sections(root, section_templates=None, levels=None, default_level=4, update_section_name_callback=None):
     # build tree by levels
 
     # subsections
@@ -1811,10 +1834,11 @@ def pack_sections(root, section_templates=None):
         
             # find next same level or higher
             section = Section()
-            section.level = 4 # hardcoded
+            section.name = e.name
+            update_section_name_callback(section)
+            section.level = levels.get(section.name, default_level) # hardcoded
             section.header = header
             #section.name = header.get_text().strip().lower()
-            section.name = e.name
 
             section.add_child(header)
 
@@ -1841,7 +1865,7 @@ def pack_sections(root, section_templates=None):
             parent.add_child(e)
             
         # recursive 
-        pack_sections( e )
+        pack_sections( e, section_templates, levels, default_level, update_section_name_callback )
             
     # return new tree
     return top_section

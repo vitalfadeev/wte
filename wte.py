@@ -176,81 +176,92 @@ class Word:
         self.ExplainationTxt = txt
     
     def add_conjugation(self, lang, term):
-        if self.Conjugation is None:
-            self.Conjugation = [ term ]
-        else:
-            if term not in self.Conjugation:
-                self.Conjugation.append( term )
+        if term:
+            if self.Conjugation is None:
+                self.Conjugation = [ term ]
+            else:
+                if term not in self.Conjugation:
+                    self.Conjugation.append( term )
     
     def add_synonym(self, lang, term):
-        if self.Synonymy is None:
-            self.Synonymy = [ term ]
-        else:
-            if term not in self.Synonymy:
-                self.Synonymy.append( term )
+        if term:
+            if self.Synonymy is None:
+                self.Synonymy = [ term ]
+            else:
+                if term not in self.Synonymy:
+                    self.Synonymy.append( term )
     
     def add_antonym(self, lang, term):
-        if self.Antonymy is None:
-            self.Antonymy = [ term ]
-        else:
-            if term not in self.Antonymy:
-                self.Antonymy.append( term )
+        if term:
+            if self.Antonymy is None:
+                self.Antonymy = [ term ]
+            else:
+                if term not in self.Antonymy:
+                    self.Antonymy.append( term )
     
     def add_hypernym(self, lang, term):
-        if self.Hypernymy is None:
-            self.Hypernymy = [ term ]
-        else:
-            if term not in self.Hypernymy:
-                self.Hypernymy.append( term )
+        if term:
+            if self.Hypernymy is None:
+                self.Hypernymy = [ term ]
+            else:
+                if term not in self.Hypernymy:
+                    self.Hypernymy.append( term )
     
     def add_hyponym(self, lang, term):
-        if self.Hyponymy is None:
-            self.Hyponymy = [ term ]
-        else:
-            if term not in self.Hyponymy:
-                self.Hyponymy.append( term )
+        if term:
+            if self.Hyponymy is None:
+                self.Hyponymy = [ term ]
+            else:
+                if term not in self.Hyponymy:
+                    self.Hyponymy.append( term )
     
     def add_meronym(self, lang, term):
-        if self.Meronymy  is None:
-            self.Meronymy = [ term ]
-        else:
-            if term not in self.Meronymy:
-                self.Meronymy.append( term )
+        if term:
+            if self.Meronymy  is None:
+                self.Meronymy = [ term ]
+            else:
+                if term not in self.Meronymy:
+                    self.Meronymy.append( term )
     
     def add_holonym(self, lang, term):
-        if self.Holonymy  is None:
-            self.Holonymy = [ term ]
-        else:
-            if term not in self.Holonymy:
-                self.Holonymy.append( term )
+        if term:
+            if self.Holonymy  is None:
+                self.Holonymy = [ term ]
+            else:
+                if term not in self.Holonymy:
+                    self.Holonymy.append( term )
     
     def add_troponym(self, lang, term):
-        if self.Troponymy is None:
-            self.Troponymy = [ term ]
-        else:
-            if term not in self.Troponymy:
-                self.Troponymy.append( term )
+        if term:
+            if self.Troponymy is None:
+                self.Troponymy = [ term ]
+            else:
+                if term not in self.Troponymy:
+                    self.Troponymy.append( term )
     
     def add_alternative_form(self, lang, term):
-        if self.AlternativeFormsOther is None:
-            self.AlternativeFormsOther = [ term ]
-        else:
-            if term not in self.AlternativeFormsOther:
-                self.AlternativeFormsOther.append( term )
+        if term:
+            if self.AlternativeFormsOther is None:
+                self.AlternativeFormsOther = [ term ]
+            else:
+                if term not in self.AlternativeFormsOther:
+                    self.AlternativeFormsOther.append( term )
     
     def add_related(self, lang, term):
-        if self.RelatedTerms is None:
-            self.RelatedTerms = [ term ]
-        else:
-            if term not in self.RelatedTerms:
-                self.RelatedTerms.append( term )
+        if term:
+            if self.RelatedTerms is None:
+                self.RelatedTerms = [ term ]
+            else:
+                if term not in self.RelatedTerms:
+                    self.RelatedTerms.append( term )
     
     def add_coordinate(self, lang, term):
-        if self.Coordinate is None:
-            self.Coordinate = [ term ]
-        else:
-            if term not in self.Coordinate:
-                self.Coordinate.append( term )
+        if term:
+            if self.Coordinate is None:
+                self.Coordinate = [ term ]
+            else:
+                if term not in self.Coordinate:
+                    self.Coordinate.append( term )
     
     def add_translation(self, lang, term):
         # validate
@@ -713,7 +724,8 @@ def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, 
     # process
     tree  = phase1(text)
     tree  = phase2(lang, tree)
-    #wikoo.dump(tree, 0, (Section, Li))
+    #wikoo.dump(tree, 0, (Section, Li, wikoo.Header))
+    #exit(4)
 
     # debug. save tmplates and sections
     if is_save_templates:
@@ -745,8 +757,30 @@ def phase2(lang, tree):
     log.debug("phase2()")
     lang_module = importlib.import_module(lang)
 
+    levels = {}
+    for k, v in lang_module.tos_sections.items():
+        for s in v:
+            levels[s] = 3
+    for s in lang_module.lang_sections:
+        levels[s] = 2
+
+    # update section names. {{s|noun}} -> noun
+    def update_section_name_callback(section):
+        if section.header:
+            for t in section.header.find_objects(Template, recursive=False):
+                if t.name in lang_module.section_name_templates:
+                    newname = lang_module.section_name_templates[t.name](t)
+                    if newname:
+                        newname = newname.strip().lower()
+                        if newname:
+                            section.name = newname
+                            break
+
+                elif t.name in lang_module.section_templates:
+                    section.name = t.name
+
     tree = wikoo.pack_lists(tree)
-    tree = wikoo.pack_sections(tree, lang_module.section_templates)
+    tree = wikoo.pack_sections(tree, lang_module.section_templates, levels, 4, update_section_name_callback)
     return tree
 
 
@@ -812,6 +846,8 @@ def phase3(lang, tree, label):
     log.debug("phase3(%s, %s)", lang, label)
 
     mined = tree
+    #wikoo.dump(tree, 0, (Section, Li, wikoo.Header))
+    #exit(9)
     
     lang_module = importlib.import_module(lang)
     words = lang_module.try_well_formed_structure(tree, label, lang)
@@ -997,10 +1033,72 @@ def phase4(lang, mined, label):
 def postprocess(words, label):
     flag = None
     if words:
+        for i, word in enumerate(words):
+            print_table_record(word, print_header=(i==0))
         import sql
         sql.SQLWriteDB( sql.DBWikictionary, {label:words} )
     return flag
 
+
+def print_table_record(word, print_header=False):
+    attrs = [
+        "LabelName",
+        "LabelType",
+        "LanguageCode",
+        "Type",
+        "ExplainationRaw",
+        "ExplainationTxt",
+        #"ExplainationExamplesRaw",
+        #"ExplainationExamplesTxt",
+        "IsMale",
+        "IsFeminine",
+        "IsSingle",
+        "IsPlural",
+        "SingleVariant",
+        "PluralVariant",
+        "MaleVariant",
+        "FemaleVariant",
+        "IsVerbPast",
+        "IsVerbPresent",
+        "IsVerbFutur",
+        "Conjugation",
+        "Synonymy",
+        "Antonymy",
+        "Hypernymy",
+        "Hyponymy",
+        "Meronymy",
+        "Holonymy",
+        "Troponymy",
+        "Otherwise",
+        "AlternativeFormsOther",
+        "RelatedTerms",
+        "Coordinate",
+        "Translation_EN",
+        "Translation_FR",
+        "Translation_DE",
+        "Translation_IT",
+        "Translation_ES",
+        "Translation_RU",
+        "Translation_PT",
+    ]
+    header = []
+    if print_header:
+        for a in attrs:
+            s = ""
+            for c in a:
+                if c.isalpha() and c == c.upper():
+                    s += c
+                    if len(s) >= 1:
+                        break
+            header.append(s.rjust(2))
+        log.info(" ".join(header))
+
+    row = []
+    for a in attrs:
+        value = getattr(word, a)
+        s = str(len(value)) if isinstance(value, (list, dict, tuple)) else ('*' if value else '-')
+        row.append(s.rjust(2))
+    log.info(" ".join(row))
 
 def one_file(lang, label):
     """
@@ -1017,9 +1115,6 @@ def one_file(lang, label):
     # parse
     log.info("Parsing")
     words = process(lang, label, text)
-
-    # postprocess
-    flag  = postprocess(words, label)
 
     # pack
     treemap = TreeMap()

@@ -10,7 +10,14 @@ from helpers import merge_two_dicts, check_flag
 
 # This dictionary maps section titles in articles to parts-of-speech.  There
 # is a lot of variety and misspellings, and this tries to deal with those.
+languages = ["fr", "french"]
 lang_sections = ["french",  "{{-fr-}}", "{{langue|fr}}", "langue"]
+section_name_templates = {
+    's': lambda t: t.arg(0) if t.arg(1) is None or t.arg(1).lower().strip() in languages else None,
+    'langue': lambda t: t.arg(0),
+    'sprache': lambda t: t.arg(0),
+    'wortart': lambda t: t.arg(0) if t.arg(1) is None or t.arg(1).lower().strip() in languages else None,
+}
 section_templates = []
 
 # Type of speech sections
