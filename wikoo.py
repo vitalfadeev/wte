@@ -49,6 +49,8 @@
 
 import xml.parsers.expat
 import re
+from collections.abc import Iterable
+from itertools import islice
 
 from loggers import log, log_non_english, log_no_words, log_unsupported
 from helpers import get_contents, is_ascii
@@ -79,14 +81,17 @@ class Container:
         self.parent = None
         self.raw = ""
 
-    def add_child(self, child):
+    def add_child(self, child, before=None):
         # add. keep ordered
         if child.parent is not None:
             child.parent.remove_child(child)
 
         child.parent = self
 
-        self.childs.append(child)
+        if before:
+            self.childs.insert(self.childs.index(before), child)
+        else:
+            self.childs.append(child)
 
     def remove_child(self, child):
         try: self.childs.remove(child)
@@ -104,34 +109,47 @@ class Container:
     def get_raw(self):
         return self.raw
 
-    def find_objects(self, cls, recursive=False, exclude=None):
+    def has_object(self, cls, recursive=False, exclude=None):
         for c in self.childs:
             if isinstance(c, cls):
                 if exclude is None or not isinstance(c, exclude):
-                    yield c
+                    return True
 
             if recursive:
                 if exclude is None or not isinstance(c, exclude):
-                    for obj in c.find_objects(cls, recursive):
-                        yield obj
+                    is_has = c.has_object(cls, recursive)
+                    if is_has:
+                        return True
 
-    def find_section(self, name, recursive=False):
-        for section in self.find_objects(Section, recursive):
-            if section.has_name(name):
-                yield section
+    def find_objects(self, cls, recursive=False, exclude=None):
+        for c in self.childs:
+            if isinstance(c, cls):
+                if (exclude is None) or (c not in exclude):
+                    yield c
 
-    def find_top_objects(self, cls, callback):
+            if recursive:
+                if (exclude is None) or (c not in exclude):
+                    yield from c.find_objects(cls, recursive, exclude)
+
+    # def find_section(self, name, recursive=False):
+        # for section in self.find_objects(Section, recursive):
+            # if section.has_name(name):
+                # yield section
+
+    def find_top_objects(self, cls, callback, exclude=None, recursive=True):
         for c in self.childs:
             is_found = False
             
             if isinstance(c, cls):
-                if callback(c):
-                    is_found = True
-                    yield c
+                if exclude is None or c not in exclude:
+                    if callback(c):
+                        is_found = True
+                        yield c
 
-            if not is_found:
-                for obj in c.find_top_objects(cls, callback):
-                    yield obj
+            if recursive:
+                if not is_found:
+                    if exclude is None or c not in exclude:
+                        yield from c.find_top_objects(cls, callback, exclude, recursive)
 
     def find_until(self, cls, recursive=False):
         for c in self.childs:
@@ -160,10 +178,10 @@ class Container:
                             # OK
                             yield obj
 
-    def get_explainations(self):
-        for child in self.childs:
-            if isinstance(child, Li):
-                yield child
+    # def get_explainations(self):
+        # for child in self.childs:
+            # if isinstance(child, Li):
+                # yield child
 
     def find_terms(self, in_links=False, in_templates=None, lang_keys=None, term_keys=None):
         """
@@ -194,31 +212,25 @@ class Article(Container):
 
 class Template(Container):
     def args(self):
-        for a in self.find_objects(Arg):
-            yield a
+        yield from self.find_objects(Arg)
+
+    def positional_args(self):
+        yield from filter(lambda a: a.name is None, self.args())
 
     def arg(self, pos):
-        args = list( self.args() )
-
         if isinstance(pos, int):
             # positional arg
-            i = 0
-            for a in args:
-                if a.get_name() is None:
-                    if pos == i:
-                        return args[pos].get_value() # OK
-                    i += 1
-            else:
-                return None # FAIL
+            a = next( islice( self.positional_args(), pos, None ), None )
+            return a.get_value() if a else None
 
         elif isinstance(pos, str):
             # named arg
-            for a in args:
-                if a.get_name() == pos:
-                    return a.get_value() # OK
-            else:
-                return None # FAIL
+            a = next( filter(lambda a: a.name == pos, self.args()), None )
+            return a.get_value() if a else None
 
+        elif pos is None:
+            return None
+        
         else:
             assert 0, "unsupported"
 
@@ -228,9 +240,7 @@ class Template(Container):
         #return "{{" + "|".join( items ) + "}}"
         s = self.arg(1)
         if s is None:
-            s = self.arg(0)
-        if s is None:
-            s = ""
+            s = self.name
         return s
 
     def find_arg(self, lang_keys):
@@ -255,11 +265,12 @@ class Template(Container):
             yield (lang, term)
 
     def has_name(self, names):
-        if isinstance(names, (list, tuple)):
+        if isinstance(names, str):
+            if self.name == names:
+                return True
+        if isinstance(names, Iterable):
             if self.name in names:
                 return True
-        elif self.name == names:
-            return True
 
         return False
 
@@ -316,7 +327,7 @@ class Header(Container):
         self.level = 0
 
     def __repr__(self):
-        return "Header(" + self.get_text() + ")"
+        return "Header( '" + self.name + "', " + str(self.level) + " )"
 
 # class H1(Header):
     # def __repr__(self):
@@ -373,6 +384,26 @@ class LiUnordered(Li):
     def __repr__(self):
         return "LiUnordered()"
 
+class Dl(Container):
+    def __init__(self, *args, **kvargs):
+        super().__init__(*args, **kvargs)
+        self.dt = Dt()
+        self.dd = Dd()
+
+    def get_text(self):
+        return self.dt.get_text() + ' ' + self.dd.get_text()
+
+    def __repr__(self):
+        return "Dl()"
+
+class Dt(Container):
+    def __repr__(self):
+        return "Dt()"
+
+class Dd(Container):
+    def __repr__(self):
+        return "Dd()"
+
 class Section(Container):
     def __init__(self, *args, **kvars):
         super().__init__(*args, **kvars)
@@ -381,7 +412,7 @@ class Section(Container):
         self.name = ""
 
     def __repr__(self):
-        return "Section(" + self.name + ", level:" + str(self.level) + ")"
+        return "Section('" + self.name + "', " + str(self.level) + ")"
 
 class Arg(Container):
     def get_name(self):
@@ -389,7 +420,7 @@ class Arg(Container):
         eqpos = text.find("=")
 
         if eqpos != -1:
-            return text[:eqpos].strip()
+            return text[:eqpos].strip().lower()
         else:
             return None
 
@@ -427,12 +458,16 @@ class Mined(Container):
 
 def dump(root, level=0, types=None):
     #print( "  "*level, root, ":", root.raw.replace("\n", "\\n"))
-    print( "  "*level, root, ":")
+    print( "  "*level, root)
     #print( "  "*level, root, ":", root.get_text().replace("\n", "\\n"))
 
     for child in root.childs:
-        if types and isinstance(child, types):
+        if types:
+            if isinstance(child, types):
+                dump(child, level+1, types)
+        else:
             dump(child, level+1, types)
+
 
 def dump_sections(root, level=0):
     dump(root, level=0, types=(Section))
@@ -502,6 +537,9 @@ class NotLink(Exception): None
 class NotLinkArg(Exception): None
 class NotHeader(Exception): None
 class NotList(Exception): None
+class NotDl(Exception): None
+class NotDt(Exception): None
+class NotDd(Exception): None
 
 
 ###### HTML parsing ######
@@ -979,8 +1017,8 @@ def read_html(text, spos):
                                 return (epos, htmlobj.childs[0]) # OK
                             
                         else: 
-                            log.error("opened: %s", repr(opened))
-                            log.error("Closed tag '%s' without opened... [skip tag]", tag)
+                            log.debug("opened: %s", repr(opened))
+                            log.debug("Closed tag '%s' without opened... [skip tag]", tag)
 
                             if len(opened) == 0:
                                 #epos += len(">")
@@ -1014,8 +1052,11 @@ def read_html(text, spos):
                     
             except NotTag:
                 # character data
-                current.add_cdata(c)
-                i += 1
+                if current == htmlobj:
+                    raise NotHtml()
+                else:
+                    current.add_cdata(c)
+                    i += 1
                     
             except NotTemplate: 
                 # character data
@@ -1075,7 +1116,6 @@ def read_template_arg(text, spos):
     l = len(text)
     
     arg = Arg()
-    cdata = []
     
     while i < l:
         c = text[i]
@@ -1113,7 +1153,7 @@ def read_template_arg(text, spos):
                 # read Link
                 log.debug("read_template_arg(): read_link()")
                 (epos, link) = read_link(text, i)
-                arg.add_child( link)
+                arg.add_child( link )
                 i = epos
                 
             else:
@@ -1132,6 +1172,11 @@ def read_template_arg(text, spos):
             i += 1
 
         except NotHtml: 
+            # cdata
+            arg.add_cdata(c)
+            i += 1
+
+        except NotLink: 
             # cdata
             arg.add_cdata(c)
             i += 1
@@ -1157,12 +1202,14 @@ def read_template(text, spos):
         i += len("{{")
         
         template = Template()
+        argpos = 0
 
         # name
         try: 
             epos = read_template_name(text, i)
             name = text[i:epos]
             template.name = name.strip().lower()
+            template.name_raw = name
                 
             #
             while i < l:
@@ -1172,6 +1219,10 @@ def read_template(text, spos):
                     i += 1
                     log.debug("read_template(): read_template_arg()")
                     (epos, arg) = read_template_arg(text, i)
+                    arg.name = arg.get_name() # str | None
+                    #if arg.name is None:
+                    #    arg.name = str(argpos) # str(int)
+                    #    argpos += 1
                     template.add_child( arg )
                     i = epos
                     
@@ -1294,6 +1345,7 @@ def read_link(text, spos):
                     
                 elif text.startswith(']]', i):
                     epos = i + len(']]')
+                    link.raw = text[spos:epos]
                     return (epos, link) # OK
                 
                 else:
@@ -1516,7 +1568,218 @@ def read_list(text, spos):
         return (epos, li)
         
     raise NotList()
+
+
+###### Dl: dt dd ######
+def read_dt(text, spos=0):
+    i = spos
+    l = len(text)
+
+    if text.startswith("\n;", i):
+        i += len("\n;")
+        
+        dt = Dt()
+        current = dt
+        
+        while i < l:
+            c = text[i]
+            
+            try:
+                if c == ':':
+                    # end 
+                    epos = i
+                    current.raw = text[spos+len(":"):epos]
+                    return (epos, dt) # OK
+
+                elif c == '\n':
+                    # end 
+                    epos = i
+                    current.raw = text[spos+len("\n"):epos]
+                    return (epos, dt) # OK
+
+                elif text.startswith("<!--", i):
+                    # strip comment
+                    log.debug("read_dt(): read_html_comment()")
+                    (epos, comment) = read_html_comment(text, i)
+                    i = epos                
+                    
+                elif c == '<':
+                    # HTML
+                    log.debug("read_dt(): read_html()")
+                    (epos, html) = read_html(text, i)
+                    current.add_child(html)
+                    i = epos
+
+                elif text.startswith('{{', i):
+                    # Template
+                    log.debug("read_dt(): read_template()")
+                    (epos, template) = read_template(text, i)
+                    current.add_child(template)
+                    i = epos
+                
+                elif text.startswith('[[', i):
+                    # Link
+                    log.debug("read_dt(): read_link()")
+                    (epos, link) = read_link(text, i)
+                    current.add_child(link)
+                    i = epos
+                
+                else:
+                    # character data
+                    current.add_cdata(c)
+                    i += 1
+
+            except NotComment:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotHtml:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotTemplate:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotLink:
+                # character data
+                current.add_cdata(c)
+                i += 1
     
+            except NotList:
+                # character data
+                current.add_cdata(c)
+                i += 1    
+            
+    raise NotDt()
+
+
+def read_dd(text, spos=0):
+    i = spos
+    l = len(text)
+
+    if text.startswith(":", i):
+        i += len(":")
+
+        dd = Dd()
+        current = dd
+        
+        while i < l:
+            c = text[i]
+            
+            try:
+                if text.startswith("\n\n", i):
+                    # end of the block
+                    epos = i
+                    current.raw = text[spos+len("\n"):epos]
+                    return (epos, dd) # OK
+
+                elif c == '\n':
+                    # character data
+                    current.add_cdata(c)
+                    i += 1
+
+                elif text.startswith("<!--", i):
+                    # strip comment
+                    log.debug("read_dd(): read_html_comment()")
+                    (epos, comment) = read_html_comment(text, i)
+                    i = epos                
+                    
+                elif c == '<':
+                    # HTML
+                    log.debug("read_dd(): read_html()")
+                    (epos, html) = read_html(text, i)
+                    current.add_child(html)
+                    i = epos
+
+                elif text.startswith('{{', i):
+                    # Template
+                    log.debug("read_dd(): read_template()")
+                    (epos, template) = read_template(text, i)
+                    current.add_child(template)
+                    i = epos
+                
+                elif text.startswith('[[', i):
+                    # Link
+                    log.debug("read_dd(): read_link()")
+                    (epos, link) = read_link(text, i)
+                    current.add_child(link)
+                    i = epos
+                
+                else:
+                    # character data
+                    current.add_cdata(c)
+                    i += 1
+
+            except NotComment:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotHtml:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotTemplate:
+                # character data
+                current.add_cdata(c)
+                i += 1
+            
+            except NotLink:
+                # character data
+                current.add_cdata(c)
+                i += 1
+    
+            except NotList:
+                # character data
+                current.add_cdata(c)
+                i += 1                
+            
+    raise NotDd()
+
+
+def read_dl(text, spos=0):
+    i = spos
+    l = len(text)
+    
+    dl = Dl()
+
+    try:
+        if text.startswith("\n;", i):
+            (epos, dt) = read_dt(text, i)
+            dl.dt = dt
+            dl.add_child(dt)
+            i = epos
+            
+            while i < l:
+                if text.startswith(":", i):
+                    (epos, dd) = read_dd(text, i)
+                    dl.dd = dd
+                    dl.add_child(dd)
+                    i = epos
+                    
+                elif text.startswith("\n\n", i):
+                    epos = i
+                    dl.raw = text[spos+len('\n'):epos]
+                    return (epos, dl) # OK
+                    
+                else:
+                    i += 1
+                
+    except NotDt:
+        raise NotDl()
+        
+    except NotDd:
+        raise NotDl()
+           
+    epos = i
+    return (epos, dl) # FAIL
+
+read_dl( "\n;5: {{plm|cliente}} regular de una prostituta.\n\n", 0 ), 0, (Dl, Dt, Dd, Template, Link, Li, Html, String)
 
 ###### Text parsing ######
 def tagizer(text, spos=0):
@@ -1528,6 +1791,8 @@ def tagizer(text, spos=0):
         
     opened = []
     closed = []
+    
+    log.debug("%s", text[spos:40].replace("\n", "\\n"))
     
     while i < l:
         c = text[i]
@@ -1590,6 +1855,13 @@ def tagizer(text, spos=0):
                 current.add_child(li)
                 i = epos
             
+            elif text.startswith('\n;', i):
+                # Dl
+                log.debug("read_dl()")
+                (epos, li) = read_dl(text, i)
+                current.add_child(li)
+                i = epos
+            
             else:
                 # character data
                 current.add_cdata(c)
@@ -1615,7 +1887,17 @@ def tagizer(text, spos=0):
             current.add_cdata(c)
             i += 1
         
+        except NotList:
+            # character data
+            current.add_cdata(c)
+            i += 1
+        
         except NotHeader:
+            # character data
+            current.add_cdata(c)
+            i += 1
+        
+        except NotDl:
             # character data
             current.add_cdata(c)
             i += 1
@@ -1624,7 +1906,7 @@ def tagizer(text, spos=0):
     return (epos, root) # OK
     #raise NotParsed # FAIL
 
-assert repr(tagizer("<a>123</a>")) == "(10, Section(, level:0))"
+assert repr(tagizer("<a>123</a>")) == "(10, Section('', 0))"
 assert tagizer("<a>123</a>")[1].get_text() == "123"
 assert tagizer("<a> 123 </a>")[1].childs[0].childs[0].raw == " 123 "
 
@@ -1761,36 +2043,35 @@ res = pack_lists( res[1] )
 #print( res )
 
 
-def get_header_level(header):
-    if isinstance(header, Header):
-        return header.level
+# def get_header_level(header):
+    # if isinstance(header, Header):
+        # return header.level
         
-    elif isinstance(header, Html):
-        if header.name == "h1":
-            return 1
-        elif header.name == "h2":
-            return 2
-        elif header.name == "h3":
-            return 3
-        elif header.name == "h4":
-            return 4
-        elif header.name == "h5":
-            return 5
-        elif header.name == "h6":
-            return 6
-        elif header.name == "h7":
-            return 7
+    # elif isinstance(header, Html):
+        # if header.name == "h1":
+            # return 1
+        # elif header.name == "h2":
+            # return 2
+        # elif header.name == "h3":
+            # return 3
+        # elif header.name == "h4":
+            # return 4
+        # elif header.name == "h5":
+            # return 5
+        # elif header.name == "h6":
+            # return 6
+        # elif header.name == "h7":
+            # return 7
 
-    else:
-        assert 0, "unsupported header"
+    # else:
+        # assert 0, "unsupported header"
 
 
-def pack_sections(root, section_templates=None, levels=None, default_level=4, update_section_name_callback=None):
+def pack_sections(root):
     # build tree by levels
 
     # subsections
     top_section = root
-    top_section.level = 0
     parent = top_section
 
     # walk over childs and put to new sections tree
@@ -1803,42 +2084,9 @@ def pack_sections(root, section_templates=None, levels=None, default_level=4, up
         
             # find next same level or higher
             section = Section()
-            section.level = get_header_level(header)
+            section.level = header.level
             section.header = header
-            #section.name = header.get_text().strip().lower()
-            section.name = header.get_raw().strip().strip('=').strip().lower()
-
-            section.add_child(header)
-
-            if parent.level < section.level:
-                # child section
-                parent.add_child( section )
-                parent = section
-
-            elif parent.level == section.level:
-                # same level section
-                parent.parent.add_child( section )
-                parent = section
-
-            else:
-                # top section
-                # find parent
-                while parent.level >= section.level:
-                    parent = parent.parent
-
-                parent.add_child( section )
-                parent = section
-        
-        elif section_templates and isinstance(e, Template) and e.name in section_templates:
-            header = e
-        
-            # find next same level or higher
-            section = Section()
-            section.name = e.name
-            update_section_name_callback(section)
-            section.level = levels.get(section.name, default_level) # hardcoded
-            section.header = header
-            #section.name = header.get_text().strip().lower()
+            section.name = header.name.strip().strip('=').strip().lower()
 
             section.add_child(header)
 
@@ -1865,7 +2113,7 @@ def pack_sections(root, section_templates=None, levels=None, default_level=4, up
             parent.add_child(e)
             
         # recursive 
-        pack_sections( e, section_templates, levels, default_level, update_section_name_callback )
+        pack_sections( e )
             
     # return new tree
     return top_section

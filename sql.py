@@ -46,6 +46,7 @@ def SQLInitDB():
         IsMale          integer,
         IsFeminine      integer,
         IsSingle        integer,
+        IsNeutre        integer,
         IsPlural        integer,
         SingleVariant   text,
         PluralVariant   text,

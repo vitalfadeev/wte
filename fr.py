@@ -1,1079 +1,317 @@
-#!/usr/bin/python3
+# !/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from wte import Word, KEYS, WORD_TYPES, get_label_type
-from wikoo import Li, Template, Section, Link
+from wte import Word, KEYS, WORD_TYPES
+from wte import WORD_TYPES as wt
+from wikoo import Li, Template, Section, Link, String
 from loggers import log, log_non_english, log_no_words, log_unsupported
 from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_section_not_found
 from helpers import merge_two_dicts, check_flag
+import miners
+from miners import \
+    if_any, \
+    has_flag_in_name, has_flag_in_explaination, has_flag_in_text, \
+    has_template, has_template_with_flag, \
+    has_arg, has_flag, has_value, has_arg_and_value_contain, has_arg_with_flag_in_name, \
+    find_terms, \
+    get_label_type, find_explainations, \
+    term0_cb, term1_cb, lang0_term1_cb, lang0_term2_cb, t_plus_cb, w_cb, alter_cb, en_conj_cb, \
+    find_all, find_any, \
+    in_section, in_template, in_arg, in_arg_with_flag_in_value, in_link, in_t_plus, in_callback
 
 
-# This dictionary maps section titles in articles to parts-of-speech.  There
-# is a lot of variety and misspellings, and this tries to deal with those.
-languages = ["fr", "french"]
-lang_sections = ["french",  "{{-fr-}}", "{{langue|fr}}", "langue"]
-section_name_templates = {
-    's': lambda t: t.arg(0) if t.arg(1) is None or t.arg(1).lower().strip() in languages else None,
-    'langue': lambda t: t.arg(0),
-    'sprache': lambda t: t.arg(0),
-    'wortart': lambda t: t.arg(0) if t.arg(1) is None or t.arg(1).lower().strip() in languages else None,
-}
-section_templates = []
-
-# Type of speech sections
-tos_sections = {
-    WORD_TYPES.NOUN: [
-        # "abbreviation",
-        # "acronym",
-        # "adjective",
-        # "initialism",
-        "noun",
-        "noun 1",
-        "noun 2",
-        "pronoun",
-        "proper noun",
-        "substantif"                    ,
-        "nombre"                        ,
-        "nom"                           ,
-        "nom commun"                    ,
-        "nom de famille"                ,
-        "nom propre"                    ,
-        "{{s|nom|fr}}"                  ,
-        "{{s|nom commun|fr}}"           ,
-        "{{s|nom de famille|fr|num=1}}" ,
-        "{{s|nom de famille|fr|num=2}}" ,
-        "{{s|nom de famille|fr}}"       ,
-        "{{s|nom propre|fr|num=1}}"     ,
-        "{{s|nom propre|fr|num=2}}"     ,
-        "{{s|nom propre|fr|num=3}}"     ,
-        "{{s|nom propre|fr|num=4}}"     ,
-        "{{s|nom propre|fr}}"           ,
-        "{{s|nom|fr|flexion|num=1}}"    ,
-        "{{s|nom|fr|flexion|num=2}}"    ,
-        "{{s|nom|fr|flexion|num=3}}"    ,
-        "{{s|nom|fr|flexion|num=4}}"    ,
-        "{{s|nom|fr|flexion|}}"         ,
-        "{{s|nom|fr|flexion}}"          ,
-        "{{s|nom|fr|nom=1}}"            ,
-        "{{s|nom|fr|nom=2}}"            ,
-        "{{s|nom|fr|num = 1}}"          ,
-        "{{s|nom|fr|num =2}}"           ,
-        "{{s|nom|fr|num=1|flexion}}"    ,
-        "{{s|nom|fr|num=1}}"            ,
-        "{{s|nom|fr|num=2|flexion}}"    ,
-        "{{s|nom|fr|num=2}}"            ,
-        "{{s|nom|fr|num=3|flexion}}"    ,
-        "{{s|nom|fr|num=3}}"            ,
-        "{{s|nom|fr|num=4}}"            ,
-        "{{s|nom|fr|num=5}}"            ,
-        "{{s|nom|fr|num=6}}"            ,
-        "{{s|nom|fr|num=7}}"            ,
-        "{{s|nom|fr|num=8}}"            ,
-        "{{s|nom|fr}}"                  ,
-    ],
-    WORD_TYPES.ADJECTIVE: [
-        "abbreviation",
-        "adjective",
-        "adjetivo"                              ,
-        "adjectif"                              ,
-        "adjectif démonstratif",
-        "adjectif indéfini",
-        "adjectif numéral",
-        "adjectif possessif",
-        "adjectif relatif",
-        "adj",
-        "{{s|adjectif démonstratif|fr}}"        ,
-        "{{s|adjectif indéfini|fr}}"            ,
-        "{{s|adjectif indéfini|fr|flexion}}"    ,
-        "{{s|adjectif numéral|fr|flexion}}"     ,
-        "{{s|adjectif numéral|fr}}"             ,
-        "{{s|adjectif possessif|fr|flexion}}"   ,
-        "{{s|adjectif possessif|fr}}"           ,
-        "{{s|adjectif relatif|fr}}"             ,
-        "{{s|adjectif|fr|flexion|num=1}}"       ,
-        "{{s|adjectif|fr|flexion|num=2}}"       ,
-        "{{s|adjectif|fr|flexion}}"             ,
-        "{{s|adjectif|fr|num=1}}"               ,
-        "{{s|adjectif|fr|num=2}}"               ,
-        "{{s|adjectif|fr|num=3}}"               ,
-        "{{s|adjectif|fr}}"                     ,
-        "{{s|adj|fr|flexion}}"                  ,
-        "{{s|adj|fr}}"                          ,
-    ],
-    WORD_TYPES.VERB: [
-        "verb",
-        "verbo"                         ,
-        "verbe"                         ,
-        "{{s|verbe|fr|flexion|num=1}}"  ,
-        "{{s|verbe|fr|flexion|num=2}}"  ,
-        "{{s|verbe|fr|flexion|num=3}}"  ,
-        "{{s|verbe|fr|flexion}}"        ,
-        "{{s|verbe|fr|num=1}}"          ,
-        "{{s|verbe|fr|num=2}}"          ,
-        "{{s|verbe|fr|num=3}}"          ,
-        "{{s|verbe|fr|num=4}}"          ,
-        "{{s|verbe|fr}}"                ,
-    ],
-    WORD_TYPES.ADVERB: [
-        "adverb",
-        "adverbe",
-        "adverbe interrogatif",
-        "adverbe interrogatif",
-        "adv",
-        "{{s|adverbe interrogatif|fr}}"         ,
-        "{{s|adverbe relatif|fr}}"              ,
-        "{{s|adverbe|fr|flexion}}"              ,
-        "{{s|adverbe|fr|num=1}}"                ,
-        "{{s|adverbe|fr|num=2}}"                ,
-        "{{s|adverbe|fr}}"                      ,
-        "{{s|adv|fr}}"                          ,
-        "adverbio"          ,
-        "{{s|adverbe|fr}}"  ,
-        "proverbe"          ,
-    ],
-    WORD_TYPES.PREDICATIVE: [
-        "predicative"
-    ],
-    WORD_TYPES.CONJUNCTION: [
-        "conjugation",
-        "conjunción"                            ,
-        "conjonction"                           ,
-        "conjonction de coordination"           ,
-        "{{s|conjonction de coordination|fr}}"  ,
-        "{{s|conjonction|fr|num=1}}"            ,
-        "{{s|conjonction|fr|num=2}}"            ,
-        "{{s|conjonction|fr}}"                  ,
-    ],
-    WORD_TYPES.PREPOSITION: [
-        "preposition",
-        "preposición"                   ,
-        "préposition"                   ,
-        "{{s|préposition|fr|flexion}}"  ,
-        "{{s|préposition|fr|num=1}}"    ,
-        "{{s|préposition|fr|num=2}}"    ,
-        "{{s|préposition|fr}}"          ,
-    ],
-    WORD_TYPES.PRONOUN: [
-        "pronoun",
-        "pronombre"                     ,
-        "pronom"                        ,
-        "pronom démonstratif"           ,
-        "pronom indéfini"               ,
-        "pronom interrogatif"           ,
-        "pronom personnel"              ,
-        "pronom relatif"                ,
-        "prénom"                        ,
-        "{{s|pronom démonstratif|fr|flexion}}" ,
-        "{{s|pronom démonstratif|fr}}"  ,
-        "{{s|pronom indéfini|fr|flexion}}" ,
-        "{{s|pronom indéfini|fr}}"      ,
-        "{{s|pronom interrogatif|fr|flexion}}" ,
-        "{{s|pronom interrogatif|fr}}"  ,
-        "{{s|pronom personnel|fr|num=1}}" ,
-        "{{s|pronom personnel|fr|num=2}}" ,
-        "{{s|pronom personnel|fr}}"     ,
-        "{{s|pronom relatif|fr|flexion}}" ,
-        "{{s|pronom relatif|fr}}"       ,
-        "{{s|pronom|fr}}"               ,
-        "{{s|prénom|fr|genre=f|num=1}}" ,
-        "{{s|prénom|fr|genre=f|num=2}}" ,
-        "{{s|prénom|fr|genre=f}}"       ,
-        "{{s|prénom|fr|genre=mf}}"      ,
-        "{{s|prénom|fr|genre=m|num=1}}" ,
-        "{{s|prénom|fr|genre=m|num=2}}" ,
-        "{{s|prénom|fr|genre=m}}"       ,
-        "{{s|prénom|fr}}"               ,
-    ],
-    WORD_TYPES.INTERJECTION: [
-        "interjection",
-        "interjection 1",
-        "interjection 2",
-        "interjección"              ,
-        "{{s|interjection|fr}}"     ,
-    ],
-    WORD_TYPES.PARTICLE: [
-        "particle",
-        "partícula"             ,
-        "particule"             ,
-        "{{s|particule|fr}}"    ,
-    ],
-    WORD_TYPES.ARTICLE: [
-        "article",
-        "artículo"                          ,
-        "article"                           ,
-        "article défini"                    ,
-        "article défini"                    ,
-        "article indéfini"                  ,
-        "article indéfini"                  ,
-        "{{s|article défini|fr|flexion}}"   ,
-        "{{s|article défini|fr}}"           ,
-        "{{s|article indéfini|fr|flexion}}" ,
-        "{{s|article indéfini|fr}}"         ,
-        "{{s|article|fr}}"                  ,
-    ],
-    WORD_TYPES.NUMERAL: [
-        "number",
-        "numeral",
-        "numéral"               ,
-        "onomatopée"            ,
-        "{{s|onomatopée|fr}}"   ,
-    ]
+LANGUAGES = [ "fr", "french", "conv" ]
+LANG_SECTIONS = [ "french", "-fr-", "fr", "translingual" ]
+TYPE_OF_SPEECH = {
+    wt.NOUN          : ['nom', 'nom ', 'nom commun', 'nom de famille', 'nom propre', 'nom scientifique'],
+    wt.ADJECTIVE     : ['adjectif', 'adjectif ', 'adjectif démonstratif', 'adjectif exclamatif', 'adjectif indéfini', 'adjectif interrogatif', 'adjectif numéral', 'adjectif possessif', 'adjectif relatif'],
+    wt.VERB          : ['proverbe', 'verb', 'verbe', 'verbe ', 'verbes:'],
+    wt.ADVERB        : ['adverbe', 'adverbe indéfini', 'adverbe interrogatif', 'adverbe pronominal', 'adverbe relatif'],
+    wt.PREDICATIVE   : ['predicative'],
+    wt.CONJUNCTION   : ['conjonction', 'conjonction ', 'conjonction de coordination'],
+    wt.PREPOSITION   : ['préposition', 'préposition '],
+    wt.PRONOUN       : ['pronom', 'pronom ', 'pronom démonstratif', 'pronom indéfini', 'pronom interrogatif', 'pronom personnel', 'pronom personnel ', 'pronom possessif', 'pronom relatif', 'prénom'],
+    wt.INTERJECTION  : ['interjection'],
+    wt.PARTICLE      : ['particule', 'particule numérale'],
+    wt.ARTICLE       : ['article', 'article défini', 'article indéfini', 'article partitif'],
+    wt.NUMERAL       : ['adjectif numéral', 'numéral', 'particule numérale'],
 }
 
+TOS_SECTIONS = list( filter(None, ( (yield from v) for v in TYPE_OF_SPEECH.values() )) )
 
-# translation sections
-translation_sections = [
-    "translations", 
-    "translation",
-    "traductions",
-    "{{s|traductions}}",
-    "{{s|traductions à trier}}",
-    "{{s|transcriptions}}"
-]
-
-# synonym sections
-synonym_sections = [
-    "synonyms",
-    "synonym",
-    "synonyme",
-    "synonymes",
-    "{{s|synonymes}}"
-]
-
-# conjugation sections
-conjugation_sections = [
-    "conjugation",
-    "{{s|conjonction|fr|num=1}}",
-    "{{s|conjonction|fr|num=2}}",
-    "{{s|conjonction|fr}}",
-]
-
-# antonymy_sections
-antonymy_sections = [
-    "antonyms",
-    "{{s|antonymes}}"
-]
-
-# hypernymy_sections
-hypernymy_sections = [
-    "hypernyms",
-    "{{s|hyperonymes}}"
-]
-
-# hyponymy_sections
-hyponymy_sections = [
-    "hyponyms",
-    "{{s|hyponymes}}",
-]
-
-# meronymy_sections
-meronymy_sections = [
-    "meronyms"
-]
-
-# holonymy_sections
-holonymy_sections = [
-    "holonyms",
-    "{{s|holonymes}}",
-]
-
-# troponymy_sections
-troponymy_sections = [
-    "troponyms",
-    "{{s|troponymes}}"
-]
-
-# alternative_forms_sections
-alternative_forms_sections = [
-    "alternative forms"
-]
-
-# related_sections
-related_sections = [
-    "related terms"
-]
-
-# coordinate_sections
-coordinate_sections = [
-    "coordinate terms",
-    "{{s|conjonction de coordination|fr}}",
-]
-
-
-def t_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def en_conj_cb(t):
-    basic_form = t.arg(0)
-    simple_past_form = t.arg(1)
-    past_participle = t.arg(2)
-    present_participle = t.arg(3)
-    simple_present_third_person_form = t.arg(4)
-    yield (None, basic_form)
-    yield (None, simple_past_form)
-    yield (None, past_participle)
-    yield (None, present_participle)
-    yield (None, simple_present_third_person_form)
-
-
-def en_conj_simple_cb(t):
-    None
-
-
-conjugation_templates = {
-    "en-conj": en_conj_cb,
-    # "en-conj-simple"    : en_conj_simple_cb,
+SECTION_NAME_TEMPLATES = { # === {{sustantivo femenino y masculino|es}} === -> sustantivo femenino y masculino
+    s:lambda t: t.name if t.arg(0) and t.arg(0).lower().strip() in LANGUAGES else None for s in TOS_SECTIONS
 }
 
-
-def L_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def jump_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def l_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def lb_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def m_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def soplink_cb(t):
-    lang = None
-    term = t.arg(0)
-    yield (lang, term)
-
-
-def w_cb(t):
-    lang = None
-    term = t.arg(0)
-    if term == t.arg("lang"):
-        term = t.arg(1)
-    yield (lang, term)
-
-
-def pedia_cb(t):
-    lang = None
-    term = t.arg(0)
-    yield (lang, term)
-
-
-def wikipedia_cb(t):
-    lang = None
-    term = t.arg(0)
-    yield (lang, term)
-
-
-def wikispecies_cb(t):
-    lang = None
-    term = t.arg(0)
-    yield (lang, term)
-
-
-def synonym_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def word_Hypernyms_cb(t):
-    term = t.name.split(" ")[0]
-    yield (None, term)
-
-
-def alter_cb(t):
-    lang = t.arg(0)
-    args = list(t.args())
-    if len(args) > 1:
-        for a in args[1:]:
-            term = a.get_value()
-            if len(term.strip()) == 0:
-                break
-            yield (lang, term)
-
-
-def alternative_form_of_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def cog_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def en_adj_cb(t):
-    None
-
-
-def form_of_cb(t):
-    lang = None
-    term = t.arg(2)
-    yield (lang, term)
-
-
-def given_name_cb(t):
-    lang = None
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def head_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def pedlink_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def rhymes_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def rootsee_cb(t):
-    lang = t.arg(0)
-    term = t.arg(1)
-    yield (lang, term)
-
-
-def en_noun(t, label):
-    """
-    {{en-noun}}
-    {{en-noun|es}}
-    {{en-noun|...}}
-    {{en-noun|...|...}}
-
-    out: (single, [plural], is_uncountable)
-    """
-    s = label
-    p = []
-    is_uncountable = False
-
-    # http://en.wiktionary.org/wiki/Template:en-noun
-    head = t.arg("head")
-    head = head if head else label
-    p1 = t.arg(0)
-    p2 = t.arg(1)
-
-    if p1 == "-":
-        # uncountable
-        is_uncountable = True
-
-        if p2 == "s":
-            # ends by s
-            p.append(head + "s")
-
-        elif p2 is not None:
-            # word
-            p.append(p2)
-
-    elif p1 == "s":
-        p.append(head + "s")
-
-    elif p1 == "es":
-        # add es
-        p.append(head + "es")
-
-    elif p1 is not None:
-        # use term
-        p.append(p1)
-
-    elif p1 is None and p2 is None:
-        p.append(head + "s")
-
-    for i, a in enumerate(t.args()):
-        key = a.get_name()
-        if not key:
-            if i == 0:
-                continue
-
-            p.append(a.get_value())
-
-    return (s, p, is_uncountable)
-
-
-common_templates = {
-    "cog": cog_cb,
-    "L": L_cb,  # {{l|en|[[God]] be [[with]] [[you]]}} | {{l|en|go|went}} | {{l|cs|háček}}
-    "l": l_cb,  # {{l|cs|háček}} | {{l|en|go|went}} - word go section #went
-    "lb": lb_cb,  # {{label|en|foobarbazbip}}
-    "lbl": lb_cb,
-    "l-self": l_cb,
-    "m-self": l_cb,
-    "label": l_cb,
-    "m": m_cb,  # {{m|en|word}}
-    "rootsee": rootsee_cb,
-    "jump": jump_cb,  # {{jump|fr|combover|s|a}}
-    "link": l_cb,
-    "soplink": soplink_cb,  # {{soplink|foo|/|bar|baz|-} → foo/bar baz-
-    "pedlink": pedlink_cb,
-    "pedia": pedia_cb,
-    "w": w_cb, # *{{w|William Shakespeare|Shakespeare}} | *{{w|William Shakespeare|Shakespeare|lang=fr}} | *{{w|lang=fr|William Shakespeare|Shakespeare}}
-    "wikipedia": wikipedia_cb,  # {{wikipedia|article|link title}}
-    "wikispecies": wikispecies_cb,
- }
-
-translations_templates = {
-    "t"           : t_cb,
-    "t*"          : t_cb,
-    "t+"          : t_cb,
-    "t+check"     : t_cb,
-    "t+tt"        : t_cb,
-    "t-check"     : t_cb,
-    "t-check-egy" : t_cb,
-    "t-egy"       : t_cb,
-    "t-f"         : t_cb,
-    "t-image"     : t_cb,
-    "t-needed"    : t_cb,
-    "t-sile"      : t_cb,
-    "t-simple"    : t_cb,
-    "t-tpi"       : t_cb,
-    "trad+"       : t_cb,
-    "trad-"       : t_cb,
-    "trad--"      : t_cb,
-    "trad"        : t_cb,
-}
-
-synonyms_templates = merge_two_dicts( common_templates, {
-    "s": synonym_cb,
-    "syn": synonym_cb,
-    "synonym of": synonym_cb,
-})
-
-antonymy_templates = merge_two_dicts( common_templates, {
-})
-
-hypernymy_templates = merge_two_dicts( common_templates, {
-})
-
-hyponym_templates = merge_two_dicts( common_templates, {
-})
-
-meronymy_templates = merge_two_dicts( common_templates, {
-})
-
-holonymy_templates = merge_two_dicts( common_templates, {
-})
-
-troponymy_templates = merge_two_dicts( common_templates, {
+SECTION_NAME_TEMPLATES.update({ # {{-nome-}} -> nome
+    's'       : lambda t: t.arg(0).lower() if t.arg(1) is None or t.arg(1).lower().strip() in LANGUAGES else None,
+    'langue'  : lambda t: t.arg(0).lower(),
+    'fr'      : lambda t: 'fr',
 })
 
 
-alternative_forms_templates = merge_two_dicts( common_templates, {
-    "alter": alter_cb,
-    "alternative form of": alternative_form_of_cb,
-    # "en-adj"    : en_adj_cb,
-    "en-conj": en_conj_cb,
-    # "fi-alt-personal",
-    "form of": form_of_cb,  # {{form of|en|alternative form|word}}
-    "given name": given_name_cb,  # {{given name|en|male}}.
-    "head": head_cb,
-    "rhymes": rhymes_cb,
-})
-
-
-related_terms_templates = merge_two_dicts( common_templates, {
-})
-
-coordinate_templates = merge_two_dicts( common_templates, {
-    # "coefficient",
-})
+def is_lang_template(t):
+    pass
 
 #
-singular_flags = [
-    "singular",
-    "singulière",
-    "singulier"
-]
-
-plural_flags = [
-    "plural",
-    "plurielle",
-    "pluriel"
-]
-
-present_flags = [
-    "present"
-]
-
-past_flags = [
-    "past"
-]
+def is_lang_section(sec):
+    if sec.name in LANG_SECTIONS:
+        return True
 
 
-def is_singular(section):
-    # case 1
-    for t in section.find_objects(Template, recursive=True):
-        if check_flag(t.name, singular_flags):
-            return True
-
-    # case 2
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "head":
-            lang = t.arg(0)
-            flag = t.arg(1)
-            if flag == "noun plural form":
-                return True
-
-    # case 3
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "fi-verb form of":
-            for a in t.args():
-                k = a.get_name()
-
-                if k is None:
-                    continue
-
-                k = k.name.strip()
-
-                if k in ("1", "c", "nodot", "suffix"):
-                    continue
-
-                v = t.arg(k)
-
-                if v in ("1s", "2s", "3s", "s"):
-                    return True
-
-    # case 4
-    for t in section.find_objects(Template, recursive=True):
-        if t.name in ("fi-form of", "conjugation of"):
-            if check_flag(v, singular_flags):
-                return True
-
-    return None
+def is_tos_section(sec):
+    if sec.name in TOS_SECTIONS:
+        return True
+    elif has_template(sec.header, [], TYPE_OF_SPEECH):
+        pass
 
 
-def is_plural(section):
-    # case 1
-    for t in section.find_objects(Template, recursive=True):
-        if check_flag(t.name, plural_flags):
-            return True
-
-    # case 2
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "fi-verb form of":
-            for a in t.args():
-                k = a.get_name()
-
-                if k is None:
-                    continue
-
-                k = k.name.strip()
-
-                if k in ("1", "c", "nodot", "suffix"):
-                    continue
-
-                v = t.arg(k)
-
-                if v in ("1p", "2p", "3p", "p", "plural"):
-                    return True
-
-    # case 3
-    for t in section.find_objects(Template, recursive=True):
-        if t.name in ("fi-form of", "conjugation of"):
-            v = t.arg("pl")
-            if check_flag(v, plural_flags):
-                return True
-
-    return None
+def is_expl_section(sec):
+    pass
+    
+    
+def conj(t, excludes, label, *args):
+    """
+    groupe=1
+        INFINITIF : -er
+        INDICATIF
+            Présent :-e, -es, -e, -ons, -ez, -ent
+            Imparfait : -ais, -ais, -ait, -ions, -iez, -aient
+            Futur simple : -erai, -eras, -era, -erons, -erez, -eront
+            Passé simple : -ai, -as, -a, -âmes, -âtes, -èrent
+        SUBJONCTIF
+            Présent : -e, -es, -e, -ions, -iez, -ent
+            Imparfait : -asse, -asses, -ât, -assions, -assiez, -assent
+        CONDITIONNEL
+            Présent : -erais, -erais, -erait, -erions, -eriez, -eraient
+        IMPÉRATIF
+            Présent : -e, -ons, -ez
+        PARTICIPE
+            Présent : -ant
+            Passé : -é, -és, -ée, ées
+    """
+    pass
 
 
-def is_verb_present(section):
-    # case 1
-    for t in section.find_objects(Template, recursive=True):
-        if check_flag(t.name, present_flags):
-            return True
-
-    # case 2
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "fi-verb form of":
-            for a in t.args():
-                k = a.get_name()
-
-                if k is None:
-                    continue
-
-                k = k.name.strip()
-
-                if k in ("1", "c", "nodot", "suffix"):
-                    continue
-
-                v = t.arg(k)
-
-                if v in ("pres"):
-                    return True
-
-    # case 3
-    for t in section.find_objects(Template, recursive=True):
-        if t.name in ("fi-form of", "conjugation of"):
-            value = t.arg("tense")
-            if value and value.find("present") != -1:
-                return True
-    return None
+def Type(search_context, excludes, word):
+    sec = search_context
+    
+    for (tos, section_names) in TYPE_OF_SPEECH.items():
+        if sec.name in section_names:
+            word.Type = tos
+            break
 
 
-def is_verb_past(section):
-    # case 1
-    for t in section.find_objects(Template, recursive=True):
-        if check_flag(t.name, past_flags):
-            return True
-
-    # case 2
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "inflection of":
-            # {{inflection of|do||past|part|lang=en}}
-            a3 = t.arg(2)
-            if a3 == "past":
-                return True
-
-    # case 3
-    for t in section.find_objects(Template, recursive=True):
-        if t.name == "fi-verb form of":
-            for a in t.args():
-                k = a.get_name()
-
-                if k is None:
-                    continue
-
-                k = k.name.strip()
-
-                if k in ("1", "c", "nodot", "suffix"):
-                    continue
-
-                v = t.arg(k)
-
-                if v in ("past"):
-                    return True
-
-    # case 4
-    for t in section.find_objects(Template, recursive=True):
-        if t.name in ("fi-form of", "conjugation of"):
-            value = t.arg("tense")
-            if value and value.find("past") != -1:
-                return True
-
-    return None
+def IsMale(search_context, excludes, word):
+    if if_any(search_context, excludes, 
+        [has_template, ["m", 'mf', 'fm', 'au masculin', 'msing']] ,
+    ):
+        word.IsMale = True
 
 
-def is_male(section):
-    # {{g}} - masculin 
+def IsFeminine(search_context, excludes, word):
+    if if_any(search_context, excludes, 
+        [has_template, ["f", 'mf', 'fm', 'au féminin', 'fsing']] ,
+    ):
+        word.IsFeminine = True
+
+
+def IsNeutre(search_context, excludes, word):
+    if if_any(search_context, excludes, 
+        [has_template, "n", 'nsing'] ,
+    ):
+        word.IsNeutre = True
+
+
+def IsSingle(search_context, excludes, word):
+    # singulier
     # 
-    # {{m}} - masculin 
-    #   {{m}} - masculin 
-    #   {{m|a}} - masculin 
-    #   {{m|i}} - masculin 
-    #   {{m|équiv=fille}} - masculin, link to féminin "fille"
-    for t in section.find_objects(Template, recursive=False):
-        if t.name == "g":
-            values = [a.get_value() for a in t.args()]
-            return ("m" in values) or ("m-p" in values)
-        elif t.name == "m":
-            return True
-        elif t.name == "mf":
-            return True
-        elif t.name == "fm":
-            return True
-        elif t.name in ("masculine plural past participle of", "masculine plural of"):
-            return True
-
-def is_female(section):
-    # {{g}} - masculin 
-    # 
-    # {{f}} - masculin 
-    #   {{f}} - masculin 
-    #   {{f|a}} - masculin 
-    #   {{f|i}} - masculin 
-    for t in section.find_objects(Template, recursive=False):
-        if t.name == "g":
-            values = [a.get_value() for a in t.args()]
-            return ("f" in values) or ("f-p" in values)
-        elif t.name == "f":
-            return True
-        elif t.name == "mf":
-            return True
-        elif t.name == "fm":
-            return True
+    if if_any(search_context, excludes, 
+        [has_template, ['singulier', 'au singulier', 'au singulier uniquement', 'singulare tantum', 'généralement singulier', 'singulier', 'msing', 'fsing', 'nsing', 'sp']],
+    ):
+        word.IsSingle = True
 
 
+def IsPlural(search_context, excludes, word):
+    if if_any(search_context, excludes, 
+        [has_template, ['au pluriel', 'sp', 'au pluriel', 'au pluriel uniquement', 'fplur', 'généralement pluriel', 'mplur', 'note-plur+', 'nplur', 'plurale tantum', 'pluriel']],
+        
+    ):
+        word.IsPlural = True
+    
+    
+def SingleVariant(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, 'fr-rég', [in_arg, (None, 's')]],
+        [in_template, 'fr-accord-mf', [in_arg, (None, 's')]],
+    ):
+        word.SingleVariant = term
+        break
+        
 
-# {{fr-inv|do}}
-# {{pron|do|fr}}
-# {{pron|kat|fr}} 
-
-
-def try_well_formed_structure(tree, label, language):
-    def find_section_name_in_header_template(header):
-        for t in header.find_objects(Template, recursive=True):
-            name = t.name
-            lang = t.arg(0)
-            if name:
-                name = name.lower() if name else name
-                lang = lang.lower() if lang else lang
-                yield(lang, name)
-                
-    def is_lang_section_templated(sec):
-        # {{langue|fr}}
-        for (lang, name) in find_section_name_in_header_template(sec.header):
-            if lang == language:
-                if name in lang_sections:
-                    return True
-            elif lang is None:
-                if name in lang_sections:
-                    return True
-        return False
-
-    def is_lang_section(sec):
-        if sec.name in lang_sections:
-            return True
-        elif is_lang_section_templated(sec) :
-            return True
-        else:
-            return False
-
-    def find_tos_section_name_in_header_template(header):
-        # "{{s|nom|fr|num=1}}"
-        for t in header.find_objects(Template, recursive=True):
-            name = t.arg(0)
-            lang = t.arg(1)
-            if name:
-                name = name.lower() if name else name
-                lang = lang.lower() if lang else lang
-                yield(lang, name)
-                
-    def is_tos_section_templated(sec):
-        # "{{s|nom|fr|num=1}}",
-        for (lang, name) in find_tos_section_name_in_header_template(sec.header):
-            if lang == language:
-                for wt, tos_section_names in tos_sections.items():
-                    if name in tos_section_names:
-                        return True
-            elif lang is None:
-                for wt, tos_section_names in tos_sections.items():
-                    if name in tos_section_names:
-                        return True
-        return False
-
-    def is_tos_section(sec):
-        for wt, tos_section_names in tos_sections.items():
-            if sec.name in tos_section_names:
-                return True
-
-        if is_tos_section_templated(sec):
-            return True
-        else:
-            return False
-
-    def get_word_type(sec):
-        for wt, tos_section_names in tos_sections.items():
-            if sec.name in tos_section_names:
-                return wt
-        return None
-
-    def get_singular_variant(sec):
-        for t in sec.find_objects(Template, recursive=True):
-            if t.name == "en-noun":
-                (s, p, is_uncountable) = en_noun(t)
-                return s
-            elif t.name == "fr-rég":
-                s = t.arg("s")
-                if s:
-                    return s
-            elif t.name == "fr-inv":
-                s = t.arg("s")
-                if s:
-                    return s
-        return None
-
-    def get_plural_variant(sec):
-        for t in sec.find_objects(Template, recursive=False):
-            if t.name == "en-noun":
-                (s, p, is_uncountable) = en_noun(t)
-                if is_uncountable:
-                    return None
-                return p
-            elif t.name == "fr-rég":
-                p = t.arg("p")
-                if p:
-                    return p
-                else:
-                    p = label + "s"
-                    return p
-        return None
-
-    def get_male_variant(sec):
-        for t in sec.find_objects(Template, recursive=True):
-            if t.name == "f":
-                return t.arg("équiv")
-        return None
-
-    def get_frmale_variant(sec):
-        for t in sec.find_objects(Template, recursive=True):
-            if t.name == "m":
-                return t.arg("équiv")
-        return None
-
-    def mine_helper(section, section_names, section_templates, word, word_method, allow_multilang=False):
-        if section.name in section_names:
-            for t in section.find_objects(Template, recursive=True):
-                callback = section_templates.get(t.name, None)
-                if callback:
-                    for lang, term in callback(t):
-                        if allow_multilang or lang is None or lang == "en":
-                            method_to_call = getattr(word, word_method)
-                            result = method_to_call(lang, term)
-
-    #
-    words = []
-
-    # flags
-    is_lang_section_found = False
-    is_tos_section_found = False
-
-    # find language section
-    for lang_section in tree.find_top_objects(Section, is_lang_section):
-        is_lang_section_found = True
-        is_tos_section_found = False
-
-        # find type-of-speech section
-        for tos_section in lang_section.find_top_objects(Section, is_tos_section):
-            is_tos_section_found = True
-
-            word = Word()
-            words.append(word)
-            word.LabelName = label
-            word.LanguageCode = language
-            word.Type = get_word_type(tos_section)
-
-            # find value sections
-            for section in tos_section.find_objects(Section, recursive=True):
-                # OK. TOS section found
-                # Translations
-                mine_helper(section, translation_sections, translations_templates, word, "add_translation",
-                            allow_multilang=True)
-
-                # Synonymy
-                mine_helper(section, synonym_sections, synonyms_templates, word, "add_synonym")
-                for li in section.find_objects(Li, recursive=False):
-                    for link in li.find_objects(Link, recursive=False):
-                        word.add_synonym(None, link.get_text())
-
-                # Conjugation
-                mine_helper(section, conjugation_sections, conjugation_templates, word, "add_conjugation")
-
-                # Antonymy
-                mine_helper(section, antonymy_sections, antonymy_templates, word, "add_antonym")
-
-                # Hypernymy
-                mine_helper(section, hypernymy_sections, hypernymy_templates, word, "add_hypernym")
-
-                # Hyponymy
-                mine_helper(section, hyponymy_sections, hyponym_templates, word, "add_hyponym")
-
-                # Meronymy
-                mine_helper(section, meronymy_sections, meronymy_templates, word, "add_meronym")
-
-                # Holonymy
-                mine_helper(section, holonymy_sections, holonymy_templates, word, "add_holonym")
-
-                # Troponymy
-                mine_helper(section, troponymy_sections, troponymy_templates, word, "add_troponym")
-
-                # Otherwise
-                pass
-
-                # AlternativeFormsOther
-                mine_helper(section, alternative_forms_sections, alternative_forms_templates, word,
-                            "add_alternative_form")
-
-                # RelatedTerms
-                mine_helper(section, related_sections, related_terms_templates, word, "add_related")
-
-                # Coordinate
-                mine_helper(section, coordinate_sections, coordinate_templates, word, "add_coordinate")
-                
-
-            # IsMale        # "g|m" "g|m-p" "m"
-            word.IsMale = is_male(tos_section)
-
-            # IsFeminine    # "g|f" "g|m|f" "g|f-p" "f"
-            word.IsFeminine = is_female(tos_section)
-
-            # IsSingle
-            word.IsSingle = is_singular(tos_section)
-
-            # IsPlural
-            word.IsPlural = is_plural(tos_section)
-
-            # IsVerbPresent
-            word.IsVerbPresent = is_verb_present(tos_section)
-
-            # IsVerbPast
-            word.IsVerbPast = is_verb_past(tos_section)
-
-            # IsVerbFutur
-
-            # SingleVariant
-            word.SingleVariant = get_singular_variant(tos_section)
-
-            # PluralVariant
-            word.PluralVariant = get_plural_variant(tos_section)
-
-            # MaleVariant
-            word.MaleVariant = get_male_variant(tos_section)
-
-            # FemaleVariant
-            word.FemaleVariant = get_frmale_variant(tos_section)
-            pass
-
-            # Explainations
-            word.Explainations = []
-            for li in tos_section.find_objects(Li, recursive=False):
-                word.Explainations.append(li)
-
-            # split by explainations
-            if hasattr(word, "Explainations") and word.Explainations:
-                for li in word.Explainations:
-                    w = word.clone()
-                    w.LabelType = get_label_type(li)
-                    w.add_explaniation(li.get_raw(), li.get_text())
-                    words.append(w)
-                words.remove(word)
-
+def PluralVariant(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, 'fr-rég', [in_arg, (None, ['p', 0])]],
+        [in_template, ['fr-accord-mf', 'fr-accord-ind'], [in_arg, (None, ['p', 0])]],
+    ):
+        word.PluralVariant = term
         break
 
-    if not is_lang_section_found:
-        log_lang_section_not_found.warn("%s", label)
 
-    if not is_tos_section_found:
-        log_tos_section_not_found.warn("%s", label)
+def MaleVariant(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, 'm', [in_arg, (None, 'équiv')]],
+    ):
+        word.MaleVariant = term
+        break
 
-    return words
+
+def FemaleVariant(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, 'f', [in_arg, (None, 'équiv')]],
+    ):
+        word.MaleVariant = term
+        break
+    
+
+def IsVerbPast(search_context, excludes, word):
+    if if_any(search_context, excludes, 
+        [has_template, 'pp'],
+    ):
+        word.IsVerbPast = True
+    
+
+def IsVerbPresent(search_context, excludes, word):
+    if if_any(search_context, excludes, 
+        [has_template, ['présent', 'prés']],
+    ):
+        word.IsVerbPresent = True
+    
+
+def IsVerbFutur(search_context, excludes, word):
+    pass
+    
+
+def Conjugation(search_context, excludes, word):
+    # conj, conjugaison, fr-inv
+    pass
+    
+    
+def Synonymy(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['synonymes'], [in_template, ['lien', 'l'], [in_arg, (0, 1) ]]],
+        [in_section, ['synonymes'], [in_link]]
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_synonym( lang, term )
+    
+
+def Antonymy(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['antonymes'], [in_template, ['lien', 'l'], [in_arg, (0, 1) ]]],
+        [in_section, ['antonymes'], [in_link]]
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_antonym( lang, term )
+
+
+def Hypernymy(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['hyperonymes'], [in_template, ['lien', 'l'], [in_arg, (0, 1) ]]],
+        [in_section, ['hyperonymes'], [in_link]]
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_hypernym( lang, term )
+
+
+def Hyponymy(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['hyponymes'], [in_template, ['lien', 'l'], [in_arg, (0, 1) ]]],
+        [in_section, ['hyponymes'], [in_link]]
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_hyponym( lang, term )
+
+
+def Meronymy(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['méronymes'], [in_template, ['lien', 'l'], [in_arg, (0, 1) ]]],
+        [in_section, ['méronymes'], [in_link]]
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_meronym( lang, term )
+
+
+def Holonymy(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['holonymes'], [in_template, ['lien', 'l'], [in_arg, (0, 1) ]]],
+        [in_section, ['holonymes'], [in_link]]
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_holonym( lang, term )
+
+    
+def Troponymy(search_context, excludes, word):
+    pass
+
+
+def Otherwise(search_context, excludes, word):
+    pass
+
+
+def AlternativeFormsOther(search_context, excludes, word):
+    pass
+
+
+def RelatedTerms(search_context, excludes, word):
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, 'related terms', [in_link]],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_related(lang, term)
+    
+
+def Coordinate(search_context, excludes, word):
+    pass
+
+
+def Translation(search_context, excludes, word):
+    # {{trad|en|cat}} {{t+|fr|ongle|m}}
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, "trad"    , [in_arg, (["lang", 0], 1)]],
+        [in_template, "trad-"   , [in_arg, (["lang", 0], 1)]],
+        [in_template, "trad+"   , [in_arg, (["lang", 0], 1)]],
+        [in_template, "t"       , [in_arg, (["lang", 0], 1)]],
+        [in_template, "t-simple", [in_arg, (["lang", 0], 1)]],
+        [in_template, "t+"      , [in_t_plus]],
+    ):
+        word.add_translation(lang, term)
+
+
+def LabelType(search_context, excludes, word):
+    word.LabelType = get_label_type(search_context)
+
+
+def ExplainationRaw(search_context, excludes, word):
+    li = search_context
+    word.ExplainationRaw = li.get_raw()
+    
+    
+def ExplainationTxt(search_context, excludes, word):
+    li = search_context
+    word.ExplainationTxt = li.get_text().strip()
+    
+    
+def ExplainationExamplesRaw(search_context, excludes, word):
+    li = search_context
+    for e in li.find_objects(Li, recursive=True):
+        if e.base.endswith(":"):
+            word.ExplainationExamplesRaw = e.get_raw()
+            break
+    
+def ExplainationExamplesTxt(search_context, excludes, word):
+    li = search_context
+    for e in li.find_objects(Li, recursive=True):
+        if e.base.endswith(":"):
+            word.ExplainationExamplesTxt = e.get_text().strip()
+            break

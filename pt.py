@@ -21,21 +21,21 @@ from miners import \
     in_section, in_template, in_arg, in_arg_with_flag_in_value, in_link, in_t_plus, in_callback
 
 
-LANGUAGES = [ "it", "italian" ]
-LANG_SECTIONS = [ "italian", "-it-", "it" ] # "translingual"
+LANGUAGES = [ "pt", "português" ]
+LANG_SECTIONS = [ "pt", "-pt-", "português", "-mwl-" ] # "translingual"
 TYPE_OF_SPEECH = {
-    wt.NOUN          : ['-nome form-', '-nome-', 'sostantivo', 'sostantivo possessivo', '-sost  form-', '-sost form-', '-sost-'],
-    wt.ADJECTIVE     : ['aggettivo', '-agg-', '-agg  form-', '-agg dim-', '-agg form-', '-agg nom-', '-agg num form-', '-agg num-', '-agg poss-', '-loc agg-'],
-    wt.VERB          : ['verbo', '-verb  form-', '-verb -', '-verb fm del verbo "[[essere]]", attraverso il {{scn', '-verb form-', '-verb formr-', '-verb-', '-loc verb-'],
-    wt.ADVERB        : ['avverbio', '-avv-', '-loc avv-'],
+    wt.NOUN          : ['#substantivo provençal', 'adjetivo e substantivo', 'adjetivo/substantivo', 'balear#substantivo balear  e  valenciano', 'categoria:substantivo (português)  substantivo', 'como substantivo', 'ficheiro:open_book_01.svg 22px  substantivo categoria:substantivo (espanhol)', 'fora de substantivo', 'forma de substantivo', 'forma de substantivo 1', 'forma de substantivo 2', 'forma de substantivo 3', 'forma de substantivo1', 'forma de substantivo2', 'froma de substantivo', 'imagem:open book 01.svg 22px  substantivo', 'pronome substantivo', 'substantivo', "substantivo  ''feminino''", "substantivo  ''masculino''", 'substantivo  (1)', 'substantivo  (2)', 'substantivo  (3)', 'substantivo  1', 'substantivo  2', 'substantivo  3', 'substantivo  4', 'substantivo  próprio', "substantivo (''particípio passivo'')", 'substantivo (2)', 'substantivo 1', 'substantivo 2', 'substantivo 3', 'substantivo 4', 'substantivo 5', 'substantivo adjetivo', 'substantivo categoria:substantivo (português)', 'substantivo de dois gêneros', 'substantivo e advérbio', 'substantivo feminino plural', 'substantivo masculino', 'substantivo próprio', "substantivo,  ''feminino''", "substantivo,  ''masculino'' categoria:substantivo (português)", "substantivo,  ''próprio''", "substantivo,  ''próprio'' categoria:substantivo (português)", 'substantivo,  categoria:substantivo (português)', "substantivo, ''feminino''", 'substantivo1', 'substantivo2', 'substantivo3', 'substantivo>', 'substantivoe', 'substantivoo 1', 'substantivos', 'substantivotivo', 'substantivo²', 'substantivo³', 'substantivo¹'],
+    wt.ADJECTIVE     : ['adjectivo', 'adjektivo', 'adjentivo', 'adjetiivo', 'adjetivo', 'adjetivo 1', 'adjetivo 2', 'adjetivo 3', 'adjetivo e substantivo', 'adjetivo substantivado', 'adjetivo/pronome/advérbio', 'adjetivo/substantivo', 'adjetivo1', 'adjetivo2', 'adjetivo3', 'adjetivos', 'adjetivotivo', 'adjetvo', 'como adjetivo', 'forma de adjectivo', 'forma de adjetivo', 'forma de adjetivo 1', 'forma de adjetivo 2', 'forms de adjetivo', 'locução adjetiva', 'pronome adjetivo', 'substantivo adjetivo', 'verbo adjetivo'],
+    wt.VERB          : ['verbo', "verbo '''1'''", 'verbo 1', 'verbo 2', 'verbo 3', 'verbo 4', 'verbo adjetivo', 'verbo auxiliar', 'verbos', 'verbo²', 'verbo¹', 'forma verbal'],
+    wt.ADVERB        : ['adverbio', 'locução adverbial'],
     wt.PREDICATIVE   : [],
-    wt.CONJUNCTION   : ['-cong-', '-cong-kk-i-'],
-    wt.PREPOSITION   : ['-prep-'],
-    wt.PRONOUN       : ['-pronome-', '-pron dim-', '-pron form-', '-pron poss-'],
-    wt.INTERJECTION  : ['-inter-'],
-    wt.PARTICLE      : ['-part-'],
-    wt.ARTICLE       : ['-art-'],
-    wt.NUMERAL       : ['-cifr-'],
+    wt.CONJUNCTION   : ['conjunção', 'conjunção 1', 'conjunção 2'],
+    wt.PREPOSITION   : ['outras preposições', 'preposição'],
+    wt.PRONOUN       : ['adjetivo/pronome/advérbio', 'forma de pronome', 'forma pronominal', 'pronome', 'pronome 1', 'pronome 2', 'pronome 3', 'pronome adjetivo', 'pronome demostrativo', 'pronome indefinido plural', 'pronome pessoais', 'pronome pessoal', 'pronome substantivo', 'pronomes', 'pronomes de género neutro sugeridos', 'pronomes demonstrativos', 'pronomes oblíquos', 'pronomes pessoais'],
+    wt.INTERJECTION  : ['interjeiçao', 'interjeição', 'interjeção'],
+    wt.PARTICLE      : [],
+    wt.ARTICLE       : ['artigo'],
+    wt.NUMERAL       : ['forma de numeral', 'numeral', 'numeral cardinal', 'numeral fracionário', 'numeral multiplicativo', 'numeral ordinal', 'outros numerais'],
 }
 
 TOS_SECTIONS = list( filter(None, ( (yield from v) for v in TYPE_OF_SPEECH.values() )) )
@@ -46,8 +46,8 @@ SECTION_NAME_TEMPLATES = { # === {{sustantivo femenino y masculino|es}} === -> s
 
 SECTION_NAME_TEMPLATES.update({ # {{-nome-}} -> nome
     's'       : lambda t: t.arg(0) if t.arg(1) is None or t.arg(1).lower().strip() in LANGUAGES else None,
-    'langue'  : lambda t: t.arg(0).lower(),
-    '-it-'    : lambda t: "-it-",
+    'língua'  : lambda t: t.arg(0).lower(),
+    '-pt-'    : lambda t: "-pt-",
 })
 
 
@@ -82,50 +82,65 @@ def Type(search_context, excludes, word):
 
 def IsMale(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_flag_in_text, "''m pl''"] ,
-        [has_flag_in_text, "''m sing''"] ,
-        [has_flag_in_text, "''m inv''"] ,
-        [in_section, '-verb form-', [has_flag_in_text, "maschile"]],
+        [has_template, ['gramática', 'g'], 
+            [has_arg, 0, [has_value, ['m', 'mp']]],
+            [has_arg, 0, [has_value, ['m', 'mp']]]
+        ],
+        [has_template, 'm'], 
     ):
         word.IsMale = True
 
 
 def IsFeminine(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_flag_in_text, "''f pl''"] ,
-        [has_flag_in_text, "''f sing''"] ,
-        [has_flag_in_text, "''f inv''"] ,
+        [has_template, ['gramática', 'g'], 
+            [has_arg, 0, [has_value, ['f', 'fp']]],
+            [has_arg, 1, [has_value, ['f', 'fp']]]
+        ],
+        [has_template, 'f'], 
     ):
         word.IsMale = True
 
 
 def IsNeutre(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_template, ['n', 'neutr.'] ] ,
+        [has_template, ['gramática', 'g'], 
+            [has_arg, 0, [has_value, ['n', 'np', 'ns', 'n2n']]]
+        ],
+        [has_template, 'n'], 
     ):
         word.IsNeutre = True
 
 
 def IsSingle(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_flag_in_text, "''m sing''"] ,
-        [has_flag_in_text, "''f sing''"] ,
-        [has_flag_in_text, "singolare"] ,
+        [has_template, ['gramática', 'g'], 
+            [has_arg, 0, [has_value, ['s', 'fs', 'ms', 'ns', 'cs', '2gs', 'c2gs', '1ps', '2ps', '3ps']]],
+            [has_arg, 1, [has_value, ['s', 'fs', 'ms', 'ns', 'cs', '2gs', 'c2gs', '1ps', '2ps', '3ps']]],
+            [has_arg, 2, [has_value, ['s', 'fs', 'ms', 'ns', 'cs', '2gs', 'c2gs', '1ps', '2ps', '3ps']]],
+        ],
+        [has_flag_in_explaination, 'singular']
     ):
         word.IsSingle = True
 
 
 def IsPlural(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_flag_in_text, "''m pl''"] ,
-        [has_flag_in_text, "''f pl''"] ,
+        [has_template, ['gramática', 'g'], 
+            [has_arg, 0, [has_value, ['p', 'fp', 'mp', 'np', 'cp', '2gp', 'c2gp', '1pp', '2pp', '3pp']]],
+            [has_arg, 1, [has_value, ['p', 'fp', 'mp', 'np', 'cp', '2gp', 'c2gp', '1pp', '2pp', '3pp']]],
+            [has_arg, 2, [has_value, ['p', 'fp', 'mp', 'np', 'cp', '2gp', 'c2gp', '1pp', '2pp', '3pp']]],
+        ],
+        [has_flag_in_explaination, 'plural']
     ):
         word.IsPlural = True
     
     
 def SingleVariant(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_template, 'tabs', [in_arg, (None, 0)]],
+        [in_template, ['flex.pt.subst.completa', 'flex.pt'],
+            [in_arg, (None, ['ms', 'fs', 'msa', 'fsa', 'msd', 'fsd']) ],
+        ]
     ):
         if lang is None or lang in LANGUAGES:
             word.SingleVariant = term
@@ -134,7 +149,9 @@ def SingleVariant(search_context, excludes, word):
 
 def PluralVariant(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_template, 'tabs', [in_arg, (None, 1)]],
+        [in_template, ['flex.pt.subst.completa', 'flex.pt'],
+            [in_arg, (None, ['mp', 'fp', 'mpa', 'fpa', 'mpd', 'fpd']) ],
+        ],
     ):
         if lang is None or lang in LANGUAGES:
             word.PluralVariant = term
@@ -143,7 +160,12 @@ def PluralVariant(search_context, excludes, word):
 
 def MaleVariant(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_template, 'tabs', [in_arg, (None, 0)]],
+        [in_template, ['avi-for-fle'],
+            [in_arg, (None, 0) ],
+        ],
+        [in_template, ['flex.pt.subst.completa', 'flex.pt'],
+            [in_arg, (None, ['ms', 'msa', 'msd']) ],
+        ],
     ):
         if lang is None or lang in LANGUAGES:
             word.MaleVariant = term
@@ -152,7 +174,9 @@ def MaleVariant(search_context, excludes, word):
 
 def FemaleVariant(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_template, 'tabs', [in_arg, (None, 2)]],
+        [in_template, ['flex.pt.subst.completa', 'flex.pt'],
+            [in_arg, (None, ['fs', 'fsa', 'fsd']) ],
+        ],
     ):
         if lang is None or lang in LANGUAGES:
             word.FemaleVariant = term
@@ -161,14 +185,14 @@ def FemaleVariant(search_context, excludes, word):
 
 def IsVerbPast(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_flag_in_text, "passato"] ,
+        [has_flag_in_explaination, ["passato"]] ,
     ):
         word.IsVerbPast = True
     
 
 def IsVerbPresent(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_flag_in_text, "presente"] ,
+        [has_flag_in_explaination, "presente", 'pretérito imperfeito'] ,
     ):
         word.IsVerbPresent = True
     
@@ -181,13 +205,19 @@ def IsVerbFutur(search_context, excludes, word):
     
 
 def Conjugation(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, ['conj.gl', 'conj.gl.ar', 'conj.gl.er'],
+            [in_arg, (None, [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]) ],
+        ],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_conjugation( lang, term )
     
     
 def Synonymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, ['-sin-'],
-            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+        [in_section, ['-sino-', 'sinóinimos', 'sinónimo', 'sinónimos', 'sinónimos 2', 'sinónimos 3', 'sinónimoss', 'sinônimo/sinónimo', 'sinônimos/sinónimos', 'sinônimos', 'sinô(ó)nimo', 'sinônimo', 'sinônimo imperfeito', 'sinônimo perfeito', 'sinônimo/sinónimo', 'sinônimos', 'sinônimos (1)', 'sinônimos (2)', 'sinônimos / variações', 'sinônimos de 1, (chama)', 'sinôninimos', 'sinôninos', 'sinônímos'],
+            [in_template, ['link', 'l', 'lb'], [in_arg, (0, 1) ]],
             [in_link]
         ],
     ):
@@ -197,7 +227,7 @@ def Synonymy(search_context, excludes, word):
 
 def Antonymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, ['-ant-'], 
+        [in_section, ['antônimo', 'antônimos', 'antônimos (1)', 'antônimos (2)'], 
             [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
             [in_link]
         ],
@@ -208,7 +238,7 @@ def Antonymy(search_context, excludes, word):
 
 def Hypernymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, ['-iperon-', '-hyph-'], 
+        [in_section, ['hipernímias'], 
             [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
             [in_link]
         ],
@@ -219,7 +249,7 @@ def Hypernymy(search_context, excludes, word):
 
 def Hyponymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, ['-ipon-'], 
+        [in_section, ['hiponímias'], 
             [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
             [in_link]
         ],
@@ -233,7 +263,14 @@ def Meronymy(search_context, excludes, word):
 
 
 def Holonymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['holonímias'], 
+            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+            [in_link]
+        ],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_holonym( lang, term )
 
     
 def Troponymy(search_context, excludes, word):
@@ -246,9 +283,8 @@ def Otherwise(search_context, excludes, word):
 
 def AlternativeFormsOther(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, ['-alter-'],
-            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
-            [in_link]
+        [in_template, ['flex.pt.subst.completa', 'flex.pt'],
+            [in_arg, (None, ['ms', 'mp', 'fs', 'fp', 'msa', 'mpa', 'fsa', 'fpa', 'msd', 'mpd', 'fsd', 'fpd', 'col']) ],
         ],
     ):
         if lang is None or lang in LANGUAGES:
@@ -257,14 +293,23 @@ def AlternativeFormsOther(search_context, excludes, word):
 
 def RelatedTerms(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, '-rel-', [in_link]],
+        [in_section, ['-rel-', 'termos correlatos', 'termos relacionados', 'verbetes relacionados', 'verbetes relacionados ao natal', 'verbetes relativos'], 
+            [in_link]
+        ],
     ):
         if lang is None or lang in LANGUAGES:
             word.add_related(lang, term)
     
 
 def Coordinate(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, 'termos coordenados (koipônimos)', 
+            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+            [in_link]
+        ],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_coordinate( lang, term )
 
 
 def Translation(search_context, excludes, word):

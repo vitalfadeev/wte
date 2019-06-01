@@ -5,6 +5,7 @@ import bz2
 import json
 import xml.parsers.expat
 import importlib
+from collections.abc import Iterable
 
 from blist import sorteddict
 from helpers import create_storage, put_contents, get_contents, sanitize_filename
@@ -15,7 +16,8 @@ from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_
 from helpers import is_ascii
 import helpers
 import wikoo
-from wikoo import Section, Template, Link, Li, Mined
+from wikoo import Section, Template, Link, Li, Dl, Dt, Dd, Header, Mined
+from miners import find_explainations
 
 
 TXT_FOLDER      = "txt"     # folder where stored text files for debugging
@@ -136,6 +138,7 @@ class Word:
         self.ExplainationExamplesTxt = None
         self.IsMale = None
         self.IsFeminine= None  # ""
+        self.IsNeutre= None  # ""
         self.IsSingle = None
         self.IsPlural = None
         self.SingleVariant = None  # ""
@@ -145,7 +148,7 @@ class Word:
         self.IsVerbPast = None
         self.IsVerbPresent = None
         self.IsVerbFutur = None
-        self.Conjugation = None  # [ ] (All verb Conjugation (example = like, liking, liked)
+        self.Conjugation = None # [ ] (All verb Conjugation (example = like, liking, liked)
         self.Synonymy = None  # [ ]
         self.Antonymy = None  # [ ]
         self.Hypernymy = None  # [ ]
@@ -313,7 +316,7 @@ class Word:
             if term not in storage:
                 storage.append( term )
 
-        elif isinstance(term, (list, tuple)):
+        elif isinstance(term, Iterable):
             # [list] | (tuple)
             for trm in term:
                 if term not in storage:
@@ -652,47 +655,158 @@ class XMLParser:
         log.info("Done processing.")
 
 
-def get_label_type(expl):
-    list1 = []
-    for t in expl.find_objects(Template):
-        inner = t.get_text()
-        s = convert_to_alnum(inner)
-        s = deduplicate(s)
-        s = s.strip("_").strip()
-        splitted = s.split(" ")
-        list1 += [ w.upper() for w in splitted ]
+# 
+# STRUCT = [
+#   LANG_SECTION, [
+#     TOS_SECTION, [
+#       EXPLAINATION, # <- Li, Dl
+#       EXPLAINATION
+#     ],
+#     TOS_SECTION, [
+#       EXPLAINATION
+#     ],
+#   ],
+#   LANG_SECTION, []
+# ]
+#
+# word, LANG, TOS, EXPL
+# word, LANG, TOS, EXPL
+# word, LANG, TOS, EXPL
 
-    list2 = []
-    for l in expl.find_objects(Link):
-        inner = l.get_text()
-        s = convert_to_alnum(inner)
-        s = deduplicate(s)
-        s = s.strip("_").strip()
-        splitted = s.split("_")
-        list2 += [ proper(w) for w in splitted ]
 
-    list3 = []
-    s = expl.get_raw()
-    s = s.replace("{", "").replace("}", "").replace("[", "").replace("]", "").replace("(", "").replace(")", "")
-    s = convert_to_alnum(s)
-    s = deduplicate(s)
-    s = s.strip("_").strip()
-    splitted = s.split("_")
-    list3 += [ w.lower() for w in splitted ]
-    list3 = [ w for w in list3 if len(w) >= 3 ]
+def build_struct(lm, label, tree):
+    # (name, childs), childs = (name, childs)
+    struct = [] # [ (LANG, [ (TOS, [ (expl), ] ), ]), ]
+    
+    is_lang_found = False
+    is_tos_found = False
+    
+    # Lang sections
+    for ls in tree.find_top_objects(Section, lm.is_lang_section, recursive=True):
+        is_lang_found = True
+        tos = []
+        struct.append( (ls, tos) )
 
-    # Concat
-    biglst = list1 + list2 + list3
-
-    if len(biglst) == 1:
-        return biglst[0]
-
-    elif len(biglst) >= 2:
-        return "-".join(biglst[:2])
-
+        # TOS sections
+        for ts in ls.find_top_objects(Section, lm.is_tos_section, recursive=True):
+            is_tos_found = True
+            expl = []
+            tos.append( (ts, expl) )
+       
+            # Explainations
+            for e in find_explainations(ts, lm.is_expl_section):
+                expl.append( (e, []) )
+                
+    #
+    if not is_lang_found:
+        log_lang_section_not_found.warn('%s', label)
     else:
-        return ""
+        if not is_tos_found:
+            log_tos_section_not_found.warn('%s', label)
+            
+    return struct
 
+
+def dump_struct(struct, level=0):
+    # (name, childs), childs = (name, childs)
+    # [ (LANG, [ (TOS, [ (expl), ] ), ]), ]
+    for (name, childs) in struct:
+        print("  "*level, name)
+        dump_struct(childs, level+1)
+
+
+def dump_tree(root, level=0, types=None, exclude=None):
+    print( "  "*level, root, ":", id(root))
+
+    for c in root.childs:
+        if types and isinstance(c, types):
+            if (exclude is None) or (c not in exclude):
+                dump_tree(c, level+1, types, exclude)
+
+
+# scan search context
+def scan_struct(lm, struct, root_word, level=0):
+    words = []
+    
+    for (search_context, childs) in struct:
+        word = root_word.clone()
+        words.append(word)
+
+        excludes = [sc for (sc, c) in childs]
+        
+        # do extraction
+        lm.Type(search_context, excludes, word)
+        lm.IsMale(search_context, excludes, word)
+        lm.IsFeminine(search_context, excludes, word)
+        lm.IsSingle(search_context, excludes, word)
+        lm.IsPlural(search_context, excludes, word)        
+        lm.SingleVariant(search_context, excludes, word)
+        lm.PluralVariant(search_context, excludes, word)
+        lm.MaleVariant(search_context, excludes, word)
+        lm.FemaleVariant(search_context, excludes, word)
+        lm.IsVerbPast(search_context, excludes, word)
+        lm.IsVerbPresent(search_context, excludes, word)
+        lm.IsVerbFutur(search_context, excludes, word)
+        lm.Conjugation(search_context, excludes, word)
+        lm.Synonymy(search_context, excludes, word)
+        lm.Antonymy(search_context, excludes, word)
+        lm.Hypernymy(search_context, excludes, word)
+        lm.Hyponymy(search_context, excludes, word)
+        lm.Meronymy(search_context, excludes, word)
+        lm.Holonymy(search_context, excludes, word)
+        lm.Troponymy(search_context, excludes, word)
+        lm.Otherwise(search_context, excludes, word)
+        lm.AlternativeFormsOther(search_context, excludes, word)
+        lm.RelatedTerms(search_context, excludes, word)
+        lm.Coordinate(search_context, excludes, word)
+        lm.Translation(search_context, excludes, word)
+
+        # explaination caontext
+        if lm.is_expl_section(search_context) or isinstance(search_context, (Li, Dl)):
+            lm.LabelType(search_context, excludes, word)
+            lm.ExplainationRaw(search_context, excludes, word)
+            lm.ExplainationTxt(search_context, excludes, word)
+            lm.ExplainationExamplesRaw(search_context, excludes, word)
+            lm.ExplainationExamplesTxt(search_context, excludes, word)
+
+        #print("  "*level, search_context, word.Type, word.IsMale)
+        
+        # recursive
+        words += scan_struct(lm, childs, word, level+1)
+        
+    return words
+
+
+def try_well_formed_structure(lang, label, tree):
+    lm = importlib.import_module(lang)
+    
+    words = []
+
+    # struct
+    # (name, childs), childs = (name, childs)
+    # [ (LANG, [ (TOS, [ (expl), ] ), ]), ]
+    struct = build_struct(lm, label, tree)
+    #dump_struct(struct)
+    #exit(2)
+    
+    # base word
+    word = Word()
+    word.LabelName = label
+    word.LanguageCode = lang
+    
+    # scan for words
+    words = scan_struct(lm, struct, word)
+    words = list( filter(lambda w: w.Type, words) ) # with type
+    words_with_explaination = list( filter(lambda w: w.LabelType is not None, words) ) # with explaination
+
+    if words_with_explaination:
+        words = words_with_explaination
+
+    if not words:
+        log_no_words.warn("%s", label)
+
+    return words
+        
 
 def preprocess(lang, callback, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False):
     dump_file = download(lang)
@@ -724,13 +838,11 @@ def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, 
     # process
     tree  = phase1(text)
     tree  = phase2(lang, tree)
-    #wikoo.dump(tree, 0, (Section, Li, wikoo.Header))
-    #exit(4)
 
     # debug. save tmplates and sections
     if is_save_templates:
         for s in tree.find_objects(Section, recursive=True):
-            for t in s.find_objects(Template, recursive=True, exclude=Section):
+            for t in s.find_objects(Template, recursive=True, exclude=list(s.find_objects(Section))):
                 helpers.add_template(s, t)
         return  []
 
@@ -738,7 +850,6 @@ def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, 
     #words = phase4(lang, mined, label)
 
     if not words:
-        log.warn("no words extracted (%s, %s)... [SKIP]", lang, label)
         return []
 
     flag  = postprocess(words, label)
@@ -749,93 +860,93 @@ def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, 
 def phase1(text):
     log.debug("phase1()")
     
-    tree = wikoo.parse("\n" + text + "\n")
+    # remove BOM
+    if text and text.startswith('\uFEFF'):
+        text = text[1:]
+        
+    text = "\n" + text + "\n" # fix. for detection '\n=='
+    
+    tree = wikoo.parse(text)
     return tree
     
 
 def phase2(lang, tree):
     log.debug("phase2()")
-    lang_module = importlib.import_module(lang)
+    lm = importlib.import_module(lang)
 
-    levels = {}
-    for k, v in lang_module.tos_sections.items():
-        for s in v:
-            levels[s] = 3
-    for s in lang_module.lang_sections:
-        levels[s] = 2
+    #wikoo.dump(tree)
+    #wikoo.dump(tree, 0, (Section, Li, Dl, wikoo.Header))
+    #exit(4)
 
-    # update section names. {{s|noun}} -> noun
-    def update_section_name_callback(section):
-        if section.header:
-            for t in section.header.find_objects(Template, recursive=False):
-                if t.name in lang_module.section_name_templates:
-                    newname = lang_module.section_name_templates[t.name](t)
-                    if newname:
-                        newname = newname.strip().lower()
-                        if newname:
-                            section.name = newname
-                            break
+    # add headers from templates. {{-noun-}} -> Header( Noun )
+    for t in tree.find_objects(Template, recursive=False):
+        # add header        
+        if t.name in lm.SECTION_NAME_TEMPLATES and lm.SECTION_NAME_TEMPLATES[t.name](t):
+            header = Header()
+            header.name = t.name
+            header.level = 0 # default level
+            t.parent.add_child(header, before=t)
+            header.add_child(t)
+            
+        elif hasattr(lm, "is_lang_template") and lm.is_lang_template(t):
+            header = Header()
+            header.name = t.name
+            header.level = 1
+            t.parent.add_child(header, before=t)
+            header.add_child(t)
+            
+        elif t.name.startswith('-') and t.name.endswith('-'): # -trad-
+            header = Header()
+            header.name = t.name
+            header.level = 2
+            t.parent.add_child(header, before=t)
+            header.add_child(t)
+            
+    # update name for templated Headers
+    for header in tree.find_objects(Header):
+        for t in header.find_objects(Template):
+            # name
+            name_fetcher = lm.SECTION_NAME_TEMPLATES.get(t.name, None)
+            
+            if callable(name_fetcher):
+                name = name_fetcher(t)
+            elif name_fetcher is None:
+                name = None
+            else:
+                name = name_fetcher
 
-                elif t.name in lang_module.section_templates:
-                    section.name = t.name
+            if name:
+                header.name = name.strip().lower()
+                
+                # level
+                if header.level == 0 or header.name in lm.LANG_SECTIONS:
+                    if header.name in lm.LANG_SECTIONS:
+                        header.level = 1
+                    elif header.name in lm.TOS_SECTIONS:
+                        header.level = 2
+                    else:
+                        header.level = 4
+                break # first template only
 
+    # fix absent lang header
+    for header in tree.find_objects(Header):
+        # find 1st header. if TOS header
+        if header.name in lm.TOS_SECTIONS:
+            # add lang header above
+            lang_header = Header()
+            lang_header.name = lang
+            lang_header.level = 1
+            tree.add_child(lang_header, before=header)
+        break
+   
+    #wikoo.dump(tree, 0, (Section, Li, Dl, wikoo.Header))
+    #exit(4)
+
+    # structure. lists. sections.
     tree = wikoo.pack_lists(tree)
-    tree = wikoo.pack_sections(tree, lang_module.section_templates, levels, 4, update_section_name_callback)
+    tree = wikoo.pack_sections(tree)
+
     return tree
-
-
-def tscan(lang, section, label):
-    # import en, de, fr, ru, ...
-    lang_module = importlib.import_module(lang)
-    
-    # section
-    section_rules = lang_module.section_rules
-    data = section_rules.get(section.name, None)
-    
-    if data is not None:
-        if isinstance(data, list):
-            lst = data
-        else:
-            lst = [data]
-            
-        for item in lst:
-            if callable(item):
-                callback = item
-                for (key, value) in callback(section):
-                    yield (key, value, repr(section))
-            else:
-                value = item
-                yield (key, value, repr(section))
-                
-    # templates
-    template_rules = lang_module.template_rules
-
-    for t in section.find_objects(Template, recursive=True, exclude=Section):
-        data = template_rules.get(t.name, None)
-        
-        if data is not None:
-            if isinstance(data, list):
-                lst = data
-            else:
-                lst = [data]
-                
-            for item in lst:
-                if callable(item):
-                    callback = item
-                    for (key, value) in callback(t):
-                        yield (key, value, repr(t))
-                else:
-                    value = item
-                    yield (key, value, repr(t))
-            
-        else:
-            log_uncatched_template.debug("%s: %s: %s", label, t.name, t.raw.replace("\n", "\\n"))
-            
-    # explainations
-    for li in section.find_objects(Li):
-        yield (KEYS.EXPLAIN, li, "explainations")
-
-
 
 
 def try_not_well_formed(tree):
@@ -846,11 +957,11 @@ def phase3(lang, tree, label):
     log.debug("phase3(%s, %s)", lang, label)
 
     mined = tree
-    #wikoo.dump(tree, 0, (Section, Li, wikoo.Header))
-    #exit(9)
+    #wikoo.dump(tree, 0, (Section, wikoo.Header))
+    #exit(4)
     
-    lang_module = importlib.import_module(lang)
-    words = lang_module.try_well_formed_structure(tree, label, lang)
+    lm = importlib.import_module(lang)
+    words = try_well_formed_structure(lang, label, tree)
     
     if 0 and len(words) == 0:
         words = try_not_well_formed(tree)
@@ -866,7 +977,7 @@ def phase3(lang, tree, label):
             for (key, data, source) in tscan(lang, section, label):
                 log.debug( "mined: %s: %s: %s", key, data, source )
                 section.mined.append( (key, data, source) )
-                
+        
     return words
 
     
@@ -1035,8 +1146,11 @@ def postprocess(words, label):
     if words:
         for i, word in enumerate(words):
             print_table_record(word, print_header=(i==0))
+
+    if 1:
         import sql
         sql.SQLWriteDB( sql.DBWikictionary, {label:words} )
+
     return flag
 
 
@@ -1052,6 +1166,7 @@ def print_table_record(word, print_header=False):
         #"ExplainationExamplesTxt",
         "IsMale",
         "IsFeminine",
+        "IsNeutre",
         "IsSingle",
         "IsPlural",
         "SingleVariant",
@@ -1096,9 +1211,10 @@ def print_table_record(word, print_header=False):
     row = []
     for a in attrs:
         value = getattr(word, a)
-        s = str(len(value)) if isinstance(value, (list, dict, tuple)) else ('*' if value else '-')
+        s = str(len(value)) if isinstance(value, (tuple, list)) else ('*' if value else '-')
         row.append(s.rjust(2))
     log.info(" ".join(row))
+
 
 def one_file(lang, label):
     """
@@ -1108,7 +1224,7 @@ def one_file(lang, label):
     Save to the test/<label>.json
     """
     log.info("Word: %s", label)
-    src_file = os.path.join(TXT_FOLDER, label + ".txt")
+    src_file = os.path.join(TXT_FOLDER, lang, label + ".txt")
     log.info("Loading from: %s", src_file)
     text = get_contents(src_file)
 
@@ -1131,7 +1247,7 @@ def one_file(lang, label):
 
     log.info("Status: words:%d", len(treemap[label]))
     for w in treemap[label]:
-        log.info("  %s: %s: %s: %s", w.LabelName, str(w.Type).ljust(14), str(w.LabelType).ljust(64), str(w.ExplainationRaw).replace("\n", "\\n"))
+        log.info("  %s: %s: %s: %s", w.LabelName, str(w.Type).ljust(14), str(w.LabelType).ljust(30), str(w.ExplainationRaw)[:50].replace("\n", "\\n"))
     log.info("Done!")
 
 
