@@ -1,16 +1,19 @@
 # wte
 Wikitionary word description extractor. Parse the article from the dump of the https://en.wiktionary.org/
 
+Extraction words off 7 languages: en, fr, de, it, es, pt, ru
+
+
 ### Requirements: 
 * blist
 * requests
 * ijson
 * pywikibot
 
-    pip install blist
-    pip install requests
-    pip install ijson
-    pip install pywikibot
+      pip install blist
+      pip install requests
+      pip install ijson
+      pip install pywikibot
 
 
 #### Using
@@ -97,8 +100,85 @@ Script steps:
         - save to json
         - save to sql
 #
-    
+
+Data saves in SQLite tables:
+* Wikictionary.db
+* WikiData.db
+
+        CREATE TABLE IF NOT EXISTS wikictionary (
+            id              BIGINT,
+            LabelName       text,
+            LabelType       text,
+            LanguageCode    text,
+            Type            text,
+            ExplainationRaw             text,
+            ExplainationTxt             text,
+            ExplainationExamplesRaw     text,
+            ExplainationExamplesTxt     text,
+            IsMale          integer,
+            IsFeminine      integer,
+            IsSingle        integer,
+            IsNeutre        integer,
+            IsPlural        integer,
+            SingleVariant   text,
+            PluralVariant   text,
+            MaleVariant     text,
+            FemaleVariant   text,
+            IsVerbPast      integer,
+            IsVerbPresent   integer,
+            IsVerbFutur     integer,
+            Conjugation     text,
+            Synonymy	    text,
+            Antonymy	    text,
+            Hypernymy	    text,
+            Hyponymy	    text,
+            Meronymy	    text,
+            Holonymy	    text,
+            Troponymy	    text,
+            Otherwise               text,
+            AlternativeFormsOther   text,
+            RelatedTerms            text,
+            Coordinate              text,
+            Translation_EN  text,
+            Translation_FR  text,
+            Translation_DE  text,
+            Translation_IT  text,
+            Translation_ES  text,
+            Translation_RU  text,
+            Translation_PT  text
+        ) 
+
+
+        CREATE TABLE IF NOT EXISTS wikidata (
+            id              BIGINT,
+            LabelName       text,
+            CodeInWiki      text,
+            LanguageCode    text,
+            Description     text,
+            AlsoKnownAs1    text,
+            AlsoKnownAs2    text,
+            AlsoKnownAs3    text,
+            AlsoKnownAs4    text,
+            AlsoKnownAs5    text,
+            SelfUrl         text,
+            WikipediaURL    text,
+            DescriptionUrl  text,        
+            Instance_of     text,
+            Subclass_of     text,
+            Part_of         text,
+            Translation_EN  text,    
+            Translation_FR  text,
+            Translation_DE  text,
+            Translation_IT  text,
+            Translation_ES  text,
+            Translation_RU  text,
+            Translation_PT  text
+        ) 
+
+
+##### Logs
+See logs in folder ./logs
+
     
 See also: 
 * main.py  
-
