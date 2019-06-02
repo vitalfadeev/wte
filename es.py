@@ -36,6 +36,7 @@ TYPE_OF_SPEECH = {
     wt.PARTICLE      : [ 'forma adjetiva ordinal y partitiva', 'forma adjetiva y de participio', 'forma adjetiva, de participio y sustantiva', 'forma adjetiva, sustantiva y de participio', 'forma de participio', 'forma participial', 'forma sustantiva y de participio', 'forma sustantiva, adjetiva y de participio', 'participio' ],
     wt.ARTICLE       : [ "article" ],
     wt.NUMERAL       : [ 'adjetivo numeral', 'adjetivo numeral cardinal', 'determinante numeral', 'numeral', 'numeral cardinal' ],
+    wt.ABBREV        : ['abbrev'],
 }
 
 TOS_SECTIONS = list( filter(None, ( (yield from v) for v in TYPE_OF_SPEECH.values() )) )
@@ -45,10 +46,10 @@ SECTION_NAME_TEMPLATES = { # === {{sustantivo femenino y masculino|es}} === -> s
 }
 
 SECTION_NAME_TEMPLATES.update({ # {{-nome-}} -> nome
-    's'     : lambda t: t.arg(0).lower() if t.arg(1) is None or t.arg(1).lower().strip() in LANGUAGES else None,
-    'langue': lambda t: t.arg(0).lower(),
-    'lengua': lambda t: t.arg(0).lower(),
-    'es'    : lambda t: 'es',
+    's'       : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else t.arg(0)) if t.arg(1) is None or t.arg(1).lower().strip() in LANGUAGES else None,
+    'langue'  : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else t.arg(0)),
+    'lengua'  : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else t.arg(0)),
+    'es'      : lambda t: 'es',
 })
 
 

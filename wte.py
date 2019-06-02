@@ -92,6 +92,7 @@ class WORD_TYPES:
     CMD         = "cmd"
     COMBINING_FORM = "combining_form"
     ADJ_COMP    = "adj_comp"
+    INTRO       = "intro"
 
     def detect_type(self, s):
         for a in dir(self):
@@ -834,6 +835,12 @@ def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, 
     # save txt
     if is_save_txt:
         put_contents(os.path.join(TXT_FOLDER, sanitize_filename(label) + ".txt"), text)
+        
+    # skip #REDIRECT
+    if text.startswith("#REDIRECT "):
+        label_to = text[len("#REDIRECT "):]
+        log_no_words.warn("REDIRECT %s -> %s... [SKIP]", label, label_to)
+        return []
 
     # process
     tree  = phase1(text)

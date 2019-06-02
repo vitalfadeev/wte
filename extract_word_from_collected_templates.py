@@ -102,8 +102,9 @@ def doit(lang, word, exclude, filename, title1, title2):
                 # print(t)
 
 
-lang = "pt"
-word = "rela"
+lang = "ru"
+word = "гл ru "
+word = "intro"
 exclude = ["<!--"]
 
 print("WORD:", lang+",", word)

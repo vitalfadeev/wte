@@ -75,7 +75,9 @@ def has_arg(t, excludes, keys, *checkers):
                 for checker in checkers:
                     func = checker[0]
                     params = checker[1:]
-                    return func(value, excludes, *params) # OK | FAIL
+                    result = func(value, excludes, *params) # OK
+                    if result:
+                        return True # OK
             else:
                 return True # OK
         
@@ -90,12 +92,12 @@ def has_flag(s, excludes, flags, *checkers):
             return True
         
 
-def has_value(s, excludes, flags, *checkers):
+def has_value(s, excludes, values, *checkers):
     """ has_flag(a, [], "presente") """
-    if isinstance(flags, (str, int)):
-        flags = [flags]
+    if isinstance(values, (str, int)):
+        values = [values]
         
-    if s in flags:
+    if s in values:
         return True
         
 
@@ -336,7 +338,7 @@ def find_explainations(tos_section, is_expl_section):
     is_found = False
     
     # case 1: try li from ==={{Bedeutungen}}=== first
-    for expl_section in tos_section.find_objects(Section, recursive=False):
+    for expl_section in tos_section.find_objects(Section, recursive=True):
         if is_expl_section(expl_section):
             for li in expl_section.find_objects(Li, recursive=False):
                 is_found = True
@@ -591,5 +593,4 @@ MINERS = {
     "head"      : lang0_term1_cb,
     "rhymes"    : lang0_term1_cb,
 }
-
 

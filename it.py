@@ -36,6 +36,7 @@ TYPE_OF_SPEECH = {
     wt.PARTICLE      : ['-part-'],
     wt.ARTICLE       : ['-art-'],
     wt.NUMERAL       : ['-cifr-'],
+    wt.ABBREV        : ['-abbr-'],
 }
 
 TOS_SECTIONS = list( filter(None, ( (yield from v) for v in TYPE_OF_SPEECH.values() )) )
@@ -45,8 +46,8 @@ SECTION_NAME_TEMPLATES = { # === {{sustantivo femenino y masculino|es}} === -> s
 }
 
 SECTION_NAME_TEMPLATES.update({ # {{-nome-}} -> nome
-    's'       : lambda t: t.arg(0) if t.arg(1) is None or t.arg(1).lower().strip() in LANGUAGES else None,
-    'langue'  : lambda t: t.arg(0).lower(),
+    's'       : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else t.arg(0)) if t.arg(1) is None or t.arg(1).lower().strip() in LANGUAGES else None,
+    'langue'  : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else t.arg(0)),
     '-it-'    : lambda t: "-it-",
 })
 
@@ -282,7 +283,6 @@ def Translation(search_context, excludes, word):
     # Translations
     for section in search_context.find_objects(Section, recursive=False, exclude=excludes):
         if section.name in ['-trad-', '-trad1-', '-trad2-']:
-            print(search_context)
             for li in section.find_objects(Li, recursive=False):
                 for t in li.find_objects(Template, recursive=False):
                     lang = t.name

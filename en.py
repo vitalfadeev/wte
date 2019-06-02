@@ -35,6 +35,7 @@ TYPE_OF_SPEECH = {
     wt.PARTICLE      : ['participle', 'participles', 'particle', 'particle 1', 'particle 2'],
     wt.ARTICLE       : ['article'],
     wt.NUMERAL       : ['numeral'],
+    wt.ABBREV        : ['abbrev'],
 }
 
 TOS_SECTIONS = list( filter(None, ( (yield from v) for v in TYPE_OF_SPEECH.values() )) )
@@ -44,8 +45,8 @@ SECTION_NAME_TEMPLATES = { # === {{sustantivo femenino y masculino|es}} === -> s
 }
 
 SECTION_NAME_TEMPLATES.update({ # {{-nome-}} -> nome
-    's'       : lambda t: t.arg(0).lower() if t.arg(1) is None or t.arg(1).lower().strip() in LANGUAGES else None,
-    'language': lambda t: t.arg(0).lower(),
+    's'       : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else t.arg(0)) if t.arg(1) is None or t.arg(1).lower().strip() in LANGUAGES else None,
+    'language': lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else t.arg(0)),
     'en'      : lambda t: 'en',
 })
 
