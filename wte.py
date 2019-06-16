@@ -18,6 +18,7 @@ import helpers
 import wikoo
 from wikoo import Section, Template, Link, Li, Dl, Dt, Dd, Header, Mined
 from miners import find_explainations
+from wiktionary import WikictionaryItem
 
 
 TXT_FOLDER      = "txt"     # folder where stored text files for debugging
@@ -122,246 +123,6 @@ class WORD_TYPES:
 
         return names
 
-class Word:
-    """
-    Main word class.
-    Here stored info about word.
-    """
-    def __init__(self):
-        self.LabelName = ""  #
-        self.LabelType = None  #
-        self.LanguageCode = ""  # (EN,FR,…)
-        self.Type = ""  # = noun,verb… see = WORD_TYPES
-        self.TypeLabelName = ""  # chatt for verb of chat
-        self.ExplainationRaw = None  #
-        self.ExplainationTxt = None  #
-        self.ExplainationExamplesRaw = None
-        self.ExplainationExamplesTxt = None
-        self.IsMale = None
-        self.IsFeminine= None  # ""
-        self.IsNeutre= None  # ""
-        self.IsSingle = None
-        self.IsPlural = None
-        self.SingleVariant = None  # ""
-        self.PluralVariant = None  # ""
-        self.MaleVariant = None  # ""
-        self.FemaleVariant = None  # ""
-        self.IsVerbPast = None
-        self.IsVerbPresent = None
-        self.IsVerbFutur = None
-        self.Conjugation = None # [ ] (All verb Conjugation (example = like, liking, liked)
-        self.Synonymy = None  # [ ]
-        self.Antonymy = None  # [ ]
-        self.Hypernymy = None  # [ ]
-        self.Hyponymy = None  # [ ]
-        self.Meronymy = None  # [ ]
-        self.Holonymy = None  # [ ]
-        self.Troponymy = None  # [ ]
-        self.Otherwise = None  # [ ]
-        self.AlternativeFormsOther = None  # [ ]
-        self.RelatedTerms = None  # [ ]
-        self.Coordinate = None  # [ ]        
-        self.Translation_EN = None  # [ ]
-        self.Translation_FR = None  # [ ]
-        self.Translation_DE = None  # [ ]
-        self.Translation_IT = None  # [ ]
-        self.Translation_ES = None  # [ ]
-        self.Translation_RU = None  # [ ]
-        self.Translation_PT = None  # [ ]
-
-    def save_to_json(self, filename):
-        save_to_json(self, filename)
-
-    def save_to_pickle(self, filename):
-        save_to_pickle(self, filename)
-
-    def add_explaniation(self, raw, txt):
-        self.ExplainationRaw = raw
-        self.ExplainationTxt = txt
-    
-    def add_conjugation(self, lang, term):
-        if term:
-            if self.Conjugation is None:
-                self.Conjugation = [ term ]
-            else:
-                if term not in self.Conjugation:
-                    self.Conjugation.append( term )
-    
-    def add_synonym(self, lang, term):
-        if term:
-            if self.Synonymy is None:
-                self.Synonymy = [ term ]
-            else:
-                if term not in self.Synonymy:
-                    self.Synonymy.append( term )
-    
-    def add_antonym(self, lang, term):
-        if term:
-            if self.Antonymy is None:
-                self.Antonymy = [ term ]
-            else:
-                if term not in self.Antonymy:
-                    self.Antonymy.append( term )
-    
-    def add_hypernym(self, lang, term):
-        if term:
-            if self.Hypernymy is None:
-                self.Hypernymy = [ term ]
-            else:
-                if term not in self.Hypernymy:
-                    self.Hypernymy.append( term )
-    
-    def add_hyponym(self, lang, term):
-        if term:
-            if self.Hyponymy is None:
-                self.Hyponymy = [ term ]
-            else:
-                if term not in self.Hyponymy:
-                    self.Hyponymy.append( term )
-    
-    def add_meronym(self, lang, term):
-        if term:
-            if self.Meronymy  is None:
-                self.Meronymy = [ term ]
-            else:
-                if term not in self.Meronymy:
-                    self.Meronymy.append( term )
-    
-    def add_holonym(self, lang, term):
-        if term:
-            if self.Holonymy  is None:
-                self.Holonymy = [ term ]
-            else:
-                if term not in self.Holonymy:
-                    self.Holonymy.append( term )
-    
-    def add_troponym(self, lang, term):
-        if term:
-            if self.Troponymy is None:
-                self.Troponymy = [ term ]
-            else:
-                if term not in self.Troponymy:
-                    self.Troponymy.append( term )
-    
-    def add_alternative_form(self, lang, term):
-        if term:
-            if self.AlternativeFormsOther is None:
-                self.AlternativeFormsOther = [ term ]
-            else:
-                if term not in self.AlternativeFormsOther:
-                    self.AlternativeFormsOther.append( term )
-    
-    def add_related(self, lang, term):
-        if term:
-            if self.RelatedTerms is None:
-                self.RelatedTerms = [ term ]
-            else:
-                if term not in self.RelatedTerms:
-                    self.RelatedTerms.append( term )
-    
-    def add_coordinate(self, lang, term):
-        if term:
-            if self.Coordinate is None:
-                self.Coordinate = [ term ]
-            else:
-                if term not in self.Coordinate:
-                    self.Coordinate.append( term )
-    
-    def add_translation(self, lang, term):
-        # validate
-        if term is None:
-            # skip None
-            return
-            
-        term = remove_comments(term)
-        term = extract_from_link(term)
-        term = term.strip()
-        
-        if not term:
-            # skip blank
-            # skip empty
-            return
-
-            # prepare
-        storages = {
-            "en": "Translation_EN",
-            "fr": "Translation_FR",
-            "de": "Translation_DE",
-            "it": "Translation_IT",
-            "es": "Translation_ES",
-            "ru": "Translation_RU",
-            "pt": "Translation_PT",
-            #"cn": "Translation_CN",
-            #"ja": "Translation_JA"
-        }
-
-        # check lang
-        if lang not in storages:
-            # not supported language
-            log.debug("unsupported language: " + str(lang))
-            return
-
-        # storage
-        storage_name = storages.get(lang, None)
-
-        # init storage
-        storage = getattr(self, storage_name)
-        if storage is None:
-            # init
-            storage = []
-            setattr(self, storage_name, storage)
-
-        # append
-        if isinstance(term, str):
-            # one
-            if term not in storage:
-                storage.append( term )
-
-        elif isinstance(term, Iterable):
-            # [list] | (tuple)
-            for trm in term:
-                if term not in storage:
-                    storage.append( term )
-
-        else:
-            log.error("unsupported type: %s", type(term))
-            # assert 0, "unsupported type"
-            
-    def get_fields(self):
-        reserved = [
-            "sql_table", 'get_fields', 'add_explaniation', 
-            'add_related', 'add_synonym', 'add_translation', 'clone', 
-            'save_to_json', 'save_to_pickle', "Excpla", "Explainations"
-            ]
-
-        result = []
-        
-        for name in dir(self):
-            if callable(name) or name.startswith("_") or name.startswith("add_") or name.startswith("save_"):
-                pass # skip
-            elif name in reserved:
-                pass # skip    
-            else:
-                result.append(name)
-        
-        return result
-            
-    def clone(self):        
-        clone = Word()
-        
-        for name in self.get_fields():
-            value = getattr(self, name)
-            if isinstance(value, list):
-                cloned_value = value.copy()
-            else:
-                cloned_value = value
-            setattr(clone, name, cloned_value)
-        
-        return clone
-
-    def __repr__(self):
-        return "Word(" + self.LabelName + ")"
-
 
 class WordsEncoder(json.JSONEncoder):
     """
@@ -370,7 +131,7 @@ class WordsEncoder(json.JSONEncoder):
     """
 
     def default(self, obj):
-        if isinstance(obj, Word):
+        if isinstance(obj, WikictionaryItem):
             # Word
             return {k: v for k, v in obj.__dict__.items() if k[0] != "_"}
 
@@ -441,7 +202,7 @@ class TreeMap:
                 else:
                     self.store[label] = words
 
-            elif isinstance(storage, Word):
+            elif isinstance(storage, WikictionaryItem):
                 if len(words) == 1:
                     stored_word = storage
                     self.store[label] = [stored_word] + words
@@ -491,7 +252,7 @@ def load_from_json(filename):
         json object decoder callback.
         """
         if "LabelName" in obj:
-            word = Word()
+            word = WikictionaryItem()
 
             for k, v in obj.items():
                 setattr(word, k, v)
@@ -791,7 +552,7 @@ def try_well_formed_structure(lang, label, tree):
     #exit(2)
     
     # base word
-    word = Word()
+    word = WikictionaryItem()
     word.LabelName = label
     word.LanguageCode = lang
     
@@ -1080,7 +841,7 @@ def phase4(lang, mined, label):
                             
                             if type:                    
                                 # Word
-                                word = Word()
+                                word = WikictionaryItem()
                                 word.LanguageCode = section_lang
                                 word.LabelName = label
                                 word.Type = type
@@ -1155,8 +916,8 @@ def postprocess(words, label):
             print_table_record(word, print_header=(i==0))
 
     if 1:
-        import sql
-        sql.SQLWriteDB( sql.DBWikictionary, {label:words} )
+        for word in words:
+            word.save_to_db()
 
     return flag
 
@@ -1218,7 +979,7 @@ def print_table_record(word, print_header=False):
     row = []
     for a in attrs:
         value = getattr(word, a)
-        s = str(len(value)) if isinstance(value, (tuple, list)) else ('*' if value else '-')
+        s = str(len(value)) if value and isinstance(value, (tuple, list)) else ('*' if value else '-')
         row.append(s.rjust(2))
     log.info(" ".join(row))
 

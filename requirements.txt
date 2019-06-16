@@ -2,3 +2,4 @@ requests
 ijson
 pywikibot
 blist
+wikipedia

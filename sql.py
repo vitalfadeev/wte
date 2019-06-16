@@ -4,11 +4,34 @@
 import sqlite3
 import json
 import wte
-import wikidict_convertor
+from wikidata import WikidataItem
 
 
 DBWikictionary = sqlite3.connect("Wikictionary.db")
 DBWikiData = sqlite3.connect("WikiData.db")
+
+
+def wikidata_factory(cursor, row):
+    w = WikidataItem()
+    
+    for idx, col in enumerate(cursor.description):
+        name = col[0]
+        value = row[idx]
+        
+        if name in ("AlsoKnownAs", "Instance_of", "Subclass_of", "Part_of", 
+            "Translation_EN",
+            "Translation_FR", "Translation_DE", "Translation_IT",
+            "Translation_ES", "Translation_RU", "Translation_PT"
+        ):
+            if value:
+                value = json.loads(value)
+            
+        setattr(w, name, value)
+        
+    return w
+
+
+DBWikiData.row_factory = wikidata_factory
 
 
 def get_new_id(DB):
@@ -30,6 +53,7 @@ def get_new_id(DB):
         get_new_id = 1
 
     return get_new_id
+
 
 def SQLInitDB():
     sql = """
@@ -90,13 +114,11 @@ def SQLInitDB():
         CodeInWiki      text,
         LanguageCode    text,
         Description     text,
-        AlsoKnownAs1    text,
-        AlsoKnownAs2    text,
-        AlsoKnownAs3    text,
-        AlsoKnownAs4    text,
-        AlsoKnownAs5    text,
+        AlsoKnownAs     text,
         SelfUrl         text,
         WikipediaURL    text,
+        EncyclopediaBritannicaEN text,
+        EncyclopediaUniversalisEN text,
         DescriptionUrl  text,        
         Instance_of     text,
         Subclass_of     text,
@@ -133,7 +155,7 @@ def SQLWriteDB( DB, worddict ):
     SQLWriteDB( DBWikictionary, {label:[word, word,...]} )
     """
     sql_table = "wikictionary" if DB == DBWikictionary else "wikidata"
-    cls_encoder = wikidict_convertor.ItemClassEncoder if DB == DBWikiData else wte.WordsEncoder
+    cls_encoder = ItemClassEncoder if DB == DBWikiData else wte.WordsEncoder
 
     # prepare    
     for label, words in worddict.items():
@@ -236,9 +258,8 @@ def SQLReadDB( DB, DictSearch ):
 
     else:
         for row in rows:
-            import wikidict_convertor
             import json
-            word = wikidict_convertor.ItemClass()
+            word = WikidataItem()
 
             for idx, col in enumerate(c.description):
                 cname = col[0]
@@ -362,4 +383,4 @@ def SQLReadDB( DB, DictSearch )
 """
 
 
-SQLInitDB()
+#SQLInitDB()

@@ -6,7 +6,7 @@ import wte
 def test_one(label, lang):
     wte.one_file(label, lang)
 
-def test_dump(lang):
+def test_wiktionary(lang):
     wte.mainfunc(lang=lang, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False)
 
 def test_read():
@@ -25,14 +25,25 @@ def test_wikidict(lang):
     wikidict_convertor.run("./wikidict-out.json", lang)
 
 
-test_dump("fr")
-test_dump("en")
-test_dump("de")
-test_dump("it")
-test_dump("pt")
-test_dump("es")
-test_dump("ru")
-test_read()
+def test_merger():
+    from merger import mainfunc as merge
+    merge()
+
+
+test_wiktionary("fr")
+test_wiktionary("en")
+test_wiktionary("de")
+test_wiktionary("it")
+test_wiktionary("pt")
+test_wiktionary("es")
+test_wiktionary("ru")
+
 test_wikidict("fr")
 test_wikidict("en")
 test_wikidict("de")
+test_wikidict("it")
+test_wikidict("pt")
+test_wikidict("es")
+test_wikidict("ru")
+
+test_merger()

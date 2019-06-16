@@ -2,7 +2,7 @@
 # !/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from wte import Word, KEYS, WORD_TYPES
+from wte import KEYS, WORD_TYPES
 from wte import WORD_TYPES as wt
 from wikoo import Li, Template, Section, Link, String
 from loggers import log, log_non_english, log_no_words, log_unsupported

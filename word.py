@@ -1,0 +1,86 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+from dbclass import DBClass
+from jsonclass import JSONClass
+import inspect
+
+
+class Word(DBClass, JSONClass):
+    DB_NAME = "Words.db"
+    DB_TABLE_NAME = "words"
+    
+    def __init__(self, parent=None):
+        self.LabelName       = None
+        self.CodeInWiki      = None
+        self.LanguageCode    = None
+        self.Description     = None
+        self.AlsoKnownAs     = None
+        self.SelfUrl         = None
+        self.WikipediaENURL  = None
+        self.EncyclopediaBritannicaEN = None
+        self.EncyclopediaUniversalisEN = None
+        self.Instance_of     = []
+        self.Subclass_of     = []
+        self.Part_of         = []
+        self.Translation_EN  = []
+        self.Translation_FR  = []
+        self.Translation_DE  = []
+        self.Translation_IT  = []
+        self.Translation_ES  = []
+        self.Translation_RU  = []
+        self.Translation_PT  = []
+        #
+        self.LabelType       = None
+        self.Type            = None
+        self.Explaination    = None
+        self.ExplainationExamples = []
+        self.IsMale          = None
+        self.IsFeminine      = None
+        self.IsSingle        = None
+        self.IsPlural        = None
+        self.SingleVariant   = None
+        self.PluralVariant   = None
+        self.IsVerbPast      = None
+        self.IsVerbPresent   = None
+        self.IsVerbFutur     = None
+        self.Conjugation     = []
+        self.Synonymy        = []
+        self.Antonymy        = []
+        self.Hypernymy       = []
+        self.Hyponymy	     = []
+        self.Meronymy	     = []
+        self.Holonymy        = []
+        self.Troponymy       = []
+        self.Otherwise       = []
+        self.AlternativeFormsOther = []
+        self.RelatedTerms    = []
+        self.Coordinate      = []
+        #
+        self.WikipediaENContent   = None
+        self.BritannicaENContent  = None
+        self.UniversalisENContent = None
+        
+        # inherit from parent
+        if parent:
+            for f in self.get_fields():
+                setattr(self, f, getattr(parent, f))
+        
+        
+    def get_fields(self):
+        reserved = [ "DB_NAME", "DB_TABLE_NAME", "Excpla", "Explainations" ]
+
+        result = []
+        
+        for name in dir(self):
+            if callable(getattr(self, name)):
+                pass # skip
+            elif inspect.ismethod(getattr(self, name)):
+                pass # skip
+            elif name.startswith("_"):
+                pass # skip
+            elif name in reserved:
+                pass # skip    
+            else:
+                result.append(name)
+        
+        return result

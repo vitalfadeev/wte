@@ -10,98 +10,20 @@ import pywikibot
 from pywikibot import Claim
 from pywikibot.site import DataSite
 from blist import sorteddict
-import sql
+#import sql
 from loggers import log_wikidata
+from wikidata import WikidataItem
 
 
-class ItemClass:
-    def __init__(self):
-        self.LabelName = None
-        self.LanguageCode = None
-        self.CodeInWiki = None
-        self.Description = None
-        #self.AlsoKnownAs = None
-        self.AlsoKnownAs1 = None
-        self.AlsoKnownAs2 = None
-        self.AlsoKnownAs3 = None
-        self.AlsoKnownAs4 = None
-        self.AlsoKnownAs5 = None
-        self.SelfUrl = None
-        self.WikipediaURL = None
-        self.DescriptionUrl = None
-        self.Instance_of = None
-        self.Subclass_of = None
-        self.Part_of = None
-        self.Translation_EN = None
-        self.Translation_FR = None
-        self.Translation_DE = None
-        self.Translation_IT = None
-        self.Translation_ES = None
-        self.Translation_RU = None
-        self.Translation_PT = None
- 
-    def get_fields(self):
-        reserved = [
-            "sql_table", 'get_fields', 'add_explaniation', 
-            'add_related', 'add_synonym', 'add_translation', 'clone', 
-            'save_to_json', 'save_to_pickle', "Excpla", "Explainations"
-            ]
-
-        result = []
-        
-        for name in dir(self):
-            if callable(name) or name.startswith("_") \
-                or name.startswith("add_") or name.startswith("save_") or name.startswith("as_"):
-                pass # skip
-            elif name in reserved:
-                pass # skip    
-            else:
-                result.append(name)
-        
-        return result
-            
-    def save_to_json(self, filename):
-        save_to_json(self, filename)
-
-    def save_to_sql(self, db):
-        # id = save_to_sql(DBWikiData)
-        SQLWriteDB( db, self )
-        pass
-
-    def as_json(self):
-        return json.dumps(self, cls=ItemClassEncoder, sort_keys=False, indent=4, ensure_ascii=False)
-        
-    def __repr__(self):
-        return "ItemClass("+self.LabelName+")"
-
-
-class ItemClassEncoder(json.JSONEncoder):
-    """
-    This class using in JSON encoder.
-    Take object with Word objects and return dict.
-    """
-    def default(self, obj):
-        if isinstance(obj, ItemClass):
-            # Word
-            return {k:v for k,v in obj.__dict__.items() if k[0] != "_"}
-
-        elif isinstance(obj, sorteddict):
-            # sorteddict
-            return dict(obj.items())
-
-        # default
-        return json.JSONEncoder.default(self, obj)
-
-
-def save_to_json(treemap, filename):
-    """
-    Save 'treemap' in the file 'filename'. In JSON format. Encoding UTF-8.
-    """
-    #folder = os.path.dirname(os.path.abspath(filename))
-    #create_storage(folder)
+# def save_to_json(treemap, filename):
+    # """
+    # Save 'treemap' in the file 'filename'. In JSON format. Encoding UTF-8.
+    # """
+    # #folder = os.path.dirname(os.path.abspath(filename))
+    # #create_storage(folder)
     
-    with open(filename, "w", encoding="UTF-8") as f:
-        json.dump(treemap, f, cls=ItemClassEncoder, sort_keys=False, indent=4, ensure_ascii=False)
+    # with open(filename, "w", encoding="UTF-8") as f:
+        # json.dump(treemap, f, cls=ItemClassEncoder, sort_keys=False, indent=4, ensure_ascii=False)
  
 
 
@@ -115,7 +37,7 @@ NAME_ID = 'P1476'
 def convert(page, lang):
     words = []
     
-    w = ItemClass()
+    w = WikidataItem()
     
     #
     id_       = str(page.id)
@@ -138,24 +60,20 @@ def convert(page, lang):
     # Britanica P1417
     # Universalis P3219
     # https://en.wikipedia.org/wiki/Cat ... https://www.wikidata.org/wiki/Special:SetSiteLink/Q146
-    description_url  = {}
+    description_url  = []
     
     BRITANICA_ID = "P1417"    
+    UniversalisENURL = ""
     if INSTANCE_OF_ID in claims:
         for source in claims.get(BRITANICA_ID, []):
-            description_url["UniversalisENURL"] = "https://www.britannica.com/" + source.getTarget()
+            UniversalisENURL = "https://www.britannica.com/" + source.getTarget()
 
     UNIVERSAILS_ID = "P3219"    
+    BritannicaENURL = ""
     if UNIVERSAILS_ID in claims:
         for source in claims.get(UNIVERSAILS_ID, []):
-            description_url["BritannicaENURL"] = "https://www.universalis.fr/encyclopedie/" + source.getTarget()
+            BritannicaENURL = "https://www.universalis.fr/encyclopedie/" + source.getTarget()
 
-    if wikipedia:
-        description_url["WikipediaENURL"] = wikipedia 
-
-    if not description_url:
-        description_url = None
-       
     # instance of
     if INSTANCE_OF_ID in claims:
         instance_of = []
@@ -184,28 +102,26 @@ def convert(page, lang):
     
     #
     # https://www.wikidata.org/wiki/Special:EntityData/Q300918.json
-    w.LabelName = label
-    w.CodeInWiki = id_
-    w.LanguageCode = lang
-    w.Description = desc
-    w.AlsoKnownAs1 = aliases[0] if len(aliases) > 0 else None
-    w.AlsoKnownAs2 = aliases[1] if len(aliases) > 1 else None
-    w.AlsoKnownAs3 = aliases[2] if len(aliases) > 2 else None
-    w.AlsoKnownAs4 = aliases[3] if len(aliases) > 3 else None
-    w.AlsoKnownAs5 = aliases[4] if len(aliases) > 4 else None
-    w.SelfUrl = "https://www.wikidata.org/wiki/" + id_
-    w.WikipediaURL = wikipedia
-    w.DescriptionUrl = description_url
-    w.Instance_of = instance_of
-    w.Subclass_of = subclass_of
-    w.Part_of = part_of
-    w.Translation_EN = page.labels.get("en", None)
-    w.Translation_FR = page.labels.get("fr", None)
-    w.Translation_DE = page.labels.get("de", None)
-    w.Translation_IT = page.labels.get("it", None)
-    w.Translation_ES = page.labels.get("es", None)
-    w.Translation_RU = page.labels.get("ru", None)
-    w.Translation_PT = page.labels.get("pt", None)
+    w.LabelName         = label
+    w.CodeInWiki        = id_
+    w.LanguageCode      = lang
+    w.Description       = desc
+    w.AlsoKnownAs       = list(aliases)
+    w.SelfUrl           = "https://www.wikidata.org/wiki/" + id_
+    w.WikipediaENURL    = wikipedia
+    w.EncyclopediaBritannicaEN = BritannicaENURL
+    w.EncyclopediaUniversalisEN = UniversalisENURL
+    w.DescriptionUrl    = description_url
+    w.Instance_of       = instance_of
+    w.Subclass_of       = subclass_of
+    w.Part_of           = part_of
+    w.Translation_EN    = [page.labels.get("en", None)]
+    w.Translation_FR    = [page.labels.get("fr", None)]
+    w.Translation_DE    = [page.labels.get("de", None)]
+    w.Translation_IT    = [page.labels.get("it", None)]
+    w.Translation_ES    = [page.labels.get("es", None)]
+    w.Translation_RU    = [page.labels.get("ru", None)]
+    w.Translation_PT    = [page.labels.get("pt", None)]
     
     words.append(w)
   
@@ -215,6 +131,7 @@ def convert(page, lang):
 class PageGenerator:
     def __init__(self, site):
         self.repo = site
+
 
     def get(self, data, force=False):
         self._content = data
@@ -261,6 +178,7 @@ class PageGenerator:
 class DumpPage(pywikibot.ItemPage):
     def __init__(self, site):
         self.repo = site
+
 
     def get(self, data, force=False):
         self._content = data
@@ -329,6 +247,7 @@ class DumpWrapper:
         
 dump_wrapper = DumpWrapper()
 
+
 def DumpWrapperFactory(*args, **kvargs):
     return dump_wrapper
 
@@ -366,8 +285,8 @@ def run(outfile, lang="en"):
                             else:
                                 fout.write(",\n")
                                 fout.write(js)
-                                
-                            sql.SQLWriteDB(sql.DBWikiData, {data["id"]:words})
+                            
+                            w.save_to_db()
 
                                 
                     except pywikibot.exceptions.NoPage:
