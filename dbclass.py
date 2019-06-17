@@ -82,7 +82,7 @@ class DBClass:
         # db_fields
         db = self.connect()
         c = db.cursor()
-        c.execute("SELECT * FROM {}".format(self.DB_TABLE_NAME))
+        c.execute("SELECT * FROM {} LIMIT 1".format(self.DB_TABLE_NAME))
         db_fields = [description[0] for description in c.description]
         
         # object fields
