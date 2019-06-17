@@ -22,7 +22,7 @@ def test_merger():
 
 
 #test_wikidict("fr")
-#test_wiktionary("it")
+#test_wiktionary("fr")
 #test_merger()
 #exit(9)
 

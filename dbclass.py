@@ -14,6 +14,7 @@ class DBClass:
         
         if db is None:
             db = sqlite3.connect(self.DB_NAME, isolation_level=None)
+            db.execute("PRAGMA journal_mode = OFF;")
             _cache[self.DB_NAME] = db
         
         return db
@@ -42,6 +43,7 @@ class DBClass:
         #
         if count == 0:
             self.create_table()
+            self.create_index(id=0)
         else:
             self.update_table()
 
