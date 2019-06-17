@@ -19,12 +19,55 @@ install
 
 
 #### Using
-    import wte
+see main.py
+
+      def test_wiktionary(lang):
+          from wte import mainfunc as wiktionary_parser
+          wiktionary_parser(lang=lang, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False)
+
+
+      def test_wikidict(lang):
+          from wikidict_convertor import run as wikidict_parser
+          wikidict_parser("./wikidict-out.json", lang)
+
+
+      def test_merger():
+          from merger import mainfunc as merge
+          merge()
+          
+      
+      test_wiktionary("fr")
+      test_wiktionary("en")
+      test_wiktionary("de")
+      test_wiktionary("it")
+      test_wiktionary("pt")
+      test_wiktionary("es")
+      test_wiktionary("ru")
+
+      test_wikidict("fr")
+      test_wikidict("en")
+      test_wikidict("de")
+      test_wikidict("it")
+      test_wikidict("pt")
+      test_wikidict("es")
+      test_wikidict("ru")
+
+      test_merger()
+
+
 
 #### Downloading
+Will douwnload dump. Stored into cache folder.
+
     wt = wte.Wikitionary()
     local_file = wt.download("en", use_cached=True)
-    
+
+Dumps:
+
+    "https://dumps.wikimedia.org/" + lang + "wiktionary/latest/" + lang + "wiktionary-latest-pages-articles.xml.bz2"
+    "https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2"
+
+
 #### Parsing
     # parse
     wte.mainfunc(lang="en", limit=0, is_save_txt=False, is_save_json=False)
@@ -103,7 +146,7 @@ Script steps:
         - save to sql
 #
 
-Data saves in SQLite tables:
+Data saves in SQLite:
 * Wikictionary.db
 * WikiData.db
 * Words.db
@@ -221,7 +264,12 @@ Structure:
         Coordinate      = []
         WikipediaENContent   = None
         BritannicaENContent  = None
-        UniversalisENContent = None        
+        UniversalisENContent = None      
+        
+Databases created automatically.
+Datatables created automatically.
+Columns created automatically. 
+See dbclass.py
 
 
 ##### Logs
@@ -240,5 +288,3 @@ See:
     ru.py
 
     
-See also: 
-* main.py  
