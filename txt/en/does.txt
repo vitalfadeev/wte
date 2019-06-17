@@ -1,0 +1,82 @@
+{{also|Does|dös|-dös}}
+==English==
+{{wikipedia|dab=does}}
+
+===Etymology 1===
+From {{inh|en|enm|dos}}, variant of {{m|enm|doth}}, {{m|enm|doþ|t=doth; doeth; does}}, equivalent to {{af|en|do|-s}}.
+
+====Pronunciation====
+* {{a|stressed}} {{enPR|dŭz}}, {{IPA|/ˈdʌz/|lang=en}}
+* {{a|unstressed}} {{IPA|/dəz/|lang=en}}
+* {{audio|en-us-does-todo.ogg|Audio (US)|lang=en}}
+* {{rhymes|ʌz|lang=en}}
+
+====Verb====
+{{head|en|verb form}}
+
+# {{en-third-person singular of|do}}
+
+=====Alternative forms=====
+* [[-'s]] {{q|after interrogative pronouns}}
+
+===Etymology 2===
+From the noun {{m|en|doe|t=female deer}}.
+
+====Pronunciation====
+* {{a|GenAm}} {{enPR|dōz}}, {{IPA|/doʊz/|lang=en}}
+* {{a|RP}} {{enPR|dōz}}, {{IPA|/dəʊz/|lang=en}}
+* {{audio|en-us-does-deer.ogg|Audio (US)|lang=en}}
+* {{rhymes|əʊz|lang=en}}
+* {{homophones|lang=en|dohs|doughs|doze|dos}} {{qualifier|in music}}
+
+====Noun====
+{{head|en|noun plural form}}
+
+# {{plural of|doe|lang=en}}
+
+===Anagrams===
+* {{anagrams|en|a=deos|SOED|deos|dose|odes}}
+
+[[Category:English heteronyms]]
+[[Category:English irregular third-person singular forms]]
+
+----
+
+==Dutch==
+
+===Etymology===
+Borrowed from {{bor|nl|fy|dûs}}.
+
+===Pronunciation===
+* {{IPA|lang=nl|/dus/}}
+* {{audio|Nl-does.ogg|Audio|lang=nl}}
+
+===Adjective===
+{{nl-adj|doezer}}
+
+# [[sleepy]], [[dozy]], not fully [[awake]] or to one's [[sense]]s
+
+====Inflection====
+{{nl-decl-adj|doeze}}
+
+====Derived terms====
+* {{l|nl|doezen}}
+
+----
+
+==Portuguese==
+
+===Verb===
+{{head|pt|verb form}}
+
+# {{pt-verb-form-of|doar}}
+
+----
+
+==Welsh==
+
+===Verb===
+{{head|cy|verb form}}
+
+# {{lb|cy|colloquial}} {{inflection of|cy|bod||3|s|existential negative}}
+#: {{uxi|cy|'''Does''' dim llaeth yn y tŷ.|There’s no milk in the house.}}

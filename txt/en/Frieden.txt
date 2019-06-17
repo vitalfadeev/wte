@@ -1,0 +1,177 @@
+== Frieden ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Substantiv|Deutsch}}, {{m}} ===
+
+{{Deutsch Substantiv Übersicht
+|Genus=m
+|Nominativ Singular=Frieden
+|Nominativ Plural=Frieden
+|Genitiv Singular=Friedens
+|Genitiv Plural=Frieden
+|Dativ Singular=Frieden
+|Dativ Plural=Frieden
+|Akkusativ Singular=Frieden
+|Akkusativ Plural=Frieden
+|Bild=Peace symbol.svg|mini|1, 3, 4|Das typische Zeichen des ''Friedens''
+}}
+
+{{Nebenformen}}
+:[[Friede]]
+
+{{Worttrennung}}
+:Frie·den, {{Pl.}} Frie·den
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ˈfʁiːdn̩}}
+:{{Hörbeispiele}} {{Audio|De-Frieden.ogg}}
+:{{Reime}} {{Reim|iːdn̩|Deutsch}}
+
+{{Bedeutungen}}
+:[1] ''kein Plural:'' vertraglich gesichertes [[Miteinander]] verschiedener Staaten, das durch Abwesenheit von Gewalt (und speziell von [[Krieg]]) gekennzeichnet ist
+:[2] ''kurz für:'' [[Friedensschluss]], [[Friedensvertrag]]
+:[3] ''kein Plural:'' Zustand [[harmonisch]]en Miteinanders
+:[4] ''kein Plural:'' Ruhe, [[beruhigend]]e Stille
+:[5] ''kein Plural:'' {{K|Religion|geh.}} religiöse [[Erfüllung]], [[Segen]]
+
+{{Herkunft}}
+:durch [[Reanalyse]] aus ''[[Friede]]'' (der Nominativ ist die einzige abweichende Form) {{QS Herkunft|unbelegt}}
+
+{{Sinnverwandte Wörter}}
+:[2] [[Friedensschluss]], [[Friedensvertrag]]
+:[3] [[Einigkeit]], [[Einklang]], [[Einmütigkeit]], [[Eintracht]], [[Einvernehmen]], [[Harmonie]], [[Übereinstimmung]]
+:[4] [[Entspannung]], [[Ruhe]], [[Stille]]
+:[5] [[Seelenruhe]], [[Stoizismus]]
+
+{{Gegenwörter}}
+:[1] [[Krieg]]
+
+{{Unterbegriffe}}
+:[1] [[Burgfrieden]], [[Diktatfrieden]], [[Kalliasfrieden]], [[Koalitionsfrieden]], [[Kompromissfrieden]], [[Landfrieden]], [[Mietfrieden]], [[Parteifrieden]], [[Rechtsfrieden]], [[Religionsfrieden]], [[Schandfrieden]], [[Scheinfrieden]], [[Separatfrieden]], [[Sonderfrieden]], [[Verhandlungsfrieden]], [[Völkerfrieden]], [[Weltfrieden]]
+:[2] [[Siegfrieden]]
+:[3] [[Ehefrieden]], [[Familienfrieden]], [[Hausfrieden]], [[Scheinfrieden]], [[Arbeitsfrieden]], [[Betriebsfrieden]], [[Tariffrieden]]
+:[4] [[Abendfrieden]], [[Dorffrieden]], [[Grabesfrieden]], [[Sonntagsfrieden]], [[Weihnachtsfrieden]]
+:[5] [[Gottesfrieden]], [[Seelenfrieden]]
+
+{{Beispiele}}
+:[1] Nachdem beide Völker ''Frieden'' geschlossen hatten, erholte sich auch die Wirtschaft wieder.
+:[1] „Es kann der Frömmste nicht in ''Frieden'' bleiben, / Wenn es dem bösen Nachbar nicht gefällt.“<ref>[[w:Friedrich von Schiller|Friedrich von Schiller]], Wilhelm Tell, IV, 3 vgl. online bei {{Wikisource|Wilhelm Tell/Vierter Aufzug}}</ref>
+:[1] Alle Menschen wären glücklich, wenn ''Frieden'' wäre.
+:[2] Der Westfälische ''Frieden'' beendete den Dreißigjährigen Krieg.
+:[3] „Die Befindlichkeit des Reiches war im Inneren durch sozialen ''Frieden'' und wirtschaftliche Prosperität gekennzeichnet sowie durch Stabilität in der Außenpolitik, die zeitweilig in den Hintergrund trat.“<ref>{{Literatur | Autor=Pedro Barceló | Titel=Kleine römische Geschichte | Auflage=Sonderausgabe, 2., bibliographisch aktualisierte | Verlag=Primus Verlag | Ort=Darmstadt | Jahr=2012 | ISBN=978-3534250967 }}, Seite 80.</ref>
+:[4] Hier in der Toskana konnte sie ihren inneren ''Frieden'' wiederfinden.
+:[5] ''Friede'' sei mit euch!
+
+{{Redewendungen}}
+:[[dem Frieden nicht trauen|dem ''Frieden'' nicht trauen]]
+:[[Friede, Freude, Eierkuchen|''Friede'', Freude, Eierkuchen]]
+:jemanden oder etwas [[in Frieden lassen|in ''Frieden'' lassen]]
+
+{{Sprichwörter}}
+:[[es kann der Frömmste nicht in Frieden leben, wenn es dem bösen Nachbarn nicht gefällt|Es kann der Frömmste nicht in ''Frieden'' leben, wenn es dem bösen Nachbarn nicht gefällt.]]
+
+{{Charakteristische Wortkombinationen}}
+:[1] [[Partnerschaft]] für den ''Frieden,'' ''Frieden'' [[schließen]], den ''Frieden'' [[stören]]
+:[2] der Westfälische ''Frieden,'' der ''Friedensschluss'' von Ultrecht
+:[3] in ''Frieden'' [[leben]], häuslicher ''Frieden'', seinen ''Frieden'' mit etwas [[machen]]
+:[4] der [[innere]] ''Friede''
+:[5] [[ruhen|ruhe]] in ''Frieden,'' ''Friede'' sei mit euch
+
+{{Wortbildungen}}
+:''Adjektive:'' [[friedfertig]], [[friedliebend]], [[friedlos]], [[friedsam]], [[friedlich]], [[zufrieden]]
+:''Substantive:'' [[Friedensabkommen]], [[Friedensaktivist]], [[Friedensangebot]], [[Friedensbedingung]], [[Friedensbereitschaft]], [[Friedensbewegung]], [[Friedensbruch]], [[Friedensdemonstration]], [[Friedensengel]], [[Friedensfahrt]], [[Friedensforschung]], [[Friedensfreund]], [[Friedensfühler]], [[Friedensfürst]], [[Friedensgarantie]], [[Friedensgespräch]], [[Friedensgott]], [[Friedensinitiative]], [[Friedenskämpfer]], [[Friedenskanzler]], [[Friedenskonferenz]], [[Friedenskurs]], [[Friedenslager]], [[Friedensliebe]], [[Friedenslied]], [[Friedensmission]], [[Friedensnobelpreis]], [[Friedensordnung]], [[Friedenspfeife]], [[Friedenspflicht]], [[Friedensplan]], [[Friedenspolitik]], [[Friedenspreis]], [[Friedensprozess]], [[Friedensresolution]], [[Friedensrichter]], [[Friedensschluss]], [[Friedensstifter]], [[Friedensstörer]], [[Friedenstaube]], [[Friedenstrupp]], [[Friedensverhandlung]], [[Friedensvermittler]], [[Friedensvertrag]], [[Friedenszeit]], [[Friedfertigkeit]], [[Friedhof]], [[Friedlosigkeit]], [[Friedsamkeit]], [[Umfriedung]]
+:[1] [[Friedensware]]
+:[5] [[Friedensgruß]], [[Friedenskuss]]
+:''Verben:'' [[befrieden]], [[befriedigen]], [[einfrieden]]
+
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{af}}: [1] {{Ü|af|vrede}}
+*{{grc}}: [1] {{Üt|grc|εἰρήνη|eirēnē}} {{f}}
+*{{ar}}: [1] {{Üxx5|ar|sala:m(un)|سَلَامٌ|سلام}} {{m}}
+*{{az}}: [1] {{Ü|az|sülh}}
+*{{bn}}: [1] {{Üt|bn|পীস|śānti}}, {{Üt|bn|শান্ডি|shandhi}}
+*{{bg}}: [1, 2] {{Üt|bg|мир|mir}}
+*{{zh}}: [1] {{Üt|zh|和平|hépíng}}
+*{{da}}: [1] {{Ü|da|fred}} {{u}}
+*{{en}}: [1–5] {{Ü|en|peace}}
+*{{eo}}: [1] {{Ü|eo|paco}}, {{Ü|eo|pacakordo}}
+*{{et}}: [1] {{Ü|et|rahu}}
+*{{fo}}: [1] {{Ü|fo|friður}}
+*{{fi}}: [1–5] {{Ü|fi|rauha}}
+*{{fr}}: [1–5] {{Ü|fr|paix}} {{f}}; [2] {{Ü|fr|traité de paix}} {{m}}
+*{{fur}}: [1] {{Ü|fur|pâs}} {{f}}
+*{{ka}}: [1] {{Üt|ka|მშვიდობა|}}; [3] {{Üt|ka|თანხმობა|}}; [4] {{Üt|ka|სიმშვიდე|}}
+*{{el}}: [1, 2, 5] {{Üt|el|ειρήνη|iríni}} {{f}}; [3]&nbsp;{{Üt|el|ομόνοια|omónia}} {{f}}; [4]&nbsp;{{Üt|el|ησυχία|isychía}} {{f}}
+*{{he}}: [1] {{Üt|he|שלום|schalom}}
+*{{id}}: [1] {{Ü|id|perdamaian}}
+*{{is}}: [1, 3, 4] {{Ü|is|friður}}
+*{{it}}: [1] {{Ü|it|pace}} {{f}}
+*{{ja}}: [1] {{Üt|ja|平和|へいわ, heiwa}}
+*{{ca}}: [1–5] {{Ü|ca|pau}} {{f}}
+*{{ko}}: [1, 3] {{Üt|ko|평화|}}
+*{{hr}}: [1] {{Ü|hr|mir}}
+*{{ku}}: [1] {{Üt|ku|aştî|}}
+*{{la}}: [1–5] {{Ü|la|pax}} {{f}}
+*{{lt}}: [1] {{Ü|lt|taika}}
+|Ü-rechts=
+*{{lb}}: [1] {{Ü|lb|Freed}} {{m}}
+*{{na}}: [1] {{Ü|na|iow}}
+*{{nds}}: [1] {{Ü?|nds|Freed}}, {{Ü|nds|Freden}}
+*{{nl}}: [1] {{Ü|nl|vrede}}; [4] {{Ü|nl|rust}}
+*{{no}}: [1–5] {{Ü|no|fred}} {{m}}
+*{{hsb}}: [1] {{Ü?|hsb|měr}}
+*{{oc}}: [1–5] {{Ü|oc|patz}} {{f}}
+*{{pl}}: [1–5] {{Ü|pl|pokój}} {{m}}
+*{{pt}}: [1–5] {{Ü|pt|paz}} {{f}}
+*{{rm}}: [1, 3] {{Ü|rm|pasch}}
+*{{ro}}: [1, 3] {{Ü|ro|pace}}
+*{{ru}}: [1–4] {{Üt|ru|мир|mir}} {{m}}; [4, 5] {{Üt|ru|покой|pokoj}} {{m}}
+*{{sv}}: [1–3] {{Ü|sv|fred}} {{u}}; [3–5] {{Ü|sv|frid}} {{u}} {{kPl.}}
+*{{sr}}: [1, 3] {{Üt|sr|мир|mir}}
+*{{sh}}: [1] {{Ü|sh|mir}}
+*{{sk}}: [1] {{Ü|sk|mier}} {{m}}; [3–5] {{Ü|sk|pokoj}}
+*{{sl}}: [1, 3] {{Ü|sl|mir}}
+*{{es}}: [1] {{Ü|es|paz}} {{f}}; [2] {{Ü|es|tratado de paz}} {{m}}; [3] {{Ü|es|armonía}} {{f}}; [4] {{Ü|es|calma}}; [5] {{Ü|es|realización}} {{f}}
+*{{tet}}: [1] {{Ü|tet|dame}}, {{Ü|tet|pás}}
+*{{cs}}: [1–3] {{Ü|cs|mír}} {{m}}; [3] {{Ü|cs|klid}} {{m}}; [5] {{Ü|cs|pokoj}} {{m}}
+*{{tr}}: [1–3] {{Ü|tr|barış}}, {{Ü|tr|sulh}}; [4] {{Ü|tr|ferahlık}}, {{Ü|tr|rahatlık}}, {{Ü|tr|sükünet}}
+*{{uk}}: [1–3] {{Üt|uk|мир|myr}} {{m}}
+*{{hu}}: [1, 3] {{Ü|hu|béke}}
+*{{vi}}: [1] {{Ü|vi|hòa bình}}
+*{{cy}}: [1–4] {{Ü|cy|heddwch}} {{m}}
+*{{wa}}: [1] {{Ü|wa|påye}}
+*{{fy}}: [1] {{Ü|fy|frede}}
+}}
+
+{{Referenzen}}
+:[1, 3, 4] {{Wikipedia|Frieden}}
+:[1, 2, 4] {{Ref-Grimm|Friede}}
+:[1–4] {{Ref-Goethe|Friede}}
+:[1–5] {{Ref-DWDS|Frieden}}
+:[*] {{Ref-Canoo|Frieden}}
+:[1] {{Ref-UniLeipzig|Frieden}}
+:[1–4] {{Ref-FreeDictionary|Frieden}}
+:[1–5] {{Ref-Duden|Friede}}
+
+{{Quellen}}
+
+=== {{Wortart|Deklinierte Form|Deutsch}} ===
+
+{{Worttrennung}}
+:Frie·den
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ˈfʁiːdn̩}}
+:{{Hörbeispiele}} {{Audio|}}
+:{{Reime}} {{Reim|iːdn̩|Deutsch}}
+
+{{Grammatische Merkmale}}
+*Dativ Singular des Substantivs '''[[Friede]]'''
+*Akkusativ Singular des Substantivs '''[[Friede]]'''
+*Nominativ Plural des Substantivs '''[[Friede]]'''
+*Genitiv Plural des Substantivs '''[[Friede]]'''
+*Dativ Plural des Substantivs '''[[Friede]]'''
+*Akkusativ Plural des Substantivs '''[[Friede]]'''
+
+{{Grundformverweis Dekl|Friede}}
+
+{{Ähnlichkeiten 1|[[Friedel]], [[Frieder]], [[Friedhof]], [[frieren]], [[Friesen]]}}

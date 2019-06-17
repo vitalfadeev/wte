@@ -1,0 +1,332 @@
+﻿{{desambiguación|Car|CAR|cár|càr|câr|ĉar|čar|čär|çar|car-|caar}}
+
+== {{lengua|es}} ==
+{{pron-graf
+|fone=kaɾ}}
+
+=== Etimología 1 ===
+{{etimología|grc|κάροιον|transcripción=károion|antena}}
+
+==== {{sustantivo masculino|es}} ====
+{{inflect.es.sust.reg-cons}}
+
+;1 {{náutica}}: {{plm|extremo}} [[inferior]] del [[mástil]] al que se asegura la [[vela]] en las embarcaciones de [[vela latina]].
+{{uso|anticuado}}.
+
+==== Véase también ====
+{{w}}
+
+{{clear}}
+
+==== Traducciones ====
+{{trad-arriba}}
+<!-- formato: {{t+|idioma|<acepción#>|palabra}} p. ej. {{t+|fr|1|voir}} si es sustantivo, indicar el género, p. ej. {{t+|fr|voiture|f}} -->
+<!--{{t+|de|}}-->
+<!--{{t+|ar|}}-->
+<!--{{t+|bg|}}-->
+<!--{{t+|ca|}}-->
+<!--{{t+|eo|}}-->
+<!--{{t+|fr|}}-->
+{{trad-centro}}
+<!--{{t+|en|}}-->
+<!--{{t+|it|}}-->
+<!--{{t+|ja|}}-->
+<!--{{t+|nl|}}-->
+<!--{{t+|pl|}}-->
+<!--{{t+|pt|}}-->
+{{trad-abajo}}
+
+{{clear}}
+
+=== Etimología 2 ===
+{{etimología|osp|car|por que}}, y este {{etim|la|quare|alt=quārē|por qué}}.
+
+==== {{conjunción|es}} ====
+;1: {{impropia|Introduce una oración que explica la causa o el motivo}}.
+{{uso|obsoleto}}.
+{{sinónimos|ca|porque|pues|ya que}}.
+
+{{clear}}
+
+==== Traducciones ====
+{{trad-arriba}}
+<!-- formato: {{t+|idioma|<acepción#>|palabra|género}} p. ej. {{t+|fr|1|chose|f}} -->
+{{trad-centro}}
+{{trad-abajo}}
+
+== {{lengua|osp}} ==
+{{pron-graf|leng=osp}}
+
+=== Etimología ===
+{{etimología|leng=osp|la|quare|alt=quārē|por qué}}.
+
+=== {{conjunción|osp}} ===
+;1: {{plm}}, {{l|es|porque}}, {{l|es|pues}} o {{l|es|ya que}}.
+
+== {{lengua|ca}} ==
+{{pron-graf|leng=ca
+|fone=ka(ɾ)
+|2fone=kar}}
+
+=== Etimología 1 ===
+{{etimología|leng=ca|la|carus|alt=cārum}}.
+
+==== {{adjetivo|ca}} ====
+{{inflect.ca.adj.reg}}
+
+;1: {{plm|caro}}.
+
+;2: {{plm|costoso}}.
+{{sinónimo|leng=ca|alt|costós|dispendiós|elevat|immòdic|onerós}}.
+{{antónimo|leng=ca|barat}}.
+
+{{clear}}
+
+=== Etimología 2 ===
+{{etimología|leng=ca|grc|κάροιον|transcripción=károion|antena}}.
+
+==== {{sustantivo masculino|ca}} ====
+{{inflect.ca.sust.reg}}
+
+;1: {{plm}}.
+
+{{clear}}
+
+=== Etimología 3 ===
+{{etimología|leng=ca|la|quare|alt=quārē|por qué}}.
+
+==== {{conjunción|ca}} ====
+;1: {{plm|pues}}, [[ya que]] o {{l|es|porque}}.
+{{uso|leng=ca|formal}}.
+{{sinónimo|leng=ca|perquè}}.
+:*'''Ejemplos:'''
+::"Si la situació és dolenta però el diagnòstic encertat, anem per bon camí, ''car'' la solució, treballosa i esquerpa o al nostre abast, és possible i probable" (Fuente: [http://www.avui.es/avui/diari/04/ago/06/30106.htm ''Avui''; 6 de agosto, 2004], consultado el 2 de septiembre de 2004)
+::"Però no va voler donar-li de mamar, ''car'' estava convençuda que, amb el disgust, la llet se li devia haver fet agra" - Pero no quiso darle de mamar, <u>''porque''</u> estaba convencida de que, con el disgusto, la leche debía habérsele agriado. De Pedrolo, Manuel (1974) ''Mecanoscrit del segon origen'', p. 151. ISBN 84-297-1032-9
+
+==== Información adicional ====
+{{anagrama|leng=ca|arc}}.
+
+== {{lengua|fr}} ==
+{{pron-graf|leng=fr
+|pron=Francia|fone=kaʁ|audio=Fr-car.ogg
+|h=care|h2=carent|h3=cares|h4=carre|h5=carrent|h6=carres|h7=cars|h8=quarre|h9=quarrent|h10=quarres|h11=quart|h12=quarts}}
+
+=== Etimología ===
+{{etimología|leng=fr|frm|car|porque}}, y este {{etim|leng=fr|fro|car|glosa=porque}}, {{etim|leng=fr|la|quare|alt=quārē|glosa=por qué}}.
+
+=== {{conjunción|fr}} ===
+;1: {{plm|dado que}}, {{l|es|porque}}, {{l|es|pues}}, {{l|es|puesto que}} o {{l|es|ya que}} (introduce una explicación, razón o causa de una proposición).
+:*'''Ejemplo:''' ''J’ai ouvert mon parapluie ''car'' il pleuvait.'' - Abrí el paraguas porque llovía.
+
+=== {{sustantivo masculino|fr}} ===
+{{inflect.fr.sust.reg}}
+
+;2 {{vehículos|leng=fr}}: {{plm|autocar}}, {{l|es|autobús}} o {{l|es|bus}}.
+{{sinónimo|leng=fr|autocar}}.
+:*'''Ejemplo:''' ''Les élèves vont à l'école en ''car''.'' - Los alumnos van al colegio en bus.
+
+=== Información adicional ===
+{{anagrama|leng=fr|arc|ARC}}.
+
+== {{lengua|fro}} ==
+{{pron-graf|leng=fro
+|g=care|g2=cor|g3=kaar|g4=kaer|g5=kar|g6=kare|g7=ker|g8=qar|g9=qare|g10=quar|g11=quare|g12=quer|g13=quore}}
+
+=== Etimología 1 ===
+{{etimología|leng=fro|la|quare|alt=quārē|por qué}}.
+
+==== {{adverbio|fro}} ====
+;1: {{plm|entonces}}.
+
+===== {{conjunción|fro}} =====
+;2: {{plm|dado que}}, {{l|es|porque}}, {{l|es|pues}}, {{l|es|puesto que}} o {{l|es|ya que}} (introduce una explicación, razón o causa de una proposición).
+
+{{clear}}
+
+=== Etimología 2 ===
+{{etimología|leng=fro|la|caro|alt=carnem}}.
+
+==== {{sustantivo|fro}} ====
+;1: {{variante|leng=fro|char}}.
+
+== {{lengua|frm}} ==
+{{pron-graf|leng=frm}}
+
+=== Etimología ===
+{{etimología|leng=frm|fro|car||fro|quare|glosa2=porque}}, y este {{etim|leng=frm|la|quare|alt=quārē|glosa=por qué}}.
+
+=== {{conjunción|frm}} ===
+;1: {{plm|dado que}}, {{l|es|porque}}, {{l|es|pues}}, {{l|es|puesto que}} o {{l|es|ya que}} (introduce una explicación, razón o causa de una proposición).
+
+== {{lengua|en}} ==
+{{pron-graf|leng=en
+|pron=R. U.|fone=ˈkɑː
+|2pron=EE. UU.|2fone=kɑɹ|2audio=en-us-car.ogg}}
+
+=== Etimología ===
+{{etimología|enm|carre|leng=en}}.
+
+=== {{sustantivo|en}} ===
+{{inflect.en.sust.reg}}
+
+;1 {{vehículos|leng=en}}: {{plm|automóvil}}, [[coche]], [[carro]], [[auto]].
+:*'''Ejemplo:''' ''My ''car'' broke down yesterday.'' - Ayer se me averió el automóvil.
+
+=== Véase también ===
+{{w|leng=en}}.
+
+== {{lengua|ia}} ==
+{{pron-graf|leng=ia
+|fone=ˈkar}}
+
+=== Etimología ===
+{{etimología|la|carus|leng=ia}}.
+
+=== {{adjetivo|ia}} ===
+;1: {{plm|querido}}.
+;2: {{plm|caro}}.
+
+== {{lengua|oc}} ==
+{{pron-graf|leng=oc
+|pron=gascón, como adjetivo y sustantivo|fone=ˈka
+|2pron=languedociano|2fone=ˈkaɾ
+|3pron=provenzal|3fone=ˈkaʁ
+|v=char|vnota=noroccitano; como adjetivo
+|p=carn}}
+
+=== Etimología 1 ===
+{{etimología|leng=oc|pro|car|porque}}, y este {{etim|leng=oc|la|quare|alt=quārē|glosa=por qué}}.
+
+==== {{conjunción|oc}} ====
+;1: {{plm|dado que}}, {{l|es|porque}}, {{l|es|pues}}, {{l|es|puesto que}} o {{l|es|ya que}}
+
+{{clear}}
+
+=== Etimología 2 ===
+{{etimología|leng=oc|pro|car|caro}}, y este {{etim|leng=oc|la|carus|alt=cārum}}.
+
+==== {{adjetivo|oc}} ====
+{{inflect.oc.adj.reg}}
+
+;1: {{plm|costoso}}.
+
+;2: {{plm|caro}}.
+
+{{clear}}
+
+=== Etimología 3 ===
+{{etimología|leng=oc|pro|car}}, y este {{etim|leng=oc|la|carrus|alt=carrum}}.
+
+==== {{sustantivo|oc}} ====
+{{inflect.oc.sust.reg}}
+
+;1: {{plm|carro}}.
+{{sinónimo|leng=oc|carri}}.
+
+==== Información adicional ====
+{{derivad|leng=oc|carament}}.
+{{anagrama|leng=oc|arc}}.
+
+==== Véase también ====
+{{w|leng=oc}}.
+
+== {{lengua|pcd}} ==
+{{pron-graf|leng=pcd}}
+
+=== Etimología 1 ===
+{{etimología|leng=pcd|fro|car}}
+
+==== {{sustantivo femenino|pcd}} ====
+;1: {{plm|carne}}.
+
+{{clear}}
+
+=== Etimología 2 ===
+{{etimología|leng=pcd|fro|car}}.
+
+==== {{sustantivo masculino|pcd}} ====
+;1: {{plm|carro}}.
+
+==== Información adicional ====
+{{derivad|leng=pcd|cairée|carée|caretée|carier|carrée|carrette}}.
+
+== {{lengua|pro}} ==
+{{pron-graf|leng=pro
+|v=carre|vnota=como sustantivo
+|v2=char|vnota2=como sustantivo}}
+
+=== Etimología 1 ===
+{{etimología|leng=pro|la|quare|alt=quārē}}.
+
+==== {{conjunción|pro}} ====
+;1: {{variante|leng=pro|quar}}.
+
+{{clear}}
+
+=== Etimología 2 ===
+{{etimología|leng=pro|la|carus|alt=cārum}}.
+
+==== {{adjetivo|pro}} ====
+;1: {{plm|caro}}.
+
+;2: De {{l|es|precio}} alto; {{l|es|difícil}}; {{l|es|raro}}.
+
+{{clear}}
+
+=== Etimología 3 ===
+{{etimología|leng=pro|la|carrus|alt=carrum}}.
+
+==== {{sustantivo|pro}} ====
+;1: {{plm|carro}}.
+
+== {{lengua|ro}} ==
+{{pron-graf|kar|leng=ro
+|g=кар|gnota=Moldavia}}
+
+=== Etimología 1 ===
+{{etimología|leng=ro|la|carrus|alt=carrum}}.
+
+==== {{sustantivo neutro|ro}} ====
+{{inflect.ro.sust.n}}
+
+;1 {{vehículos|leng=ro}}: {{plm|carreta}}, {{l|es|carretilla}} o {{l|es|carro}}.
+
+{{clear}}
+
+=== Etimología 2 ===
+{{etimología|leng=ro|la|carius}}.
+
+==== {{sustantivo neutro|ro}} ====
+{{inflect.ro.sust.n|u=s}}
+
+;1 {{insectos|leng=ro}}: {{plm|escarabajo del reloj de la muerte}}.
+
+{{clear}}
+
+==== Locuciones ====
+{{rel-arriba}}
+*{{l+|ro|a pus carul înaintea boilor}}
+*{{l+|ro|car blindat}}
+*{{l+|ro|car de asalt}}
+*{{l+|ro|car de foc}}
+*{{l+|ro|car funebru}}
+{{rel-centro}}
+*{{l+|ro|car funerar}}
+*{{l+|ro|car mortuar}}
+*{{l+|ro|Carul Mare}}
+*{{l+|ro|Carul Mic}}
+*{{l+|ro|cu carul}}
+*{{l+|ro|nici în car, nici în căruță}}
+{{rel-abajo}}
+
+==== Información adicional ====
+{{anagrama|leng=ro|arc}}.
+
+==== Véase también ====
+{{w|leng=ro}}.
+
+== Referencias y notas ==
+<references />
+:*{{dexonline}}
+:*{{DRAE}}
+:*{{GDLC}}

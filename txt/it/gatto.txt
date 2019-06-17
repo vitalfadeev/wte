@@ -1,0 +1,133 @@
+﻿{{W|Dividere le traduzioni in base alla definizione a cui si riferiscono}}
+== {{-it-}} ==
+{{-sost-|it}} 
+{{Pn|w}} ''m sing''
+{{Tabs|gatto|gatti|gatta|gatte}}
+[[File:Felis catus-cat on snow.jpg|thumb|un gatto [[domestico]] ([[w:Felis silvestris catus|Felis silvestris catus]]) sulla [[neve]]]]
+[[File:Felis silvestris silvestris Luc Viatour.jpg|thumb|un '''gatto''' [[selvatico]]]]
+[[File:June odd-eyed-cat cropped.jpg|thumb|gatto [[bianco]] con [[iridi]] di [[colore]] [[differente]], un [[esempio]] di [[eterocromia]]]]
+# {{Term|zoologia|it}} {{Term|mammalogia|it}} [[piccolo]] [[mammifero]] [[domestico]] dell'ordine dei [[Carnivori]], [[della]] [[famiglia]] [[dei]] [[Felidi]], [[dal]] [[corpo]] [[agile]], con [[capo]] [[tondeggiante]], [[unghie]] [[retrattili]] e [[pelame]] di [[vario]] colore; {{Taxon|Felis silvestris catus}}
+# {{Fig}} [[persona]] [[agilissimo|agilissima]]
+#* ''quell'atleta è un {{Pn}}''
+# {{Fig}} [[persona]] [[molto]] [[dolce]]
+# {{Term|araldica|it}} figura [[araldica]] [[convenzionale]] che rappresenta di norma l'[[animale]] [[passante]] e con la testa di fronte, nella [[posizione]] simile a quella del [[leopardo]]
+# {{Spreg}} persona [[astuta]]
+#* ''si muove come un {{Pn}}''
+
+{{-sill-}}
+; gàt | to
+
+{{-pron-}}
+{{IPA|/'gatto/}}
+{{Audio|It-gatto.ogg}}
+
+{{-etim-}}
+dal [[latino]] tardo ''[[cattus]]''
+
+{{-quote-}}
+{{Quote
+|Fu chiaro fin dall'inizio che ogni qualvolta c'era un lavoro da fare, il gatto si rendeva irreperibile
+|[[q:George Orwell|George Orwell]]}}
+
+{{-sin-}}
+* {{Term|familiare|it}} [[micio]]
+* [[felino]]
+
+{{-der-}}
+* [[gattara]], [[sgattaiolare]], [[occhio di gatto]], [[gattaiola]], [[gatta]], [[gattità]], [[gattofilo]], [[gattomammone]], [[gattonare]]
+
+{{-rel-}}
+* ''(Felidi)'' [[tigre]], [[leopardo]], [[gattopardo]], [[lince]], [[giaguaro]], [[leone]], [[ozelot]] (o [[ozelot]]), [[puma]], [[ghepardo]], [[pantera]]
+
+{{-var-}}
+* {{Term|antico|it}} [[catto]]
+
+{{-alter-}}
+* {{Dim}} [[gattino]]
+* {{Accr}} [[gattone]]
+* {{Spreg}} [[gattaccio]]
+* {{Vezz}} [[gattuccio]]
+
+{{-iperon-}}
+* [[animale]], [[metazoo]], [[cordato]], [[vertebrato]], [[omeotermo]], [[omotermo]], [[mammifero]], [[carnivoro]], [[felide]], [[felino]]
+
+
+
+
+{{-prov-}}
+* ''essere in quattro '''gatti''''': essere in un numero molto ristretto di persone
+* ''essere come cane e '''gatto''''': non andare d'accordo, provare antipatia reciproca, litigare sempre
+* ''non dire '''gatto''' se non ce l'hai nel sacco'': non cantare vittoria prima del tempo
+* ''quando il '''gatto''' non c'è i topi ballano'': quando non c'è il capo i subordinati fanno festa - non si impegnano
+* ''tanto va la '''gatta''' al lardo che ci lascia lo zampino'': a forza di rischiare si finisce col rimetterci
+* '''''gatta''' ci cova'': c'è sotto qualcosa
+* ''la '''gatta''' frettolosa fa i gattini ciechi'': le cose fatte in fretta riescono male
+* ''fare come il '''gatto''' che si morde la coda'': girare intorno a un problema senza comprendere il nocciolo della questione, così come il gatto che gira in tondo mordendosi, senza capire che la coda è sua
+* ''camminare a '''[[gattoni]]''''' (o a [[carponi]] o '''[[gattonare]]'''): camminare a quattro gambe, come fanno i bambini piccoli
+* ''fare la '''gatta''' morta'': riferito all'atteggiamento di persone, in genere donne, che per scopi personali, per lo più di seduzione, si fingono ingenue, deboli o svenevoli, mentre sono di tutt'altra predisposizione; un vago sinonimo del [[cascamorto]] maschile
+* ''è un '''gatto''' di piombo'': sembra, o pretende di essere, una persona attiva, ma in realtà non fa nulla
+* ''sciopero a '''gatto''' selvaggio'': uno sciopero fatto senza preavviso, o a gruppetti, o comunque imprevedibile, tale da dare il maggior disturbo con il minimo costo; tipica espressione del mondo sindacale anni 60-70
+* ''quando il '''gatto''' si liscia le orecchie, aspettati acqua da riempir le secchie'':quando il gatto si passa la zampa dietro le orecchie, pioverà molto
+
+{{-trad-}}
+{{Trad1|animale domestico}}
+:*{{akz}}: [[kati]] (''di casa''), [[kowi]] (''selvatico'')
+:*{{ar}}: [[قط|قِطّ]] (qiṭṭ)
+:*{{eu}}: [[katu]]
+:*{{bg}}: [[котка]] (kotka)
+:*{{ca}}: [[gat]] ''m''
+:*{{cic}}: [[koi]]
+:*{{zh}}: [[猫]] (mao)
+:*{{ko}}: [[고양]] (goyang)
+:*{{co}}: [[ghjattu]]
+:*{{hr}}: [[mačka]] ''f'', [[mačak]] ''m''
+:*{{da}}: [[kat]] ''c''
+:*{{he}}: [[חטול]]
+:*{{eo}}: [[kato]]
+:*{{fi}}: [[kissa]], [[katti]]
+:*{{fr}}: [[chat]]
+:*{{cy}}: [[cath]] ''f''
+:*{{ja}}:  [[猫]] ([[ねこ]], neko)
+:*{{el}}: [[γάτος]] (gátos) ''m''
+:*{{grc}}: [[αἴλουρος]] (aílouros) ''m''
+:*{{en}}: [[cat]]
+{{mid}}
+:*{{ga}}: [[cat]] ''m''
+:*{{is}}: [[köttur]]
+:*{{lld}}: [[giat]]
+:*{{la}}: [[feles]], [[cattus]]
+:*{{lmo}}: [[gatt]]
+:*{{nap}}: [[gàtto]], [[miscio]], [[mucìllo]]
+:*{{no}}: [[katt]]
+:*{{nl}}: [[Kattekop]]
+:*{{fa}}: [[گربه]]
+:*{{pl}}: [[kot]] ''m''
+:*{{pt}}: [[gato]]
+:*{{ro}}: [[pisică]]
+:*{{ru}}: [[кот]] ''m'' / [[кошка]] ''f''
+:*{{sc}}: [[gattu]]
+:*{{sr}}: [[mačka]] / [[мачка]] ''f'', [[mačor]] / [[мачор]] ''m'' (meno comune)
+:*{{sl}}: [[mačka]] ''f''
+:*{{es}}: [[gato]]
+:*{{sv}}: [[katt]] ''c''
+:*{{de}}: [[Katze]] ''f'', [[Kater]] ''m''
+:*{{hu}}: [[macska]] 
+{{Trad2}}
+
+
+
+{{-ref-}}
+* {{Fonte|gar}}
+* {{Fonte|dem}}
+* {{Fonte|dizit}}
+* {{Fonte|trec}}
+* {{Fonte|hoep}}
+* {{Fonte|sabco}}
+* {{Fonte|sin-co}}
+* {{Fonte|sape}}
+*Enciclopedia [http://www.treccani.it/enciclopedia/ricerca/Europa/ Treccani]
+* {{Term|araldica|it}} ''Dizionario araldico, di Piero Guelfi Camajani - edito a Milano nel 1940''
+* {{Term|araldica|it}} ''[http://www.archiviodistato.firenze.it/ceramellipapiani/static/figure.htm Glossario dell'Archivio di Stato di Firenze]''
+
+== Altri progetti ==
+{{Interprogetto|etichetta=gatto domestico|w=Felis silvestris catus|commons1=Felis silvestris catus|wikispecies=Felis silvestris catus|q|q_etichetta=gatto|preposizione=sul}}

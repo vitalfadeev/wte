@@ -1,0 +1,73 @@
+﻿== {{lengua|es}} ==
+{{pron-graf}}
+{{pronunciación}} {{AFI|...}}
+
+=== Etimología ===
+{{etimología}}
+
+=== {{sustantivo propio|es}} ===
+
+;1 {{ciudades}}: Ciudad capital de [[Noruega]].
+{{relacionado|tit=Gentilicio|oslense}}.
+{{sinónimos|Christiania|Cristianía|Kristiania|nota3=En 1624, Oslo fue destruida por un incendio y Cristian IV de Dinamarca y Noruega la reconstruyó por completo y le dio el nombre de Christiania (o en español ''Cristianía''). Conservó este nombre hasta 1925 en que recuperó el topónimo histórico}}.
+
+=== Véase también ===
+* [[noruego]]
+{{w}}
+{{wikiviajes}}
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+{{t+|sl|1|Oslo}}
+{{t+|fr|1|Oslo}}
+{{trad-centro}}
+{{t+|en|1|Oslo}}
+{{t+|it|1|Oslo}}
+{{trad-abajo}}
+
+== {{lengua|fr}} ==
+{{pron-graf|leng=fr}}
+
+=== Etimología ===
+{{etimología|leng=fr}}
+
+=== {{sustantivo propio|fr}} ===
+
+;1 {{ciudades|leng=fr}}: {{l|es|Oslo}}.
+
+=== Véase también ===
+{{w|leng=fr}}
+{{wikiviajes|leng=fr}}
+
+== {{lengua|en}} ==
+{{pron-graf|leng=en}}
+
+=== Etimología ===
+{{etimología|leng=en}}
+
+=== {{sustantivo propio|en}} ===
+
+;1 {{ciudades|leng=en}}: {{l|es|Oslo}}.
+
+=== Véase también ===
+{{w|leng=en}}
+{{wikiviajes|leng=en}}
+
+== {{lengua|it}} ==
+{{pron-graf|leng=it}}
+
+=== Etimología ===
+{{etimología|leng=it}}
+
+=== {{sustantivo propio|it}} ===
+
+;1 {{ciudades|leng=it}}: {{l|es|Oslo}}.
+
+=== Véase también ===
+{{w|leng=it}}
+{{wikiviajes|leng=it}}
+
+== Referencias y notas ==
+<references />

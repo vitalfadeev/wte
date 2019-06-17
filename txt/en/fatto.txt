@@ -1,0 +1,90 @@
+﻿== {{-it-}} ==
+{{-agg-|it}}
+{{Pn}} ''m sing''
+{{Tabs|fatto|fatti|fatta|fatte}}
+# che è stato portato a compimento
+# {{Term|gergale|it}} di [[chi]] ha [[consumato]] [[stupefacenti]]
+#* ''quello è {{Pn}} e [[strafatto]]''
+# {{Term|familiare|it}} di persona  che ha [[raggiunto]] l'età [[adulta]]
+
+{{-sost-|it}}
+{{Pn|w}} ''m sing'' {{Linkp|fatti}}
+# {{Term|filosofia|it}} {{Term|diritto|it}} [[evento]] [[accaduto]] [[realmente]]
+#* ''i '''fatti''' del [[passato]] restano [[quasi]] tutti [[per sempre]]''
+# {{Est}} quanto già [[avvenuto]]
+# {{Est}} [[fenomeno]] [[realizzato]]
+
+{{-verb form-|it}}
+# participio passato maschile singolare  di [[fare]]
+
+{{-sill-}}
+; fàt | to
+
+{{-pron-}}
+{{IPA|/'fatto/}}
+{{Audio|it-fatto.ogg}}
+
+{{-etim-}}
+* ''(sostantivo) dal [[latino]] ''[[factum]]''
+* ''(forma verbale)'' dal verbo latino [[facio]] più specificamente dal participio perfetto [[factus]]
+
+{{-quote-}}
+{{Quote|Ed elli avea del cul '''fatto''' trombetta|[[w:Dante Alighieri|Dante Alighieri]], ''[[w:Inferno - Canto ventiseiesimo|Divina Commedia, Inferno, Canto XXVI]]''}}
+
+{{Quote
+|Uno dei malfattori appesi alla croce lo insultava: «Non sei tu il Cristo? Salva te stesso e anche noi!». Ma l'altro lo rimproverava: «Neanche tu hai timore di Dio e sei dannato alla stessa pena? Noi giustamente, perché riceviamo il giusto per le nostre azioni, egli invece non ha '''fatto''' nulla di male». E aggiunse: «Gesù, ricordati di me quando entrerai nel tuo regno». Gli rispose: «In verità ti dico, oggi sarai con me nel paradiso».
+|[[w:Vangelo secondo Luca|Vangelo secondo Luca]] {{passo biblico|Lc|23,39-43}},testo CEI 2008}}
+
+{{-sin-}}
+* [[costruito]], [[eseguito]], [[fabbricato]], [[formato]], [[composto]], [[creato]], [[prodotto]]
+* ''(di cibo)'' [[cucinato]], [[preparato]], [[adatto]]
+* ''(di persona)'' [[incline]], [[portato]]
+* [[compiuto]], [[avvenuto]], [[finito]], [[terminato]], [[completato]], [[ultimato]]
+* [[maturo]]
+* {{Term|gergale|it}} [[stanco]], [[affaticato]], [[drogato]], [[tossico]]
+* [[avvenimento]], [[circostanza]], [[vicenda]], [[evento]], [[caso]], [[accaduto]], [[episodio]], [[fenomeno]], [[azione]], [[atto]], [[impresa]]
+* [[realtà]], [[sostanza]]
+* {{Term|familiare|it}} [[questione]], [[argomento]], [[problema]]
+
+{{-der-}}
+* [[antefatto]], [[fattuale]], [[misfatto]], [[rifatto]], [[siffatto]]
+
+{{-rel-}}
+* [[fare]], [[farsi]]
+
+{{-prov-}}
+* ''sapere il {{Pn}} suo'': essere molto bravo
+* ''detto... {{Pn}}'': agire immediatamente oppure significa evidenziare un'azione sbagliata altrui già prevista
+* ''così {{Pn}}''
+* ''quel che è {{Pn}}, è {{Pn}}'': detto da chi in verità, non potendo più nascondere un proprio errore, vorrebbe che non lo si considerasse più
+
+{{-trad-}}
+{{Trad1|completato, compiuto}}
+:* {{en}}: [[done]], [[completed]]
+:* {{la}}: [[factus]], [[effectus]], [[aptus]], [[facinus]]
+{{Trad2}} 
+{{Trad1|episodio, evento}}
+:*{{fr}}:  [[fait]] ''m''; [[affaire]] ''m'' (questione)
+:*{{en}}:  [[fact]]
+:* {{la}}: [[acta]], [[conventio]], [[facĭnus]], [[factum]], res gestae 
+:*{{nl}}:  [[feit]] ''n''
+{{mid}}
+:*{{pap}}:  [[echo]]
+:*{{es}}:  [[hecho]] ''m''
+:*{{de}}:  [[Tatsache]] ''f''
+{{Trad2}}
+
+
+
+{{-ref-}}
+* {{Fonte|trec}}
+* {{Fonte|hoep}}
+* {{Fonte|sape}}
+* {{Fonte|gar}}
+* {{Fonte|sabco}}
+* {{Fonte|dizit}}
+* {{Fonte|dem}}
+* {{Fonte|eti}}
+
+== Altri progetti ==
+{{Interprogetto|w|w_preposizione=riguardante il|q|q_preposizione=sul}}

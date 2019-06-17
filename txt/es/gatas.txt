@@ -1,0 +1,39 @@
+﻿== {{lengua|es}} ==
+{{pron-graf|fone=ˈga.tas}}
+
+=== Forma sustantiva femenina ===
+;1: {{impropia|Forma plural de [[gata]]}}.
+
+=== Locuciones ===
+* [[a gatas]]: Significa el modo de ponerse o andar una persona con pies y manos en el suelo, como el gato y demás cuadrúpedos.<ref name="dlc1914">{{DLC1914|506||05 de septiembre de 2012}}</ref>
+* [[salir uno a gatas]]: Librarse con gran trabajo y dificultad de un peligro o apuro.<ref name="dlc1914" />
+
+=== Véase también ===
+{{w}}
+
+== {{lengua|tl}} ==
+{{pron-graf|leng=tl}}
+
+=== Etimología ===
+{{etimología|leng=tl}}.
+
+=== {{sustantivo|tl}} ===
+;1 {{bebidas|leng=tl}}: {{plm|leche}}.
+
+=== Véase también ===
+{{W|idioma=tl}}.
+
+== {{lengua|war}} ==
+{{pron-graf|leng=war}}
+
+=== Etimología ===
+{{etimología|leng=war}}.
+
+=== {{sustantivo|war}} ===
+;1 {{bebidas|leng=war}}: {{plm|leche}}.
+
+=== Véase también ===
+{{W|idioma=war}}.
+
+== Referencias y notas ==
+<references />

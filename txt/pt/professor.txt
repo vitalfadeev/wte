@@ -1,0 +1,214 @@
+﻿{{Wikipédia}}
+
+={{-pt-}}=
+==Substantivo==
+{{flex.pt|ms=professor|mp=professores|fs=professora|fp=professoras}}
+{{oxítona|pro|fes|sor}}, {{m}}
+# [[pessoa]] que tem por [[profissão]] [[ensinar]]
+# [[mestre]]
+# [[magister]]
+
+===Tradução===
+{{tradini}}
+* {{trad|af|onderwyser|skoolmeester}}
+* {{trad|ay|yatichiri}}
+* {{trad|sq|mësues}}
+* {{trad|de|Lehrer|Dozent}}
+* {{trad|ar|مُعَلِّمة|مُدَرِّس|مُعَلِّم|معلم}}
+* {{trad|an|mayestro|maistro}}
+* {{trad|arn|kimeltufe}}
+* {{trad|hy|ուսուցիչ}}
+* {{trad|ast|maestru}}
+* {{trad|az|müəlim}}
+* {{trad|eu|irakasle|maistra}}
+* {{trad|bn|ওস্তাদ}}
+* {{trad|be|настаўнік}}
+* {{trad|bi|tija}}
+* {{trad|br|skolaer|skolaerez}}
+* {{trad|bg|учител|преподавател}}
+* {{trad|kea|pursór}}
+* {{trad|ca|mestre}}
+* {{trad|ce|хьехархо}}
+* {{trad|cs|učitel}}
+* {{trad|zh|老师}} (lǎoshī)
+* {{trad|sn|mudzidzisi}}
+* {{trad|ko|선생님}}
+* {{trad|co|maestru|istitutore}}
+* {{trad|hr|učiteljica|nastavnik}}
+* {{trad|ku|mamoste}}
+* {{trad|da|lærer|skolelærer}}
+* {{trad|sk|učiteľ}}
+* {{trad|es|maestro|profesor}}
+* {{trad|eo|instruisto}}
+* {{trad|et|õpetaja}}
+* {{trad|fo|lærari}}
+* {{trad|fi|opettaja}}
+* {{trad|vls|schoolmeester}}
+* {{trad|fr|maître|enseignant|professeur}}
+* {{trad|fy|learaar}}
+* {{trad|fur|profesor|mestri|insegnat}}
+* {{trad|gd|tidsear}}
+* {{trad|gl|mestre}}
+* {{trad|cy|athro|athrawes}}
+* {{trad|ka|მასწავლებელი}}
+* {{trad|el|δάσκαλος}}
+* {{trad|grc|διδάσκαλος}}
+* {{trad|gn|mbo’ehara}}
+* {{trad|gu|શિક્ષક}}
+* {{trad|he|מורה|פרופסור}}
+* {{trad|hi|अध्यापक|गुरू|शिक्षक}}
+* {{trad|nl|leraar|onderwijzer}}
+{{tradmeio}}
+* {{trad|hu|tanár|tanító}}
+* {{trad|id|guru}}
+* {{trad|en|teacher}}
+* {{trad|yo|olùkọ́}}
+* {{trad|ga|múinteoir}}
+* {{trad|is|kennari}}
+* {{trad|it|maestro|insegnante}}
+* {{trad|ja|教師|先生}}
+* {{trad|lad|maester}}
+* {{trad|la|magister}} ''m''
+* {{trad|lv|skolotajs}}
+* {{trad|li|lierer|sjoolmeister}}
+* {{trad|lt|mokytojas}}
+* {{trad|ln|molakisi}}
+* {{trad|mk|учител}}
+* {{trad|ms|guru}}
+* {{trad|mg|tompo}}
+* {{trad|mt|lekcerer|ghallem}}
+* {{trad|mi|kaiwhakaako}}
+* {{trad|mr|पंतोजी|शिक्षक}}
+* {{trad|mas|olaiteng'enanai}}
+* {{trad|mn|багш}}
+* {{trad|nap|maesto}}
+* {{trad|no|lærer}}
+* {{trad|fa|معلم|آموزگار}}
+* {{trad|pms|magìster}}
+* {{trad|pl|nauczyciel}}
+* {{trad|pa|ਗੁਰੂ|ਸਿਖਿਅਕ}}
+* {{trad|qu|yachachij|yachachiqe}}
+* {{trad|rom|सिकाव्नो}}
+* {{trad|ro|învățător|profesor}}
+* {{trad|ru|учитель|преподаватель}}
+* {{trad|se|oahpaheaddji}}
+* {{trad|sm|faiā'oga}}
+* {{trad|sa|आचार्य|गुरू}}
+* {{trad|sro|maistu}}
+* {{trad|sr|учитељ}}
+* {{trad|sw|mwalimu}}
+* {{trad|sv|lärare}}
+* {{trad|tl|gurò|maestro}}
+* {{trad|th|ครู|อาจารย์}}
+* {{trad|tn|thitšhara}}
+* {{trad|tu|mboessara}}
+* {{trad|tr|öğretmen|muallime}}
+* {{trad|tk|мугаллым}}
+* {{trad|uk|вчитель|професор}}
+* {{trad|ur|استاد}}
+* {{trad|val|professor|mestre}}
+* {{trad|vi|giáo viên}}
+{{tradfim}}
+
+=={{etimologia|pt}}==
+: Do [[latim]] ''professor, -ōris''.
+
+==Ver também==
+===No Wikcionário===
+{{verTambém.Ini}}
+* [[acadêmico]]
+* [[alfabetizar]]
+* [[catedrático]]
+* [[CEFAPRO]]
+{{verTambém.NovaColuna}}
+* [[docente]]
+* [[ensinar]]
+* [[ensino]]
+* [[escola]]
+{{verTambém.NovaColuna}}
+* [[lente]]
+* [[lição]]
+* [[mestre]]
+{{verTambém.NovaColuna}}
+* [[paraninfo]]
+* [[pedagogia]]
+* [[professorzão]]
+{{verTambém.NovaColuna}}
+* [[profissão]]
+* [[quadro-negro]]
+* [[tutor]]
+{{verTambém.Fim}}
+
+[[Categoria:Substantivo (Português)]]
+[[Categoria:Educação (Português)]]
+[[Categoria:Profissão (Português)]]
+
+
+={{-af-}}=
+==Substantivo==
+'''professor'''
+# [[professor#Português|professor]] [[universitário]]
+
+[[Categoria:Substantivo (Africâner)]]
+[[Categoria:Educação (Africâner)]]
+[[Categoria:Profissão (Africâner)]]
+
+
+={{-da-}}=
+==Substantivo==
+'''professor'''
+# [[professor#Português|professor]] [[universitário]]
+
+[[Categoria:Substantivo (Dinamarquês)]]
+[[Categoria:Educação (Dinamarquês)]]
+[[Categoria:Profissão (Dinamarquês)]]
+
+
+={{-sk-}}=
+==Substantivo==
+'''professor'''
+# [[professor#Português|professor]] [[universitário]]
+
+[[Categoria:Substantivo (Eslovaco)]]
+[[Categoria:Educação (Eslovaco)]]
+[[Categoria:Profissão (Eslovaco)]]
+
+
+={{-nl-}}=
+==Substantivo==
+'''professor'''
+# [[professor#Português|professor]] [[universitário]]
+
+[[Categoria:Substantivo (Holandês)]]
+[[Categoria:Educação (Holandês)]]
+[[Categoria:Profissão (Holandês)]]
+
+
+={{-en-}}=
+==Substantivo==
+'''professor'''
+# [[professor#Português|professor]] [[universitário]]
+
+[[Categoria:Substantivo (Inglês)]]
+[[Categoria:Educação (Inglês)]]
+[[Categoria:Profissão (Inglês)]]
+
+
+={{-no-}}=
+==Substantivo==
+'''professor'''
+# [[professor#Português|professor]] [[universitário]]
+
+[[Categoria:Substantivo (Norueguês)]]
+[[Categoria:Educação (Norueguês)]]
+[[Categoria:Profissão (Norueguês)]]
+
+
+={{-sv-}}=
+==Substantivo==
+'''professor'''
+# [[professor#Português|professor]] [[universitário]]
+
+[[Categoria:Substantivo (Sueco)]]
+[[Categoria:Educação (Sueco)]]
+[[Categoria:Profissão (Sueco)]]

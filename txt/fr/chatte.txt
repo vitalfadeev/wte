@@ -1,0 +1,159 @@
+﻿{{voir|chatté|Chatte}}
+
+== {{langue|fr}} ==
+=== {{S|étymologie}} ===
+: Du {{étyl|bas latin|fr|mot=catta}}, féminin de ''[[cattus#la|cattus]]'', « chat ».
+
+=== {{S|nom|fr}} ===
+{{fr-rég|ʃat}}
+[[Image:White Cat Nursing Four Kittens.jpg|thumb|Une '''chatte''' en train d’[[allaiter]] ses quatre [[chaton]]s. (1)]]
+'''chatte''' {{pron|ʃat|fr}} {{f}}
+# Femelle du [[chat#fr-nom-1|chat]] (''Felis silvestris catus'') de l’ordre des [[félidés]]. {{note}} Pour parler d’un chat [[mâle]], ou si on ne précise pas le sexe, on dit « [[chat]] ».
+#* ''Même les animaux de sexe féminin, hormis les poules et les '''chattes''', sont interdits [sur le Mont-Athos].'' {{source|Aliette {{pc|de Crozet}}, ''Ne passez pas à côté de Thessalonique'', Version Femina n° 789, 14 mai 2017}}
+#* ''Ma '''chatte''' est incroyable ; elle se jette sur tout ce qui bouge : mouches, araignées, souris, papillons, sauterelles, aspirateurs.''
+#{{ancre|sens_sexe}} {{vulgaire|fr}} [[vulve|Vulve]], [[sexe]] de la femme.
+#* ''Manque l'odeur, quand même. Manque l'odeur. Une bonne odeur de '''chatte''' mouillée. Bordel de bordel de bordel, une bonne odeur de '''chatte''' baveuse et chaude que tu lappes comme un chat lappe son lait. J'en rebande, tiens, preuve en main.'' {{source|Jean-Pierre Andrevon, ''Manuscrit d'un roman de SF trouvé dans une poubelle: nouvelles'', éd. Encrage, 1996, p. 84}}
+#* ''Un type complètement saoul s'accrochait aux rebords de la table et plongeait son nez entre les cuisses de la fille. « Cinquante cents pour bouffer la '''chatte''' de Cindy. » Elle se laissait grignoter quelques secondes, puis elle l'envoyait valdinguer d'un violent coup de cul.'' {{source|Noël Balen , ''La planche à frissons'', éd. Mille et une nuits, 2002}}
+#* '' Ça te choque, ce que je dis? <br>— Non. Mmmmmpfff. Si tu continues de te tripoter les nichons et la '''chatte''', ça va gicler, je te préviens.'' {{source|{{w|Pierre Lucas}}, ''Police des mœurs'', n° 159 : ''Le Denier du cul'', éd. Vauvenargues, 2014, chap. 1}}
+# {{marine|fr}} [[allège|Allège]] [[portuaire]].
+# {{marine|fr}} [[batterie|Batterie]] [[flottant]]e [[placer|placée]] [[autrefois]] à l’[[entrée]] d’un [[port]].
+# {{marine|fr}} [[grappin|Grappin]] sans [[oreille]]s, servant à [[draguer]] [[câble]]s et [[chaîne]]s.
+# {{marine|fr}} {{histoire|fr}} Petit [[voilier]] [[amphidrome]], utilisé au {{siècle2|XIX}} [[siècle]] sur les [[côte]]s [[atlantique]]s de [[France]].
+# {{France|fr}} {{argot|fr}} {{vulgaire|fr}} [[chance|Chance]].
+#* ''Il a une '''chatte''' incroyable ; il n’a pas une seule éraflure après une chute pareille.''
+
+==== {{S|synonymes}} ====
+{{(|Femelle du chat}}
+* [[mimine]]
+* [[minette]]
+* [[minoune]]
+* [[mémère]] ''(pour une vieille chatte)''
+{{)}}
+{{(|Organe génital féminin}}
+* {{cf}} la section synonyme de [[vulve#Synonymes|vulve]]
+{{)}}
+
+==== {{S|dérivés}} ====
+* [[avoir de la chatte]]
+* [[teuch]]
+* [[teucha]]
+* [[chattemite]]
+* [[chatière]]
+
+==== {{S|traductions}} ====
+{{trad-début|Femelle du chat}}
+* {{T|sq}} : {{trad-|sq|pidhi}}
+* {{T|de}} : {{trad+|de|Katze|f}}
+* {{T|fro}} : {{trad--|fro|mite}}
+* {{T|en}} : {{trad+|en|she-cat}}
+* {{T|ar}} : {{trad-|ar|هرة|tr=hirah|f}}
+* {{T|br}} : {{trad+|br|kazhez}}
+* {{T|ca}} : {{trad+|ca|gata|f}}
+* {{T|zh}} : {{trad-|zh|母猫|tr=mǔmāo|tradi=母貓}}
+* {{T|ko}} : {{trad+|ko|암고양이|tr=amgoyaengi}}
+* {{T|da}} : {{trad+|da|hunkat|c}}
+* {{T|egy}} : {{trad--|egy|mỉw.t}}
+* {{T|es}} : {{trad+|es|gata|f}}
+* {{T|eo}} : {{trad+|eo|katino}}
+* {{T|el}} : {{trad+|el|γάτα|tr=gáta|f}}
+* {{T|gu}} : {{trad+|gu|બિલાડી|f}}
+* {{T|he}} : {{trad-|he|חתולה|tr=hatavalahe}}
+* {{T|hi}} : {{trad+|hi|बिल्ली|tr=billī}} {{f}}
+* {{T|hu}} : {{trad-|hu|nőstény macska}}
+* {{T|it}} : {{trad+|it|gatta}}
+* {{T|ja}} : {{trad-|ja|雌猫|tr=mesuneko}}
+* {{T|kk}} : {{trad-|kk|мырсын|tr=mırsın}}
+* {{T|lt}} : {{trad-|lt|katė}}
+* {{T|nl}} : {{trad-|nl|katin}}
+* {{T|fa}} : {{trad-|fa|گربه ماده|tr=gorbeye mâde}}
+* {{T|pl}} : {{trad+|pl|kotka}}
+* {{T|pt}} : {{trad+|pt|gata|f}}
+* {{T|ro}} : {{trad-|ro|pisicà}}
+* {{T|ru}} : {{trad+|ru|кошка|tr=kochka}}, {{trad+|ru|киска|tr=kiska}}
+* {{T|zdj}} : {{trad--|zdj|paha tshe}}
+* {{T|sv}} : {{trad+|sv|honkatt}}
+* {{T|tsolyáni}} : {{trad--|tsolyáni|tiúnirakh}}
+* {{T|non}} : {{trad--|non|köttr|f}}
+{{trad-fin}}
+{{trad-début|Sexe féminin}}
+* {{T|sq}} : {{trad-|sq|piçka}}, {{trad-|sq|pidh}}
+* {{T|de}} : {{trad+|de|Fotze|f}}, {{trad+|de|Muschi|f}}
+* {{T|en}} : {{trad+|en|pussy}}
+* {{T|hy}} : {{trad-|hy|պուց|tr=pouc'}}
+* {{T|ca}} : {{trad+|ca|cony|m}}
+* {{T|zh}} : {{trad+|zh|屄|tr=bī}}
+* {{T|ko}} : {{trad+|ko|보지|tr=boji}}
+* {{T|hr}} : {{trad+|hr|pička}}
+* {{T|da}} : {{trad+|da|kusse|c}}, {{trad+|da|fisse|c}}
+* {{T|es}} : {{trad+|es|coño|m}}
+* {{T|eo}} : {{trad+|eo|piĉo}}
+* {{T|fi}} : {{trad+|fi|pillu}}
+* {{T|gd}} : {{trad-|gd|pit|f}}, {{trad-|gd|duille|f}}, {{trad-|gd|faighean|m}}
+* {{T|el}} : {{trad+|el|μουνί|tr=muní|n}}
+* {{T|hu}} : {{trad+|hu|picsa}}
+* {{T|it}} : {{trad+|it|topa}}, {{trad+|it|fica}}
+* {{T|ja}} : {{trad+|ja|まんこ|tr=manko}}
+* {{T|kk}} : {{trad-|kk|ам|tr=am}}
+* {{T|nl}} : {{trad+|nl|kut}}
+* {{T|pap}} : {{trad--|pap|blònchi}}
+* {{T|fa}} : {{trad+|fa|کس|tr=kos}}
+* {{T|pl}} : {{trad+|pl|cipa}}, {{trad+|pl|piczka}}
+* {{T|pt}} : {{trad+|pt|boceta}}
+* {{T|ro}} : {{trad+|ro|pizdă}}
+* {{T|ru}} : {{trad-|ru|наружные|tr=naroujnye}}
+* {{T|sk}} : {{trad-|sk|piča}}
+* {{T|sl}} : {{trad+|sl|pizda}}
+* {{T|sv}} : {{trad+|sv|fitta}}
+* {{T|cs}} : {{trad+|cs|píča}}
+* {{T|tr}} : {{trad+|tr|kuku}}
+{{trad-fin}}
+
+=== {{S|adjectif|fr}} ===
+{{fr-rég|ʃat}}
+'''chatte''' {{pron|ʃat|fr}} {{mf}}
+# [[comparable|Comparable]] à une chatte : [[joueur]], [[caresseur]], [[flatteur]].
+#* ''Avoir une façon '''chatte''', des manières '''chattes'''.
+
+=== {{S|verbe|fr|flexion|num=1}} ===
+{{fr-verbe-flexion|chatter|ind.p.1s=oui|ind.p.3s=oui|sub.p.1s=oui|sub.p.3s=oui|imp.p.2s=oui}}
+'''chatte''' {{pron|tʃat|fr}}
+# ''Première personne du singulier de l’indicatif présent du verbe'' [[chatter]] (dans le sens dérivé de l'anglais).
+# ''Troisième personne du singulier de l’indicatif présent du verbe'' [[chatter]].
+# ''Première personne du singulier du subjonctif présent du verbe'' [[chatter]].
+# ''Troisième personne du singulier du subjonctif présent du verbe'' [[chatter]].
+# ''Deuxième personne du singulier de l’impératif présent du verbe'' [[chatter]].
+
+=== {{S|verbe|fr|flexion|num=2}} ===
+{{fr-verbe-flexion|chatter|ind.p.1s=oui|ind.p.3s=oui|sub.p.1s=oui|sub.p.3s=oui|imp.p.2s=oui}}
+'''chatte''' {{pron|ʃat|fr}}
+# ''Première personne du singulier de l’indicatif présent du verbe'' [[chatter]] (dans le sens lié aux chats).
+# ''Troisième personne du singulier de l’indicatif présent du verbe'' [[chatter]].
+# ''Première personne du singulier du subjonctif présent du verbe'' [[chatter]].
+# ''Troisième personne du singulier du subjonctif présent du verbe'' [[chatter]].
+# ''Deuxième personne du singulier de l’impératif présent du verbe'' [[chatter]].
+
+=== {{S|anagrammes}} ===
+* [[tchate]]
+
+=== {{S|prononciation}} ===
+* {{écouter|lang=fr|France <!-- précisez svp la ville ou la région -->|ʃat|audio=Fr-chatte.ogg}}
+* {{écouter|lang=fr|France (Muntzenheim)|audio=LL-Q150 (fra)-0x010C-chatte.wav}}
+
+=== {{S|voir aussi}} ===
+* {{WP}}
+
+== {{langue|nl}} ==
+=== {{S|verbe|nl|flexion}} ===
+'''chatte''' {{pron||nl}}
+# ''Première personne du singulier du prétérit de'' [[chatten]].
+# ''Deuxième personne du singulier du prétérit de'' [[chatten]].
+# ''Troisième personne du singulier du prétérit de'' [[chatten]].
+
+[[Catégorie:Homographes non homophones en français]]
+[[Catégorie:Animaux femelles en français]]
+[[Catégorie:Chats en français]]
+[[Catégorie:ch prononcés /tʃ/ en français]]
+
+
+=== {{S|prononciation}} ===
+* {{écouter|||lang=nl|audio=Nl-chatte.ogg}}

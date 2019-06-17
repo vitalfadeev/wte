@@ -1,0 +1,19 @@
+﻿== {{Wortart|Konjugierte Form|Deutsch}} ==
+
+{{Worttrennung}}
+:ma·che
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ˈmaxə}}
+:{{Hörbeispiele}} {{Audio|}}
+:{{Reime}} {{Reim|axə|Deutsch}}
+
+{{Grammatische Merkmale}}
+* 1. Person Singular Indikativ Präsens Aktiv des Verbs '''[[machen]]'''
+* 1. Person Singular Konjunktiv Präsens Aktiv des Verbs '''[[machen]]'''
+* 3. Person Singular Konjunktiv Präsens Aktiv des Verbs '''[[machen]]'''
+* 2. Person Singular Imperativ Präsens Aktiv des Verbs '''[[machen]]'''
+
+{{Grundformverweis Konj|machen}}
+
+{{Ähnlichkeiten 1|[[lache]], [[Mache]]}}

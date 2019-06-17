@@ -1,0 +1,261 @@
+﻿{{desambiguación|-do}}
+{{ES||1}}
+
+{{pronunciación|[ ˈdo ]}}
+{{etimología|it|do}}.
+
+=== {{sustantivo masculino|es}} ===
+{{inflect.es.sust.reg}}
+
+;1 {{música}}: [[nota|Nota]] [[musical]]. [[Corresponde]] a la [[primera]] en la [[escala]] musical, situada entre el [[si]] y el [[re]].
+{{sinónimos|C|nota=en la escala alfabética|ut|nota2=arcaísmo}}.
+
+== Locuciones ==
+{{rel-arriba|Locuciones con «do»}}
+*[[do bemol]]
+*[[do de pecho]]: Nota más aguda que alcanza el tenor
+*[[do de pecho]]: Máximo esfuerzo por conseguir algo
+{{rel-centro}}
+*[[do mayor]]
+*[[do menor]]
+*[[do sostenido]]
+{{rel-abajo}}
+
+== Véase también ==
+{{w}}
+
+== Traducciones ==
+{{trad-arriba}}
+{{t+|fr|1|do}}
+{{trad-centro}}
+{{t+|en|1|C}}
+{{t+|it|1|do}}
+{{trad-abajo}}
+
+{{ES||2}}
+
+{{pronunciación|[ ˈdo ]}}
+{{etimología2|Contracción de la preposición ''[[de]]'' y el adverbio arcaico ''[[o]]''}}.[[Categoría:ES:Palabras formadas por contracción]]
+
+=== {{adverbio|es}} ===
+;1: Adverbio que indica un lugar en el que ocurre o está algo o alguien.
+{{uso|anticuado|o|poético}}.
+{{sinónimos|donde}}.
+
+;2: Adverbio que indica un lugar desde el que viene o va algo o alguien.
+{{uso|anticuado|o|poético}}.
+{{sinónimos|de|donde}}.
+
+{{SL-ES}}
+
+{{pronunciación|leng=sl}}
+{{etimología|leng=sl}}
+
+=== {{preposición|sl}} ===
+;1: {{plm|a}}, [[hasta]].
+
+{{FY-ES}}
+
+{{pronunciación|leng=fy}}
+{{etimología|frisón antiguo|thu|leng=fy}}, y este del protogermánico {{l+|gem-pro|*thu}}.
+
+=== {{pronombre personal|fy}} ===
+;1: [[tú|Tú]].
+
+{{CY-ES}}
+
+{{pronunciación|leng=cy}}
+
+=== {{sustantivo masculino|cy}} ===
+;1: ''Mutación suave de'' '''[[to#Galés|to]]'''.
+
+{{GL-ES}}
+
+{{pronunciación|leng=gl}}
+
+=== Contracción ===
+{{inflect.gl.adj|do|{{l|gl|da}}|{{l|gl|dos}}|{{l|gl|das}}}}
+;1: {{contracción|leng=gl|de|o|preposiciones|artículos}}: {{l*|es|de}} {{l*|es|el}} ({{l*|es|del}}).
+
+{{EN-ES}}
+{{pronunciación|/du/, /dʊ, də/ (sin énfasis)}}
+:*{{audio|en-us-do-verb.ogg|Audio, EEUU}}
+{{etimología|ang|don|leng=en}}, a su vez del germánico occidental ''[[*don]]'', en última instancia del protoindoeuropeo ''[[*dhe-]]''.
+
+=== {{verbo transitivo|en}} ===
+{{inflect.en.v/2|link=si|do|dost|does|doth|did|done|doing}}
+
+;1: {{plm|hacer}}.
+
+;2: {{plm|tratar}}.
+
+;3: {{plm|finalizar}}.
+
+;4: {{plm|matar}}.
+{{uso|coloquial|leng=en}}
+
+;5: {{plm|timar}}, [[estafar]]
+{{uso|coloquial|leng=en}}
+
+;6: {{plm|follar}}.
+{{uso|coloquial|leng=en}}
+
+=== {{verbo intransitivo|en}} ===
+;7: [[bastar|Bastar]].
+
+=== {{verbo|en|modal}} ===
+;8: {{impropia|Verbo usado para construir frases negativas, interrogativas o resaltar la acción del verbo que acompaña}}.
+:*'''Ejemplos:'''
+::'''''Did''' Jane come yesterday? No, she '''didn't''' come'' → ¿Vino Jane ayer? No, ella no vino.
+::''Despite what you think, I '''do''' know what I'm doing'' → Creas lo que creas, yo [sí] sé lo que hago.
+
+{{GA-ES||1}}
+
+{{pronunciación|[d̪ˠə] [ɡə]}}
+{{etimología|leng=ga|sga|do}}
+{{parónimo|dó}}.
+
+=== {{preposición|ga}} ===
+{{inflect.ga.prep.vocal
+ |1sg = dom
+ |1sgem = domhsa
+ |2sg = duit
+ |2sgem = duitse
+ |3sgm = dó
+ |3sgmem = dósan
+ |3sgf = di
+ |1pl = dúinn
+ |2pl = daoibh
+ |3pl = dóibh
+ |3plem = dóibhsean
+ |artsg = don
+ |1sgpos = dom
+ |2sgpos = dod
+ |3sgmpos = dá
+ |3sgfpos = dá
+ |1plpos = dár
+ |3plpos = dá
+ |rel.pr = dá
+ |rel.pa = dar
+ |cop.pr = dar
+ |cop.pa = dar
+ |cop.pr.v = darb
+ |cop.pa.v = darbh
+}}
+
+;1: {{plm|para}}, [[a]]; {{impropia|denota conveniencia, finalidad o destinatario.}}
+:*'''Ejemplos:'''
+::'''''Do''' {{l|ga|náisiún|Náisiúnaibh}} {{l|ga|an}} {{l|ga|domhan|Domhain}}: {{plm|beatha|ga}} {{l|ga|agus}} {{plm|sláinte|ga}}.'' → «A las Naciones del Mundo: Salud y Prosperidad [Vida y Salud]» {{cita libro|título=Scéal ó Dháil Éireann chum Saor-Náisiún an Domhain|URL=http://wikisource.org/wiki/Sc%C3%A9al_%C3%B3_Dh%C3%A1il_%C3%89ireann_chum_Saor-N%C3%A1isi%C3%BAn_an_Domhain|apellidos=Dáil Éireann|año=1919|enlaceautor=Dáil Éireann}}
+
+;2: {{plm|a}}; {{impropia|introduce el objeto indirecto.}}
+:*'''Ejemplos:'''
+::''"{{l|ga|an|An}} {{l|ga|bí|bhfuil}} {{l|ga|seanscéal|sean-scéal}} {{l|ga|ar bith}} {{l|ga|agat}} {{l|ga|le}} h{{l|ga|insint}} '''dom'''?" {{l|ga|arsa}} {{l|ga|an}} {{l|ga|rí}}.'' → «¿Tienes alguna historia que contarme?, dijo el rey.» {{cita libro|título=An rí nach raibh le fáil bháis|año=1896|URL=http://wikisource.org/wiki/An_r%C3%AD_nach_raibh_le_f%C3%A1il_bh%C3%A1is}}
+
+;3: {{plm|a}}; {{impropia|sustituye al pronombre personal de objeto.}}
+:*'''Uso:''' En conjunción con un adjetivo posesivo, en tiempos progresivos.
+:*'''Ejemplos:'''
+::''{{l|ga|bí|Beidh}} {{l|ga|mé}} '''do''' {{l|ga|mo}} {{l|ga|gléasadh|ghléasadh}} {{l|ga|féin}} {{l|ga|chomh}} {{l|ga|luath}} {{l|ga|agus}} {{l|ga|a}} {{l|ga|imigh|imíonn}} {{l|ga|tú}} {{l|ga|síos}} {{l|ga|an}} {{l|ga|staighre}}!'' → «Me arreglé en lo que se tarda en bajar las escaleras» {{cita web|url=http://beo.ie/alt-nuair-a-bhi-rudai-difriuil.aspx |título=Beo! (7) |fechaacceso=16 de diciembre de 2010 |autor=Micheál Ó Conghaile |fecha=noviembre 2001}}
+
+;4: {{impropia|Conecta el sustantivo verbal con su objeto.}}
+{{ámbito|Munster|leng=ga}}.
+{{sinónimos|leng=ga|a}}
+:*'''Ejemplos:'''
+::''[...]; {{l*|ga|óir}} {{l*|ga|níor}} {{l|ga|cleacht|chleacht}} {{l*|ga|sé}} {{l*|ga|biadh}} {{l*|ga|ná}} {{l*|ga|deoch}} '''do''' {{l|ga|ceannach|cheannach}} {{l*|ga|riamh}} {{l*|ga|roimhe}} {{l*|ga|sin}}.'' → «porque nunca antes se acostumbró a comprar allí comida o bebida» {{cita libro|título=Text into image, image into text: proceedings of the interdisciplinary bicentenary conference held at St. Patrick's College, Maynooth (the National University of Ireland)|año=1985|mes=septiembre|apellidos=Morrison|nombre=Jeffrey|coautores= Krobb, Florian|URL=http://books.google.es/books?id=cnevD92lnQYC&pg=PA150&lpg=PA150&dq=%22do+cheannach%22+munster&source=bl&ots=9O22qzt_vP&sig=3_fdjCjtACbsQKx758BySKX1m5U&hl=es&ei=wC0PTZqfAsyTjAfP_NW9Dg&sa=X&oi=book_result&ct=result&resnum=1&ved=0CBcQ6AEwAA#v=onepage&q=%22do%20cheannach%22%20munster&f=false}}
+
+== Información adicional ==
+:*'''Uso:'''
+::*Ante sonido vocálico, se usa {{l+|ga|d'}}
+::*Provoca mutación suave.
+
+{{GA-ES||2}}
+
+{{pronunciación|[ d̪ˠə ]}}
+{{etimología|leng=ga|sga|do}}.
+{{parónimo|dó}}.
+
+=== {{adjetivo|ga|posesivo}} ===
+;1: {{plm|tu}}
+:*'''Uso:''' Provoca mutación suave. Ante vocal se contrae en {{l+|ga|d'}}.
+:*'''Ejemplos:
+::''"{{plm|cá|ga}} {{l|ga|faigh|bhfuairis}} {{l|ga|an}} {{l|ga|fáinne}} {{l|ga|sin}} {{l|ga|ar}} '''do''' {{l|ga|méir|mhéir}}?" {{l|ga|arsa}} an {{l|ga|captaen}}.'' → «¿Dónde encontraste ese anillo en tu dedo? dijo el capitán» {{cita libro|título=Iníon an Cheannaí|URL=http://wikisource.org/wiki/In%C3%ADon_an_Cheanna%C3%AD}}
+
+{{GA-ES||3}}
+
+{{pronunciación|leng=ga}}
+{{etimología|leng=ga}}
+{{parónimo|dó}}.
+
+=== {{partícula|ga}} ===
+;1: ''En verbos, introduce tiempos pasados.''
+:*'''Uso:''' Provoca mutación suave. Se omite ante sonido consonántico, salvo en {{Munster|leng=ga}}, y ante sonido vocálico se contrae en {{l+|ga|d'}}. Las formas de pasiva autónoma no se ven afectadas por la mutación, o bien son aspiradas (fenómeno en decadencia). Por ejemplo: ''† (do) h-innsigheadh'' > ''insíodh'' "se dijo".
+:*'''Ejemplos:'''
+::'''''D''''{{l|ga|éirigh}} {{l|ga|sé}} {{l|ga|ón}} g{{l|ga|cathaoir}} {{l|ga|agus}} '''do''' {{l|ga|buail|bhuail}} sé {{l|ga|an}} {{l|ga|doras}} {{l|ga|amach}} {{l|ga|gan}} {{l|ga|slán}} {{l|ga|a}} {{l|ga|fágaint|fhágaint}} {{l|ga|aici}}.'' → «Se levantó de la silla y salió dando un portazo, sin decirle adiós» {{cita libro|título=Iníon an Cheannaí|URL=http://wikisource.org/wiki/In%C3%ADon_an_Cheanna%C3%AD}}
+
+{{SGA-ES||1}}
+
+{{pronunciación|leng=sga}}
+{{etimología|leng=sga}}
+
+=== {{preposición|sga}} ===
+;1: {{plm|a}}, [[para]].
+:*'''Uso:''' Provoca mutación suave. Rige caso dativo.
+
+{{SGA-ES||2}}
+
+{{pronunciación|leng=sga}}
+{{etimología|leng=sga}}
+
+=== {{adjetivo|sga|posesivo}} ===
+;1: {{plm|tu}}
+:*'''Uso:''' Provoca mutación suave.
+
+{{LA-ES|dō}}
+
+{{pron.la|doː}}
+:* {{audio|la-cls-do.ogg|'''Audio''' (clásico)|nb=apr}}
+{{etimología|leng=la|itc|*didati}}, y este del protoindoeuropeo {{l+|ine|ine=x|*di-d(e)h₃-|glosa=dar}}<ref name="vaan">{{DeVaan|174/175}}</ref> (de {{l+|ine|*deh₃-}}<ref>{{Mallory-Adams|270}}</ref>). Compárese el hitita {{l+|hit|dā-ⁱ}}/{{l+|hit|d-}} ("[[tomar]]", "[[decidir]]"), el sánscrito {{l+|sa|ददाति|tr=dádāti}}, el avéstico gatha {{l+|avg|dadā|glosa=dar}}, el avéstico clásico {{l+|avc|daδāiti|glosa=dar}}, el griego antiguo {{l+|grc|δίδωμι|tr=dídōmi|glosa=dar}}, el lituano {{l+|lt|dúoti|glosa=dar}} y el eslavo eclesiástico antiguo {{l+|cu|dati|glosa=dar}}.<ref name="vaan" />
+
+=== {{verbo transitivo|la}} ===
+<small>''presente activo '''dō''', presente infinitivo '''{{l+|la|dare}}''', perfecto activo '''{{l+|la|dedi|dedī}}''', supino '''{{l+|la|datum}}'''.''</small>
+
+;1: {{plm|dar}}, [[conceder]], [[entregar]], [[confiar]].
+{{sinónimo|leng=la|dono|alt=dōnō}}
+
+;2: {{plm|ofrecer}}.
+
+;3: {{plm|otorgar}}.
+
+;4: {{plm|permitir}}, [[dejar]], [[hacer]] que.
+
+;5: {{plm|poner}}.
+
+;6: {{plm|causar}}, [[producir]], [[hacer]].
+
+;7: {{plm|decir}}.
+
+;8: {{plm|divulgar}}.
+
+;9: {{plm|atribuir}}, [[imputar]].
+
+== Conjugación ==
+{{inflect.la.verbo.1-do|d|ded|dat}}
+
+{{PT-ES|do}}
+
+{{pronunciación|leng=pt}}
+
+=== Contracción ===
+{{inflect.pt.adj|do|{{l|pt|dos}}|{{l|pt|da}}|{{l|pt|das}}}}
+;1: {{contracción|leng=pt|de|o|preposiciones|artículos}}
+
+{{TRANSLIT|persa|do}}
+
+:*'''Grafías alternativas:''' Árabe: [[ دو ]]
+
+=== {{adjetivo|fa}} cardinal ===
+[[Categoría:FA:Números]]
+
+;1: {{plm|dos}}
+
+= <small>Referencias y notas</small> =
+<references />

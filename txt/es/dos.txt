@@ -1,0 +1,255 @@
+﻿== {{lengua|es}} ==
+{{pron-graf|fone=dos}}
+
+=== Etimología ===
+{{etimología|la|duo}}, y este del protoindoeuropeo {{l+|ine|*duwóh₁}}.
+
+=== {{adjetivo cardinal|es}} ===
+;1: Que consta de uno más que la unidad (1+1).
+
+=== {{adjetivo ordinal|es}} ===
+;2: Que ocupa el segundo lugar en una serie.
+{{sinónimo|segundo}}
+:*'''Ejemplo:''' El capítulo ''dos''
+
+=== {{adjetivo|es}} ===
+;3: Que es escaso, poco abundante, corto.
+{{sinónimo|poco}}, un [[par]] de.
+:*'''Ejemplo:''' Te llevo. Mi auto está a ''dos'' pasos.
+
+=== {{sustantivo masculino|es}} ===
+{{inflect.es.sust.reg-cons}}
+;4: {{plm|signo}} o signos que representan esta cantidad{{-sub|1}}.
+:*'''Ejemplo:''' En números romanos el ''dos'' se escribre '''II''', y en números árabes es '''2'''.
+
+;5: En las barajas, las cartas que llevan dos marcas que indican su segundo lugar en una serie del mismo palo.
+{{ejemplo}} Tengo el ''dos'' de tréboles
+
+{{clear}}
+
+=== Locuciones ===
+{{rel-arriba|Locuciones con ''dos''}}
+* [[a cada dos por tres]]: Frecuentemente, a menudo, cada dos por tres.
+* [[a dos]]:
+#En deportes, empatado dos a dos (2-2).
+#En la pelota vasca, igualados a 30 en ambos partidos. (España)
+* [[a dos haces]]: con una segunda intención.
+* [[a dos por tres]]: de forma rápida demostrativa. (España, coloquial)
+* [[ambos a dos]]: ambos (Forma redundante más común en España)
+* [[arma de dos filos]]
+* [[cada dos por tres]]: continuamente.
+* [[cara con dos haces]]: que procede con falsedad y doblez.
+* [[comer a dos carrillos]]: comer con ansia, gran apetito, llenándose la boca.
+* [[comer en dos bocados]]: comer muy de [[prisa]], muy [[apurado]].
+* [[como dos y dos son cuatro]]: se dice de un argumento [[irredargüible]], [[irrefutable]], de una verdad absoluta.
+* [[cuatro ojos ven más que dos]]
+* [[de dos caras]]: de diferente opinión o actitud frente a dos personas o situaciones diferentes.
+* [[de dos en dos]]: en pares, por parejas, separados en grupos de dos.
+* [[dos a dos]]:
+#En deportes, empatados a dos tantos por lado (2-2).
+#En diversos juegos de cuatro jugadores, se dice del juego en parejas.
+* [[dos letras]]: unas pocas palabras, una carta o escrito breve.
+*[[dos puntos]]: signo ortográfico: ''':'''. Indica que la oración está gramaticalmente completa y que lo que viene después completa el sentido lógico. Se usa también para introducir una cita.
+* [[en dos palabras]]: brevemente.
+{{rel-centro}}
+* [[en dos patadas]]: fácilmente, en un dos por tres.
+* [[entre dos]]: a dúo, al [[alimón]]
+* [[entre dos aguas]]: en una situación dudosa, poco clara, que provoca cautela.
+* [[entre dos fuegos]]: estar entre dos peligros.
+* [[en un dos por tres]]: en un [[santiamén]]
+* [[estar a dos velas]]: estar sin dinero o escaso de él. (España)
+* [[hacer a dos caras]]: proceder con hipocresía, doblez.
+* [[jugar a dos puntas]]
+* [[jugar con dos barajas]]: proceder con hipocresía, doblez.
+* [[mamar a dos tetas]]
+* [[más ven cuatro ojos que dos]]
+* [[matar dos pájaros de un tiro]]: resolver dos situaciones con una sola acción.
+* [[nadar entre dos aguas]]:
+*[[número dos]]: el segundo mejor en un deporte, profesión u otra actividad.
+* [[quedar como dos de queso]]: de escaso valor o utilidad.
+* [[quedarse a dos velas]]:
+#Estar sin dinero o escaso de él.(España)
+#Quedarse s comprender. (España)
+* [[que le den dos duros]]
+* [[ser chancha de dos caras]]
+*[[real de a dos]]: real de plata que valía la mitad del real de a [[cuatro]].
+* [[ser de dos haces]]: obrar con doblez, decir una cosa y hacer otra. (España)
+* [[tener dos dedos de frente]]: tener un mínimo de inteligencia para no decir o hacer insensateces.
+* [[una de dos]]: expresión con la que se oponen dos cosas de las cuales hay que elegir una.
+{{rel-abajo}}
+
+=== Información adicional ===
+*Pares mínimos: [[dar|das]], [[dar|des]], [[don]], [[os]], [[los]], [[nos]], [[pos]], [[ros]], [[tos]], [[vos]]
+
+=== Véase también ===
+{{w}}
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+{{t+|de|1|zwei}}
+{{t+|ain|1|ツ゚ㇷ゚|,|ト゚ㇷ゚|,|トゥㇷ゚}}
+*{{ar}}: (1) ''número dual'', {{trad|ar|اثنان}} (ithnān) (m), {{trad|ar|اثنتان}} (ithnatān) (f)
+{{t+|ay|1|paya}}
+{{t+|br|1|daou}}
+{{t+|bg|1|двама|m|,|два|m|,|две|f}}, {{n}}
+{{t+|ca|1|dos|m|,|dues|f}}
+{{t+|cs|1|dva}}
+{{t+|chr|1|ᏔᎵ}} (tali)
+{{t+|ctu|cha'p'ej}}
+{{t+|zh|1|二}} (èr), ''(+ clasificador)'' {{trad|zh|两}} (liăng)
+{{t+|hr|1|dva}}
+{{t+|da|to}}
+{{t+|sk|1|dva}}
+{{t+|sl|1|dva}}
+{{t+|dv|dheiy}}
+{{t+|eo|1|du|,|2|dua}}
+{{t+|eu|1|bi}}
+{{t+|fi|1|kaksi}}
+{{t+|fr|1|deux}}
+{{t+|fy|1|twa}}
+{{t+|el|δύο}} (dío)
+{{t+|gn|1|mokõi}}
+{{t+|ha|1|biyu}}
+{{t+|hi|1|दो}} (do)
+{{t+|hu|1|kettő}}
+{{t+|id|1|dua}}
+{{trad-centro}}
+{{t+|en|1|two}}
+{{t+|it|1|due}}
+{{t+|ja|1|二}} ([[ni]]), {{trad|ja|に}}
+{{t+|alc|1|wokstou}}
+{{t+|ku|1|du}}
+{{t+|la|1|duo}}
+{{t+|ln|1|míbalé}} ''(después del n)''
+{{t+|arn|1, 3, 5-7|epu}}
+{{t+|mit|1|ùi}}
+{{t+|ms|1|dua}}
+{{t+|yua|1|ca}}
+{{t+|mn|1|хоёр}}
+{{t+|nci|1|ome|ōme}}
+{{t+|nv|1|naaki}}
+{{t+|nl|1|twee}}
+{{t+|nb|1|to}}
+{{t+|nn|1|to}}
+*{{fa}}: (1) {{trad|fa|دو}} (do)
+{{t+|pl|1|dwa}}
+{{t+|pt|1|dois|m|,|duas|f}}
+{{t+|quz|1|iskay}}
+{{t+|ru|1|два}} (dva) (m, n), {{trad|ru|две}} (dve) (f)
+{{t+|sa|?|द्वि}}
+{{t+|sv|1|två}}
+{{t+|sw|1|mbili}} (clase 9, raíz -wili)
+{{t+|tl|1|dalawa}} (dalawâ)
+{{t+|crh|eki}}
+{{t+|tr|1|iki}}
+{{t+|uk|1|два}} (dva) (m, n), {{trad|uk|дві}} (dvi) (f)
+{{trad-abajo}}
+
+[[Categoría:ES:Números]]
+[[Categoría:ES:Lista Swadesh|023dos]]
+
+== {{lengua|ca}} ==
+{{pron-graf|leng=ca}}
+
+=== Etimología ===
+{{etimología|la|duo|leng=ca}}
+
+=== {{adjetivo|ca}} ===
+;1: {{plm|dos}}.
+
+[[Categoría:CA:Números]]
+[[Categoría:CA:Lista Swadesh|023dos]]
+
+== {{lengua|kw}} ==
+{{pron-graf|leng=kw}}
+:*'''Grafías:'''
+::*''Standard Written Form:'' [[dos]]
+
+=== Etimología ===
+{{etimología|leng=kw}}
+
+=== {{verbo intransitivo|kw}} ===
+[[Categoría:KW:Lista Swadesh|122dos]]
+
+;1: {{plm|venir}}.
+
+== {{lengua|fr}} ==
+{{pron-graf|leng=fr|fono=do}}
+:* {{audio|Fr-dos.ogg|'''Audio''' (Francia)}}
+
+=== Etimología ===
+{{etimología|la|dorsum|leng=fr}}
+
+=== {{sustantivo masculino|fr}} ===
+{{inflect.sust.sg-pl|leng=fr|link=s|dos|dos}}
+
+;1 {{anatomía|leng=fr}}: {{plm|espalda}}.
+
+[[Categoría:FR:Lista Swadesh|088dos]]
+
+== {{lengua|gl}} ==
+{{pron-graf|leng=gl}}
+
+=== Contracción ===
+[[Categoría:GL:Contracciones]]
+{{inflect.gl.adj|{{l|gl|do}}|{{l|gl|da}}|{{l|gl|dos}}|{{l|gl|das}}}}
+
+;1: {{contracción|leng=gl|de|os|preposiciones|artículos}}: {{l*|es|de}} {{l*|es|los}}
+
+== {{lengua|la}} ==
+{{pron-graf|leng=la}}
+
+=== Etimología ===
+{{etimología2|leng=la|de {{l+|ine|*dóh₃tis|alt=*dóh₃tis|glosa=dar}}}}, de la raíz {{l+|ine|*deh₃-|alt=*deh₃-|glosa=dar}}.
+
+=== {{sustantivo femenino|la}} ===
+{{inflect.la.sust.3mf|dot|dōs}}
+
+;1: {{plm|dote}}.
+;2: {{plm|don}} ([[talento]]).
+
+{{clear}}
+
+=== Información adicional ===
+{{derivados|des=s}}
+{{desc|es|dote}}
+{{desc|fr|dot}}
+{{centro}}
+{{desc|it|dote}}
+{{desc|pt|dote}}
+{{abajo}}
+
+== {{lengua|pt}} ==
+{{pron-graf|leng=pt|fone=do}}
+
+=== Contracción ===
+[[Categoría:PT:Contracciones]]
+{{inflect.pt.adj|{{l|pt|do}}|{{l|pt|da}}|{{l|pt|dos}}|{{l|pt|das}}}}
+
+;1: {{contracción|leng=pt|de|os|preposiciones|artículos}}.
+
+== {{lengua|ro}} ==
+{{pron-graf|leng=ro}}
+
+=== Etimología ===
+{{etimología|leng=ro|la|dorsum|espalda}}
+
+=== {{sustantivo neutro|ro}} ===
+{{inflect.sust.sg-pl|leng=ro|link=s|dos|dosuri}}
+
+;1 {{anatomía|leng=ro}}: {{plm|espalda}}.
+{{sinónimo|leng=ro|spate}}
+
+;2: {{plm|trasero}} (humano).
+{{sinónimo|leng=ro|fund}}
+
+;3: {{plm|dorso}}, [[reverso]].
+
+;4: {{plm|sello}} (de una moneda).
+
+[[Categoría:RO:Lista Swadesh|088dos]]
+
+== Referencias y notas ==
+<references />

@@ -1,0 +1,203 @@
+{{also|Done|doné|doně}}
+==English==
+{{wikipedia|dab=done}}
+
+===Etymology 1===
+From {{inh|en|enm|don}}, {{m|enm|idon}}, {{m|enm|ȝedon}}, {{m|enm|gedon}}, from {{inh|en|ang|dōn}}, {{m|ang|ġedōn}}, from {{inh|en|gem-pro|*dōnaz}}, past participle of {{m|gem-pro|*dōną|t=to do}}. Equivalent to {{suffix|en|do|en}}. Cognate with {{cog|sco|dune}}, {{m|sco|deen}}, {{m|sco|dene}}, {{m|sco|dane|t=done}}, {{cog|stq|däin|t=done}}, {{cog|fy|dien|t=done}}, {{cog|nl|gedaan|t=done}}, {{cog|nds-de|daan|t=done}}, {{cog|de|getan|t=done}}. More at {{l|en|do}}.
+
+====Pronunciation====
+* {{a|UK}} {{IPA|/dʌn/|/dɐn/|/dʊn/|lang=en}}
+* {{a|US}} {{enPR|dŭn}}, {{IPA|/dʌn/|lang=en}}
+* {{audio|En-ca-done.ogg|Audio (CA)|lang=en}}
+* {{rhymes|ʌn|lang=en}}
+* Homophones: ''[[dun]], [[Donn]], [[Donne]], [[Dunn]], [[Dunne]]''
+
+====Adjective====
+{{en-adj}}
+
+# {{lb|en|of food}} [[ready|Ready]], fully [[cooked]].
+#: ''As soon as the potatoes are '''done''' we can sit down and eat.''
+# Having [[complete|completed]] or [[finish|finished]] an activity.
+#: ''He pushed his empty plate away, sighed and pronounced "I am '''done'''."''
+#: ''They were '''done''' playing and were picking up the toys when he arrived.''
+# Being [[exhausted]] or fully [[spent]].
+#: ''When the water is '''done''' we will only be able to go on for a few days.''
+# Without [[hope]] or [[prospect]] of [[completion]] or [[success]].
+#: ''He is '''done''', after three falls there is no chance he will be able to finish.''
+# [[fashionable|Fashionable]], [[socially]] acceptable, [[tasteful]].
+#: ''I can't believe he just walked up and spoke to her like that, those kind of things just aren't '''done'''!''
+#: ''What is the '''done''' thing these days? I can't keep up!''
+
+=====Synonyms=====
+* {{sense|ready, fully cooked}}
+* {{sense|finished an activity}} {{l|en|completed}}, {{l|en|concluded}}, {{l|en|finished}}, {{l|en|in the books}}
+* {{sense|being exhausted}} See also [[Thesaurus:fatigued]]
+* {{sense|without hope of completion}} See also [[Thesaurus:doomed]]
+* {{sense|fashionable}} See also [[Thesaurus:fashionable]]
+
+=====Derived terms=====
+{{der-top}}
+* {{l|en|be done for}}
+* {{l|en|be done with it}}
+* {{l|en|done deal}}
+* {{l|en|doneness}}
+* {{l|en|fordone}}
+{{der-mid}}
+* {{l|en|get done for}}
+* {{l|en|overdone}}
+* {{l|en|well done}}
+{{der-bottom}}
+
+=====Translations=====
+{{trans-top|(of food) ready, fully cooked}}
+* Bulgarian: {{t+|bg|сготвен}}
+* Dutch: {{t+|nl|gaar}}
+* French: {{t+|fr|fait}}, {{t+|fr|prêt}}, {{t+|fr|terminé}}, {{t+|fr|cuit}}
+* German: {{t+|de|gar}}, {{t+|de|fertig}}
+* Indonesian: {{t+|id|matang}}
+* Latvian: {{t|lv|gatavs|m}}
+{{trans-mid}}
+* Portuguese: {{t+|pt|pronto}}
+* Russian: {{t+|ru|гото́вый}}
+* Scottish Gaelic: {{t|gd|ullamh}}
+* Spanish: {{t+|es|listo}}, {{t+|es|acabado}}
+* Walloon: {{t|wa|presse|m|f}}, {{t+|wa|cût|m}}, {{t|wa|cûte|f}}
+{{trans-bottom}}
+
+{{trans-top|In a state of having completed or finished an activity}}
+* Basque: {{t|eu|kitto}}
+* Bulgarian: {{t+|bg|направен}}, {{t+|bg|извършен}}
+* Danish: {{t|da|færdig}}
+* Dutch: {{t+|nl|klaar}}
+* Esperanto: {{t|eo|farita}}
+* Finnish: {{t+|fi|valmis}}
+* Galician: {{t+|gl|feito|m}}, {{t|gl|feita|f}}
+* German: {{t+|de|fertig}}
+{{trans-mid}}
+* Greek: {{t|el|τελειωμένο}}
+* Japanese: {{t+|ja|済む|alt=済んだ|tr=sunda}}, {{t+|ja|終わる|alt=終わった|tr=owatta}}, {{t|ja|済み|alt=-済み|tr=zumi}} (''suffix'')
+* Portuguese: {{t+|pt|pronto}}, {{t+|pt|feito}}, {{t+|pt|terminado}}, {{t+|pt|acabado}}
+* Russian: {{t+|ru|готовый}}, {{t+|ru|завершённый}}
+* Scots: {{t|sco|duin}}
+* Scottish Gaelic: {{t|gd|dèanta}}
+* Spanish: {{t+|es|terminado}}, {{t+|es|hecho|m}}
+* Swedish: {{t+|sv|klar}}, {{t+|sv|färdig}}
+{{trans-bottom}}
+
+{{trans-top|being exhausted or fully spent}}
+* Bulgarian: {{t+|bg|изтощен}}
+* Dutch: {{t+|nl|op}}
+* French: {{t+|fr|mort}}
+* Galician: {{t|gl|rematado|m}}, {{t|gl|rematada|f}}, {{t|gl|acabado|m}}, {{t|gl|acabada|f}}
+{{trans-mid}}
+* Portuguese: {{t+|pt|acabado}}
+* Russian: {{t+|ru|истощённый}}
+* Swedish: {{t+|sv|slut}}
+* Walloon: {{t+|wa|fini|m}}, {{t|wa|fineye|f}}, {{t+|wa|spoujhî|m}}, {{t|wa|spoujheye|f}}
+{{trans-bottom}}
+
+{{trans-top|without hope or prospect of completion or success}}
+* Russian: {{t+|ru|конченый}}
+* Spanish: {{t+|es|acabado}}
+{{trans-mid}}
+* Swedish: {{t+|sv|ute}}, {{t+|sv|färdig}}
+* Walloon: {{t+|wa|fotou|m}}, {{t+|wa|fotowe|f}}
+{{trans-bottom}}
+
+{{trans-top|fashionable, socially acceptable, tasteful}}
+* Walloon: {{t|wa|convnåbe|m|f}}, {{t+|wa|comifåt|m|f}}
+{{trans-mid}}
+{{trans-bottom}}
+
+====Verb====
+{{head|en|verb form}}
+
+# {{inflection of|do||past|part|lang=en}}
+#: ''I have '''''done''''' my work.''
+# {{lb|en|African American Vernacular English|Southern American English|auxiliary verb|taking a [[past tense]]}} Used in forming the perfective aspect; [[have#Verb|have]].
+#: ''I '''done''' did my best to raise y'all.''
+#: ''I woke up and found out she '''done''' left.''
+# {{lb|en|obsolete}} ''plural simple present form of'' '''{{l|en|do}}'''
+#* '''1579''', {{w|Edmund Spenser}}, ''{{w|The Shepheardes Calender}}''
+#*: The while their Foes '''done''' each of hem scorn.
+#* '''1606''', {{w|Nathaniel Baxter}}, ''Sir Philip Sydneys Ourania, that is, Endimions Song and Tragedie, containing all Philosophie''
+#*: O you Caelestiall ever-living fires,
+#*: That '''done''' inflame our hearts with high desires;
+#* '''1647''', {{w|Henry More}}, ''The Praeexistency of the Soul''
+#*: The soul of Naboth lies to Ahab told,
+#*: As '''done''' the learned Hebrew Doctours write,
+
+===Etymology 2===
+
+====Alternative forms====
+* [['done]]
+
+====Pronunciation====
+* {{IPA|/dəʊn/|lang=en}}
+
+====Noun====
+{{en-noun|?}}
+
+# {{lb|en|colloquial|slang}} {{clipping of|methadone|lang=en}}
+#: ''on the '''done'''''
+
+===Anagrams===
+* {{anagrams|en|a=deno|Deno|Deon|Endo|NODE|endo|endo-|node|oden|onde|oned}}
+
+[[Category:English irregular past participles]]
+
+----
+
+==Basque==
+
+===Adjective===
+{{eu-adj}}
+
+# [[holy]]
+
+----
+
+==Czech==
+
+===Pronunciation===
+* {{IPA|/ˈdonɛ/|lang=cs}}
+* {{rhymes|onɛ|lang=cs}}
+* {{hyphenation|do|ne|lang=cs}}
+
+===Noun===
+{{head|cs|noun form}}
+
+# {{inflection of|don||voc|s|lang=cs}}
+
+===Anagrams===
+* {{anagrams|cs|node|onde}}
+
+----
+
+==Dogrib==
+
+===Noun===
+{{head|dgr|noun}}
+
+# [[person]]
+
+----
+
+==Spanish==
+
+===Verb===
+{{head|es|verb form}}
+
+# {{es-verb form of|ending=ar|mood=subjunctive|tense=present|pers=1|number=singular|donar}}
+# {{es-verb form of|ending=ar|mood=subjunctive|tense=present|pers=2|formal=yes|number=singular|donar}}
+# {{es-verb form of|ending=ar|mood=subjunctive|tense=present|pers=3|number=singular|donar}}
+
+----
+
+==Venetian==
+
+===Noun===
+{{head|vec|noun plural form}}
+
+# {{inflection of|dona||p|lang=vec}}
+

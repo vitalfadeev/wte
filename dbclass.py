@@ -10,6 +10,7 @@ _cache = {}
 
 class DBClass:
     def connect(self):
+        """ Opend database file, cache handle, disable journaling """
         db = _cache.get(self.DB_NAME, None)
         
         if db is None:
@@ -21,6 +22,11 @@ class DBClass:
         
         
     def create_index(self, **kvargs):
+        """ 
+        Create DB index 
+        
+        WikictionaryItem.create_index(LabelName=0)
+        """
         db = self.connect()
         c = db.cursor()
         
@@ -30,6 +36,7 @@ class DBClass:
     
 
     def check_table(self):
+        """ Check table existens and structure. Create if need, update if need """
         db = self.connect()
         db.row_factory = None
         c = db.cursor()
@@ -49,6 +56,7 @@ class DBClass:
 
 
     def create_table(self):
+        """ Create sqlite table. Python object attributes -> sqlite columns, id - primary key """
         fields = []
         
         for f in self.get_fields():
@@ -81,6 +89,7 @@ class DBClass:
         
         
     def update_table(self):
+        """ Update table structure. Add absent columns. Python object attributes -> sqlite columns.  """
         # db_fields
         db = self.connect()
         c = db.cursor()
@@ -121,6 +130,7 @@ class DBClass:
         
     
     def get_new_id(self):
+        """ Get SQL table new id """
         db = self.connect()
         
         c = db.cursor()
@@ -142,6 +152,7 @@ class DBClass:
         
         
     def get_fields(self):
+        """ Get fields of the python class, for store into DB """
         reserved = [ "DB_NAME", "DB_TABLE_NAME", "Excpla", "Explainations" ]
 
         result = []
@@ -162,6 +173,7 @@ class DBClass:
 
 
     def save_to_db(self, autocommit=True, db=None):
+        """ Save to sqlite """
         self.check_table()
         
         db = self.connect()
@@ -210,6 +222,7 @@ class DBClass:
         
     
     def factory(self, cursor, row):
+        """ Sqlite row -> python object """
         w = deepcopy(self)
         
         for idx, col in enumerate(cursor.description):
@@ -236,6 +249,15 @@ class DBClass:
 
 
     def from_db(self, where=None, **kvargs):
+        """ 
+        Select rows from DB 
+        
+        for word in WikictionaryItemClass.from_db( LabelName = WikidataItem.LabelName ):
+            print( word )
+            
+        for word in WikictionaryItemClass.from_db( where="LabelName = 'Cat'" ):
+            print( word )
+        """
         self.check_table()
         db = self.connect()
         db.row_factory = self.factory
@@ -266,6 +288,7 @@ class DBClass:
 
 
 def get_field_type(v):
+    """ Python type -> sqlite type """
     if v is None:
         return None
     if isinstance(v, str):
@@ -288,6 +311,9 @@ def DBRead(ItemClass, **conditions):
         print( word )
         
     for word in DBRead( WikictionaryItemClass, LabelName = WikidataItem.LabelName ):
+        print( word )
+        
+    for word in DBRead( WikictionaryItemClass, where="LabelName = 'Cat'" ):
         print( word )
     """
     yield from ItemClass().from_db( **conditions )

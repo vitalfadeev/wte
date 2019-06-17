@@ -1,0 +1,120 @@
+﻿{{desambiguación|Abeja}}
+== {{lengua|es}} ==
+{{pron-graf|fone=a.ˈβe.xa|ac=g}}
+[[Archivo:Bees Collecting Pollen 2004-08-14.jpg|thumb|[1]]]
+
+=== Etimología ===
+{{etimología|la|apicula}}, diminutivo de ''[[apis]]'', y esta de origen incierto. La raíz protoindoeuropea parecería ser ''[[*bʰi-]]'', a partir de la evidencia del protogermánico y protoeslavo, que hubiera dado /?fj/ en latín, pero no hay una explicación universalmente aceptada para la aparición de vocal inicial y la mutación de la consonante a una plosiva
+
+=== {{sustantivo femenino|es}} ===
+{{inflect.es.sust.reg}}
+
+;1 {{insectos|apicultura}}: (''[[species:Apis|Apis]]'' spp.) {{plm|insecto}} [[himenóptero]] [[volador]], de color pardo oscuro, y que según las [[especie]]s puede vivir en solitario o formando grandes [[colonia]]s. Poseen un [[aguijón]] capaz de producir una [[picadura]] muy dolorosa. Se alimentan del [[polen]] y del [[néctar]] de las [[flores]], contribuyendo eficazmente a su [[polinización]]. Las especies [[social]]es pueden llegar a producir grandes cantidades de [[miel]], [[polen]] y [[cera]], por lo que han sido utilizadas por el hombre para su beneficio desde tiempos muy remotos.
+{{sinónimos|colmena|nota=sur de Chile|mosco de miel}}.
+{{hipónimo|obrera|reina|zángano}}.
+{{hiperónimo|himenóptero|insecto}}.
+{{relacionado|avispa|melipona}}.
+
+;2: {{plm|persona}} [[laborioso|laboriosa]].
+{{uso|figurado}}.
+{{relacionado|dedicado|trabajador}}.
+
+{{clear}}
+
+=== Locuciones ===
+{{rel-arriba|Locuciones con «abeja»}}
+* [[abeja albañila]]
+* [[abeja carpintera]]
+* [[abeja machiega]]
+* [[abeja maesa]]
+* [[abeja maestra]]
+* [[abeja melífera]]
+{{rel-centro}}
+* [[abeja neutra]]
+* [[abeja obrera]]
+* [[abeja reina]]
+* [[flor de la abeja]]
+* [[nido de abeja]]
+{{rel-abajo}}
+
+=== Información adicional ===
+{{derivad|abejar|abejarrón|abejaruco|abejear|abejeo|abejera|abejero|abejón|abejonear|abejoneo|abejorreo|abejorro|catabejas|desabejar}}.
+*'''Cognados:''' [[apicultor]], [[apicultura]]
+*'''Pares mínimos:''' [[abejas]], [[Abela]], [[aneja]], [[añejo|añeja]], [[avena]], [[oveja]], [[veja]]
+
+=== Véase también ===
+{{Wikipedia}}.
+* [[apicultor]], [[apicultura]] y [[:Categoría:ES:Apicultura|términos de apicultura]] en Wikcionario.
+* [[colmena]], [[panal]]
+* [[jalea real]], [[miel]]
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+{{t+|sq|1|bletë}}
+{{t+|de|1|Biene}}
+{{t+|ay|1|mamuraya}}
+{{t+|am|ንብ}} (''nəb'')
+{{t+|ar|1|نحلة}} (''naḥlâ'')
+{{t+|an|1|abella}}
+{{t+|ast|abeya}}
+{{t+|az|arı}}
+{{t+|bs|1|pčela}}
+{{t+|bg|1|пчела}}
+{{t+|br|1|gwenanenn}} {{s}}, {{trad|br|gwenan}} {{colectivo}}
+{{t+|ca|1|abella}}
+{{t+|cs|1|včela}}
+{{t+|zh|1|蜜蜂}}
+{{t+|ko|1|벌}} (''beol'')
+{{t+|co|1|abba|,|apa}}
+{{t+|hr|1|pčela}}
+{{t+|da|1|bi}}
+{{t+|sl|1|čebela}}
+{{t+|eo|1|abelo}}
+{{t+|et|1|mesilane}}
+{{t+|eu|1|erle}}
+{{t+|fi|1|mehiläinen}}
+{{t+|fr|1|abeille|f}}
+{{t+|el|1|μέλισσα|f}}
+{{t+|kl|1|igutsak}}
+{{t+|gn|eiru|,|eira rúa}}
+{{t+|ha|1|zuma}}
+{{t+|he|דבורה}} (''dəvorah'')
+{{t+|hu|1|méh}}
+{{t+|id|1|lebah}}
+{{trad-centro}}
+{{t+|ia|1|ape|,|1|apicula}}
+{{t+|en|1|bee|,|2|busy beaver|,|2|busy bee}}
+{{t+|it|1|ape}}
+{{t+|ja|1|蜂}} ([[はち]], ''[[hachi#Japonés|hachi]]''), {{trad|ja|蜜蜂|1}} ([[みつばち]], ''[[mitsubachi]]'')
+{{t+|la|1|apis}}
+{{t+|lt|1|bitė}}
+{{t+|mt|1|naħla}}
+{{t+|mn|1|зөгий}} ''(zögii)''
+{{t+|arn|diwlliñ|,|diwmeñ|,|kormenia}}
+{{t+|nci|neuczayolin|,|pipiyolin}}
+{{t+|nl|1|bij|,|1|honingbij}}
+{{t+|no|1|bie}}
+{{t+|fa|1|زنبور}} ''(zanbur)''
+{{t+|ote|1|sefi}}
+{{t+|pl|1|pszczoła|f}}
+{{t+|pt|1|abelha}}
+{{t+|pua|1|uauapu}}
+{{t+|quz|1|lachiwa}}
+{{t+|ro|1|albină}}
+{{t+|ru|1|пчела|f}} ''(pchela)''
+{{t+|sc|abba}}
+{{t+|sr|1|pčela}}
+{{t+|so|1|shinni}}
+{{t+|sv|1|bi}}
+{{t+|sw|1|nyuki}}
+{{t+|ti|1|ንህቢ|tr=nəhəbi}}
+*Tupinambá: [[eíra]]
+{{t+|tr|arı}}
+{{t+|vi|1|ong}}
+{{t+|yo|1|oyin|,|1|kòkòrò oyin}}
+{{trad-abajo}}
+
+== Referencias y notas ==
+<references />

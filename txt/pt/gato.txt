@@ -1,0 +1,347 @@
+﻿{{Wikipédia}}
+{{Wikispecies|felis catus}}
+{{Wikipédia|lang=ht}}
+{{Wikipédia|lang=mwl}}
+{{ver também|Gato}}
+[[Imagem:Domestic cat cropped.jpg|thumb|right|250px|<center>Gato<sup>1</sup> doméstico</center>]]
+
+={{-pt-}}=
+==Adjetivo==
+{{flex.pt|ms=gato|mp=gatos|fs=gata|fp=gatas}}
+{{paroxítona|ga|to}}
+# {{escopo|pt|Brasil|coloquial}} [[bonito]]
+
+===Sinônimos===
+{{verTambém.Ini}}
+* {{escopo2|Portugal}} [[borracho]]
+{{verTambém.NovaColuna}}
+* [[gatão]]
+{{verTambém.Fim}}
+
+===Aumentativo===
+* [[gatão]]
+
+==Substantivo==
+{{flex.pt.subst.completa|ms=gato|mp=gatos|fs=gata|fp=gatas|msa=gatão|mpa=gatões|fsa=gatona|fpa=gatonas|msd=gatinho|mpd=gatinhos|fsd=gatinha|fpd=gatinhas|col=gataria}}
+{{paroxítona|ga|to}}, {{gramática|m}} {{datação|século XIII}}
+# {{escopo|pt|Mamífero}} [[animal]] da [[espécie]] ''[[species:Felis silvestris catus|Felis silvestris catus]]'', Ordem [[species:Mammalia|Mamalia]], Família [[species:Felidae|Felidade]]
+# [[grampo]]: [[peça]] de [[metal]] para [[prender]] [[louça]] [[rachado|rachada]] ou [[quebrado|quebrada]]
+# [[gancho]] para [[segurar]] [[peça]]s ou [[obra]]s de [[cantaria]] ([[construção]])
+# {{escopo|pt|figurado}} [[erro]], [[lapso]], [[engano]]
+# {{escopo|pt|Gíria|Brasil}} alguém [[atraente]], [[charmoso]]
+# {{escopo|pt|Gíria|Brasil}} [[ligação]] [[ilegal]] de [[fornecimento]] [[elétrico]], de [[TV a cabo]], de [[água]]
+# {{escopo|pt|Gíria|Brasil}} ligação [[elétrico|elétrica]] [[improvisado|improvisada]]
+# {{escopo|pt|Gíria|Brasil}} [[conserto]] [[improvisado]]
+# {{escopo|pt|Gíria}} [[ladrão]], [[batedor de carteira]]s
+# {{escopo|pt|Portugal}} [[tipo]] de [[saco]] feito de [[pele]] utilizado para [[transportar]] [[vinho]]
+# {{escopo|pt|Jogo}} [[colocação]] de [[pedra]] de [[dominó]] que não cabe no seu [[jogo]]
+# {{escopo|pt|Jogo}} desportista que falseia a idade para uma menor que a real de modo a atuar em uma categoria reservada ou destinada a jogadores mais jovens
+
+===Sinônimos===
+De '''9''' (ladrão): [[gatuno]]
+{{verTambém.Ini}}
+* [[gatuno]]
+{{verTambém.NovaColuna}}
+* [[ladrão]]
+{{verTambém.Fim}}
+
+===Expressões===
+* '''[[à noite todos os gatos são pardos]]''': tudo se confunde na escuridão.
+* '''[[balaio de gato]]''':
+* '''[[cama de gato]]''':
+* '''[[capar o gato]]''': ir embora, sair.
+* '''[[dar-se como o cão e o gato]]''': dar-se mal quando estão juntos.
+* '''[[fazer de gato sapato]]''': maltratar, humilhar, desprezar.
+* '''[[gato de armazém]]''': pessoa [[dorminhoco|dorminhoca]] (que dorme muito).
+* '''[[gato em telhado de vidro]]''': pessoa em situação delicada.
+* '''[[gato escaldado tem medo de água fria e de água quente também]]''':
+* '''[[gato escaldado tem medo de água fria]]''': pessoa precavida devido ao que já sofreu.
+* '''[[o pulo do gato]]''': trunfo que se guarda.
+* '''[[pôr o guizo no gato]]''':
+* '''[[quando o gato sai, os ratos fazem uma festa]]''': quando um responsável de um determinado lugar se descuida.
+* '''[[quem não tem cão, caça com gato]]''': improvisa-se usando daquilo que se dispõe para resolver um problema.
+* '''[[ser um gato]]''': para se referir que alguém é bonito / ligeiro, esperto.
+* '''[[trocar gato por lebre]]''': enganar, dando ou vendendo o mau como se fosse bom.
+* '''[[viver como cão e gato]]''': viver brigando.
+
+===Tradução===
+{{tradini|De 1 (animal)}}
+* {{trad|af|kat}}
+* {{trad|ay|michi|phisi}}
+* {{trad|sq|macja|maçok}}
+* {{trad|gsw|Hauskatze}}
+* {{trad|de|Hauskatze|Katze|Kater|Mieze|Miezekatze}}
+* {{trad|ar|قِطّ|قطة}}
+* {{trad|an|gato|mixino|mixín}}
+* {{trad|arn|narki}}
+* {{trad|hy|կատու}}
+* {{trad|ast|gatu|músaru|muxín}}
+* {{trad|az|pişik}}
+* {{trad|nds|Katt}}
+* {{trad|nds-nl|kat}}
+* {{trad|bm|jakuma}}
+* {{trad|eu|katu}}
+* {{trad|bar|Katz}}
+* {{trad|bn|িবলাড়}}
+* {{trad|be|кот}}
+* {{trad|bs|macka}}
+* {{trad|br|kazh|bisig}}
+* {{trad|bg|котка|котарак|котак}}
+* {{trad|km|ឆ្មា}}
+* {{trad|ca|gat}}
+* {{trad|kk|мисиқ}}
+* {{trad|ce|tsitska}}
+* {{trad|cs|kočka}}
+* {{trad|chr|ᏪᏌ}}
+* {{trad|chy|poeso}}
+* {{trad|zh|猫}}
+* {{trad|sn|katsi}}
+* {{trad|cod|mishu}}
+* {{trad|ko|고양이}}
+* {{trad|co|ghjattu}}
+* {{trad|hr|mačka}}
+* {{trad|ku|pisik}}
+* {{trad|da|kat|hankat}}
+* {{trad|egy|mjw}}
+* {{trad|eml|gàt}}
+* {{trad|sco|cat}}
+* {{trad|sk|kocur}}
+* {{trad|sl|mačka|maček|muc|mucek}}
+* {{trad|es|gato|morrongo|micho|mizo|minino|cuchito|miechi|morro}}
+* {{trad|eo|kato}}
+* {{trad|et|kass}}
+* {{trad|fo|kattur}}
+* {{trad|fi|kissa}}
+* {{trad|vls|kat|poes|kater}}
+* {{t|fr|chat|m}}
+* {{trad|frp|chat}}
+* {{trad|fy|kat}}
+* {{trad|fur|gjat}}
+* {{trad|gd|cat}}
+* {{trad|gl|gato}}
+* {{trad|cy|cath|pwsi|pwsyn|sgiatan}}
+* {{trad|ka|კატა}}
+* {{trad|el|γάτα}}
+* {{trad|gn|mbarakaya|mbarakaja}}
+* {{trad|gu|બિલાડી}}
+* {{trad|hak|meu-é}}
+* {{trad|he|חתול}}
+* {{trad|hi|बिल्ली}}
+* {{trad|nl|kat}}
+* {{trad|hu|macska|cica}}
+* {{trad|io|kato}}
+* {{trad|id|kucing|meong}}
+* {{trad|en|cat}}
+* {{trad|ang|catte}}
+* {{trad|ia|catto}}
+* {{trad|ga|cat}}
+* {{trad|is|köttur}}
+* {{trad|it|gatto}}
+* {{t|ja|猫||neko}}
+{{tradmeio}}
+* {{trad|jv|kucing}}
+* {{trad|kha|myaw}}
+* {{trad|lad|iat}}
+* {{trad|la|feles|felis}}
+* {{trad|lv|kaķis}}
+* {{trad|li|poes|kat|kets}}
+* {{trad|ln|nkondoko|pusi}}
+* {{trad|lfn|gato|гато}}
+* {{trad|lt|katė|katinas}}
+* {{trad|lb|Kaz}}
+* {{trad|mk|мачка}}
+* {{trad|ms|kucing}}
+* {{trad|mg|saka|piso}}
+* {{trad|mt|qattus}}
+* {{trad|gv|kayt}}
+* {{trad|mi|ngeru|poti}}
+* {{trad|mr|मांजरी}}
+* {{trad|mas|embarra|anyau}}
+* {{trad|mzn|بامشی}}
+* {{trad|cdo|mà}}
+* {{trad|nan|niau}}
+* {{trad|mwl|gato}}
+* {{trad|mhn|kòtz}}
+* {{trad|mn|муур|мий}}
+* {{trad|nap|gatta}}
+* {{trad|nah|ocelotl}}
+* {{trad|nci|mizton}}
+* {{trad|non|kǫttr}}
+* {{trad|roa-nor|cat}}
+* {{trad|no|katt|tamkatt}}
+* {{trad|nn|katt}}
+* {{trad|os|гæды}}
+* {{trad|pap|pushi}}
+* {{trad|fa|گربه|گرب}}
+* {{trad|pms|gat}}
+* {{trad|pl|kot}}
+* {{trad|pa|ਮਾਊਂ|ਬਿੱਲਾ}}
+* {{trad|qu|michi|misi|phichi}}
+* {{trad|ky|мешек}}
+* {{trad|rap|kurī}}
+* {{trad|ro|pisică}}
+* {{trad|rw|injangwe}}
+* {{trad|ru|кот|кошка}}
+* {{trad|se|bus'sá|bussá}}
+* {{trad|sm|pusi}}
+* {{trad|sgs|katie}}
+* {{trad|sa|बिडाल}}
+* {{trad|sro|gatu|agatu|pisitu}}
+* {{trad|sr|мачак|мачка}}
+* {{trad|st|katse}}
+* {{trad|scn|gattu|jattu}}
+* {{trad|sd|ٻلي}}
+* {{trad|sw|paka}}
+* {{trad|sv|katt}}
+* {{trad|th|แมว}}
+* {{trad|ta|பூனை}}
+* {{trad|tet|busa}}
+* {{trad|bo|ཞི་མི་}}
+* {{trad|tn|katse}}
+* {{trad|tr|kedi}}
+* {{trad|tk|пишик}}
+* {{trad|uk|кіт}}
+* {{trad|ug|مۈشۈك|müshük|мүшүк}}
+* {{trad|wo|muus}}
+* {{trad|ur|بيلی}}
+* {{trad|uz|mushuk|мушук}}
+* {{trad|wa|tchèt|poupous'}}
+* {{trad|val|gat}}
+* {{trad|vec|gato}}
+* {{trad|vi|con mèo|mèo}}
+* {{trad|xh|ikati}}
+* {{trad|zu|ikati}}
+{{tradfim}}
+
+=={{etimologia|pt}}==
+{{llietimo|la|cattus|pt}}
+
+=={{pronúncia|pt}}==
+* [[AFI]]: /ˈɡa.tu/
+
+==Ver também==
+===No Wikcionário===
+{{verTambém.Ini}}
+* [[caixa de areia]]
+* [[felino]]
+* [[gateira]]
+{{verTambém.NovaColuna}}
+* [[gatil]]
+* [[vibrissa]]
+* [[zapetrape]]
+{{verTambém.Fim}}
+
+vozes de chamamento:
+{{verTambém.Ini}}
+* [[chane]]
+{{verTambém.NovaColuna}}
+* [[chaninho]]
+{{verTambém.Fim}}
+
+==Anagramas==
+# [[gota]]
+# [[toga]]
+
+[[Categoria:Adjetivo (Português)]]
+[[Categoria:Substantivo (Português)]]
+[[Categoria:Entrada com imagem (Português)]]
+
+
+={{-an-}}=
+==Substantivo==
+'''gato'''
+# {{escopo|an|Mamífero}} [[gato#Português|gato]]
+
+=={{etimologia|an}}==
+{{llietimo|la|cattus|an}}
+
+[[Categoria:Substantivo (Aragonês)]]
+[[Categoria:Entrada com imagem (Aragonês)]]
+
+
+={{-es-}}=
+==Substantivo==
+'''ga.to''', {{g|m|lang=es}}
+# {{escopo|es|Mamífero}} [[gato#Português|gato]]
+
+=={{etimologia|es}}==
+{{llietimo|la|cattus|es}}
+
+=={{pronúncia|es}}==
+* AFI: /ˈɡa.to/
+
+[[Categoria:Substantivo (Espanhol)]]
+[[Categoria:Dissílabo (Espanhol)]]
+[[Categoria:Entrada com imagem (Espanhol)]]
+
+
+={{-gl-}}=
+==Substantivo==
+'''gato'''
+# {{escopo|gl|Mamífero}} [[gato#Português|gato]]
+# {{escopo|gl|Flor}} [[flor]] do [[salgueiro]]
+
+=={{etimologia|gl}}==
+{{llietimo|la|cattus|gl}}
+
+[[Categoria:Substantivo (Galego)]]
+[[Categoria:Entrada com imagem (Galego)]]
+
+
+={{-ht-}}=
+==Substantivo==
+'''gato'''
+# {{escopo|ht|Alimentação}} [[bolo]]
+
+=={{etimologia|ht}}==
+{{llietimo|fr|gâteau|ht}}
+
+[[Categoria:Substantivo (Haitiano)]]
+[[Categoria:Alimentação (Haitiano)]]
+
+
+={{-lfn-}}=
+==Substantivo==
+{{flex.lfn|gato|gatos}}
+'''gato'''
+# {{escopo|lfn|Mamífero}} [[gato#Português|gato]]
+
+==={{-varort-}}===
+* '''[[alfabeto cirílico|Alfabeto cirílico]]:''' {{l.s.|гато|{{lfn}}}}
+
+=={{etimologia|lfn}}==
+{{llietimo|la|cattus|lfn}}
+
+[[Categoria:Substantivo (Língua Franca Nova)]]
+[[Categoria:Entrada com imagem (Língua Franca Nova)]]
+
+
+={{-mwl-}}=
+==Substantivo==
+{{flex.mwl|ms=gato|mp=gatos|fs=gata|fp=gatas}}
+{{paroxítona|ga|to|língua=mwl}}, {{m}}
+# {{escopo|mwl|Mamífero}} [[gato#Português|gato]] (''[[species:Felis silvestris catus|Felis silvestris catus]]'')
+
+==Ver também==
+===No Wikcionário===
+{{verTambém.Ini}}
+* [[gato muntés]]
+{{verTambém.NovaColuna}}
+* [[gato brabo]]
+{{verTambém.Fim}}
+
+[[Categoria:Substantivo (Mirandês)]]
+[[Categoria:Animal (Mirandês)]]
+[[Categoria:Entrada com imagem (Mirandês)]]
+
+
+={{-vec-}}=
+==Substantivo==
+'''gato'''
+# {{escopo|vec|Mamífero}} [[gato#Português|gato]]
+
+=={{etimologia|vec}}==
+{{llietimo|la|cattus|vec}}
+
+[[Categoria:Substantivo (Vêneto)]]
+[[Categoria:Entrada com imagem (Vêneto)]]

@@ -1,0 +1,31 @@
+﻿== {{lengua|es}} ==
+{{stub}}
+{{pron-graf|fone=ˈon.fa.los}}
+[[Archivo:Onfalosdelfoslou.jpg|thumb|150px|Ónfalos de la ciudad de Delfos.]]
+
+=== Etimología ===
+{{etimología|grc|Oμφαλoς-oυ|ombligo}}.
+
+=== {{sustantivo masculino|es}} ===
+{{inflect.es.sust.invariante}}
+
+:;1:Piedra redondeada con forma de huevo utilizada por los griegos como símbolo de centro.
+
+:*'''Derivados griegos''': Oμφαλιoς - oς, redondeado o abombado / Oμφαλητoμoς - oυ, médico o comadrona que corta el cordón umbilical.
+
+=== Véase también ===
+{{En Wikipedia}}
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+{{t+|de|Omphalos|m}}
+{{t+|fr|omphalos}}
+{{trad-centro}}
+{{t+|en|omphalos}}
+:{{nl}}: {{trad|de|omphalos}}
+{{trad-abajo}}
+
+== Referencias y notas ==
+<references />

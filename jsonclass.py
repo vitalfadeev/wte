@@ -6,10 +6,12 @@ from blist import sorteddict
 
 class JSONClass:
     def save_to_json(self, filename):
+        """ Save this object into the JSON file """
         save_to_json(self, filename)
 
 
     def as_json(self):
+        """ Return this object as JSON encoded string """
         return json.dumps(self, cls=JSONEncoder, sort_keys=False, indent=4, ensure_ascii=False)
         
 

@@ -1,0 +1,151 @@
+﻿{{voir/dun}}
+
+== {{langue|conv}} ==
+=== {{S|symbole|conv}} ===
+'''dun'''
+# {{linguistique|conv}} Code {{w|ISO 639-3}} du [[dusun deyah]].
+
+=== {{S|références}} ===
+* {{Lien 639-3|dun}}
+
+== {{langue|af}} ==
+=== {{S|étymologie}} ===
+: {{ébauche-étym|af}}
+
+=== {{S|adjectif|af}} ===
+'''dun''' {{pron||af}}
+# [[mince|Mince]].
+
+==== {{S|synonymes}} ====
+* [[maer]]
+
+== {{langue|fro}} ==
+=== {{S|étymologie}} ===
+:Du {{étyl|non|fro|mot=dunn}}.
+
+=== {{S|nom|fro}} ===
+'''dun''' {{pron||fro}} {{m}}
+# [[duvet|Duvet]].
+#* {{ébauche-exe|fro}}
+
+==== {{S|variantes}} ====
+* {{lien|dum|fro}}
+
+==== {{S|dérivés}} ====
+* {{lien|dumet|fro}}
+
+=== {{S|références}} ===
+*{{R:Godefroy|dum}}
+
+== {{langue|en}} ==
+=== {{S|étymologie}} ===
+: {{ébauche-étym|en}}
+
+=== {{S|adjectif|en}} ===
+'''dun''' {{pron|dʌn|en}}
+# [[marron|Marron]] grisâtre {{couleur|#DAC8AE}}.
+#* {{ébauche-exe|en}}
+
+=== {{S|nom|en}} ===
+{{en-nom-rég|dʌn}}
+'''dun''' {{pron|dʌn|en}}
+# [[marron|Marron]] grisâtre.
+#* {{ébauche-exe|en}}
+
+=== {{S|verbe|en}} ===
+{{en-conj-rég-cons|n|inf.pron=ˈdʌn}}
+'''dun''' {{pron|dʌn|en}}
+# Demander le [[paiement]] d’une [[dette]].
+#* {{ébauche-exe|en}}
+
+[[Catégorie:Couleurs en anglais]]
+
+== {{langue|ang}} ==
+=== {{S|étymologie}} ===
+: {{ébauche-étym|ang}}
+
+=== {{S|nom|ang}} ===
+'''dun''' {{pron||ang}}
+# [[colline|Colline]].
+
+==== {{S|synonymes}} ====
+* [[hyll]]
+
+== {{langue|bm}} ==
+=== {{S|étymologie}} ===
+: {{ébauche-étym|bm}}
+
+=== {{S|adjectif|bm}} ===
+'''dun''' {{pron|duŋ|bm}}
+# [[profond|Profond]].
+
+=== {{S|verbe|bm}} ===
+'''dun''' {{pron|duŋ|bm}}
+# [[manger|Manger]].
+
+==== {{S|synonymes}} ====
+* [[dumuni]]
+
+== {{langue|da}} ==
+=== {{S|étymologie}} ===
+: {{ébauche-étym|da}}
+
+=== {{S|nom|da}} ===
+'''dun''' {{pron||da}} {{m}}
+# [[duvet|Duvet]].
+
+== {{langue|avk}} ==
+=== {{S|particule|avk}} ===
+'''dun''' {{pron|ˈdun|avk}}
+# ''Particule aspectuelle invariable marquant la notion d'action progressive en cours (être en train de).''
+#* ''Okol '''dun''' vulteyer viele ...''
+#*: Le cheval était en train de courir quand ...
+
+== {{langue|nl}} ==
+=== {{S|étymologie}} ===
+:{{ébauche-étym|nl}}
+
+=== {{S|adjectif|nl}} ===
+{{nl-adj-cons|dun|n}}
+'''dun''' {{pron||nl}}
+# [[mince|Mince]].
+
+==== {{S|synonymes}} ====
+* [[dungezaaid]]
+* [[iel]]
+* [[luchtig]]
+* [[mager]]
+* [[schraal]]
+* [[sprietig]]
+* [[vloeibaar]]
+* [[ijl]]
+
+==== {{S|antonymes}} ====
+* [[dik]]
+
+==== {{S|dérivés}} ====
+* [[flinterdun]]
+
+=== {{S|prononciation}} ===
+* {{écouter|lang=nl|audio=nl-dun.ogg}}
+* {{écouter|lang=nl|Pays-Bas (partie continentale) (Wijchen)|audio=LL-Q7411 (nld)-Robin van der Vliet-dun.wav}}
+
+== {{langue|sv}} ==
+=== {{S|étymologie}} ===
+: {{ébauche-étym|sv}}
+
+=== {{S|nom|sv}} ===
+{{sv-nom-n-0}}
+'''dun''' {{pron||sv}} {{n}}
+# [[duvet|Duvet]].
+
+=== {{S|références}} ===
+* {{R:Schulthess|287}}
+
+== {{langue|wo}} ==
+=== {{S|étymologie}} ===
+: {{ébauche-étym|wo}}
+
+=== {{S|nom|wo}} ===
+'''dun''' {{pron||wo}}
+# [[île|Île]].

@@ -1,0 +1,10 @@
+﻿== {{lengua|es}} ==
+{{pron-graf|pron=seseo|altpron=No seseante|fone=aˈθjen.do|2pron=seseo|alt2pron=Seseante|2fone=aˈsjen.do}}
+
+=== Forma verbal ===
+
+;1: {{forma verbo|hacendar|p=1s|t=presente|m=indicativo}}.
+;2: {{gerundio|hacer}}.
+
+== Referencias y notas ==
+<references />

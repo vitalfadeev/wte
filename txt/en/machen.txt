@@ -1,0 +1,196 @@
+{{Wort der Woche|24|2008}}
+{{überarbeiten|Synonyme prüfen, Bedeutung [6], [19], [20] belegen, Redewendungen formatieren|Deutsch}}
+== machen ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Verb|Deutsch}} ===
+
+{{Deutsch Verb Übersicht
+|Präsens_ich=mache
+|Präsens_du=machst
+|Präsens_er, sie, es=macht
+|Präteritum_ich=machte
+|Partizip II=gemacht
+|Konjunktiv II_ich=machte
+|Imperativ Singular=mache
+|Imperativ Singular*=mach
+|Imperativ Plural=macht
+|Hilfsverb=haben
+}}
+
+{{Worttrennung}}
+:ma·chen, {{Prät.}} mach·te, {{Part.}} ge·macht
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ˈmaxn̩}}
+:{{Hörbeispiele}} {{Audio|De-machen.ogg}}, {{Audio|De-at-machen.ogg|spr=at}}
+:{{Reime}} {{Reim|axn̩|Deutsch}}
+
+{{Bedeutungen}}
+:[1] in einen [[bestimmt]]en [[Zustand]] [[versetzen]]
+:[2] ''[[umgangssprachlich]]:'' [[herstellen]], [[produzieren]], [[anfertigen]]
+:[3] ''machen, dass:'' [[veranlassen]]
+::[a] ''früher auch mit Infinitiv''
+:[4] ''umgangssprachlich:'' [[tun]], [[tätigen]], [[handeln]], [[ausführen]], [[erledigen]]
+:[5] ''[[euphemistisch]] für:''
+::[a] [[koten]]
+::[b] [[urinieren]]
+:[6] ''regional für'' [[einfüllen]], [[auffüllen]]
+:[7] ''ostmitteldeutsch, mit Hilfsverb „[[sein]]“:'' den [[Wohnort]] [[wechseln]], vom Wohnort [[wegziehen]]
+:[8] ''umgangssprachlich''; ''es machen'': [[koitieren]], [[Sex]] haben
+:[9] [[verursachen]], [[hervorrufen]]
+:[10] durch [[geschäftlich]]e Tätigkeiten [[verdienen]]
+:[11] ''umgangssprachlich, mit „[[sich]]“'': eine meist [[positiv]]e [[Entwicklung]] [[nehmen]]; sich [[aufwärts]] [[entwickeln]], [[wachsen]]
+:[12] ''salopp:'' eine [[bestimmt]]e [[Rolle]] [[übernehmen]]
+:[13] ''umgangssprachlich, abwertend'': etwas oder jemanden [[mimen]], eine bestimmte [[Haltung]] nach außen hin [[einnehmen]]
+:[14] ''mit „sich“'': sich in eine bestimmte [[Umgebung]] [[gut]] [[einfügen]], gut [[irgendwohin]] [[passen]]
+:[15] ''umgangssprachlich auch mit [[in]] [[etwas]]'': sich auf einem bestimmten [[Geschäftsfeld]] [[betätigen]]
+:[16] ''umgangssprachlich:'' eine bestimmte [[Summe]] [[Geldes]] [[betragen]]
+:[17] ''bei mathematischen Operationen (insbesondere bei [[Addition]], [[Multiplikation]] und [[Subtraktion]], [[Division]])'': [[ergeben]]
+:[18] den nachfolgend [[umschreiben|umschriebenen]] [[Laut]] [[von sich geben]]
+:[19] ''regional:'' gehen
+:[20] beginnen
+:[21] {{K|Ballsport|ugs.}} ein [[Tor]] [[erzielen]]
+
+{{Herkunft}}
+:[[westgermanisch]]: [[althochdeutsch]] ''mahhōn,'' [[mittelhochdeutsch]] ''machen''; [[altsächsisch]] [[altnfr.]] ''macôn,'' [[niederdeutsch]], [[niederländisch]] ''maken''; [[friesisch]] ''makia,'' [[angelsächsisch]] ''macian,'' [[englisch]] ''make''; ins [[Isländisch]]e und [[Schwedisch]]e als ''maka,'' ins [[Dänisch]]e als ''mage'' entlehnt. Präteritum: [[althochdeutsch]] ''machôta,'' [[Konjunktiv]] ''machôti,'' [[mittelhochdeutsch]] ''machete,'' ''machte.'' Aus [[indoeuropäisch]] ''*mag-'' "kneten". Verwendung in handwerklichen Sonderbereichen. Die allgemeine germanische Bedeutung, ''bauen,'' könnte auf "Wände mit Lehm verschmieren" zurückgeführt werden. Indoeur.: ''*mag-'' ist [[griechisch]] μάσσω ''(másso):'' ich knete, [[altslawisch]] ''mazati'' bestreichen; [[bretonisch]] ''meza'' kneten {{QS Herkunft|unbelegt}}
+
+{{Synonyme}}
+:[2] [[anfertigen]], [[arbeiten an]], [[ausarbeiten]], [[basteln]], [[bauen]], [[erschaffen]], [[erstellen]], [[erzeugen]], [[fabrizieren]], [[fertigen]], [[gestalten]], [[herstellen]], [[schaffen]], [[verarbeiten]], [[verfertigen]]
+:[3] [[antreiben]], [[anregen]], [[auslösen]], [[befehlen]], [[bestimmen]], [[bewerkstelligen]], [[bewirken]], [[einfädeln]], [[initiieren]], [[nötigen]], [[veranlassen]], dafür [[sorgen]]; [[lassen]] ''(mit Infinitiv)'', [[sorgen für]]
+:[4] [[arbeiten]], [[erledigen]], [[schaffen]], sich [[befassen]] mit, sich [[beschäftigen]] mit, sich [[widmen]], [[tun]], [[verstehen]]
+:[5] sich [[erleichtern]]; ''nicht euphemistisch, aber gehobene Sprache:'' [a] [[koten]], [[defäzieren]], [b] [[harnen]], [[urinieren]]
+:[6] [[geben]], [[hineingeben]], [[füllen]], [[auffüllen]], [[einfüllen]]; ''andere Regionen:'' [[tun]], [[drauftun]], [[hineintun]]
+:[7] [[fortmachen]], [[gehen]], [[umziehen]], [[weggehen]], [[wegziehen]], [[auswandern]], [[fliehen]], [[flüchten]]
+
+{{Gegenwörter}}
+:[4] [[unterlassen]]
+:[21] [[verschießen]]
+
+{{Beispiele}}
+:[1] Das ''macht'' mich wütend.
+:[1] Komm, lieber Mai, und ''mache'' die Bäume wieder grün. ''([[w:Wolfgang Amadeus Mozart|Wolfgang Amadeus Mozart]])''
+:[1] Du ''machst'' dich zum Gespött der Leute.
+:[1] Was hast du nur aus mir ''gemacht!''
+:[1] Er ''machte'' sie zu seiner engsten Vertrauten.
+:[1] Sie ''machte'' ihn zu ihrem Verlobten.
+:[1] Meine Frau ''hat'' sich heute Abend besonders hübsch ''gemacht.''
+:[1] Du ''machst'' mich aber jetzt neugierig!
+:[2] In welchem Land wurde dieses Spielzeugauto ''gemacht?''
+:[3] Lieber Gott, ''mach'' bitte, ''dass'' es regnet.
+:[3a] Das ''machte'' ihn alles vergessen.
+:[4] Wir ''machen'' es so, wie es uns gefällt.
+:[4] Hinnerk ''macht'' nie seine Hausaufgaben.
+:[5] Der Hund hat auf den Teppich ''gemacht.''
+:[6] ''Mach'' mir bitte eine Wurst auf den Teller.
+:[7] Das halbe Dorf ''ist'' in den Westen ''gemacht.''
+:[8] Sie ''haben es'' letzte Nacht ''gemacht.''
+:[8] Er ''macht es'' mit jeder.
+:[9] Du ''machst'' mir nur Arbeit!
+:[9] Mit seiner dauernden Nörgelei ''hat'' sich Marius schon viele Feinde ''gemacht.''
+:[10] Mit seinen riskanten Spekulationen an der Börse ''hat'' mein Schwager ein Vermögen ''gemacht.''
+:[11] Dein Sohn ''hat sich'' echt ''gemacht.''
+:[12] Jedes Jahr ''macht'' der Nachbar den Orpheus bei der Dorfbühne.
+:[13] Die Partei ''macht'' auf Optimismus.
+:[13] Sie ''macht'' auf cool.
+:[14] Dein neues Sofa ''macht sich'' ausnehmend gut vor dem Fenster.
+:[15] Acherich ''macht'' seit kurzem in Eisenwaren.
+:[16] Insgesamt ''macht'' das 798 Euro.
+:[16] Wieviel ''macht'' das?
+:[17] 7 mal 7 ''macht'' 49. 5 und 8 ''macht'' 13.
+:[18] „Wuff“ ''machte'' der Hund.
+:[18] Dann ''macht'' es „bumm“, und alles liegt in Schutt und Asche.
+:[19] ''Machst'' du noch fort?
+:[20] Ich ''mache mich'' jetzt ''an'' die Arbeit.
+:[21] Jeder Fußballfan hat irgendwann schon mal den Satz gesagt: „Den muss er ''machen!''“ Gemeint ist damit, dass ein Spieler eine große Torchance hat.<ref>{{Internetquelle | url=https://www.11freunde.de/node/421514 | titel=Welche Spielidee der neue BVB-Trainer hat - Das Favre-Rätsel | autor=Christoph Biermann | hrsg=11Freunde Verlag GmbH & Co. KG, Berlin, Deutschland | datum=2018-05-17 | zugriff=2018-05-20 | sprache=de }}</ref>
+
+{{Redewendungen}}
+:[[das macht nichts|das ''macht'' nichts]]/[[macht nichts|''macht'' nichts]]
+:[[eine gute Figur machen|eine gute Figur ''machen'']]
+:[[einen Abflug machen|einen Abflug ''machen'']]/[[den Abflug machen|den Abflug ''machen'']]
+:[[einen auf … machen|einen auf … ''machen'']]
+:[[es jemandem machen|es jemandem ''machen'']]
+:[[es kurz machen|es kurz ''machen'']]
+:[[es machen|es ''machen'']]
+:[[es mit jemandem machen können|es mit jemandem ''machen'' können]]
+:[[es nicht unter etwas machen|es nicht unter etwas ''machen'']]
+:[[etwas aus sich machen|etwas aus sich ''machen'']]
+:[[für etwas gemacht sein|für etwas ''gemacht sein'']]/[[für etwas nicht gemacht sein|für etwas nicht ''gemacht sein'']]
+:[[jemandem den Hof machen|jemandem den Hof ''machen'']]
+:[[mach Sachen|''mach'' Sachen]]!/[[mach keine Sachen|''mach'' keine Sachen]]!
+:[[sich an etwas machen|sich an etwas ''machen'']]
+:[[sich aus dem Staub machen|sich aus dem Staub ''machen'']]
+:[[sich nichts aus etwas machen|sich nichts aus etwas ''machen'']]
+:[[sich nichts aus jemandem machen|sich nichts aus jemandem ''machen'']]
+:[[sich nützlich machen|sich nützlich ''machen'']]
+:[[sich Sorgen machen|sich Sorgen ''machen'']]
+:[[wie mans macht, macht mans falsch|wie mans ''macht, macht'' mans falsch]]
+:[[zu etwas machen|zu etwas ''machen'']] (als etwas bestätigen; beweisen)
+
+{{Charakteristische Wortkombinationen}}
+:[[Abitur]] ''machen'', jemandem einen [[Antrag]] ''machen'' ({{Audio|De-jemandem einen Antrag machen.ogg|Audio}}), die [[Arbeit]] ''machen,'' eine [[Beobachtung]] ''machen,'' die [[Bett]]en ''machen,'' [[Dummheit]]en ''machen,'' einen [[gut]]en [[Eindruck]] ''machen,'' einen [[Fehler]] ''machen,'' sich die [[Haar]]e ''machen'' [[lassen]], seine [[Hausaufgabe]]n ''machen,'' [[Lärm]] ''machen,'' [[Licht]] ''machen,'' [[Musik]] ''machen,'' jemandem [[Mut]] ''machen,'' sich [[Mut]] ''machen,'' einen [[Reibach]] ''machen,''  ein [[Recht]] [[gerichtlich]] [[geltend]] ''machen'' (=einen [[Anspruch]] mit einem [[Prozess]] [[durchsetzen]] [[wollen]]) ({{Audio|De-ein Recht gerichtlich geltend machen.ogg|Audio}}), eine [[Reise]] ''machen,'' einen [[Spaziergang]] ''machen,'' ein [[Spiel]] ''machen,'' [[Sport]] ''machen,'' eine [[Verbeugung]] ''machen,'' ein [[Vermögen]] ''machen''
+:etwas [[glänzend]] ''machen'' ({{Audio|De-glänzend machen.ogg|Audio}}), etwas [[glaubhaft]] ''machen'' (=etwas [[einleuchtend]]/[[überzeugend]] [[darstellen]]) ({{Audio|De-etwas glaubhaft machen.ogg|Audio}}), jemanden [[rasend]] ''machen'' ({{Audio|De-jemanden rasend machen.ogg|Audio}})
+:Macht nichts!
+:Mach dir/Macht euch nichts daraus!
+
+{{Wortbildungen}}
+:*[[Substantiv]]e: [[Hutmacher]], [[Korbmacher]], [[Machart]], [[Mache]], [[Machenschaft]], [[Macher]], [[Machwerk]], [[Namhaftmachung]], [[Schuhmacher]], [[Segelmacher]], [[Stellmacher]], [[Uhrmacher]]
+:*[[Verb]]en: [[abmachen]], [[allemachen]], [[altmachen]], [[anmachen]], [[armmachen]], [[aufmachen]], [[auseinandermachen]], [[ausmachen]], [[beimachen]], [[bekanntmachen]], [[bemachen]], [[bereitmachen]], [[bewusstmachen]], [[blaumachen]], [[breitmachen]], [[darübermachen]], [[davonmachen]], [[dichtmachen]], [[dickmachen]], [[dranmachen]], [[draufmachen]], [[dünnmachen]], [[durchmachen]], [[einmachen]], [[feinmachen]], [[fertigmachen]], [[festmachen]], [[flottmachen]], [[flüssigmachen]], sich [[fortmachen]], [[freimachen]], [[gemeinmachen]], [[gerademachen]], [[gesundmachen]], [[glattmachen]], [[gleichmachen]], [[großmachen]], [[gutmachen]], [[haltmachen]], [[heilmachen]], [[heißmachen]], [[heranmachen]], [[herausmachen]], [[hermachen]], [[herummachen]], [[heruntermachen]], [[hinausmachen]], [[hineinmachen]], [[hinmachen]], [[irremachen]], [[kaltmachen]], [[kaputtmachen]], [[kehrtmachen]], [[kirremachen]], [[klarmachen]], [[kleinmachen]], [[krankmachen]], [[krummmachen]], [[kundmachen]], [[kurzmachen]], [[langmachen]], [[leermachen]], [[leichtmachen]], [[lockermachen]], [[losmachen]], [[madigmachen]], [[miesmachen]], [[mitmachen]], [[mobilmachen]], [[muntermachen]], [[mürbemachen]], [[nachmachen]], [[nassmachen]], [[niedermachen]], [[plattmachen]], [[publikmachen]], [[ranmachen]], [[rarmachen]], [[rausmachen]], [[reichmachen]], [[reinmachen]], [[reinemachen]], [[richtigmachen]], [[rübermachen]], [[rummachen]], [[rundmachen]], [[sattmachen]], [[saubermachen]], [[scharfmachen]], [[scheumachen]], [[schlankmachen]], [[schlappmachen]], [[schlechtmachen]], [[schönmachen]], [[schwachmachen]], [[schwermachen]], [[seligmachen]], [[sichermachen]], [[starkmachen]], [[totmachen]], [[übermachen]], [[ummachen]], [[vermachen]], [[vollmachen]], [[voranmachen]], [[vormachen]], [[vorwärtsmachen]], [[wahrmachen]], [[warmmachen]], [[wegmachen]], [[weichmachen]], [[weismachen]], [[weitermachen]], [[wettmachen]], [[wichtigmachen]], [[zumachen]], [[zunichtemachen]], [[zurechtmachen]], [[zurückmachen]]
+
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{ar}}: [1] {{Üt|ar|فعل|faʿala}}
+*{{eu}}: [1] {{Ü|eu|egin}}
+*{{bg}}: [1, 2] {{Üt|bg|правя|pravja}}
+*{{zh}}: [1, 2] {{Üt|zh|作|zuò}}
+*{{en}}: [1–3, 16, 17] {{Ü|en|make}}; [4] {{Ü|en|do}}; [6] {{Ü|en|put}}; [7, 18] {{Ü|en|go}}
+*{{eo}}: [?] {{Ü|eo|fari}}
+*{{fi}}: [1] {{Ü|fi|tehdä}}
+*{{fr}}: [1–4] {{Ü|fr|faire}}; [2] {{Ü|fr|effectuer}}
+*{{el}}: [1, 3, 4] {{Üt|el|κάνω|káno}}; [2] {{Üt|el|φτιάχνω|ftiáchno}}
+*{{hi}}: [1–3] {{Üt|hi|बनाना|banānā}}; [4] {{Üt|hi|करना|karanā}}
+*{{ia}}: [1–4] {{Ü|ia|facer}}
+*{{it}}: [1] {{Ü|it|fare}}
+*{{ja}}: [2] {{Üt|ja|作る|つくる, tsukuru}};　[4] {{Üt|ja|遣る|やる, yaru}}; [8] {{Üt|ja|ヤる|yaru}}
+*{{ca}}: [1] {{Ü|ca|fer tornar}} (+ Adjektiv) [2–4] {{Ü|ca|fer}}
+*{{ko}}: [2] {{Üt|ko|만들다|man-dl-da}}; [4] {{Üt|ko|하다|ha-da}} ''(es wird aber auch als Hilfsverb gebraucht)''
+*{{ku}}: [1] {{Üt|ku|kirin|}}
+*{{la}}: [1] {{Ü|la|facere}}
+*{{nds}}: [1–5], [8–18] {{Ü|nds|maken}}
+*{{nl}}: [1] {{Ü|nl|doen}}
+*{{no}}: [1–5] {{Ü|no|gjøre}}
+|Ü-rechts=
+*{{oc}}: [2–4] {{Ü|oc|far}}, {{Ü|oc|faire}}
+*{{fa}}: [4] ''(Präsensform)'' {{Üt|fa|کن|kon}}, ''(Präteritumsform)'' {{Üt|fa|کردن|kardan}}
+*{{pl}}: [1, 2] {{Ü|pl|robić}} (''perfektiv:'' {{Ü|pl|zrobić}})
+*{{pt}}: [1–19] {{Ü|pt|fazer}}
+*{{ro}}: [1, 2] {{Ü|ro|face}}
+*{{ru}}: [1–5] {{Üt|ru|делать|delatʹ}}
+*{{sv}}: [1] {{Ü|sv|göra}}; [2] {{Ü|sv|tillverka}}, {{Ü|sv|producera}}, {{Ü|sv|framställa}}, {{Ü|sv|göra}}; [3] {{Ü|sv|göra}}, {{Ü|sv|få}}; [4] {{Ü|sv|göra}}, {{Ü|sv|utföra}}; [5] {{Ü|sv|göra}}; [6] {{Ü|sv|ge}}; [7] {{Ü|sv|flytta}}; [9] {{Ü|sv|göra}}, {{Ü|sv|skapa}}; [10] {{Ü|sv|göra}}, {{Ü|sv|skapa}}; [11] ''refl.:'' {{Ü|sv|arta sig}}, {{Ü|sv|utvecklas}}; [12] {{Ü|sv|spela}}, {{Ü|sv|göra rollen som}}; [13] {{Ü|sv|låtsas vara}}, {{Ü|sv|spela}}; [14] {{Ü|sv|passa}}, ''refl.:'' {{Ü|sv|göra sig}}; [15] {{Ü|sv|handla med}}, {{Ü|sv|vara verksam inom}}, {{Ü|sv|göra affärer i}}; [16] {{Ü|sv|bli}}; [17] {{Ü|sv|bli}}; [18] {{Ü|sv|låta}}; [19] {{Ü|sv|gå}}; [20] {{Ü|sv|börja}}
+*{{es}}: [1, 2] {{Ü|es|hacer}}
+*{{th}}: [1, 2] {{Üt|th|ทำ|tham}}
+*{{cs}}: [4] {{Ü|cs|dělat}}, {{Ü|cs|udělat}}
+*{{tr}}: [1, 2] {{Ü|tr|yapmak}}
+*{{uk}}: [1, 2] {{Üt|uk|робити|robýty}}; {{Üt|uk|виконувати|wykónuwaty}}
+*{{hu}}: [1, 2] {{Ü|hu|megcsinál}}; [3] {{Ü|hu|megtesz}}; [4] {{Ü|hu|elvégez}}
+|Dialekttabelle=
+*Bairisch-Österreichisch: [[macha]]
+*Berlin-Brandenburgisch: [[machn]]
+*Düsseldorfisch: [[make]]
+*[[Kölsch]]: maache
+|D-rechts=
+*Lausitzisch: [[machn]]
+*Moselfränkisch: [[machng]]
+*Obersächsisch: [[machn]]
+*Rheinfränkisch (Süd-): [[machng]]
+}}
+
+{{Referenzen}}
+:[1] {{Ref-Grimm}}
+:[1] {{Ref-DWDS}}
+:[1] {{Ref-Canoo}}
+:[1] {{Ref-UniLeipzig}}
+:[1, 2, 4, 5, 7–19] {{Lit-Duden: Universalwörterbuch|A=4}}, „machen“, Seite 1038f.
+{{Referenzen prüfen|Deutsch}}
+
+{{Quellen}}
+
+{{Ähnlichkeiten 1|[[Aachen]], [[Bachen]], [[Lachen]], [[lachen]], [[Mach]], [[Machete]], [[Macho]], [[Maschen]], [[Nachen]], [[Rachen]], [[Sachen]], [[Wachen]], [[wachen]]}}

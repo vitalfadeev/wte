@@ -1,0 +1,248 @@
+{{Siehe auch|[[Tun]]}}
+== tun ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Verb|Deutsch}} ===
+
+{{Deutsch Verb Übersicht
+|Präsens_ich=tue
+|Präsens_ich*=tu
+|Präsens_du=tust
+|Präsens_er, sie, es=tut
+|Präteritum_ich=tat
+|Partizip II=getan
+|Konjunktiv II_ich=täte
+|Imperativ Singular=tue
+|Imperativ Singular*=tu
+|Imperativ Plural=tut
+|Hilfsverb=haben
+}}
+
+{{Nicht mehr gültige Schreibweisen}}
+:[[thun]]
+
+{{Worttrennung}}
+:tun, {{Prät.}} tat, {{Part.}} ge·tan
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|tuːn}}
+:{{Hörbeispiele}} {{Audio|De-tun.ogg}}
+:{{Reime}} {{Reim|uːn|Deutsch}}
+
+{{Bedeutungen}}
+*{{trans.}}
+:[1] eine [[Handlung]] ausführen
+::[a] die zuvor im [[Kontext]] näher [[beschreiben|beschriebene]]
+::[b] die dem [[vorangehend]]en [[Nomen]] [[entsprechen]]de
+::[c] dazu [[führen]], dass sich etwas [[ereignen|ereignet]], [[zustande]] kommt
+:[2] ''meist {{ugs.|,}} mit [[Präposition]]:'' etwas in eine bestimmte [[Position]] [[bringen]]
+:[3] {{Dativ|:}} jemanden in einer [a] [[gut]]en oder [b] [[schlecht]]en [[Weise]] [[behandeln]]
+
+*''[[es]] tun''
+:[4] {{ugs.|:}} für den [[vorsehen|vorgesehenen]] [[Zweck]] [[ausreichen]]
+:[5] {{ugs.|,}} ''von [[Gegenstand|Gegenständen]]:'' seine [[Funktion]] [[erfüllen]], vorschriftsmäßig [[arbeiten]]
+:[6] {{ugs.|,}} [[verhüllend]]: (den ersten) [[Geschlechtsverkehr]] haben
+
+*{{intrans.}}
+:[7] ''mit [[nachfolgend]]em [a] [[Adjektiv]] oder [b] [[Verb]] im [[Konjunktiv]]; meist [[abwertend]]:'' eine [[Eigenschaft]] beziehungsweise einen [[Sachverhalt]] anders [[darstellen]], als er [[wirklich]] ist
+:[8] {{ugs.|,}} ''[[landschaftlich]], von Gegenständen:'' seine Funktion erfüllen, vorschriftsmäßig arbeiten
+
+*{{refl.}}
+:[9] {{ugs.|,}} es tut sich etwas/einiges/nichts: es gehen [[entscheidend]]e, [[erwartet]]e [[Änderung]]en vor
+
+{{Herkunft}}
+:[[mittelhochdeutsch]] und [[althochdeutsch]] ''tuon'', seit dem 8.&nbsp;Jahrhundert belegt, über westgermanisch ''*dō-'' von ''*dhē-'' "[[stellen]], [[setzen]], [[legen]]"<ref>{{Ref-DWDS|tun}}</ref>
+
+{{Synonyme}}
+:[1] [[machen]]
+:[1c] [[bringen]]
+:[2] [[platzieren]]
+:[3] [[antun]]
+:[4] [[ausreichen]], [[genügen]], [[langen]]
+:[5] [[funktionieren]], [[gehen]]
+:[6] es [[machen]]; ''siehe auch:'' [[Verzeichnis:Deutsch/Geschlechtsverkehr]]
+:[7a] [[vortäuschen]], … zu sein
+:[7b] [[vortäuschen]], zu …
+:[8] [[funktionieren]], [[gehen]]
+:[9] sich [[ereignen]], [[geschehen]], [[passieren]], [[vorgehen]]
+
+{{Gegenwörter}}
+:[1] [[lassen]], [[sein lassen]]/[[seinlassen]], [[unterlassen]]
+:[2] (stehen) [[lassen]]
+:[7a] [[sein]]
+
+{{Unterbegriffe}}
+:[1] [[treiben]]
+:[1] [[unternehmen]]
+:[2] [[legen]], [[setzen]], [[stellen]], ''regional:'' [[machen]]
+:[3b] [[verletzen]], [[wehtun]]
+
+{{Beispiele}}
+:[1] Was ''tust'' du?
+:[1] Was ihr sagt oder ''tut,'' ist mir egal.
+:[1] Ich würde alles dafür ''tun.''
+:[1] All dies ''tat'' ich für Euch!
+:[1a] Die räumen hier gerade auf, ''tue'' du das nachher bitte auch.
+:[1b] Wir haben all unsere Arbeiten ''getan.''
+:[1c] Deine Hilfen ''tun'' Wunder.
+:[2] ''Tu’s'' wieder dahin zurück, wo es vorher war!
+:[2] Wir ''tun'' das Geld in einen Sparstrumpf.
+:[3a] Ich ''tu'' dir einen Gefallen…
+:[3b] ''Tu'' mir nichts.
+:[3b] Sei vorsichtig, sonst ''tust'' du dir noch was.
+:[4] Die alte Jacke ''tut es'' für die Gartenarbeit.
+:[5] Unser Computer ''tut’s'' nicht mehr.
+:[6] Wir haben ''es'' noch nicht miteinander ''getan.''
+:[7a] ''Tu'' nicht so blöd!
+:[7b] Ich ''tu,'' als sei ich taub.
+:[8] Das Teil ''tut'' nicht mehr gescheit, ich will ein Neues.
+:[9] In den letzten Jahren ''hat sich'' hier einiges ''getan.''
+
+{{Redewendungen}}
+:[1] [[es zu tun haben]]
+:[1] [[es zu tun bekommen]]/[[es zu tun kriegen|kriegen]]
+:[1] [[mit etwas ist es getan]]/[[mit etwas ist es nicht getan|nicht getan]]
+:[1] [[gesagt, getan]]
+:[1] um jemanden/etwas [[getan]] sein
+:[1c] [[nichts zur Sache tun]]
+:[7] (so) [[tun, als ob]], (nur) [[so tun]]
+
+{{Charakteristische Wortkombinationen}}
+:[1] (viel) zu ''tun'' haben
+:[77b] (nur) so tun; (so) tun, als ob/wenn…; (so) tun, als…
+
+{{Wortbildungen}}
+:*[[abtun]], [[antun]], [[auftun]], [[austun]], [[betun]], [[dartun]], [[dazutun]], [[dicktun]]/[[dicketun]], [[geheimtun]], [[genugtun]], [[gleichtun]], [[großtun]], [[guttun]], [[harttun]], [[heimlichtun]], [[heimtun]], [[heraustun]], [[herumtun]], [[hervortun]], [[hinauftun]], [[hinaustun]], [[hineintun]], [[hintun]], [[hinübertun]], [[hinzutun]], [[kundtun]], [[leichttun]], [[leidtun]], [[mittun]], [[nachtun]], [[nottun]], [[schöntun]], [[schwertun]], [[übeltun]], [[übertun]], [[umtun]], sich [[vertun]], [[wegtun]], [[wehtun]], [[wichtigtun]], [[wiedertun]], [[wohltun]], [[zugutetun]], [[zurücktun]], [[zusammentun]], [[zutun]], [[zuvortun]]
+:*[[Getue]], [[Tat]], [[Tun]], -tuer (→[[Tuerei]]), [[Tuwort]], [[untertan]]
+
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{ar}}: [1] {{Üxx5|ar|faʕala|فَعَلَ|فعل}}
+*{{eu}}: [1] {{Ü|eu|egin}}
+*{{en}}: [1, 4, 6] {{Ü|en|do}}; [2] {{Ü|en|put}}; [7] {{Ü|en|act}}
+*{{eo}}: [1] {{Ü|eo|fari}}
+*{{fi}}: [1] {{Ü|fi|tehdä}}
+*{{fr}}: [1, 3, 6, 7] {{Ü|fr|faire}}; [2] {{Ü|fr|mettre}}; [4] {{Ü|fr|convenir}}; [5, 8] {{Ü|fr|fonctionner}}; [7] {{Ü|fr|faire semblant}}; [9] {{Ü|fr|arriver}}
+*{{gl}}: [2] {{Ü|gl|poñer}}
+*{{el}}: [1, 3] {{Üt|el|κάνω|káno}}; [2] {{Üt|el|βάζω|vázo}}
+*{{ia}}: [1] {{Ü|ia|facer}}
+*{{it}}: [1] {{Ü|it|fare}}
+*{{ja}}: [1] {{Üt|ja|する|suru}}, {{Üt|ja|成す|なす, nasu}}
+*{{ca}}: [1] {{Ü|ca|fer}}
+*{{nds}}: [1–3, 7] {{Ü|nds|doon}} (Norddeutschland, Münsterland), {{Ü|nds|daun}} (ehem. Vest Recklinghausen); [1, 6] {{Ü|nds|maken}}; [4] {{Ü|nds|langen}}; [6] {{Ü|nds|drieven}}
+|Ü-rechts=
+*{{no}}: [1] {{Ü|no|gjøre}}
+*{{oc}}: [1] {{Ü|oc|far}}, {{Ü|oc|faire}}
+*{{pl}}: [1] {{Ü|pl|czynić}}
+*{{pt}}: [1] {{Ü|pt|fazer}}; [2] {{Ü|pt|por}}; [4] {{Ü|pt|bastar}}; [6] {{Ü|pt|transar}}
+*{{ro}}: [1] {{Ü|ro|face}}
+*{{ru}}: [1] {{Üt|ru|делать|dʲelatʲ}}; [2] {{Üt|ru|класть|kʲlastʲ}}, {{Üt|ru|положить|poloʐitʲ}}, {{Üt|ru|ставить|ctavitʲ}}, {{Üt|ru|поставить|poctavitʲ}}; [7] {{Üt|ru|притворяться|pritvorjatʲcja}}
+*{{sv}}: [1] {{Ü|sv|göra}}
+*{{wen}}:
+**{{hsb}}: [1] {{Ü|hsb|činić}}
+*{{es}}: [1] {{Ü|es|hacer}}; [2] {{Ü|es|poner}}
+*{{sw}}: [1] {{Ü|sw|kufanya}}
+*{{th}}: [1] {{Üt|th|ทำ|tham}}
+*{{cs}}: [1] {{Ü|cs|dělat}}, {{Ü|cs|konat}}, {{Ü|cs|činit}}
+*{{tr}}: [1] {{Ü|tr|yapmak}}
+|Dialekttabelle=
+*Alemannisch: [1–6] due/tuä
+*Bairisch: doa
+*Kölsch: dunn
+|D-rechts=
+*Schwäbisch: dua, doa
+}}
+
+{{Referenzen}}
+:[1–7, 9] {{Ref-FreeDictionary|tun}}
+:[1–3, 7, 9] {{Ref-DWDS|tun}}
+:[1–9] {{Lit-Duden: Universalwörterbuch|A=6}}, „<sup>1</sup>tun“, Seite 1718-1719
+:[1, 2] {{Ref-Grimm|tun}}
+:[*] {{Ref-Canoo|tun}}
+:[*] {{Ref-UniLeipzig|tun}}
+
+{{Quellen}}
+
+=== {{Wortart|Hilfsverb|Deutsch}} ===
+
+{{Deutsch Verb Übersicht
+|Präsens_ich=tu
+|Präsens_ich*=tue
+|Präsens_du=tust
+|Präsens_er, sie, es=tut
+|Präteritum_ich=tat
+|Partizip II=getan
+|Konjunktiv II_ich=täte
+|Imperativ Singular=tu
+|Imperativ Singular*=tue
+|Imperativ Plural=tut
+|Hilfsverb=haben
+}}
+
+{{Worttrennung}}
+:tun, {{Prät.}} tat, {{Part.}} ge·tan
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|tuːn}}
+:{{Hörbeispiele}} {{Audio|}}
+:{{Reime}} {{Reim|uːn|Deutsch}}
+
+{{Bedeutungen}}
+:[1] ''meist {{ugs.|:}} zur [[Betonung]] des [[Vollverb]]s oder um die [[Konjugation]] desselben zu [[vermeiden]] verwendet''
+::[a] ''[[nachgestellt]]''
+::[b] ''[[vorangestellt]]''
+:[2] ''[[landschaftlich]]: [[ersetzen|ersetzt]] den [[Konjunktiv]]''
+
+{{Herkunft}}
+:siehe [[tun#Verb|oben]]
+
+{{Synonyme}}
+:[2] [[werden]]
+
+{{Beispiele}}
+:[1a] Lesen ''tu'' ich auch noch ziemlich gerne.
+:[1b] ''Tut'' er noch schlafen? ''(schläft er noch?)''
+:[2] Wenn du mir doch nur ein bisschen helfen ''tätest… (helfen würdest; hälfest)''
+
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{en}}: [1] {{Ü|en|}}
+|Ü-rechts=
+*{{fr}}: [1] {{Ü|fr|}}
+}}
+
+{{Referenzen}}
+:[1, 2] {{Lit-Duden: Universalwörterbuch|A=6}}, „<sup>2</sup>tun“, Seite 1719
+:[1a] {{Ref-DWDS|tun}}
+:[1a, 2] {{Ref-FreeDictionary|tun}}
+
+=== {{Wortart|Konjugierte Form|Deutsch}} ===
+
+{{Nebenformen}}
+:[[tune]]
+
+{{Worttrennung}}
+:tun
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|tjuːn}}
+:{{Hörbeispiele}} {{Audio|}}
+
+{{Grammatische Merkmale}}
+*2. Person Singular Imperativ Präsens Aktiv des Verbs '''[[tunen]]'''
+
+{{Grundformverweis Konj|tunen}}
+
+== tun ({{Sprache|Tschechisch}}) ==
+=== {{Wortart|Deklinierte Form|Tschechisch}} ===
+
+{{Worttrennung}}
+:tun
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|tʊn}}
+:{{Hörbeispiele}} {{Audio|}}
+:{{Reime}} {{Reim|ʊn|Tschechisch}}
+
+{{Grammatische Merkmale}}
+*Genitiv Plural des Substantivs '''[[tuna]]'''
+
+{{Grundformverweis Dekl|tuna|spr=cs}}

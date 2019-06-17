@@ -1,0 +1,61 @@
+{
+    "gatti": [
+        {
+            "LabelName": "gatti",
+            "LabelType": "IT-IT",
+            "LanguageCode": "it",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# {{Term|zoologia|it}}, {{Term|mammalogia|it}} plurale maschile di [[gatto]]",
+            "ExplainationTxt": "it, it plurale maschile di gatto",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsSingle": null,
+            "IsPlural": true,
+            "SingleVariant": "gatto",
+            "PluralVariant": "gatti",
+            "MaleVariant": "gatto",
+            "FemaleVariant": "gatta",
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": [
+                "mici",
+                "felini",
+                "battipali",
+                "magli"
+            ],
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": [
+                "gatto",
+                "gatti",
+                "gatta",
+                "gatte"
+            ],
+            "RelatedTerms": null,
+            "Coordinate": null,
+            "Translation_EN": [
+                "cats"
+            ],
+            "Translation_FR": [
+                "les chats"
+            ],
+            "Translation_DE": null,
+            "Translation_IT": null,
+            "Translation_ES": [
+                "gatos"
+            ],
+            "Translation_RU": null,
+            "Translation_PT": null
+        }
+    ]
+}

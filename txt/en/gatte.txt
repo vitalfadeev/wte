@@ -1,0 +1,16 @@
+﻿== {{-it-}} ==
+{{-sost form-|it}}
+{{Pn}} ''f pl''
+# femminile plurale di [[gatto]]
+
+{{-sill-}}
+; gàt | te
+
+{{-etim-}}
+{{Vd|gatto}}
+
+{{-trad-}}
+{{Trad1|}}
+:*{{en}}: <!-- inserisci qui la/le traduzione/ni nelle altre lingue -->
+
+{{Trad2}}

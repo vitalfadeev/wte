@@ -1,0 +1,44 @@
+﻿== {{-it-}} ==
+[[File:Miagolina 1.JPG|thumb|una gatta di otto mesi, nata nelle campagne del sud Italia]]
+{{-sost form-|it}}
+{{Pn|w}} ''f sing''
+{{Tabs|gatto|gatti|gatta|gatte}}
+# femminile di [[gatto]]
+
+{{-sost-|it}}
+{{Pn}} ''m sing''
+# {{Term|marina|it}} {{Nodef|it}}
+
+{{-sill-}}
+; gàt | ta
+
+{{-pron-}}
+{{IPA|/ˈgatta/}}
+
+{{-etim-}}
+{{Vd|gatto}}
+
+{{-alter-}}
+* {{Dim}} [[gattina]], [[gattuccia]]
+* {{Accr}} [[gattona]]
+* {{Pegg}} [[gattaccia]]
+
+
+{{-prov-}}
+* ''Quando la gatta non c'è i topi ballano''
+* ''avere una brutta '''gatta''' da pelare'': impresa di difficile soluzione
+* '''''gatta''' ci cova'': situazione dubbia e truffaldina
+
+{{-trad-}}
+{{Trad1|}}
+:*{{en}}: <!-- inserisci qui la/le traduzione/ni nelle altre lingue -->
+{{Trad2}}
+
+{{-ref-}}
+* {{Fonte|hoep|gatto}}
+* {{Fonte|dizit}}
+* {{Fonte|hoep|1}}
+* {{Fonte|hoep|2}}
+
+== Altri progetti ==
+{{Interprogetto|w}}

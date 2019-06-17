@@ -1,0 +1,133 @@
+﻿{{desambiguación|una|Una|-una|Uña|Unna|ùnàà|||}}
+
+== {{lengua|es}} ==
+{{pron-graf|fone=ˈu.ɲa}}
+
+=== Etimología ===
+{{etimología|la|ungula|garra}}, "[[espolón]]" o "[[pezuña]]"; diminutivo femenino de ''[[unguis]]'', "[[uña]]"
+
+=== {{sustantivo femenino|es}} ===
+{{inflect.es.sust.reg}}
+
+;1 {{anatomía}}: Capa [[queratina|queratinosa]] (córnea) que recubre el [[extremo]] de los [[dedo]]s del [[hombre]] y de algunos [[animal]]es. Algunos felinos, como los gatos, tienen [[uña retráctil|uñas retráctiles]]
+{{hipónimo|garra|pezuña}}
+
+;2: {{plm|utensilio}} para extraer puntas y clavos de distintas superficies, típicamente de la madera. Consta de una barra metálica larga en cuyos dos extremos hay practicada una curvatura, sobre la que se apalanca, después de encajar la cabeza del clavo que queda encajada en la uña que forma el extremo semejante a la [[pezuña]] de algunos animales.
+{{sinónimo|barra de uña|patacabra}}
+
+;3 {{moluscos|y|gastronomía}}: {{definición imprecisa|Cierto molusco comestible.}}
+{{sinónimo|dátil de mar}}
+
+;4 {{zootomía}}: Punta de la cola del [[escorpión]].
+
+;5 {{náutica}}: Cada una de las puntas curvas del ancla.
+
+;6 {{botánica}}: {{plm|espina}} curvada de algunas plantas.
+
+;7 {{música}}: Pedazo de plástico que los músicos ponen sobre sus uñas naturales para pulsar instrumentos de cuerda como el arpa y la guitarra.
+{{sinónimo|uñeta}}
+
+;8 {{botánica}}: Parte inicial y estrecha del pétalo de una flor.
+
+;9 {{zootomía}}: Apéndice con forma de gancho en el tarso de los insectos.
+
+;10: Pequeño sacado o hendidura que tienen algunos instrumentos y objetos para poder tirar o empujar con la uña.
+
+;11 {{arácnidos}}: {{definición imprecisa|Araña extremadamente venenosa de los campos chilenos.}}
+{{sinónimo|araña de poto colorado}}
+
+=== Locuciones ===
+*[[a uña de caballo]]:
+:;:1: Hacer correr velozmente al caballo.
+
+:;:2: A toda velocidad.
+:*'''Uso:''' Figurado.
+:*'''Ejemplo:''' ''A uña de caballo'', salieron para Francia en el Renault de Juan, pero dando tan mal al naipe que a unos kilómetros de Candanchú, el coche dio un patinazo y a punto estuvo de dar con ellos en lo mas profundo del abismo. (Fuente: Fernando Arrabal: ''La torre herida por el rayo''. España, 1982. [[CREA]].)
+*[[con uñas y dientes]]: poner todo el empeño y energía en la acción.
+:*'''Uso:''' Normalmente utilizado con [[pelear]] o [[defenderse]].
+:*'''Ejemplo:''' Un pwazon rat sabe defenderse, tiene el deber de defenderse ''con uñas y dientes'', con machete y con lo que haga falta, pero nunca grita. (Fuente: Mayra Montero: ''Tú, la oscuridad''. Cuba, 1995. [[CREA]].)
+*[[dejarse las uñas en algo]]: Trabajar con mucho esfuerzo y sacrificio en algo.
+*[[de uñas]]: Enemistado o enfadado con alguien.
+{{ámbito|España}}
+*[[largo de uñas]]: Ladrón, cleptómano, propenso a robar.
+*[[no tener uñas para gaitero]]: Carecer de las cualidades para desempeñar una actividad.
+{{ámbito|Rioplatense}}
+{{sinónimo|no tener dedos para el piano}}.
+*[[no tener uñas para guitarrero]]: [[no tener uñas para gaitero]]
+{{ámbito|Rioplatense}}
+{{sinónimo|no tener dedos para el piano}}.
+*[[rascarse con sus propias uñas]]: Arreglárselas solo, sin ayuda ajena.
+*[[sacar las uñas]]: Amenazar o ponerse violento.
+*[[ser uña y carne]]: estar muy unidos.
+:*'''Ejemplo:''' Como somos tan amigas, que no te puedes figurar lo amigas que somos, más que ''uña y carne'', lo compartimos todo, pues me pidió que te esperara para pedirte perdón en su nombre. (Fuente: Santiago Moncada: ''Cena para dos''. España, 1991. [[CREA]].)
+*[[ser uña y mugre]]: estar muy unidos.
+:*'''Ámbito:''' {{México|Chile|Perú|Bolivia|Panamá|Ecuador|Honduras}}
+:*'''Uso:''' Coloquial y jocoso.
+:*'''Ejemplo:''' Fidencio ya sabía de la existencia de la concubina (ya sabes, él y Doroteo eran ''uña y mugre''), pero no la conocía en persona, prefería saberlo y callarlo, como secreto de confesión. (Fuente: Sealtiel Alatriste: ''Por vivir en quinto patio''. México, 1985. [[CREA]].)
+
+*[[esmalte de uñas]]: Esmalte utilizado para adornar las uñas.
+*[[laca de uñas]]: Laca utilizada para colorear y adornar las uñas.
+*[[uña de gato]]: [[hierba]] [[rastrera]] de [[jardín]] y [[ornamental]] cuya forma recuerda la forma de la uña de un gato. En su [[florescencia]] se produce un manojo de pequeñas flores (no más de 1 cm.) de color [[morado]].<br><br>
+*[[uña retráctil]]: Uñas que tienen generalmente los felinos dispuestas de modo que pueden quedar [[recogida]]s o [[sobresalida]]s con respecto a sus dedos. Sobresalen cuando están en estado de [[excitación]] nerviosa o al [[estirar]]se .
+*uña de gato: ''Uncaria tomentosa''
+
+=== Información adicional ===
+{{derivad|uñada|uñagata|uñero|pezuña|cortauñas}}.
+
+=== Véase también ===
+{{W}}.
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+{{t+|af|nael}}
+{{t+|de|1|Nagel|m|,|1|Fingernagel|m|,|1|Fußnagel|m}} (de los dedos del pie)
+{{t+|ast|uña|f}}
+{{t+|bg|нокът|m}}
+{{t+|ca|grapa|f|,|ungla|f}}
+{{t+|da|negl}}
+{{t+|sl|noht}}
+{{t+|eo|ungo}}
+{{t+|eu|azazkal|,|azkazal}}
+{{t+|fi|kynsi}}
+{{t+|fy|neil}}
+{{t+|fo|negl}}
+{{t+|fr|ongle|m}}
+{{t+|el|νύχι|tr=nýji}}
+{{t+|he|ציפורן}} [tsiporen]
+{{t+|hu|köröm}}
+{{trad-centro}}
+{{t+|it|unghia|f}}
+{{t+|en|nail|,|fingernail}} (de los dedos de la mano), {{trad|en|toenail}} (de los dedos del pie)
+{{t+|alc|árksens|1}}
+{{t+|arn|1|wiḻi}}
+{{t+|ms|kuku}}
+{{t+|no|negl}}
+{{t+|nl|nagel}}
+{{t+|pap|uña}}
+{{t+|pt|unha|f}}
+{{t+|srn|nagri|,|nangra}}
+{{t+|sv|nagel}}
+{{t+|sw|1|ukucha}}
+{{t+|tl|pakò}}
+{{t+|crh|mıq}}
+{{t+|yag|1|káluf}}
+{{trad-abajo}}
+
+== {{lengua|gl}} ==
+{{pron-graf|leng=gl}}
+
+=== Etimología ===
+{{etimología|leng=gl|la|ungula}}
+
+=== {{sustantivo femenino|gl}} ===
+{{inflect.gl.sust.reg}}
+
+;1 {{anatomía|leng=gl}}: {{plm}}.
+
+=== Véase también ===
+{{W|idioma=gl}}.
+
+== Referencias y notas ==
+<references />

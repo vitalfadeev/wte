@@ -1,0 +1,102 @@
+﻿== {{lengua|es}} ==
+{{pron-graf|fone=ˈga.ta}}
+
+=== Etimología ===
+{{etimología|latín vulgar|cattus}}.
+
+=== {{sustantivo femenino|es}} ===
+{{inflect.es.sust.reg}}
+
+;1 {{mamíferos}}: Hembra del [[gato]].
+[[Archivo:Domkraft, Nordisk familjebok.png|thumb|[2]]]
+
+;2: Máquina, generalmente [[hidráulico|hidráulica]], utilizada para levantar grandes pesos a poca altura.
+:*'''Ámbito:''' [[Chile]], [[Perú]], [[Bolivia]], [[Ecuador]], América Central
+{{sinónimo|cric|crique|gato}}.
+
+;3 {{plantas}}: (''Ononis spinosa'') Planta papilionácea muy común en los sembrados. Es un arbusto espinoso.
+{{sinónimo|gatuña|aznacho|asnallo|aznallo|arnacho|detienebuey|uña gata}}.
+
+;4: Mujer oriunda de Madrid.
+{{sinónimo|madrileño|alt1=madrileña}}.
+:*'''Uso:''' Coloquial.
+
+;5: Sirvienta.
+:*'''Ámbito:''' {{México}}
+
+;6: Nubecita pegada en los montes, que parece subir gateando.
+
+;7: (''Galeus arae'') Pez marino de hasta cuatro metros que se pesca en las aguas del Atlántico. Su carne es poco apreciada.
+:*'''Ámbito:''' América Central, México, Cuba
+{{sinónimo|tiburón gata}}.
+
+;8: Protección como tejadillo que antiguamente usaban los soldados que se acercaban a un muro para minarlo.
+
+;9: Nombre dado a diversas [[oruga]]s.
+{{ámbito|España}}
+
+=== Locuciones ===
+* [[aparejo de gata]]: Aparejo para llevar el ancla hasta la [[serviola]], cuando se levan anclas.
+:*'''Campo semántico:''' Náutica
+* [[uña gata]]: [[aznallo|Aznallo]], [[gatuña]], una maleza espinosa de los campos.
+* [[tiburón gata]]: Pez marino de hasta cuatro metros que se pesca en las aguas del Atlántico. Su carne es poco apreciada.
+:*'''Ámbito:''' Cuba
+
+* [[gata parida]]: Mujer flaca y débil
+* [[¿está parida la gata?]]: ¿Qué hace tanta luz encendida en esta habitación?
+* [[estar preñando la gata]]: Perder, malgastar el tiempo.
+:*'''Ámbito:''' El Salvador
+* [[llevar más palo que una gata ladrona]]: sufrir una descomunal [[golpiza]].
+{{ámbito|Venezuela}}
+{{uso|coloquial|figurado}}
+
+=== Véase también ===
+{{w}}
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+*{{de}}: [1] {{trad|de|Katze}} {{f}}, [2] {{trad|de|Wagenheber}} {{m}}, [3] {{trad|de|Dornige Hauhechel}}
+{{t+|bs|1|maca|f|,|2|mačka|f|,|3|mačak|m}}
+*{{da}}: [2] {{trad|da|donkraft}}
+*{{eo}}: [2] {{trad|eo|kriko}}
+*{{fi}}: [2] {{trad|fi|tunkki}}, {{trad|fi|nosturi}}
+{{trad-centro}}
+*{{fr}}: [1] {{trad|fr|chatte}}, [2] {{trad|fr|cric}} {{m}}
+*{{en}}: [1] {{trad|it|cat}}, [2] {{trad|en|jack}}, [3] {{trad|en|spiny restharrow}}
+*{{it}}: [1] {{trad|it|gatta}}, [2] {{trad|it|cric}}, {{trad|it|cricco}}
+*{{nl}}: [2] {{trad|nl|krik}} {{f}}, [3] {{trad|nl|kattendoorn}}
+
+{{trad-abajo}}
+
+== {{lengua|is}} ==
+{{pron-graf|leng=is}}
+
+=== Etimología ===
+{{etimología|leng=is}}
+
+=== {{sustantivo femenino|is}} ===
+;1: {{plm|calle}}
+;2: {{plm|camino}}
+
+== {{lengua|sv}} ==
+{{pron-graf|leng=sv|fone=ˈɡɑːta}}
+
+=== Etimología ===
+{{etimología2|leng=sv|De origen germánico, con significado impreciso.}}
+
+=== {{sustantivo|sv}} ===
+{{inflect.sv.sust.n.or|raízplural=gat}}
+
+;1: {{plm|calle}}.
+*'''Ejemplo:'''
+::''Han gick över '''gatan'''''<br>
+::Él cruzó la calle
+
+=== Locuciones ===
+* [[gammal som gatan]]
+* [[gå på gatan]]
+
+== Referencias y notas ==
+<references />

@@ -1,0 +1,139 @@
+{{also|Did|DID}}
+==Translingual==
+
+===Alternative forms===
+* {{sense|roman numeral}} {{l|mul|DID}}, {{l|mul|CMXCIX}}, {{l|mul|cmxcix}}
+{{wikipedia|DID}}
+
+===Number===
+{{mul-number}}
+
+# {{lb|mul|informal}} A [[Roman numeral]] representing [[nine hundred and ninety-nine]] ([[999]]).
+
+====See also====
+* Previous: [[diid]] ([[nine hundred and ninety-eight]], [[998]])
+* Next: [[dd]] ([[one thousand]], [[1000]])
+
+----
+
+==English==
+
+===Pronunciation===
+* {{IPA|/dɪd/|lang=en}}
+* {{audio|En-ca-did.ogg|Audio (CA)|lang=en}}
+* {{rhymes|ɪd|lang=en}}
+
+===Verb===
+{{head|en|verb form}}
+
+# {{en-simple past of|do}}
+#* '''1590''', Edmund Spenser, ''The Faerie Queene'', II.vi:
+#*: she with liquors strong his eyes '''did''' steepe, / That nothing should him hastily awake [...].
+#* '''1590''', Edmund Spenser, ''The Faerie Queene'', II.v:
+#*: The wearie Traueiler, wandring that way, / Therein '''did''' often quench his thristy heat, / And then by it his wearie limbes display, / Whiles creeping slomber made him to forget / His former paine [...].
+#* '''1590''', Edmund Spenser, ''The Faerie Queene'', II.v:
+#*: He made him stoup perforce vnto his knee, / And do vnwilling worship to the Saint, / That on his shield depainted he '''did''' see [...].
+
+===Anagrams===
+* {{anagrams|en|a=ddi|DDI|idd}}
+
+[[Category:English irregular simple past forms]]
+
+----
+
+==Danish==
+
+===Adverb===
+{{da-adv}}
+
+# [[thither]], to [[there]], towards that place
+
+====Synonyms====
+* {{l|da|dertil}}
+
+====Coordinate terms====
+* {{l|da|hid}}, {{l|da|der}}
+
+----
+
+==Molise Croatian==
+
+===Etymology===
+From {{inh|svm|sh|did}}.
+
+===Pronunciation===
+* {{IPA|/dîd/|lang=svm}}
+
+===Noun===
+{{head|svm|noun|g=m}}
+
+# [[grandfather]]
+
+====Declension====
+{{svm-noun-m-cons|did}}
+
+===References===
+* {{R:svm:DCMAC}}
+
+----
+
+==Novial==
+
+===Etymology===
+From English.
+
+===Verb===
+{{head|nov|particle}}
+
+# {{lb|nov|auxiliary}} {{non-gloss definition|added to the front of a verb, it causes that verb to be in the past tense}}
+
+====Usage notes====
+* An equivalent effect can be obtained by adding the ending ''-d'' to the verb.
+
+----
+
+==Old Welsh==
+
+===Etymology===
+From {{inh|owl|cel-pro|*dīyos||day}} (compare Old Irish {{m|sga|día}}), from {{inh|owl|ine-pro|[[*dyḗws]], [[*dyew-]]}}.
+
+===Noun===
+{{head|owl|noun|g=m}}
+
+# [[day]]
+
+====Descendants====
+* Middle Welsh: {{l|wlm|dyd}}
+** Welsh: {{l|cy|dydd}}
+
+----
+
+==Serbo-Croatian==
+
+===Alternative forms===
+* {{qualifier|Ijekavian}}: {{l|sh|djȅd}}
+* (''Ekavian''): {{l|sh|dȅda}}, {{l|sh|dȅd}}
+
+===Etymology===
+From {{inh|sh|sla-pro|*dědъ}}.
+
+===Pronunciation===
+* {{IPA|/dîd/|lang=sh}}
+
+===Noun===
+{{sh-noun|g=m|head=dȉd}}
+
+# {{lb|sh|Ikavian}} [[grandfather]]
+
+====Declension====
+{{sh-decl-noun
+|dȉd|dìdovi/didi
+|dida|didova/dida
+|didu|didovima/didima
+|dida|didove/dide
+|dide|didovi/didi
+|didu|didovima/didima
+|didom|didovima/didima
+}}
+
+[[Category:sh:Male family members]]

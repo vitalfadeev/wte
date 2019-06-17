@@ -1,0 +1,56 @@
+﻿{{ES}}
+
+{{pronunciación|[ a.foɾ.tuˈna.ðo ]}} 
+{{etimología|sufijo|afortunar|ado}}.<ref name=drae/>
+
+=== {{adjetivo|es}} ===
+{{inflect.es.adj.reg|afortunad}}
+
+;1: Con [[fortuna]] o buena [[suerte]].<ref name=dlc>{{DLC1914|26}}</ref>
+{{uso|utcs}}.
+{{sinónimo|agraciado|bienaventurado|favorecido|fortunado|nota4=anticuado|suertudo|nota5=coloquial|venturoso}}.
+:*'''Antónimos:''' [[desafortunado]], [[infortunado]], [[infortuno]] (anticuado), [[malafortunado]], [[de malas]]
+:*'''Ejemplos:'''
+:: ''(adjetivo)'': "Las personas ''afortunadas'' no solo tienen un talento natural para emplear su intuición, sino que la cultivan activamente". [http://books.google.es/books?id=mDKPnzlksRsC&pg=PA59&dq=%22afortunadas%22]
+:: ''(sustantivo)'': "La verdad es soy objetivamente un ''afortunado'', puedo afirmar que he tenido mucha suerte". [http://books.google.es/books?id=vmYdiTsObWcC&pg=PA13&dq=%22un+afortunado%22]
+
+;2: {{plm|feliz}}, que [[contener|contiene]], [[generar|genera]] o [[provenir|proviene]] de la [[felicidad]].<ref name=dlc/>
+
+;3: Que [[ocurrir|ocurre]] o [[hacer|se hace]] de tal modo o en tal momento que genera [[resultado]]s positivos.
+{{sinónimo|acertado|beneficioso|conveniente|oportuno}}.<ref name=drae>{{DRAE}}</ref>
+{{ejemplo|El hedor, equilibrista, se le hospedó en la nariz y allí se mantuvo hasta que un ''afortunado'' estornudo lo expulsó de manera violenta}} [http://books.google.es/books?id=zEoGqEFDDkYC&pg=PA101&dq=%22un+afortunado%22]
+
+;4: {{plm|borrascoso}}, [[tempestuoso]].<ref name=dlc/>
+{{uso|anticuado}}.<ref name=drae/>
+
+=== Forma verbal ===
+
+;5: {{participio|afortunar}}.
+
+=== Refranes ===
+* [[novia mojada, novia afortunada]]
+
+== Información adicional ==
+{{derivad|tit=Derivación|fortuna|afortunar|afortunado|afortunadamente|desafortunado|desafortunadamente|fortunado|fortunal|fortunio|fortuno|fortunoso|fortunón|infortuna|infortunadamente|infortunado|infortunio|infortuno|malafortunado}}.
+
+==Traducciones==
+{{trad-arriba}}
+<!-- formato: {{t+|idioma|<acepción#>|palabra}} p. ej. {{t+|fr|1|voir}} si es sustantivo, indicar el género, p. ej. {{t+|fr|voiture|f}} -->
+<!--{{t+|de|}}-->
+<!--{{t+|ar|}}-->
+<!--{{t+|bg|}}-->
+<!--{{t+|ca|}}-->
+<!--{{t+|eo|}}-->
+{{t+|fr|2-3|fortuné}}
+{{trad-centro}}
+{{t+|en|1-3|fortunate|,|lucky}}
+<!--{{t+|it|}}-->
+<!--{{t+|ja|}}-->
+<!--{{t+|nl|}}-->
+<!--{{t+|pl|}}-->
+<!--{{t+|pt|}}-->
+{{trad-abajo}}
+
+<!-- si vas a insertar una nueva sección de etimología o de idioma, por favor hazlo ↑  arriba ↑  de esta línea. Por favor no borres esta línea ni las dos siguientes-->
+= <small>Referencias y notas</small> =
+<references />

@@ -1,0 +1,21 @@
+﻿{{desambiguación|azotó}}
+== {{lengua|es}} ==
+{{pron-graf}}
+=== Forma verbal ===
+;1: {{forma verbo|azotar|p=1s|t=presente|m=indicativo}}.
+== {{lengua|eo}} ==
+{{pron-graf|leng=eo|fono=aˈzo.to}}
+=== Etimología ===
+{{etimología|leng=eo}}.
+=== {{sustantivo|eo}} ===
+{{inflect.eo.sust|contable=no}}
+;1 {{elementos químicos|leng=eo}}: {{plm|nitrógeno}}.
+{{relacionado|leng=eo|tit=Símbolo químico|N}}.
+{{sinónimo|leng=eo|nitrogeno}}.
+{{uso|leng=eo|Anticuado}}.
+===Derivados===
+*[[azota]]'' - adjetivo''
+===Véase también===
+{{w|idioma=eo}}
+== Referencias y notas ==
+<references />

@@ -1,0 +1,220 @@
+﻿{{ver também|NOVO}}
+
+={{-pt-}}=
+==Adjetivo==
+{{flex.pt|ms=novo|mp=novos|fs=nova|fp=novas}}
+{{paroxítona|no|vo}}, {{gramática|m}}
+# com [[pouco]] [[tempo]] de [[existência]]
+# [[adicional]]
+#* '''''Novos''' apelos foram feitos à população.''
+# [[moderno]]
+#* ''Os '''novos''' modelos de telefones móveis parecem ser capaz de fazer qualquer tarefa!''
+# [[recente]], [[atual]]
+#* ''O novo '''papa''' foi saudado por dezenas de milhares de fiéis.''
+# [[estranho]], [[desconhecido]], que não foi visto [[antes]]
+#* ''A ideia de economizar dinheiro era '''nova''' para ela.''
+# sem [[experiência]], recém [[ingressado]]
+#* ''Sendo '''novo''' na cidade, eu não conhecia os costumes de lá.''
+# [[jovem]], [[moço]], de pouca [[idade]]
+#* ''Era um rapaz '''novo''' quando mudou-se para a Europa.''
+# recém [[chegado]]
+#* ''A '''nova''' aluna foi bem recebida pelos seus colegas.''
+# [[emendado]], [[reformado]], [[revigorado]]
+# [[original]]
+# [[outro]]
+#* ''Tire essa camisa suja e vista uma '''nova''': vamos sair.''
+
+===Antônimos===
+* De '''1''', '''3''', '''4''' e '''8''':
+{{colunas|2}}
+* [[antigo]]
+* [[velho]]
+{{colunas/fim}}
+
+* De '''3''':
+{{colunas|2}}
+* [[antiquado]]
+* [[obsoleto]]
+{{colunas/fim}}
+
+* De '''4''':
+{{colunas|3}}
+* [[anterior]]
+* [[passado]]
+* [[pretérito]]
+{{colunas/fim}}
+
+* De '''5''':
+{{colunas|2}}
+* [[conhecido]]
+* [[familiar]]
+{{colunas/fim}}
+
+* De '''6''':
+{{colunas|3}}
+* [[experiente]]
+* [[experimentado]]
+* [[veterano]]
+{{colunas/fim}}
+
+* De '''7''':
+{{colunas|3}}
+* [[ancião]]
+* [[idoso]]
+* [[velho]]
+{{colunas/fim}}
+
+===Expressões===
+* '''[[Ano Novo]]''':
+* '''[[de novo]]''': novamente, mais uma vez
+* '''[[Igreja Nova]]''':
+* '''[[Nova Andradina]]''':
+* '''[[Nova Boa Vista]]''':
+* '''[[Nova Castilho]]''':
+* '''[[Nova Fátima]]''':
+* '''[[Nova Olímpia]]''':
+* '''[[novo em folha]]''': [[completamente]] novo, [[jamais]] [[visto]] ou [[utilizado]]
+* '''[[Novo Testamento]]''':
+* '''[[Serra Nova Dourada]]''':
+* '''[[Vila Nova da Barquinha]]''':
+* '''[[Vila Nova de Cerveira]]''':
+* '''[[Vila Nova de Famalicão]]''':
+* '''[[Vila Nova de Foz Côa]]''':
+* '''[[Vila Nova de Gaia]]''':
+* '''[[Vila Nova de Paiva]]''':
+* '''[[Vila Nova de Poiares]]''':
+* '''[[Vila Nova do Piauí]]''':
+* '''[[Vila Nova do Sul]]''':
+* '''[[Vila Nova dos Martírios]]''':
+
+===Sinônimos===
+* De '''1''':
+* [[recente]]
+
+* De '''4''':
+* [[corrente]]
+
+* De '''6''':
+{{colunas|2}}
+* [[iniciante]]
+* [[inexperiente]]
+* [[novato]]
+* [[principiante]]
+{{colunas/fim}}
+
+* De '''7''':
+* [[moço]]
+
+===Tradução===
+{{tradini}}
+* {{trad|af|nuut}}
+* {{trad|de|neu}}
+* {{trad|am|አዲስ}}
+* {{trad|hy|nor}}
+* {{trad|ae|nava}}
+* {{trad|bal|nokh}}
+* {{trad|eu|berri}}
+* {{trad|be|novy}} 
+* {{trad|br|nevez}}
+* {{trad-|bg|нов|(nov)}} ''m.'', {{xlatio|bg|нова|(nova)}} ''f.'', {{xlatio|bg|ново|(novo)}} ''n.''
+* {{trad|ca|nou}}
+* {{trad|cs|nový}}
+* {{trad|zh|新的|陌生的|最近}}
+* {{ku}} ([[curmânji|Curmânji]]) : [[nû]]
+* {{ku}} ([[sorâni|Sorâni]]) : [[nwê]]
+* {{trad|da|ny}}
+* {{trad|sk|nový}}
+* {{trad|sl|nov}}
+* {{trad|es|nuevo}}
+* {{trad|eo|nova}}
+* {{trad|et|uus}}
+* {{trad|fo|nyggjur}}
+* {{trad|fi|uusi}}
+* {{trad|fr|nouveau|neuf}}, {{xlatio|fr|nouvel|}} ''m.'', {{xlatio|fr|nouvelle|}} ''f.''
+* {{trad|fy|nij}} 
+* {{trad|gd|nuadh}}
+* {{trad|cy|newydd}}
+* {{trad|glf|novios}}
+* {{trad|ka|ახალი}}
+* {{trad-|el|νέος|(néos}}}
+* {{trad|gn|pyahu}}
+* {{trad|hit|newa}}
+* {{trad|nl|nieuw}}
+* {{trad|hu|új}}
+* {{trad|io|nova}}
+* {{trad|ine|newo}}
+* {{trad|id|baru}}
+{{tradmeio}}
+* {{trad|en|new|}}
+* {{trad|ia|nove}}
+* {{trad|ga|nua}}
+* {{trad|is|nyr}} 
+* {{trad|it|nuovo}}
+* {{trad-|ja|新しい|([[あたらしい]], atarashii)}}
+* {{trad|la|novus}}
+* {{trad|lt|naujas}}
+* {{trad|ms|baru}}
+* {{trad|mnc|ice}}
+* {{trad|gv|no}}
+* {{t|mwl|nuobo|m}}
+* {{trad|na|etsimeduw}}
+* {{trad|nv|ániid}}
+* {{trad|no|ny}}
+* {{trad|osc|nú}}
+* {{trad|ps|nevaj}}
+* {{trad-|fa|نو|(now)}}
+* {{trad|pl|nowy}} 
+* {{trad|pt|novo}}
+* {{trad|prg|nauns}} 
+* {{trad|ky|Jany}}
+* {{trad|ro|nou}} ''m.'', {{xlatio|ro|nouă|}} ''f.''
+* {{trad-|ru|новый|(novy)}}
+* {{trad|sa|navas}}
+* {{trad|wen|nowy}}
+* {{trad|xsv|naunas|naujas}}
+* {{trad|sv|ny}} 
+* {{trad|tg|nav}}
+* {{trad|th|ใหม่}}
+* {{trad|tet|foun|nurak}}
+* {{trad|xto|n'u}} 
+* {{trad|txh|neos}}
+* {{trad|tu|pysasu}}
+* {{trad|tr|yeni}}
+* {{trad|uk|novij}}
+* {{trad|ur|نیا}}
+{{tradfim}}
+
+===Verbetes derivados===
+{{colunas|2}}
+* [[inovar]]
+* [[nova]]
+* [[novamente]]
+* [[novato]]
+* [[novidade]]
+* [[renovar]]
+{{colunas/fim}}
+
+==Substantivo==
+{{flex.pt|ms=novo|mp=novos|fs=nova|fp=novas}}
+{{paroxítona|no|vo}}, {{gramática|m}}
+# com [[qualidade]] de [[novo]]
+#* ''Acredito que fiz um mau negócio: o meu carro anterior era bem melhor que o '''novo'''.''
+# (no plural) as novas pessoas
+# (no plural) os [[incipiente]]s, os que [[começar|começam]] a [[revelar]]-se ([[artista]]s, [[literato]]s, etc.)
+
+=={{etimologia|pt}}==
+: Do [[indo-europeu]] ''[[newo]]'', pelo [[latim]] {{etimo|la|novum}} ("novo").
+
+=={{pronúncia|pt}}==
+===Brasil===
+* AFI: {{AFI|/'no.vu/}}
+
+==Ver também==
+===No Wikcionário===
+* [[Ano-Novo]]
+
+====Siglas====
+* [[NOVO]]
+
+[[Categoria:Adjetivo (Português)]]
+[[Categoria:Substantivo (Português)]]

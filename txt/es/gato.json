@@ -1,0 +1,1054 @@
+{
+    "gato": [
+        {
+            "LabelName": "gato",
+            "LabelType": "mamíferos-felis",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";1 {{mamíferos}}: (''Felis silvestris catus'' o ''F. catus'') {{plm|animal}} [[carnívoro]] de la familia de los [[felino]]s, [[domesticado]] como [[animal de compañía]] desde al menos el 3500 adC.\n{{sinónimo|minino|micho|nota2=Ecuador, Panamá}}",
+            "ExplainationTxt": "1  mamíferos  (''Felis silvestris catus'' o ''F. catus'')  plm   carnívoro  de la familia de los  felino s,  domesticado  como  animal de compañía  desde al menos el 3500 adC.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "mamíferos-por",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";2 {{mamíferos}}: Por extensión, cualquier ejemplar de la familia de los [[félido]]s, que comprende 37 especies de [[mamífero]]s [[carnívoro]]s.\n{{sinónimo|félido|felino}}\n{{hipónimo|gato montés}}",
+            "ExplainationTxt": "2  mamíferos  Por extensión, cualquier ejemplar de la familia de los  félido s, que comprende 37 especies de  mamífero s  carnívoro s.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "plm-prostituta",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";3: {{plm|prostituta}} de alto nivel, que solo atiende un número más o menos reducido de clientes regulares.\n{{ámbito|Rioplatense}}\n{{uso|Lunfardismo}}",
+            "ExplainationTxt": "3   plm  de alto nivel, que solo atiende un número más o menos reducido de clientes regulares.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "por-extensión",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";4: Por extensión, prostituta en general, especialmente la de cierto nivel.\n{{ámbito|Rioplatense}}\n{{uso|Lunfardismo}}",
+            "ExplainationTxt": "4  Por extensión, prostituta en general, especialmente la de cierto nivel.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "plm-cliente",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";5: {{plm|cliente}} regular de una prostituta.\n{{ámbito|Rioplatense}}\n{{uso|Lunfardismo}}",
+            "ExplainationTxt": "5   plm  regular de una prostituta.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "plm-bisoñé",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";6: {{plm|bisoñé}}, [[peluca]] que usan algunos hombres para disimular su [[calvicie]].\n{{ámbito|Rioplatense}}\n{{uso|Lunfardismo}}",
+            "ExplainationTxt": "6   plm ,  peluca  que usan algunos hombres para disimular su  calvicie .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "máquina-para",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";7: Máquina para [[levantar]] grandes [[peso]]s a poca [[altura]].\n{{sinónimo|gato hidraúlico|cric|crique|gata}}\n[[Archivo:Tic tac toe complete-temp.svg|thumb|gato (8)]]\n;8: Juego de mesa para dos personas en que gana el primero en poner tres [[marca]]s en [[línea]], usualmente [[círculo]]s y [[cruz|cruces]], dentro de una [[cuadrícula]] de tres [[casilla]]s de ancho por tres de alto\n{{sinónimo|juego de la vieja|juego del gato|tres en raya|ta te ti|triqui|}}.",
+            "ExplainationTxt": "7  Juego de mesa para dos personas en que gana el primero en poner tres  marca s en  línea , usualmente  círculo s y  cruz cruces , dentro de una  cuadrícula  de tres  casilla s de ancho por tres de alto",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "nombre-del",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";9: Nombre del símbolo [[#]], por su semejanza con el juego llamado \"gato\", sobre todo hablando de la [[tecla]] que lleva ese símbolo en los [[teléfono]]s.\n{{ámbito|Chile|México}}.\n{{sinónimo|almohadilla|nota=España|numeral}}.",
+            "ExplainationTxt": "9  Nombre del símbolo  # , por su semejanza con el juego llamado \"gato\", sobre todo hablando de la  tecla  que lleva ese símbolo en los  teléfono s.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "plm-baile",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";10: {{plm|baile}} tradicional de [[Argentina]], de pareja suelta y ritmo alegre.\n{{hipónimo|gato con relaciones|gato cordobés|gato cuyano|gato patriótico}}.\n:*'''Ejemplos:'''\n::\"Yo vengo de aquellos pagos / muy cerca de la frontera / donde se baila la cueca / zamba, ''gato'' y chacarera\" (Óscar Palavecino, \"Chacarera pa' mi Tartagal\") {{referencia incompleta}}",
+            "ExplainationTxt": "10 :\"Yo vengo de aquellos pagos / muy cerca de la frontera / donde se baila la cueca / zamba, ''gato'' y chacarera\" (Óscar Palavecino, \"Chacarera pa' mi Tartagal\")  referencia incompleta",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "persona-nacida",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";11: Persona nacida en la ciudad de [[Madrid]], [[España]].",
+            "ExplainationTxt": "11  Persona nacida en la ciudad de  Madrid ,  España .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "ladrón-ladrones",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";12: [[ladrón|Ladrones]] de poca monta (o [[ratero]]s), llamados así por su habilidad para moverse y actuar silenciosamente sin ser detectados, al igual que el animal.\n{{ámbito|Algunas provincias argentinas}}",
+            "ExplainationTxt": "12   ladrón Ladrones  de poca monta (o  ratero s), llamados así por su habilidad para moverse y actuar silenciosamente sin ser detectados, al igual que el animal.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "plm-sirviente",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";13: {{plm|sirviente}}, en especial del servicio doméstico.\n{{ámbito|México}}\n{{uso|despectivo}}",
+            "ExplainationTxt": "13   plm , en especial del servicio doméstico.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "plantas-salix",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";14 {{plantas}}: (''Salix caprea'') {{plm|árbol}} [[dioico]] de la familia de las salicáceas, nativo de Eurasia, de [[hoja]]s relativamente anchas y [[flor]]es agrupadas en [[amento]]s.\n{{ámbito|Chile}}\n{{sinónimo|sauce cabruno|sauce alemán|nota2=Chile|meca de gato|nota3=Chiloé}}",
+            "ExplainationTxt": "14  plantas  (''Salix caprea'')  plm   dioico  de la familia de las salicáceas, nativo de Eurasia, de  hoja s relativamente anchas y  flor es agrupadas en  amento s.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "LabelName": "gato",
+            "LabelType": "articulo-cosa",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";15: Articulo, cosa o acto ilegal.\n{{ámbito|Uruguay}}\n{{uso|coloquial}}\n{{clear}}",
+            "ExplainationTxt": "15  Articulo, cosa o acto ilegal.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "gato",
+            "PluralVariant": "gatos",
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": null,
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": null,
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": null,
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        }
+    ]
+}

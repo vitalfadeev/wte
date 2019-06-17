@@ -1,0 +1,319 @@
+{
+    "gatto": [
+        {
+            "LabelName": "gatto",
+            "LabelType": "IT-IT",
+            "LanguageCode": "it",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# {{Term|zoologia|it}} {{Term|mammalogia|it}} [[piccolo]] [[mammifero]] [[domestico]] dell'ordine dei [[Carnivori]], [[della]] [[famiglia]] [[dei]] [[Felidi]], [[dal]] [[corpo]] [[agile]], con [[capo]] [[tondeggiante]], [[unghie]] [[retrattili]] e [[pelame]] di [[vario]] colore; {{Taxon|Felis silvestris catus}}",
+            "ExplainationTxt": "it it piccolo mammifero domestico dell'ordine dei Carnivori, della famiglia dei Felidi, dal corpo agile, con capo tondeggiante, unghie retrattili e pelame di vario colore; Felis silvestris catus",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": "gatto",
+            "PluralVariant": "gatti",
+            "MaleVariant": "gatto",
+            "FemaleVariant": "gatta",
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": [
+                "micio",
+                "felino"
+            ],
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": [
+                "gatto",
+                "gatti",
+                "gatta",
+                "gatte"
+            ],
+            "RelatedTerms": null,
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater"
+            ],
+            "Translation_IT": null,
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот",
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato"
+            ]
+        },
+        {
+            "LabelName": "gatto",
+            "LabelType": "-Persona",
+            "LanguageCode": "it",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# {{Fig}} [[persona]] [[agilissimo|agilissima]]",
+            "ExplainationTxt": "persona agilissimo agilissima",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": "gatto",
+            "PluralVariant": "gatti",
+            "MaleVariant": "gatto",
+            "FemaleVariant": "gatta",
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": [
+                "micio",
+                "felino"
+            ],
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": [
+                "gatto",
+                "gatti",
+                "gatta",
+                "gatte"
+            ],
+            "RelatedTerms": null,
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater"
+            ],
+            "Translation_IT": null,
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот",
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato"
+            ]
+        },
+        {
+            "LabelName": "gatto",
+            "LabelType": "-Persona",
+            "LanguageCode": "it",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# {{Fig}} [[persona]] [[molto]] [[dolce]]",
+            "ExplainationTxt": "persona molto dolce",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": "gatto",
+            "PluralVariant": "gatti",
+            "MaleVariant": "gatto",
+            "FemaleVariant": "gatta",
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": [
+                "micio",
+                "felino"
+            ],
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": [
+                "gatto",
+                "gatti",
+                "gatta",
+                "gatte"
+            ],
+            "RelatedTerms": null,
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater"
+            ],
+            "Translation_IT": null,
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот",
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato"
+            ]
+        },
+        {
+            "LabelName": "gatto",
+            "LabelType": "IT-Araldica",
+            "LanguageCode": "it",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# {{Term|araldica|it}} figura [[araldica]] [[convenzionale]] che rappresenta di norma l'[[animale]] [[passante]] e con la testa di fronte, nella [[posizione]] simile a quella del [[leopardo]]",
+            "ExplainationTxt": "it figura araldica convenzionale che rappresenta di norma l'animale passante e con la testa di fronte, nella posizione simile a quella del leopardo",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": "gatto",
+            "PluralVariant": "gatti",
+            "MaleVariant": "gatto",
+            "FemaleVariant": "gatta",
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": [
+                "micio",
+                "felino"
+            ],
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": [
+                "gatto",
+                "gatti",
+                "gatta",
+                "gatte"
+            ],
+            "RelatedTerms": null,
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater"
+            ],
+            "Translation_IT": null,
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот",
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato"
+            ]
+        },
+        {
+            "LabelName": "gatto",
+            "LabelType": "-Astuta",
+            "LanguageCode": "it",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# {{Spreg}} persona [[astuta]]",
+            "ExplainationTxt": "persona astuta",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": "gatto",
+            "PluralVariant": "gatti",
+            "MaleVariant": "gatto",
+            "FemaleVariant": "gatta",
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": [
+                "micio",
+                "felino"
+            ],
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": [
+                "gatto",
+                "gatti",
+                "gatta",
+                "gatte"
+            ],
+            "RelatedTerms": null,
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater"
+            ],
+            "Translation_IT": null,
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот",
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato"
+            ]
+        }
+    ]
+}

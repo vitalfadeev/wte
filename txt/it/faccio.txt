@@ -1,0 +1,21 @@
+﻿=={{-it-}}==
+{{-verb form-|it}}
+{{Pn}}
+#1ª persona singolare dell'indicativo futuro di [[fare]]
+#* ''io '''farò'''''
+
+{{-sill-}}
+; fa | rò
+
+{{-etim-}}
+{{Etim-link|fare}}
+
+{{-trad-}}
+{{Trad1|1ª persona singolare dell'indicativo futuro di [[fare]]}}
+:*{{bn}}: আমি [[করব]] (ami korbo)
+:*{{fr}}: je [[ferai]]
+:*{{en}}: I [[will]] [[do]]
+:*{{la}}: ego [[faciam]]
+:*{{es}}: yo [[haré]]
+:*{{de}}: ich [[werde]] [[machen]]
+{{Trad2}}

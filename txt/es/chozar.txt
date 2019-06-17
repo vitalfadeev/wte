@@ -1,0 +1,24 @@
+﻿{{esbozo}}
+
+== {{lengua|es}} ==
+{{pron-graf}}
+
+=== Etimología ===
+{{etimología}}.
+
+=== {{verbo|es}} ===
+;1: .
+
+=== Conjugación ===
+{{es.v.conj.zar|cho}}
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+<!-- formato: {{t+|idioma|<acepción#>|palabra|género}} p. ej. {{t+|fr|1|chose|f}} -->
+{{trad-centro}}
+{{trad-abajo}}
+
+== Referencias y notas ==
+<references />

@@ -1,0 +1,30 @@
+== {{-it-}} ==
+[[File:Cats Petunia and Mimosa 2004.jpg|180px|thumb|due gatti]]
+{{-sost form-|it}}
+{{Pn}} ''m pl'' {{Tabs|gatto|gatti|gatta|gatte}}
+# {{Term|zoologia|it}}, {{Term|mammalogia|it}} plurale maschile di [[gatto]]
+
+{{-sill-}}
+; gàt | ti
+
+{{-etim-}}
+{{Vd|gatto}}
+
+{{-sin-}}
+* {{Term|familiare|it}} [[mici]]
+* {{Term|scherzozo|it}} [[felini]]
+* ''(tecnica)'' [[battipali]]; [[magli]]
+
+{{-prov-}}
+* ''essere come cani e gatti'': litigare  [[ininterrottamente]]
+
+{{-trad-}}
+{{Trad1|}}
+:*{{fr}}: [[les chats]]
+:*{{en}}: [[cats]]
+:*{{es}}: [[gatos]]
+{{Trad2}}
+
+{{-ref-}}
+*[http://www.sapere.it/sapere/dizionari/dizionari/Italiano/G/GA/gatto.html?q_search=gatto]De Agostini, vocabolario edizione on-line su "www.sapere.it"
+* {{Fonte|hoep|gatto}}

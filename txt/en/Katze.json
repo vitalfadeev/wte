@@ -1,0 +1,235 @@
+{
+    "Katze": [
+        {
+            "LabelName": "Katze",
+            "LabelType": "ZOOLOGIE-Mensch",
+            "LanguageCode": "de",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ":[1] {{K|Zoologie}} dem [[Mensch]]en [[verbunden]]es, [[anschmiegsam]]es [[Haustier]] (''Felis silvestris catus''), in zahlreichen Rassen gezüchtet, ''auch speziell im Unterschied zum [[Kater]]:'' das [[weiblich]]e Tier",
+            "ExplainationTxt": "[1] Zoologie dem Menschen verbundenes, anschmiegsames Haustier (''Felis silvestris catus''), in zahlreichen Rassen gezüchtet, ''auch speziell im Unterschied zum Kater:'' das weibliche Tier",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "MaleVariant": "Kater",
+            "FemaleVariant": "Kätzin",
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": [
+                "Hauskatze",
+                "Stubentiger",
+                "Dachhase",
+                "Mieze",
+                "Miezekatze",
+                "Büsi",
+                "Kätzin",
+                "Murner",
+                "Fabel",
+                "Laufkatze"
+            ],
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": [
+                "Katze",
+                "Katzen"
+            ],
+            "RelatedTerms": null,
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "she-cat",
+                "feline"
+            ],
+            "Translation_FR": [
+                "chat",
+                "chatte",
+                "félin",
+                "félidé"
+            ],
+            "Translation_DE": null,
+            "Translation_IT": [
+                "gatto",
+                "gatta"
+            ],
+            "Translation_ES": [
+                "gato",
+                "gata",
+                "félido"
+            ],
+            "Translation_RU": [
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato",
+                "gata",
+                "carrete"
+            ]
+        },
+        {
+            "LabelName": "Katze",
+            "LabelType": "Teil-Brückenkran",
+            "LanguageCode": "de",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ":[2] ein [[Teil]] eines [[Brückenkran]]es",
+            "ExplainationTxt": "[2] ein Teil eines Brückenkranes",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "MaleVariant": "Kater",
+            "FemaleVariant": "Kätzin",
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": [
+                "Hauskatze",
+                "Stubentiger",
+                "Dachhase",
+                "Mieze",
+                "Miezekatze",
+                "Büsi",
+                "Kätzin",
+                "Murner",
+                "Fabel",
+                "Laufkatze"
+            ],
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": [
+                "Katze",
+                "Katzen"
+            ],
+            "RelatedTerms": null,
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "she-cat",
+                "feline"
+            ],
+            "Translation_FR": [
+                "chat",
+                "chatte",
+                "félin",
+                "félidé"
+            ],
+            "Translation_DE": null,
+            "Translation_IT": [
+                "gatto",
+                "gatta"
+            ],
+            "Translation_ES": [
+                "gato",
+                "gata",
+                "félido"
+            ],
+            "Translation_RU": [
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato",
+                "gata",
+                "carrete"
+            ]
+        },
+        {
+            "LabelName": "Katze",
+            "LabelType": "PLURAL-Familie",
+            "LanguageCode": "de",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ":[3] {{K|Zoologie|Plural}} eine [[Familie]] (Félidae) der [[Raubtier]]e",
+            "ExplainationTxt": "[3] Plural eine Familie (Félidae) der Raubtiere",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "MaleVariant": "Kater",
+            "FemaleVariant": "Kätzin",
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": null,
+            "Synonymy": [
+                "Hauskatze",
+                "Stubentiger",
+                "Dachhase",
+                "Mieze",
+                "Miezekatze",
+                "Büsi",
+                "Kätzin",
+                "Murner",
+                "Fabel",
+                "Laufkatze"
+            ],
+            "Antonymy": null,
+            "Hypernymy": null,
+            "Hyponymy": null,
+            "Meronymy": null,
+            "Holonymy": null,
+            "Troponymy": null,
+            "Otherwise": null,
+            "AlternativeFormsOther": [
+                "Katze",
+                "Katzen"
+            ],
+            "RelatedTerms": null,
+            "Coordinate": null,
+            "Translation_EN": [
+                "cat",
+                "she-cat",
+                "feline"
+            ],
+            "Translation_FR": [
+                "chat",
+                "chatte",
+                "félin",
+                "félidé"
+            ],
+            "Translation_DE": null,
+            "Translation_IT": [
+                "gatto",
+                "gatta"
+            ],
+            "Translation_ES": [
+                "gato",
+                "gata",
+                "félido"
+            ],
+            "Translation_RU": [
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato",
+                "gata",
+                "carrete"
+            ]
+        }
+    ]
+}

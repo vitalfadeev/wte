@@ -1,0 +1,60 @@
+{{also|doïng}}
+==English==
+
+===Alternative forms===
+* {{l|en|doïng}} {{qualifier|pedantic}}
+
+===Etymology 1===
+See {{m|en|do}}.
+
+====Pronunciation====
+* {{enPR|du'ing}}, {{IPA|/ˈduːɪŋ/|lang=en}}
+* {{audio|en-ca-doing.ogg|Audio (CA)|lang=en}}
+
+====Noun====
+{{en-noun}}
+
+# A [[deed]] or [[action]], especially when somebody is held responsible for it.
+#: ''This is his '''doing'''.'' (= "He did it.")
+#* '''1900''', ''Book News'' (volume 18, page 80)
+#*: Mr. Dawe further calls his voyage “A Record of some Strange Doings at Sea.” They are strange '''doings''', in fact, and yet not as novel as might be expected. They involve mutiny, piracy, shipwreck, and fights with Savages {{...}}
+
+=====Translations=====
+{{trans-top|a deed or action}}
+* Bulgarian: {{t+|bg|поведение|n}}
+* Chinese:
+*: Mandarin: {{t+|cmn|作為|sc=Hani}}, {{t+|cmn|作为|tr=zuòwéi|sc=Hani}}, {{t+|cmn|行為|sc=Hani}}, {{t+|cmn|行为|tr=xíngwéi|sc=Hani}}
+* Dutch: {{t+|nl|toedoen|n}}
+* Finnish: {{t+|fi|tekeminen}}
+* German: {{t+|de|Tun|n}}
+{{trans-mid}}
+* Japanese: {{t+|ja|する|tr=suru koto|alt=すること|sc=Jpan}}, {{t+|ja|行為|tr=こうい, kōi}}
+* Latin: {{t+|la|actiō|f}}, {{t+|la|faciens|n}}
+* Maori: {{t|mi|ahatanga}}, {{t|mi|whanonga}}
+* Russian: {{t+|ru|посту́пок|m}}, {{t+|ru|дея́ние|n}}, {{t+|ru|де́йствие|n}}, {{t+|ru|де́ло|n}}
+* Turkish: {{t+|tr|etme}}
+{{trans-bottom}}
+
+====Verb====
+{{head|en|verb form}}
+
+# {{present participle of|do|lang=en|nocat=1}}
+
+===Etymology 2===
+Onomatopœic.
+
+====Pronunciation====
+* {{enPR|doing}}, {{IPA|/dɔɪŋ/|lang=en}}
+
+====Interjection====
+{{en-interj}}
+
+# The [[sound]] made by an [[elastic]] object when struck by or striking a hard object.
+
+=====Synonyms=====
+* {{l|en|boing}}
+
+===Anagrams===
+* {{anagrams|en|a=dgino|Godin|Gondi|OD'ing|digon|dingo}}
+
+[[Category:English onomatopoeias]]

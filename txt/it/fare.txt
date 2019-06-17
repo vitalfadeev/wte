@@ -1,0 +1,140 @@
+﻿== {{-it-}} ==
+{{-sost-|it}}
+{{Pn}} ''m inv''
+#l'[[operare]] per [[realizzare]] [[qualcosa]]
+#* ''il '''fare''' è più importante del dire''
+
+{{-verb-|it}}
+{{Transitivo|it}}
+{{Pn|c}}
+# [[realizzare]] o [[portare]] a [[termine]] qualcosa
+#* '''''ho fatto''' una casa con il [[Lego]]''
+# [[compiere]] un'[[azione]]
+#* ''Il [[giovane]] [[ragazzo]] disse di [[cuore]]: "Cosa [[posso]] {{Pn}}? Posso [[aiutare]]?"''
+#* ''[[penso]] che [[non]] l''''avrebbe fatto''' se fossi [[arrivato]] [[in tempo]]''
+#accompagnato a un [[sostantivo]], spesso sostituisce il [[verbo]] corrispondente
+#* ''{{Pn}} una [[supposizione]]'': [[supporre]]
+#* ''{{Pn}} un [[viaggio]]'': [[viaggiare]]
+#* ''{{Pn}} un [[salto]]'': [[saltare]]
+# [[atteggiarsi]] a, [[imitare]]
+#* ''Ci '''fai'''?!''
+# '''fare il [[finto]] [[tonto]]''': fingersi uno sprovveduto
+# {{Term|gergale|it}} si riferisce ad un [[furto]]
+#* ''mi '''ha fatto''' un [[pezzo]] della [[macchina]] [[nuova]]''
+# {{Term|gergale|it}} in [[romanesco]] significa [[ricevere]] un [[regalo]] [[importante]]
+#* ''"I [[miei]] [[genitori]] mi '''hanno fatto''' il [[motorino]] per il [[compleanno]]"''
+
+{{-sill-}}
+; fà | re
+
+{{-pron-}}
+{{IPA|/ˈfaːre/}}
+
+{{-etim-}}
+contrazione dal {{la}} ''[[facio|facere]]''
+
+{{-quote-}}
+{{Quote
+|Poi il Signore Dio disse: «Non è bene che l'uomo sia solo: gli voglio '''fare''' un aiuto che gli sia simile.
+|[[w:Genesi|Genesi]] {{passo biblico|Genesi|2,18}}}}
+{{Quote
+| Meglio fare e pentere, che starsi e pentersi
+|[[q:Giovanni Boccaccio|Giovani Boccaccio]]}}
+
+{{-sin-}}
+* [[attività]], [[lavoro]], [[azione]], [[operosità]]
+* [[comportamento]], [[atteggiamento]], [[modo]], [[maniera]], [[portamento]], [[tono]], [[contegno]]
+*(del giorno, della notte) [[inizio]]
+* [[costruire]], [[fabbricare]], [[realizzare]]; [[confezionare]], [[preparare]], [[produrre]]; [[erigere]]
+*(di atto, gesto) [[eseguire]], [[compiere]], [[intraprendere]]; [[stipulare]]; [[commettere]]
+* [[creare]], dare origine, [[generare]], [[partorire]], [[procreare]]
+*(di opera) [[comporre]]
+* {{Term|cinema|it}}, {{Term|teatro|it}} [[rappresentare]], mettere in scena; [[recitare]], [[sostenere]]
+* [[cucinare]], [[preparare]]
+* [[comperare]], [[procacciarsi]]
+* [[causare]], [[provocare]], [[suscitare]], [[originare]], [[determinare]], [[cagionare]], [[portare]], [[condurre]], dare luogo, dare adito
+*(di versi, suoni) [[emettere]]
+*(di odore) [[spandere]]
+*(di funzione, rito) [[celebrare]]; [[organizzare]]
+*(di periodo) [[trascorrere]], [[passare]]
+*(di documento, richiesta) [[scrivere]], [[compilare]]; [[inoltrare]]
+* [[pulire]], [[rassettare]]
+* [[annoverare]]
+*(di operazioni aritmetiche) dare come risultato
+* [[rendere]]
+* [[credere]], [[ritenere]], [[immaginare]]
+* [[eleggere]], [[nominare]]
+* [[formare]]
+* {{Term|familiare|it}} [[dire]]
+* [[praticare]], [[esercitare]]
+* [[agire]], [[operare]], [[comportarsi]]
+* essere adatto, convenire, confarsi
+*(di periodo) [[compiersi]], [[terminare]], essere trascorso
+* fungere da
+*(di tempo) [[essere]]
+
+* [[lavorare]], [[cagionare]], [[formare]], [[giovare]],  [[spaventare]], [[sorprendere]], [[stupire]], [[disgustare]], [[nauseare]], [[infastidire]], [[sforzarsi]], [[lasciare]]
+
+{{-ant-}}
+* [[disfare]] 
+
+{{-der-}}
+* [[assuefare]], [[farsi]], [[fattura]], [[rifare]]
+
+{{-prov-}}
+* '''''far''' fuori'': [[ammazzare]]
+* ''{{Pn}} a botte''
+* ''pensa di {{Pn}} tutto quello che vuole''
+* ''cosa deve {{Pn}}?/cosa può {{Pn}}?'': domanda retorica che vuole sottolineare l'impossibilità di alternative ad una situazione apparentemente appunto senza soluzione d'immmediata fattibilità
+* ''non '''farcela''' più'': è un momento che vivono in molti come estraneo alla propria esistenza, quando con distacco si dubita che il successo sia lontano e quanto già raggiunto sia caduco; è però un modo per rafforzarsi e seguitare ancora con tenacia, proprio come la forza nel dirlo manifesta la volontà di uno o più cambiamenti positivi ed ancora più soddisfacenti per continuare al meglio la propria vita
+* ''non hanno/non avete proprio altro da {{Pn}}, eh...'': quando sono troppi gli scherzi, è troppa l'insistenza oppure sono esagerati i dubbi a cui conseguono continue chiacchiere inutili, gesti senza senso, ecc
+
+{{-trad-}}
+{{Trad1|sostantivo, [[operare]] per [[realizzare]] [[qualcosa]]}}
+{{Trad2}}
+
+{{Trad1|verbo, realizzare, produrre, costruire}}
+:*{{en}}: to [[make]]
+{{Trad2}}
+
+{{Trad1|verbo, [[compiere]] un'[[azione]]}}
+:*{{ar}}: [[فعل|فَعَلَ]] (fa'ala)
+:*{{bn}}: [[করা]] (kora)
+:*{{es}}: [[hacer]]
+:*{{en}}: to [[do]]
+:*{{eo}}: [[fari]]
+:* {{la}}: [[agere]], [[conficere]], [[facere]], [[gerere]], [[efficere]], [[perficere]] 
+:*{{el}}: [[φτιάχνω]], [[κάνω]]
+:*{{fr}}: [[faire]]
+:*{{pt}}: [[fazer]]
+:*{{ru}}: [[делать]]
+:*{{scn}}: [[fari]]
+:*{{sr}}: [[raditi]] / [[радити]]
+:*{{sv}}: [[göra]]
+:*{{de}}: [[tun]], [[machen]]
+:*{{hu}}: [[csinál]]
+{{Trad2}}
+
+{{Trad1|sostituzione del verbo corrispondente}}
+:*{{bn}}: [[করা]] (kora)
+{{Trad2}}
+
+{{Trad1|imitare}}
+{{Trad2}}
+[[Categoria:Verbi italiani irregolari]]
+
+== {{-en-}} ==
+{{-sost-|en}}
+{{Pn}}
+
+# [[tariffa]]
+
+{{-ref-}}
+* italiano
+** {{Fonte|hoep}}
+** {{Fonte|sabco|2}}
+** {{Fonte|sin-co|1}}
+** {{Fonte|sin-co|2}}
+** {{Fonte|itfd}}
+*inglese
+** {{Fonte|wrenit}}

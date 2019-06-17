@@ -1,0 +1,1123 @@
+﻿== {{langue|fr}} ==
+=== {{S|étymologie}} ===
+: De l’{{étyl|fro|fr|faire}}, du {{étyl|la|fr}} populaire {{recons|fagĕre}} (par analogie avec ''[[agere|agĕre]]'' ou, plus probablement, [[réfection]] sur les [[verbes]] en ''-gĕre'', d’après les [[participe passé|participes passés]] en ''-ctus'', communs aux deux formes), en latin classique ''[[facere|facĕre]]'', de même sens.
+
+=== {{S|verbe|fr}} ===
+'''faire''' {{pron|fɛʁ|fr}} {{t|fr}}, {{i|fr}} ou {{prnl|fr}} {{conjugaison|fr|groupe=3}} {{lien pronominal}}
+# [[créer|Créer]], [[produire]], [[fabriquer]], en parlant de toute [[œuvre]] [[matériel]]le.
+#* ''Il y a donc eu certainement une époque où ce que nous voyons maintenant autour de nous n’existait pas. Qui l’'''a''' donc '''fait''' ? Qui ? si ce n’est l’Être Suprême.'' {{source|[[w:Félix Kir|Chanoine Kir]], Le problème religieux à la portée de tout le monde'', Paris : imp. des Orphelins d’Auteuil, 1923, rééd. 1950, page 47}}
+#* ''La nature est admirable dans tout ce qu’elle '''fait'''.
+#* ''L’oiseau '''fait''' son nid, l’araignée '''fait''' sa toile, les castors '''font''' une digue, les abeilles '''font''' leur miel.''
+# {{particulier}} [[préparer|Préparer]] un [[repas]], le [[cuisiner]].
+#* '''''Faire''' le dîner (ou '''faire''' à dîner), le déjeuner, le souper''.
+# [[élaborer|Élaborer]], en parlant des [[œuvre]]s de l’[[intelligence]] et de l’[[imagination]].
+#* ''Un ouvrage,un dessin '''fait''' à la main.''
+#* '''''Faire''' du calcul mental, un récit, une description, des vers, de la prose, de l’histoire, de la musique, du théâtre, de la peinture…''
+#* ''Un écolier qui '''fait''' ses devoirs, ses exercices.''
+#* ''C’est un conte '''fait''' à plaisir, ou '''fait''' à façon'' : {{vieilli|fr}} C’est une histoire réécrite, inventée.
+#* ''Il faut '''faire''' comme les autres : maxime suspecte, qui signifie presque toujours : il faut mal faire.'' {{source|La Bruyère cité par Philippe Sollers, ''Éloge de l’infini'', Gallimard, page 436}}
+# [[opérer|Opérer]], [[effectuer]], [[exécuter]], [[accomplir]], [[réaliser]], que ce soit d’[[ordre]] [[physique]] ou d’ordre [[moral]].
+#* ''Là encore mes amis, vous '''avez fait''' de l’excellente besogne et vous l’'''avez faite''' sans bruit, sans flafla, comme toujours, […].'' {{source|{{w|Charles Le Goffic}}, ''Bourguignottes et pompons rouges'', 1916, p.75}}
+#* '''''Faire''' le bien, le mal.''
+#* '''''Faire''' la guerre, la paix, la trêve, une trêve.''
+#* '''''Faire''' des affaires, des dettes.''
+#* '''''Faire''' des prisonniers.''
+#* '''''Faire''' des excuses à quelqu’un.''
+#* '''''Faire''' du bruit.''
+#* '''''Faire''' un achat.''
+#* '''''Faire''' un bon repas''.
+#* '''''Faire''' un envoi : Envoyer quelque chose.''
+#* '''''Faire''' une expérience : Vivre une expérience.''
+#* '''''Faire''' une faute de langue, de français, de grammaire, de conjugaison, d’orthographe….''
+#* '''''Faire''' une fête.''
+#* '''''Faire''' une prière, sa prière, une promesse, un serment, un vœu, des vœux.''
+#* '''Faire''' un mouvement.''
+## {{part}} [[dire|Dire]].
+##* ''— Je le sais, '''fit'''-il ; rien n’est plus malaisé que de se désencombrer l’esprit des images qui l’obsèdent, […].'' {{source|{{w|Joris-Karl Huysmans}}, ''[[s:La Cathédrale/IV|La Cathédrale]]'', Plon-Nourrit, 1915}}
+## {{part}} [[accorder|Accorder]].
+##* '''''Faire''' quelque chose pour quelqu’un.''
+## {{part}} [[provoquer|Provoquer]].
+##* '''''Faire''' une incartade.''
+## {{part}} [[pratiquer|Pratiquer]].
+##* '''''Faire''' une opération chirurgicale.''
+## {{part}} {{populaire|fr}} [[dérober|Dérober]] ; [[faire les poches]].
+##* ''Imbécile de Grubb, – maugréait-il, fouillant en vain ses poches. – Il avait bien besoin de garder ma boite… avec sa maudite habitude de vous « '''faire''' » vos allumettes.'' {{source|{{Citation/H. G. Wells/La Guerre dans les airs/1921|89}}}}
+# Avoir dans son [[domaine]] [[professionnel]].
+#* ''Désolé, monsieur, nous ne '''faisons''' plus cet article.'' (Nous ne le [[vendre|vendons]] plus.)
+#* ''J’'''fais''' un peu l’orge, je '''fais''' un peu l’avoine. J’suis obligé de '''faire''' l’avoine, parce que je '''fais''' le cheval.'' {{source|{{w|Fernand Raynaud}}, ''Ça a eu payé (le paysan)'', dans ''Heureux !'', Éditions de Provence/La Table Ronde, Paris, 1975}}
+# Se [[mouvoir]] dans un [[déplacement]] d’un [[lieu]] à un autre.
+#* '''''Faire''' des pas, '''faire''' les cent pas.''
+#* '''''Faire''''' un tour de promenade, le tour de la ville. ''
+#* '''''Faire''''' une lieue à pied. ''
+#* '''''Faire''''' des allées et venues.''
+#* '''''Faire''' une course, un voyage, un long trajet, un grand circuit.''
+#* ''La Terre '''fait''' sa révolution en 365 jours et un quart.''
+# [[signaler|Signaler]], [[indiquer]] un [[état]] de [[chose]]s.
+#* ''Ma voiture '''fait''' du 230 à l’heure.''
+# [[disposer|Disposer]], [[ranger]], [[arranger]], mettre dans un [[état]] [[convenable]].
+#* '''''Faire''' sa chambre, son lit.''
+#* '''''Faire''''' ses ongles, ou se '''faire''' les ongles.''
+# {{part}} [[farder|Farder]], [[maquiller]].
+#* '''''Faire''' son visage, '''faire''' ses yeux''.
+# [[amasser|Amasser]], [[assembler]], [[mettre]] [[ensemble]], en parlant d’[[argent]] ou d’autres choses dont on a [[besoin]] de se [[pourvoir]].
+#* ''Des fuites découvertes dans la chaudière m’ont fait hésiter à quitter l’Islande pour les réparer ; en tous cas il était urgent de '''faire''' un peu d’eau […]'' {{source|{{w|Jean-Baptiste Charcot}}, ''Dans la mer du Groenland'', 1928}}
+#* ''Tâche de te '''faire''' quelque argent cet été !''
+#* '''''Faire''''' des provisions, des courses.''
+#* '''''Faire''''' des bénéfices, '''faire''' fortune, '''faire''' des frais.''
+# [[employer|Employer]] ses [[force]]s, ses [[talent]]s, l’[[activité]] de son [[esprit]] à quelque chose ; s’en [[occuper]], y [[passer]] son [[temps]].
+#* '''''Faire''' un travail, sa besogne. ''
+#* ''Il n’a rien '''fait''' de toute la journée.''
+#* '''''Faire''''' tout ce qu’on peut, tous ses efforts.''
+#* {{FR|fr}} ''Ça le '''fait'''.''
+#* ''C’est un homme qui ne trouve rien de difficile à '''faire'''.''
+#* ''Que '''faites'''-vous cet après-midi ?''
+#* ''Je n’ai rien à '''faire'''.''
+#* ''Qu’est-ce que '''fait''' cet homme ? Quelle profession a-t-il ?''
+#* ''Ce jeune homme ne '''fait''' rien, il a perdu son emploi.''
+# [[observer|Observer]], [[mettre en pratique]], souvent par [[obligation]] ou par [[précepte]].
+#* '''''Faire''' ce que la Religion ordonne, son devoir, sa prière.''
+#* '''''Faire''' la pénitence qui est imposée, ses pâques, les Rois.''
+#* '''''Faire''''' maigre, diète.''
+#* '''''Faire''' une fête : La célébrer.''
+#* '''''Faire''' le lundi : Passer le lundi à se reposer au lieu de travailler.''
+# [[exécuter|Exécuter]] ou [[pratiquer]] certaines choses que l’on s’oblige à [[achever]] en un certain temps.
+#* '''''Faire''' la quarantaine ou '''''faire''' quarantaine.''
+#* '''''Faire''' ses classes, son droit, sa médecine, son apprentissage, son noviciat, son service militaire.''
+#* '''''Faire''' une neuvaine.''
+# [[former|Former]], [[façonner]], [[perfectionner]] quelqu’un.
+#* ''Ce général '''a fait''' de bons officiers.''
+#* ''Ce professeur '''a fait''' de bons écoliers.''
+#* ''Les affaires '''font''' les hommes.''
+# [[former|Former]], [[composer]], [[constituer]] un tout, une [[seul]]e chose, en parlant de [[deux]] ou de [[plusieurs]] choses qui s’unissent, s’ajoutent, etc.
+#* ''Deux et deux '''font''' quatre.''
+#* ''Cinq fois deux '''font''' dix.''
+#* ''Toutes ces sommes ensemble '''font''' tant.''
+#* ''Deux lignes qui se coupent '''font''' un angle.''
+#* ''Ces forêts, ces ruisseaux, ces montagnes, tout cela ensemble '''fait''' un beau pays.''
+# [[constituer|Constituer]] l’[[essence]] d’une chose.
+#* ''Ce qui '''fait''' la qualité du vin.''
+#* ''Le spectacle '''faisait''' le beau de la fête.''
+#* ''La clarté '''fait''' le principal mérite de son style.''
+#* ''Voilà ce qui '''fait''' l’objet de mes recherches.''
+#* ''Ce fils '''fait''' toute la joie de sa mère.''
+# Être la [[cause]] de [[tel ou tel]] [[résultat]] ou en être l’[[occasion]].
+#* ''Ce remède m’'''a fait''' beaucoup de bien.''
+#* ''Sa réussite lui '''a fait''' beaucoup d’ennemis.''
+#* ''Ses propos lui '''ont fait''' du tort.''
+#* ''Il ne faut '''faire''' de peine (ou de la peine) à personne.''
+#* '''''Faire''' des jaloux, des mécontents, des dupes, des heureux.''
+#* ''C’est ce qui '''fait''' que les choses vont si mal.''
+#* ''Cela ne '''fera''' que l’irriter davantage.''
+#* '''''Faites''', je vous en prie, que cela soit vite fini.''
+#* ''C’est à vous à '''faire''' que rien ne manque.''
+#* ''Nous '''ferons''' en sorte qu’ils n’aient pas lieu de se plaindre.''
+# {{péjoratif|fr}} Se [[donner]] une [[apparence]] [[mensongère]].
+#* '''''Faire''' la bête, la bourgeoise.''
+#* '''Faire''' l’empressé, l’enfant, l’entendu, l’esprit fort, le fanfaron, le gentil.''
+#* '''''Faire''' le grand seigneur, l’homme d’importance, le malade, le malin, le mort, le savant, le sourd.''
+# {{familier|fr}} Donner l’air, créer une impression particulière.
+#* ''Ces lunettes, ça '''fait''' vraiment intello.''
+#* ''Ils truffent leurs communiqués de mots comme ''responsabilité sociale'' ou ''écologie'', pour '''faire''' bien, pour '''faire''' moderne, mais tout ça, c’est de la poudre aux yeux.''
+#* ''Non, pas un 4x4, ça '''fait''' nouveau riche.''
+# {{familier|fr}} '''Faire''' ici (ou là) : Être en ce lieu.
+#* ''Qu’est-ce que vous '''faites''' ici ? : Pourquoi êtes-vous en ce lieu ? ''
+#* ''Ce livre n’a rien à '''faire''' là.''
+# Construit avec la [[préposition]] [[de]], il prend le sens de [[changer]], [[transformer]] en.
+#* ''Que '''ferez'''-vous '''de''' votre fils ?''
+#* ''On veut '''faire d’'''elle une institutrice.''
+#* ''Ce précepteur ne '''fera''' rien '''de''' son élève.''
+#* ''On '''a fait de''' cet ancien théâtre une salle de bal.''
+# Toujours avec la préposition ''de'', il peut signifier [[employer]] quelqu’un ou quelque chose, en [[disposer]], en tirer [[parti]] d’une [[façon]] ou d’une autre.
+#* ''Que voulez-vous que je '''fasse de''' cet homme-là ?''
+#* ''Vous ne '''faites''' rien '''de''' ce meuble-là, vous n’'''en faites''' rien ?''
+#* '''''Faites de''' cela ce que bon vous semble.''
+#* ''Il ne sait que '''faire de''' son temps.''
+# S’emploie souvent en tant que [[verbe]]-[[substitut]] pour [[éviter]] la [[répétition]] du [[verbe]] [[précédent]], précédé des [[conjonction]]s ''[[comme]], [[ainsi que]], [[autant que]], [[moins que]], [[plus que]]'', etc., et accompagné du pronom personnel ''[[le]]'' (''[[l’]]''), celui-ci représentant l’action décrite juste avant.
+#* ''Il répondit comme les autres '''l’avaient fait''' : Comme les autres avaient répondu.''
+#* ''Nous parlions de plein de choses, comme '''l’auraient fait''' deux anciens amis : Comme auraient parlé deux anciens amis.''
+#* ''Il apprit à chasser comme son père '''le faisait''' avant lui : Comme son père chassait avant lui.''
+#* ''Il vous protègera beaucoup plus que je ne pourrai '''le faire'''.''
+#* ''Le chien aboya à notre approche, ainsi que '''le font''' tous les chiens.''
+#* ''(Observation)'' La langue classique permet cette substitution sans le pronom personnel, et même s’il ne s’agit pas d’une action :
+#** ''Je ne me trouve plus belle comme je '''faisais'''.'' {{source|Jean de la Fontaine, ''Les Amours de Psyché et de Cupidon'', livre II, Charles Bertrand éditeur, Paris, 1970, page 134}}
+# Il est également substitut dans l’[[expression]] ''[[en faire autant]]''.
+#* ''Je vais dormir, tu devrais '''en faire autant'''.''
+# Mais on ne doit pas confondre cet emploi avec une autre tournure (sans conjonction de subordination) dans laquelle ''faire'', conservant le sens d’exécuter, opérer, effectuer, etc., a également pour complément le pronom ''le'' qui représente le verbe précédent.
+#* ''Il voudrait partir, mais il ne peut '''le faire''''' (faire l’action de partir) ''sans autorisation.''
+#* ''Quoiqu’il ait tous les moyens de vous obliger, il ne '''le fera''' pas.''
+# {{term|jeu}}
+#* '''''Faire''' une partie : Jouer une partie (de cartes, d’échecs, de dames, etc.).''
+#* '''''Faire''' les cartes : Les mélanger et les donner.''
+#* '''''Faire''' une levée : Ramasser les cartes jouées.''
+#* '''''Faire''' tant de points : Gagner tant de points.''
+#* '''''Faire''' le jeu : Avoir les bonnes cartes.''
+#* ''C’est à vous à '''faire''' : C’est à vous de distribuer les cartes ; ou encore c’est à vous de jouer en premier.''
+# {{marine|fr}}
+#* '''''Faire''' le quart.''
+#* '''''Faire''' voile vers un endroit : Se diriger à la voile vers un point déterminé.''
+#* '''''Faire''' le point : Déterminer par l’observation des astres la position exacte d’un navire sur la mer.''
+#* '''''Faire''' eau : Se dit d’un bateau dont la coque laisse passer l’eau.''
+#* '''''Faire''' naufrage''.
+# {{transports|fr}} {{intransitif|fr}} [[approvisionner|Approvisionner]].
+#* ''Beaucoup de navires '''feront''' du charbon à Colon, et tous seront forcés de s’arrêter au port d’entrée pour acquitter le péage, prendre des pilotes.'' {{source|Bulletin de l’Union Géographique du Nord de la France, Douai, 1903, page 125}}
+#* '''''Faire''' les vivres : Remplir un bateau de vivres.''
+# {{médecine|fr}} [[atteindre|Être atteint]], être [[malade]] de, [[montrer]] les [[symptôme]]s de.
+#* '''''Faire''' de la neurasthénie.''
+#* '''''Faire''' de la température.''
+#* '''''faire''' de l’embonpoint, du diabète.''
+# {{militaire|fr}} [[effectuer|Effectuer]] ce qui [[ordonner|est ordonné]].
+#* '''''Faire''' l’exercice, le guet, la ronde. ''
+#* '''''Faire''' la revue d’une armée.''
+# {{militaire|fr}} [[combattre|Combattre]] dans une [[guerre]].
+#* ''J'avais un brigadier-chef qui '''avait fait''' l'Indochine, le parfait baroudeur, qui commençait à être violent.'' {{source|{{w|Patrick Rotman}}, ''{{w|L'Ennemi intime}}'', 2009}}, Seuil.
+# [[voyager|Voyager]] dans un pays.
+#* ''Tu '''as fait''' Madagascar ?''
+# {{intrans|fr}} [[agir|Agir]].
+#* '''''Faire''' bien, '''faire''' mal.''
+#* ''Il '''a fait''' de son mieux ; il '''a fait''' mieux que lui.''
+#* ''Comment '''faire''' ?''
+#* ''Laissez-le donc '''faire''', il saura bien se tirer d’embarras.''
+#* ''Il '''a''' tant '''fait''' qu’il en est venu à bout.''
+#* ''Il '''a''' si bien '''fait''' par ses sottises qu’on a fini par le renvoyer.''
+#* ''Si on le laisse '''faire''', il sera bientôt maître de tout.''
+#* ''Il y a fort à '''faire''' dans cette entreprise.''
+# {{intrans|fr}} {{vieilli|fr}} Être [[convenable]], [[produire]] un [[effet]] [[agréable]] (aujourd’hui, on utilise plutôt le verbe ''[[aller]]'').
+#* ''Ces deux choses '''font''' fort bien ensemble.''
+#* ''L’or '''fait''' bien avec le vert.''
+#* ''Ce tableau ne '''fait''' pas bien où il est ; il '''ferait''' mieux ailleurs.''
+# {{intrans|fr}} {{familier|fr}} Se [[décharger]] le [[ventre]], [[déféquer]].
+#* ''Cet enfant '''a fait''' dans sa chemise.''
+#* ''Ce malade '''a fait''' sous lui.''
+# {{intrans|fr}} {{vieilli|fr}} Être [[efficace]].
+#* ''Mes amis des deux sexes employèrent, pour me consoler, tout ce qui '''faisait''', non contre Henriette, qu’ils avaient tous aimée, mais contre l’infâme Macbell…'' {{source|{{w|Nicolas Rétif de la Bretonne}}, ''{{w|Monsieur Nicolas}}'', 1796, bibliothèque de la Pléiade, Tome 1, p. 1095.}}
+# {{pronl|fr}} [[devenir|Devenir]], [[embrasser]] une profession, une [[idée]], une [[religion]].
+#* ''Le chien, qui '''se faisait''' vieux et n’aimait point à découcher, était, comme d’habitude, rentré dès le premier soir et gardait le coin du feu, car on était en hiver.'' {{source|{{w|Louis Pergaud}}, ''Le retour'', dans ''{{w|Les Rustiques, nouvelles villageoises}}'', 1921}}
+#* ''Dans l’entre-deux-guerres, le prosateur '''se fait''' volontiers reporter : il mène l’enquête et décrit les faits, en usant de son art de la narration.'' {{source|{{Lien web |auteur=Anne Dujin |url=https://www.lemonde.fr/idees/article/2018/08/16/les-ecrivans-crevent-l-ecran_5343070_3232.html |titre=Les écrivains crèvent l’écran |éditeur=Le Monde |en ligne le=16 août 2018}}}}
+#* '''''Se faire''' beau, belle : Se préparer, se maquiller.''
+#* ''Il '''s’est fait''' tout beau pour son mariage.''
+#* {{familier|fr}} ''Cet enfant commence à '''se faire''' grand.''
+# {{pronl|fr}} Indique une chose que l’on s’[[accorder|accorde]] ou que l’on s’[[imposer|impose]] à [[soi-même]].
+#* '''''Se faire''' scrupule : Hésiter à faire quelque chose.''
+#* '''''Se faire''' conscience de…''
+#* '''''Se faire''' gloire de quelque chose. : Tirer de la gloire d’une chose.''
+#* '''''Se faire''' honneur de quelque chose : En tirer vanité, s’en sentir honoré.''
+#* '''''Se faire''' une obligation, un devoir de… : S’obliger à…''
+#* ''Je '''me fais''' fort d’y arriver.''
+#* ''Il '''se fait''' beaucoup plus malade qu’il ne l’est.''
+#* '''''Se faire''' plus riche, plus pauvre, plus jeune qu’on ne l’est réellement.''
+#* '''''Se faire''' une beauté : Se dit d’une personne qui se maquille ou qui s’apprête.''
+# {{pronl|fr}} S’[[habituer]], s’[[accoutumer]] à quelque chose.
+#* '''''Se faire''' au bruit, à tout.''
+#* '''''Se faire''' aux manières de quelqu’un.''
+#* '''''Se faire''' la main.''
+#* ''Je crois que je ne '''m’y ferai''' jamais.''
+# {{pronl|fr}} Se [[former]].
+#* ''C’est un jeune homme qui '''se fera''' peu à peu.''
+#* ''Ces jeunes magistrats '''se feront''' par la pratique des affaires.''
+#* ''Ce vin n’a pas encore eu le temps de '''se faire'''.''
+# {{pronl|fr}} Se [[créer]].
+#* '''''Se faire''' des amis, des relations, des ennemis, un nom, une situation…''
+#* ''Il '''s’est fait''' du tort à lui-même.''
+# {{pronl|fr}} Être [[possible]], se [[produire]].
+#* ''Si c’est une chose qui puisse '''se faire''', je vous en aurai obligation.''
+#* ''Si cela peut '''se faire''', j’en serai ravi.''
+#* ''Ces choses-là ne '''se font''' pas aisément.''
+#* ''Je crois que le mariage '''se fera''' bientôt.''
+#* ''Il faut espérer que la paix '''se fasse'''.''
+# {{pronl|fr}} Être [[couramment]] [[pratiquer|pratiqué]].
+#* ''Cela '''se faisait''' dans le temps.''
+#* ''Ici, ce sont des choses qui '''se font'''.''
+#* ''Le jaune '''se fait''' beaucoup cette année.''
+# {{pronl|fr}} {{vulgaire|fr}} [[posséder|Posséder]] [[sexuellement]].
+#* ''Il '''se fait''' au moins trois nanas par semaine.''
+# {{pronl|fr}} {{familier|fr}} ''Se le faire'' ou ''se la faire'' : Finir par se montrer violent.
+#* ''Je vais '''me le faire''' s’il continue !''
+# {{emploi|impersonnel}} Indique un état météorologique.
+#* ''Lorsque Bishop revint et posa un gobelet fumant devant elle, Anise referma les mains dessus pour se réchauffer ; il '''faisait''' trente-cinq degrés à l’ombre, et pourtant elle tremblait de froid.'' {{source|Kay David, L’ombre du doute, traduit de l’anglais par B. Dufy, en recueil avec ''La machination'' de Harper Allen, éd. Harlequin (coll. Black Rose), 2009, chap. 12}}
+#* ''Il '''fait''' beau, beau temps.''
+#* ''Il '''fait''' bon, une chaleur épouvantable !''
+#* ''Il '''fait''' chaud, doux, frais, frisquet, froid, un froid de canard, gris, humide. ''
+#* ''Il '''fait''' jour, nuit. ''
+#* ''Il '''fait''' nuageux, sec, soleil. — Il '''fait''' un temps de chien, un temps pourri.''
+#* ''Quel temps '''fait'''-il aujourd’hui ?''
+# {{emploi|impersonnel}} S’emploie pour [[marquer]] la [[nature]], l’[[état]], la [[disposition]] ou les [[qualité]]s de certaines choses.
+#* ''Dehors, on n’entendait rien ; le feu pétillait sur l’âtre. Il '''faisait''' bien bon dans cette grande cuisine, […].'' {{source|{{w|Erckmann-Chatrian}}, ''[[s:Histoire d’un conscrit de 1813/3|Histoire d’un conscrit de 1813]]'', J. Hetzel, 1864}}
+#* ''Il '''fait''' bon vivre dans ce pays.''
+#* ''Il ne '''fait''' pas bon de se frotter à cet homme-là.''
+# {{emploi|impersonnel}} Être la [[cause]].
+#* ''Ça '''fait''' du bien.''
+#* ''Ça '''fait''' peur.''
+#* ''Ça '''fait''' pitié…''
+# {{emploi|impersonnel}} [[y avoir|Y avoir]].
+#* ''Ça '''fait''' longtemps que je ne l’ai vu.''
+# {{pronominal|fr}} {{emploi|impersonnel}} [[arriver|Arriver]].
+#* ''Il '''s’est fait''' beaucoup de fentes dans cette muraille.''
+#* ''Il '''se fit''' un moment de silence.''
+#* ''Il '''se fait''' bien des choses qu’on s’explique mal. ''
+#* ''On ne sait comment cela '''s’est fait'''.''
+#* ''Comment peut-il '''se faire''' que vous n’en sachiez rien ?''
+# {{pronominal|fr}} {{emploi|impersonnel}} Être [[convenable]]. — {{note}} Se dit surtout des actes de politesse ou de cérémonie qu’il de bon ton d’accomplir en telle ou telle circonstance.
+#* ''Vous auriez dû envoyer une carte, cela '''se fait''' toujours.''
+#* ''Dites-moi, je vous prie, ce qui '''se fait''' en pareille circonstance.''
+# [[commencer|Commencer]] à [[être]].
+#* ''Il '''se fait''' tard.''
+#* ''Il '''se fait''' vieux.''
+# Aux formes simple ou pronominale (se faire), peut être [[auxiliaire]] de [[mode]] et se construire avec un [[infinitif]] pour [[signifier]] : être la [[cause]] ([[proche]] ou [[lointain]]e) de quelque chose ou d’une [[action]]. Le sujet du verbe à l’infinitif peut être exprimé dans la phrase ou être absent de la phrase. De même, le complément d’objet du verbe à l’infinitif n’est pas toujours exprimé.
+#* ''Les maquignons '''se font''' craindre des animaux les plus revêches et savent réveiller les plus paresseux pour si peu qu’ils aient séjourné dans leurs écuries.'' {{source|Gabriel Maury, ''[[s:Des ruses employées dans le commerce des solipèdes|Des ruses employées dans le commerce des solipèdes]]'', Jules Pailhès, 1877}}
+#* ''J’ai fait des représentations au grand vizir et ai dû revenir à la charge à plusieurs reprises pour '''faire''' cesser cette pratique répugnante.'' {{source|{{w|Frédéric {{smcp|Weisgerber}}}}, ''Trois mois de campagne au Maroc : étude géographique de la région parcourue'', Paris : Ernest Leroux, 1904, p. 97}}
+#* ''Alors tout le monde aurait su ce que l’on a tenté si longtemps de nous cacher : notre carte bancaire à puce est bel et bien piratable, quoi que l’on ait voulu nous '''faire''' croire !'' {{source|Pascal Colombani, ''Le dossier noir des cartes bancaires'', Chatou : Éditions Carnot, 2001, page 185}}
+#* ''L’opium '''fait''' dormir. [sujet de ''dormir'' non exprimé]''
+#* ''C’est ce qui le '''fait''' vivre.''
+#* '''''Faire''' agir des personnes puissantes. [sujet d’''agir'' exprimé]'' 
+#* '''''Faire''' dire, '''faire''' savoir quelque chose à quelqu’un. [compléments d’objet direct et indirect exprimés]''
+#* ''C’est moi qui le lui '''ai fait''' connaître. [complément d’objet direct de ''connaître'' exprimé]''
+#* '''''Faire''' construire une maison par un architecte. [sujet introduit par ''par'']'' 
+#* ''Je les '''ai fait''' chercher partout.''
+#* ''Se '''faire faire''' un habit.''
+#* '''''Faire''' imprimer, '''faire''' paraître un livre.''
+#* ''La partie civile l’'''a fait''' condamner aux dépens. [complément d’objet indirect de ''condamner'' exprimé]''
+#* ''Cela me '''fait''' penser à quelque chose. [complément d’objet indirect de ''penser'' exprimé]''
+#* '''''Se faire''' aduler, aimer, craindre, détester, haïr. [réfléchi direct]''
+#* '''''Se faire''' couler un bain. [réfléchi indirect]''
+#* ''Faire dire quelque chose à quelqu’un'' : Lui attribuer des paroles qui ne sont pas les siennes.
+#* ''Ne me '''faites''' pas dire ce que je n’ai pas dit !''
+# Expressions qui veulent toutes dire la même chose : laisse-moi tranquille.
+#* {{familier|fr}} '' Va te '''faire''' cuire un œuf.''
+#* {{vulgaire|fr}} ''Va te '''faire''' enculer.''
+#* {{vulgaire|fr}} ''Va te '''faire''' foutre.''
+#* {{term|Américanisme}} ''Va te '''faire''' pendre ailleurs.''
+#* {{vulgaire|fr}} ''Va te '''faire''' voir.''
+
+==== {{S|notes}} ====
+: Sert de remplaçant à de nombreux autres verbes.
+:* commettre : '''''Faire''' une erreur, une faute.''
+:* déféquer : '''''Se faire''' dessus.''
+:* devenir : ''Au pluriel, « cheval » '''fait''' « chevaux ».''
+:* dire : ''Il me '''fait''' alors : « C’est pour quand ? »'' ; '''''Faire''' des calembours.''
+:* établir : '''''Faire''' un diagnostic, le parallèle.''
+:* incarner : ''C’était Johnny Weissmuller qui '''faisait''' Tarzan.''
+:* mettre, poser : ''Qu’est-ce que j’'''ai fait''' de mes lunettes ?'' : Où les ai-je mises ?
+:* nouer : '''''Faire''' ses lacets.''
+:* participer : '''''Faire''' une course, un rallye.''
+:* pratiquer : '''''Faire''' une opération.''
+:* préparer : '''''Faire''' à manger.''
+:* ranger : '''''Faire''' sa chambre.''
+:* raser : '''''Faire''' la barbe, '''faire''' la moustache.''
+:* répondre : ''J’irai avec vous, lui '''fis'''-je.''
+:* travailler : '''''Faire''' des heures supplémentaires.''
+:* vendre : ''Vous le '''faites''' à combien, votre poulet ?''
+
+==== {{S|dérivés}} ====
+{{(}}
+* [[aller se faire]]
+* [[aller se faire cuire un œuf]]
+* [[aller se faire empapaouter]]
+* [[aller se faire enculer]]
+* [[aller se faire fiche]]
+* [[aller se faire foutre]]
+* [[aller se faire mettre]]
+* [[aller se faire voir]]
+* [[aller se faire voir ailleurs]]
+* [[aller se faire voir chez les Grecs]]
+* [[aller se faire voir chez Plumeau]]
+* [[aussitôt dit, aussitôt fait]]
+* [[avoir à faire]]
+* [[avoir fait son temps]]
+* [[avoir fort à faire]]
+* [[avoir une piastre à faire]]
+* [[bienfaisant]]
+* [[bonne à tout faire]]
+* [[c’en est fait de]]
+* [[ce faisant]]
+* [[ce qui fait que]]
+* [[cela fait]]
+* [[chemin faisant]]
+* [[clair comme deux et deux font quatre]]
+* [[défaire]]
+* [[en faire autant]]
+* [[en faire des caisses]]
+* [[en faire des tartines]]
+* [[en faire des tonnes]]
+* [[en faire tout un plat]]
+* [[en faire trop]]
+* [[en faire un pataquès]]
+* [[en faire une maladie]]
+* [[en faire voir]]
+* [[en faire voir de toutes les couleurs]]
+* [[être bien fait]] (être beau)
+* [[être fait comme un rat]]
+* [[être fait pour]]
+* [[faire abstraction]]
+* [[faire acte d’autorité]]
+* [[faire acte de candidature]]
+* [[faire acte de clémence]]
+* [[faire acte de présence]]
+* [[faire alliance]]
+* [[faire amende honorable]]
+* [[faire antichambre]]
+* [[faire appel]]
+* [[faire assaut]]
+* [[faire attention]]
+* [[faire autorité]]
+* [[faire avancer le schmilblick]]
+* [[faire banco]]
+* [[faire bande à part]]
+* [[faire banqueroute]]
+* [[faire basket]]
+* [[faire bien de]]
+* [[faire bisquer]]
+* [[faire bombance]]
+* [[faire bon accueil]],
+* [[faire bon ménage]]
+* [[faire bonne chère]]
+* [[faire bonne contenance]]
+* [[faire bouger les lignes]]
+* [[faire bouillir la marmite]]
+* [[faire boule de neige]]
+* [[faire boutique mon cul]]
+* [[faire bronzette]]
+* [[faire caca]]
+* [[faire cadeau]]
+* [[faire carrière]]
+* [[faire cas]]
+* [[faire cause commune]]
+* [[faire cavalier seul]]
+* [[faire ceinture]]
+* [[faire chabrol]]
+* [[faire chabrot]]
+* [[faire chambre à part]]
+* [[faire chanter]]
+* [[faire chaud au cœur]]
+* [[faire chauffer la carte bleue]]
+* [[faire chou blanc]]
+* [[faire claquer son fouet]]
+* [[faire cocu]]
+* [[faire comme chez soi]]
+* [[faire comme si]]
+* [[faire confiance]]
+* [[faire contre mauvaise fortune bon cœur]]
+* [[faire corps]]
+* [[faire coup double]]
+* [[faire crédit]]
+* [[faire cul sec]]
+* [[faire d’une chose comme des choux de son jardin]]
+* [[faire d’une mouche un éléphant]]
+* [[faire d’une pierre deux coups]]
+* [[faire dans son froc]]
+* [[faire dans son pantalon]]
+* [[faire danser l’anse du panier]]
+* [[faire de l’eau]]
+* [[faire de l’esbroufe]]
+* [[faire de l’esprit]]
+* [[faire de l’œil]]
+* [[faire de l’ombre]]
+* [[faire de l’or en barre]]
+* [[faire de la peine]]
+* [[faire de nécessité vertu]]
+* [[faire de vieux os]]
+* [[faire défaut]]
+* [[faire demi-tour]]
+* [[faire des avances]]
+* [[faire des étincelles]]
+* [[faire des façons]]
+* [[faire des folies]]
+* [[faire des frais]]
+* [[faire des gammes]]
+* [[faire des gorges chaudes]]
+* [[faire des histoires]]
+* [[faire des messes basses]]
+* [[faire des petits]]
+* [[faire des pieds et des mains]]
+* [[faire des remontrances]]
+* [[faire des ronds dans l’eau]]
+* [[faire des ronds de jambe]]
+* [[faire des salades]]
+* [[faire des siennes]]
+* [[faire des vacances]]
+* [[faire des yeux de merlan frit]]
+* [[faire devenir chèvre]]
+* [[faire diligence]]
+* [[faire diversion]]
+* [[faire dodo]]
+* [[faire don]]
+* [[faire dresser les oreilles]]
+* [[faire droit]]
+* [[faire du coude à coude]]
+* [[faire du coude]]
+* [[faire du genou]]
+* [[faire du mal]]
+* [[faire du pied]]
+* [[faire du pouce]]
+* [[faire du reuz]]
+* [[faire du sale boulot]]
+* [[faire du tort]]
+* [[faire du zèle]]
+* [[faire dur]]
+* [[faire eau]]
+* [[faire école]]
+* [[faire effet]]
+* [[faire en sorte que]]
+* [[faire entendre raison]]
+* [[faire entrer en ligne de compte]]
+* [[faire envie]]
+* [[faire éruption]]
+* [[faire escale]]
+* [[faire étalage]]
+* [[faire face]]
+* [[faire faillite]]
+* [[faire Fanny]]
+* [[faire fausse queue]]
+* [[faire fausse route]]
+* [[faire faux-bond]]
+* [[faire flanelle]]
+* [[faire feu de tout bois]]
+* [[faire feu vif]]
+* [[faire feu]]
+* [[faire fi de]]
+* [[faire ficelle]]
+* [[faire fissa]]
+* [[faire flèche de tout bois]]
+* [[faire florès]]
+* [[faire foi]]
+* [[faire fort]]
+* [[faire fortune]]
+* [[faire grâce]]
+* [[faire grand bruit]]
+* [[faire grand cas]]
+* [[faire grief]]
+* [[faire grise mine]]
+* [[faire halte]]
+* [[faire hommage à la table]]
+* [[faire honneur]]
+* [[faire honte]]
+* [[faire impression]]
+* [[faire irruption]]
+* [[faire joujou]]
+* [[faire justice soi-même]]
+* [[faire l’amour]]
+* [[faire l’andouille]]
+* [[faire l’âne pour avoir du son]]
+* [[faire l’appel]]
+* [[faire l’appoint]]
+* [[faire l’aumône]]
+* [[faire l’avion]]
+* [[faire l’école buissonnière]]
+* [[faire l’effet d’une bombe]]
+* [[faire l’idiot]]
+* [[faire l’imbécile]]
+* [[faire l’impasse]]
+* [[faire l’innocent]]
+* [[faire la bombe]]
+* [[faire la bouche en cœur]]
+* [[faire la bringue]]
+* [[faire la cane]]
+* [[faire la chaîne]]
+* [[faire la charité]]
+* [[faire la chasse]]
+* [[faire la chattemite]]
+* [[faire la chose]]
+* [[faire la connaissance]]
+* [[faire la coquette]]
+* [[faire la cour]]
+* [[faire la course]]
+* [[faire la courte échelle]]
+* [[faire la couverture]]
+* [[faire la cuisine]]
+* [[faire la différence]]
+* [[faire le difficile]]
+* [[faire la fête]]
+* [[faire la file]]
+* [[faire la fine bouche]]
+* [[faire la figue à]]
+* [[faire la foire]]
+* [[faire la grasse matinée]]
+* [[faire la grimace]]
+* [[faire la gueule]]
+* [[faire la java]]
+* [[faire la lecture]]
+* [[faire la lessive]]
+* [[faire la lumière sur]]
+* [[faire la noce]]
+* [[faire la lessive]]
+* [[faire la lippe]]
+* [[faire la loi]]
+* [[faire la lumière sur]]
+* [[faire la maligne]]
+* [[faire la manche]]
+* [[faire la minette]]
+* [[faire la moisson]]
+* [[faire la monnaie]]
+* [[faire la morale]]
+* [[faire la moue]]
+* [[faire la navette]]
+* [[faire la nique]]
+* [[faire la noce]]
+* [[faire la paix]]
+* [[faire la Pâque]], [[faire la pâque|pâque]]
+* [[faire la part des choses]]
+* [[faire la part du feu]]
+* [[faire la peau]]
+* [[faire la pote]]
+* [[faire la poudrette]]
+* [[faire la pluie et le beau temps]]
+* [[faire la quête]]
+* [[faire la queue]]
+* [[faire la roue]]
+* [[faire la rue Michel]]
+* [[faire la rue Thubaneau]]
+* [[faire la sourde oreille]]
+* [[faire la tête]]
+* [[faire la tête au carré]]
+* [[faire la tournée des bistrots]]
+* [[faire la tournée des grands-ducs]]
+* [[faire la tronche]]
+* [[faire la une]]
+* [[faire la vaisselle]]
+* [[faire la valise]]
+* [[faire la vie dure]]
+* [[faire le barbot]]
+* [[faire le beau]]
+* [[faire le bonhomme]]
+* [[faire le bourdon]]
+* [[faire le cake]]
+* [[faire le carême]]
+* [[faire le clown]]
+* [[faire le con]]
+* [[faire le coq]]
+* [[faire le coup de fusil]]
+* [[faire le coup de poing]]
+* [[faire le cul de poule]]
+* [[faire le deuil]]
+* [[faire le difficile]]
+* [[faire le dos rond]]
+* [[faire-le-faut]], [[faire le faut]]
+* [[faire le fou]]
+* [[faire le Gilles]]
+* [[faire le gros dos]]
+* [[faire le jacques]]
+* [[faire le joli cœur]]
+* [[faire le kéké]]
+* [[faire le lézard]]
+* [[faire le lien]]
+* [[faire le lit]]
+* [[faire le malin]]
+* [[faire le mariole]]
+* [[faire le marmiton]]
+* [[faire le ménage]]
+* [[faire le mort]]
+* [[faire le mur]]
+* [[faire le nord]]
+* [[faire le paon]]
+* [[faire le pied de grue]]
+* [[faire le pitre]]
+* [[faire le pont]]
+* [[faire le pont-levis]]
+* [[faire le plein]]
+* [[faire le pli]]
+* [[faire le poids]]
+* [[faire le poil]]
+* [[faire le point]]
+* [[faire le poireau]]
+* [[faire le pont]]
+* [[faire le premier pas]]
+* [[faire le rat mort]]
+* [[faire le sale boulot]]
+* [[faire le saut]]
+* [[faire le tapin]]
+* [[faire le tigre]]
+* [[faire le tour du propriétaire]]
+* [[faire le trottoir]]
+* [[faire le trou]]
+* [[faire le zèbre]]
+* [[faire le zouave]]
+* [[faire les boutiques]]
+* [[faire les choses à moitié]]
+* [[faire les quatre cents coups]]
+* [[faire les courses]]
+* [[faire les foins]]
+* [[faire les frais]]
+* [[faire les gros yeux]]
+* [[faire les cornes à]]
+* [[faire les magasins]]
+* [[faire les poches]]
+* [[faire les poubelles]]
+* [[faire les vendanges]]
+* [[faire les yeux doux]]
+* [[faire les yeux ronds]]
+* [[faire loi]]
+* [[faire long feu]]
+* [[faire machine arrière]]
+* [[faire main basse]]
+* [[faire mal]]
+* [[faire marcher]]
+* [[faire mauvais accueil]]
+* [[faire mauvais genre]]
+* [[faire mention de]]
+* [[faire mieux de]]
+* [[faire mine de]]
+* [[faire miroiter]]
+* [[faire montre de]]
+* [[faire mouche]]
+* [[faire naufrage]]
+* [[faire obstruction]]
+* [[faire office de]]
+* [[faire opposition]]
+* [[faire panpan cucul]]
+* [[faire parler la poudre]]
+* [[faire Pâques avant les Rameaux]]
+* [[faire part]]
+* [[faire partie]]
+* [[faire passer l’envie de quelque chose]]
+* [[faire patte de velours]]
+* [[faire peau neuve]]
+* [[faire peine]]
+* [[faire pencher la balance]]
+* [[faire pénitence]]
+* [[faire petite chère]]
+* [[faire peur]]
+* [[faire pipi]]
+* [[faire pitié]]
+* [[faire place nette]]
+* [[faire place]]
+* [[faire place nette]]
+* [[faire plaisir]]
+* [[faire pleurer le colosse]]
+* [[faire porter le chapeau]]
+* [[faire prendre le change]]
+* [[faire profil bas]]
+* [[faire que fou]]
+* [[faire que sage]]
+* [[faire rage]]
+* [[faire référence à]]
+* [[faire revenir]]
+* [[faire ripaille]]
+* [[faire risette]]
+* [[faire route]]
+* [[faire sa B.A.]]
+* [[faire sa tête]]
+* [[faire sa valise]]
+* [[faire sa Vanessa]]
+* [[faire salle comble]]
+* [[faire sauter]]
+* [[faire sauter la banque]]
+* [[faire sauter la grenouille]]
+* [[faire sauter le bouchon]]
+* [[faire semblant]]
+* [[faire sensation]]
+* [[faire ses dents]]
+* [[faire ses humanités]]
+* [[faire ses lacets]]
+* [[faire ses Pâques]]
+* [[faire ses premières armes]]
+* [[faire ses valises]]
+* [[faire ses choux gras]]
+* [[faire silence]]
+* [[faire son âge]]
+* [[faire son beurre]]
+* [[faire son chemin]]
+* [[faire son deuil]]
+* [[faire son droit]]
+* [[faire son Kevin]]
+* [[faire son temps]]
+* [[faire son trou]]
+* [[faire sprinter l’unijambiste]]
+* [[faire suer le burnous]]
+* [[faire surface]]
+* [[faire table rase]]
+* [[faire tache d’encre]]
+* [[faire tache d’huile]]
+* [[faire tapis]]
+* [[faire tapisserie]]
+* [[faire tête]]
+* [[faire tilt]]
+* [[faire tintin]]
+* [[faire tourner en bourrique]]
+* [[faire tourner chèvre]]
+* [[faire trempette]]
+* [[faire un bail]]
+* [[faire un bide]]
+* [[faire un blocage]]
+* [[faire un caca nerveux]]
+* [[faire un crime]]
+* [[faire un enfant]]
+* [[faire un enfant dans le dos]]
+* [[faire un faux pas]]
+* [[faire un four]]
+* [[faire un grand pas]]
+* [[faire un malheur]]
+* [[faire un marché]]
+* [[faire un petit dans le dos]]
+* [[faire un pont d’or]]
+* [[faire un prix]]
+* [[faire un sale boulot]]
+* [[faire un saut]]
+* [[faire un tabac]]
+* [[faire un tonneau]]
+* [[faire un tour]]
+* [[faire une]]
+* [[faire une corne à un livre]]
+* [[faire une croix]]
+* [[faire une croix sur]]
+* [[faire une fin]]
+* [[faire une fleur]]
+* [[faire une lessive]]
+* [[faire une machine]]
+* [[faire une main]]
+* [[faire une montagne]]
+* [[faire une passe]]
+* [[faire une partie de jambes en l’air]]
+* [[faire une queue de poisson]]
+* [[faire une scène]]
+* [[faire une vie]]
+* [[faire usage]]
+* [[faire vibrer]]
+* [[faire vivre]]
+* [[faire voile]]
+* [[fasse le ciel que]]
+* [[homme à tout faire]]
+* [[il pourrait bien se faire que]]
+* [[laissez-faire]]
+* [[le faire]], [[la faire]] (néologisme de plus en plus répandu, par exemple ''ça ne va pas le faire'', ''ça devrait le faire'')
+* [[le faire à]]
+* [[malfaisant]]
+* [[manger à s’en faire péter la sous-ventrière]]
+* [[n’avoir que faire]]
+* [[n’en faire qu’à sa tête]]
+* [[n’en rien faire]]
+* [[ne faire ni chaud ni froid]]
+* [[ne faire que]]
+* [[ne pas avoir fait une panse d’a]]
+* [[ne pas faire dans la dentelle]]
+* [[ne pas faire long feu]]
+* [[ne pas faire de mal à une mouche]]
+* [[ne pas faire de quartier]]
+* [[ne pas faire de vieux os]]
+* [[ne rien avoir à faire avec]]
+* [[ne rien faire de ses dix doigts]]
+* [[phrase toute faite]]
+* [[refaire]]
+* [[rien à faire]]
+* [[s’en faire]]
+* [[savoir y faire]]
+* [[se faire appeler Arthur]]
+* [[se faire brasser le Canayen]]
+* [[se faire carotte]]
+* [[se faire des cheveux blancs]]
+* [[se faire des couilles en or]]
+* [[se faire des fausses idées]]
+* [[se faire des films]]
+* [[se faire du mouron]]
+* [[se faire du mauvais sang]]
+* [[se faire fort]] de…
+* [[se faire frotter les oreilles]]
+* [[se faire jour]]
+* [[se faire hacher en pièces]]
+* [[se faire la main]]
+* [[se faire la malle]]
+* [[se faire manger la cenne]]
+* [[se faire péter la sous-ventrière]]
+* [[se faire remonter les bretelles]]
+* [[se faire sauter le caisson]]
+* [[se faire son cinéma]]
+* [[se faire taper sur les doigts]]
+* [[se faire tasser la boîte à caca]]
+* [[se faire tirer]]
+* [[se faire tirer le portrait]]
+* [[se faire tirer l’oreille]]
+* [[se faire tirer les oreilles]]
+* [[se faire une raison]]
+* [[se faire une toile]]
+* [[se laisser faire]]
+* [[si fait]]
+* [[sitôt dit, sitôt fait]]
+* [[tant qu’à faire]]
+* [[tous les jours que Dieu fait]]
+* [[trop en faire]]
+* [[vite fait, bien fait]]
+* [[y faire]]
+{{)}}
+
+==== {{S|phrases}} ====
+{{(}}
+* [[bien faire et laisser dire]]
+* [[bien faire et laisser braire]]
+* [[ça commence à bien faire]]
+* [[ça lui fait une belle jambe]]
+* [[ça ne fait rien]]
+* [[ça va lui faire un coup]]
+* [[c’est bien fait]]
+* [[c’est ce qui se fait de mieux]]
+* [[c’est chose faite]]
+* [[c’est dans les vieux pots qu’on fait la meilleure soupe]]
+* [[c’est dans les vieux pots qu’on fait les meilleures confitures]]
+* [[c’est ni fait ni à faire]]
+* [[ce qui est fait est fait]]
+* [[cela m’en touche une sans faire bouger l’autre]]
+* [[cela va faire du bruit dans Landerneau]]
+* [[comme on fait son lit, on se couche]]
+* [[faire et défaire c’est toujours travailler]]
+* [[fais ce que dois, advienne que pourra]]
+* [[l’habit ne fait pas le moine]]
+* [[l’occasion fait le larron]]
+* [[l’union fait la force]]
+* [[le diable ne lui ferait pas faire ceci]]
+* [[les chiens ne font pas des chats]]
+* [[les petits ruisseaux font les grandes rivières]]
+* [[on fait de bonne soupe dans un vieux pot]]
+* [[ne fais pas à autrui ce que tu ne voudrais pas qu’on te fît]]
+* [[nécessité fait loi]]
+* [[on ne saurait faire d’une buse un épervier]]
+* [[Paris ne s’est pas fait en un jour]]
+* [[petit à petit, l’oiseau fait son nid]]
+* [[pourquoi faire compliqué quand on peut faire simple]]
+* [[pourquoi faire simple quand on peut faire compliqué]]
+* [[qui se fait brebis, le loup le mange]]
+* [[qui veut faire l’ange fait la bête]]
+{{)}}
+
+==== {{S|traductions}} ====
+{{trad-début|Créer, produire, fabriquer}}
+* {{T|af}} : {{trad+|af|maak}}
+* {{T|de}} : {{trad+|de|machen}}, {{trad+|de|tun}}
+* {{T|en}} : {{trad+|en|make}}
+* {{T|ar}} : {{trad-|ar|جعل|tr=jaʿala}}
+* {{T|ba}} : {{trad--|ba|эшләү}}, {{trad--|ba|ҡылыу}}, {{trad--|ba|яһау}}
+* {{T|bm}} : {{trad--|bm|kɛ}}
+* {{T|bar}} : {{trad--|bar|mochn}}
+* {{T|brabançon}} : {{trad--|brabançon|moeëke}} (brusseleer), {{trad--|brabançon|mooke}} (leuvens)
+* {{T|br}} : {{trad-|br|gober}}, {{trad+|br|ober}}
+* {{T|ca}} : {{trad+|ca|fer}}
+* {{T|shy}} : {{trad--|shy|yegga}}, {{trad--|shy|yeyya}}
+* {{T|zh}} : {{trad+|zh|做|tr=zuò}}, {{trad+|zh|制作|tradi=製作|tr=zhìzuò}}, {{trad+|zh|制造|tradi=製造|tr=zhìzào}}
+* {{T|ko}} : {{trad+|ko|만들다|tr=mandeulda}}, {{trad+|ko|작성하다|tr=jakseonghada|tradi=作成하다}}
+* {{T|es}} : {{trad+|es|hacer}}
+* {{T|eo}} : {{trad+|eo|fari}}
+* {{T|fi}} : {{trad+|fi|tehdä}}
+* {{T|gd}} : {{trad-|gd|dèan}}
+* {{T|gag}} : {{trad--|gag|yapmaa}}
+* {{T|el}} : {{trad+|el|κάνω|R=káno}}
+* {{T|sah}} : {{trad--|sah|оҥор}}
+* {{T|it}} : {{trad+|it|fare}}
+* {{T|ja}} : {{trad+|ja|作る|tr=tsukuru}}, {{trad-|ja|作成する|tr=sakuseisuru}}
+* {{T|krc}} : {{trad--|krc|этерге}}
+* {{T|kk}} : {{trad+|kk|жасау|tr=jasaw}}, {{trad+|kk|істеу|tr=istew}}, {{trad+|kk|қылу|tr=qıluw}}
+* {{T|ky}} : {{trad+|ky|жасоо}}, {{trad+|ky|иштөө}}
+* {{T|kum}} : {{trad--|kum|этмек}}
+* {{T|li}} : {{trad-|li|machen}}
+* {{T|mg}} : {{trad+|mg|manao}}
+* {{T|nl}} : {{trad+|nl|maken}}, {{trad+|nl|creëren}}, {{trad+|nl|produceren}}, {{trad+|nl|fabriceren}}
+* {{T|no}} : {{trad+|no|lage}}
+* {{T|oc}} : {{trad+|oc|far}}, {{trad+|oc|faire}}
+* {{T|fa}} : {{trad+|fa|کردن}}
+* {{T|pl}} : {{trad+|pl|robić}}
+* {{T|pt}} : {{trad+|pt|fazer}}
+* {{T|ro}}&nbsp;: a {{trad+|ro|face}}, a {{trad+|ro|produce}}
+* {{T|ru}} : {{trad+|ru|делать|R=delat’}}
+* {{T|se}} : {{trad--|se|bargat}}, {{trad--|se|dahkat}}
+* {{T|sa}} : {{trad+|sa|करोति|R=karoti}}
+* {{T|zdj}} : {{trad--|zdj|-umɓa|dif=huumɓa}}, {{trad--|zdj|-fua|dif=ufua}}
+* {{T|sv}} : {{trad+|sv|göra}}
+* {{T|crh}} : {{trad--|crh|yapmaq}}, {{trad--|crh|yasamaq}}
+* {{T|tt}} : {{trad-|tt|ясау}}
+* {{T|tr}} : {{trad+|tr|yapmak}}, {{trad+|tr|etmek}}
+* {{T|tk}} : {{trad+|tk|etmek}}, {{trad-|tk|ýasamak}}
+* {{T|uk}} : {{trad-|uk|робити|R=robyty}}
+* {{T|cu}} : {{trad--|cu|дѣлати}}
+{{trad-fin}}
+
+{{trad-début|Préparer un repas, le cuisiner}}
+* {{T|en}} : {{trad+|en|make}}
+* {{T|bar}} : {{trad--|bar|hearichtn}}, {{trad--|bar|mochn}}
+* {{T|zh}} : {{trad+|zh|做|tr=zuò}}
+* {{T|ko}} : {{trad+|ko|만들다|tr=mandeulda}}
+* {{T|fi}} : {{trad+|fi|tehdä}}, {{trad+|fi|valmistaa}}
+* {{T|ja}} : {{trad+|ja|作る|tr=tsukuru}}
+* {{T|kk}} : {{trad-|kk|әзірлеу|tr=äzirlew}}, {{trad-|kk|пісіру|tr=pisirüw}}, {{trad-|kk|дайындау|tr=dayındaw}}
+* {{T|nl}} : {{trad+|nl|klaarmaken}}, {{trad+|nl|bereiden}}, {{trad+|nl|koken}}
+* {{T|pl}} : {{trad+|pl|robić}}
+{{trad-fin}}
+
+{{trad-début|Élaborer, en parlant des œuvres de l’intelligence et de l’imagination}}
+* {{T|en}} : {{trad+|en|carry out}}
+* {{T|bar}} : {{trad--|bar|mochn}}
+* {{T|nl}} : {{trad+|nl|maken}}, {{trad+|nl|doen}}
+{{trad-fin}}
+
+{{trad-début|Opérer, effectuer, exécuter, accomplir, réaliser, que ce soit d’ordre physique ou d’ordre moral}}
+* {{T|de}} : {{trad+|de|tun}}
+* {{T|en}} : {{trad+|en|make}} ''(war, peace, a truce)'', {{trad+|en|make}} ''(noise)'', {{trad+|en|make}} ''(one’s excuses)'', {{trad+|en|make}} ''(a promise, an oath)'', {{trad+|en|take}} ''(prisoners)'', {{trad+|en|do}} ''(good, evil)'', {{trad+|en|work}} ''(a miracle)''
+* {{T|az}} : {{trad+|az|etmək}}
+* {{T|bar}} : {{trad--|bar|mochn}}
+* {{T|swb}} : {{trad--|swb|utsimidza}}
+* {{T|nl}} : {{trad+|nl|doen}}, {{trad+|nl|maken}}, {{trad+|nl|uitvoeren}}
+* {{T|pdt}} : {{trad--|pdt|doonen}}
+* {{T|tr}} : {{trad+|tr|etmek}}
+{{trad-fin}}
+
+{{trad-début|Se mouvoir dans un déplacement d’un lieu à un autre}}
+* {{T|vls}} : {{trad--|vls|doen}}
+* {{T|nl}} : {{trad+|nl|doen}}, {{trad+|nl|maken}}
+{{trad-fin}}
+
+{{trad-début|Employer ses forces, ses talents, l’activité de son esprit ; s’en occuper, y passer son temps}}
+* {{T|en}} : {{trad+|en|do}}
+* {{T|bar}} : {{trad--|bar|doa}}, {{trad--|bar|mochn}}
+* {{T|nl}} : {{trad+|nl|uitvoeren}}, {{trad+|nl|doen}}
+{{trad-fin}}
+
+{{trad-début|Être la cause de tel ou tel résultat ou en être l’occasion|17}}
+* {{T|nl}} : {{trad+|nl|doen}}, {{trad+|nl|maken}}
+* {{T|zdj}} : {{trad--|zdj|utsonga}}, {{trad--|zdj|-tsongeza|dif=utsongeza}}
+{{trad-fin}}
+
+{{trad-début|(Impersonnel) Il fait : s’emploie pour marquer la nature, l’état, la disposition ou les qualités}}
+* {{T|en}} : {{trad+|en|is}}
+* {{T|ca}} : {{trad+|ca|fer}}
+* {{T|es}} : {{trad+|es|hacer}}
+* {{T|nl}} : {{trad+|nl|zijn}}
+* {{T|oc}} : {{trad+|oc|far}}
+* {{T|pl}} : {{trad+|pl|jest}}
+{{trad-fin}}
+
+{{trad-début|(Pronominal, impersonnel) Se faire, arriver}}
+* {{T|de}} : {{trad+|de|geschehen}}, {{trad+|de|eintreten}}, {{trad+|de|passieren}}
+* {{T|en}} : {{trad+|en|happen}}
+* {{T|nl}} : {{trad+|nl|gebeuren}}, {{trad+|nl|zijn}}
+{{trad-fin}}
+
+{{trad-début|(Pronominal, impersonnel) Être convenable|46}}
+* {{T|zdj}} : {{trad--|zdj|-renɗeha|tr=urendeha|dif=urenɗeha}}
+{{trad-fin}}
+
+{{trad-début|(auxiliaire de mode construit avec un infinitif) Être la cause de quelque chose ou d’une action}}
+* {{T|de}} : {{trad+|de|lassen}}
+* {{T|en}} : {{trad+|en|make}}
+* {{T|ja}} : {{trad+|ja|させる|tr=saseru}}, {{trad+|ja|せる|tr=-seru}}, {{trad+|ja|させる|tr=-saseru}}
+* {{T|zdj}} : {{trad--|zdj|-renɗa|tr=urenda|dif=urenɗa}}
+{{trad-fin}}
+
+{{trad-début|Faire du sport, une activité}}
+* {{T|de}} : {{trad+|de|treiben}}
+* {{T|en}} : {{trad+|en|play}}
+* {{T|es}} : {{trad+|es|practicar}}
+* {{T|vls}} : {{trad--|vls|doen}}
+* {{T|kk}} : {{trad-|kk|айналысу|tr=aynalısuw}}, {{trad-|kk|шұғылдану|tr=şuğıldanuw}}
+* {{T|nl}} : {{trad+|nl|doen}}, {{trad+|nl|beoefenen}}
+* {{T|pl}} : {{trad+|pl|uprawiać}}
+{{trad-fin}}
+
+===== {{S|traductions à trier}} =====
+{{trad-début}}
+* {{T|grc|trier}} : {{trad--|grc|ποιέω|R=poiéô}}, {{trad--|grc|πράττω|R=práttô}}
+* {{T|hbo|trier}} : {{trad--|hbo|עשה|dif=עשׂה}} {{m}}
+* {{T|cs}} : {{trad+|cs|dělat}}
+{{trad-fin}}
+
+=== {{S|nom|fr}} ===
+{{fr-inv|fɛʁ}}
+'''faire''' {{pron|fɛʁ|fr}} {{m}}
+# Action de faire, [[action]].
+#* ''La pédagogie, entre le dire et le '''faire'''.''
+#* ''La fable joue de la distinction entre le '''faire''' et le paraître.''
+
+==== {{S|traductions}} ====
+{{trad-début|{{cf|action|lang=fr}}}}
+{{trad-fin}}
+
+=== {{S|prononciation}} ===
+* {{pron|fɛʁ|fr}}
+** {{écouter|lang=fr|France|fɛʁ|audio=Fr-faire.ogg}}
+* Français méridional : {{pron|ˈfɛ.ʁə|fr}}
+* Canada : {{pron|fɛːʁ|fr}}, {{phon|faɛ̯ʁ|fr}}
+* {{écouter|lang=fr|France (Paris)|audio=LL-Q150 (fra)-GrandCelinien-faire.wav}}
+* {{écouter|lang=fr|Suisse (canton du Valais)|audio=LL-Q150 (fra)-DSwissK-faire.wav}}
+* {{écouter|lang=fr|France (Brétigny-sur-Orge)|audio=LL-Q150 (fra)-Pamputt-faire.wav}}
+
+==== {{S|homophones|fr}} ====
+* [[fer]]
+* [[ferre]], [[ferrent]], [[ferres]] (formes du verbe ''[[ferrer]]'')
+
+=== {{S|anagrammes}} ===
+* [[féria]]
+* [[ferai]]
+* [[fraie]]
+
+=== {{S|références}} ===
+* {{R:TLFi}}
+
+== {{langue|fro}} ==
+=== {{S|verbe|fro}} ===
+'''faire''' {{pron|ˈfaɪ.rə|fro}}
+# {{term|processus}} [[faire|Faire]] quelque chose.
+#* '''''Faire''' a'' + verbe ou nom : être la cause de, mériter, être digne de.
+#* '''''Faire''' son aisement'', '''''faire''' ses aisemenz'' : faire ses besoins.
+#* '''''Faire''' amie'' : se procurer une amie.
+#* '''''Faire''' la marmitaine'' : faire le bon apôtre.
+#* '''''Faire''' pais'' : faire la paix.
+#* '''''Faire''' le veloset'' : faire le câlin, faire patte de velours.
+# {{term|manière}} Se [[comporter]].
+#* '''''Faire''' d’armes'' : se montrer vaillant.
+# {{term|emploi de substitution}} Se [[porter]], se [[comporter]], [[dire]], [[parler]].
+#* '''''Faire''' blasme'' : blâmer.
+#* '''''Faire''' fausseté'' : se tromper.
+# [[faire#fr|Faire]], [[dire]], [[exprimer]] par des [[mot]]s.
+#* ''Nenil nenil '''fet''' la geline'' {{source|1=''Le Ysope'', {{w|Marie de France}}, [http://www.bl.uk/manuscripts/Viewer.aspx?ref=harley_ms_978_f067r f. 67r, 2{{e}} colonne de ce manuscrit de 1275-1300]}}
+#*: Non, non, fait la poule
+# {{impersonnel|fro}} [[faire#fr|Faire]].
+#* ''en yver quant '''fet''' freit'' {{source|1=''Le secré des secrez'', vers n<sup><u>o</u></sup> 2064, édition de {{pc|Beckerlegge}}, Anglo-Norman Text Society, 1944}}
+#*:
+
+==== {{S|variantes orthographiques}} ====
+* {{lien|fere|fro}}
+
+== {{langue|pro}} ==
+=== {{S|verbe|pro}} ===
+'''faire'''
+# {{variante de|far}}.
+
+=== {{S|références}} ===
+* {{R:Raynouard}}
+
+== {{langue|en}} ==
+=== {{S|étymologie}} ===
+: De l’{{étyl|fro|fr}} ''[[feire]]''.
+
+=== {{S|nom|en}} ===
+{{en-nom-rég|}}
+'''faire'''
+# Orthographe alternative de ''[[fair#en|fair]]'' ([[foire]]).
+#* ''The How Weird Street '''Faire''' is an outdoor street festival held in San Francisco.''
+
+== {{langue|gallo}} ==
+=== {{S|étymologie}} ===
+: {{ébauche-étym|gallo}}
+
+=== {{S|nom|gallo}} ===
+{{gallo-rég}}
+'''faire''' {{pron||gallo}} {{f}} {{gallo-graphie ABCD}}
+# [[foire|Foire]].
+
+==== {{S|synonymes}} ====
+* {{lien|feirr|gallo}}
+* {{lien|fouere|gallo}}
+* {{lien|anjevine|gallo}}
+
+=== {{S|références}} ===
+* {{Ouvrage|prénom1=Régis|nom1=Auffray|titre=Le petit Matao|éditeur=Rue des Scribes|isbn=978-2-906064-64-5|passage=716}}
+
+== {{langue|oc}} ==
+=== {{S|étymologie}} ===
+: Du {{étyl|la|oc|facere}}.
+
+=== {{S|verbe|oc}} ===
+'''faire''' {{pron|ˈfaj.re|oc}} {{oc-norme classique}}
+# [[faire#fr|Faire]].
+
+==== {{S|variantes}} ====
+* [[far#oc|far]]
+
+==== {{S|variantes dialectales}} ====
+* [[hèr#oc|hèr]] {{oc gascon|nocat=1}}
+
+=== {{S|références}} ===
+* {{R:Cantalausa}}

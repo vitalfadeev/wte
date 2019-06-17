@@ -1,0 +1,25 @@
+﻿== {{lengua|es}} ==
+{{pron-graf}}
+
+=== Etimología ===
+{{etimología|sufijo|ébano|ista}}
+
+=== {{sustantivo femenino y masculino|es}} ===
+{{inflect.es.sust.ad-lib|ebanista|ebanistas|ebanista|ebanistas|link=s}}
+[[Categoría:ES:Oficios]][[Categoría:ES:Ocupaciones]]
+;1: Persona cuyo [[oficio]] es el [[tallado]] de la [[madera]]. A diferencia del [[carpintero]], el ebanista se especializa en el tallado de [[moldura]]s y [[bajorrelieve]]s, si bien ambos se relacionan con la fabricación de [[mueble]]s.
+{{relacionado|ébano}}.
+
+=== Véase también ===
+{{w}}
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+{{t+|bg|1|столар|,|мебелист}}, работещ с абанос
+{{trad-centro}}
+{{trad-abajo}}
+
+== Referencias y notas ==
+<references />

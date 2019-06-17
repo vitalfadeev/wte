@@ -1,0 +1,14 @@
+﻿== {{lengua|es}} ==
+{{pron-graf|fone=ˈɡa.tos|ac=g}}
+
+=== Forma sustantiva masculina ===
+;1: {{forma sustantivo plural|gato}}.
+
+=== Información adicional ===
+{{anagrama|gasto|gotas|togas}}.
+
+=== Véase también ===
+* {{Wikipedia}}
+
+== Referencias y notas ==
+<references />

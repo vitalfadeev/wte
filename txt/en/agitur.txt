@@ -1,0 +1,24 @@
+==Latin==
+
+===Pronunciation===
+* {{la-IPA}}
+
+===Verb===
+{{la-verb-form|agitur}}
+
+# {{inflection of|agō||3|s|pres|pasv|indc|lang=la}}
+## "<span title="he, she or it">it</span> is done, <span title="he, she or it">it</span> is made"
+## "it is accomplished, <span title="he, she or it">it</span> is managed, it is achieved"
+## "it is performed, it is transacted"
+## "<span title="he, she or it">it</span> is driven, <span title="he, she or it">it</span> is conducted"
+## "<span title="he, she or it">it</span> is pushed, <span title="he, she or it">it</span> is moved, <span title="he, she or it">it</span> is impelled"
+## "<span title="he, she or it">it</span> is guided, <span title="he, she or it">it</span> is governed, it is administered"
+## "<span title="he, she or it">it</span> is discussed, it is pleaded, it is deliberated"
+## "<span title="he, she or it">it</span> is thought&nbsp;upon"
+## "<span title="he, she or it">it</span> is stirred&nbsp;up, <span title="he, she or it">it</span> is excited, <span title="he, she or it">it</span> is caused, <span title="he, she or it">it</span> is induced"
+## "<span title="he, she or it">it</span> is chased, <span title="he, she or it">it</span> is pursued"
+## {{lb|la|of a course of action}}&nbsp;"it is driven, <span title="he, she or it">it</span> is pursued"
+## "<span title="he, she or it">it</span> is robbed, <span title=he, she or it">it</span> is stolen, it is plundered, <span title="he, she or it">it</span> is carried&nbsp;off"
+## {{lb|la|of time}}&nbsp;"it is passed, <span title="he, she or it">it</span> is spent"
+## {{lb|la|of offerings}}&nbsp;"<span title="he, she or it">it</span> is slain, <span title="he, she or it">it</span> is killed&nbsp;(as a sacrifice)"
+## {{lb|la|of plants}}&nbsp;"it is put&nbsp;forth, it is sprouted, it is extended"

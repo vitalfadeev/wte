@@ -1,0 +1,54 @@
+﻿== Torben ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Substantiv|Deutsch}}, {{m}}, {{Wortart|Vorname|Deutsch}} ===
+
+{{Deutsch Vorname Übersicht m
+|Nominativ Singular=Torben
+|Nominativ Plural=Torbens
+|Genitiv Singular=Torbens
+|Genitiv Plural=Torbens
+|Dativ Singular=Torben
+|Dativ Plural=Torbens
+|Akkusativ Singular=Torben
+|Akkusativ Plural=Torbens
+}}
+
+{{Worttrennung}}
+:Tor·ben, {{Gen.}} Tor·bens
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ˈtɔʁbn̩}}
+:{{Hörbeispiele}} {{Audio|De-Torben.ogg}}
+:{{Reime}} {{Reim|ɔʁbn̩|Deutsch}}
+
+{{Bedeutungen}}
+:[1] männlicher [[Vorname]]
+
+{{Herkunft}}
+:ursprünglich [[dänisch]]e Variante von [[Thorbjørn]]
+
+{{Verkleinerungsformen}}
+:[1] [[Torbi]]
+
+{{Alternative Schreibweisen}}
+:[1] [[Thorben]]
+
+{{Bekannte Namensträger}}
+:[1] [[w:Torben Sander|Torben Sander]], [[w:Torben Wosik|Torben Wosik]], [[w:Torben Hoffmann|Torben Hoffmann]]
+
+{{Beispiele}}
+:[1] ''Torben'' war der angenehmste Mitbewohner der letzten 10 Jahre.
+
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{no}}: [1] {{Ü|no|Thorbjørn}}
+|Ü-rechts=
+*{{sv}}: [1] {{Ü|sv|Thorbjörn}}
+}}
+
+{{Referenzen}}
+:[1] {{Wikipedia|Torben}}
+:[1] {{Wikipedia|Thorbjörn}}
+:[1] {{Ref-behindthename|Torben}}
+:[1] {{Ref-babynamespedia|Torben}}
+
+{{Ähnlichkeiten 1|[[toben]]}}

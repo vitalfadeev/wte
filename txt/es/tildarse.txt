@@ -1,0 +1,36 @@
+﻿== {{lengua|es}} ==
+{{pron-graf}}
+
+=== Etimología ===
+{{etimología2|de ''tiltar'' (obsoleto, defectivo) «''se tiltó el flipper''», y éste de los carteles <small>''TILT''</small> < inglés ''[[tilt]]'', inclinación}}
+
+=== {{verbo pronominal|es}} ===
+;1: Bloquearse el ''flipper'' o ''[[pinball]]'' por haber recibido demasiadas [[sacudida]]s.
+{{ámbito|Argentina}}
+{{uso|coloquial}}
+;2: Bloquearse o dejar de responder al [[usuario]] una [[computadora]], [[artefacto]] [[electrónico]] o [[programa]] [[informático]].
+:* '''Ejemplo:''' Se ''tildó'' el Word y perdí todo lo escrito.
+{{sinónimo|colgarse|trabarse}}.
+{{ámbito|Argentina}}
+{{uso|coloquial}}
+;6: Por extensión, entrar una [[persona]] en estado de [[estupor]], ignorando estímulos y sin poder pensar con claridad.
+:* '''Ejemplo:''' En Los Angeles me tuvieron que internar, porque estaba ''tildado''. Si seguía con la mirada fija en un punto de la habitación me moría ahí mismo. El médico dio con el diagnóstico enseguida: panic attack. <small>LEÓN GIECO, entrevista de ROLLING STONE PANAMÁ</small>
+{{ámbito|Argentina}}
+{{uso|coloquial}}
+
+=== Conjugación ===
+{{es.v.conj.arse|tild|tíld}}
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+{{t+|de|absturzen}}
+{{t+|fr|plantager}}
+{{trad-centro}}
+{{t+|en|hang}}
+{{t+|ru|зависание}}
+{{trad-abajo}}
+
+== Referencias y notas ==
+<references />

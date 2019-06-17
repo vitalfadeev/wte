@@ -1,0 +1,40 @@
+﻿{{desambiguación}}
+{{esbozo}}
+
+== {{lengua|es}} ==
+{{pron-graf}}
+
+=== Etimología ===
+{{etimología}}
+
+=== {{verbo transitivo|es}} ===
+
+;1: <ref name=drae>{{DRAE}}.</ref>
+
+=== Conjugación ===
+{{es.v.conj.-ie-ue-.ar|hacend|haciend}}
+
+=== Véase también ===
+* [[hacendarse]]
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+<!--{{t+|de|?|}}-->
+<!--{{t+|ar|?|}}-->
+<!--{{t+|bg|?|}}-->
+<!--{{t+|ca|?|}}-->
+<!--{{t+|eo|?|}}-->
+<!--{{t+|fr|?|}}-->
+{{trad-centro}}
+<!--{{t+|en|?|}}-->
+<!--{{t+|it|?|}}-->
+<!--{{t+|ja|?|}}-->
+<!--{{t+|nl|?|}}-->
+<!--{{t+|pl|?|}}-->
+<!--{{t+|pt|?|}}-->
+{{trad-abajo}}
+
+== Referencias y notas ==
+<references />

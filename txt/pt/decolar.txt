@@ -1,0 +1,15 @@
+﻿={{-pt-}}=
+==Verbo==
+{{oxítona|de|co|lar}}
+# [[levantar voo]], [[voar]]
+
+===Conjugação===
+{{conj/pt|decol|ar}}
+
+===Tradução===
+{{tradini|De '''1''' (levantar voo)}}
+* {{trad|en|take off}}
+{{tradmeio}}
+{{tradfim}}
+
+[[Categoria:Verbo (Português)]]

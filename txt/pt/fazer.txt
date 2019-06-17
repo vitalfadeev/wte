@@ -1,0 +1,228 @@
+﻿={{-pt-}}=
+==Verbo==
+{{oxítona|fa|zer}}
+# {{escopo2|transitivo}} [[dar]] [[existência]] ou [[forma]] a
+# {{escopo2|transitivo}} [[executar]] uma ação
+# {{escopo2|transitivo}} [[conceder]] (graça ou mercê)
+# {{escopo2|reflexivo}} [[transformar]]-se em
+# {{escopo2|intransitivo}} [[atingir]] um [[objetivo]]
+# {{escopo2|transitivo direto}} [[consumir]], [[comer]]
+#* ''Observava os pássaros enquanto '''fazia''' sua refeição.''
+#* ''Obrigado por oferecer-me uma fatia, mas eu não estou com fome, '''fiz''' um lanche antes de vir pra cá.''
+# {{escopo|pt|Brasil}} acondicionar alimento em (um recipiente para que posteriormente dele se possa ou se venha a alimentar-se)
+#* ''Já '''fez''' seu prato? '''Faça''', não fique sem graça.''
+# {{escopo|pt|Informal}} exercer como atividade laboral, como meio de ganho de vida
+#* ''Perguntei a ela o que ela '''fazia''', numa conversa despretensiosa, e ela me disse que era engenheira.''
+# {{escopo|pt|Coloquial|informal}} [[cursar]]
+#* '''''Fazia''' Letras, com uma bolsa paga, até que decidiu que não era o que queria.''
+# {{escopo|pt|Fisiologia}} liberar produto de desassimilação ou digestão que estavam retidos em um órgão ou parte de um aparelho para o meio externo pela via natural
+#* '''''Fazer''' xixi, '''fazer''' cocô, '''fazer''' pum, não necessariamente nessa ordem.''
+#* '''''Fazer''' necessidades.''
+#* '''''Fez''' caquinha, tira daqui, troca agora! Não, sai pra lá! Uh!''
+# [[fingir]]
+#* ''Quando ela passou perto dele, ele desviou o olhar e '''fez''' que estava olhando as flores.''
+# {{escopo2|transitivo}} [[ter]]
+#* ''Não '''faço''' ideia.''
+#* ''Não '''faço''' a mínima.''
+# [[interpretar]]
+#* ''No seu último filme a atriz '''faz''' o papel de uma executiva recém-nomeada presidente de uma companhia que tem a missão de salvar sua empresa da falência enquanto que na vida pessoal está em meio a um conflito familiar.''
+{{oxítona|fa|zer}}, {{gramática|pron|vti}}
+# {{cont|14}} simular o [[comportar]] (regência verbal com preposição: [[de]])
+#* ''A: —"Quando eu perguntei para ela, ela disse que não sabia, será que ela '''se fez''' de desentendida?" B: —"Lógico que '''se fez''', não seja tonta, ela sabia."''
+#* ''Não '''se faça''' de idiota, você sabe bem do que eu estou falando.''
+#* ''Ela '''se faz''' de santinha na vista do público.''
+{{oxítona|fa|zer}}, {{gramática|vt}}
+# {{cont|15}} ter [[inoculado]]
+#: '''2010''', ''ENADE Comentado 2007: Medicina, EDIPUCRS'', página: 68
+#*: ''pacientes com asma persistente devem ser aconselhados a '''fazer''' a vacina anual para influenza.''
+#: '''2015''', Marisilda Tescaroli, ''Dessas Eu Lembro'', Clube de Autores, página: ''?''
+#*: ''Ainda bem que a Bia veterinária consegue chegar até ele para '''fazer''' as vacinas''.
+#: '''2005''', Rüdiger Dahlke, Margit Dahlke, Volker Zahn, ''Caminho Para a Vida, O'', página: 78
+#*: ''Quando não se encontram anticorpos contra sarampo, aconselha-se muita cautela, e em nenhuma hipótese se deve '''fazer''' a vacina''
+# [[experienciar]], [[vivenciar]]
+#* ''Só '''fazia''' trabalhar e trabalhar e trabalhar e o fruto disso em nada desfrutava.''
+#* ''Naquela vida só '''fazia''' sofrer.''
+{{oxítona|fa|zer}}, {{gramática|pron}}
+# {{cont|16}} [[vender]], entregar ao receber um valor a propriedade
+#* ''Ah, muito caro, me '''faz''' por três reais?''
+
+===Conjugação===
+{{conj.pt.fazer}}
+
+===Expressões===
+* '''[[fazer a cabeça de]]''':
+* '''[[fazer a cabeça]]''':
+* '''[[fazer a cama e deitar-se nela]]''': construir reputação.
+* '''[[fazer a cama]]''': arrumar a cama.
+* '''[[fazer a caveira com]]''':
+* '''[[fazer a caveira]]''':
+* '''[[fazer a folha]] a''': agredir, bater em.
+* '''[[fazer a sesta]]''': dormitar.
+* '''[[fazer alto]]''': parar, mandar parar.
+* '''[[fazer as vezes de]]''': substituir.
+* '''[[fazer avenida]]''': passear.
+* '''[[fazer barba, bigode e cabelo]]''': executar serviço completo, arrasar.
+* '''[[fazer barba, cabelo e bigode]]''':
+* '''[[fazer beicinho]]''': amuar.
+* '''[[fazer biquinho]]''': amuar.
+* '''[[fazer cair os braços]]''': conseguir rendição.
+* '''[[fazer caras e bocas]]''':
+* '''[[fazer caso]]''': ter em atenção, atender.
+* '''[[fazer cera]]''': mandriar.
+* '''[[fazer corpo mole]]''': dificultar, procrastinar.
+* '''[[fazer cruzes na boca]]''': não ter que comer.
+* '''[[fazer cu doce]]''':
+* '''[[fazer das tripas coração]]''': sacrificar-se.
+* '''[[fazer de conta]]''': fingir, supor, imaginar.
+* '''[[fazer efeito]]''': ter eficácia, causar sensação.
+* '''[[fazer escola]]''': ser seguido por muita gente.
+* '''[[fazer espécie]]''': causar estranheza.
+* '''[[fazer figura de urso]]''': portar-se mal.
+* '''[[fazer fitas]]''': desprezar.
+* '''[[fazer frente]]''': opor-se.
+* '''[[fazer gambá]]''':
+* '''[[fazer hora com a cara de]]''':
+* '''[[fazer hora com a cara]]''':
+* '''[[fazer hora]]''': ocupar o tempo.
+* '''[[fazer jeito]]''': exibir, posar de.
+* '''[[fazer nas coxas]]''': fazer de qualquer jeito.
+* '''[[fazer o cabaço]]''': desvirginar.
+* '''[[fazer onda]]''': dificultar, procrastinar.
+* '''[[fazer ouvidos de mercador]]''': não ligar importância.
+* '''[[fazer pé de alferes]]''': namoriscar; defender algo de forma obstinada.
+* '''[[fazer por elas]]''': merecer castigo.
+* '''[[fazer por fazer]]''': fazer sem interesse.
+* '''[[fazer por onde]]''': esforçar-se para merecer.
+* '''[[fazer por]]''': esforçar-se por.
+* '''[[fazer pouco]]''': troçar.
+* '''[[fazer questão]]''':
+* '''[[fazer rodeios]]''': usar subterfúgios, argumentação indireta.
+* '''[[fazer sombra a]]''': eclipsar, interpor-se a alguém, opor-se a.
+* '''[[fazer um jeito a]]''': fazer um pequeno favor, ser condescendente com.
+* '''[[fazer-se à vida]]''': preparar o futuro profissional, trabalhar.
+* '''[[fazer-se ao mar]]''': partir em viagem por mar.
+* '''[[fazer-se cu doce]]''': fingir não dar importância.
+* '''[[fazer-se de difícil]]''': fingir não dar importância.
+* '''[[fazer-se de]]''':
+* '''[[fazer-se homem]]''': ganhar maturidade, crescer.
+* '''[[fazer-se noite]]''': anoitecer.
+* '''[[fazer-se]]''':
+
+===Sinônimos===
+* De '''1''' (dar existência ou forma a): [[concluir]], [[construir]], [[criar]], [[fabricar]], [[formar]], [[gerar]], [[inventar]], [[produzir]]
+* De '''2''' (executar uma ação): [[praticar]], [[realizar]], [[executar]], [[terminar]], [[executar]], [[proceder]], [[perfazer]]
+* De '''3''' (conceder): [[proporcionar]]
+* De '''4''' (transformar-se em): [[tornar]]-se, [[vir]] a [[ser]]
+* De '''5''' (atingir um objetivo): [[conseguir]]
+* De '''9''' (liberar produto): [[excretar]], [[evacuar]]
+
+===Tradução===
+{{tradini|De 1 (dar existência ou forma a)}}
+* {{trad|ar|صنّع}} (sanna'a)
+* {{trad|de|machen|herstellen}}
+* {{trad|grc|ῥέζω}}
+* {{trad|en|make}}
+{{tradmeio}}
+* {{trad|it|fare}}
+* {{trad|ru|делать|сделать}}
+* {{trad|tr|yapmak}}
+* {{trad|ur|بنانا}}
+{{tradfim}}
+
+{{tradini|De 2 (executar uma ação)}}
+* {{trad|ar|صنّع}} (sanna'a)
+* {{trad|de|machen|tun}}
+* {{trad|es|hacer}}
+* {{trad|fr|faire}}
+* {{trad|el|κάνω}}
+* {{trad|en|do}}
+{{tradmeio}}
+* {{trad|is|gera}}
+* {{trad|mwl|fazer}}
+* {{trad|pap|haci}}
+* {{trad|fa|کردن}}
+* {{trad|tet|halo}}
+* {{trad|ur|کرنا}}
+{{tradfim}}
+
+{{tradini-checar}}
+* {{trad|bm|kɛ}}
+* {{trad|nds|maken}}
+{{tradmeio}}
+* {{trad|tr|etmek}}
+{{tradfim}}
+
+=={{etimologia|pt}}==
+{{llietimo|la|facere|pt}}
+
+==Ver também==
+===No Wikcionário===
+{{verTambém.Ini}}
+* [[agenda]]
+* [[bem-fazer]]
+* [[confeccionar]]
+* [[desfazer]]
+* [[efetuar]]
+{{verTambém.NovaColuna}}
+* [[factível]]
+* [[fato]]
+* [[feita]]
+* [[meter mão à obra]]
+{{verTambém.NovaColuna}}
+* [[obrar]]
+* [[perfazer]]
+* [[rarefazer]]
+* [[refazer]]
+{{verTambém.Fim}}
+
+==Litações externas==
+* {{Aulete}}
+* {{DicioAberto}}
+* {{DPLP}}
+* {{Infopédia}}
+* {{Michaelis}}
+* {{PLP}}
+* {{VOLPABL}}
+* [https://books.google.com/books?id=02EoAQAAMAAJ&q=%22fez+o+galã%22&dq=%22fez+o+galã%22&sa=X&ei=VxFAVfLuIOaHsQSYxoCwDQ&ved=0CCQQ6AEwAg citação 1 no Google Books]
+* [https://books.google.com/books?id=NpEqAAAAMAAJ&q=%22fez+o+galã%22&dq=%22fez+o+galã%22&sa=X&ei=VxFAVfLuIOaHsQSYxoCwDQ&ved=0CBwQ6AEwAA citação 2 no Google Books]
+* [https://books.google.com/books?id=Hwg-AQAAIAAJ&q=%22fez+o+bandido%22&dq=%22fez+o+bandido%22&sa=X&ei=QhNAVeq0ObLasASJtYGwCg&ved=0CB8Q6AEwATgK citação 3 no Google Books]
+
+[[Categoria:Verbo (Português)]]
+
+
+={{-gl-}}=
+==Verbo==
+{{oxítona|fa|zer|lang=gl}}
+# [[fazer#{{pt}}|fazer]]
+
+===Conjugação===
+{{conj.gl | fazer | fazendo | feito | fago | fas / fazes | fai / faz | fazemos | fazedes / fazeis | fam / fazem | fazia | fazias | fazia | fazíamos | faziades / faziais | faziam | fizem / figem | fizeste / fizeche/ figeste / figeche | fizo / fijo | fizemos / figemos | fizestes/ figestes | fizérom / figérom | fizera / figera | fizeras / figeras | fizera / figera | fizéramos / figéramos | fizérais / fizérades / figérais / fizérades | fizeram / figeram | farei | farás | fará | fareremos | fareis / [[faredes]] | farão | faria | farias | faria | faríamos | faríais / faríades | fariam | faga | fagas | faga | fagamos | fagais / fagades | fagam | fizesse / figesse | fizesses / figesses | fizesse / figesse | fizéssemos / figéssemos | fizésseis / fizésedes / figésseis / figéssedes | fizessem / figessem | fizer / figer | fizeres / figeres | fizer / figer | fizermos / figermos | fizerdes / figerdes | fizerem / figerem | faz / fai | faga | fagamos | fazei / fazede | fazam | não fagas | não faga | não fagamos | não fagais / não fagades | não fagam | fazer | fazeres | fazer | fazermos | fazerdes | fazerem }}
+
+[[Categoria:Verbo (Galego)]]
+
+
+={{-mwl-}}=
+==Verbo==
+{{oxítona|fa|zer|língua=mwl}}
+# [[fazer#{{pt}}|fazer]]
+
+===Antônimo===
+* [[çfazer]]
+
+===Conjugação===
+{{conj.mwl
+|[[fazer]] |[[fazendo]] |[[feito]]<br/>[[fazido]] 
+|[[fago]] |[[fais]] |[[fai]]<br/>[[faç]] |[[fazemos]] |[[fazeis]] |[[fáien]]<br/>[[fázen]] 
+|[[fazie]] |[[fazies]] |[[fazie]] |[[faziemos]] |[[faziedes]] |[[fazien]] 
+|[[fiç]] |[[faziste]] |[[fizo]] |[[fazimos]] |[[fazistes]] |[[fazírun]] 
+|[[fazira]] |[[faziras]] |[[fazira]] |[[fazíramos]] |[[fazírades]] |[[fazíran]] 
+|[[fazerei]] |[[fazerás]] |[[fazerá]] |[[fazeremos]] |[[fazereis]] |[[fazeran]] 
+|[[fazerie]]<br/>[[farie]] |[[fazeries]]<br/>[[faries]] |[[fazerie]]<br/>[[farie]] |[[fazeriemos]]<br/>[[fariemos]] |[[fazeriedes]]<br/>[[fariedes]] |[[fazerien]]<br/>[[farien]] 
+|[[faga]] |[[fagas]] |[[faga]] |[[fágamos]] |[[fágades]] |[[fágan]] 
+|[[fazisse]] |[[fazisses]] |[[fazisse]] |[[fazíssemos]] |[[fazíssedes]] |[[fazíssen]]
+|[[fazir]] |[[fazires]] |[[fazir]] |[[fazirmos]] |[[fazirdes]] |[[fazíren]] 
+|[[fai]] ||[[fazei]] 
+|[[fazer]] |[[fazeres]] |[[fazer]] |[[fazermos]] |[[fazerdes]] |[[fazéren]] 
+}}
+
+[[Categoria:Verbo (Mirandês)]]
