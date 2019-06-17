@@ -1,11 +1,11 @@
 # wte
 Wiktionary, Wikidata words extractor. Parsing the dump from the https://en.wiktionary.org/
 
-Extraction words of 7 languages: en, fr, de, it, es, pt, ru
+Extracting words of 7 languages: en, fr, de, it, es, pt, ru
 
-Merge.
+Merging
 
-Fetch explaination from Wikipedia, Britanica, Universalis.
+Fetching explaination from Wikipedia, Britanica, Universalis.
 
 
 ### Requirements: 
