@@ -28,6 +28,7 @@ create_storage(TXT_FOLDER)
 
 
 class KEYS:
+    """ Data keys for using in data mining """
     IS_TYPE_SECTION = "IS_TYPE_SECTION"
     LANG        = "lang"
     TYPE        = "type"
@@ -47,6 +48,7 @@ class KEYS:
 
 
 class WORD_TYPES:
+    """ Word type of speech"""
     ROOT        = "root"  # also ===Proper noun=== {{en-proper noun}}
     NOUN        = "noun"  # also ===Proper noun=== {{en-proper noun}}
     VERB        = "verb"
@@ -102,6 +104,7 @@ class WORD_TYPES:
                     return getattr(self, a)
 
         return None  # not found type
+
 
     def get_names(self):
         """
@@ -437,6 +440,18 @@ class XMLParser:
 
 
 def build_struct(lm, label, tree):
+    """
+    Used in word article scanner.
+
+    in:
+        lm      Language module
+        label   word label
+        tree    parsed article tree
+    out:
+        Lang
+          Type-of-speech
+            Explaination
+    """
     # (name, childs), childs = (name, childs)
     struct = [] # [ (LANG, [ (TOS, [ (expl), ] ), ]), ]
     
@@ -488,6 +503,16 @@ def dump_tree(root, level=0, types=None, exclude=None):
 
 # scan search context
 def scan_struct(lm, struct, root_word, level=0):
+    """
+    Walk on the Lang,Type-of-speech,Explaination and mine data
+
+    in:
+        lm          Language module
+        struct      struct (Lang,Type-of-speech,Explaination, see: build_struct)
+        root_word   Word base template
+    out:
+        words       list with mined words
+    """
     words = []
     
     for (search_context, childs) in struct:
@@ -540,6 +565,7 @@ def scan_struct(lm, struct, root_word, level=0):
 
 
 def try_well_formed_structure(lang, label, tree):
+    """ Walk on well-formed structure of article """
     lm = importlib.import_module(lang)
     
     words = []
@@ -571,6 +597,7 @@ def try_well_formed_structure(lang, label, tree):
         
 
 def preprocess(lang, callback, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False):
+    """ Prepare data: unzip, init xml parser """
     dump_file = download(lang)
     
     with bz2.open(dump_file, "r") as xml_stream:
@@ -579,6 +606,7 @@ def preprocess(lang, callback, limit=0, is_save_txt=False, is_save_json=False, i
 
 
 def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, is_save_xml=False, is_save_templates=False):
+    """ This function emitted on each article. Called from XML parser """
     log.info("process(%s, %s)", lang, label)
     
     # setup context
@@ -626,6 +654,7 @@ def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, 
 
 
 def phase1(text):
+    """ Prepare extracted text. Make object representation of article: ==English== -> Header(English), {{en-noun}} -> Template(en-noun) """
     log.debug("phase1()")
     
     # remove BOM
@@ -639,6 +668,15 @@ def phase1(text):
     
 
 def phase2(lang, tree):
+    """
+    Build tree
+
+    Section(en)
+      Section(Noun)
+        Section(Translations)
+      Section(Verb)
+        Section(Translations)
+    """
     log.debug("phase2()")
     lm = importlib.import_module(lang)
 
@@ -722,6 +760,7 @@ def try_not_well_formed(tree):
 
 
 def phase3(lang, tree, label):
+    """ Mine data """
     log.debug("phase3(%s, %s)", lang, label)
 
     mined = tree
@@ -910,6 +949,7 @@ def phase4(lang, mined, label):
     
     
 def postprocess(words, label):
+    """ Save to DB """
     flag = None
     if words:
         for i, word in enumerate(words):
@@ -926,6 +966,7 @@ def postprocess(words, label):
 
 
 def print_table_record(word, print_header=False):
+    """ Beauty logging tool """
     attrs = [
         "LabelName",
         "LabelType",

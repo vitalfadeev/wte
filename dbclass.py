@@ -262,11 +262,6 @@ class DBClass:
 
         #db.close()
 
-        
-
-def from_db(ItemClass, **conditions):
-    yield from ItemClass().from_db( **conditions )
-
 
 def get_field_type(v):
     if v is None:
@@ -279,5 +274,29 @@ def get_field_type(v):
         return "BIGINT"
     if isinstance(v, int):
         return "BIGINT"
+      
+
+def from_db(ItemClass, **conditions):
+    yield from ItemClass().from_db( **conditions )
+
+
+def DBRead(ItemClass, **conditions):
+    """
+    for word in DBRead( WikidataItemClass ):
+        print( word )
+        
+    for word in DBRead( WikictionaryItemClass, LabelName = WikidataItem.LabelName ):
+        print( word )
+    """
+    yield from ItemClass().from_db( **conditions )
+
+
+def DBWrite(word):
+    """
+    word = WikidataItemClass()
+    word.LabelName = "Cat"
+    DBWrite(word)
+    """
+    word.save_to_db()
 
 
