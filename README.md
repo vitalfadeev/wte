@@ -5,17 +5,17 @@ Extraction words off 7 languages: en, fr, de, it, es, pt, ru
 
 
 ### Requirements: 
-* blist
-* requests
-* ijson
-* pywikibot
-* wikipedia
+see requirements.txt
 
-      pip install blist
-      pip install requests
-      pip install ijson
-      pip install pywikibot
-      pip install wikipedia
+      blist
+      requests
+      ijson
+      pywikibot
+      wikipedia
+
+install
+
+      pip install -r requirements.txt
 
 
 #### Using
