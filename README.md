@@ -9,11 +9,13 @@ Extraction words off 7 languages: en, fr, de, it, es, pt, ru
 * requests
 * ijson
 * pywikibot
+* wikipedia
 
       pip install blist
       pip install requests
       pip install ijson
       pip install pywikibot
+      pip install wikipedia
 
 
 #### Using
@@ -104,80 +106,138 @@ Script steps:
 Data saves in SQLite tables:
 * Wikictionary.db
 * WikiData.db
+* Words.db
 
-        CREATE TABLE IF NOT EXISTS wikictionary (
-            id              BIGINT,
-            LabelName       text,
-            LabelType       text,
-            LanguageCode    text,
-            Type            text,
-            ExplainationRaw             text,
-            ExplainationTxt             text,
-            ExplainationExamplesRaw     text,
-            ExplainationExamplesTxt     text,
-            IsMale          integer,
-            IsFeminine      integer,
-            IsSingle        integer,
-            IsNeutre        integer,
-            IsPlural        integer,
-            SingleVariant   text,
-            PluralVariant   text,
-            MaleVariant     text,
-            FemaleVariant   text,
-            IsVerbPast      integer,
-            IsVerbPresent   integer,
-            IsVerbFutur     integer,
-            Conjugation     text,
-            Synonymy	    text,
-            Antonymy	    text,
-            Hypernymy	    text,
-            Hyponymy	    text,
-            Meronymy	    text,
-            Holonymy	    text,
-            Troponymy	    text,
-            Otherwise               text,
-            AlternativeFormsOther   text,
-            RelatedTerms            text,
-            Coordinate              text,
-            Translation_EN  text,
-            Translation_FR  text,
-            Translation_DE  text,
-            Translation_IT  text,
-            Translation_ES  text,
-            Translation_RU  text,
-            Translation_PT  text
-        ) 
+Structure:
 
+        # Wiktionary
+        LabelName = ""  #
+        LabelType = None  #
+        LanguageCode = ""  # (EN,FR,…)
+        Type = ""  # = noun,verb… see = WORD_TYPES
+        TypeLabelName = ""  # chatt for verb of chat
+        ExplainationRaw = None  #
+        ExplainationTxt = None  #
+        ExplainationExamplesRaw = None
+        ExplainationExamplesTxt = None
+        IsMale = None
+        IsFeminine= None  # ""
+        IsNeutre= None  # ""
+        IsSingle = None
+        IsPlural = None
+        SingleVariant = None  # ""
+        PluralVariant = None  # ""
+        MaleVariant = None  # ""
+        FemaleVariant = None  # ""
+        IsVerbPast = None
+        IsVerbPresent = None
+        IsVerbFutur = None
+        Conjugation = []
+        Synonymy = []
+        Antonymy = []
+        Hypernymy = []
+        Hyponymy = []
+        Meronymy = []
+        Holonymy = []
+        Troponymy = []
+        Otherwise = []
+        AlternativeFormsOther = []
+        RelatedTerms = []
+        Coordinate = []
+        Translation_EN = []
+        Translation_FR = []
+        Translation_DE = []
+        Translation_IT = []
+        Translation_ES = []
+        Translation_RU = []
+        Translation_PT = []
 
-        CREATE TABLE IF NOT EXISTS wikidata (
-            id              BIGINT,
-            LabelName       text,
-            CodeInWiki      text,
-            LanguageCode    text,
-            Description     text,
-            AlsoKnownAs1    text,
-            AlsoKnownAs2    text,
-            AlsoKnownAs3    text,
-            AlsoKnownAs4    text,
-            AlsoKnownAs5    text,
-            SelfUrl         text,
-            WikipediaURL    text,
-            DescriptionUrl  text,        
-            Instance_of     text,
-            Subclass_of     text,
-            Part_of         text,
-            Translation_EN  text,    
-            Translation_FR  text,
-            Translation_DE  text,
-            Translation_IT  text,
-            Translation_ES  text,
-            Translation_RU  text,
-            Translation_PT  text
-        ) 
+        # Wiktidata
+        LabelName = None
+        LanguageCode = None
+        CodeInWiki = None
+        Description = None
+        AlsoKnownAs = []
+        SelfUrl = None
+        WikipediaENURL = None
+        EncyclopediaBritannicaEN = None
+        EncyclopediaUniversalisEN = None
+        DescriptionUrl = None
+        Instance_of = []
+        Subclass_of = []
+        Part_of = []
+        Translation_EN = []
+        Translation_FR = []
+        Translation_DE = []
+        Translation_IT = []
+        Translation_ES = []
+        Translation_RU = []
+        Translation_PT = []
+        
+        # Words
+        LabelName       = None
+        CodeInWiki      = None
+        LanguageCode    = None
+        Description     = None
+        AlsoKnownAs     = None
+        SelfUrl         = None
+        WikipediaENURL  = None
+        EncyclopediaBritannicaEN = None
+        EncyclopediaUniversalisEN = None
+        Instance_of     = []
+        Subclass_of     = []
+        Part_of         = []
+        Translation_EN  = []
+        Translation_FR  = []
+        Translation_DE  = []
+        Translation_IT  = []
+        Translation_ES  = []
+        Translation_RU  = []
+        Translation_PT  = []
+        LabelType       = None
+        Type            = None
+        Explaination    = None
+        ExplainationExamples = []
+        IsMale          = None
+        IsFeminine      = None
+        IsSingle        = None
+        IsPlural        = None
+        SingleVariant   = None
+        PluralVariant   = None
+        IsVerbPast      = None
+        IsVerbPresent   = None
+        IsVerbFutur     = None
+        Conjugation     = []
+        Synonymy        = []
+        Antonymy        = []
+        Hypernymy       = []
+        Hyponymy	     = []
+        Meronymy	     = []
+        Holonymy        = []
+        Troponymy       = []
+        Otherwise       = []
+        AlternativeFormsOther = []
+        RelatedTerms    = []
+        Coordinate      = []
+        WikipediaENContent   = None
+        BritannicaENContent  = None
+        UniversalisENContent = None        
 
 
 ##### Logs
 See logs in folder ./logs
+
+
+##### Language modules
+See:
+
+    en.py
+    fr.py
+    de.py
+    it.py
+    es.py
+    pt.py
+    ru.py
 
     
 See also: 
