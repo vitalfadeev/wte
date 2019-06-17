@@ -1,6 +1,27 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+# Here is the Wiki text parser
+# in: wiki text
+#     ==en==
+#     ===Noun===
+#     ====Translations====
+#     {{t|en|Cat}}
+#     {{t|de|Katze}}
+#     {{t|es|Gato}}
+# out: object representation
+#     Header(en)
+#     Header(Noun)
+#     Header(Translations)
+#     Template(t)
+#     Template(t)
+#     Template(t)
+
+# It have own HTML parser for read not-well-formed HTML
+
+# tagizer() - main function
+
+
 # Layout:    https://en.wiktionary.org/wiki/Wiktionary:Entry_layout
 # Templates: https://en.wiktionary.org/wiki/Wiktionary:Templates
 # Semantic:  https://en.wiktionary.org/wiki/Wiktionary:Semantic_relations
@@ -10,11 +31,12 @@
 # Algorithm:
 # - read text
 # - tokenize templates: {{ }}
+# - tokenize HTML <tag>...</tag>
 # - tokenize preformatted: <space>...
 # - tokenize tables: {| |}
 # - tokenize format elements: links [[ ]], '' '', _( )_
-# - tokenize headrs: == ==
-# - tokenize lists: #, *
+# - tokenize headers: == ==
+# - tokenize lists: #, *, :
 # - tokenize sections: <Header>, <Header>
 
 
@@ -1783,6 +1805,13 @@ read_dl( "\n;5: {{plm|cliente}} regular de una prostituta.\n\n", 0 ), 0, (Dl, Dt
 
 ###### Text parsing ######
 def tagizer(text, spos=0):
+    """
+    Main function of this module
+
+    :param text:  string     wiki text
+    :param spos:  int        start position in text, default 0
+    :return:      Section()  container with objects
+    """
     i = spos
     l = len(text)
 
