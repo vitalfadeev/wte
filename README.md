@@ -1,7 +1,11 @@
 # wte
-Wikitionary word description extractor. Parse the article from the dump of the https://en.wiktionary.org/
+Wiktionary, Wikidata words extractor. Parsing the dump from the https://en.wiktionary.org/
 
 Extraction words off 7 languages: en, fr, de, it, es, pt, ru
+
+Merge.
+
+Fetch explaination from Wikipedia, Britanica, Universalis.
 
 
 ### Requirements: 
@@ -57,7 +61,7 @@ see main.py
 
 
 #### Downloading
-Will douwnload dump. Stored into cache folder.
+Will download dump. Stored into cache folder.
 
     wt = wte.Wikitionary()
     local_file = wt.download("en", use_cached=True)
