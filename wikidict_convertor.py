@@ -67,16 +67,16 @@ def convert(page, lang):
     description_url  = []
     
     BRITANICA_ID = "P1417"    
-    UniversalisENURL = ""
+    BritannicaENURL = ""
     if INSTANCE_OF_ID in claims:
         for source in claims.get(BRITANICA_ID, []):
-            UniversalisENURL = "https://www.universalis.fr/encyclopedie/" + source.getTarget()
+            BritannicaENURL = "https://www.britannica.com/" + source.getTarget()
 
     UNIVERSAILS_ID = "P3219"    
-    BritannicaENURL = ""
+    UniversalisENURL = ""
     if UNIVERSAILS_ID in claims:
         for source in claims.get(UNIVERSAILS_ID, []):
-            BritannicaENURL = "https://www.britannica.com/" + source.getTarget()
+            UniversalisENURL = "https://www.universalis.fr/encyclopedie/" + source.getTarget()
 
     # instance of
     if INSTANCE_OF_ID in claims:
