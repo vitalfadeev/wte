@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import json
-import inspect
 from blist import sorteddict
 
 

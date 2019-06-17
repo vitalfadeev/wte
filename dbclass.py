@@ -2,19 +2,42 @@
 # -*- coding: utf-8 -*-
 import sqlite3
 import json
-from copy import deepcopy 
+import inspect
+from copy import deepcopy
+
+_cache = {}
 
 
 class DBClass:
+    def connect(self):
+        db = _cache.get(self.DB_NAME, None)
+        
+        if db is None:
+            db = sqlite3.connect(self.DB_NAME, isolation_level=None)
+            _cache[self.DB_NAME] = db
+        
+        return db
+        
+        
+    def create_index(self, **kvargs):
+        db = self.connect()
+        c = db.cursor()
+        
+        for k,v in kvargs.items():
+            c = db.cursor()
+            c.execute("CREATE INDEX IF NOT EXISTS {} ON {} ({})".format(self.DB_TABLE_NAME + "_" + k, self.DB_TABLE_NAME, k))
+    
+
     def check_table(self):
-        db = sqlite3.connect(self.DB_NAME)
+        db = self.connect()
+        db.row_factory = None
         c = db.cursor()
         sql = """
-            SELECT count(*) FROM sqlite_master WHERE type='table' AND name='{}';
+            SELECT count(*) as cnt FROM sqlite_master WHERE type='table' AND name='{}';
         """.format(self.DB_TABLE_NAME)
         c.execute(sql)
         count = c.fetchone()[0]
-        db.close()
+        #db.close()
         
         #
         if count == 0:
@@ -49,15 +72,15 @@ class DBClass:
         sql = sql + ")"
 
         #
-        db = sqlite3.connect(self.DB_NAME)
+        db = self.connect()
         c = db.cursor()
         c.execute(sql)
-        db.close()
+        #db.close()
         
         
     def update_table(self):
         # db_fields
-        db = sqlite3.connect(self.DB_NAME)
+        db = self.connect()
         c = db.cursor()
         c.execute("SELECT * FROM {}".format(self.DB_TABLE_NAME))
         db_fields = [description[0] for description in c.description]
@@ -92,11 +115,11 @@ class DBClass:
             c = db.cursor()
             c.execute(sql)
 
-        db.close()
+        #db.close()
         
     
     def get_new_id(self):
-        db = sqlite3.connect(self.DB_NAME)
+        db = self.connect()
         
         c = db.cursor()
 
@@ -111,14 +134,35 @@ class DBClass:
         else:
             new_id = 1
 
-        db.close()
+        #db.close()
 
         return new_id
+        
+        
+    def get_fields(self):
+        reserved = [ "DB_NAME", "DB_TABLE_NAME", "Excpla", "Explainations" ]
+
+        result = []
+        
+        for name in dir(self):
+            if callable(getattr(self, name)):
+                pass # skip
+            elif inspect.ismethod(getattr(self, name)):
+                pass # skip
+            elif name.startswith("_"):
+                pass # skip
+            elif name in reserved:
+                pass # skip    
+            else:
+                result.append(name)
+        
+        return result
 
 
-    def save_to_db(self):
+    def save_to_db(self, autocommit=True, db=None):
         self.check_table()
-        db = sqlite3.connect(self.DB_NAME)
+        
+        db = self.connect()
 
         fields = []
         values = []
@@ -157,9 +201,10 @@ class DBClass:
             )
         c.execute(sql, values)
         
-        db.commit()
+        if autocommit:
+            db.commit()
 
-        db.close()
+        #db.close()
         
     
     def factory(self, cursor, row):
@@ -173,15 +218,24 @@ class DBClass:
                 if isinstance(getattr(w, name), (list, tuple)): # decode "" to []
                     if value:
                         value = json.loads(value)
-                
-            setattr(w, name, value)
+                        
+                    if isinstance(value, list):
+                        pass
+                    else:
+                        if value:
+                            value = [value] # convert to list
+                        else:
+                            value = getattr(w, name) # default
+            
+            if value is not None:
+                setattr(w, name, value)
             
         return w
 
 
     def from_db(self, where=None, **kvargs):
         self.check_table()
-        db = sqlite3.connect(self.DB_NAME)
+        db = self.connect()
         db.row_factory = self.factory
         c = db.cursor()
         
@@ -206,7 +260,7 @@ class DBClass:
         else:
             yield from c.execute( "SELECT * FROM {}".format(self.DB_TABLE_NAME))
 
-        db.close()
+        #db.close()
 
         
 

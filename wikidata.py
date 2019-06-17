@@ -3,7 +3,6 @@
 
 from dbclass import DBClass
 from jsonclass import JSONClass
-import inspect
 
 
 class WikidataItem(DBClass, JSONClass):
@@ -31,26 +30,6 @@ class WikidataItem(DBClass, JSONClass):
         self.Translation_ES = []
         self.Translation_RU = []
         self.Translation_PT = []
- 
-
-    def get_fields(self):
-        reserved = [ "DB_NAME", "DB_TABLE_NAME", "Excpla", "Explainations" ]
-
-        result = []
-        
-        for name in dir(self):
-            if callable(getattr(self, name)):
-                pass # skip
-            elif inspect.ismethod(getattr(self, name)):
-                pass # skip
-            elif name.startswith("_"):
-                pass # skip
-            elif name in reserved:
-                pass # skip    
-            else:
-                result.append(name)
-        
-        return result
             
 
     def __repr__(self):

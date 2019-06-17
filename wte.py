@@ -916,8 +916,11 @@ def postprocess(words, label):
             print_table_record(word, print_header=(i==0))
 
     if 1:
-        for word in words:
-            word.save_to_db()
+        if words:
+            db = words[0].connect()
+            for word in words:
+                word.save_to_db(autocommit=False, db=db)
+            db.commit()
 
     return flag
 

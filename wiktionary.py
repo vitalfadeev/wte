@@ -3,7 +3,6 @@
 
 from dbclass import DBClass
 from jsonclass import JSONClass
-import inspect
 from helpers import remove_comments, extract_from_link
 from loggers import log, log_non_english, log_no_words, log_unsupported
 from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_section_not_found
@@ -57,35 +56,18 @@ class WikictionaryItem(DBClass, JSONClass):
         self.Translation_PT = []
 
 
-    def get_fields(self):
-        reserved = [ "DB_NAME", "DB_TABLE_NAME", "Excpla", "Explainations" ]
-
-        result = []
-        
-        for name in dir(self):
-            if callable(getattr(self, name)):
-                pass # skip
-            elif inspect.ismethod(getattr(self, name)):
-                pass # skip
-            elif name.startswith("_"):
-                pass # skip
-            elif name in reserved:
-                pass # skip    
-            else:
-                result.append(name)
-        
-        return result
-
-
     def save_to_json(self, filename):
         save_to_json(self, filename)
+
 
     def save_to_pickle(self, filename):
         save_to_pickle(self, filename)
 
+
     def add_explaniation(self, raw, txt):
         self.ExplainationRaw = raw
         self.ExplainationTxt = txt
+
     
     def add_conjugation(self, lang, term):
         if term:
@@ -95,6 +77,7 @@ class WikictionaryItem(DBClass, JSONClass):
                 if term not in self.Conjugation:
                     self.Conjugation.append( term )
     
+
     def add_synonym(self, lang, term):
         if term:
             if self.Synonymy is None:
@@ -103,6 +86,7 @@ class WikictionaryItem(DBClass, JSONClass):
                 if term not in self.Synonymy:
                     self.Synonymy.append( term )
     
+
     def add_antonym(self, lang, term):
         if term:
             if self.Antonymy is None:
@@ -110,6 +94,7 @@ class WikictionaryItem(DBClass, JSONClass):
             else:
                 if term not in self.Antonymy:
                     self.Antonymy.append( term )
+
     
     def add_hypernym(self, lang, term):
         if term:
@@ -119,6 +104,7 @@ class WikictionaryItem(DBClass, JSONClass):
                 if term not in self.Hypernymy:
                     self.Hypernymy.append( term )
     
+
     def add_hyponym(self, lang, term):
         if term:
             if self.Hyponymy is None:
@@ -127,6 +113,7 @@ class WikictionaryItem(DBClass, JSONClass):
                 if term not in self.Hyponymy:
                     self.Hyponymy.append( term )
     
+
     def add_meronym(self, lang, term):
         if term:
             if self.Meronymy  is None:
@@ -135,6 +122,7 @@ class WikictionaryItem(DBClass, JSONClass):
                 if term not in self.Meronymy:
                     self.Meronymy.append( term )
     
+
     def add_holonym(self, lang, term):
         if term:
             if self.Holonymy  is None:
@@ -143,6 +131,7 @@ class WikictionaryItem(DBClass, JSONClass):
                 if term not in self.Holonymy:
                     self.Holonymy.append( term )
     
+
     def add_troponym(self, lang, term):
         if term:
             if self.Troponymy is None:
@@ -151,6 +140,7 @@ class WikictionaryItem(DBClass, JSONClass):
                 if term not in self.Troponymy:
                     self.Troponymy.append( term )
     
+
     def add_alternative_form(self, lang, term):
         if term:
             if self.AlternativeFormsOther is None:
@@ -159,6 +149,7 @@ class WikictionaryItem(DBClass, JSONClass):
                 if term not in self.AlternativeFormsOther:
                     self.AlternativeFormsOther.append( term )
     
+
     def add_related(self, lang, term):
         if term:
             if self.RelatedTerms is None:
@@ -167,6 +158,7 @@ class WikictionaryItem(DBClass, JSONClass):
                 if term not in self.RelatedTerms:
                     self.RelatedTerms.append( term )
     
+
     def add_coordinate(self, lang, term):
         if term:
             if self.Coordinate is None:
@@ -174,6 +166,7 @@ class WikictionaryItem(DBClass, JSONClass):
             else:
                 if term not in self.Coordinate:
                     self.Coordinate.append( term )
+
     
     def add_translation(self, lang, term):
         # validate
@@ -234,6 +227,7 @@ class WikictionaryItem(DBClass, JSONClass):
         else:
             log.error("unsupported type: %s", type(term))
             # assert 0, "unsupported type"
+
             
     def clone(self):        
         clone = WikictionaryItem()

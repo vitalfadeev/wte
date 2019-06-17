@@ -1,34 +1,30 @@
 #!/bin/env python3
 
-import wte
-
 
 def test_one(label, lang):
-    wte.one_file(label, lang)
+    from wte import one_file as wiktionary_parser_one
+    wiktionary_parser_one(label, lang)
+
 
 def test_wiktionary(lang):
-    wte.mainfunc(lang=lang, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False)
+    from wte import mainfunc as wiktionary_parser
+    wiktionary_parser(lang=lang, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False)
 
-def test_read():
-    import sql
-    rows = sql.SQLReadDB(sql.DBWikictionary, {"id": 1})
-    print(rows)
-
-    rows = sql.SQLReadDB(sql.DBWikictionary, {"LabelName": "free"})
-    print(rows)
-
-    rows = sql.SQLReadDB(sql.DBWikiData, {"LabelName": "bonheur"})
-    print(rows)
 
 def test_wikidict(lang):
-    import wikidict_convertor
-    wikidict_convertor.run("./wikidict-out.json", lang)
+    from wikidict_convertor import run as wikidict_parser
+    wikidict_parser("./wikidict-out.json", lang)
 
 
 def test_merger():
     from merger import mainfunc as merge
     merge()
 
+
+#test_wikidict("de")
+#test_wiktionary("de")
+#test_merger()
+#exit(9)
 
 test_wiktionary("fr")
 test_wiktionary("en")

@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 from dbclass import DBClass
 from jsonclass import JSONClass
-import inspect
 
 
 class Word(DBClass, JSONClass):
@@ -65,22 +64,3 @@ class Word(DBClass, JSONClass):
             for f in self.get_fields():
                 setattr(self, f, getattr(parent, f))
         
-        
-    def get_fields(self):
-        reserved = [ "DB_NAME", "DB_TABLE_NAME", "Excpla", "Explainations" ]
-
-        result = []
-        
-        for name in dir(self):
-            if callable(getattr(self, name)):
-                pass # skip
-            elif inspect.ismethod(getattr(self, name)):
-                pass # skip
-            elif name.startswith("_"):
-                pass # skip
-            elif name in reserved:
-                pass # skip    
-            else:
-                result.append(name)
-        
-        return result

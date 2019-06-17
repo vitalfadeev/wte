@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+import os
 import bz2
 import json
 
@@ -10,9 +11,12 @@ import pywikibot
 from pywikibot import Claim
 from pywikibot.site import DataSite
 from blist import sorteddict
-#import sql
 from loggers import log_wikidata
 from wikidata import WikidataItem
+from helpers import create_storage
+from wte import CACHE_FOLDER
+from loggers import log, log_non_english, log_no_words, log_unsupported
+from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_section_not_found
 
 
 # def save_to_json(treemap, filename):
@@ -252,6 +256,39 @@ def DumpWrapperFactory(*args, **kvargs):
     return dump_wrapper
 
 
+def download(lang="en", use_cached=True):
+    """
+    Download file from HTTPS.
+
+    In:
+        lang       - Language code string, like a: en, de, fr
+        use_cached - True if need use cached_file. False for force run downloading.
+    Out:
+        local_file - local cached file name
+    """
+    remote_file = 'https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2'
+
+    create_storage(CACHE_FOLDER)
+    local_file = os.path.join(CACHE_FOLDER, "wikidata-latest-all.json.bz2")
+
+    # check cache
+    if use_cached and os.path.exists(local_file):
+        return local_file
+
+    # download
+    import requests
+    import shutil
+
+    r = requests.get(remote_file, auth=('usrname', 'password'), verify=False, stream=True)
+    r.raw.decode_content = True
+
+    log.info("Downloading....")
+    with open(local_file, 'wb') as f:
+        shutil.copyfileobj(r.raw, f)
+    log.info("Downloaded....[ OK ]")
+
+    return local_file
+
 
 
 def run(outfile, lang="en"):
@@ -259,12 +296,18 @@ def run(outfile, lang="en"):
     repo = site.data_repository()
     repo._simple_request = DumpWrapperFactory
 
-    log_wikidata.info("Result in the: %s", outfile)
+    #log_wikidata.info("Result in the: %s", outfile)
+    
+    log_wikidata.info("downloading...")
+    local_file = download()
+    log_wikidata.info("downloaded.")
 
-    with requests.get('https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2', stream=True) as req:
-      with bz2.open(req.raw, "rt", encoding="utf-8") as fin:
-        with open(outfile, "w", encoding="utf-8") as fout:
-            fout.write("[\n")
+    log_wikidata.info("parsing...")    
+    with bz2.open(local_file, "rt", encoding="utf-8") as fin:
+    #with requests.get('https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2', stream=True) as req:
+    #  with bz2.open(req.raw, "rt", encoding="utf-8") as fin:
+        #with open(outfile, "w", encoding="utf-8") as fout:
+            #fout.write("[\n")
 
             try:
                 for i, data in enumerate(ijson.items(fin, "item")):
@@ -278,13 +321,12 @@ def run(outfile, lang="en"):
                         
                         for w in words:
                             log_wikidata.info(w.LabelName)
-                            js = w.as_json()
-                            
-                            if i == 0: 
-                                fout.write(js)
-                            else:
-                                fout.write(",\n")
-                                fout.write(js)
+
+                            #if i == 0: 
+                            #    fout.write(w.as_json())
+                            #else:
+                            #    fout.write(",\n")
+                            #    fout.write(w.as_json())
                             
                             w.save_to_db()
 
@@ -297,7 +339,7 @@ def run(outfile, lang="en"):
                 log_wikidata.error("unexpected end of file")
                 pass         
                 
-            fout.write("\n]\n")
+            #fout.write("\n]\n")
         
 
 if __name__ == "__main__":

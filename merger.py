@@ -1,18 +1,43 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+import sys
+import os.path
 import json
 import sqlite3
 import requests
 import wikipedia
-from wikidata import WikidataItem
-from wiktionary import WikictionaryItem
+from wikidata import WikidataItem as WikidataItemClass
+from wiktionary import WikictionaryItem as WikictionaryItemClass
 from sql import DBWikiData, DBWikictionary, get_new_id
 from word import Word
 from dbclass import from_db
+from helpers import get_contents, put_contents
 
 
-DBWords = sqlite3.connect("Words.db")
+#DBWords = sqlite3.connect("Words.db")
+
+
+class CacheRequest:
+    """ decorator """    
+
+    def __init__(self, function): 
+        self._cache = {}
+        self.function = function 
+
+
+    def __call__(self, url, *args, **kwarg):
+        # reset cache for memory keeping
+        if len(self._cache) > 1000:
+            self._cache = {}
+
+        #
+        if url in self._cache:
+            return self._cache[url]
+        else:
+            data = self.function(url, *args, **kwarg)
+            self._cache[url] = data
+            return data
 
 
 class DescriptionItem():
@@ -108,7 +133,7 @@ def SQLInit():
 
 
 def SearchWikictionary( WikidataItem ):
-    yield from from_db(WikictionaryItem, LabelName = WikidataItem.LabelName )
+    yield from from_db(WikictionaryItemClass, LabelName = WikidataItem.LabelName )
 
 
 def CompareWikictionary(WikidataItem, WikictionaryItem):
@@ -145,8 +170,8 @@ def MergeWikidata( word, WikidataItem ):
 def MergeWiktionary( word, WikictionaryItem ):
     word = Word(word)
     word.Type                       = WikictionaryItem.Type
-    word.ExplainationWiktionary     = WikictionaryItem.Explaination
-    word.ExamplesWiktionary         = WikictionaryItem.ExplainationExamples
+    word.ExplainationWiktionary     = WikictionaryItem.ExplainationRaw
+    word.ExamplesWiktionary         = WikictionaryItem.ExplainationExamplesRaw
     word.IsMale                     = WikictionaryItem.IsMale
     word.IsFeminine                 = WikictionaryItem.IsFeminine
     word.IsSingle                   = WikictionaryItem.IsSingle
@@ -207,6 +232,7 @@ def MergeContent( word, DescriptionItem ):
 #   CONTENT
 
 
+@CacheRequest
 def GetContentWikipedia( Url, WikidataItem ):
     wikipedia.set_lang("en")
     
@@ -229,9 +255,9 @@ def GetContentWikipedia( Url, WikidataItem ):
     return desc
 
 
+@CacheRequest
 def GetContentBritanica( Url, WikidataItem ):
-    r = requests.get(Url)
-    html_doc = r.text
+    html_doc = requests.get(Url).text
 
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html_doc, 'html.parser')
@@ -245,9 +271,9 @@ def GetContentBritanica( Url, WikidataItem ):
     return desc
 
 
+@CacheRequest
 def GetContentUniversalis( Url, WikidataItem ):
-    r = requests.get(Url)
-    html_doc = r.text
+    html_doc = requests.get(Url).text
 
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html_doc, 'html.parser')
@@ -266,13 +292,71 @@ def CompareContent ( Word, DescriptionItem ):
     
 
 def wikidata_reader():
-    yield from from_db(WikidataItem)
+    yield from from_db(WikidataItemClass)
+    
     
 
+class SavePoint:
+    point = None
+    POINT_FILE_NAME = "savepoint.txt"
+    _must_check = False
+
+    @classmethod
+    def check_save_point(self, s):
+        if self._must_check:
+            if self.point == s:
+                return True
+            else:
+                return False
+        else:
+            return True
+
+
+    @classmethod
+    def load_save_point(self):
+        if os.path.isfile(self.POINT_FILE_NAME):
+            self.point = get_contents(self.POINT_FILE_NAME)
+            if self.point:
+                print("Savepoint found:", self.POINT_FILE_NAME, ":", self.point)
+                self._must_check = True
+
+
+    @classmethod
+    def make_save_point(self, s):
+        put_contents(self.POINT_FILE_NAME, s)
+        self._must_check = False
+
+
 def mainfunc():
+    SavePoint.load_save_point()
+    
+    WikictionaryItemClass().create_index(LabelName=1)
+
     # read words from wikidata
     for WikidataItem in wikidata_reader():
+        if SavePoint.check_save_point( str(WikidataItem.id) ):
+            pass # savepoint found or first run
+        else:
+            continue # skip. because waiting savepoint
+
         print( WikidataItem )
+
+        SavePoint.make_save_point( str(WikidataItem.id) )
+
+        # header
+        for s in ["WD", "WT", "Wp", "Br", "Un", "Done"]:
+            print( s.ljust(3), end="" )
+        print()
+
+        # WD
+        print('*'.ljust(3), end="")
+        
+        if 0:
+            if WikidataItem.LabelName == "Belgique":
+                pass
+            else:
+                continue
+            
         word = Word()        
         word = MergeWikidata( word, WikidataItem )
 
@@ -282,40 +366,96 @@ def mainfunc():
             if CompareWikictionary ( WikidataItem, WikictionaryItem ):
                 word = MergeWiktionary( word, WikictionaryItem )
                 words.append(word)
-        
+
         # words
-        if len(words) == 0:
+        if len(words) > 0:
+            # WT
+            print((str(len(words))).ljust(3), end="")
+            sys.stdout.flush()
+            
+        else:
             words.append(word)
+            # WT
+            print(('.').ljust(3), end="")
+            sys.stdout.flush()
+            
         
         # descriptions
         words2 = []
         for word in words:
+            # WP
             Url = word.WikipediaENURL
+            WP_found = ""
             if Url:
-                DescriptionItem = GetContentWikipedia( Url, WikidataItem )
-                word = MergeContent(word, DescriptionItem)
+                try:
+                    DescriptionItem = GetContentWikipedia( Url, WikidataItem )
+                    word = MergeContent(word, DescriptionItem)
+                    if len(DescriptionItem.CONTENT) > 0:
+                        WP_found = "*"
+                except wikipedia.exceptions.DisambiguationError:
+                    WP_found = "E"
+                except wikipedia.exceptions.PageError:
+                    WP_found = "E"
+                except wikipedia.exceptions:
+                    WP_found = "E"
+                    
+            if WP_found:
+                print(WP_found.ljust(3), end="")
+                sys.stdout.flush()
+            else:
+                print('.'.ljust(3), end="")
+                sys.stdout.flush()
 
+
+            # BR
             Url = word.EncyclopediaBritannicaEN
+            BR_found = False
             if Url:
                 DescriptionItem = GetContentBritanica( Url, WikidataItem )
                 word = MergeContent(word, DescriptionItem)
+                BR_found = True
 
+            if BR_found:
+                print('*'.ljust(3), end="")
+                sys.stdout.flush()
+            else:
+                print('.'.ljust(3), end="")
+                sys.stdout.flush()
+
+
+            # UN
             Url = word.EncyclopediaUniversalisEN
+            UN_found = False
             if Url:
                 DescriptionItem = GetContentUniversalis( Url, WikidataItem )
                 word = MergeContent(word, DescriptionItem)
+                UN_found = True
+
+            # UN
+            if UN_found:
+                print('*'.ljust(3), end="")
+                sys.stdout.flush()
+            else:
+                print('.'.ljust(3), end="")
+                sys.stdout.flush()
 
             words2.append(word)
+            
+            # stub eol for logging
+            if len(words) > 1 and len(words) != len(words2):
+                print()
+                print(" " * (3 * len(["WD", "WT"])), end="")
             
         if words2:
             words = words2
             
-        print('.', end="")
-
         # write words
         for word in words:
             word.save_to_db()
 
+        # Done
+        print( '*'.ljust(3) )
+    
 
 def test():
     word = Word()

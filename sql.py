@@ -7,8 +7,8 @@ import wte
 from wikidata import WikidataItem
 
 
-DBWikictionary = sqlite3.connect("Wikictionary.db")
-DBWikiData = sqlite3.connect("WikiData.db")
+DBWikictionary = sqlite3.connect("Wikictionary.db", isolation_level=None)
+DBWikiData = sqlite3.connect("WikiData.db", isolation_level=None)
 
 
 def wikidata_factory(cursor, row):
