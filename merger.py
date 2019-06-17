@@ -266,6 +266,8 @@ def GetContentBritanica( Url, WikidataItem ):
     desc.URL = Url
     desc.TITLE = soup.title.get_text()
     content = soup.find("article", id="article-content") # <article id="article-content" class="content">
+    if content is None:
+        content = soup.find("section", id="corps-fr") # <section class="col-sm-8 col-lg-9" id="corps-fr">
     desc.CONTENT = content.get_text() if content else ""
     
     return desc
