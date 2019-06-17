@@ -104,7 +104,7 @@ Script steps:
     phase 2: (add sections)
       in: object tree
          - buld struct: LANG / Type-of-speech / Explaination
-         - fixed: 
+         - fixes: 
            - add absend lang section
            - add headers 
            - extract names from templated headers
