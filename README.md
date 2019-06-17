@@ -195,7 +195,7 @@ Structure:
         Translation_RU = []
         Translation_PT = []
 
-        # Wiktidata
+        # Wikidata
         LabelName = None
         LanguageCode = None
         CodeInWiki = None
