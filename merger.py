@@ -12,7 +12,7 @@ from wiktionary import WikictionaryItem as WikictionaryItemClass
 from sql import DBWikiData, DBWikictionary, get_new_id
 from word import Word
 from dbclass import from_db
-from helpers import get_contents, put_contents
+from helpers import get_contents, put_contents, unique
 
 
 #DBWords = sqlite3.connect("Words.db")
@@ -170,6 +170,7 @@ def MergeWikidata( word, WikidataItem ):
 def MergeWiktionary( word, WikictionaryItem ):
     word = Word(word)
     word.Type                       = WikictionaryItem.Type
+    word.LabelType                  = WikictionaryItem.LabelType
     word.ExplainationWiktionary     = WikictionaryItem.ExplainationRaw
     word.ExamplesWiktionary         = WikictionaryItem.ExplainationExamplesRaw
     word.IsMale                     = WikictionaryItem.IsMale
@@ -200,6 +201,14 @@ def MergeWiktionary( word, WikictionaryItem ):
     word.AlternativeFormsOther      = WikictionaryItem.AlternativeFormsOther
     word.RelatedTerms               = WikictionaryItem.RelatedTerms
     word.Coordinate                 = WikictionaryItem.Coordinate
+    
+    word.Translation_EN = unique(word.Translation_EN)
+    word.Translation_FR = unique(word.Translation_FR)
+    word.Translation_DE = unique(word.Translation_DE)
+    word.Translation_IT = unique(word.Translation_IT)
+    word.Translation_ES = unique(word.Translation_ES)
+    word.Translation_RU = unique(word.Translation_RU)
+    word.Translation_PT = unique(word.Translation_PT)
     
     return word
 
