@@ -327,7 +327,11 @@ def Hypernymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, "hypernyms", [in_arg, (0, [1,2,3,4,5,6,7]) ]],
         [in_section, 'hypernyms', [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1) ]]],
-        [in_section, 'hypernyms', [in_template, 'wikipedia', [in_arg, (None, 1) ]]],
+        [in_section, 'hypernyms', 
+            [in_template, 'wikipedia', [in_arg, (None, 1) ]],
+            [in_link]
+        ],
+        
     ):
         if lang is None or lang in LANGUAGES:
             word.add_hypernym( lang, term )
@@ -337,7 +341,11 @@ def Hyponymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, "hyponyms", [in_arg, (0, [1,2,3,4,5,6,7]) ]],
         [in_section, 'hyponyms', [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1) ]]],
-        [in_section, 'hyponyms', [in_template, 'wikipedia', [in_arg, (None, 1) ]]],
+        [in_section, 'hyponyms', 
+            [in_template, 'wikipedia', [in_arg, (None, 1) ]],
+            [in_link]
+        ],
+
     ):
         if lang is None or lang in LANGUAGES:
             word.add_hyponym( lang, term )
@@ -347,7 +355,11 @@ def Meronymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, "meronyms", [in_arg, (0, [1,2,3,4,5,6,7]) ]],
         [in_section, 'meronyms', [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1) ]]],
-        [in_section, 'meronyms', [in_template, 'wikipedia', [in_arg, (None, 1) ]]],
+        [in_section, 'meronyms', 
+            [in_template, 'wikipedia', [in_arg, (None, 1) ]],
+            [in_link]
+        ],
+        
     ):
         if lang is None or lang in LANGUAGES:
             word.add_meronym( lang, term )
@@ -357,7 +369,11 @@ def Holonymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, "holonyms", [in_arg, (0, [1,2,3,4,5,6,7]) ]],
         [in_section, 'holonyms', [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1) ]]],
-        [in_section, 'holonyms', [in_template, 'wikipedia', [in_arg, (None, 1) ]]],
+        [in_section, 'holonyms', 
+            [in_template, 'wikipedia', [in_arg, (None, 1) ]],
+            [in_link]
+        ],
+        
     ):
         if lang is None or lang in LANGUAGES:
             word.add_holonym( lang, term )
@@ -367,7 +383,11 @@ def Troponymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, "troponyms", [in_arg, (0, [1,2,3,4,5,6,7]) ]],
         [in_section, 'troponyms', [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1) ]]],
-        [in_section, 'troponyms', [in_template, 'wikipedia', [in_arg, (None, 1) ]]],
+        [in_section, 'troponyms', 
+            [in_template, 'wikipedia', [in_arg, (None, 1) ]],
+            [in_link]
+        ],
+        
     ):
         if lang is None or lang in LANGUAGES:
             word.add_troponym( lang, term )
