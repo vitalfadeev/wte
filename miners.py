@@ -240,6 +240,7 @@ def w_cb(t):
 def t_plus_cb(t):
     # {{t+|en|1|cat|,|3, 4|hooker|,|5|john|,|7|jack|,|8|noughts and crosses|,|8|tic-tac-toe}}
     # {{t+|de|1, 2|Katze|f|,|1|Kater|m|nota|gato macho|,|7|Wagenheber|m|,|7|Heber|m|,|8|Kreis und Kreuz|,|8|Tic Tac Toe}}
+    # {{t+|de|Dezember|m}}, {{t+|de|Julmond|m}}
     # first
     lang = t.arg(0)
     term = t.arg(2)
@@ -465,6 +466,7 @@ def in_arg(t, excludes, keys, *miners):
     for key in term_keys:
         term = t.arg(key)
         if term:
+            term = term.strip()
             yield (lang, term)
 
 

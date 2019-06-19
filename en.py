@@ -98,6 +98,10 @@ def en_noun(t, excludes, label, miners=None):
             # ends by s
             yield (None, head + "s")
 
+        elif p2 == "es":
+            # ends by es
+            yield (None, head + "es")
+
         elif p2 is not None:
             # word
             yield (None, p2)
@@ -255,6 +259,7 @@ def SingleVariant(search_context, excludes, word):
 def PluralVariant(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, 'en-noun', [en_noun, word.LabelName]],
+        [in_template, 'en-proper noun', [in_arg, [None, 0]]],
     ):
         word.PluralVariant = term
         break
@@ -309,7 +314,10 @@ def Antonymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, "antonyms", [in_arg, (0, [1,2,3,4,5,6,7]) ]],
         [in_section, ['antonym', 'antonyms'], [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1) ]]],
-        [in_section, ['antonym', 'antonyms'], [in_template, 'wikipedia', [in_arg, (None, 1) ]]],
+        [in_section, ['antonym', 'antonyms'], 
+            [in_template, 'wikipedia', [in_arg, (None, 1) ]],
+            [in_link]
+        ],
     ):
         if lang is None or lang in LANGUAGES:
             word.add_antonym( lang, term )
@@ -373,6 +381,7 @@ def AlternativeFormsOther(search_context, excludes, word):
     # {{en-adv}}
     # {{en-adj}}
     for (lang, term) in find_all(search_context, excludes,
+        [in_section, 'alternative forms', [in_template, 'l', [in_arg, (0, 1) ]]],
         [in_template, ['en-adv','en-adj'], [en_adj, word.LabelName]],
     ):
         if lang is None or lang in LANGUAGES:
@@ -382,7 +391,7 @@ def AlternativeFormsOther(search_context, excludes, word):
 def RelatedTerms(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_section, 'related terms', [in_link]],
-        [in_template, ['see', 'also'], [in_arg, ([0,1,2,3,4,5,6,7]) ]],
+        [in_template, ['see', 'also'], [in_arg, (None, [0,1,2,3,4,5,6,7]) ]],
         [in_template, 'cog', [in_arg, (0, 1) ]],
     ):
         if lang is None or lang in LANGUAGES:
@@ -402,10 +411,10 @@ def Translation(search_context, excludes, word):
     # {{trad|en|cat}}
     # {{t+|fr|ongle|m}}
     for (lang, term) in find_all(search_context, excludes,
-        [in_template, "trad", [in_arg, (["lang", 0], 1)]],
-        [in_template, "t"   , [in_arg, (["lang", 0], 1)]],
-        [in_template, "t-simple", [in_arg, (["lang", 0], 1)]],
-        [in_template, "t+"  , [in_t_plus]],
+        [in_template, "trad",       [in_arg, (["lang", 0], 1)]],
+        [in_template, "t"   ,       [in_arg, (["lang", 0], 1)]],
+        [in_template, "t-simple",   [in_arg, (["lang", 0], 1)]],
+        [in_template, "t+"  ,       [in_arg, (["lang", 0], 1)]],
     ):
         word.add_translation(lang, term)
 

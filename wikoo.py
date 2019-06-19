@@ -260,9 +260,16 @@ class Template(Container):
         # extract template
         #items = [self.name] + [ a.get_text() for a in self.args() ]
         #return "{{" + "|".join( items ) + "}}"
+        if self.name == "initialism of":
+            a0 = self.arg(0)
+            if a0:
+                return self.name + " " + a0
+
         s = self.arg(1)
+
         if s is None:
-            s = self.name
+            return self.name
+
         return s
 
     def find_arg(self, lang_keys):
@@ -328,6 +335,31 @@ class Preformatted(Container):
         return "Preformatted()"
 
 class Link(Container):
+    def get_text(self):
+        """
+        [[abc]] gives 'abc'
+        [[a|b]] is labelled "b" on this page but links to page "a". Example: b.
+        [[a]]b gives ab. So does [[a|ab]]: ab. The code [[a|b]]c gives bc, just as [[a|bc]] does. However, all four of these examples will link to page "a".
+        a[[b]] gives ab.
+        [[a]]:b gives a:b since the colon is outside the end brackets. The same goes for [[Washington]]'s or e-[[mail]].
+        [[a]]''b'' gives ab. (Double apostrophes turn on and off italics.)
+        ''[[a]]''b gives ab.
+        [[a|b]]cd gives bcd, and shows an example of link trailing.
+        [[a]]<nowiki />b gives ab. (The nowiki tag is needed to turn off the so-called "linktrail rules".)
+        [[a|b]]<nowiki />c gives bc.
+        
+        ref: https://en.wikipedia.org/wiki/Help:Link
+        """
+        text = " ".join( c.get_text() for c in self.childs if not isinstance(c, Template) ) # skip templates
+        args = [c for c in self.childs if isinstance(c, Arg)]
+
+        if len(args) == 1:
+            return text
+        if len(args) > 1:
+            return args[1].get_text()
+
+        return text
+
     def __repr__(self):
         return "Link()"
 
@@ -445,6 +477,9 @@ class Arg(Container):
             return text[:eqpos].strip().lower()
         else:
             return None
+
+    def get_text(self):
+        return " ".join( c.get_text() for c in self.childs if not isinstance(c, Template) ) # skip templates
 
     def get_value(self):
         text = self.get_text()
@@ -1385,7 +1420,7 @@ def read_link(text, spos):
 assert repr(read_link("[[ ]]", 0)) == "(5, Link())"
 assert read_link("[[ http://wikipedia.org/wiki/cat ]]", 0)[0] == len("[[ http://wikipedia.org/wiki/cat ]]")
 assert read_link("[[ http://wikipedia.org/wiki/cat ]]", 0)[1].get_text() == " http://wikipedia.org/wiki/cat "
-assert read_link("[[ http://wikipedia.org/wiki/cat | abc ]]", 0)[1].get_text() == " http://wikipedia.org/wiki/cat   abc "
+assert read_link("[[ http://wikipedia.org/wiki/cat | abc ]]", 0)[1].get_text() == " abc "
 
 try: read_html("<font size=4%></font size>", 0)
 except NotHtml: pass

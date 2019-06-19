@@ -1,9 +1,9 @@
 #!/bin/env python3
 
 
-def test_one(label, lang):
+def test_one(lang, label):
     from wte import one_file as wiktionary_parser_one
-    wiktionary_parser_one(label, lang)
+    wiktionary_parser_one(lang, label)
 
 
 def test_wiktionary(lang):
@@ -21,10 +21,11 @@ def test_merger():
     merge()
 
 
+#test_one("en", "USSR")
 #test_wikidict("fr")
-#test_wiktionary("fr")
+test_wiktionary("en")
 #test_merger()
-#exit(9)
+exit(9)
 
 test_wiktionary("fr")
 test_wiktionary("en")
