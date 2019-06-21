@@ -365,7 +365,7 @@ def get_label_type(expl, word):
     #
     list1 = []
     for t in expl.find_objects((Template, Link), recursive=True, exclude=[li for li in expl.find_objects((Li, Dl))]):
-        inner = t.get_text()
+        inner = t.raw
         s = convert_to_alnum(inner)
         s = s.replace('_', ' ')
         s = deduplicate(s, ' ')
