@@ -21,14 +21,14 @@ def test_merger():
     merge()
 
 
-#test_one("en", "USSR")
-#test_wikidict("fr")
+#test_one("en", "Cat")
+#test_wikidict("en")
 test_wiktionary("en")
 #test_merger()
 exit(9)
 
-test_wiktionary("fr")
 test_wiktionary("en")
+test_wiktionary("fr")
 test_wiktionary("de")
 test_wiktionary("it")
 test_wiktionary("pt")

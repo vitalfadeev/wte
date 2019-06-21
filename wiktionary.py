@@ -11,49 +11,53 @@ from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_
 class WikictionaryItem(DBClass, JSONClass):
     DB_NAME = "Wikictionary.db"
     DB_TABLE_NAME = "wikictionary"
-    
+    DB_PRIMARY = ["PrimaryKey"]
+    DB_INDEXES = []
+
 
     def __init__(self):
-        self.LabelName = ""  #
-        self.LabelType = None  #
-        self.LanguageCode = ""  # (EN,FR,…)
-        self.Type = ""  # = noun,verb… see = WORD_TYPES
-        self.TypeLabelName = ""  # chatt for verb of chat
-        self.ExplainationRaw = None  #
-        self.ExplainationTxt = None  #
+        self.PrimaryKey              = None
+        self.SelfUrl                 = None
+        self.LabelName               = ""  #
+        self.LabelType               = None  #
+        self.LanguageCode            = ""  # (EN,FR,…)
+        self.Type                    = ""  # = noun,verb… see = WORD_TYPES
+        self.TypeLabelName           = ""  # chatt for verb of chat
+        self.ExplainationRaw         = None  #
+        self.ExplainationTxt         = None  #
         self.ExplainationExamplesRaw = None
         self.ExplainationExamplesTxt = None
-        self.IsMale = None
-        self.IsFeminine= None  # ""
-        self.IsNeutre= None  # ""
-        self.IsSingle = None
-        self.IsPlural = None
-        self.SingleVariant = None  # ""
-        self.PluralVariant = None  # ""
-        self.MaleVariant = None  # ""
-        self.FemaleVariant = None  # ""
-        self.IsVerbPast = None
-        self.IsVerbPresent = None
-        self.IsVerbFutur = None
-        self.Conjugation = []
-        self.Synonymy = []
-        self.Antonymy = []
-        self.Hypernymy = []
-        self.Hyponymy = []
-        self.Meronymy = []
-        self.Holonymy = []
-        self.Troponymy = []
-        self.Otherwise = []
-        self.AlternativeFormsOther = []
-        self.RelatedTerms = []
-        self.Coordinate = []
-        self.Translation_EN = []
-        self.Translation_FR = []
-        self.Translation_DE = []
-        self.Translation_IT = []
-        self.Translation_ES = []
-        self.Translation_RU = []
-        self.Translation_PT = []
+        self.IsMale                  = None
+        self.IsFeminine              = None  # ""
+        self.IsNeutre                = None  # ""
+        self.IsSingle                = None
+        self.IsPlural                = None
+        self.SingleVariant           = None  # ""
+        self.PluralVariant           = None  # ""
+        self.MaleVariant             = None  # ""
+        self.FemaleVariant           = None  # ""
+        self.IsVerbPast              = None
+        self.IsVerbPresent           = None
+        self.IsVerbFutur             = None
+        self.Conjugation             = []
+        self.Synonymy                = []
+        self.Antonymy                = []
+        self.Hypernymy               = []
+        self.Hyponymy                = []
+        self.Meronymy                = []
+        self.Holonymy                = []
+        self.Troponymy               = []
+        self.Otherwise               = []
+        self.AlternativeFormsOther   = []
+        self.RelatedTerms            = []
+        self.Coordinate              = []
+        self.Translation_EN          = []
+        self.Translation_FR          = []
+        self.Translation_DE          = []
+        self.Translation_IT          = []
+        self.Translation_ES          = []
+        self.Translation_RU          = []
+        self.Translation_PT          = []
 
 
     def save_to_json(self, filename):

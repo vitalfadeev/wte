@@ -359,15 +359,20 @@ def find_explainations(tos_section, is_expl_section):
             yield dl
 
 
-def get_label_type(expl):
+def get_label_type(expl, word):
+    wt = proper(word.Type) if word.Type is not None else ""
+    
+    #
     list1 = []
     for t in expl.find_objects((Template, Link), recursive=True, exclude=[li for li in expl.find_objects((Li, Dl))]):
         inner = t.get_text()
         s = convert_to_alnum(inner)
-        s = deduplicate(s)
-        s = s.strip("_").strip()
+        s = s.replace('_', ' ')
+        s = deduplicate(s, ' ')
+        s = s.strip()
         splitted = s.split(" ")
         list1 += [ w.upper() for w in splitted ]
+        list1 = [ w for w in list1 if len(w) >= 3 ]
 
     list2 = []
     for l in expl.find_objects(Link, recursive=True, exclude=[li for li in expl.find_objects((Li, Dl))]):
@@ -379,12 +384,22 @@ def get_label_type(expl):
         list2 += [ proper(w) for w in splitted ]
 
     list3 = []
-    s = expl.get_raw()
-    s = s.replace("{", "").replace("}", "").replace("[", "").replace("]", "").replace("(", "").replace(")", "")
+    texts = []
+    for c in expl.childs:
+        if isinstance(c, Li): # skip deep lists 
+            continue
+        if isinstance(c, Template): # skip Templates {{ }}
+            continue
+        if isinstance(c, Template): # skip Links [[ ]]
+            continue
+        else:
+            texts.append( c.get_text() )
+    s = "".join( texts )
     s = convert_to_alnum(s)
-    s = deduplicate(s)
-    s = s.strip("_").strip()
-    splitted = s.split("_")
+    s = s.replace('_', ' ')
+    s = deduplicate(s, ' ')
+    s = s.strip()
+    splitted = s.split(" ")
     list3 += [ w.lower() for w in splitted ]
     list3 = [ w for w in list3 if len(w) >= 3 ]
 
@@ -392,13 +407,13 @@ def get_label_type(expl):
     biglst = list1 + list2 + list3
 
     if len(biglst) == 1:
-        return biglst[0]
+        return wt + "-" + biglst[0]
 
     elif len(biglst) >= 2:
-        return "-".join(biglst[:2])
+        return wt + "-" + "-".join(biglst[:2])
 
     else:
-        return ""
+        return wt
 
 
 #

@@ -106,26 +106,27 @@ def convert(page, lang):
     
     #
     # https://www.wikidata.org/wiki/Special:EntityData/Q300918.json
-    w.LabelName         = label
-    w.CodeInWiki        = id_
-    w.LanguageCode      = lang
-    w.Description       = desc
-    w.AlsoKnownAs       = list(aliases)
-    w.SelfUrl           = "https://www.wikidata.org/wiki/" + id_
-    w.WikipediaENURL    = wikipedia
-    w.EncyclopediaBritannicaEN = BritannicaENURL
+    w.LabelName                 = label
+    w.CodeInWiki                = id_
+    w.PrimaryKey                = w.LabelName + "§" + w.CodeInWiki
+    w.LanguageCode              = lang
+    w.Description               = desc
+    w.AlsoKnownAs               = list(aliases)
+    w.SelfUrl                   = "https://www.wikidata.org/wiki/" + id_
+    w.WikipediaENURL            = wikipedia
+    w.EncyclopediaBritannicaEN  = BritannicaENURL
     w.EncyclopediaUniversalisEN = UniversalisENURL
-    w.DescriptionUrl    = description_url
-    w.Instance_of       = instance_of
-    w.Subclass_of       = subclass_of
-    w.Part_of           = part_of
-    w.Translation_EN    = [page.labels.get("en", None)]
-    w.Translation_FR    = [page.labels.get("fr", None)]
-    w.Translation_DE    = [page.labels.get("de", None)]
-    w.Translation_IT    = [page.labels.get("it", None)]
-    w.Translation_ES    = [page.labels.get("es", None)]
-    w.Translation_RU    = [page.labels.get("ru", None)]
-    w.Translation_PT    = [page.labels.get("pt", None)]
+    w.DescriptionUrl            = description_url
+    w.Instance_of               = instance_of
+    w.Subclass_of               = subclass_of
+    w.Part_of                   = part_of
+    w.Translation_EN            = [page.labels.get("en", None)]
+    w.Translation_FR            = [page.labels.get("fr", None)]
+    w.Translation_DE            = [page.labels.get("de", None)]
+    w.Translation_IT            = [page.labels.get("it", None)]
+    w.Translation_ES            = [page.labels.get("es", None)]
+    w.Translation_RU            = [page.labels.get("ru", None)]
+    w.Translation_PT            = [page.labels.get("pt", None)]
     
     words.append(w)
   

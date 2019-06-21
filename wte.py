@@ -19,6 +19,7 @@ import wikoo
 from wikoo import Section, Template, Link, Li, Dl, Dt, Dd, Header, Mined
 from miners import find_explainations
 from wiktionary import WikictionaryItem
+from dbclass import DBWrite
 
 
 TXT_FOLDER      = "txt"     # folder where stored text files for debugging
@@ -331,11 +332,14 @@ class XMLParser:
     """
 
     def __init__(self):
-        self.inpage = False
+        self.inpage  = False
         self.intitle = False
-        self.intext = False
-        self.title = ""
-        self.text = ""
+        self.intext  = False
+        self.inid_   = False
+        self.title  = ""
+        self.text   = ""
+        self.id_    = ""
+        self.opened = []
 
         ### BEGIN ###
         # Initializing xml parser
@@ -354,12 +358,14 @@ class XMLParser:
         if not self.inpage:
             if tag == "page":
                 # flags
-                self.inpage = True
+                self.inpage  = True
                 self.intitle = False
-                self.intext = False
+                self.intext  = False
+                self.inid_   = False
                 # storages
-                self.text = ""
+                self.text  = ""
                 self.title = ""
+                self.id_   = ""
 
         elif self.inpage:
             if tag == "title":
@@ -369,6 +375,13 @@ class XMLParser:
             elif tag == "text":
                 self.intext = True
                 self.text = ""
+
+            elif tag == "id" and self.opened[-1] == "page":
+                self.inid_ = True
+                self.id_ = ""
+        
+        self.opened.append(tag)
+
 
     def cdata(self, data):
         """
@@ -383,13 +396,18 @@ class XMLParser:
                 # text
                 self.text += data  # cumulative, because can be multiple data sections
 
+            elif self.inid_:
+                # text
+                self.text += data  # cumulative, because can be multiple data sections
+
+
     def end(self, tag):
         """
         Event on close tag, like the "</page>"
         """
         if self.inpage:
             if tag == "page":
-                self.page_callback(self.lang, self.title, self.text, self.limit, self.is_save_txt, self.is_save_json, self.is_save_xml, self.is_save_templates)
+                self.page_callback(self.lang, self.id_, self.title, self.text, self.limit, self.is_save_txt, self.is_save_json, self.is_save_xml, self.is_save_templates)
                 self.inpage = False
 
             elif tag == "title":
@@ -397,6 +415,12 @@ class XMLParser:
 
             elif tag == "text":
                 self.intext = False
+
+            elif tag == "id":
+                self.inid_ = False
+
+        self.opened.pop()
+        
 
     def parse(self, file_stream, page_callback, lang="en", limit=10, is_save_txt=False, is_save_json=False, is_save_xml=False, is_save_templates=False):
         """
@@ -550,11 +574,12 @@ def scan_struct(lm, struct, root_word, level=0):
 
         # explaination caontext
         if lm.is_expl_section(search_context) or isinstance(search_context, (Li, Dl)):
-            lm.LabelType(search_context, excludes, word)
             lm.ExplainationRaw(search_context, excludes, word)
             lm.ExplainationTxt(search_context, excludes, word)
             lm.ExplainationExamplesRaw(search_context, excludes, word)
             lm.ExplainationExamplesTxt(search_context, excludes, word)
+            lm.LabelType(search_context, excludes, word)
+            word.PrimaryKey = word.LabelName + "§" + word.LabelType
 
         #print("  "*level, search_context, word.Type, word.IsMale)
         
@@ -581,6 +606,8 @@ def try_well_formed_structure(lang, label, tree):
     word = WikictionaryItem()
     word.LabelName = label
     word.LanguageCode = lang
+    word.PrimaryKey = word.LabelName + "§"
+    word.SelfUrl = "https://" + lang + ".wiktionary.org/wiki/" + label
     
     # scan for words
     words = scan_struct(lm, struct, word)
@@ -605,7 +632,7 @@ def preprocess(lang, callback, limit=0, is_save_txt=False, is_save_json=False, i
         parser.parse(xml_stream, callback, lang=lang, limit=limit, is_save_txt=is_save_txt, is_save_json=is_save_json, is_save_templates=is_save_templates) # call process() here
 
 
-def process(lang, label, text,  limit=0, is_save_txt=False, is_save_json=False, is_save_xml=False, is_save_templates=False):
+def process(lang, id_, label, text,  limit=0, is_save_txt=False, is_save_json=False, is_save_xml=False, is_save_templates=False):
     """ This function emitted on each article. Called from XML parser """
     log.info("process(%s, %s)", lang, label)
     
@@ -1025,7 +1052,7 @@ def print_table_record(word, print_header=False):
         value = getattr(word, a)
         s = str(len(value)) if value and isinstance(value, (tuple, list)) else ('*' if value else '-')
         row.append(s.rjust(2))
-    log.info(" ".join(row))
+    log.info(" ".join(row) + " " + word.PrimaryKey)
 
 
 def one_file(lang, label):
@@ -1039,10 +1066,11 @@ def one_file(lang, label):
     src_file = os.path.join(TXT_FOLDER, lang, label + ".txt")
     log.info("Loading from: %s", src_file)
     text = get_contents(src_file)
+    id_ = label + "-1"
 
     # parse
     log.info("Parsing")
-    words = process(lang, label, text)
+    words = process(lang, id_, label, text)
 
     # pack
     treemap = TreeMap()
@@ -1054,13 +1082,18 @@ def one_file(lang, label):
     save_to_json(treemap, json_file)
 
     log.info("Saving to DB")
-    import sql
-    sql.SQLWriteDB( sql.DBWikictionary, treemap )
+    for w in treemap[label]:
+        #w.save_to_db()
+        DBWrite(w)
 
     log.info("Status: words:%d", len(treemap[label]))
     for w in treemap[label]:
         log.info("  %s: %s: %s: %s", w.LabelName, str(w.Type).ljust(14), str(w.LabelType).ljust(30), str(w.ExplainationRaw)[:50].replace("\n", "\\n"))
-        #print(w.Synonymy)
+        print(w.ExplainationRaw)
+        print(w.LabelType)
+        print(w.SelfUrl)
+        print(w.PrimaryKey)
+        print()
     log.info("Done!")
 
 

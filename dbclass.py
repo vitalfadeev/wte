@@ -9,6 +9,12 @@ _cache = {}
 
 
 class DBClass:
+    DB_NAME = ""
+    DB_TABLE_NAME = ""
+    DB_PRIMARY = []
+    DB_INDEXES = []
+
+
     def connect(self):
         """ Opend database file, cache handle, disable journaling """
         db = _cache.get(self.DB_NAME, None)
@@ -26,13 +32,24 @@ class DBClass:
         Create DB index 
         
         WikictionaryItem.create_index(LabelName=0)
+        WikictionaryItem.create_index(LabelName=0, UNIQUE=True)
         """
         db = self.connect()
         c = db.cursor()
         
+        #
+        if "UNIQUE" in kvargs and kvargs["UNIQUE"]:
+            pk = "UNIQUE"
+        else:
+            pk = ""
+        
         for k,v in kvargs.items():
+            if k == "UNIQUE":
+                continue
+                
+            print("Creating index:", k)
             c = db.cursor()
-            c.execute("CREATE INDEX IF NOT EXISTS {} ON {} ({})".format(self.DB_TABLE_NAME + "_" + k, self.DB_TABLE_NAME, k))
+            c.execute("CREATE {} INDEX IF NOT EXISTS {} ON {} ({})".format(pk, self.DB_TABLE_NAME + "_" + k, self.DB_TABLE_NAME, k))
     
 
     def check_table(self):
@@ -50,7 +67,7 @@ class DBClass:
         #
         if count == 0:
             self.create_table()
-            self.create_index(id=0)
+            #self.create_index(id=0)
         else:
             self.update_table()
 
@@ -74,7 +91,7 @@ class DBClass:
                     fields.append( f + " " + field_type )
         
         #
-        fields.insert(0, "id BIGINT")
+        #fields.insert(0, "id BIGINT")
          
         #         
         sql = "CREATE TABLE IF NOT EXISTS {} (".format(self.DB_TABLE_NAME)
@@ -128,6 +145,48 @@ class DBClass:
 
         #db.close()
         
+        
+    def check_indexes(self):
+        indb = []
+        to_create = []
+
+        # get table description
+        db = self.connect()
+        r = db.row_factory
+        db.row_factory = None
+        c = db.cursor()
+        sql = """
+            SELECT name FROM sqlite_master WHERE type='index' AND tbl_name = '{}'
+        """.format(self.DB_TABLE_NAME)
+        c.execute(sql)
+        for rec in c.fetchall():
+            indb.append(rec[0])
+            
+        #
+        db.row_factory = r
+            
+        # compare unique
+        to_create = []
+        for index in self.DB_PRIMARY:
+            if (self.DB_TABLE_NAME + "_" + index) not in indb:
+                to_create.append(index)
+                
+        # create unique
+        for index in to_create:
+            kvargs = {index:1, "UNIQUE":True}
+            self.create_index(**kvargs)
+        
+        # compare
+        to_create = []
+        for index in self.DB_INDEXES:
+            if (self.DB_TABLE_NAME + "_" + index) not in indb:
+                to_create.append(index)
+                
+        # create
+        for index in to_create:
+            kvargs = {index:1}
+            self.create_index(**kvargs)
+        
     
     def get_new_id(self):
         """ Get SQL table new id """
@@ -153,7 +212,7 @@ class DBClass:
         
     def get_fields(self):
         """ Get fields of the python class, for store into DB """
-        reserved = [ "DB_NAME", "DB_TABLE_NAME", "Excpla", "Explainations" ]
+        reserved = [ "DB_NAME", "DB_TABLE_NAME", "DB_PRIMARY", "DB_INDEXES", "Excpla", "Explainations" ]
 
         result = []
         
@@ -175,6 +234,7 @@ class DBClass:
     def save_to_db(self, autocommit=True, db=None):
         """ Save to sqlite """
         self.check_table()
+        self.check_indexes()
         
         db = self.connect()
 
@@ -182,10 +242,10 @@ class DBClass:
         values = []
         placeholders = []
         
-        newid = self.get_new_id()
-        fields.append("id")
-        values.append(newid)
-        placeholders.append("?")
+        #newid = self.get_new_id()
+        #fields.append("id")
+        #values.append(newid)
+        #placeholders.append("?")
 
         for name in self.get_fields():
             value = getattr(self, name)
@@ -213,7 +273,15 @@ class DBClass:
             ",".join(fields), 
             ",".join(placeholders)
             )
-        c.execute(sql, values)
+            
+        try:
+            c.execute(sql, values)
+        except sqlite3.IntegrityError as e:
+            for field in self.DB_PRIMARY:
+                print(field.ljust(30), ":", getattr(self, field))
+            for field in self.get_fields():
+                print(field.ljust(30), ":", getattr(self, field))
+            raise e
         
         if autocommit:
             db.commit()
@@ -259,6 +327,7 @@ class DBClass:
             print( word )
         """
         self.check_table()
+        self.check_indexes()
         db = self.connect()
         db.row_factory = self.factory
         c = db.cursor()

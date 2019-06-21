@@ -144,6 +144,7 @@ def CompareWikictionary(WikidataItem, WikictionaryItem):
 
 def MergeWikidata( word, WikidataItem ):
     word = Word(word)
+    word.PrimaryKey                 = WikidataItem.PrimaryKey
     word.LabelName                  = WikidataItem.LabelName
     word.CodeInWiki                 = WikidataItem.CodeInWiki
     word.LanguageCode               = WikidataItem.LanguageCode

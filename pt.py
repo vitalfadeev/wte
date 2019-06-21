@@ -338,7 +338,7 @@ def Translation(search_context, excludes, word):
 
 
 def LabelType(search_context, excludes, word):
-    word.LabelType = get_label_type(search_context)
+    word.LabelType = get_label_type(search_context, word)
 
 
 def ExplainationRaw(search_context, excludes, word):
@@ -348,7 +348,8 @@ def ExplainationRaw(search_context, excludes, word):
     
 def ExplainationTxt(search_context, excludes, word):
     li = search_context
-    word.ExplainationTxt = li.get_text().strip()
+    text =  "".join( c.get_text() for c in li.childs if not isinstance(c, (Li, Template)) )
+    word.ExplainationTxt = text.strip()
     
     
 def ExplainationExamplesRaw(search_context, excludes, word):
