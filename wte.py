@@ -540,7 +540,7 @@ def scan_struct(lm, struct, root_word, level=0):
     """
     words = []
     
-    for (search_context, childs) in struct:
+    for i, (search_context, childs) in enumerate(struct):
         word = root_word.clone()
         words.append(word)
 
@@ -580,7 +580,7 @@ def scan_struct(lm, struct, root_word, level=0):
             lm.ExplainationExamplesRaw(search_context, excludes, word)
             lm.ExplainationExamplesTxt(search_context, excludes, word)
             lm.LabelType(search_context, excludes, word)
-            word.PrimaryKey = word.LabelName + "§" + word.LabelType + "-" + str(random.randint(1, 777))
+            word.PrimaryKey = word.LabelName + "§" + word.LabelType + "-" + str(i) + "-" + str(random.randint(1, 777))
 
         #print("  "*level, search_context, word.Type, word.IsMale)
         
