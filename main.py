@@ -21,7 +21,7 @@ def test_merger():
     merge()
 
 
-#test_one("en", "Cat")
+#test_one("en", "synonym")
 #test_wikidict("en")
 test_wiktionary("en")
 #test_merger()

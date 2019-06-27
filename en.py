@@ -106,6 +106,25 @@ def en_noun(t, excludes, label, miners=None):
             # word
             yield (None, p2)
 
+    elif p1 == "~":
+        # uncountable and countable
+        is_uncountable = True
+
+        if p2 == "s":
+            # ends by s
+            yield (None, head + "s")
+
+        elif p2 == "es":
+            # ends by es
+            yield (None, head + "es")
+
+        elif p2 is not None:
+            # word
+            yield (None, p2)
+            
+        else:
+            yield (None, head + "s")
+    
     elif p1 == "s":
         yield (None, head + "s")
 
@@ -303,7 +322,10 @@ def Synonymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, ["syn", 'synonym of'], [in_arg, (0, [1,2,3,4,5,6,7]) ]],
         [in_section, ['synonym', 'synonyms'], [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1) ]]],
-        [in_section, ['synonym', 'synonyms'], [in_template, 'wikipedia', [in_arg, (None, 1) ]]],
+        [in_section, ['synonym', 'synonyms'], 
+            [in_template, 'wikipedia', [in_arg, (None, 1) ]],
+            [in_link]
+        ],
         [in_template, 'sense', [in_link]],
     ):
         if lang is None or lang in LANGUAGES:
@@ -313,6 +335,7 @@ def Synonymy(search_context, excludes, word):
 def Antonymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, "antonyms", [in_arg, (0, [1,2,3,4,5,6,7]) ]],
+        [in_template, "ant", [in_arg, (0, [1,2,3,4,5,6,7]) ]],
         [in_section, ['antonym', 'antonyms'], [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1) ]]],
         [in_section, ['antonym', 'antonyms'], 
             [in_template, 'wikipedia', [in_arg, (None, 1) ]],
@@ -410,7 +433,10 @@ def AlternativeFormsOther(search_context, excludes, word):
 
 def RelatedTerms(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, 'related terms', [in_link]],
+        [in_section, 'related terms', 
+            [in_template, 'l', [in_arg, (0, 1) ]],
+            [in_link],
+        ],
         [in_template, ['see', 'also'], [in_arg, (None, [0,1,2,3,4,5,6,7]) ]],
         [in_template, 'cog', [in_arg, (0, 1) ]],
     ):

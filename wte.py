@@ -1082,18 +1082,16 @@ def one_file(lang, label):
     log.info("Saving to: %s", json_file)
     save_to_json(treemap, json_file)
 
-    log.info("Saving to DB")
-    for w in treemap[label]:
-        #w.save_to_db()
-        DBWrite(w)
+    #log.info("Saving to DB")
+    #for w in treemap[label]:
+    #    #w.save_to_db()
+    #    DBWrite(w)
 
     log.info("Status: words:%d", len(treemap[label]))
     for w in treemap[label]:
         log.info("  %s: %s: %s: %s", w.LabelName, str(w.Type).ljust(14), str(w.LabelType).ljust(30), str(w.ExplainationRaw)[:50].replace("\n", "\\n"))
-        print(w.ExplainationRaw)
-        print(w.LabelType)
-        print(w.SelfUrl)
         print(w.PrimaryKey)
+        print(w.PluralVariant)
         print()
     log.info("Done!")
 
