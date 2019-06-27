@@ -20,6 +20,7 @@ from wikoo import Section, Template, Link, Li, Dl, Dt, Dd, Header, Mined
 from miners import find_explainations
 from wiktionary import WikictionaryItem
 from dbclass import DBWrite
+import random
 
 
 TXT_FOLDER      = "txt"     # folder where stored text files for debugging
@@ -579,7 +580,7 @@ def scan_struct(lm, struct, root_word, level=0):
             lm.ExplainationExamplesRaw(search_context, excludes, word)
             lm.ExplainationExamplesTxt(search_context, excludes, word)
             lm.LabelType(search_context, excludes, word)
-            word.PrimaryKey = word.LabelName + "§" + word.LabelType
+            word.PrimaryKey = word.LabelName + "§" + word.LabelType + "-" + str(random.randint(1, 777))
 
         #print("  "*level, search_context, word.Type, word.IsMale)
         
