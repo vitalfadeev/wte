@@ -46,6 +46,11 @@ def convert(page, lang):
     #
     id_       = str(page.id)
     label     = page.labels.get(lang, None)
+    
+    if label is None:
+        return words
+        
+    
     aliases   = page.aliases.get(lang, [])
     aliases   = [ str(a.encode('utf-16', 'surrogatepass').decode('utf-16').encode('utf-8')) for a in aliases ] # decode surrogates: '\ud83c\udde7\ud83c\uddea'
     
@@ -267,10 +272,13 @@ def download(lang="en", use_cached=True):
     Out:
         local_file - local cached file name
     """
-    remote_file = 'https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2'
+    # remote_file = 'https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2'
+    # latest-all.json.bz2 - is not stable link. sometime locate to absent file. 404 - error
+    remote_file = 'https://dumps.wikimedia.org/wikidatawiki/entities/20190701/wikidata-20190701-all.json.bz2.not'
 
     create_storage(CACHE_FOLDER)
     local_file = os.path.join(CACHE_FOLDER, "wikidata-latest-all.json.bz2")
+    return local_file
 
     # check cache
     if use_cached and os.path.exists(local_file):
@@ -289,7 +297,37 @@ def download(lang="en", use_cached=True):
     log.info("Downloaded....[ OK ]")
 
     return local_file
+    
 
+class Counter:    
+    unique_id = 1
+
+    @classmethod
+    def get_next_id(cls):
+        cls.unique_id += 1
+        return cls.unique_id
+    
+
+def fix_data(data):
+    for claim_key, claims in data['claims'].items():
+        for claim in claims:
+            if 'qualifiers' in claim:
+                for prop, qualifier in claim['qualifiers'].items():
+                    for q in qualifier:
+                        q['hash'] = str(Counter.get_next_id())
+        
+    return data
+
+
+def dumpdata(data, level=0):
+    if isinstance(data, dict):
+        for k in data:
+            print("  "*level, k)
+            dumpdata(data[k], level+1)
+            
+    if isinstance(data, list):
+        for d in data:
+            dumpdata(d, level)
 
 
 def run(outfile, lang="en"):
@@ -313,6 +351,15 @@ def run(outfile, lang="en"):
             try:
                 for i, data in enumerate(ijson.items(fin, "item")):
                     try:
+                        log_record = data['id'], data['labels'][lang]['value']
+                    except KeyError:
+                        log_record = data['id']
+                        
+                    log_wikidata.info(log_record)
+                    #dumpdata(data)
+                    data = fix_data(data)
+                        
+                    try:
                         data.update({"pageid":1,"ns":0,"title":data["id"],"lastrevid":931882328,"modified":"2019-05-03T10:37:50Z"})
                         dump_wrapper.dumpdata = {data["id"]:data}
                         item = pywikibot.ItemPage(repo, data["id"])
@@ -321,7 +368,7 @@ def run(outfile, lang="en"):
                         words = convert(item, lang)
                         
                         for w in words:
-                            log_wikidata.info(w.LabelName)
+                            #log_wikidata.info(w.LabelName)
 
                             #if i == 0: 
                             #    fout.write(w.as_json())
@@ -330,12 +377,11 @@ def run(outfile, lang="en"):
                             #    fout.write(w.as_json())
                             
                             w.save_to_db()
-
                                 
                     except pywikibot.exceptions.NoPage:
                         log_wikidata.warn("no page... [SKIP]")
                         pass
-            
+                        
             except ijson.common.IncompleteJSONError:
                 log_wikidata.error("unexpected end of file")
                 pass         

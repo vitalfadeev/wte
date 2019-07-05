@@ -1,5 +1,5 @@
 requests
-ijson
-pywikibot
-blist
+ijson==2.3
+pywikibot==3.0.dev0
+blist==1.3.6
 wikipedia
