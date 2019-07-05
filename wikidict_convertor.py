@@ -272,13 +272,17 @@ def download(lang="en", use_cached=True):
     Out:
         local_file - local cached file name
     """
+    # remove oold localfile
+    old_local_file = os.path.join(CACHE_FOLDER, "wikidata-latest-all.json.bz2")
+    if os.path.exists(old_local_file):
+        os.remove(old_local_file);
+    
     # remote_file = 'https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2'
     # latest-all.json.bz2 - is not stable link. sometime locate to absent file. 404 - error
     remote_file = 'https://dumps.wikimedia.org/wikidatawiki/entities/20190701/wikidata-20190701-all.json.bz2.not'
 
     create_storage(CACHE_FOLDER)
-    local_file = os.path.join(CACHE_FOLDER, "wikidata-latest-all.json.bz2")
-    return local_file
+    local_file = os.path.join(CACHE_FOLDER, "wikidata-20190701-all.json.bz2")
 
     # check cache
     if use_cached and os.path.exists(local_file):
