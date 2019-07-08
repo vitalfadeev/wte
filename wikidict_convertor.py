@@ -52,7 +52,7 @@ def convert(page, lang):
         
     
     aliases   = page.aliases.get(lang, [])
-    aliases   = [ str(a.encode('utf-16', 'surrogatepass').decode('utf-16').encode('utf-8')) for a in aliases ] # decode surrogates: '\ud83c\udde7\ud83c\uddea'
+    aliases   = [ str(a.encode('utf-16', 'surrogatepass').decode('utf-16')) for a in aliases ] # decode surrogates: '\ud83c\udde7\ud83c\uddea'
     
     wikipedia = "https://en.wikipedia.org/wiki/" + page.getSitelink('enwiki')
     
@@ -78,10 +78,16 @@ def convert(page, lang):
             BritannicaENURL = "https://www.britannica.com/" + source.getTarget()
 
     UNIVERSAILS_ID = "P3219"    
-    UniversalisENURL = ""
+    UniversalisFRURL = ""
     if UNIVERSAILS_ID in claims:
         for source in claims.get(UNIVERSAILS_ID, []):
-            UniversalisENURL = "https://www.universalis.fr/encyclopedie/" + source.getTarget()
+            UniversalisFRURL = "https://www.universalis.fr/encyclopedie/" + source.getTarget()
+
+    ENCYCLOPEDIAGREATRUSSIANRU_ID = "P2924"    
+    EncyclopediaGreatRussianRU = ""
+    if ENCYCLOPEDIAGREATRUSSIANRU_ID in claims:
+        for source in claims.get(ENCYCLOPEDIAGREATRUSSIANRU_ID, []):
+            EncyclopediaGreatRussianRU = "https://bigenc.ru/" + source.getTarget()
 
     # instance of
     if INSTANCE_OF_ID in claims:
@@ -108,6 +114,12 @@ def convert(page, lang):
             subclass_of.append(source.target.id)
     else:
         subclass_of = None
+        
+        
+    # site links
+    # dbname = "Q124354" # Wikipedia
+    ks = [k for k in page.sitelinks.keys() if k.endswith("wiki") and k != "commonswiki"]
+    WikipediaLinkCountTotal = len(ks)
     
     #
     # https://www.wikidata.org/wiki/Special:EntityData/Q300918.json
@@ -120,7 +132,7 @@ def convert(page, lang):
     w.SelfUrl                   = "https://www.wikidata.org/wiki/" + id_
     w.WikipediaENURL            = wikipedia
     w.EncyclopediaBritannicaEN  = BritannicaENURL
-    w.EncyclopediaUniversalisEN = UniversalisENURL
+    w.EncyclopediaUniversalisFR = UniversalisFRURL
     w.DescriptionUrl            = description_url
     w.Instance_of               = instance_of
     w.Subclass_of               = subclass_of
@@ -132,6 +144,8 @@ def convert(page, lang):
     w.Translation_ES            = [page.labels.get("es", None)]
     w.Translation_RU            = [page.labels.get("ru", None)]
     w.Translation_PT            = [page.labels.get("pt", None)]
+    w.WikipediaLinkCountTotal   = WikipediaLinkCountTotal
+    w.EncyclopediaGreatRussianRU= EncyclopediaGreatRussianRU
     
     words.append(w)
   

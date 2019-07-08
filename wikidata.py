@@ -23,7 +23,7 @@ class WikidataItem(DBClass, JSONClass):
         self.SelfUrl                    = None
         self.WikipediaENURL             = None
         self.EncyclopediaBritannicaEN   = None
-        self.EncyclopediaUniversalisEN  = None
+        self.EncyclopediaUniversalisFR  = None
         self.DescriptionUrl             = None
         self.Instance_of                = []
         self.Subclass_of                = []
@@ -35,6 +35,8 @@ class WikidataItem(DBClass, JSONClass):
         self.Translation_ES             = []
         self.Translation_RU             = []
         self.Translation_PT             = []
+        self.WikipediaLinkCountTotal    = None
+        self.EncyclopediaGreatRussianRU = None
             
 
     def __repr__(self):
