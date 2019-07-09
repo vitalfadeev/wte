@@ -540,53 +540,50 @@ def scan_struct(lm, struct, root_word, level=0):
     """
     words = []
     
-    for i, (search_context, childs) in enumerate(struct):
+    for search_context, childs in struct:
         word = root_word.clone()
         words.append(word)
 
         excludes = [sc for (sc, c) in childs]
         
         # do extraction
-        lm.Type(search_context, excludes, word)
-        lm.IsMale(search_context, excludes, word)
-        lm.IsFeminine(search_context, excludes, word)
-        lm.IsSingle(search_context, excludes, word)
-        lm.IsPlural(search_context, excludes, word)        
-        lm.SingleVariant(search_context, excludes, word)
-        lm.PluralVariant(search_context, excludes, word)
-        lm.MaleVariant(search_context, excludes, word)
-        lm.FemaleVariant(search_context, excludes, word)
-        lm.IsVerbPast(search_context, excludes, word)
-        lm.IsVerbPresent(search_context, excludes, word)
-        lm.IsVerbFutur(search_context, excludes, word)
-        lm.Conjugation(search_context, excludes, word)
-        lm.Synonymy(search_context, excludes, word)
-        lm.Antonymy(search_context, excludes, word)
-        lm.Hypernymy(search_context, excludes, word)
-        lm.Hyponymy(search_context, excludes, word)
-        lm.Meronymy(search_context, excludes, word)
-        lm.Holonymy(search_context, excludes, word)
-        lm.Troponymy(search_context, excludes, word)
-        lm.Otherwise(search_context, excludes, word)
+        lm.Type                 (search_context, excludes, word)
+        lm.IsMale               (search_context, excludes, word)
+        lm.IsFeminine           (search_context, excludes, word)
+        lm.IsSingle             (search_context, excludes, word)
+        lm.IsPlural             (search_context, excludes, word)        
+        lm.SingleVariant        (search_context, excludes, word)
+        lm.PluralVariant        (search_context, excludes, word)
+        lm.MaleVariant          (search_context, excludes, word)
+        lm.FemaleVariant        (search_context, excludes, word)
+        lm.IsVerbPast           (search_context, excludes, word)
+        lm.IsVerbPresent        (search_context, excludes, word)
+        lm.IsVerbFutur          (search_context, excludes, word)
+        lm.Conjugation          (search_context, excludes, word)
+        lm.Synonymy             (search_context, excludes, word)
+        lm.Antonymy             (search_context, excludes, word)
+        lm.Hypernymy            (search_context, excludes, word)
+        lm.Hyponymy             (search_context, excludes, word)
+        lm.Meronymy             (search_context, excludes, word)
+        lm.Holonymy             (search_context, excludes, word)
+        lm.Troponymy            (search_context, excludes, word)
+        lm.Otherwise            (search_context, excludes, word)
         lm.AlternativeFormsOther(search_context, excludes, word)
-        lm.RelatedTerms(search_context, excludes, word)
-        lm.Coordinate(search_context, excludes, word)
-        lm.Translation(search_context, excludes, word)
+        lm.RelatedTerms         (search_context, excludes, word)
+        lm.Coordinate           (search_context, excludes, word)
+        lm.Translation          (search_context, excludes, word)
 
         # explaination caontext
         if lm.is_expl_section(search_context) or isinstance(search_context, (Li, Dl)):
-            lm.ExplainationRaw(search_context, excludes, word)
-            lm.ExplainationTxt(search_context, excludes, word)
-            lm.ExplainationExamplesRaw(search_context, excludes, word)
-            lm.ExplainationExamplesTxt(search_context, excludes, word)
-            lm.LabelType(search_context, excludes, word)
-            word.PrimaryKey = word.LabelName + "§" + word.LabelType + "-" + str(i) + "-" + str(random.randint(1, 777))
-
-        #print("  "*level, search_context, word.Type, word.IsMale)
+            lm.ExplainationRaw          (search_context, excludes, word)
+            lm.ExplainationTxt          (search_context, excludes, word)
+            lm.ExplainationExamplesRaw  (search_context, excludes, word)
+            lm.ExplainationExamplesTxt  (search_context, excludes, word)
+            lm.LabelType                (search_context, excludes, word)
         
         # recursive
         words += scan_struct(lm, childs, word, level+1)
-        
+
     return words
 
 
@@ -621,11 +618,21 @@ def try_well_formed_structure(lang, label, tree):
     if not words:
         log_no_words.warn("%s", label)
 
+    # PrimaryKey
+    for (i, word) in enumerate(words):
+        label_type = word.LabelType if word.LabelType else ""
+        word.PrimaryKey = word.LanguageCode + "-" + word.LabelName + "§" + label_type + "-" + str(i) + "-" + str(random.randint(1, 777))
+        
     return words
         
 
 def preprocess(lang, callback, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False):
     """ Prepare data: unzip, init xml parser """
+    # remove old lang data
+    log.info("deleting old '%s' records...", lang)
+    WikictionaryItem.execute_sql("DELETE FROM {} WHERE LanguageCode = ?".format(WikictionaryItem.DB_TABLE_NAME), lang)
+    
+    # xml dump
     dump_file = download(lang)
     
     with bz2.open(dump_file, "r") as xml_stream:

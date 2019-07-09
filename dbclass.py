@@ -354,6 +354,16 @@ class DBClass:
             yield from c.execute( "SELECT * FROM {}".format(self.DB_TABLE_NAME))
 
         #db.close()
+        
+    
+    @classmethod
+    def execute_sql(cls, sql, *args):
+        instance = cls()
+        instance.check_table()
+        instance.check_indexes()
+        db = instance.connect()
+        c = db.cursor()
+        return c.execute( sql, args )
 
 
 def get_field_type(v):
