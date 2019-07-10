@@ -3,7 +3,9 @@
 
 from dbclass import DBClass
 from jsonclass import JSONClass
+from collections.abc import Iterable
 from helpers import remove_comments, extract_from_link
+from helpers import filterWodsProblems
 from loggers import log, log_non_english, log_no_words, log_unsupported
 from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_section_not_found
 
@@ -74,6 +76,7 @@ class WikictionaryItem(DBClass, JSONClass):
 
     
     def add_conjugation(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.Conjugation is None:
                 self.Conjugation = [ term ]
@@ -83,6 +86,7 @@ class WikictionaryItem(DBClass, JSONClass):
     
 
     def add_synonym(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.Synonymy is None:
                 self.Synonymy = [ term ]
@@ -92,6 +96,7 @@ class WikictionaryItem(DBClass, JSONClass):
     
 
     def add_antonym(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.Antonymy is None:
                 self.Antonymy = [ term ]
@@ -101,6 +106,7 @@ class WikictionaryItem(DBClass, JSONClass):
 
     
     def add_hypernym(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.Hypernymy is None:
                 self.Hypernymy = [ term ]
@@ -110,6 +116,7 @@ class WikictionaryItem(DBClass, JSONClass):
     
 
     def add_hyponym(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.Hyponymy is None:
                 self.Hyponymy = [ term ]
@@ -119,6 +126,7 @@ class WikictionaryItem(DBClass, JSONClass):
     
 
     def add_meronym(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.Meronymy  is None:
                 self.Meronymy = [ term ]
@@ -128,6 +136,7 @@ class WikictionaryItem(DBClass, JSONClass):
     
 
     def add_holonym(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.Holonymy  is None:
                 self.Holonymy = [ term ]
@@ -137,6 +146,7 @@ class WikictionaryItem(DBClass, JSONClass):
     
 
     def add_troponym(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.Troponymy is None:
                 self.Troponymy = [ term ]
@@ -146,6 +156,7 @@ class WikictionaryItem(DBClass, JSONClass):
     
 
     def add_alternative_form(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.AlternativeFormsOther is None:
                 self.AlternativeFormsOther = [ term ]
@@ -155,6 +166,7 @@ class WikictionaryItem(DBClass, JSONClass):
     
 
     def add_related(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.RelatedTerms is None:
                 self.RelatedTerms = [ term ]
@@ -164,6 +176,7 @@ class WikictionaryItem(DBClass, JSONClass):
     
 
     def add_coordinate(self, lang, term):
+        term = filterWodsProblems(term, log)
         if term:
             if self.Coordinate is None:
                 self.Coordinate = [ term ]
@@ -187,7 +200,7 @@ class WikictionaryItem(DBClass, JSONClass):
             # skip empty
             return
 
-            # prepare
+        # prepare
         storages = {
             "en": "Translation_EN",
             "fr": "Translation_FR",
@@ -206,6 +219,9 @@ class WikictionaryItem(DBClass, JSONClass):
             log.debug("unsupported language: " + str(lang))
             return
 
+        # filter
+        term = filterWodsProblems(term, log)
+
         # storage
         storage_name = storages.get(lang, None)
 
@@ -217,7 +233,10 @@ class WikictionaryItem(DBClass, JSONClass):
             setattr(self, storage_name, storage)
 
         # append
-        if isinstance(term, str):
+        if term is None:
+            pass
+            
+        elif isinstance(term, str):
             # one
             if term not in storage:
                 storage.append( term )

@@ -14,6 +14,7 @@ from blist import sorteddict
 from loggers import log_wikidata
 from wikidata import WikidataItem
 from helpers import create_storage
+from helpers import filterWodsProblems
 from wte import CACHE_FOLDER
 from loggers import log, log_non_english, log_no_words, log_unsupported
 from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_section_not_found
@@ -47,9 +48,9 @@ def convert(page, lang):
     id_       = str(page.id)
     label     = page.labels.get(lang, None)
     
+    label = filterWodsProblems(label, log_wikidata)
     if label is None:
-        return words
-        
+        return []        
     
     aliases   = page.aliases.get(lang, [])
     aliases   = [ str(a.encode('utf-16', 'surrogatepass').decode('utf-16')) for a in aliases ] # decode surrogates: '\ud83c\udde7\ud83c\uddea'
@@ -125,7 +126,7 @@ def convert(page, lang):
     # https://www.wikidata.org/wiki/Special:EntityData/Q300918.json
     w.LabelName                 = label
     w.CodeInWiki                = id_
-    w.PrimaryKey                = w.LabelName + "§" + w.CodeInWiki
+    w.PrimaryKey                = lang + "-" + w.LabelName + "§" + w.CodeInWiki
     w.LanguageCode              = lang
     w.Description               = desc
     w.AlsoKnownAs               = list(aliases)
@@ -137,13 +138,13 @@ def convert(page, lang):
     w.Instance_of               = instance_of
     w.Subclass_of               = subclass_of
     w.Part_of                   = part_of
-    w.Translation_EN            = [page.labels.get("en", None)]
-    w.Translation_FR            = [page.labels.get("fr", None)]
-    w.Translation_DE            = [page.labels.get("de", None)]
-    w.Translation_IT            = [page.labels.get("it", None)]
-    w.Translation_ES            = [page.labels.get("es", None)]
-    w.Translation_RU            = [page.labels.get("ru", None)]
-    w.Translation_PT            = [page.labels.get("pt", None)]
+    w.Translation_EN            = filterWodsProblems( [page.labels.get("en", None)], log_wikidata )
+    w.Translation_FR            = filterWodsProblems( [page.labels.get("fr", None)], log_wikidata )
+    w.Translation_DE            = filterWodsProblems( [page.labels.get("de", None)], log_wikidata )
+    w.Translation_IT            = filterWodsProblems( [page.labels.get("it", None)], log_wikidata )
+    w.Translation_ES            = filterWodsProblems( [page.labels.get("es", None)], log_wikidata )
+    w.Translation_RU            = filterWodsProblems( [page.labels.get("ru", None)], log_wikidata )
+    w.Translation_PT            = filterWodsProblems( [page.labels.get("pt", None)], log_wikidata )
     w.WikipediaLinkCountTotal   = WikipediaLinkCountTotal
     w.EncyclopediaGreatRussianRU= EncyclopediaGreatRussianRU
     

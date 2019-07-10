@@ -11,6 +11,7 @@ from blist import sorteddict
 from helpers import create_storage, put_contents, get_contents, sanitize_filename
 from helpers import load_from_pickle, save_to_pickle, convert_to_alnum, proper, deduplicate
 from helpers import remove_comments, extract_from_link
+from helpers import filterWodsProblems
 from loggers import log, log_non_english, log_no_words, log_unsupported
 from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_section_not_found
 from helpers import is_ascii
@@ -644,14 +645,18 @@ def process(lang, id_, label, text,  limit=0, is_save_txt=False, is_save_json=Fa
     """ This function emitted on each article. Called from XML parser """
     log.info("process(%s, %s)", lang, label)
     
-    # setup context
-    wikoo.Context.label = label
-    
     # filter
     if not label.isalnum():
         log.warn("non alnum char (%s, %s)... [SKIP]", lang, label)
         return []
+        
+    label = filterWodsProblems(label, log)
+    if label is None:
+        return []
 
+    # setup context
+    wikoo.Context.label = label
+    
 #    if not is_ascii(label):
 #        log.warn("non ascii char (%s, %s)... [SKIP]", lang, label)
 #        return []
@@ -984,7 +989,7 @@ def phase4(lang, mined, label):
     
     
 def postprocess(words, label):
-    """ Save to DB """
+    """ Filter. Save to DB """    
     flag = None
     if words:
         for i, word in enumerate(words):

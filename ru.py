@@ -389,9 +389,21 @@ def Translation(search_context, excludes, word):
         if t.name in ['перев-блок']:
             for a in t.args():
                 lang = a.get_name()
-                term = a.get_value()
-                if lang and term:
-                    word.add_translation(lang, term)
+                
+                terms = []
+                if a.childs:
+                    for c in a.childs[1:]:
+                        if isinstance(c, Link):
+                            terms.append(c.get_text())
+                        elif isinstance(c, String):
+                            terms.append(c.get_text())
+                
+                if len(terms) == 0:
+                    terms.append(a.get_value())
+                        
+                for term in terms:
+                    if lang and term:
+                        word.add_translation(lang, term)
 
 
 def LabelType(search_context, excludes, word):

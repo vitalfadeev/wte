@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+import sys
 import os
 import io
 import pickle
@@ -257,3 +258,50 @@ def first_true(iterable, default=False, pred=None):
     # first_true([a,b,c], x) --> a or b or c or x
     # first_true([a,b], x, f) --> a if f(a) else b if f(b) else x
     return next(filter(pred, iterable), default)
+
+
+def func_name():
+    """
+    :return: name of caller
+    """
+    return sys._getframe(2).f_code.co_name
+    
+    
+
+def filterWodsProblems(s, log, context=None):
+    """
+    Filter word. If not correct retirn None
+    
+    in:  string
+    out: string
+    """
+    
+    if context is None:
+        context = func_name()
+    
+    # skip None
+    if s is None:
+        #log.warn("is None: [SKIP]")
+        return None
+        
+    # skip single symbols
+    if len(s) == 1:
+        log.warn("    filter: %s: %s: len() == 1: [SKIP]", context, s)
+        return None
+        
+    # skip words contains more than 1 symbol of two dots
+    if s.count('.') > 1:
+        log.warn("    filter: %s: %s: count('.') > 1: [SKIP]", context, s)
+        return None
+
+    # skip more than 3 spaces
+    if s.count(' ') > 3:
+        log.warn("    filter: %s: %s: count(' ') > 3: [SKIP]", context, s)
+        return None
+
+    # skip #
+    if s.find('#') != -1:
+        log.warn("    filter: %s: %s: find('#'): [SKIP]", context, s)
+        return None
+    
+    return s

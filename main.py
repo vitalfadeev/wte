@@ -23,7 +23,7 @@ def test_merger():
 
 #test_one("en", "synonym")
 #test_wikidict("en")
-test_wiktionary("ru")
+test_wiktionary("en")
 #test_merger()
 exit(9)
 
