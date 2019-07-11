@@ -289,9 +289,14 @@ def filterWodsProblems(s, log, context=None):
         log.warn("    filter: %s: %s: len() == 1: [SKIP]", context, s)
         return None
         
-    # skip words contains more than 1 symbol of two dots
-    if s.count('.') > 1:
-        log.warn("    filter: %s: %s: count('.') > 1: [SKIP]", context, s)
+    # skip words contains more than 3 symbol of two dots (ABBR?)
+    #if s.count('.') > 3:
+    #    log.warn("    filter: %s: %s: count('.') > 3: [SKIP]", context, s)
+    #    return None
+
+    # skip words contains :
+    if s.find(':') != -1:
+        log.warn("    filter: %s: %s: find(':'): [SKIP]", context, s)
         return None
 
     # skip more than 3 spaces
