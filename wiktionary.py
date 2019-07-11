@@ -36,6 +36,7 @@ class WikictionaryItem(DBClass, JSONClass):
         self.IsPlural                = None
         self.SingleVariant           = None  # ""
         self.PluralVariant           = None  # ""
+        self.PopularityOfWord        =  0
         self.MaleVariant             = None  # ""
         self.FemaleVariant           = None  # ""
         self.IsVerbPast              = None

@@ -993,7 +993,61 @@ def postprocess(words, label):
     """ Filter. Save to DB """    
     flag = None
     if words:
-        for i, word in enumerate(words):
+        for i, word in enumerate(words):            
+            word.PopularityOfWord = 0
+
+            if word.ExplainationExamplesRaw is not None:
+                word.PopularityOfWord += len(word.ExplainationExamplesRaw) * 5
+
+            if word.RelatedTerms is not None:
+                word.PopularityOfWord += len(word.RelatedTerms)
+
+            other_cost = 0
+
+            if word.Translation_DE is not None:
+                other_cost += len(word.Translation_DE)
+
+            if word.Translation_EN is not None:
+                other_cost += len(word.Translation_EN)
+
+            if word.Translation_ES is not None:
+                other_cost += len(word.Translation_ES)
+
+            if word.Translation_FR is not None:
+                other_cost += len(word.Translation_FR)
+
+            if word.Translation_IT is not None:
+                other_cost += len(word.Translation_IT)
+
+            if word.Translation_PT is not None:
+                other_cost += len(word.Translation_PT)
+
+            if word.Translation_RU is not None:
+                other_cost += len(word.Translation_RU)
+
+            if word.Holonymy is not None:
+                other_cost += len(word.Holonymy)
+
+            if word.Troponymy is not None:
+                other_cost += len(word.Troponymy)
+                
+            if word.Hypernymy is not None:
+                other_cost += len(word.Hypernymy)
+                
+            if word.Hyponymy is not None:
+                other_cost += len(word.Hyponymy)
+                
+            if word.Meronymy is not None:
+                other_cost += len(word.Meronymy)
+                
+            if word.Synonymy is not None:
+                other_cost += len(word.Synonymy)
+                
+            if word.Antonymy is not None:
+                other_cost += len(word.Antonymy)
+                
+            word.PopularityOfWord += 1 if other_cost else 0
+
             print_table_record(word, print_header=(i==0))
 
     if 1:
