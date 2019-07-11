@@ -69,6 +69,7 @@
 # test open
 # test expect
 
+import html
 import xml.parsers.expat
 import re
 from collections.abc import Iterable
@@ -2204,6 +2205,14 @@ res = tagizer("""
 """)
 #dump( pack_sections( res[1] ) )
 
+
+def decode_html_entities(text):
+    text = text.replace("&nbsp;", " ")
+    text = html.unescape(text)
+    return text
+    
+
 def parse(text):
+    text = decode_html_entities(text)
     (epos, tree) = tagizer(text)
     return tree
