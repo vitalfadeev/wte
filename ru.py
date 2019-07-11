@@ -396,10 +396,12 @@ def Translation(search_context, excludes, word):
                         if isinstance(c, Link):
                             terms.append(c.get_text())
                         elif isinstance(c, String):
-                            terms.append(c.get_text())
+                            terms += [t.strip() for t in c.get_text().split(',')]
                 
                 if len(terms) == 0:
-                    terms.append(a.get_value())
+                    terms = [t.strip() for t in a.get_value().split(',')]
+                    
+                terms = [t for t in terms if not t.startswith("-")]
                         
                 for term in terms:
                     if lang and term:
