@@ -21,9 +21,9 @@ def test_merger():
     merge()
 
 
-test_one("ru", "цель")
+#test_one("ru", "цель")
 #test_wikidict("en")
-#test_wiktionary("ru")
+test_wiktionary("ru")
 #test_merger()
 exit(9)
 
