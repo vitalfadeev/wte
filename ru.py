@@ -390,6 +390,7 @@ def Translation(search_context, excludes, word):
             for a in t.args():
                 lang = a.get_name()
                 
+                # fetch from [[...]], [[...|...], abc
                 terms = []
                 if a.childs:
                     for c in a.childs[1:]:
@@ -398,10 +399,15 @@ def Translation(search_context, excludes, word):
                         elif isinstance(c, String):
                             terms += [t.strip() for t in c.get_text().split(',')]
                 
+                # fetch from simple string comma separated. abc, abc, abc
                 if len(terms) == 0:
                     terms = [t.strip() for t in a.get_value().split(',')]
-                    
+
+                # remove words started from "-..."
                 terms = [t for t in terms if not t.startswith("-")]
+                
+                # extract from (). (abc) -> abc
+                terms = [t.replace('(', '').replace(')', '').strip() for t in terms]
                         
                 for term in terms:
                     if lang and term:
