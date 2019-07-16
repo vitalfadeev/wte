@@ -320,13 +320,19 @@ def Conjugation(search_context, excludes, word):
     
 def Synonymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_template, ["syn", 'synonym of'], [in_arg, (0, [1,2,3,4,5,6,7]) ]],
-        [in_section, ['synonym', 'synonyms'], [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1) ]]],
-        [in_section, ['synonym', 'synonyms'], 
-            [in_template, 'wikipedia', [in_arg, (None, 1) ]],
+        [in_template, ["syn", 'synonym of'],
+            [in_arg, (0, [1,2,3,4,5,6,7]) ]
+        ],
+        [in_section, ['synonym', 'synonyms'],
+            [in_template, ['l', 'lb', 'label', 'm', 'link'],
+                [in_arg, (0, 1) ]
+            ],
+            [in_template, 'wikipedia',
+                [in_arg, (None, 1)]
+            ],
             [in_link]
         ],
-        [in_template, 'sense', [in_link]],
+        [in_template, 'sense', [in_link]]
     ):
         if lang is None or lang in LANGUAGES:
             word.add_synonym( lang, term )
@@ -336,9 +342,9 @@ def Antonymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, "antonyms", [in_arg, (0, [1,2,3,4,5,6,7]) ]],
         [in_template, "ant", [in_arg, (0, [1,2,3,4,5,6,7]) ]],
-        [in_section, ['antonym', 'antonyms'], [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1) ]]],
-        [in_section, ['antonym', 'antonyms'], 
+        [in_section, ['antonym', 'antonyms'],
             [in_template, 'wikipedia', [in_arg, (None, 1) ]],
+            [in_template, ['l', 'lb', 'label', 'm', 'link'], [in_arg, (0, 1)]],
             [in_link]
         ],
     ):
@@ -476,6 +482,13 @@ def ExplainationRaw(search_context, excludes, word):
     
 def ExplainationTxt(search_context, excludes, word):
     li = search_context
+
+    for c in li.childs:
+        if isinstance(c, (Li, Template)):
+            pass
+        else:
+            pass
+
     text =  "".join( c.get_text() for c in li.childs if not isinstance(c, (Li, Template)) )
     word.ExplainationTxt = text.strip()
     

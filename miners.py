@@ -342,21 +342,36 @@ def find_explainations(tos_section, is_expl_section):
     for expl_section in tos_section.find_objects(Section, recursive=True):
         if is_expl_section(expl_section):
             for li in expl_section.find_objects(Li, recursive=False):
-                is_found = True
-                yield li
-            break
-            
+                if li.base.startswith("#"):
+                    if li.base.endswith(":"):
+                        pass
+                    elif li.base.endswith("*"):
+                        pass
+                    else:
+                        is_found = True
+                        childs = list(find_explainations(li, is_expl_section))
+                        yield (li, childs)
+            break # explaination from first section only
+
+    # case 2: try get list in TOS section
     if not is_found:
-        # case 2: try get list in TOS section
         for li in tos_section.find_objects(Li, recursive=False):
-            is_found = True
-            yield li
+            if li.base.startswith("#"):
+                if li.base.endswith(":"):
+                    pass
+                elif li.base.endswith("*"):
+                    pass
+                else:
+                    is_found = True
+                    childs = list(find_explainations(li, is_expl_section))
+                    yield (li, childs)
 
     # case 3: try get Dl in TOS section
     if not is_found:
         for dl in tos_section.find_objects(Dl, recursive=False):
             is_found = True
-            yield dl
+            childs = []
+            yield (dl, childs)
 
 
 def get_label_type(expl, word):

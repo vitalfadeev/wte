@@ -478,6 +478,7 @@ def build_struct(lm, label, tree):
         Lang
           Type-of-speech
             Explaination
+              Explaination
     """
     # (name, childs), childs = (name, childs)
     struct = [] # [ (LANG, [ (TOS, [ (expl), ] ), ]), ]
@@ -498,8 +499,8 @@ def build_struct(lm, label, tree):
             tos.append( (ts, expl) )
        
             # Explainations
-            for e in find_explainations(ts, lm.is_expl_section):
-                expl.append( (e, []) )
+            for (e, childs) in find_explainations(ts, lm.is_expl_section):
+                expl.append( (e, childs) )
                 
     #
     if not is_lang_found:
@@ -542,9 +543,15 @@ def scan_struct(lm, struct, root_word, level=0):
     """
     words = []
     
-    for search_context, childs in struct:
+    for (search_context, childs) in struct:
         word = root_word.clone()
         words.append(word)
+
+        # fixes
+        # 1 translation - 1 explaination
+        if word.Translation_DE:
+            if lm.is_expl_section(search_context) or isinstance(search_context, (Li, Dl)):
+                pass
 
         excludes = [sc for (sc, c) in childs]
         
@@ -574,6 +581,11 @@ def scan_struct(lm, struct, root_word, level=0):
         lm.RelatedTerms         (search_context, excludes, word)
         lm.Coordinate           (search_context, excludes, word)
         lm.Translation          (search_context, excludes, word)
+
+        # 1 translation - 1 explaination
+        #if level == 1:  # is TOS
+        #    if len(childs) <= 1:
+        #        pass
 
         # explaination caontext
         if lm.is_expl_section(search_context) or isinstance(search_context, (Li, Dl)):

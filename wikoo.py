@@ -427,8 +427,8 @@ class Li(Container):
 
     def __repr__(self):
         s = self.raw
-        if len(s) > 24:
-            s = s[:24] + "..."
+        if len(s) > 40:
+            s = s[:40] + "..."
         return "Li(" + s.replace("\n", "\\n") + ")"
 
 class LiOrdered(Li):
