@@ -8,6 +8,9 @@ from helpers import convert_to_alnum, proper, deduplicate
 from helpers import remove_comments, extract_from_link
 from helpers import first_true
 
+TP_EXPL = "EXPL"
+
+
 
 def find_terms(section, sub_section_name, templates, links=False):
     """ 
@@ -350,7 +353,7 @@ def find_explainations(tos_section, is_expl_section):
                     else:
                         is_found = True
                         childs = list(find_explainations(li, is_expl_section))
-                        yield (li, childs)
+                        yield (li, TP_EXPL, childs)
             break # explaination from first section only
 
     # case 2: try get list in TOS section
@@ -364,14 +367,14 @@ def find_explainations(tos_section, is_expl_section):
                 else:
                     is_found = True
                     childs = list(find_explainations(li, is_expl_section))
-                    yield (li, childs)
+                    yield (li, TP_EXPL, childs)
 
     # case 3: try get Dl in TOS section
     if not is_found:
         for dl in tos_section.find_objects(Dl, recursive=False):
             is_found = True
             childs = []
-            yield (dl, childs)
+            yield (dl, TP_EXPL, childs)
 
 
 def get_label_type(expl, word):

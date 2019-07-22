@@ -466,6 +466,11 @@ class XMLParser:
 # word, LANG, TOS, EXPL
 
 
+TP_LANG = "LANG"
+TP_TOS  = "TOS"
+TP_EXPL = "EXPL"
+
+
 def build_struct(lm, label, tree):
     """
     Used in word article scanner.
@@ -480,7 +485,7 @@ def build_struct(lm, label, tree):
             Explaination
               Explaination
     """
-    # (name, childs), childs = (name, childs)
+    # (name, type, childs), childs = (name, type, childs)
     struct = [] # [ (LANG, [ (TOS, [ (expl), ] ), ]), ]
     
     is_lang_found = False
@@ -490,17 +495,17 @@ def build_struct(lm, label, tree):
     for ls in tree.find_top_objects(Section, lm.is_lang_section, recursive=True):
         is_lang_found = True
         tos = []
-        struct.append( (ls, tos) )
+        struct.append( (ls, TP_LANG, tos) )
 
         # TOS sections
         for ts in ls.find_top_objects(Section, lm.is_tos_section, recursive=True):
             is_tos_found = True
             expl = []
-            tos.append( (ts, expl) )
+            tos.append( (ts, TP_TOS, expl) )
        
             # Explainations
-            for (e, childs) in find_explainations(ts, lm.is_expl_section):
-                expl.append( (e, childs) )
+            for (e, tp, childs) in find_explainations(ts, lm.is_expl_section):
+                expl.append( (e, TP_EXPL, childs) )
                 
     #
     if not is_lang_found:
@@ -513,9 +518,9 @@ def build_struct(lm, label, tree):
 
 
 def dump_struct(struct, level=0):
-    # (name, childs), childs = (name, childs)
+    # (name, type, childs), childs = (name, type, childs)
     # [ (LANG, [ (TOS, [ (expl), ] ), ]), ]
-    for (name, childs) in struct:
+    for (name, tp, childs) in struct:
         print("  "*level, name)
         dump_struct(childs, level+1)
 
@@ -543,18 +548,12 @@ def scan_struct(lm, struct, root_word, level=0):
     """
     words = []
     
-    for (search_context, childs) in struct:
+    for (search_context, tp, childs) in struct:
         word = root_word.clone()
         words.append(word)
 
-        # fixes
-        # 1 translation - 1 explaination
-        if word.Translation_DE:
-            if lm.is_expl_section(search_context) or isinstance(search_context, (Li, Dl)):
-                pass
+        excludes = [sc for (sc, t, c) in childs]
 
-        excludes = [sc for (sc, c) in childs]
-        
         # do extraction
         lm.Type                 (search_context, excludes, word)
         lm.IsMale               (search_context, excludes, word)
@@ -582,11 +581,6 @@ def scan_struct(lm, struct, root_word, level=0):
         lm.Coordinate           (search_context, excludes, word)
         lm.Translation          (search_context, excludes, word)
 
-        # 1 translation - 1 explaination
-        #if level == 1:  # is TOS
-        #    if len(childs) <= 1:
-        #        pass
-
         # explaination caontext
         if lm.is_expl_section(search_context) or isinstance(search_context, (Li, Dl)):
             lm.ExplainationRaw          (search_context, excludes, word)
@@ -594,7 +588,21 @@ def scan_struct(lm, struct, root_word, level=0):
             lm.ExplainationExamplesRaw  (search_context, excludes, word)
             lm.ExplainationExamplesTxt  (search_context, excludes, word)
             lm.LabelType                (search_context, excludes, word)
-        
+
+        # fixes
+        # translations. 1 translation = 1 explaination
+        """
+        if tp == TP_TOS:
+            if len(childs) > 1:  # too much explainations
+                word.Translation_DE = None
+                word.Translation_EN = None
+                word.Translation_ES = None
+                word.Translation_FR = None
+                word.Translation_IT = None
+                word.Translation_PT = None
+                word.Translation_RU = None
+        """
+
         # recursive
         words += scan_struct(lm, childs, word, level+1)
 

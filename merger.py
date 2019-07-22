@@ -300,8 +300,21 @@ def GetContentUniversalis( Url, WikidataItem ):
     
 
 def CompareContent ( Word, DescriptionItem ):
+    if 0:
+        host = "http://lviv.ixioo.com"
+        port = 8012
+        path = "/FindMatch"
+        query = "?open&WDPK={}&WKPKL={}"
+
+        if isinstance(wt_id, (list,tuple)):
+            wt_id = ",".join(wt_id)
+
+        url = host + ":" + str(port) + path + query.format(wd_id, wt_id)
+
+        ids = requests.get(url).text
     pass
-    
+
+
 
 def wikidata_reader():
     yield from from_db(WikidataItemClass)
