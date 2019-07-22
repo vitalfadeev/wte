@@ -12,6 +12,7 @@ class Word(DBClass, JSONClass):
 
     
     def __init__(self, parent=None):
+        self.PrimaryKey                 = None
         self.LabelName                  = None
         self.CodeInWiki                 = None
         self.LanguageCode               = None

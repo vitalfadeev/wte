@@ -136,10 +136,22 @@ def SearchWikictionary( WikidataItem ):
     yield from from_db(WikictionaryItemClass, LabelName = WikidataItem.LabelName )
 
 
-def CompareWikictionary(WikidataItem, WikictionaryItem):
-    if WikidataItem.LabelName == WikictionaryItem.LabelName:
-        if WikidataItem.LanguageCode == WikictionaryItem.LanguageCode:
-            return True
+def CompareWikictionary(WikidataItem, WiktionaryItems):
+    host = "http://lviv.ixioo.com"
+    port = 8012
+    path = "/FindMatch"
+
+    ids = [wki.PrimaryKey for wki in WiktionaryItems]
+
+    url = host + ":" + str(port) + path
+
+    params = {"open":1, "WDPK": WikidataItem.PrimaryKey, "WKPKL": ids}
+
+    result = requests.get(url, params=params).text
+
+    result = result.splitlines()
+
+    return result
 
 
 def MergeWikidata( word, WikidataItem ):
@@ -153,7 +165,7 @@ def MergeWikidata( word, WikidataItem ):
     word.WikiDataUrl                = WikidataItem.SelfUrl # WikiDataUrl
     word.WikipediaENURL             = WikidataItem.WikipediaENURL
     word.EncyclopediaBritannicaEN   = WikidataItem.EncyclopediaBritannicaEN
-    word.EncyclopediaUniversalisEN  = WikidataItem.EncyclopediaUniversalisEN
+    word.EncyclopediaUniversalisFR  = WikidataItem.EncyclopediaUniversalisFR
     word.Instance_of                = WikidataItem.Instance_of
     word.Subclass_of                = WikidataItem.Subclass_of
     word.Part_of                    = WikidataItem.Part_of
@@ -300,20 +312,7 @@ def GetContentUniversalis( Url, WikidataItem ):
     
 
 def CompareContent ( Word, DescriptionItem ):
-    if 0:
-        host = "http://lviv.ixioo.com"
-        port = 8012
-        path = "/FindMatch"
-        query = "?open&WDPK={}&WKPKL={}"
-
-        if isinstance(wt_id, (list,tuple)):
-            wt_id = ",".join(wt_id)
-
-        url = host + ":" + str(port) + path + query.format(wd_id, wt_id)
-
-        ids = requests.get(url).text
     pass
-
 
 
 def wikidata_reader():
@@ -359,14 +358,14 @@ def mainfunc():
 
     # read words from wikidata
     for WikidataItem in wikidata_reader():
-        if SavePoint.check_save_point( str(WikidataItem.id) ):
+        if SavePoint.check_save_point( str(WikidataItem.PrimaryKey) ):
             pass # savepoint found or first run
         else:
             continue # skip. because waiting savepoint
 
         print( WikidataItem )
 
-        SavePoint.make_save_point( str(WikidataItem.id) )
+        SavePoint.make_save_point( str(WikidataItem.PrimaryKey) )
 
         # header
         for s in ["WD", "WT", "Wp", "Br", "Un", "Done"]:
@@ -376,19 +375,15 @@ def mainfunc():
         # WD
         print('*'.ljust(3), end="")
         
-        if 0:
-            if WikidataItem.LabelName == "Belgique":
-                pass
-            else:
-                continue
-            
-        word = Word()        
+        word = Word()
         word = MergeWikidata( word, WikidataItem )
 
         # search Wiktionary
         words = []
-        for WikictionaryItem in SearchWikictionary( WikidataItem ):
-            if CompareWikictionary ( WikidataItem, WikictionaryItem ):
+
+        ids = CompareWikictionary(WikidataItem, SearchWikictionary(WikidataItem))
+        for id in ids:
+            for WikictionaryItem in WikictionaryItemClass.from_db(PrimaryKey=id):
                 word = MergeWiktionary( word, WikictionaryItem )
                 words.append(word)
 
@@ -397,14 +392,14 @@ def mainfunc():
             # WT
             print((str(len(words))).ljust(3), end="")
             sys.stdout.flush()
-            
+
         else:
             words.append(word)
             # WT
             print(('.').ljust(3), end="")
             sys.stdout.flush()
-            
-        
+
+
         # descriptions
         words2 = []
         for word in words:
@@ -423,7 +418,7 @@ def mainfunc():
                     WP_found = "E"
                 except wikipedia.exceptions:
                     WP_found = "E"
-                    
+
             if WP_found:
                 print(WP_found.ljust(3), end="")
                 sys.stdout.flush()
@@ -465,22 +460,22 @@ def mainfunc():
                 sys.stdout.flush()
 
             words2.append(word)
-            
+
             # stub eol for logging
             if len(words) > 1 and len(words) != len(words2):
                 print()
                 print(" " * (3 * len(["WD", "WT"])), end="")
-            
+
         if words2:
             words = words2
-            
+
         # write words
         for word in words:
             word.save_to_db()
 
         # Done
         print( '*'.ljust(3) )
-    
+
 
 def test():
     word = Word()
