@@ -300,8 +300,9 @@ class DBClass:
             if hasattr(w, name):
                 if isinstance(getattr(w, name), (list, tuple)): # decode "" to []
                     if value:
-                        value = json.loads(value)
-                        
+                        if isinstance(value, (list, tuple)):
+                            value = json.loads(value)
+
                     if isinstance(value, list):
                         pass
                     else:

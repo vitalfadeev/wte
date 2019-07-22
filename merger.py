@@ -383,7 +383,7 @@ def mainfunc():
 
         ids = CompareWikictionary(WikidataItem, SearchWikictionary(WikidataItem))
         for id in ids:
-            for WikictionaryItem in WikictionaryItemClass.from_db(PrimaryKey=id):
+            for WikictionaryItem in from_db(WikictionaryItemClass, PrimaryKey=id):
                 word = MergeWiktionary( word, WikictionaryItem )
                 words.append(word)
 
