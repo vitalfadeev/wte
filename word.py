@@ -8,7 +8,7 @@ class Word(DBClass, JSONClass):
     DB_NAME = "Words.db"
     DB_TABLE_NAME = "words"
     DB_PRIMARY = ["PrimaryKey"]
-    DB_INDEXES = []
+    DB_INDEXES = ["LabelName", "AlsoKnownAs", "LanguageCode"]
 
     
     def __init__(self, parent=None):
