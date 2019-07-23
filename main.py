@@ -21,10 +21,10 @@ def test_merger():
     merge()
 
 
-#test_one("en", "cat")
+test_one("fr", "Palynologie")
 #test_wikidict("en")
-#test_wiktionary("en")
-test_merger()
+#test_wiktionary("fr")
+#test_merger()
 exit(9)
 
 test_wiktionary("en")

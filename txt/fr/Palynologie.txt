@@ -1,0 +1,56 @@
+{{voir|Palynologie}}
+
+== {{langue|fr}} ==
+=== {{S|étymologie}} ===
+: Composé de ''[[palyno-]]'', (« pollen »), et de ''[[-logie]]'', (« étude »).
+
+=== {{S|nom|fr}} ===
+{{fr-rég|pa.li.nɔ.lɔ.ʒi}}
+'''palynologie''' {{pron|pa.li.nɔ.lɔ.ʒi|fr}} {{f}}
+# {{botanique|fr}} Étude des [[pollen]]s.
+#* ''La '''palynologie''' est la science des pollens et des spores libérés par les espèces végétales actuelles et fossiles.'' {{source|Article ''Palynologie'' sur le site ecosociosystemes.fr}}
+#* ''Ainsi, les données de l’anthracologie devront être confrontées à celles issues des autres études paléo- et archéo-environnementales du site, dont la sédimentologie, la '''palynologie''' et la phytolithologie, ou encore la zooarchéologie, afin de traiter de façon pluridisciplinaire certaines problématiques communes.'' {{source|Lydie {{pc|Dussol}}, ''Économie des bois et gestion des forêts chez les anciens Mayas'', Les nouvelles de l'archéologie, janvier 2016.}}
+
+==== {{S|dérivés}} ====
+* [[aéropalynologie]]
+* [[paléopalynologie]]
+* [[palynologique]]
+* [[palynologue]]
+
+==== {{S|apparentés}} ====
+* [[pollen]]
+
+==== {{S|traductions}} ====
+{{trad-début}}
+* {{T|de}} : {{trad+|de|Palynologie}}
+* {{T|en}} : {{trad+|en|palynology}}
+* {{T|bs}} : {{trad-|bs|palinologija}}
+* {{T|ca}} : {{trad-|ca|palinologia|f}}
+* {{T|hr}} : {{trad-|hr|palinologija}}
+* {{T|da}} : {{trad-|da|palynologi}}
+* {{T|es}} : {{trad+|es|palinología|f}}
+* {{T|eo}} : {{trad-|eo|polenoscienco}}, {{trad-|eo|polenologio}}
+* {{T|et}} : {{trad-|et|palünoloogia}}
+* {{T|ga}} : {{trad-|ga|pailineolaíocht}}
+* {{T|id}} : {{trad+|id|palinologi}}
+* {{T|it}} : {{trad-|it|palinologia|f}}
+* {{T|nl}} : {{trad-|nl|palynologie}}, {{trad+|nl|pollenanalyse}}
+* {{T|no}} : {{trad-|no|palynologi}}
+* {{T|pl}} : {{trad+|pl|palinologia}}
+* {{T|pt}} : {{trad-|pt|palinologia}}
+* {{T|ro}} : {{trad+|ro|palinologie}}
+* {{T|sk}} : {{trad-|sk|palynológia}}
+* {{T|sv}} : {{trad-|sv|palynologi}}
+* {{T|tl}} : {{trad-|tl|palinolohiya}}
+* {{T|cs}} : {{trad-|cs|palynologie}}
+* {{T|tr}} : {{trad-|tr|palinoloji}}
+{{trad-fin}}
+
+=== {{S|prononciation}} ===
+* {{écouter|lang=fr|France (Toulouse)|audio=LL-Q150 (fra)-Lepticed7-palynologie.wav}}
+* {{écouter|lang=fr|France (Lyon)|audio=LL-Q150 (fra)-WikiLucas00-palynologie.wav}}
+
+=== {{S|voir aussi}} ===
+* {{WP}}
+
+[[Catégorie:Noms de sciences en français]]

@@ -94,6 +94,22 @@ def conj(t, excludes, label, *args):
     pass
 
 
+def fr_reg_p(t, excludes, label, miners=None):
+    # http://en.wiktionary.org/wiki/Template:en-noun
+    head = t.arg("head")
+    head = head if head else label
+    p1 = t.arg(0)
+    p = t.arg('p')
+    pp = t.arg('pp')
+
+    if pp:
+        yield (None, pp)
+    elif pp:
+        yield (None, pp)
+    elif p1:
+        yield (None, head + "s")
+
+
 def Type(search_context, excludes, word):
     sec = search_context
     
@@ -152,7 +168,7 @@ def SingleVariant(search_context, excludes, word):
 
 def PluralVariant(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_template, 'fr-rég', [in_arg, (None, ['p', 0])]],
+        [in_template, 'fr-rég', [fr_reg_p, word.LabelName]],
         [in_template, ['fr-accord-mf', 'fr-accord-ind'], [in_arg, (None, ['p', 0])]],
     ):
         word.PluralVariant = term
