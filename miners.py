@@ -4,7 +4,7 @@
 from itertools import islice
 from collections.abc import Iterable
 from wikoo import Section, Template, Link, Li, Dl, Dt, Dd, String
-from helpers import convert_to_alnum, proper, deduplicate
+from helpers import convert_to_alnum, proper, deduplicate, get_lognest_word
 from helpers import remove_comments, extract_from_link
 from helpers import first_true
 
@@ -383,7 +383,7 @@ def find_explainations(tos_section, is_expl_section):
             yield (dl, TP_EXPL, childs)
 
 
-def get_label_type(expl, word):
+def get_label_type_v1(expl, word):
     wt = proper(word.Type) if word.Type is not None else ""
     
     #
@@ -425,7 +425,7 @@ def get_label_type(expl, word):
     s = s.strip()
     splitted = s.split(" ")
     list3 += [ w.lower() for w in splitted ]
-    list3 = [ w for w in list3 if len(w) >= 3 ]
+    list3 = [ w for w in list3 if len(w) >= 4 ]
 
     # Concat
     biglst = list1 + list2 + list3
@@ -433,11 +433,83 @@ def get_label_type(expl, word):
     if len(biglst) == 1:
         return wt + "-" + biglst[0]
 
-    elif len(biglst) >= 2:
-        return wt + "-" + "-".join(biglst[:2])
+    elif len(biglst) >= 3:
+        return wt + "-" + "-".join(biglst[:3])
 
     else:
         return wt
+
+
+def get_label_type(expl, word):
+    wt = proper(word.Type) if word.Type is not None else ""
+
+    # Extract the list of item enclosed in {{ }}
+    # For each item found , if there is | inside , then split and take only longest word
+    # Convert all non 0-9 A-Z into _
+    # Deduplicate _ _ into single _
+    # Make all words in upper case
+    list1 = []
+    for t in expl.find_objects(Template, recursive=True, exclude=[li for li in expl.find_objects((Li, Dl))]):
+        inner = t.raw
+        words = []
+        for ws in inner.split("|"):
+            words += ws.split(' ')
+        s = get_lognest_word(words)
+        s = convert_to_alnum(s, '_')
+        s = deduplicate(s, '_')
+        s = s.strip('_')
+        s = s.strip()
+        s = s.upper()
+        list1.append(s)
+
+    # Extract the list of item enclosed in [[ ]]
+    # For each item found , if there is | inside , then split and take only longest word
+    # Convert all non 0-9 A-Z into _
+    # Deduplicate _ _ into single _
+    # Make all words with first letter uppercase and others lower case (propercase)
+    list2 = []
+    for l in expl.find_objects(Link, recursive=True, exclude=[li for li in expl.find_objects((Li, Dl))]):
+        inner = l.raw
+        words = []
+        for ws in inner.split("|"):
+            words += ws.split(' ')
+        s = get_lognest_word(words)
+        s = convert_to_alnum(s, '_')
+        s = deduplicate(s, '_')
+        s = s.strip('_')
+        s = s.strip()
+        s = proper(s)
+        list2.append(s)
+
+    # remove all [ ( { ) ] } from the line, and extract all words separated by spaces
+    # keep only words having a lenght>=3
+    # Convert all non 0-9 A-Z into _
+    # Deduplicate _ _ into single _
+    # Make all words in lowercase
+    list3 = []
+    s = expl.raw
+    s = s.replace('{', ' ').replace('}', ' ')
+    s = s.replace('[', ' ').replace(']', ' ')
+    s = s.replace('(', ' ').replace(')', ' ')
+    s = deduplicate(s, ' ')
+    splits = s.split(' ')
+    list3 = [w for w in splits if len(w) >= 3]
+    list3 = [convert_to_alnum(w) for w in list3]
+    list3 = [deduplicate(w, '_') for w in list3]
+    list3 = [w.strip('_') for w in list3]
+    list3 = [w.strip(' ') for w in list3]
+    list3 = [w.lower() for w in list3]
+
+    # Add TYPE + (the 4 first items of the concatenated list :  list1 + List2 + list3
+    # Concat
+    #print(expl.raw)
+    #print(list1)
+    #print(list2)
+    #print(list3)
+    #print()
+    biglst = list1 + list2 + list3
+
+    return wt + "-" + "-".join(biglst[:4])
 
 
 #

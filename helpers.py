@@ -136,8 +136,20 @@ def get_number(s):
     return result
     
 
-def convert_to_alnum(s):
-    return "".join( (c if c.isalnum() else "_" for c in s ) )
+def convert_to_alnum(s, replace_char="_"):
+    return "".join( (c if c.isalnum() else replace_char for c in s ) )
+
+
+def get_lognest_word(lst):
+    longest = ""
+    maxlen = 0
+
+    for w in lst:
+        if len(w) > maxlen:
+            maxlen = len(w)
+            longest = w
+
+    return longest
 
 
 def remove_comments(s, startpos=0):
