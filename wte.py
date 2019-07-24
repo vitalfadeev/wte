@@ -619,6 +619,7 @@ def try_well_formed_structure(lang, label, tree):
     # (name, childs), childs = (name, childs)
     # [ (LANG, [ (TOS, [ (expl), ] ), ]), ]
     struct = build_struct(lm, label, tree)
+    #wikoo.dump(tree)
     #dump_struct(struct)
     #exit(2)
     
@@ -1178,7 +1179,8 @@ def one_file(lang, label):
     for w in treemap[label]:
         log.info("  %s: %s: %s: %s", w.LabelName, str(w.Type).ljust(14), str(w.LabelType).ljust(30), str(w.ExplainationRaw)[:50].replace("\n", "\\n"))
         print(w.PrimaryKey)
-        print(w.PluralVariant)
+        print(w.ExplainationRaw)
+        print(w.ExplainationTxt)
         print()
     log.info("Done!")
 

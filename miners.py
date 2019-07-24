@@ -354,6 +354,12 @@ def find_explainations(tos_section, is_expl_section):
                         is_found = True
                         childs = list(find_explainations(li, is_expl_section))
                         yield (li, TP_EXPL, childs)
+
+                elif li.base.startswith(":") and li.base.endswith(":"):
+                    is_found = True
+                    childs = list(find_explainations(li, is_expl_section))
+                    yield (li, TP_EXPL, childs)
+
             break # explaination from first section only
 
     # case 2: try get list in TOS section

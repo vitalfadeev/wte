@@ -75,7 +75,7 @@ def is_tos_section(sec):
 
 
 def is_expl_section(sec):
-    return sec.name in ["bedeutungen"]
+    return sec.name in ["bedeutungen", 'meanings']
     
     
 def Type(search_context, excludes, word):
@@ -287,6 +287,8 @@ def ExplainationRaw(search_context, excludes, word):
 def ExplainationTxt(search_context, excludes, word):
     li = search_context
     text =  "".join( c.get_text() for c in li.childs if not isinstance(c, (Li, Template)) )
+    if len(text) >= 2 and text[0] == "[" and text[1].isdigit() and text[2] == "]": # :[1] ...
+        text = text[3:]
     word.ExplainationTxt = text.strip()
     
     
