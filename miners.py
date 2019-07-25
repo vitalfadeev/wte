@@ -516,7 +516,7 @@ def get_label_type(expl, word):
     #if len(biglst) < 4:
     #    biglst = unique(biglst)
 
-    return wt + "-" + "_".join(biglst[:4])
+    return wt + "_" + "_".join(biglst[:4])
 
 
 #
