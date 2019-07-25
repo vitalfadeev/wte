@@ -4,7 +4,7 @@
 from itertools import islice
 from collections.abc import Iterable
 from wikoo import Section, Template, Link, Li, Dl, Dt, Dd, String
-from helpers import convert_to_alnum, proper, deduplicate, get_lognest_word
+from helpers import convert_to_alnum, proper, deduplicate, get_lognest_word, unique
 from helpers import remove_comments, extract_from_link
 from helpers import first_true
 
@@ -451,14 +451,14 @@ def get_label_type(expl, word):
     list1 = []
     for t in expl.find_objects(Template, recursive=True, exclude=[li for li in expl.find_objects((Li, Dl))]):
         inner = t.raw
-        words = []
-        for ws in inner.split("|"):
-            words += ws.split(' ')
-        s = get_lognest_word(words)
-        s = convert_to_alnum(s, '_')
+        s = convert_to_alnum(inner , '_')
         s = deduplicate(s, '_')
         s = s.strip('_')
-        s = s.strip()
+        words = []
+        for ws in s.split("|"):
+            for w in ws.split('_'):
+                words += w.split(' ')
+        s = get_lognest_word(words)
         s = s.upper()
         list1.append(s)
 
@@ -469,15 +469,15 @@ def get_label_type(expl, word):
     # Make all words with first letter uppercase and others lower case (propercase)
     list2 = []
     for l in expl.find_objects(Link, recursive=True, exclude=[li for li in expl.find_objects((Li, Dl))]):
-        inner = l.raw
-        words = []
-        for ws in inner.split("|"):
-            words += ws.split(' ')
-        s = get_lognest_word(words)
+        s = l.get_text()
         s = convert_to_alnum(s, '_')
         s = deduplicate(s, '_')
         s = s.strip('_')
-        s = s.strip()
+        words = []
+        for ws in s.split('_'):
+            for w in ws.split(' '):
+                words.append(w)
+        s = get_lognest_word(words)
         s = proper(s)
         list2.append(s)
 
@@ -487,18 +487,22 @@ def get_label_type(expl, word):
     # Deduplicate _ _ into single _
     # Make all words in lowercase
     list3 = []
-    s = expl.raw
-    s = s.replace('{', ' ').replace('}', ' ')
-    s = s.replace('[', ' ').replace(']', ' ')
+    words = []
+    for w in expl.find_objects(String, recursive=False, exclude=[li for li in expl.find_objects((Li, Dl))]):
+        words.append(w.get_text())
+
+    s = " ".join(words)
     s = s.replace('(', ' ').replace(')', ' ')
     s = deduplicate(s, ' ')
-    splits = s.split(' ')
-    list3 = [w for w in splits if len(w) >= 3]
-    list3 = [convert_to_alnum(w) for w in list3]
-    list3 = [deduplicate(w, '_') for w in list3]
-    list3 = [w.strip('_') for w in list3]
-    list3 = [w.strip(' ') for w in list3]
-    list3 = [w.lower() for w in list3]
+    s = convert_to_alnum(s)
+    s = deduplicate(s, '_')
+    s = s.strip('_')
+
+    words = []
+    for ws in s.split('_'):
+        for w in ws.split(' '):
+            words.append(w)
+    list3 = [w.lower() for w in words if len(w) >= 3]
 
     # Add TYPE + (the 4 first items of the concatenated list :  list1 + List2 + list3
     # Concat
@@ -509,7 +513,10 @@ def get_label_type(expl, word):
     #print()
     biglst = list1 + list2 + list3
 
-    return wt + "-" + "-".join(biglst[:4])
+    #if len(biglst) < 4:
+    #    biglst = unique(biglst)
+
+    return wt + "-" + "_".join(biglst[:4])
 
 
 #
