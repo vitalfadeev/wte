@@ -24,8 +24,6 @@ def worker(item):
 
 result_list = []
 def log_result(result):
-    # This is called whenever foo_pool(i) returns a result.
-    # result_list is modified only by the main process, not the pool workers.
     result_list.append(result)
 
 

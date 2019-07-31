@@ -5,6 +5,7 @@ import sys
 import os.path
 import json
 import sqlite3
+import multiprocessing
 import requests
 import wikipedia
 from wikidata import WikidataItem as WikidataItemClass
@@ -13,6 +14,7 @@ from sql import DBWikiData, DBWikictionary, get_new_id
 from word import Word
 from dbclass import from_db
 from helpers import get_contents, put_contents, unique
+from  loggers import log_merger
 
 
 #DBWords = sqlite3.connect("Words.db")
@@ -351,7 +353,7 @@ class SavePoint:
         self._must_check = False
 
 
-def mainfunc():
+def mainfunc_single_process():
     SavePoint.load_save_point()
     
     WikictionaryItemClass().create_index(LabelName=1)
@@ -493,3 +495,103 @@ def test():
     #print(DescriptionItem.CONTENT)
 
 
+def MergeOneWikidataItem(WikidataItem):
+    """ The worker in async process """
+    if WikidataItem:
+        log_merger.info(WikidataItem)
+
+        SavePoint.make_save_point(str(WikidataItem.PrimaryKey))
+
+        # WD
+        word = Word()
+        word = MergeWikidata(word, WikidataItem)
+
+        # search Wiktionary
+        words = []
+
+        ids = CompareWikictionary(WikidataItem, SearchWikictionary(WikidataItem))
+
+        for id in ids:
+            for WikictionaryItem in from_db(WikictionaryItemClass, PrimaryKey=id):
+                word = MergeWiktionary(word, WikictionaryItem)
+                words.append(word)
+
+        # words
+        if len(words) > 0:
+            pass
+        else:
+            words.append(word)
+
+        # descriptions
+        words2 = []
+        for word in words:
+            # WP
+            Url = word.WikipediaENURL
+            WP_found = ""
+            if Url:
+                try:
+                    DescriptionItem = GetContentWikipedia(Url, WikidataItem)
+                    word = MergeContent(word, DescriptionItem)
+                    if len(DescriptionItem.CONTENT) > 0:
+                        WP_found = "*"
+                except wikipedia.exceptions.DisambiguationError:
+                    WP_found = "E"
+                except wikipedia.exceptions.PageError:
+                    WP_found = "E"
+                except wikipedia.exceptions:
+                    WP_found = "E"
+
+            # BR
+            Url = word.EncyclopediaBritannicaEN
+            BR_found = False
+            if Url:
+                DescriptionItem = GetContentBritanica(Url, WikidataItem)
+                word = MergeContent(word, DescriptionItem)
+                BR_found = True
+
+            # UN
+            Url = word.EncyclopediaUniversalisEN
+            UN_found = False
+            if Url:
+                DescriptionItem = GetContentUniversalis(Url, WikidataItem)
+                word = MergeContent(word, DescriptionItem)
+                UN_found = True
+
+            words2.append(word)
+
+        if words2:
+            words = words2
+
+        # write words
+        for word in words:
+            word.save_to_db()
+
+
+def error_callback(e):
+    print(e)
+    raise e # FAIL
+
+def log_result(result):
+    return  True
+
+
+def mainfunc():
+    WORKERS = 10  # N worker processes
+
+    pool = multiprocessing.Pool(WORKERS)
+
+    pool.imap(MergeOneWikidataItem, wikidata_reader())
+
+    """
+    for WikidataItem in wikidata_reader():
+        print(WikidataItem)
+        #pool.apply(MergeOneWikidataItem, args=(WikidataItem,))
+        #$pool.apply(MergeOneWikidataItem, args=(WikidataItem,), callback=log_result, error_callback=error_callback)
+    """
+
+    pool.close()
+    pool.join()
+
+
+if __name__ == "__main__":
+    mainfunc()
