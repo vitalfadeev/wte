@@ -25,5 +25,3 @@ if __name__ == "__main__":
     p = multiprocessing.Pool(N)
     p.map(worker, items)
 
-
-
