@@ -35,7 +35,11 @@ if __name__ == "__main__":
     p = multiprocessing.Pool(WORKERS)
 
     for item in items_reader:
+        print("read from reader: ", item)
         p.apply_async(worker, args = (item,), callback = log_result)
+
+    # imap
+    # p.imap(worker, items_reader)
 
     p.close()
     p.join()
