@@ -18,6 +18,7 @@ from  loggers import log_merger
 
 
 #DBWords = sqlite3.connect("Words.db")
+REMOTE_CONTENT_FETCHING = False
 
 
 class CacheRequest:
@@ -523,44 +524,49 @@ def MergeOneWikidataItem(WikidataItem):
             words.append(word)
 
         # descriptions
-        words2 = []
-        for word in words:
-            # WP
-            Url = word.WikipediaENURL
-            WP_found = ""
-            if Url:
-                try:
-                    DescriptionItem = GetContentWikipedia(Url, WikidataItem)
+        if REMOTE_CONTENT_FETCHING:
+            words2 = []
+
+            for word in words:
+                # WP
+                Url = word.WikipediaENURL
+                WP_found = ""
+                if Url:
+                    try:
+                        DescriptionItem = GetContentWikipedia(Url, WikidataItem)
+                        word = MergeContent(word, DescriptionItem)
+                        if len(DescriptionItem.CONTENT) > 0:
+                            WP_found = "*"
+                    except wikipedia.exceptions.DisambiguationError:
+                        WP_found = "E"
+                    except wikipedia.exceptions.PageError:
+                        WP_found = "E"
+                    except wikipedia.exceptions:
+                        WP_found = "E"
+
+                # BR
+                Url = word.EncyclopediaBritannicaEN
+                BR_found = False
+                if Url:
+                    DescriptionItem = GetContentBritanica(Url, WikidataItem)
                     word = MergeContent(word, DescriptionItem)
-                    if len(DescriptionItem.CONTENT) > 0:
-                        WP_found = "*"
-                except wikipedia.exceptions.DisambiguationError:
-                    WP_found = "E"
-                except wikipedia.exceptions.PageError:
-                    WP_found = "E"
-                except wikipedia.exceptions:
-                    WP_found = "E"
+                    BR_found = True
 
-            # BR
-            Url = word.EncyclopediaBritannicaEN
-            BR_found = False
-            if Url:
-                DescriptionItem = GetContentBritanica(Url, WikidataItem)
-                word = MergeContent(word, DescriptionItem)
-                BR_found = True
-
-            # UN
-            Url = word.EncyclopediaUniversalisEN
-            UN_found = False
-            if Url:
-                DescriptionItem = GetContentUniversalis(Url, WikidataItem)
-                word = MergeContent(word, DescriptionItem)
-                UN_found = True
+                # UN
+                Url = word.EncyclopediaUniversalisEN
+                UN_found = False
+                if Url:
+                    DescriptionItem = GetContentUniversalis(Url, WikidataItem)
+                    word = MergeContent(word, DescriptionItem)
+                    UN_found = True
 
             words2.append(word)
 
-        if words2:
-            words = words2
+            if words2:
+                words = words2
+
+        else:
+            pass
 
         # write words
         for word in words:
