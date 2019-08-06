@@ -22,12 +22,14 @@ from miners import find_explainations
 from wiktionary import WikictionaryItem
 from dbclass import DBWrite
 import random
+import multiprocessing
 
 
 TXT_FOLDER      = "txt"     # folder where stored text files for debugging
 CACHE_FOLDER    = "cached"  # folder where stored downloadad dumps
 WORD_JUST       = 24        # align size
 create_storage(TXT_FOLDER)
+WORKERS         = 10        # N worker processes
 
 
 class KEYS:
@@ -329,125 +331,7 @@ def download(lang="en", use_cached=True):
     return local_file
 
 
-class XMLParser:
-    """
-    XML parser. Parser xml stream, find <page>, extract all subtags and data, and run callback.
-    """
-
-    def __init__(self):
-        self.inpage  = False
-        self.intitle = False
-        self.intext  = False
-        self.inid_   = False
-        self.title  = ""
-        self.text   = ""
-        self.id_    = ""
-        self.opened = []
-
-        ### BEGIN ###
-        # Initializing xml parser
-        self._parser = xml.parsers.expat.ParserCreate()
-
-        self._parser.StartElementHandler = self.start
-        self._parser.EndElementHandler = self.end
-        self._parser.CharacterDataHandler = self.cdata
-        self._parser.buffer_text = True
-        self._parser.buffer_size = 1024
-
-    def start(self, tag, attrs):
-        """
-        Event on open tag, like the "<page>"
-        """
-        if not self.inpage:
-            if tag == "page":
-                # flags
-                self.inpage  = True
-                self.intitle = False
-                self.intext  = False
-                self.inid_   = False
-                # storages
-                self.text  = ""
-                self.title = ""
-                self.id_   = ""
-
-        elif self.inpage:
-            if tag == "title":
-                self.intitle = True
-                self.title = ""
-
-            elif tag == "text":
-                self.intext = True
-                self.text = ""
-
-            elif tag == "id" and self.opened[-1] == "page":
-                self.inid_ = True
-                self.id_ = ""
-        
-        self.opened.append(tag)
-
-
-    def cdata(self, data):
-        """
-        Event on tag data, like the "<page> data here </page>"
-        """
-        if self.inpage:
-            if self.intitle:
-                # title
-                self.title += data  # cumulative, because can be multiple data sections
-
-            elif self.intext:
-                # text
-                self.text += data  # cumulative, because can be multiple data sections
-
-            elif self.inid_:
-                # text
-                self.text += data  # cumulative, because can be multiple data sections
-
-
-    def end(self, tag):
-        """
-        Event on close tag, like the "</page>"
-        """
-        if self.inpage:
-            if tag == "page":
-                self.page_callback(self.lang, self.id_, self.title, self.text, self.limit, self.is_save_txt, self.is_save_json, self.is_save_xml, self.is_save_templates)
-                self.inpage = False
-
-            elif tag == "title":
-                self.intitle = False
-
-            elif tag == "text":
-                self.intext = False
-
-            elif tag == "id":
-                self.inid_ = False
-
-        self.opened.pop()
-        
-
-    def parse(self, file_stream, page_callback, lang="en", limit=10, is_save_txt=False, is_save_json=False, is_save_xml=False, is_save_templates=False):
-        """
-        Parse xml stream 'file_stream', and run callback 'page_callback'
-
-        In:
-            file_stream   - stream like a: File
-            page_callback - function like a: page_callback(label, text)
-
-        """
-        self.page_callback = page_callback
-        self.lang = lang
-        self.limit = limit
-        self.is_save_txt = is_save_txt
-        self.is_save_json = is_save_json
-        self.is_save_xml = is_save_xml
-        self.is_save_templates = is_save_templates
-
-        log.info("Processing...")
-        self._parser.ParseFile(file_stream)
-        log.info("Done processing.")
-
-
-# 
+#
 # STRUCT = [
 #   LANG_SECTION, [
 #     TOS_SECTION, [
@@ -647,20 +531,39 @@ def try_well_formed_structure(lang, label, tree):
         word.PrimaryKey = word.LanguageCode + "-" + word.LabelName + "§" + label_type + "-" + str(i) + "-" + str(random.randint(1, 777))
         
     return words
-        
 
-def preprocess(lang, callback, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False):
+
+def DumpReader(dump_file, lang):
+    with bz2.open(dump_file, "r") as xml_stream:
+        for (id_, ns, label, text) in read_xml_stream(xml_stream):
+            if ns == "0":  # see wikimedia namespaces
+                yield (lang, id_, label, text) # see process()
+
+
+def preprocess(lang, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False):
     """ Prepare data: unzip, init xml parser """
+    is_save_xml = False
+
     # remove old lang data
     log.info("deleting old '%s' records...", lang)
     WikictionaryItem.execute_sql("DELETE FROM {} WHERE LanguageCode = ?".format(WikictionaryItem.DB_TABLE_NAME), lang)
     
     # xml dump
     dump_file = download(lang)
-    
-    with bz2.open(dump_file, "r") as xml_stream:
-        parser = XMLParser()
-        parser.parse(xml_stream, callback, lang=lang, limit=limit, is_save_txt=is_save_txt, is_save_json=is_save_json, is_save_templates=is_save_templates) # call process() here
+
+    # parssing
+    log.info("Parsing (%s, %s)...", lang, dump_file)
+    dump_reader = DumpReader(dump_file, lang)
+
+    # miltiprocessing
+    pool = multiprocessing.Pool(WORKERS)
+    pool.imap(process_cb, dump_reader)
+    pool.close()
+    pool.join()
+
+
+def process_cb(args):
+    return process(*args)
 
 
 def process(lang, id_, label, text,  limit=0, is_save_txt=False, is_save_json=False, is_save_xml=False, is_save_templates=False):
@@ -1144,6 +1047,39 @@ def print_table_record(word, print_header=False):
     log.info(" ".join(row) + " " + word.PrimaryKey)
 
 
+def read_xml_stream(infile):
+    from lxml import etree
+
+    context = etree.iterparse(infile, huge_tree=True, events=('start', 'end'))
+
+    # read xmlns
+    for event, elem in context:
+        if event == "start" and etree.QName(elem).localname == "mediawiki":
+            xmlns = elem.nsmap[elem.prefix]
+            page_tag     = "{"+xmlns+"}"+"page"
+            id_tag       = "{"+xmlns+"}"+"id"
+            ns_tag       = "{"+xmlns+"}"+"ns"
+            title_tag    = "{"+xmlns+"}"+"title"
+            revision_tag = "{"+xmlns+"}"+"revision"
+            text_tag     = "{"+xmlns+"}"+"text"
+            break
+
+    # read pages
+    for event, elem in context:
+        if event == "end" and elem.tag == page_tag:
+            page     = elem
+
+            id_      = page.findtext(id_tag      , default='')    # page/id
+            ns       = page.findtext(ns_tag      , default='')    # page/bs
+            label    = page.findtext(title_tag   , default='')    # page/title
+            revision = page.find    (revision_tag)                # page/revision
+            text     = revision.findtext(text_tag, default='')    # page/text
+
+            yield (id_, ns, label, text)
+
+            elem.clear()
+
+
 def one_file(lang, label):
     """
     Parse only on word 'label'. (For Debugging)
@@ -1236,4 +1172,4 @@ def mainfunc(lang="en", limit=0, is_save_txt=False, is_save_json=False, is_save_
     #     - save to json
     #     - save to sql
     #
-    preprocess(lang, process, limit, is_save_txt, is_save_json, is_save_templates) # next code in process()
+    preprocess(lang, limit, is_save_txt, is_save_json, is_save_templates) # next code in process()

@@ -18,7 +18,7 @@ class WikictionaryItem(DBClass, JSONClass):
 
 
     def __init__(self):
-        self.PrimaryKey              = None
+        self.PrimaryKey              = ""
         self.SelfUrl                 = None
         self.LabelName               = ""  #
         self.LabelType               = None  #
