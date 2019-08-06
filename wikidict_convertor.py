@@ -8,6 +8,7 @@ import json
 import requests
 import ijson
 import pywikibot
+import downloader
 from pywikibot import Claim
 from pywikibot.site import DataSite
 from blist import sorteddict
@@ -304,16 +305,12 @@ def download(lang="en", use_cached=True):
         return local_file
 
     # download
-    import requests
-    import shutil
-
-    r = requests.get(remote_file, auth=('usrname', 'password'), verify=False, stream=True)
-    r.raw.decode_content = True
-
-    log.info("Downloading....")
-    with open(local_file, 'wb') as f:
-        shutil.copyfileobj(r.raw, f)
-    log.info("Downloaded....[ OK ]")
+    log.info("Downloading (%s)....", remote_file)
+    if downloader.download_with_resume(remote_file, local_file):
+        log.info("Downloaded... [ OK ]")
+    else:
+        log.error("Downloading... [ FAIL ]")
+        raise Exception("Downloading... [ FAIL ]")
 
     return local_file
     

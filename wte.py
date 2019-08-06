@@ -15,6 +15,7 @@ from helpers import filterWodsProblems
 from loggers import log, log_non_english, log_no_words, log_unsupported
 from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_section_not_found
 from helpers import is_ascii
+import downloader
 import helpers
 import wikoo
 from wikoo import Section, Template, Link, Li, Dl, Dt, Dd, Header, Mined
@@ -29,7 +30,7 @@ TXT_FOLDER      = "txt"     # folder where stored text files for debugging
 CACHE_FOLDER    = "cached"  # folder where stored downloadad dumps
 WORD_JUST       = 24        # align size
 create_storage(TXT_FOLDER)
-WORKERS         = 10        # N worker processes
+WORKERS         = 2        # N worker processes
 
 
 class KEYS:
@@ -317,16 +318,12 @@ def download(lang="en", use_cached=True):
         return local_file
 
     # download
-    import requests
-    import shutil
-
-    r = requests.get(remote_file, auth=('usrname', 'password'), verify=False, stream=True)
-    r.raw.decode_content = True
-
-    log.info("Downloading....")
-    with open(local_file, 'wb') as f:
-        shutil.copyfileobj(r.raw, f)
-    log.info("Downloaded....[ OK ]")
+    log.info("Downloading (%s)....", remote_file)
+    if downloader.download_with_resume(remote_file, local_file):
+        log.info("Downloaded... [ OK ]")
+    else:
+        log.error("Downloading... [ FAIL ]")
+        raise Exception("Downloading... [ FAIL ]")
 
     return local_file
 
