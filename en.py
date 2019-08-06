@@ -260,7 +260,6 @@ def IsSingle(search_context, excludes, word):
 
 def IsPlural(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_template, ['accusative singular of', 'dative singular of', 'en-archaic second-person singular of', 'en-archaic second-person singular past of', 'en-archaic third-person singular of', 'en-third person singular of', 'en-third-person singular of', 'enm-first-person singular of', 'enm-first/third-person singular past of', 'enm-second-person singular of', 'enm-second-person singular past of', 'enm-singular subjunctive of', 'enm-singular subjunctive past of', 'enm-third-person singular of', 'feminine singular of', 'feminine singular past participle of', 'genitive singular definite of', 'genitive singular indefinite of', 'genitive singular of', 'neuter singular of', 'neuter singular past participle of', 'sco-third-person singular of', 'singular definite of', 'singular indefinite of', 'singular of', 'vocative singular of']],        
         [has_template, "fi-form of", [has_arg, "pl", [has_value, "plural"]]],
         [has_template, 'en-plural noun'],        
     ):
@@ -506,3 +505,4 @@ def ExplainationExamplesTxt(search_context, excludes, word):
         if e.base.endswith(":"):
             word.ExplainationExamplesTxt = e.get_text().strip()
             break
+

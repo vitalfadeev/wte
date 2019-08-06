@@ -276,15 +276,27 @@ def Hyponymy(search_context, excludes, word):
 
 
 def Meronymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, "merónimo" , [in_arg, (None, [0,1,2,3,4,5,6,7]) ]],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_meronym( lang, term )
 
 
 def Holonymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, "holónimo" , [in_arg, (None, [0,1,2,3,4,5,6,7]) ]],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_holonym( lang, term )
 
 
 def Troponymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, "tropónimo" , [in_arg, (None, [0,1,2,3,4,5,6,7]) ]],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_troponym( lang, term )
 
 
 def Otherwise(search_context, excludes, word):
