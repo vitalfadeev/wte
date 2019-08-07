@@ -83,11 +83,16 @@ def Type(search_context, excludes, word):
 
 def IsMale(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_template, ['gramática', 'g'], 
+        [has_template, ['gramática', 'g'],
             [has_arg, 0, [has_value, ['m', 'mp']]],
             [has_arg, 0, [has_value, ['m', 'mp']]]
         ],
-        [has_template, 'm'], 
+        [has_template, 'm'],
+        [has_template, ['flex.pt'],
+            [has_arg, ['ms', 'mp', 'mpa', 'mpd'],
+                [has_value, [word.LabelName]]
+            ],
+        ],
     ):
         word.IsMale = True
 
@@ -98,7 +103,12 @@ def IsFeminine(search_context, excludes, word):
             [has_arg, 0, [has_value, ['f', 'fp']]],
             [has_arg, 1, [has_value, ['f', 'fp']]]
         ],
-        [has_template, 'f'], 
+        [has_template, 'f'],
+        [has_template, ['flex.pt'],
+            [has_arg, ['fs', 'fp', 'fpa', 'fpd'],
+                [has_value, [word.LabelName]]
+            ],
+        ],
     ):
         word.IsMale = True
 
@@ -108,7 +118,12 @@ def IsNeutre(search_context, excludes, word):
         [has_template, ['gramática', 'g'], 
             [has_arg, 0, [has_value, ['n', 'np', 'ns', 'n2n']]]
         ],
-        [has_template, 'n'], 
+        [has_template, 'n'],
+        [has_template, ['flex.pt'],
+            [has_arg, ['0s', '0p'],
+                [has_value, [word.LabelName]]
+            ],
+        ],
     ):
         word.IsNeutre = True
 
@@ -120,7 +135,12 @@ def IsSingle(search_context, excludes, word):
             [has_arg, 1, [has_value, ['s', 'fs', 'ms', 'ns', 'cs', '2gs', 'c2gs', '1ps', '2ps', '3ps']]],
             [has_arg, 2, [has_value, ['s', 'fs', 'ms', 'ns', 'cs', '2gs', 'c2gs', '1ps', '2ps', '3ps']]],
         ],
-        [has_flag_in_explaination, 'singular']
+        [has_template, ['flex.pt'],
+            [has_arg, ['ms', 'fs', 's', '0s'],
+                [has_value, [word.LabelName]]
+            ],
+        ],
+        [has_flag_in_explaination, 'singular'],
     ):
         word.IsSingle = True
 
@@ -132,7 +152,12 @@ def IsPlural(search_context, excludes, word):
             [has_arg, 1, [has_value, ['p', 'fp', 'mp', 'np', 'cp', '2gp', 'c2gp', '1pp', '2pp', '3pp']]],
             [has_arg, 2, [has_value, ['p', 'fp', 'mp', 'np', 'cp', '2gp', 'c2gp', '1pp', '2pp', '3pp']]],
         ],
-        [has_flag_in_explaination, 'plural']
+        [has_template, ['flex.pt'],
+            [has_arg, ['mp', 'fp', 'p', '0p'],
+                [has_value, [word.LabelName]]
+            ],
+        ],
+        [has_flag_in_explaination, 'plural'],
     ):
         word.IsPlural = True
     
@@ -140,7 +165,7 @@ def IsPlural(search_context, excludes, word):
 def SingleVariant(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, ['flex.pt.subst.completa', 'flex.pt'],
-            [in_arg, (None, ['ms', 'fs', 'msa', 'fsa', 'msd', 'fsd']) ],
+            [in_arg, (None, ['ms', 'fs', 'msa', 'fsa', 'msd', 'fsd', '0s']) ],
         ]
     ):
         if lang is None or lang in LANGUAGES:
@@ -151,7 +176,7 @@ def SingleVariant(search_context, excludes, word):
 def PluralVariant(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, ['flex.pt.subst.completa', 'flex.pt'],
-            [in_arg, (None, ['mp', 'fp', 'mpa', 'fpa', 'mpd', 'fpd']) ],
+            [in_arg, (None, ['mp', 'fp', 'mpa', 'fpa', 'mpd', 'fpd', '0p']) ],
         ],
     ):
         if lang is None or lang in LANGUAGES:
@@ -165,7 +190,7 @@ def MaleVariant(search_context, excludes, word):
             [in_arg, (None, 0) ],
         ],
         [in_template, ['flex.pt.subst.completa', 'flex.pt'],
-            [in_arg, (None, ['ms', 'msa', 'msd']) ],
+            [in_arg, (None, ['ms', 'msa', 'msd', 'mp', 'mpa', 'msd', 'mpd']) ],
         ],
     ):
         if lang is None or lang in LANGUAGES:
@@ -176,7 +201,7 @@ def MaleVariant(search_context, excludes, word):
 def FemaleVariant(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, ['flex.pt.subst.completa', 'flex.pt'],
-            [in_arg, (None, ['fs', 'fsa', 'fsd']) ],
+            [in_arg, (None, ['fs', 'fsa', 'fsd', 'fp', 'fpa', 'fsd', 'fpd']) ],
         ],
     ):
         if lang is None or lang in LANGUAGES:
@@ -186,7 +211,7 @@ def FemaleVariant(search_context, excludes, word):
 
 def IsVerbPast(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_flag_in_explaination, ["passato"]] ,
+        [has_flag_in_explaination, ["passato"]],
     ):
         word.IsVerbPast = True
     
@@ -260,7 +285,14 @@ def Hyponymy(search_context, excludes, word):
 
 
 def Meronymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['merônimos'],
+            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+            [in_link]
+        ],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_meronym( lang, term )
 
 
 def Holonymy(search_context, excludes, word):
@@ -275,7 +307,14 @@ def Holonymy(search_context, excludes, word):
 
     
 def Troponymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['tropônimos'],
+            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+            [in_link]
+        ],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_troponym( lang, term )
 
 
 def Otherwise(search_context, excludes, word):
@@ -294,7 +333,7 @@ def AlternativeFormsOther(search_context, excludes, word):
 
 def RelatedTerms(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, ['-rel-', 'termos correlatos', 'termos relacionados', 'verbetes relacionados', 'verbetes relacionados ao natal', 'verbetes relativos'], 
+        [in_section, ['verbetes derivados', '-rel-', 'termos correlatos', 'termos relacionados', 'verbetes relacionados', 'verbetes relacionados ao natal', 'verbetes relativos'],
             [in_link]
         ],
     ):
@@ -354,14 +393,32 @@ def ExplainationTxt(search_context, excludes, word):
     
 def ExplainationExamplesRaw(search_context, excludes, word):
     li = search_context
-    for e in li.find_objects(Li, recursive=True):
-        if e.base.endswith(":"):
+    for e in li.find_objects(Li, recursive=False):
+        if e.base.endswith(":") or e.base.endswith("*"):
             word.ExplainationExamplesRaw = e.get_raw()
             break
-    
+
+    # for one explaination in TOS
+    if not word.ExplainationExamplesTxt:
+        for section in search_context.find_objects(Section, recursive=False):
+            if section.name in ['expressões']:
+                for ex in section.find_objects(Li, recursive=False):
+                    if ex.base.endswith(":") or ex.base.endswith("*"):
+                        word.ExplainationExamplesRaw= ex.raw
+                        return
+
 def ExplainationExamplesTxt(search_context, excludes, word):
     li = search_context
-    for e in li.find_objects(Li, recursive=True):
-        if e.base.endswith(":"):
+    for e in li.find_objects(Li, recursive=False):
+        if e.base.endswith(":") or e.base.endswith("*"):
             word.ExplainationExamplesTxt = e.get_text().strip()
             break
+
+    # for one explaination in TOS
+    if not word.ExplainationExamplesTxt:
+        for section in search_context.find_objects(Section, recursive=False):
+            if section.name in ['expressões']:
+                for ex in section.find_objects(Li, recursive=False):
+                    if ex.base.endswith(":") or ex.base.endswith("*"):
+                        word.ExplainationExamplesTxt = ex.get_text().strip()
+                        return

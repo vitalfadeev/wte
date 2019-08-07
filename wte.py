@@ -462,13 +462,17 @@ def scan_struct(lm, struct, root_word, level=0):
         lm.Coordinate           (search_context, excludes, word)
         lm.Translation          (search_context, excludes, word)
 
-        # explaination caontext
+        # explaination context
         if lm.is_expl_section(search_context) or isinstance(search_context, (Li, Dl)):
             lm.ExplainationRaw          (search_context, excludes, word)
             lm.ExplainationTxt          (search_context, excludes, word)
             lm.ExplainationExamplesRaw  (search_context, excludes, word)
             lm.ExplainationExamplesTxt  (search_context, excludes, word)
             lm.LabelType                (search_context, excludes, word)
+
+        if tp == TP_TOS and not word.ExplainationExamplesRaw:
+            lm.ExplainationExamplesRaw  (search_context, excludes, word)
+            lm.ExplainationExamplesTxt  (search_context, excludes, word)
 
         # fixes
         # translations. 1 translation = 1 explaination

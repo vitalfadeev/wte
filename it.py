@@ -310,13 +310,13 @@ def ExplainationTxt(search_context, excludes, word):
 def ExplainationExamplesRaw(search_context, excludes, word):
     li = search_context
     for e in li.find_objects(Li, recursive=True):
-        if e.base.endswith(":"):
+        if e.base.endswith(":") or e.base.endswith("*"):
             word.ExplainationExamplesRaw = e.get_raw()
             break
-    
+
 def ExplainationExamplesTxt(search_context, excludes, word):
     li = search_context
     for e in li.find_objects(Li, recursive=True):
-        if e.base.endswith(":"):
+        if e.base.endswith(":") or e.base.endswith("*"):
             word.ExplainationExamplesTxt = e.get_text().strip()
             break

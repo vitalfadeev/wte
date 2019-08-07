@@ -79,111 +79,122 @@ class WikictionaryItem(DBClass, JSONClass):
     def add_conjugation(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.Conjugation is None:
-                self.Conjugation = [ term ]
-            else:
-                if term not in self.Conjugation:
-                    self.Conjugation.append( term )
+            if term != self.LabelName:
+                if self.Conjugation is None:
+                    self.Conjugation = [ term ]
+                else:
+                    if term not in self.Conjugation:
+                        self.Conjugation.append( term )
     
 
     def add_synonym(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.Synonymy is None:
-                self.Synonymy = [ term ]
-            else:
-                if term not in self.Synonymy:
-                    self.Synonymy.append( term )
+            if term != self.LabelName:
+                if self.Synonymy is None:
+                    self.Synonymy = [ term ]
+                else:
+                    if term not in self.Synonymy:
+                        self.Synonymy.append( term )
     
 
     def add_antonym(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.Antonymy is None:
-                self.Antonymy = [ term ]
-            else:
-                if term not in self.Antonymy:
-                    self.Antonymy.append( term )
+            if term != self.LabelName:
+                if self.Antonymy is None:
+                    self.Antonymy = [ term ]
+                else:
+                    if term not in self.Antonymy:
+                        self.Antonymy.append( term )
 
     
     def add_hypernym(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.Hypernymy is None:
-                self.Hypernymy = [ term ]
-            else:
-                if term not in self.Hypernymy:
-                    self.Hypernymy.append( term )
+            if term != self.LabelName:
+                if self.Hypernymy is None:
+                    self.Hypernymy = [ term ]
+                else:
+                    if term not in self.Hypernymy:
+                        self.Hypernymy.append( term )
     
 
     def add_hyponym(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.Hyponymy is None:
-                self.Hyponymy = [ term ]
-            else:
-                if term not in self.Hyponymy:
-                    self.Hyponymy.append( term )
+            if term != self.LabelName:
+                if self.Hyponymy is None:
+                    self.Hyponymy = [ term ]
+                else:
+                    if term not in self.Hyponymy:
+                        self.Hyponymy.append( term )
     
 
     def add_meronym(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.Meronymy  is None:
-                self.Meronymy = [ term ]
-            else:
-                if term not in self.Meronymy:
-                    self.Meronymy.append( term )
+            if term != self.LabelName:
+                if self.Meronymy  is None:
+                    self.Meronymy = [ term ]
+                else:
+                    if term not in self.Meronymy:
+                        self.Meronymy.append( term )
     
 
     def add_holonym(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.Holonymy  is None:
-                self.Holonymy = [ term ]
-            else:
-                if term not in self.Holonymy:
-                    self.Holonymy.append( term )
+            if term != self.LabelName:
+                if self.Holonymy  is None:
+                    self.Holonymy = [ term ]
+                else:
+                    if term not in self.Holonymy:
+                        self.Holonymy.append( term )
     
 
     def add_troponym(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.Troponymy is None:
-                self.Troponymy = [ term ]
-            else:
-                if term not in self.Troponymy:
-                    self.Troponymy.append( term )
+            if term != self.LabelName:
+                if self.Troponymy is None:
+                    self.Troponymy = [ term ]
+                else:
+                    if term not in self.Troponymy:
+                        self.Troponymy.append( term )
     
 
     def add_alternative_form(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.AlternativeFormsOther is None:
-                self.AlternativeFormsOther = [ term ]
-            else:
-                if term not in self.AlternativeFormsOther:
-                    self.AlternativeFormsOther.append( term )
+            if term != self.LabelName:
+                if self.AlternativeFormsOther is None:
+                    self.AlternativeFormsOther = [ term ]
+                else:
+                    if term not in self.AlternativeFormsOther:
+                        self.AlternativeFormsOther.append( term )
     
 
     def add_related(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.RelatedTerms is None:
-                self.RelatedTerms = [ term ]
-            else:
-                if term not in self.RelatedTerms:
-                    self.RelatedTerms.append( term )
+            if term != self.LabelName:
+                if self.RelatedTerms is None:
+                    self.RelatedTerms = [ term ]
+                else:
+                    if term not in self.RelatedTerms:
+                        self.RelatedTerms.append( term )
     
 
     def add_coordinate(self, lang, term):
         term = filterWodsProblems(term, log)
         if term:
-            if self.Coordinate is None:
-                self.Coordinate = [ term ]
-            else:
-                if term not in self.Coordinate:
-                    self.Coordinate.append( term )
+            if term != self.LabelName:
+                if self.Coordinate is None:
+                    self.Coordinate = [ term ]
+                else:
+                    if term not in self.Coordinate:
+                        self.Coordinate.append( term )
 
     
     def add_translation(self, lang, term):
@@ -253,7 +264,7 @@ class WikictionaryItem(DBClass, JSONClass):
             # assert 0, "unsupported type"
 
             
-    def clone(self):        
+    def clone(self):
         clone = WikictionaryItem()
         
         for name in self.get_fields():
