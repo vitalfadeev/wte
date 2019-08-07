@@ -83,21 +83,42 @@ def Type(search_context, excludes, word):
 
 def IsMale(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_flag_in_text, "''m pl''"] ,
-        [has_flag_in_text, "''m sing''"] ,
-        [has_flag_in_text, "''m inv''"] ,
-        [in_section, '-verb form-', [has_flag_in_text, "maschile"]],
+        [has_flag_in_text, ["''m pl''", "''m sing''", "''m inv''", "'' m pl''", "'' m sing''", "'' m inv''"]],
+        [has_section, '-verb form-', [has_flag_in_text, "maschile"]],
     ):
         word.IsMale = True
+        return
+
+    if not if_any(search_context, excludes,
+        [has_flag_in_text, ["''f pl''", "''f sing''", "''f inv''", "'' f pl''", "'' f sing''", "'' f inv''"]],
+    ):
+        if if_any(search_context, excludes,
+              [has_template, ['tabs'],
+                   [has_arg, ['m', 'mp'], [has_value, [word.LabelName]]],
+                   [has_arg, [0, 1],      [has_value, [word.LabelName]]],
+               ],
+        ):
+            word.IsMale = True
 
 
 def IsFeminine(search_context, excludes, word):
-    if if_any(search_context, excludes, 
-        [has_flag_in_text, "''f pl''"] ,
-        [has_flag_in_text, "''f sing''"] ,
-        [has_flag_in_text, "''f inv''"] ,
+    if if_any(search_context, excludes,
+        [has_flag_in_text, ["''f pl''", "''f sing''", "''f inv''", "'' f pl''", "'' f sing''", "'' f inv''"]],
     ):
-        word.IsMale = True
+        word.IsFeminine = True
+        return
+
+    if not if_any(search_context, excludes,
+        [has_flag_in_text, ["''m pl''", "''m sing''", "''m inv''", "'' m pl''", "'' m sing''", "'' m inv''"]],
+        [has_section, '-verb form-', [has_flag_in_text, "maschile"]],
+    ):
+        if if_any(search_context, excludes,
+          [has_template, ['tabs'],
+               [has_arg, ['f', 'fp'], [has_value, [word.LabelName]]],
+               [has_arg, [2, 3],      [has_value, [word.LabelName]]],
+           ],
+        ):
+            word.IsFeminine = True
 
 
 def IsNeutre(search_context, excludes, word):
@@ -108,22 +129,45 @@ def IsNeutre(search_context, excludes, word):
 
 
 def IsSingle(search_context, excludes, word):
-    if if_any(search_context, excludes, 
-        [has_flag_in_text, "''m sing''"] ,
-        [has_flag_in_text, "''f sing''"] ,
-        [has_flag_in_text, "singolare"] ,
+    # {{Tabs|gatto|gatti|gatta|gatte}}
+    if if_any(search_context, excludes,
+        [has_flag_in_text, ["''m sing''", "''f sing''", "'' m sing''", "'' f sing''"]],
+        [has_flag_in_text, "singolare"],
     ):
         word.IsSingle = True
+        return
+
+    if not if_any(search_context, excludes,
+        [has_flag_in_text, ["''m pl''", "''f pl''", "'' m pl''", "'' f pl''"]],
+    ):
+        if if_any(search_context, excludes,
+            [has_template, ['tabs'],
+                [has_arg, ['m', 'f'],[has_value, [word.LabelName]]],
+                [has_arg, [0, 2],    [has_value, [word.LabelName]]],
+            ],
+        ):
+            word.IsSingle = True
 
 
 def IsPlural(search_context, excludes, word):
-    if if_any(search_context, excludes, 
-        [has_flag_in_text, "''m pl''"] ,
-        [has_flag_in_text, "''f pl''"] ,
+    if if_any(search_context, excludes,
+        [has_flag_in_text, ["''m pl''", "''f pl''", "'' m pl''", "'' f pl''"]],
     ):
         word.IsPlural = True
-    
-    
+        return
+
+    if not if_any(search_context, excludes,
+        [has_flag_in_text, ["''m sing''", "''f sing''", "'' m sing''", "'' f sing''"]],
+    ):
+        if if_any(search_context, excludes,
+              [has_template, ['tabs'],
+                   [has_arg, ['sp', 'mp'], [has_value, [word.LabelName]]],
+                   [has_arg, [1, 3],       [has_value, [word.LabelName]]],
+               ],
+         ):
+            word.IsPlural = True
+
+
 def SingleVariant(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_template, 'tabs', [in_arg, (None, 0)]],
@@ -230,15 +274,36 @@ def Hyponymy(search_context, excludes, word):
 
 
 def Meronymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['-meron-'],
+            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+            [in_link]
+        ],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_meronym( lang, term )
 
 
 def Holonymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['-holon-'],
+            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+            [in_link]
+        ],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_holonym( lang, term )
 
     
 def Troponymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['-tropon-'],
+            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+            [in_link]
+        ],
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_troponym( lang, term )
 
 
 def Otherwise(search_context, excludes, word):
@@ -309,14 +374,14 @@ def ExplainationTxt(search_context, excludes, word):
     
 def ExplainationExamplesRaw(search_context, excludes, word):
     li = search_context
-    for e in li.find_objects(Li, recursive=True):
+    for e in li.find_objects(Li, recursive=False):
         if e.base.endswith(":") or e.base.endswith("*"):
             word.ExplainationExamplesRaw = e.get_raw()
             break
 
 def ExplainationExamplesTxt(search_context, excludes, word):
     li = search_context
-    for e in li.find_objects(Li, recursive=True):
+    for e in li.find_objects(Li, recursive=False):
         if e.base.endswith(":") or e.base.endswith("*"):
             word.ExplainationExamplesTxt = e.get_text().strip()
             break

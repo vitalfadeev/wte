@@ -134,8 +134,8 @@ class Container:
 
     def has_object(self, cls, recursive=False, exclude=None):
         for c in self.childs:
-            if isinstance(c, cls):
-                if exclude is None or not isinstance(c, exclude):
+            if exclude is None or not isinstance(c, exclude):
+                if isinstance(c, cls):
                     return True
 
             if recursive:
@@ -146,8 +146,8 @@ class Container:
 
     def find_objects(self, cls, recursive=False, exclude=None):
         for c in self.childs:
-            if isinstance(c, cls):
-                if (exclude is None) or (c not in exclude):
+            if (exclude is None) or (c not in exclude):
+                if isinstance(c, cls):
                     yield c
 
             if recursive:
@@ -162,9 +162,9 @@ class Container:
     def find_top_objects(self, cls, callback, exclude=None, recursive=True):
         for c in self.childs:
             is_found = False
-            
-            if isinstance(c, cls):
-                if exclude is None or c not in exclude:
+
+            if exclude is None or c not in exclude:
+                if isinstance(c, cls):
                     if callback(c):
                         is_found = True
                         yield c

@@ -558,7 +558,8 @@ def preprocess(lang, limit=0, is_save_txt=False, is_save_json=False, is_save_tem
 
     # miltiprocessing
     pool = multiprocessing.Pool(WORKERS)
-    pool.imap(process_cb, dump_reader)
+    for result in pool.imap(process_cb, dump_reader):
+        pass
     pool.close()
     pool.join()
 
@@ -1117,7 +1118,7 @@ def one_file(lang, label):
         log.info("  %s: %s: %s: %s", w.LabelName, str(w.Type).ljust(14), str(w.LabelType).ljust(30), str(w.ExplainationRaw)[:50].replace("\n", "\\n"))
         print(w.PrimaryKey)
         print(w.ExplainationRaw)
-        print(w.ExplainationTxt)
+        print(w.ExplainationExamplesRaw)
         print()
     log.info("Done!")
 

@@ -21,10 +21,9 @@ def test_merger():
     merge()
 
 
-#test_one("pt", "gato")
-#test_one("pt", "boa")
+#test_one("es", "albanesi")
 #test_wikidict("en")
-test_wiktionary("pt")
+test_wiktionary("es")
 #test_merger()
 exit(9)
 
