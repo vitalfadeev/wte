@@ -253,9 +253,9 @@ class DBClass:
             if value:
                 # list to JSON
                 if isinstance(value, list):
-                    value = json.dumps(value, sort_keys=False, indent=4, ensure_ascii=False)
+                    value = json.dumps(value, sort_keys=False, ensure_ascii=False, indent=None)
                 elif isinstance(value, dict):
-                    value = json.dumps(value, sort_keys=False, indent=4, ensure_ascii=False)
+                    value = json.dumps(value, sort_keys=False, ensure_ascii=False, indent=None)
                 
                 fields.append(name)
                 values.append(value)
@@ -287,6 +287,20 @@ class DBClass:
             db.commit()
 
         #db.close()
+
+
+    def to_list(self, s):
+        if s is None:
+            return None
+        elif isinstance(s, list):
+            return s
+        elif isinstance(s, str):
+            if s[0] == "[":
+                return json.loads(s)
+            else:
+                return [s]
+        else:
+            return [s]
         
     
     def factory(self, cursor, row):
@@ -299,18 +313,8 @@ class DBClass:
             
             if hasattr(w, name):
                 if isinstance(getattr(w, name), (list, tuple)): # decode "" to []
-                    if value:
-                        if isinstance(value, (list, tuple)):
-                            value = json.loads(value)
+                    value = self.to_list(value)
 
-                    if isinstance(value, list):
-                        pass
-                    else:
-                        if value:
-                            value = [value] # convert to list
-                        else:
-                            value = getattr(w, name) # default
-            
             if value is not None:
                 setattr(w, name, value)
             

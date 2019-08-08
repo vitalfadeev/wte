@@ -144,11 +144,12 @@ class Container:
                     if is_has:
                         return True
 
-    def find_objects(self, cls, recursive=False, exclude=None):
+    def find_objects(self, cls, recursive=False, exclude=None, callback=None):
         for c in self.childs:
             if (exclude is None) or (c not in exclude):
                 if isinstance(c, cls):
-                    yield c
+                    if callback is None or callback(c):
+                        yield c
 
             if recursive:
                 if (exclude is None) or (c not in exclude):
@@ -165,7 +166,7 @@ class Container:
 
             if exclude is None or c not in exclude:
                 if isinstance(c, cls):
-                    if callback(c):
+                    if callback is None or callback(c):
                         is_found = True
                         yield c
 
@@ -1542,7 +1543,7 @@ def read_list_level(text, spos):
 def read_list(text, spos):
     i = spos
     l = len(text)
-    
+
     if text.startswith("\n#", i) or text.startswith("\n*", i) or text.startswith("\n:", i):
         i += len("\n")
         (epos, level) = read_list_level(text, i)
@@ -1735,11 +1736,6 @@ def read_dd(text, spos=0):
                     current.raw = text[spos+len("\n"):epos]
                     return (epos, dd) # OK
 
-                elif c == '\n':
-                    # character data
-                    current.add_cdata(c)
-                    i += 1
-
                 elif text.startswith("<!--", i):
                     # strip comment
                     log.debug("read_dd(): read_html_comment()")
@@ -1766,7 +1762,19 @@ def read_dd(text, spos=0):
                     (epos, link) = read_link(text, i)
                     current.add_child(link)
                     i = epos
-                
+
+                elif text.startswith('\n:', i):
+                    # Unordered List
+                    log.debug("read_dd(): read_list()")
+                    (epos, li) = read_list(text, i)
+                    current.add_child(li)
+                    i = epos
+
+                elif c == '\n':
+                    # character data
+                    current.add_cdata(c)
+                    i += 1
+
                 else:
                     # character data
                     current.add_cdata(c)
@@ -2146,6 +2154,10 @@ def pack_sections(root):
     for e in generator:
         if isinstance(e, Header):
             header = e
+
+            # fix level
+            if header.level == 0:
+                header.level = parent.level + 1
         
             # find next same level or higher
             section = Section()
@@ -2162,14 +2174,22 @@ def pack_sections(root):
 
             elif parent.level == section.level:
                 # same level section
-                parent.parent.add_child( section )
-                parent = section
+                if parent.parent is not None:
+                    parent.parent.add_child( section )
+                    parent = section
+                else:
+                    parent.add_child( section )
+                    parent = section
+
 
             else:
                 # top section
                 # find parent
                 while parent.level >= section.level:
-                    parent = parent.parent
+                    if parent.parent is not None:
+                        parent = parent.parent
+                    else:
+                        break
 
                 parent.add_child( section )
                 parent = section

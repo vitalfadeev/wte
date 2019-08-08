@@ -19,6 +19,8 @@ from  loggers import log_merger
 
 #DBWords = sqlite3.connect("Words.db")
 REMOTE_CONTENT_FETCHING = False
+MULTIPROCESSING = True
+WORKERS = 10  # N worker processes
 
 
 class CacheRequest:
@@ -157,6 +159,12 @@ def CompareWikictionary(WikidataItem, WiktionaryItems):
     return result
 
 
+def to_list(s):
+    if isinstance(s, list):
+        return s
+    else:
+        return [s]
+
 def MergeWikidata( word, WikidataItem ):
     word = Word(word)
     word.PrimaryKey                 = WikidataItem.PrimaryKey
@@ -172,13 +180,13 @@ def MergeWikidata( word, WikidataItem ):
     word.Instance_of                = WikidataItem.Instance_of
     word.Subclass_of                = WikidataItem.Subclass_of
     word.Part_of                    = WikidataItem.Part_of
-    word.Translation_EN             = WikidataItem.Translation_EN
-    word.Translation_FR             = WikidataItem.Translation_FR
-    word.Translation_DE             = WikidataItem.Translation_DE
-    word.Translation_IT             = WikidataItem.Translation_IT
-    word.Translation_ES             = WikidataItem.Translation_ES
-    word.Translation_RU             = WikidataItem.Translation_RU
-    word.Translation_PT             = WikidataItem.Translation_PT
+    word.Translation_EN             = to_list(WikidataItem.Translation_EN)
+    word.Translation_FR             = to_list(WikidataItem.Translation_FR)
+    word.Translation_DE             = to_list(WikidataItem.Translation_DE)
+    word.Translation_IT             = to_list(WikidataItem.Translation_IT)
+    word.Translation_ES             = to_list(WikidataItem.Translation_ES)
+    word.Translation_RU             = to_list(WikidataItem.Translation_RU)
+    word.Translation_PT             = to_list(WikidataItem.Translation_PT)
     
     return word
     
@@ -582,22 +590,14 @@ def log_result(result):
 
 
 def mainfunc():
-    WORKERS = 10  # N worker processes
-
-    pool = multiprocessing.Pool(WORKERS)
-
-    pool.imap(MergeOneWikidataItem, wikidata_reader())
-
-    """
-    for WikidataItem in wikidata_reader():
-        print(WikidataItem)
-        #pool.apply(MergeOneWikidataItem, args=(WikidataItem,))
-        #$pool.apply(MergeOneWikidataItem, args=(WikidataItem,), callback=log_result, error_callback=error_callback)
-    """
-
-    pool.close()
-    pool.join()
-
+    if MULTIPROCESSING:
+        pool = multiprocessing.Pool(WORKERS)
+        pool.imap(MergeOneWikidataItem, wikidata_reader())
+        pool.close()
+        pool.join()
+    else:
+        for args in wikidata_reader():
+            MergeOneWikidataItem(args)
 
 if __name__ == "__main__":
     mainfunc()

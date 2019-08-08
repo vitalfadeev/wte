@@ -30,8 +30,8 @@ TXT_FOLDER      = "txt"     # folder where stored text files for debugging
 CACHE_FOLDER    = "cached"  # folder where stored downloadad dumps
 WORD_JUST       = 24        # align size
 create_storage(TXT_FOLDER)
-WORKERS         = 2        # N worker processes
-
+MULTIPROCESSING = True
+WORKERS         = 10        # N worker processes
 
 class KEYS:
     """ Data keys for using in data mining """
@@ -102,6 +102,7 @@ class WORD_TYPES:
     COMBINING_FORM = "combining_form"
     ADJ_COMP    = "adj_comp"
     INTRO       = "intro"
+    VOCATIVO    = "vocativo"
 
     def detect_type(self, s):
         for a in dir(self):
@@ -373,21 +374,22 @@ def build_struct(lm, label, tree):
     is_tos_found = False
     
     # Lang sections
-    for ls in tree.find_top_objects(Section, lm.is_lang_section, recursive=True):
-        is_lang_found = True
-        tos = []
-        struct.append( (ls, TP_LANG, tos) )
+    for ls in tree.find_objects(Section, callback=lm.is_lang_section, recursive=True):
+        if ls.name in lm.LANG_SECTIONS:
+            is_lang_found = True
+            tos = []
+            struct.append( (ls, TP_LANG, tos) )
 
-        # TOS sections
-        for ts in ls.find_top_objects(Section, lm.is_tos_section, recursive=True):
-            is_tos_found = True
-            expl = []
-            tos.append( (ts, TP_TOS, expl) )
-       
-            # Explainations
-            for (e, tp, childs) in find_explainations(ts, lm.is_expl_section):
-                expl.append( (e, TP_EXPL, childs) )
-                
+            # TOS sections
+            for ts in ls.find_objects(Section, callback=lm.is_tos_section, recursive=True):
+                is_tos_found = True
+                expl = []
+                tos.append( (ts, TP_TOS, expl) )
+
+                # Explainations
+                for (e, tp, childs) in find_explainations(ts, lm.is_expl_section):
+                    expl.append( (e, TP_EXPL, childs) )
+
     #
     if not is_lang_found:
         log_lang_section_not_found.warn('%s', label)
@@ -507,7 +509,7 @@ def try_well_formed_structure(lang, label, tree):
     #wikoo.dump(tree)
     #dump_struct(struct)
     #exit(2)
-    
+
     # base word
     word = WikictionaryItem()
     word.LabelName = label
@@ -557,11 +559,16 @@ def preprocess(lang, limit=0, is_save_txt=False, is_save_json=False, is_save_tem
     dump_reader = DumpReader(dump_file, lang)
 
     # miltiprocessing
-    pool = multiprocessing.Pool(WORKERS)
-    for result in pool.imap(process_cb, dump_reader):
-        pass
-    pool.close()
-    pool.join()
+    if MULTIPROCESSING:
+        pool = multiprocessing.Pool(WORKERS)
+        for result in pool.imap(process_cb, dump_reader):
+            pass
+        pool.close()
+        pool.join()
+
+    else: # single process
+        for args in dump_reader:
+            process_cb(args)
 
 
 def process_cb(args):
@@ -690,15 +697,6 @@ def phase2(lang, tree):
 
             if name:
                 header.name = name.strip().lower()
-                
-                # level
-                if header.level == 0 or header.name in lm.LANG_SECTIONS:
-                    if header.name in lm.LANG_SECTIONS:
-                        header.level = 1
-                    elif header.name in lm.TOS_SECTIONS:
-                        header.level = 2
-                    else:
-                        header.level = 4
                 break # first template only
 
     # fix absent lang header
@@ -1116,10 +1114,10 @@ def one_file(lang, label):
     log.info("Status: words:%d", len(treemap[label]))
     for w in treemap[label]:
         log.info("  %s: %s: %s: %s", w.LabelName, str(w.Type).ljust(14), str(w.LabelType).ljust(30), str(w.ExplainationRaw)[:50].replace("\n", "\\n"))
-        print(w.PrimaryKey)
-        print(w.ExplainationRaw)
-        print(w.ExplainationExamplesRaw)
-        print()
+        #print(w.PrimaryKey)
+        #print(w.ExplainationRaw)
+        #print(w.ExplainationExamplesRaw)
+        #print()
     log.info("Done!")
 
 

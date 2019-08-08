@@ -1,10 +1,10 @@
 # !/usr/bin/python3
 # !/usr/bin/python3
 # -*- coding: utf-8 -*-
-
+from en import ExplainationExamplesTxt
 from wte import KEYS, WORD_TYPES
 from wte import WORD_TYPES as wt
-from wikoo import Li, Template, Section, Link, String
+from wikoo import Li, Template, Section, Link, String, Dl, Header
 from loggers import log, log_non_english, log_no_words, log_unsupported
 from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_section_not_found
 from helpers import merge_two_dicts, check_flag
@@ -37,18 +37,19 @@ TYPE_OF_SPEECH = {
     wt.ARTICLE       : [ "article" ],
     wt.NUMERAL       : [ 'adjetivo numeral', 'adjetivo numeral cardinal', 'determinante numeral', 'numeral', 'numeral cardinal' ],
     wt.ABBREV        : ['abbrev'],
+    wt.VOCATIVO      : ['vocativo'],
 }
 
 TOS_SECTIONS = list( filter(None, ( (yield from v) for v in TYPE_OF_SPEECH.values() )) )
 
 SECTION_NAME_TEMPLATES = { # === {{sustantivo femenino y masculino|es}} === -> sustantivo femenino y masculino
-    s:lambda t: t.name if t.arg(0) and t.arg(0).lower().strip() in LANGUAGES else None for s in TOS_SECTIONS
+    s: lambda t: t.name if t.arg(0) and t.arg(0).lower().strip() in LANGUAGES else None for s in TOS_SECTIONS
 }
 
 SECTION_NAME_TEMPLATES.update({ # {{-nome-}} -> nome
-    's'       : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else t.arg(0)) if t.arg(1) is None or t.arg(1).lower().strip() in LANGUAGES else None,
-    'langue'  : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else t.arg(0)),
-    'lengua'  : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else t.arg(0)),
+    's'       : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else (t.arg(0)) if t.arg(1) is None or t.arg(1).lower().strip() in LANGUAGES else None),
+    'langue'  : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else None),
+    'lengua'  : lambda t: (t.arg(0).lower() if isinstance(t.arg(0), str) else None),
     'es'      : lambda t: 'es',
 })
 
@@ -62,6 +63,11 @@ def is_lang_template(t):
 def is_lang_section(sec):
     if sec.name in LANG_SECTIONS:
         return True
+
+    for hdr in sec.find_objects(Header, recursive=False):
+        for tpl in hdr.find_objects(Template, recursive=False):
+            if tpl.name in ["langue", "lengua"]:
+                return True
 
 
 def is_tos_section(sec):
@@ -87,35 +93,39 @@ def Type(search_context, excludes, word):
 
 def IsMale(search_context, excludes, word):
     if if_any(search_context, excludes, 
+        [has_template, "m"],
         [has_flag_in_name, "masculino"] ,
         [has_flag_in_name, "maschile"] ,
-        #[has_template, "g", [has_arg, "m" ]] ,
-        #[has_template, "g", [has_arg, "m-p"]] ,
-        #[has_template, "m"] ,
-        #[has_template, "mf"] ,
-        #[has_template, "fm"] ,
-        #[has_template, "masculine plural past participle of"] ,
-        #[has_template, "masculine plural of"] ,
-        #[has_flag_in_text, "''m sing''"] ,
-        #[has_flag_in_text, "''m pl''"] ,
-        #[has_flag_in_text, "''m inv''"],
+        [has_template, ['inflect.es.adj.ad-lib'],
+            [has_arg, [0, 1],
+                [has_value, [word.LabelName]]
+            ],
+        ],
+        [has_template, ['forma adjetivo'],
+            [has_arg, [1, 2, 3, 4],
+                [has_value, ['masculino']]
+            ],
+        ],
     ):
         word.IsMale = True
 
 
+
 def IsFeminine(search_context, excludes, word):
     if if_any(search_context, excludes, 
+        [has_template, "f"],
         [has_flag_in_name, "femenino"] ,
         [has_flag_in_name, "femminile"] ,
-        #[has_template, "g", [has_arg, "f" ]] ,
-        #[has_template, "g", [has_arg, "f-p"]] ,
-        #[has_template, "f"] ,
-        #[has_template, "mf"] ,
-        #[has_template, "fm"] ,
-        #[has_template, "deutsch substantiv übersicht", [has_arg, "Genus", "f"]] ,
-        #[has_flag_in_text, "''f sing''"] ,
-        #[has_flag_in_text, "''f pl''"] ,
-        #[has_flag_in_text, "''f inv''"],
+        [has_template, ['inflect.es.adj.ad-lib'],
+            [has_arg, [2, 3],
+                [has_value, [word.LabelName]]
+            ],
+        ],
+        [has_template, ['forma adjetivo'],
+            [has_arg, [1, 2, 3, 4],
+                [has_value, ['femenino']]
+            ],
+        ],
     ):
         word.IsFeminine = True
 
@@ -128,30 +138,69 @@ def IsSingle(search_context, excludes, word):
     if if_any(search_context, excludes, 
         [has_template, "inflect.es.sust.reg"],
         [has_template, "inflect.es.sust.reg-cons"],
+        [has_template, ['inflect.es.adj.ad-lib'],
+            [has_arg, [0, 2],
+                [has_value, [word.LabelName]]
+            ],
+        ],
         [has_template, "forma verbo", [has_arg, "p", [has_value, [
             "1s", "yo", "2s", "tú", "tu", "2sv", "vos", "2stv", "tú, vos", "2su", "usted", "3s", "primera persona singular", "segunda persona singular", "él", "el", "ella", "tercera persona singular"
         ]]]],
+        [has_template, ['forma adjetivo'],
+            [has_arg, [1, 2, 3, 4],
+                [has_value, ['singular']]
+            ],
+        ],
     ):
         word.IsSingle = True
+
     
 
 def IsPlural(search_context, excludes, word):
     if if_any(search_context, excludes, 
+        [has_template, ["forma sustantivo plural", "f.s.p", "plural"]],
         [has_template, "impropia", [has_arg, 0, [has_flag, "forma plural de"]]],
+        [has_template, ['inflect.es.adj.ad-lib'],
+            [has_arg, [1, 3],
+                [has_value, [word.LabelName]]
+            ],
+        ],
         [has_template, "forma verbo", [has_arg, "p", [has_value, [
             "1p", "nos", "nosotros", "primera persona plural", "2p", "vosotros", "segunda persona plural", "2pu", "ustedes", "3p", "ellos", "ellas", "tercera persona plural"
         ]]]],
+        [has_template, ['forma adjetivo'],
+            [has_arg, [1, 2, 3, 4],
+                [has_value, ['plural']]
+            ],
+        ],
     ):
         word.IsPlural = True
     
     
 def SingleVariant(search_context, excludes, word):
+    # inflect.es.adj.ad-lib
     for (lang, term) in find_any(search_context, excludes,
         [in_template, "impropia", [in_arg_with_flag_in_value, "forma plural de", [in_link]]]
     ):
         word.SingleVariant = term
         break
         
+    if not word.SingleVariant:
+        for (lang, term) in find_any(search_context, excludes,
+             [in_template, ["forma sustantivo plural", "f.s.p", "plural"], [in_arg, (None, 0)]]
+        ):
+            word.SingleVariant = term
+            break
+
+    if not word.SingleVariant:
+        for (lang, term) in find_any(search_context, excludes,
+             [in_template, "inflect.es.adj.ad-lib", [in_arg, (None, [0, 2])]]
+        ):
+            for spited in term.split("/"):
+                word.SingleVariant = spited.strip()
+                break
+            break
+
 
 def PluralVariant(search_context, excludes, word):
     # {{inflect.es.sust.reg-cons}}
@@ -169,6 +218,15 @@ def PluralVariant(search_context, excludes, word):
             [in_template, "inflect.es.sust.ad-lib", [in_arg, (None, 1)]]
         ):
             word.PluralVariant = term
+            break
+
+    if not word.PluralVariant:
+        for (lang, term) in find_any(search_context, excludes,
+             [in_template, "inflect.es.adj.ad-lib", [in_arg, (None, [1, 2])]]
+        ):
+            for spited in term.split("/"):
+                word.PluralVariant = spited.strip()
+            break
 
 
 def MaleVariant(search_context, excludes, word):
@@ -177,7 +235,24 @@ def MaleVariant(search_context, excludes, word):
             [in_template, "inflect.es.sust.ad-lib", [in_arg, (None, 0)]]
         ):
             word.MaleVariant = term
-    
+            break
+
+    if not word.MaleVariant:
+        for (lang, term) in find_any(search_context, excludes,
+             [in_template, "inflect.es.adj.ad-lib", [in_arg, (None, [0, 1])]]
+        ):
+            word.MaleVariant = term
+            break
+
+    if not word.MaleVariant:
+        for (lang, term) in find_any(search_context, excludes,
+             [in_template, "forma adjetivo", [in_arg, ('leng', 0)]]
+        ):
+            for spited in term.split("/"):
+                word.MaleVariant = spited.strip()
+                break
+            break
+
 
 def FemaleVariant(search_context, excludes, word):
     if if_any(search_context, excludes, [has_template, "inflect.es.sust.ad-lib"]):
@@ -185,7 +260,14 @@ def FemaleVariant(search_context, excludes, word):
             [in_template, "inflect.es.sust.ad-lib", [in_arg, (None, 2)]]
         ):
             word.FemaleVariant = term
-    
+
+    if not word.FemaleVariant and word.IsFeminine:
+        for (lang, term) in find_any(search_context, excludes,
+             [in_template, "inflect.es.adj.ad-lib", [in_arg, (None, [2, 3])]]
+        ):
+            word.FemaleVariant = term
+            break
+
 
 def IsVerbPast(search_context, excludes, word):
     # {{forma verbo|hacendar|p=1s|t=pretérito|m=indicativo}}.
@@ -353,15 +435,48 @@ def ExplainationTxt(search_context, excludes, word):
     
 def ExplainationExamplesRaw(search_context, excludes, word):
     li = search_context
-    for e in li.find_objects(Li, recursive=True):
-        if e.base.endswith(":"):
-            word.ExplainationExamplesRaw = e.get_raw()
-            break
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, "ejemplo", [in_arg, (None, 0)]],
+    ):
+        word.ExplainationExamplesRaw = term
+        break
+
+    if not word.ExplainationExamplesRaw:
+        for e in li.find_objects(Li, recursive=False):
+            if e.base.endswith(":"):
+                word.ExplainationExamplesRaw = e.get_raw()
+                break
+    
+    # :*'''Ejemplos:'''
+    # String().raw: \n:*'''Ejemplos:'''\n::"Yo vengo de aquellos pagos
+    # .\n:*'''Ejemplos:'''\n::
+    if not word.ExplainationExamplesRaw:
+        if isinstance(search_context, Dl):
+            for e in li.find_objects(Li, recursive=True):
+                if e.base.endswith(":"):
+                    word.ExplainationExamplesRaw = e.get_raw()
+                    break
 
 
 def ExplainationExamplesTxt(search_context, excludes, word):
     li = search_context
-    for e in li.find_objects(Li, recursive=True):
-        if e.base.endswith(":"):
-            word.ExplainationExamplesTxt = e.get_text().strip()
-            break
+    for (lang, term) in find_all(search_context, excludes,
+        [in_template, "ejemplo", [in_arg, (None, 0)]],
+    ):
+        word.ExplainationExamplesTxt = term
+        break
+
+    if not word.ExplainationExamplesTxt:
+        for e in li.find_objects(Li, recursive=False):
+            if e.base.endswith(":"):
+                word.ExplainationExamplesTxt = e.get_text().strip()
+                break
+
+    if not word.ExplainationExamplesTxt:
+        if isinstance(search_context, Dl):
+            for e in li.find_objects(Li, recursive=True):
+                if e.base.endswith(":"):
+                    word.ExplainationExamplesTxt = e.get_text().strip("\"").strip()
+                    break
+
+ 

@@ -3,22 +3,26 @@
 
 import os
 import bz2
-import json
+import multiprocessing
 
-import requests
-import ijson
+try:
+    import ijson.backends.yajl2_cffi as ijson
+except:
+    import ijson.backends.yajl2 as ijson
 import pywikibot
 import downloader
 from pywikibot import Claim
 from pywikibot.site import DataSite
-from blist import sorteddict
 from loggers import log_wikidata
 from wikidata import WikidataItem
 from helpers import create_storage
 from helpers import filterWodsProblems
 from wte import CACHE_FOLDER
 from loggers import log, log_non_english, log_no_words, log_unsupported
-from loggers import log_uncatched_template, log_lang_section_not_found, log_tos_section_not_found
+
+
+MULTIPROCESSING = True
+WORKERS = 10  # N worker processes
 
 
 # def save_to_json(treemap, filename):
@@ -40,6 +44,12 @@ URL_ID = 'P854'
 NAME_ID = 'P1476'
 
 
+def list_or_None(s):
+    if s:
+        return [s]
+    else:
+        None
+
 def convert(page, lang):
     words = []
     
@@ -48,7 +58,7 @@ def convert(page, lang):
     #
     id_       = str(page.id)
     label     = page.labels.get(lang, None)
-    
+
     label = filterWodsProblems(label, log_wikidata)
     if label is None:
         return []        
@@ -139,13 +149,13 @@ def convert(page, lang):
     w.Instance_of               = instance_of
     w.Subclass_of               = subclass_of
     w.Part_of                   = part_of
-    w.Translation_EN            = filterWodsProblems( [page.labels.get("en", None)], log_wikidata )
-    w.Translation_FR            = filterWodsProblems( [page.labels.get("fr", None)], log_wikidata )
-    w.Translation_DE            = filterWodsProblems( [page.labels.get("de", None)], log_wikidata )
-    w.Translation_IT            = filterWodsProblems( [page.labels.get("it", None)], log_wikidata )
-    w.Translation_ES            = filterWodsProblems( [page.labels.get("es", None)], log_wikidata )
-    w.Translation_RU            = filterWodsProblems( [page.labels.get("ru", None)], log_wikidata )
-    w.Translation_PT            = filterWodsProblems( [page.labels.get("pt", None)], log_wikidata )
+    w.Translation_EN            = list_or_None( filterWodsProblems( page.labels.get("en", None), log_wikidata ) )
+    w.Translation_FR            = list_or_None( filterWodsProblems( page.labels.get("fr", None), log_wikidata ) )
+    w.Translation_DE            = list_or_None( filterWodsProblems( page.labels.get("de", None), log_wikidata ) )
+    w.Translation_IT            = list_or_None( filterWodsProblems( page.labels.get("it", None), log_wikidata ) )
+    w.Translation_ES            = list_or_None( filterWodsProblems( page.labels.get("es", None), log_wikidata ) )
+    w.Translation_RU            = list_or_None( filterWodsProblems( page.labels.get("ru", None), log_wikidata ) )
+    w.Translation_PT            = list_or_None( filterWodsProblems( page.labels.get("pt", None), log_wikidata ) )
     w.WikipediaLinkCountTotal   = WikipediaLinkCountTotal
     w.EncyclopediaGreatRussianRU= EncyclopediaGreatRussianRU
     
@@ -270,12 +280,18 @@ class DumpWrapper:
     
     def submit(self, *args, **kvargs):
         return {"entities":self.dumpdata, 'success':1}
-        
-dump_wrapper = DumpWrapper()
 
 
-def DumpWrapperFactory(*args, **kvargs):
-    return dump_wrapper
+#def DumpWrapperFactory(*args, **kvargs):
+#    return dump_wrapper
+
+
+class DumpWrapperFactory:
+    def __init__(self, dump_wrapper):
+        self.dump_wrapper = dump_wrapper
+
+    def __call__(self, *args, **kwargs):
+        return self.dump_wrapper
 
 
 def download(lang="en", use_cached=True):
@@ -346,68 +362,69 @@ def dumpdata(data, level=0):
             dumpdata(d, level)
 
 
-def run(outfile, lang="en"):
+def DumpReader(lang, local_file):
+    with bz2.open(local_file, "rb") as fin:
+        for i, data in enumerate(ijson.items(fin, "item")):
+            yield (lang, i, data)
+
+
+def process_one_mp(args):
+    return process_one(*args)
+
+
+def process_one(lang, i, data):
     site = pywikibot.Site("wikidata", 'wikidata')
     repo = site.data_repository()
-    repo._simple_request = DumpWrapperFactory
+    dump_wrapper = DumpWrapper()
+    repo._simple_request = DumpWrapperFactory(dump_wrapper)
 
-    #log_wikidata.info("Result in the: %s", outfile)
-    
+    try:
+        log_record = data['id'], data['labels'][lang]['value']
+    except KeyError:
+        log_record = data['id']
+
+    # check id (required by pywikibot: Q[0-9]+)
+    if pywikibot.ItemPage.is_valid_id(data['id']):
+        pass
+    else:
+        return
+
+    log_wikidata.info(log_record)
+    data = fix_data(data)
+
+    try:
+        data.update({"pageid":i,"ns":0,"title":data["id"],"lastrevid":931882328,"modified":"2019-05-03T10:37:50Z"})
+        dump_wrapper.dumpdata = {data["id"]:data}
+        item = pywikibot.ItemPage(repo, data["id"])
+        item.get()
+
+        words = convert(item, lang)
+
+        for w in words:
+            w.save_to_db()
+
+    except pywikibot.exceptions.NoPage:
+        log_wikidata.warn("no page... [SKIP]")
+        pass
+
+
+def run(outfile, lang="en"):
     log_wikidata.info("downloading...")
     local_file = download()
     log_wikidata.info("downloaded.")
 
-    log_wikidata.info("parsing...")    
-    with bz2.open(local_file, "rt", encoding="utf-8") as fin:
-    #with requests.get('https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2', stream=True) as req:
-    #  with bz2.open(req.raw, "rt", encoding="utf-8") as fin:
-        #with open(outfile, "w", encoding="utf-8") as fout:
-            #fout.write("[\n")
+    log_wikidata.info("parsing...")
+    if MULTIPROCESSING:
+        pool = multiprocessing.Pool(WORKERS)
+        pool.imap(process_one_mp, DumpReader(lang, local_file))
+        pool.close()
+        pool.join()
 
-            try:
-                for i, data in enumerate(ijson.items(fin, "item")):
-                    try:
-                        log_record = data['id'], data['labels'][lang]['value']
-                    except KeyError:
-                        log_record = data['id']
-                        
-                    log_wikidata.info(log_record)
-                    #dumpdata(data)
-                    data = fix_data(data)
-                        
-                    try:
-                        data.update({"pageid":1,"ns":0,"title":data["id"],"lastrevid":931882328,"modified":"2019-05-03T10:37:50Z"})
-                        dump_wrapper.dumpdata = {data["id"]:data}
-                        item = pywikibot.ItemPage(repo, data["id"])
-                        item.get()
-                        
-                        words = convert(item, lang)
-                        
-                        for w in words:
-                            #log_wikidata.info(w.LabelName)
+    else:
+        for (lang, i, data) in DumpReader(lang, local_file):
+            process_one(lang, i, data)
 
-                            #if i == 0: 
-                            #    fout.write(w.as_json())
-                            #else:
-                            #    fout.write(",\n")
-                            #    fout.write(w.as_json())
-                            
-                            w.save_to_db()
-                                
-                    except pywikibot.exceptions.NoPage:
-                        log_wikidata.warn("no page... [SKIP]")
-                        pass
-                        
-            except ijson.common.IncompleteJSONError:
-                log_wikidata.error("unexpected end of file")
-                pass         
-                
-            #fout.write("\n]\n")
-        
+
 
 if __name__ == "__main__":
-    run("./wikidict-out.json", "fr")
-
-
-# aéroport de Berlin-Tegel -  Compressed file ended before the end-of-stream marker was reached
-
+    run("./wikidict-out.json", "en")
