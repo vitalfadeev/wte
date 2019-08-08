@@ -31,6 +31,7 @@ CACHE_FOLDER    = "cached"  # folder where stored downloadad dumps
 WORD_JUST       = 24        # align size
 create_storage(TXT_FOLDER)
 MULTIPROCESSING = True
+#MULTIPROCESSING = False
 WORKERS         = 10        # N worker processes
 
 class KEYS:

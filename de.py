@@ -214,7 +214,14 @@ def Antonymy(search_context, excludes, word):
 
 
 def Hypernymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['Oberbegriffe'],
+            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+            [in_link]
+        ]
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_hypernym( lang, term )
 
 
 def Hyponymy(search_context, excludes, word):
@@ -222,7 +229,14 @@ def Hyponymy(search_context, excludes, word):
 
 
 def Meronymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['Unterbegriffe'],
+            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+            [in_link]
+        ]
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_meronym( lang, term )
 
 
 def Holonymy(search_context, excludes, word):
@@ -237,7 +251,14 @@ def Holonymy(search_context, excludes, word):
 
     
 def Troponymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['Herkunft'],
+            [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
+            [in_link]
+        ]
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_troponym( lang, term )
 
 
 def Otherwise(search_context, excludes, word):

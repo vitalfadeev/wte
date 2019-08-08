@@ -1,0 +1,77 @@
+{{voir|Cabot}}
+
+== {{langue|fr}} ==
+=== {{S|étymologie}} ===
+:''([[cabot#fr-nom-1|Nom commun 1]])'' {{date|1821}} Étymologie obscure, le lien avec ''{{lien|clabaud|fr}}'' est séduisante sémantiquement mais pose problème du point de vue phonétique.
+:''([[cabot#fr-nom-2|Nom commun 2]])'' {{date|1847}} Voir ''{{lien|cabotin|fr}}'' qui lui est antérieur (1807).
+:''([[cabot#fr-nom-3|Nom commun 3]])'' {{date|1881}} Ellipse de ''{{lien|caporal|fr}}'' avec un /b/ pour éviter l’homonymie avec ''{{lien|capot|fr}}'' ou de l'{{étyl|oc|fr|mot=cabòt}} (« grosse tête »)<ref>F. Vernet, <i>Que dalle ! Quand l'argot parle occitan</i>, Bouloc : IEO Edicions, 2007</ref>.
+:''([[cabot#fr-nom-4|Nom commun 4]])'' Variante de ''{{lien|chabot|fr}}''.
+
+=== {{S|nom|fr|num=1}} ===
+{{fr-rég|ka.bo}}
+[[Fichier:Dog white.jpg|vignette|Un '''cabot''' qui tire la langue.]]
+'''cabot''' {{pron|ka.bo|fr}} {{m}}
+# {{familier|fr}} {{péjoratif|fr}} [[chien|Chien]].
+#* ''L'ouverture donnait sur la loge de Gaby Million où la vedette avait laissé ses chiens. Les bêtes se mirent à aboyer.<br/>Naturellement c'est plein de '''cabots''', crut devoir déclarer spirituellement Mr. Morgan. Mes girls aussi en trimbaleraient une meute si je le tolérais. {{source|{{Citation/Francis Carco/L’Homme de minuit/1938}}}}
+
+=== {{S|nom|fr|num=2}} ===
+{{fr-accord-ot|ca.b}}
+'''cabot''' {{m}} 
+# {{théâtre|fr}} {{péjoratif|fr}} [[comédien|Comédien]] [[médiocre]].
+#* ''Pour devenir un comédien de mérite, n’est-il pas indispensable d’être '''cabot''' à la naissance, '''cabot''' dès qu’on marche et qu’on parle ?'' {{source|{{w|Guy de Maupassant}}, « [[s:L’Homme de lettres|L’Homme de lettres]] », in ''[[s:Chroniques de Maupassant|Chroniques]]'', 6 novembre 1882.}}
+#* ''Un jour, il l’avait surprise avec un croupier de cercle ; un autre jour avec un '''cabot''' des Bouffes…''  {{source|{{w|Octave Mirbeau}},  {{w|''Le Calvaire ''}}, 1886}}
+
+==== {{S|vocabulaire}} ====
+* [[cabotin]]
+* [[cabotiner]]
+
+=== {{S|nom|fr|num=3}} ===
+{{fr-rég|ka.bo}}
+'''cabot''' {{pron|ka.bo|fr}} {{m}}
+# {{militaire|fr}} {{argot militaire|fr}} {{péjoratif|fr}} ou {{ironique|fr}} [[caporal|Caporal]].
+#* ''Dès le deuxième litre, il entama les souvenirs du régiment ; il passa la revue de tous les camarades de chambrée et de tous les chefs, du colon au dernier des '''cabots''', en passant par le capiston, le yeutenant, le juteux, le doublard et le piédeban ; […].'' {{source|{{w|Louis Pergaud}}, ''[[s:Un renseignement précis|Un renseignement précis]]'', dans ''{{w|Les Rustiques, nouvelles villageoises}}'', 1921}}
+#* ''Quand je pense, dit Richardon, que j’étais '''cabot''' fourrier, et que je serais peut-être juteux, si j’avais eu le flair de rempiler !''  {{source|{{w|César {{pc|Fauxbras}}}}, ''Viande à brûler'', Flammarion, 1935}}
+
+==== {{S|dérivés}} ====
+* [[cabot-chef]]
+
+=== {{S|nom|fr|num=4}} ===
+{{fr-rég|ka.bo}}
+'''cabot''' {{pron|ka.bo|fr}} {{m}}
+# {{poissons|fr}} {{variante de|chabot|fr}}, nom [[vernaculaire]] donné à [[différent]]es [[espèce]]s de [[poisson]]s, notamment :
+## Le [[chabot commun]], ''Cottus gobio'' (désuet)
+## Le [[chevesne]]
+## Le [[gobie]] 
+## Le [[muge]] ou [[mulet]].
+## Le [[cernier commun]].
+
+=== {{S|prononciation}} ===
+* {{écouter|lang=fr|France|ka.bo|audio=Fr-cabot.ogg}}
+
+=== {{S|voir aussi}} ===
+* {{WP}}
+
+=== {{S|références}} ===
+* {{R:TLFi}}
+{{Références}}
+
+== {{langue|pcd}} ==
+{{ébauche|pcd}}
+=== {{S|étymologie}} ===
+: {{ébauche-étym|pcd}}
+
+=== {{S|nom|pcd}} ===
+'''cabot''' {{pron||pcd}}
+# {{zool|pcd}} [[chien#fr|Chien]].
+
+==== {{S|synonymes}} ====
+* [[quien]]
+* [[tchien]]
+
+=== {{S|voir aussi}} ===
+* {{WP|Kien|lang=pcd}}
+
+=== {{S|références}} ===
+* {{R:Freelang}}
+
+[[Catégorie:Noms alternatifs des animaux en français]]

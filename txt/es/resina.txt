@@ -1,0 +1,35 @@
+== {{lengua|es}} ==
+{{pron-graf}}
+
+=== Etimología ===
+{{etimología|la|resina}} (resina).
+
+=== {{sustantivo femenino|es}} ===
+{{inflect.es.sust.reg|resina}}
+
+;1: Nombre de diversas sustancias orgánicas de origen [[vegetal]], solidas o semisólidas, [[transparente]]s o [[translúcido|translúcidas]], solubles en [[alcohol]] e insolubles en agua, que fluyen de determinadas plantas.
+{{ejemplo|Y su muerte fue esto: fueron ahogados, vino la inundación, vino del cielo una abundante ''resina''.|título=Popol Vuh & Chilam Balam|fecha=2014|editorial=Ediciones Brontes|páginas=18-19}}
+
+;2 {{química}}: ''Resina artificial'': La que se obtiene por [[destilación]] de las [[trementina]]s.
+
+=== Véase también ===
+{{w}}
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+{{t+|de|Harz|n}}
+{{t+|ca|resina}}
+{{t+|eo|rezino}}
+{{t+|fr|résine|f}}
+{{trad-centro}}
+{{t+|it|resina|f}}
+{{t+|en|resin}}
+{{t+|fo|harpeis}}
+{{t+|yua|its}}
+{{t+|nl|hars}}
+{{trad-abajo}}
+
+== Referencias y notas ==
+<references />

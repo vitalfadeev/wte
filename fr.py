@@ -97,13 +97,15 @@ def conj(t, excludes, label, *args):
 def fr_reg_p(t, excludes, label, miners=None):
     # http://en.wiktionary.org/wiki/Template:en-noun
     head = t.arg("head")
+    s = t.arg('s')
+    head = head if head else s
     head = head if head else label
     p1 = t.arg(0)
     p = t.arg('p')
     pp = t.arg('pp')
 
-    if pp:
-        yield (None, pp)
+    if p:
+        yield (None, p)
     elif pp:
         yield (None, pp)
     elif p1:
@@ -142,9 +144,13 @@ def IsNeutre(search_context, excludes, word):
 
 def IsSingle(search_context, excludes, word):
     # singulier
-    # 
-    if if_any(search_context, excludes, 
+    if if_any(search_context, excludes,
         [has_template, ['singulier', 'au singulier', 'au singulier uniquement', 'singulare tantum', 'généralement singulier', 'singulier', 'msing', 'fsing', 'nsing', 'sp']],
+        [has_template, ['fr-rég'],
+            [has_arg, 's',
+                [has_value, [word.LabelName]]
+            ],
+        ],
     ):
         word.IsSingle = True
 
@@ -152,7 +158,13 @@ def IsSingle(search_context, excludes, word):
 def IsPlural(search_context, excludes, word):
     if if_any(search_context, excludes, 
         [has_template, ['au pluriel', 'sp', 'au pluriel', 'au pluriel uniquement', 'fplur', 'généralement pluriel', 'mplur', 'note-plur+', 'nplur', 'plurale tantum', 'pluriel']],
-        
+        [has_template, ['fr-rég'],
+            [has_arg, 'p',
+                [has_value, [word.LabelName]]
+            ],
+        ],
+        [has_flag_in_explaination, "''Pluriel de''"],
+
     ):
         word.IsPlural = True
     
@@ -269,7 +281,12 @@ def Holonymy(search_context, excludes, word):
 
     
 def Troponymy(search_context, excludes, word):
-    pass
+    for (lang, term) in find_all(search_context, excludes,
+        [in_section, ['troponymes'], [in_template, ['lien', 'l'], [in_arg, (0, 1) ]]],
+        [in_section, ['troponymes'], [in_link]]
+    ):
+        if lang is None or lang in LANGUAGES:
+            word.add_troponym( lang, term )
 
 
 def Otherwise(search_context, excludes, word):
@@ -283,6 +300,7 @@ def AlternativeFormsOther(search_context, excludes, word):
 def RelatedTerms(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
         [in_section, 'related terms', [in_link]],
+        [in_section, 'voir aussi', [in_link]],
     ):
         if lang is None or lang in LANGUAGES:
             word.add_related(lang, term)
@@ -326,10 +344,23 @@ def ExplainationExamplesRaw(search_context, excludes, word):
         if e.base.endswith(":"):
             word.ExplainationExamplesRaw = e.get_raw()
             break
-    
+
+    if not word.ExplainationExamplesRaw:
+        for e in li.find_objects(Li, recursive=True):
+            if e.base.endswith("*"):
+                word.ExplainationExamplesRaw = e.get_raw()
+                break
+
+
 def ExplainationExamplesTxt(search_context, excludes, word):
     li = search_context
     for e in li.find_objects(Li, recursive=True):
         if e.base.endswith(":"):
             word.ExplainationExamplesTxt = e.get_text().strip()
             break
+
+    if not word.ExplainationExamplesTxt :
+        for e in li.find_objects(Li, recursive=True):
+            if e.base.endswith("*"):
+                word.ExplainationExamplesTxt  = e.get_text().strip()
+                break

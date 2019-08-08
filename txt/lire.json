@@ -1,0 +1,624 @@
+{
+    "lire": [
+        {
+            "PrimaryKey": "fr-lire§Verb_Interpréter_Information_Mot_Dessin-0-138",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Verb_Interpréter_Information_Mot_Dessin",
+            "LanguageCode": "fr",
+            "Type": "verb",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# [[interpréter|Interpréter]] des [[information]]s écrites sous forme de [[mot]]s ou de [[dessin]]s sur un [[support]].",
+            "ExplainationTxt": "Interpréter des informations écrites sous forme de mots ou de dessins sur un support.",
+            "ExplainationExamplesRaw": "#* ''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' {{source|{{w|Jules Michelet}}, ''Du prêtre, de la femme, de la famille'', 3{{e}} éd., Hachette & Paulin, 1845, p.133}}",
+            "ExplainationExamplesTxt": "''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' source",
+            "IsMale": null,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1181,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "read"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [
+                "lesen"
+            ],
+            "Translation_IT": [
+                "leggere"
+            ],
+            "Translation_ES": [
+                "leer"
+            ],
+            "Translation_RU": [
+                "читать",
+                "прочитать"
+            ],
+            "Translation_PT": [
+                "ler"
+            ]
+        },
+        {
+            "PrimaryKey": "fr-lire§Verb_Suivre_Yeux_Écrit_Imprimé-1-574",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Verb_Suivre_Yeux_Écrit_Imprimé",
+            "LanguageCode": "fr",
+            "Type": "verb",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# [[suivre|Suivre]] des [[yeux]] ce qui est [[écrit]] ou [[imprimer|imprimé]], [[avec]] la [[connaissance]] des sons que les [[lettre]]s [[figurent]] ; [[soit]] en ne [[proférer|proférant]] pas les mots, [[être|soit]] en les proférant à [[haut]]e [[voix]].",
+            "ExplainationTxt": "Suivre des yeux ce qui est écrit ou imprimé, avec la connaissance des sons que les lettres figurent ; soit en ne proférant pas les mots, soit en les proférant à haute voix.",
+            "ExplainationExamplesRaw": "#* ''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' {{source|{{w|Jules Michelet}}, ''Du prêtre, de la femme, de la famille'', 3{{e}} éd., Hachette & Paulin, 1845, p.133}}",
+            "ExplainationExamplesTxt": "''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' source",
+            "IsMale": null,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1181,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "read"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [
+                "lesen"
+            ],
+            "Translation_IT": [
+                "leggere"
+            ],
+            "Translation_ES": [
+                "leer"
+            ],
+            "Translation_RU": [
+                "читать",
+                "прочитать"
+            ],
+            "Translation_PT": [
+                "ler"
+            ]
+        },
+        {
+            "PrimaryKey": "fr-lire§Verb_Connaissance_Comprendre_texte_écrit-2-569",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Verb_Connaissance_Comprendre_texte_écrit",
+            "LanguageCode": "fr",
+            "Type": "verb",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# [[prendre connaissance|Prendre connaissance]] et [[comprendre]] un texte écrit.",
+            "ExplainationTxt": "Prendre connaissance et comprendre un texte écrit.",
+            "ExplainationExamplesRaw": "#* ''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' {{source|{{w|Jules Michelet}}, ''Du prêtre, de la femme, de la famille'', 3{{e}} éd., Hachette & Paulin, 1845, p.133}}",
+            "ExplainationExamplesTxt": "''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' source",
+            "IsMale": null,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1181,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "read"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [
+                "lesen"
+            ],
+            "Translation_IT": [
+                "leggere"
+            ],
+            "Translation_ES": [
+                "leer"
+            ],
+            "Translation_RU": [
+                "читать",
+                "прочитать"
+            ],
+            "Translation_PT": [
+                "ler"
+            ]
+        },
+        {
+            "PrimaryKey": "fr-lire§Verb_Comprendre_Langue_Étrangère_qui-3-522",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Verb_Comprendre_Langue_Étrangère_qui",
+            "LanguageCode": "fr",
+            "Type": "verb",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# [[comprendre|Comprendre]] ce qui est écrit ou imprimé dans une [[langue]] [[étranger|étrangère]].",
+            "ExplainationTxt": "Comprendre ce qui est écrit ou imprimé dans une langue étrangère.",
+            "ExplainationExamplesRaw": "#* ''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' {{source|{{w|Jules Michelet}}, ''Du prêtre, de la femme, de la famille'', 3{{e}} éd., Hachette & Paulin, 1845, p.133}}",
+            "ExplainationExamplesTxt": "''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' source",
+            "IsMale": null,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1181,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "read"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [
+                "lesen"
+            ],
+            "Translation_IT": [
+                "leggere"
+            ],
+            "Translation_ES": [
+                "leer"
+            ],
+            "Translation_RU": [
+                "читать",
+                "прочитать"
+            ],
+            "Translation_PT": [
+                "ler"
+            ]
+        },
+        {
+            "PrimaryKey": "fr-lire§Verb_MUSIQUE_ANALOGIE_parcourir_des-4-6",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Verb_MUSIQUE_ANALOGIE_parcourir_des",
+            "LanguageCode": "fr",
+            "Type": "verb",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# {{musique|fr}} {{analogie|fr}} Parcourir des yeux une musique notée, avec la connaissance des sons que les notes figurent et des diverses modifications que ces sons doivent recevoir.",
+            "ExplainationTxt": "Parcourir des yeux une musique notée, avec la connaissance des sons que les notes figurent et des diverses modifications que ces sons doivent recevoir.",
+            "ExplainationExamplesRaw": "#* ''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' {{source|{{w|Jules Michelet}}, ''Du prêtre, de la femme, de la famille'', 3{{e}} éd., Hachette & Paulin, 1845, p.133}}",
+            "ExplainationExamplesTxt": "''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' source",
+            "IsMale": null,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1181,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "read"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [
+                "lesen"
+            ],
+            "Translation_IT": [
+                "leggere"
+            ],
+            "Translation_ES": [
+                "leer"
+            ],
+            "Translation_RU": [
+                "читать",
+                "прочитать"
+            ],
+            "Translation_PT": [
+                "ler"
+            ]
+        },
+        {
+            "PrimaryKey": "fr-lire§Verb_Prononcer_Voix_Intonation_haute-5-185",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Verb_Prononcer_Voix_Intonation_haute",
+            "LanguageCode": "fr",
+            "Type": "verb",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# [[prononcer|Prononcer]] à haute [[voix]], avec l’[[intonation]] voulue, ce qui est écrit ou imprimé.",
+            "ExplainationTxt": "Prononcer à haute voix, avec l’intonation voulue, ce qui est écrit ou imprimé.",
+            "ExplainationExamplesRaw": "#* ''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' {{source|{{w|Jules Michelet}}, ''Du prêtre, de la femme, de la famille'', 3{{e}} éd., Hachette & Paulin, 1845, p.133}}",
+            "ExplainationExamplesTxt": "''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' source",
+            "IsMale": null,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1181,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "read"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [
+                "lesen"
+            ],
+            "Translation_IT": [
+                "leggere"
+            ],
+            "Translation_ES": [
+                "leer"
+            ],
+            "Translation_RU": [
+                "читать",
+                "прочитать"
+            ],
+            "Translation_PT": [
+                "ler"
+            ]
+        },
+        {
+            "PrimaryKey": "fr-lire§Verb_Instruire_Amuser_Informer_etc-6-259",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Verb_Instruire_Amuser_Informer_etc",
+            "LanguageCode": "fr",
+            "Type": "verb",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# S’[[instruire]], s’[[amuser]], s’[[informer]], etc. par la lecture.",
+            "ExplainationTxt": "S’instruire, s’amuser, s’informer, etc. par la lecture.",
+            "ExplainationExamplesRaw": "#* ''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' {{source|{{w|Jules Michelet}}, ''Du prêtre, de la femme, de la famille'', 3{{e}} éd., Hachette & Paulin, 1845, p.133}}",
+            "ExplainationExamplesTxt": "''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' source",
+            "IsMale": null,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1181,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "read"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [
+                "lesen"
+            ],
+            "Translation_IT": [
+                "leggere"
+            ],
+            "Translation_ES": [
+                "leer"
+            ],
+            "Translation_RU": [
+                "читать",
+                "прочитать"
+            ],
+            "Translation_PT": [
+                "ler"
+            ]
+        },
+        {
+            "PrimaryKey": "fr-lire§Verb_Livre_Professeur_Explique_Auditeur-7-27",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Verb_Livre_Professeur_Explique_Auditeur",
+            "LanguageCode": "fr",
+            "Type": "verb",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# Se dit encore en parlant de quelque [[livre]] qu’un [[professeur]] [[expliquer|explique]] ou fait expliquer à ses [[auditeur]]s et qu’il prend pour [[sujet]] des [[leçon]]s qu’il [[leur]] [[donne]].",
+            "ExplainationTxt": "Se dit encore en parlant de quelque livre qu’un professeur explique ou fait expliquer à ses auditeurs et qu’il prend pour sujet des leçons qu’il leur donne.",
+            "ExplainationExamplesRaw": "#* ''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' {{source|{{w|Jules Michelet}}, ''Du prêtre, de la femme, de la famille'', 3{{e}} éd., Hachette & Paulin, 1845, p.133}}",
+            "ExplainationExamplesTxt": "''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' source",
+            "IsMale": null,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1181,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "read"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [
+                "lesen"
+            ],
+            "Translation_IT": [
+                "leggere"
+            ],
+            "Translation_ES": [
+                "leer"
+            ],
+            "Translation_RU": [
+                "читать",
+                "прочитать"
+            ],
+            "Translation_PT": [
+                "ler"
+            ]
+        },
+        {
+            "PrimaryKey": "fr-lire§Verb_FIGURÉ_Pénétrer_Quelque_Obscur-8-347",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Verb_FIGURÉ_Pénétrer_Quelque_Obscur",
+            "LanguageCode": "fr",
+            "Type": "verb",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# {{figuré|fr}} [[pénétrer|Pénétrer]] [[quelque chose]] d’[[obscur]] ou de [[cacher|caché]].",
+            "ExplainationTxt": "Pénétrer quelque chose d’obscur ou de caché.",
+            "ExplainationExamplesRaw": "#* ''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' {{source|{{w|Jules Michelet}}, ''Du prêtre, de la femme, de la famille'', 3{{e}} éd., Hachette & Paulin, 1845, p.133}}",
+            "ExplainationExamplesTxt": "''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' source",
+            "IsMale": null,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1181,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "read"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [
+                "lesen"
+            ],
+            "Translation_IT": [
+                "leggere"
+            ],
+            "Translation_ES": [
+                "leer"
+            ],
+            "Translation_RU": [
+                "читать",
+                "прочитать"
+            ],
+            "Translation_PT": [
+                "ler"
+            ]
+        },
+        {
+            "PrimaryKey": "fr-lire§Noun_Monnaie_Italie_Euro_utilisée-9-616",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Noun_Monnaie_Italie_Euro_utilisée",
+            "LanguageCode": "fr",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# [[monnaie|Monnaie]] utilisée en [[Italie]] avant l’usage de l’[[euro]].",
+            "ExplainationTxt": "Monnaie utilisée en Italie avant l’usage de l’euro.",
+            "ExplainationExamplesRaw": "#* ''Un euro vaut environ 1936 '''lires'''.''",
+            "ExplainationExamplesTxt": "''Un euro vaut environ 1936 '''lires'''.''",
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "lires",
+            "PopularityOfWord": 226,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [
+                "kuruş"
+            ],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "lira"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [],
+            "Translation_IT": [],
+            "Translation_ES": [],
+            "Translation_RU": [],
+            "Translation_PT": []
+        },
+        {
+            "PrimaryKey": "fr-lire§Noun_Turquie_monnaie-10-494",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/lire",
+            "LabelName": "lire",
+            "LabelType": "Noun_Turquie_monnaie",
+            "LanguageCode": "fr",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# Monnaie de la [[Turquie]].",
+            "ExplainationTxt": "Monnaie de la Turquie.",
+            "ExplainationExamplesRaw": "#* ''Un euro vaut environ 1936 '''lires'''.''",
+            "ExplainationExamplesTxt": "''Un euro vaut environ 1936 '''lires'''.''",
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "lires",
+            "PopularityOfWord": 226,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [
+                "kuruş"
+            ],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "lira"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [],
+            "Translation_IT": [],
+            "Translation_ES": [],
+            "Translation_RU": [],
+            "Translation_PT": []
+        }
+    ]
+}

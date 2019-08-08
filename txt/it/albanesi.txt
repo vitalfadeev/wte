@@ -1,0 +1,120 @@
+== {{-it-}} ==
+{{-agg-|it}}
+{{Pn}} ''m'' e '' f sing''
+{{Tabs|albanese|albanesi|albanese|albanese}}
+# {{Term|geografia|it}} che riguarda l'[[Albania]]
+
+{{-sost-|it}}
+{{Pn}} ''m'' e ''f sing'' {{Linkp|albanesi}}
+#  [[persona]] di [[nazionalità]] albanese (e per [[estensione]] chi ha [[origine|origini]] albanesi)
+
+
+{{-sost-|it}}
+{{Pn}} ''m inv''
+# {{Term|linguistica|it}} [[lingua]] parlata in [[Albania]]
+#* ''Parlo [[albanese]]''
+
+{{-sill-|}}
+; al | ba | né | se 
+
+{{-pron-}}
+{{IPA|/albaˈnese/}} o {{IPA|/albaˈneze/}}
+
+{{-etim-}}
+da [[Albania]]
+
+{{-der-}}
+* [[albanofono]]
+
+{{-trad-}}
+{{Trad1|aggettivo, relativo o originario dell'Albania}}
+:*{{lt}}: [[albanai]] ''m pl''
+:{{lt}}: [[albaniškas]] ''m'', [[albaniška]] ''f''
+:{{fi}}: [[albanialainen]]
+:*{{fr}}: [[albanais]]
+{{Trad2}}
+
+{{Trad1|lingua parlata in Albania}}
+:*{{af}}: [[Albanees]], [[Albanies]]
+:*{{sq}}: [[Shqiptar]]
+:*{{ar}}: [[البانية]]
+:*{{hy}}: [[Ալբանական]]
+:*{{az}}: [[Албан]]
+:*{{eu}}: [[Albaniera]]
+:*{{be}}: [[Альбанскай]], [[Альбанская]]
+:*{{br}}: [[Albaneg]]
+:*{{bg}}: [[Албански]]
+:*{{ca}}: [[albanès]]
+:*{{zh}}: {{zh-tradsem|[[阿爾巴尼亞語]]|[[阿尔巴尼亚语]]}} (ā'ěrbāníyàyǔ)
+:*{{hr}}: [[Albanski]]
+:*{{cs}}: [[albánský]]
+:*{{da}}: [[Albansk]]
+:*{{en}}: [[Albanian]]
+:*{{et}}: [[albaania keel]], [[albaania]]
+:*{{fo}}: [[Albanskt]]
+:*{{fa}}: [[البانى]]
+:*{{fi}}: [[albania]]
+:*{{fr}}: [[albanais]]
+:*{{fur}}: [[albanês]]
+:*{{fy}}: [[Albaneesk]]
+:*{{ga}}: [[Albanés]], [[Albáinis]]
+:*{{de}}: [[Albanisch]]
+:*{{gl}}: [[Albanés]]
+:*{{el}}: [[Αλβανικά]]
+:*{{gu}}: [[આલ્બાનિયન]] 
+:*{{he}}: [[אלבנית]]
+:*{{hi}}: [[आल्बानियन]] 
+:*{{hu}}: [[albán]]
+:*{{is}}: [[Albanska]]
+:*{{ia}}: [[albanese]]
+:*{{id}}: [[Albania]]
+:*{{ja}}: [[アルバニア語]]
+{{mid}}
+:*{{ko}}: [[알바니아어]]
+:*{{ku}}: [[Elbanî]]
+:*{{lv}}: [[Albāņu]]
+:*{{lt}}: [[albanų]], [[albaniškai]]
+:*{{ms}}: [[Bahasa Albania]]
+:*{{mt}}: [[Albaniż]]
+:*{{mdf}}: [[Албанонь]]
+:*{{mn}}: [[Албани]]
+:*{{nds}}: [[Albaansch]]
+:*{{ne}}: [[अल्बेनियन]], [[आल्बानियन]]
+:*{{no}}: [[Albansk]]
+:*{{oc}}: [[Albanès]]
+:*{{nl}}: [[Albanees]]
+:*{{pl}}: [[albański]]
+:*{{pt}}: [[albanés]]
+:*{{ro}}: [[albaneză]]
+:*{{ru}}: [[Албанский]]
+:*{{scn}}: [[arbanisi]]
+:*{{sr}}: [[Албански]]
+:*{{sk}}: [[Albánsky]]
+:*{{sl}}: [[Albanščina]]
+:*{{hsb}}: [[Albanšćina]], [[Albańšćina]]
+:*{{es}}: [[albanés]]
+:*{{sw}}: [[Kialbania]]
+:*{{sv}}: [[albanska]]
+:*{{tl}}: [[Albano]]
+:*{{th}}: [[ภาษาอัลบาเนียน]], [[ภาษาแอลเบเนีย]]
+:*{{tr}}: [[Arnavutça]]
+:*{{uk}}: [[Албанський]]
+:*{{ur}}: [[الباني]]
+:*{{vi}}: [[Tiếng An-ba-ni]]
+:*{{wa}}: [[Albanyin]], [[Albanès]]
+:*{{cy}}: [[Albanaidd]]
+{{Trad2}}
+
+{{Trad1|persona di nazionalità albanese}}
+:*{{fr}}: [[Albanais]]
+:*{{lt}}: [[albanas]] ''m'', [[albanė]] ''f''
+{{Trad2}}
+
+{{-ref-}}
+* {{Fonte|trec}}
+* {{Fonte|hoep}}
+* {{Fonte|sape}}
+* {{Fonte|gar}}
+* {{Fonte|sabco}}
+* {{Fonte|dizit}}
+* {{Fonte|dem}}

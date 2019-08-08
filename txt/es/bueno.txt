@@ -1,0 +1,137 @@
+{{desambiguación|Bueno}}
+
+== {{lengua|es}} ==
+{{pron-graf|fone=ˈbwe.no}}
+:* '''Nota de uso:''' En el masculino singular, cuando el adjetivo se emplea en función atributiva antepuesto al sustantivo que modifica, se elide el sufijo ''-o'', escribiéndose ''[[buen]]''.
+
+=== Etimología ===
+{{etimología|osp|bueno|bueno}}, y este del latín {{l+|la|bonus|bonum|glosa=conveniente}}, esta forma procede del latín arcaico {{l+|la|bonus|duenos}}, luego por cambio fonético a {{l+|la|bonus|duonos}}, evolucionando definitivamente a bonus. Su forma proto-itálica es {{l+|leng=la|itc|*dweno-}}.
+
+=== {{adjetivo|es}} ===
+{{inflect.es.adj.ad-lib|bueno / [[buen]]|[[buenos]]|[[buena]]|[[buenas]]|sup=[[buenísimo]]|sup2=[[bonísimo]]}}
+
+;1: Útil para un propósito específico.
+{{relacionado|óptimo|nota1=superlativo irregular}}.
+{{ejemplo|Wikcionario es muy ''bueno'' para ver traducciones y listas de palabras.}}
+
+;2: Se dice de lo que es correcto, válido, verdadero.
+{{ejemplo|El [[billete]] es ''bueno'', no es falso.}}
+
+;2: Se dice de los alimentos que son comestibles, que no causan daño.
+{{ejemplo|Este [[plátano]] está ''bueno'', no está verde ni viejo.}}
+
+;3: Se dice de los alimentos que producen placer al degustarlos.
+{{ejemplo|La [[sopa]] está muy ''buena'', sabrosísima.}}
+
+;4: Se dice de los alimentos que son muy nutritivos.
+{{ejemplo|Las [[verdura]]s son ''buenas'' para la salud.}}
+
+;5: Placentero, disfrutable.
+{{ejemplo|Pasamos una ''buena'' [[velada]], nos divertimos mucho.}}
+
+;6: Competente.
+{{ejemplo|Es un nadador ''bueno'', ha ganado varias competencias.}}
+
+;7: Eficiente.
+{{ejemplo|Es un ''buen'' trabajador que logra resultados.}}
+
+;8: Favorable.
+{{ejemplo|El clima estuvo ''bueno'', sin tormentas.}}
+
+=== {{interjección|es}} ===
+;9 {{telecomunicación}}: {{plm|aló}}, {{l|es|diga}}, {{l|es|dígame}} u {{l|es|oiga}}.
+{{ámbito|México}}.
+;10: Forma de aprobación de algún asunto.
+{{ejemplo|''Bueno'', nos vemos a las 8 como acordamos}}
+;11: Manera de dar por concluida una discusión o una conversación.
+
+=== Locuciones ===
+* ¡[[a buenas horas, mangas verdes]]!
+* [[a la buena de Dios]]
+* [[tener buen ojo]]
+* [[bueno para nada]]: [[inútil]], se usa mayormente como un insulto.
+* [[está bueno]]: [[basta]] (Venezuela)
+
+=== Información adicional ===
+:*'''Grado comparativo:''' [[mejor]], [[más]] bueno
+:*'''Grado superlativo:''' [[buenísimo]], [[bonísimo]], [[óptimo]], [[muy]] bueno, [[sobresaliente]], [[excelente]]
+
+=== Véase también ===
+{{w}}
+
+{{clear}}
+
+=== Traducciones ===
+{{trad-arriba}}
+{{t+|ain|?|ピㇼカ|,|ピㇽカ}}
+{{t+|af|gaaf|,|goed}}
+{{t+|sq|mirë}}
+{{t+|de|gut}}
+{{t+|ast|buenu}}
+{{t+|az|1,3,4,7|yaxşı}}
+{{t+|bg|добър}}
+{{t+|ang|god}}
+{{t+|ca|bo}}
+{{t+|da|god}}
+{{t+|fr|bon}}
+{{t+|eo|bona}}
+{{t+|fo|góður}}
+{{t+|fi|hyvä}}
+{{t+|fy|goed}}
+{{t+|fur|bon}}
+{{t+|gd|math|,|deagh}}
+{{t+|el|αγαθός}}
+{{t+|hu|jó}}
+{{t+|en|good|,|nice|,|okay|,|fine}}
+{{t+|is|góður}}
+{{t+|it|buono}}
+{{trad-centro}}
+{{t+|clm|ʔə́y̕|,|háʔɬ}}
+{{t+|kuz|cayáhia}}
+{{t+|la|bonus}}
+{{t+|ms|bagus}}
+{{t+|arn|küme}}
+{{t+|yua|uts}}
+{{t+|no|god}}
+{{t+|nl|goed|,|okee}}
+{{t+|pap|bon}}
+{{t+|pl|dobrzy}}
+{{t+|pt|bom}}
+{{t+|ro|bun}}
+{{t+|ru|хороший}}
+{{t+|srn|bun}}
+{{t+|sv|bra|,|god}}
+{{t+|sw|-ema|,|-zuri}}
+{{t+|tl|mabúti|,|magalíng|,|mahúsay}}
+{{t+|cs|dobrý|,|hodný}}
+{{t+|tr|iyi}}
+{{t+|zu|-hle}}
+{{trad-abajo}}
+
+== {{lengua|osp}} ==
+{{pron-graf|leng=osp}}
+
+=== Etimología ===
+{{etimología|leng=osp|la|bonus|alt=bonum|conveniente}}.
+
+=== {{adjetivo|osp}} ===
+;1: {{plm}}.
+{{antónimo|leng=osp|malo}}.
+{{hipónimo|leng=osp|meior}}.
+
+== {{lengua|lad}} ==
+{{pron-graf|leng=lad
+|g=בואינו}}
+
+=== Etimología ===
+{{etimología|leng=lad|osp|bueno|bueno}}, y este del latín {{l+|la|bonus|bonum|glosa=conveniente}}.
+
+=== {{adjetivo|lad}} ===
+{{inflect.lad.adj.reg|buen}}
+
+;1: {{plm}}.
+{{antónimo|leng=lad|malo}}.
+{{hipónimo|leng=lad|ekselente|estupendo|fantastiko|maraviyozo|mijor}}.
+
+== Referencias y notas ==
+<references />

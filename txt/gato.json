@@ -1,0 +1,1140 @@
+{
+    "gato": [
+        {
+            "PrimaryKey": "es-gato§Noun_MAMÍFEROS_ANIMAL_SINÓNIMO_Carnívoro-0-417",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_MAMÍFEROS_ANIMAL_SINÓNIMO_Carnívoro",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";1 {{mamíferos}}: (''Felis silvestris catus'' o ''F. catus'') {{plm|animal}} [[carnívoro]] de la familia de los [[felino]]s, [[domesticado]] como [[animal de compañía]] desde al menos el 3500 adC.\n{{sinónimo|minino|micho|nota2=Ecuador, Panamá}}",
+            "ExplainationTxt": "1  mamíferos (''Felis silvestris catus'' o ''F. catus'')  plm   carnívoro  de la familia de los  felino s,  domesticado  como  animal de compañía  desde al menos el 3500 adC.\n micho",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "minino",
+                "micho"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_MAMÍFEROS_SINÓNIMO_HIPÓNIMO_Félido-1-543",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_MAMÍFEROS_SINÓNIMO_HIPÓNIMO_Félido",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";2 {{mamíferos}}: Por extensión, cualquier ejemplar de la familia de los [[félido]]s, que comprende 37 especies de [[mamífero]]s [[carnívoro]]s.\n{{sinónimo|félido|felino}}\n{{hipónimo|gato montés}}",
+            "ExplainationTxt": "2  mamíferos Por extensión, cualquier ejemplar de la familia de los  félido s, que comprende 37 especies de  mamífero s  carnívoro s.\n felino \n hipónimo",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "félido",
+                "felino"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [
+                "gato montés"
+            ],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_PROSTITUTA_RIOPLATENSE_LUNFARDISMO-2-95",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_PROSTITUTA_RIOPLATENSE_LUNFARDISMO",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";3: {{plm|prostituta}} de alto nivel, que solo atiende un número más o menos reducido de clientes regulares.\n{{ámbito|Rioplatense}}\n{{uso|Lunfardismo}}",
+            "ExplainationTxt": "3  plm  de alto nivel, que solo atiende un número más o menos reducido de clientes regulares.\n ámbito \n uso",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_RIOPLATENSE_LUNFARDISMO-3-767",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_RIOPLATENSE_LUNFARDISMO",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";4: Por extensión, prostituta en general, especialmente la de cierto nivel.\n{{ámbito|Rioplatense}}\n{{uso|Lunfardismo}}",
+            "ExplainationTxt": "4 Por extensión, prostituta en general, especialmente la de cierto nivel.\n ámbito \n uso",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_CLIENTE_RIOPLATENSE_LUNFARDISMO-4-195",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_CLIENTE_RIOPLATENSE_LUNFARDISMO",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";5: {{plm|cliente}} regular de una prostituta.\n{{ámbito|Rioplatense}}\n{{uso|Lunfardismo}}",
+            "ExplainationTxt": "5  plm  regular de una prostituta.\n ámbito \n uso",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_BISOÑÉ_RIOPLATENSE_LUNFARDISMO_Peluca-5-378",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_BISOÑÉ_RIOPLATENSE_LUNFARDISMO_Peluca",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";6: {{plm|bisoñé}}, [[peluca]] que usan algunos hombres para disimular su [[calvicie]].\n{{ámbito|Rioplatense}}\n{{uso|Lunfardismo}}",
+            "ExplainationTxt": "6  plm ,  peluca  que usan algunos hombres para disimular su  calvicie .\n ámbito \n uso",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_HIDRAÚLICO_SINÓNIMO_Levantar_Peso-6-200",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_HIDRAÚLICO_SINÓNIMO_Levantar_Peso",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";7: Máquina para [[levantar]] grandes [[peso]]s a poca [[altura]].\n{{sinónimo|gato hidraúlico|cric|crique|gata}}\n[[Archivo:Tic tac toe complete-temp.svg|thumb|gato (8)]]\n;8: Juego de mesa para dos personas en que gana el primero en poner tres [[marca]]s en [[línea]], usualmente [[círculo]]s y [[cruz|cruces]], dentro de una [[cuadrícula]] de tres [[casilla]]s de ancho por tres de alto\n{{sinónimo|juego de la vieja|juego del gato|tres en raya|ta te ti|triqui|}}.",
+            "ExplainationTxt": "7 Máquina para  levantar  grandes  peso s a poca  altura .\n cric \n thumb \n;8: Juego de mesa para dos personas en que gana el primero en poner tres  marca s en  línea , usualmente  círculo s y  cruces , dentro de una  cuadrícula  de tres  casilla s de ancho por tres de alto\n juego del gato .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "gato hidraúlico",
+                "cric",
+                "crique",
+                "gata",
+                "juego de la vieja",
+                "juego del gato",
+                "tres en raya",
+                "ta te ti",
+                "triqui"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_ÁMBITO_ALMOHADILLA__Tecla-7-531",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_ÁMBITO_ALMOHADILLA__Tecla",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";9: Nombre del símbolo [[#]], por su semejanza con el juego llamado \"gato\", sobre todo hablando de la [[tecla]] que lleva ese símbolo en los [[teléfono]]s.\n{{ámbito|Chile|México}}.\n{{sinónimo|almohadilla|nota=España|numeral}}.",
+            "ExplainationTxt": "9 Nombre del símbolo  # , por su semejanza con el juego llamado \"gato\", sobre todo hablando de la  tecla  que lleva ese símbolo en los  teléfono s.\n México .\n numeral .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "almohadilla",
+                "numeral"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_BAILE_RELACIONES_REFERENCIA_Argentina-8-445",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_BAILE_RELACIONES_REFERENCIA_Argentina",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";10: {{plm|baile}} tradicional de [[Argentina]], de pareja suelta y ritmo alegre.\n{{hipónimo|gato con relaciones|gato cordobés|gato cuyano|gato patriótico}}.\n:*'''Ejemplos:'''\n::\"Yo vengo de aquellos pagos / muy cerca de la frontera / donde se baila la cueca / zamba, ''gato'' y chacarera\" (Óscar Palavecino, \"Chacarera pa' mi Tartagal\") {{referencia incompleta}}",
+            "ExplainationTxt": "10  plm  tradicional de  Argentina , de pareja suelta y ritmo alegre.\n gato cordobés . '''Ejemplos:''' \"Yo vengo de aquellos pagos / muy cerca de la frontera / donde se baila la cueca / zamba, ''gato'' y chacarera\" (Óscar Palavecino, \"Chacarera pa' mi Tartagal\") referencia incompleta",
+            "ExplainationExamplesRaw": "::\"Yo vengo de aquellos pagos / muy cerca de la frontera / donde se baila la cueca / zamba, ''gato'' y chacarera\" (Óscar Palavecino, \"Chacarera pa' mi Tartagal\") {{referencia incompleta}}",
+            "ExplainationExamplesTxt": "Yo vengo de aquellos pagos / muy cerca de la frontera / donde se baila la cueca / zamba, ''gato'' y chacarera\" (Óscar Palavecino, \"Chacarera pa' mi Tartagal\") referencia incompleta",
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 941,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [
+                "gato con relaciones",
+                "gato cordobés",
+                "gato cuyano",
+                "gato patriótico"
+            ],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_Madrid_España-9-541",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_Madrid_España",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";11: Persona nacida en la ciudad de [[Madrid]], [[España]].",
+            "ExplainationTxt": "11 Persona nacida en la ciudad de  Madrid ,  España .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_PROVINCIAS_Ladrones_Ratero-10-323",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_PROVINCIAS_Ladrones_Ratero",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";12: [[ladrón|Ladrones]] de poca monta (o [[ratero]]s), llamados así por su habilidad para moverse y actuar silenciosamente sin ser detectados, al igual que el animal.\n{{ámbito|Algunas provincias argentinas}}",
+            "ExplainationTxt": "12  Ladrones  de poca monta (o  ratero s), llamados así por su habilidad para moverse y actuar silenciosamente sin ser detectados, al igual que el animal.\n ámbito",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_SIRVIENTE_ÁMBITO_DESPECTIVO-11-282",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_SIRVIENTE_ÁMBITO_DESPECTIVO",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";13: {{plm|sirviente}}, en especial del servicio doméstico.\n{{ámbito|México}}\n{{uso|despectivo}}",
+            "ExplainationTxt": "13  plm , en especial del servicio doméstico.\n ámbito \n uso",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_PLANTAS_ÁRBOL_ÁMBITO_SINÓNIMO-12-90",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_PLANTAS_ÁRBOL_ÁMBITO_SINÓNIMO",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";14 {{plantas}}: (''Salix caprea'') {{plm|árbol}} [[dioico]] de la familia de las salicáceas, nativo de Eurasia, de [[hoja]]s relativamente anchas y [[flor]]es agrupadas en [[amento]]s.\n{{ámbito|Chile}}\n{{sinónimo|sauce cabruno|sauce alemán|nota2=Chile|meca de gato|nota3=Chiloé}}",
+            "ExplainationTxt": "14  plantas (''Salix caprea'')  plm   dioico  de la familia de las salicáceas, nativo de Eurasia, de  hoja s relativamente anchas y  flor es agrupadas en  amento s.\n ámbito \n sauce alemán",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "sauce cabruno",
+                "sauce alemán",
+                "meca de gato"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        },
+        {
+            "PrimaryKey": "es-gato§Noun_URUGUAY_COLOQUIAL_CLEAR-13-169",
+            "SelfUrl": "https://es.wiktionary.org/wiki/gato",
+            "LabelName": "gato",
+            "LabelType": "Noun_URUGUAY_COLOQUIAL_CLEAR",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";15: Articulo, cosa o acto ilegal.\n{{ámbito|Uruguay}}\n{{uso|coloquial}}\n{{clear}}",
+            "ExplainationTxt": "15 Articulo, cosa o acto ilegal.\n ámbito \n uso \n clear",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "gatos",
+            "PopularityOfWord": 6,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "felino",
+                "gatear",
+                "gatera",
+                "minino",
+                "perro"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "hooker",
+                "john",
+                "jack",
+                "noughts and crosses",
+                "tic-tac-toe"
+            ],
+            "Translation_FR": [
+                "chat",
+                "cric"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater",
+                "Wagenheber",
+                "Heber",
+                "Kreis und Kreuz",
+                "Tic Tac Toe"
+            ],
+            "Translation_IT": [
+                "gatto",
+                "cric",
+                "cricco"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "кот",
+                "кошка",
+                "крестики-нолики"
+            ],
+            "Translation_PT": [
+                "gato",
+                "jogo da velha"
+            ]
+        }
+    ]
+}

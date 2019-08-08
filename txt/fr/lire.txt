@@ -1,0 +1,299 @@
+{{voir|Lire|Liré}}
+== {{langue|fr}} ==
+=== {{S|étymologie}} ===
+: ([[#fr-verb|Verbe]]) Du {{étyl|la|fr|mot=lego|dif=lĕgĕre|sens=''id.''}}, proprement « recueillir »
+: ([[#fr-nom|Nom]]) De l’{{étyl|it|fr|mot=lira}}, du {{étyl|la|fr|libra}} (« [[livre]] », le poids).
+
+=== {{S|verbe|fr}} ===
+[[File:Reading Jane Eyre.jpg|thumb|Jeune fille qui '''lit'''. (1)]]
+[[File:USMC-120302-M-PG598-001.jpg|thumb|Une adulte '''lit''' une histoire à un groupe d'enfants. (6)]]
+'''lire''' {{pron|liʁ|fr}} {{conjugaison|fr|grp=3}}
+# [[interpréter|Interpréter]] des [[information]]s écrites sous forme de [[mot]]s ou de [[dessin]]s sur un [[support]].
+#* ''On '''lit''' ce livre absolument comme au bord de la cascade on entendrait, rêveur, le gazouillement des eaux.'' {{source|{{w|Jules Michelet}}, ''Du prêtre, de la femme, de la famille'', 3{{e}} éd., Hachette & Paulin, 1845, p.133}}
+#* ''[…] ; je me souviens d’avoir '''lu''' autrefois, dans un manuel de Paul Bert, que le principe fondamental de la morale s’appuie sur les enseigne­ments de Zoroastre et sur la Constitution de l’an III ; […].'' {{source|{{w|Georges Sorel}}, ''Réflexions sur la violence'', Chap.VII, ''La morale des producteurs'', 1908, p.315}}
+#* ''[…], mais vous comprenez bien qu’on ne donne pas une égale attention à tout ce qu’on '''lit''' ou qu’on parcourt dans les colonnes des journaux […].'' {{source|{{w|Louis Pergaud}}, ''[[s:Un point d’histoire|Un point d’histoire]]'', dans ''{{w|Les Rustiques, nouvelles villageoises}}'', 1921}}
+#* ''Une auto qui venait en sens inverse éclaira un instant la borne kilométrique et Joseph Mittel se pencha juste à temps pour '''lire''' :'' Forges-les-Eaux, 2 km. {{source|{{w|Georges Simenon}}, ''[[w:Long Cours (roman)|Long cours]]'', Éditions Gallimard, 1936, chap.1}}
+#* '' Il était célèbre par une obstination admirable à apprendre à écrire et à '''lire''' ; le résultat ne fut pas étonnant ; il faut croire qu’il est bien difficile d’apprendre à '''lire''' ; […].'' {{source|[[w:Alain (philosophe)|Alain]], ''Souvenirs de guerre'', page 75, Hartmann, 1937}}
+#* ''Mais '''lire''', c’est surtout entrer en soi-même, apprendre à se considérer comme un monde de signes, de messages codés, de rébus.'' {{source|Philippe Sollers, ''Éloge de l’infini'', Gallimard, page 619}}
+# [[suivre|Suivre]] des [[yeux]] ce qui est [[écrit]] ou [[imprimer|imprimé]], [[avec]] la [[connaissance]] des sons que les [[lettre]]s [[figurent]] ; [[soit]] en ne [[proférer|proférant]] pas les mots, [[être|soit]] en les proférant à [[haut]]e [[voix]].
+#* ''Ce qui m’étonne, c’est que le propriétaire dudit bouquin ne semble pas le '''lire''' de droite à gauche. Est-ce qu’il ne serait pas imprimé en caractères chinois ?'' {{source|{{Citation/Jules Verne/Claudius Bombarnac/1892|6}}}}
+#* ''Il s’est fatigué la vue à '''lire''' de vieux manuscrits.''
+#* ''Une écriture difficile à '''lire'''.''
+# [[prendre connaissance|Prendre connaissance]] et [[comprendre]] un texte écrit.
+#* ''Il est de jeunes écrivains qui ne '''lisent''' pas Hugo. C’est pourquoi ils ont tant de certitudes heureuses et atteignent promptement au talent.'' {{source|{{Citation/Victor Méric/Les Compagnons de l’Escopette/1930|67}}}}
+#* ''J’'''ai''' beaucoup '''lu''' sur Péguy, ce fils de rempailleuse de chaises devenu Normalien, dreyfusard acharné, socialiste de sang et de flammes, polémiste frontal.'' {{source|François-Xavier Putallaz, ‎Nicolas Buttet & ‎Pascal Décaillet, ''Coups de griffe: chroniques des Temps qui courent'', Éditions Saint-Augustin, 2006, page 219}}
+#* ''Il est vrai qu'il paraît inutile d'apprendre ce qui est écrit dans les livres puisque ça y est, encore faut il pouvoir l'y trouver et donc de savoir '''lire''', privilège maintenant réservé à une frange minoritaire de la population qui a la chance de naître dans une famille […], ayant le souci et la patience d'apprendre la lecture à sa progéniture.'' {{source|Jean-Claude Besso, ''Les Commentaires du docteur Agasse'', Société des Écrivains, 2010, page 55}}
+# [[comprendre|Comprendre]] ce qui est écrit ou imprimé dans une [[langue]] [[étranger|étrangère]].
+#* ''Il ne parle pas l’anglais, mais il le '''lit''' avec assez de facilité.''
+# {{musique|fr}} {{analogie|fr}} Parcourir des yeux une musique notée, avec la connaissance des sons que les notes figurent et des diverses modifications que ces sons doivent recevoir.
+#* '''''Lire''' une partition''
+# [[prononcer|Prononcer]] à haute [[voix]], avec l’[[intonation]] voulue, ce qui est écrit ou imprimé.
+#* ''Il '''lit''' bien, il '''lit''' mal.''
+#* ''Il '''lit''' distinctement.''
+#* ''Il ne sait pas '''lire'''.''
+#* ''Il nous a '''lu''' un long discours.''
+#* ''Je vais vous '''lire''' mes vers.''
+#* ''Ce prince avait l’habitude de se faire '''lire''' quelque bon livre pendant ses repas.''
+# S’[[instruire]], s’[[amuser]], s’[[informer]], etc. par la lecture.
+#* '''''Lire''' un volume de vers, un roman, un billet, une lettre, la messe, une dépêche chiffrée.''
+#* {{absolument}} ''Il passe son temps à '''lire'''.''
+#* {{figuré|fr}} ''C’est un ouvrage qu’on ne peut '''lire''','' se dit d’un ouvrage ennuyeux, ou mal écrit, ou surtout licencieux.
+#* {{figuré|fr}} et {{familier|fr}} ''Ce livre, cet ouvrage se laisse '''lire''','' On le lit sans fatigue, sans ennui.
+# Se dit encore en parlant de quelque [[livre]] qu’un [[professeur]] [[expliquer|explique]] ou fait expliquer à ses [[auditeur]]s et qu’il prend pour [[sujet]] des [[leçon]]s qu’il [[leur]] [[donne]].
+#* ''Notre professeur nous '''lisait''' Homère.''
+# {{figuré|fr}} [[pénétrer|Pénétrer]] [[quelque chose]] d’[[obscur]] ou de [[cacher|caché]].
+#* ''L’ivresse se '''lisait''' dans ses yeux, une ivresse crâne et satisfaite qui lui arrachait quelquefois de gros rires.'' {{source|{{Citation/Francis Carco/Messieurs les vrais de vrai/1927}}}}
+#* ''A quoi songes-tu donc ? s’informa la maîtresse du logis, surprise de l’inattention qu’elle '''lisait''' dans les yeux de l’artiste. Tu n’as pas de contrariétés.'' {{source|{{Citation/Francis Carco/L’Homme de minuit/1938}}}}
+#* ''Je la regardais — minutes silencieuses où l'on n'entendait que le tic-tac de l'horloge accrochée au mur — et j'essayais de '''lire''' dans son visage muet, mais rien d'elle ne m'était familier.'' {{source|{{w|Stefan Zweig}}, ''La peur'', traduit de l'allemand par Alzir Hella éd. Grasset, 1935, 2002}}
+
+==== {{S|dérivés}} ====
+{{(}}
+* [[délire]] ''(verbe)''
+* [[entrelire]]
+* [[lire-écrire]]
+* [[lire en diagonale]]
+* [[lire entre les lignes]]
+* [[lire sur les lèvres]]
+* [[relire]]
+{{)}}
+
+==== {{S|traductions}} ====
+{{trad-début|Interpréter des informations écrites.}}
+* {{T|de}} : {{trad+|de|lesen}}
+* {{T|en}} : {{trad+|en|read}}
+* {{T|ar}} : {{trad+|ar|قَرَأَ|m|tr=qara-a}}
+* {{T|az}} : {{trad+|az|oxumaq}}
+* {{T|ba}} : {{trad--|ba|уҡыу}}
+* {{T|ca}} : {{trad+|ca|llegir}}
+* {{T|zh}} : {{trad+|zh|读|tr=dú|tradi=讀}}
+* {{T|ko}} : {{trad+|ko|읽다|tr=ikda}}
+* {{T|es}} : {{trad+|es|leer}}
+* {{T|eo}} : {{trad+|eo|legi}}
+* {{T|fi}} : {{trad+|fi|lukea}}
+* {{T|gag}} : {{trad--|gag|okumaa}}
+* {{T|sah}} : {{trad--|sah|аах}}
+* {{T|it}} : {{trad+|it|leggere}}
+* {{T|ja}} : {{trad+|ja|読む|tr=yomu}}
+* {{T|krc}} : {{trad--|krc|окъургъа}}
+* {{T|kk}} : {{trad+|kk|оқу|tr=oquw}}
+* {{T|kjh}} : {{trad--|kjh|хығырарға}}
+* {{T|ky}} : {{trad+|ky|окуу}}
+* {{T|kum}} : {{trad--|kum|охумакъ}}
+* {{T|mk}} : {{trad-|mk|чита|tr=tschita}}
+* {{T|nl}} : {{trad+|nl|lezen}}
+* {{T|plodarisch}} : {{trad--|plodarisch|lesn}}
+* {{T|pl}} : {{trad+|pl|czytać}}
+* {{T|pt}} : {{trad+|pt|ler}}
+* {{T|ru}} : {{trad+|ru|читать}}
+* {{T|sk}} : {{trad-|sk|čítať}}
+* {{T|tt}} : {{trad-|tt|уку}}
+* {{T|cv}} : {{trad--|cv|вула}}
+* {{T|tk}} : {{trad-|tk|okamak}}
+{{trad-fin}}
+
+{{trad-début|Suivre des yeux ce qui est écrit ou imprimé.}}
+* {{T|de}} : {{trad+|de|lesen}}
+* {{T|en}} : {{trad+|en|read}}
+* {{T|ar}} : {{trad+|ar|قَرَأَ|m|tr=qara-a}}
+* {{T|ca}} : {{trad+|ca|llegir}}
+* {{T|es}} : {{trad+|es|leer}}
+* {{T|fi}} : {{trad+|fi|lukea}}
+* {{T|it}} : {{trad+|it|leggere}}
+* {{T|kk}} : {{trad+|kk|оқу|tr=oquw}}
+* {{T|mk}} : {{trad-|mk|чита|tr=tschita}}
+* {{T|nl}} : {{trad+|nl|lezen}}
+* {{T|plodarisch}} : {{trad--|plodarisch|lesn}}
+* {{T|ru}} : {{trad+|ru|читать}}
+{{trad-fin}}
+
+{{trad-début|Prendre connaissance et comprendre un texte écrit.}}
+* {{T|de}} : {{trad+|de|lesen}}
+* {{T|en}} : {{trad+|en|read}}
+* {{T|ar}} : {{trad+|ar|قَرَأَ|m|tr=qara-a}}
+* {{T|ca}} : {{trad+|ca|llegir}}
+* {{T|es}} : {{trad+|es|leer}}
+* {{T|fi}} : {{trad+|fi|lukea}}
+* {{T|it}} : {{trad+|it|leggere}}
+* {{T|nl}} : {{trad+|nl|lezen}}
+* {{T|pl}} : {{trad+|pl|przeczytać}}
+* {{T|ru}} : {{trad+|ru|читать}}
+{{trad-fin}}
+
+{{trad-début|Comprendre ce qui est écrit ou imprimé dans une langue étrangère.}}
+* {{T|de}} : {{trad+|de|lesen}}
+* {{T|en}} : {{trad+|en|read}}
+* {{T|ar}} : {{trad+|ar|قَرَأَ|m|tr=qara-a}}
+* {{T|es}} : {{trad+|es|leer}}
+* {{T|it}} : {{trad+|it|leggere}}
+* {{T|mk}} : {{trad-|mk|чита|tr=tschita}}
+* {{T|nl}} : {{trad+|nl|lezen}}
+* {{T|pl}} : {{trad+|pl|odczytać}}
+* {{T|ru}} : {{trad+|ru|читать}}
+{{trad-fin}}
+
+{{trad-début|(Musique) (Par analogie) Parcourir des yeux une musique notée.}}
+* {{T|de}} : {{trad+|de|lesen}}
+* {{T|en}} : {{trad+|en|read}}
+* {{T|ar}} : {{trad+|ar|قَرَأَ|m|tr=qara-a}}
+* {{T|ca}} : {{trad+|ca|llegir}}
+* {{T|es}} : {{trad+|es|leer}}
+* {{T|it}} : {{trad+|it|leggere}}
+* {{T|ja}} : {{trad+|ja|読む|tr=yomu}}
+* {{T|nl}} : {{trad+|nl|lezen}}
+* {{T|ru}} : {{trad+|ru|читать}}
+{{trad-fin}}
+
+{{trad-début|Prononcer à haute voix, avec l’intonation voulue, ce qui est écrit ou imprimé.}}
+* {{T|de}} : {{trad+|de|lesen}}
+* {{T|en}} : {{trad+|en|read}}
+* {{T|ar}} : {{trad+|ar|قَرَأَ|m|tr=qara-a}}
+* {{T|ca}} : {{trad+|ca|llegir}}
+* {{T|es}} : {{trad+|es|leer}}
+* {{T|it}} : {{trad+|it|leggere}}
+* {{T|ja}} : {{trad+|ja|読む|tr=yomu}}, {{trad-|ja|朗読する|tr=rōdoku suru}}
+* {{T|mk}} : {{trad-|mk|чита|tr=tschita}}
+* {{T|nl}} : {{trad+|nl|voorlezen}}, {{trad+|nl|oplezen}}
+* {{T|ru}} : {{trad+|ru|читать}}
+{{trad-fin}}
+
+{{trad-début|S’instruire, s’amuser, s’informer, etc. par la lecture.}}
+* {{T|de}} : {{trad+|de|lesen}}
+* {{T|en}} : {{trad+|en|read}}
+* {{T|ar}} : {{trad+|ar|قَرَأَ|m|tr=qara-a}}
+* {{T|ca}} : {{trad+|ca|llegir}}
+* {{T|ko}} : {{trad+|ko|읽다|tr=ikda}}, {{trad+|ko|독서하다|tradi=讀書하다|tr=dokseohada}}
+* {{T|es}} : {{trad+|es|leer}}
+* {{T|it}} : {{trad+|it|leggere}}
+* {{T|ja}} : {{trad+|ja|読む|tr=yomu}}, {{trad-|ja|読書する|tr=dokusho suru}}
+* {{T|mk}} : {{trad-|mk|чита|tr=tschita}}
+* {{T|nl}} : {{trad+|nl|lezen}}
+* {{T|ru}} : {{trad+|ru|читать}}
+{{trad-fin}}
+
+{{trad-début|Expliquer un livre pris pour sujet de leçons.}}
+* {{T|de}} : {{trad+|de|lesen}}
+* {{T|en}} : {{trad+|en|read}}
+* {{T|ar}} : {{trad+|ar|قَرَأَ|m|tr=qara-a}}
+* {{T|ca}} : {{trad+|ca|llegir}}
+* {{T|es}} : {{trad+|es|leer}}
+* {{T|it}} : {{trad+|it|leggere}}
+* {{T|mk}} : {{trad-|mk|чита|tr=tschita}}
+{{trad-fin}}
+
+{{trad-début|(Figuré) Pénétrer quelque chose d’obscur ou de caché.}}
+* {{T|de}} : {{trad+|de|lesen}}
+* {{T|en}} : {{trad+|en|read}}
+* {{T|ar}} : {{trad+|ar|قَرَأَ|m|tr=qara-a}}
+* {{T|ca}} : {{trad+|ca|llegir}}
+* {{T|es}} : {{trad+|es|leer}}
+* {{T|it}} : {{trad+|it|leggere}}
+* {{T|mk}} : {{trad-|mk|чита|tr=tschita}}
+* {{T|nl}} : {{trad+|nl|lezen}}
+{{trad-fin}}
+
+===== {{S|traductions à trier}} =====
+{{trad-début}}
+* {{T|ab}} : {{trad--|ab|аҧхьара}}
+* {{T|ady}} : {{trad--|ady|еджэн}}
+* {{T|bs}} : {{trad-|bs|čitati}}
+* {{T|ca}} : {{trad+|ca|llegir}}
+* {{T|hr}} : {{trad+|hr|čitati}}
+* {{T|eo}} : {{trad+|eo|legi}}
+* {{T|fi}} : {{trad+|fi|lukea}}
+* {{T|gd}} : {{trad-|gd|leugh}}
+* {{T|ga}} : {{trad-|ga|léigh}}
+* {{T|gn}} : {{trad-|gn|moñeʼẽ}}
+* {{T|he}} : {{trad-|he|לקרוא}} (laqarava)
+* {{T|hu}} : {{trad+|hu|olvas}}
+* {{T|io}} : {{trad+|io|lektar}}
+* {{T|id}} : {{trad+|id|baca}}, {{trad+|id|membaca}}
+* {{T|ia}} : {{trad-|ia|leger}}
+* {{T|iu}} : {{trad-|iu|ᐅᖃᓕᒫᖅ-|R=[[uqalimaaq-]]}}
+* {{T|kl}} : {{trad-|kl|atuarneq}}
+* {{T|ki}} : {{trad--|ki|gũthoma}}
+* {{T|rw}} : {{trad-|rw|soma}}
+* {{T|ku}} : {{trad+|ku|xwendin}}
+* {{T|ltg}} : {{trad--|ltg|skaiteit}}
+* {{T|la}} : {{trad+|la|legere}}
+* {{T|lv}} : {{trad+|lv|lasīt}}
+* {{T|lt}} : {{trad+|lt|skaityti}}
+* {{T|nl}} : {{trad+|nl|lezen}}
+* {{T|fra-nor}} : {{trad--|fra-nor|luure}}
+* {{T|oc}} : {{trad+|oc|legir}}
+* {{T|pt}} : {{trad+|pt|ler}}
+* {{T|ro}} : {{trad+|ro|citi}}
+* {{T|ru}} : {{trad+|ru|читать}} (tchitat') ''imperf'', {{trad+|ru|прочитать}} (protchitat') ''perf''
+* {{T|se}} : {{trad--|se|lohkat}}
+* {{T|sr}} : {{trad+|sr|читати}} (tchitati)
+* {{T|sk}} : {{trad-|sk|čítať}}
+* {{T|ses}} : {{trad--|ses|cew}}
+* {{T|sv}} : {{trad+|sv|läsa}}
+* {{T|tl}} : {{trad+|tl|basa}}
+* {{T|cs}} : {{trad+|cs|číst}}
+* {{T|tr}} : {{trad+|tr|okumak}}
+* {{T|vi}} : {{trad+|vi|đọc}}
+{{trad-fin}}
+
+=== {{S|nom|fr}} ===
+{{fr-rég|liʁ}}
+'''lire''' {{pron|liʁ|fr}} {{f}}
+# [[monnaie|Monnaie]] utilisée en [[Italie]] avant l’usage de l’[[euro]].
+#* ''Un euro vaut environ 1936 '''lires'''.''
+# Monnaie de la [[Turquie]].
+
+==== {{S|méronymes}} ====
+; Lire italienne
+* [[centime]] ''({{lien|centimiso|it}})'' : 1 ITL = 100 ct
+; Lire turque
+* [[kuruş]] : 1 TLY = 100 kuruş
+
+==== {{S|synonymes}} ====
+; Lire turque
+* [[livre]] turque
+
+==== {{S|traductions}} ====
+{{trad-début}}
+* {{T|en}} : {{trad+|en|lira}}
+* {{T|ar}} : {{trad-|ar|لِيرَة|f|tr=līra}}
+* {{T|zh}} : {{trad+|zh|里拉|tr=lǐlā}}
+* {{T|ko}} : {{trad+|ko|리라|tr=rira}}
+* {{T|ja}} : {{trad-|ja|リラ|tr=rira}}
+{{trad-fin}}
+
+=== {{S|prononciation}} ===
+* {{écouter|lang=fr|France <!-- précisez svp la ville ou la région -->|liʁ|audio=Fr-lire.ogg}}
+* {{écouter|lang=fr|France (Brétigny-sur-Orge)||audio=LL-Q150 (fra)-Pamputt-lire.wav}}
+
+
+
+==== {{S|homophones|fr}} ====
+* [[lyre]]
+
+=== {{S|anagrammes}} ===
+* [[riel]]
+* [[lier]]
+
+=== {{S|voir aussi}} ===
+* {{WP}}
+
+[[Catégorie:Monnaies en français]]
+
+== {{langue|fro}} ==
+=== {{S|étymologie}} ===
+: Du {{étyl|la|fro|mot=lyra}}.
+
+=== {{S|nom|fro}} ===
+'''lire''' {{pron|liʁ|fro}}
+# [[lyre#fr|Lyre]].
+#* ''De vièle sot et de rote,<br>De '''lire''' et de satérion,<br>De harpe sot et de choron,<br>(…)'' {{source|{{w|Wace}}, ''Roman de Brut'', 1155}}
+
+[[Catégorie:Instruments de musique en ancien français]]
+
+== {{langue|af}} ==
+=== {{S|étymologie}} ===
+: {{ébauche-étym|af}}
+
+=== {{S|nom|af}} ===
+'''lire''' {{pron||af}}
+# [[lire#fr-nom|Lire]].
+

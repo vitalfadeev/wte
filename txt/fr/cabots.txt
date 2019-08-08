@@ -1,0 +1,5 @@
+== {{langue|fr}} ==
+=== {{S|nom|fr|flexion}} ===
+{{fr-rég|s=cabot|ka.bo}}
+'''cabots''' {{pron|ka.bo|fr}} {{m}}
+# ''Pluriel de'' [[cabot#fr|cabot]].

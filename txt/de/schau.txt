@@ -1,0 +1,61 @@
+{{Siehe auch|[[Schau]]}}
+== schau ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Adjektiv|Deutsch}} ===
+
+{{Deutsch Adjektiv Übersicht
+|Positiv=schau
+|Komparativ=schauer
+|Superlativ=schausten
+|Superlativ*=schauesten
+}}
+
+{{Worttrennung}}
+:schau, {{Komp.}} schau·er, {{Sup.}} am schaus·ten, am schau·es·ten
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ʃaʊ̯}}
+:{{Hörbeispiele}} {{Audio|De-schau.ogg}}
+:{{Reime}} {{Reim|aʊ̯|Deutsch}}
+
+{{Bedeutungen}}
+:[1] ''[[Modewort]], [[jugendsprachlich]], veraltet, [[berlinisch]] (vor allem Ostberlin)'': [[chic]], [[toll]], [[außerordentlich]]; positive [[Bewertung]] ausdrückend
+
+{{Herkunft}}
+:[1] von „'ne [[Schau]]“, wurde vorwiegend in den 1960er bis 1980er Jahren verwendet
+
+{{Synonyme}}
+:[1] [[dufte]], [[fetzt]], [[fetzig]], [[urst]],  [[urig]], [[irre]], [[poppig]]<!--Sinnverwandte Wörter aus der selben Zeit, nach „Zum Gebrauch einiger Berliner Wörter im Ost- und im Westteil der Stadt“, Abs. 2.5 chic, Seite 118, als Quelle unter Referenzen-->
+<!--Wenn schon Gegenwörter dann vielleicht eher Ostberliner Modewörter negativer Bewertung aus derselben Zeit wie Mist, Kacke? – keine Belege-->
+
+{{Beispiele}}
+:[1] Das Kleid ist wirklich ''schau.''
+:[1] Dein Freund ist ein ''schauer'' Typ, echt!.
+
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{en}}: [1] {{Ü|en|}}
+|Ü-rechts=
+*{{fr}}: [1] {{Ü|fr|}}
+}}
+
+{{Referenzen}}
+:[1] {{Literatur|Herausgeber= Wissenschaftlicher Rat der Dudenredaktion|Titel=Duden – Das große Wörterbuch der deutschen Sprache |Verlag= Dudenverlag|Ort= Mannheim|Jahr= 2005|ISBN= 3-411-06448-X|Kommentar= 10 Bände auf CD-ROM}}, Eintrag „schau“
+:[1] Peter Schlobinski, Helmut Schönfeld: ''Zum Gebrauch einiger Berliner Wörter im Ost- und im Westteil der Stadt''. Seite 117 f.. In: Gesellschaft für deutsche Sprache (Hrsg.): ''Muttersprache.'' 102. Jahrgang, Wiesbaden 1992, Seite 114–121
+
+=== {{Wortart|Konjugierte Form|Deutsch}} ===
+
+{{Worttrennung}}
+:schau
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ʃaʊ̯}}
+:{{Hörbeispiele}} {{Audio|De-schau.ogg}}
+:{{Reime}} {{Reim|aʊ̯|Deutsch}}
+
+{{Grammatische Merkmale}}
+*Imperativ Singular des Verbs '''[[schauen]]'''
+
+{{Grundformverweis Konj|schauen}}
+
+{{Ähnlichkeiten 1|[[ciao]], [[schab]], [[Schaf]], [[Schah]], [[Schal]], [[Scham]], [[Schar]], [[schauen]], [[Schaum]], [[Scheu]], [[schlau]], [[Schmu]], [[tschau]]}}
+

@@ -48,10 +48,8 @@ def get_contents(filename):
     """
     Read the file 'filename' and return content.
     """
-    with open(filename, encoding="UTF-8") as f:
+    with open(filename, 'rt', encoding="UTF-8") as f:
         return f.read()
-
-    return None
 
 
 def put_contents(filename, content):

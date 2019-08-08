@@ -1,0 +1,55 @@
+{{ver também|borne}}
+
+={{-en-}}=
+==Adjetivo==
+'''born'''
+# [[nato]], que [[ter|tem]] um [[dom]] ou uma [[habilidade]] [[natural]]:
+#* ''a '''born''' killer'' <small>(um assassino nato)</small>
+
+==Forma verbal==
+'''born'''
+# [[particípio passado]] do [[verbo]] '''[[bear]]''':
+#* ''I was '''born''' to love you (Queen, "I Was Born to Love You")'' <small>(nasci para te amar)</small>
+
+===Expressões===
+* '''[[born and bred]]''': nascido e criado
+* '''[[to be born yesterday]]''': nascer ontem, ser bobo
+* '''[[to be born]]''': nascer
+
+===Verbetes derivados===
+{{verTambém.Ini}}
+* [[-born]]
+* [[born-again]]
+{{verTambém.NovaColuna}}
+* [[firstborn]]
+* [[stillborn]]
+{{verTambém.Fim}}
+
+==Substantivo==
+{{flex.en|[[born]]|[[borns]]|s-div=born|p-div=borns}}
+'''born'''
+# {{escopo|Regionalismo, Norte da Inglaterra}} [[córrego]], [[curso d'água]]
+
+==Verbo==
+'''born'''
+# {{escopo|Regionalismo, Norte da Inglaterra}} [[queimar]]
+
+===Conjugação===
+{{conj.en.irreg|borns|bornt|bornt|borning}}
+
+=={{etimologia|en}}==
+'''Substantivo e verbo'''
+: Variação dialetal de {{etimo|en|burn}}.
+
+=={{pronúncia|en}}==
+* [[AFI]]: {{AFI|/ˈboː(r)n/}}, {{AFI|/bɔə(ɹ)n/}}
+* [[X-SAMPA]]: /"bo:(r)n/, /"bO@(r\)n/
+* {{áudio|En-us-born.ogg|"born" (Estados Unidos)}}
+
+[[Categoria:Adjetivo (Inglês)]]
+[[Categoria:Substantivo (Inglês)]]
+[[Categoria:Verbo (Inglês)]]
+[[Categoria:Forma verbal (Inglês)]]
+[[Categoria:Monossílabo (Inglês)]]
+[[Categoria:Regionalismo (Inglês)]]
+[[Categoria:Entrada com áudio (Inglês)]]

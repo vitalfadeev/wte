@@ -1,0 +1,59 @@
+{{desambiguación|huís}}
+
+== {{lengua|es}} ==
+{{pron-graf|fone=ˈwis|fone2=uˈis}}
+
+=== Forma verbal ===
+;1: {{forma verbo|huir|p=vos|t=presente|m=indicativo}}.
+
+;2: {{forma verbo|huir|p=vosotros|t=presente|m=indicativo}}.
+
+== {{lengua|af}} ==
+{{pron-graf|leng=af}}
+
+=== Etimología ===
+{{etimología|leng=af|nl|huis}}, y este del antiguo {{l+|odt|hus}}, a su vez del protogermánico {{l+|gem-pro|*hūsą}}, de origen incierto, quizás del protoindoeuropeo {{l+|ine|*(s)keu-}}, "[[cubrir]]". Compárese el alemán {{l+|de|Haus}}, el inglés {{l+|en|house}} o el danés, noruego y sueco {{l+|sv|hus}}
+
+=== {{sustantivo|af}} ===
+;1: {{plm|casa}}.
+
+== {{lengua|fr}} ==
+{{pron-graf|leng=fr|fono=ɥi}}
+
+=== Etimología ===
+{{etimología|leng=fr|fro|huis}}, y esta del bajo latín {{l+|la|ustium}}, del clásico {{l+|la|ostium}}, "[[entrada]]", de {{l+|la|os}}, "[[boca]]", del protoindoeuropeo {{l+|ine|*h₁éh₃(o)s}}. Compárese el italiano {{l+|it|ostio}}, {{l+|it|uscio}}, o el rumano {{l+|ro|uşă}}
+
+=== {{sustantivo masculino|fr}} ===
+{{inflect.fr.sust|huis|huis}}
+
+;1: {{plm|puerta}} [[exterior]] de una [[casa]].
+{{uso|leng=fr|desusado|o|poético}}
+{{sinónimo|leng=fr|porte}}.
+
+=== Locuciones ===
+* {{l|fr|à huis clos}}
+* {{l|fr|huis clos}}
+
+== {{lengua|fro}} ==
+{{pron-graf|leng=fro}}
+
+=== Etimología ===
+{{etimología|leng=fro|bajo latín|ustium}}, del clásico {{l+|la|ostium}}, "[[entrada]]", de {{l+|la|os}}, "[[boca]]", del protoindoeuropeo {{l+|ine|*h₁éh₃(o)s}}
+
+=== {{sustantivo masculino|fro}} ===
+{{inflect.fro.sust.inv}}
+
+;1: {{plm|puerta}} [[exterior]] de una [[casa]].
+
+== {{lengua|nl}} ==
+{{pron-graf|leng=nl|hœys|audio=Nl-huis.ogg}}
+
+=== Etimología ===
+{{etimología|leng=nl|odt|hus}}, y esta del protogermánico {{l+|gem-pro|*hūsą}}, de origen incierto, quizás del protoindoeuropeo {{l+|ine|*(s)keu-}}, "[[cubrir]]". Compárese el alemán {{l+|de|Haus}}, el inglés {{l+|en|house}} o el danés, noruego y sueco {{l+|sv|hus}}.
+
+=== {{sustantivo neutro|nl}} ===
+{{inflect.nl.sust|huis|huizen|huisje|huisjes}}
+;1 {{vivienda|leng=nl}}: {{plm|casa}}.
+
+== Referencias y notas ==
+<references />

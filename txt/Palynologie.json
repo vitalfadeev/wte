@@ -1,0 +1,59 @@
+{
+    "Palynologie": [
+        {
+            "PrimaryKey": "fr-Palynologie§Noun-BOTANIQUE-POLLEN-0-468",
+            "SelfUrl": "https://fr.wiktionary.org/wiki/Palynologie",
+            "LabelName": "Palynologie",
+            "LabelType": "Noun-BOTANIQUE-POLLEN",
+            "LanguageCode": "fr",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": "# {{botanique|fr}} Étude des [[pollen]]s.",
+            "ExplainationTxt": "Étude des pollens.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "Palynologies",
+            "PopularityOfWord": 1,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "palynology"
+            ],
+            "Translation_FR": [],
+            "Translation_DE": [
+                "Palynologie"
+            ],
+            "Translation_IT": [
+                "palinologia"
+            ],
+            "Translation_ES": [
+                "palinología"
+            ],
+            "Translation_RU": [],
+            "Translation_PT": [
+                "palinologia"
+            ]
+        }
+    ]
+}
