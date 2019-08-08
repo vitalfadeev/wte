@@ -1,0 +1,336 @@
+{{desambiguación|Amigo|amigó|amìgo}}
+
+== {{lengua|es}} ==
+{{pron-graf|aˈmi.ɣo}}
+
+=== Etimología ===
+{{etimología|osp|amigo||osp|amygo|glosa2=amigo}}, y estos del latín {{l+|la|amicus|amīcum|glosa=amigo}}.<ref name=drae/> Compárense el catalán {{l+|ca|amic}}, el francés {{l+|fr|ami}}, el italiano {{l+|it|amico}}, el judeoespañol {{l+|lad|amigo}}, el portugués {{l+|pt|amigo}} y el rumano {{l+|ro|amic}}.
+
+==== {{adjetivo|es}} ====
+{{inflect.es.adj.reg|amig|sup=amiguísimo|sup2=amicísimo}}
+
+;1: Que [[dar|da]] o [[recibir|recibe]] un [[afecto]] [[desinteresado]] ([[amistad]]), especialmente si no se basa en lazos de [[parentesco]].<ref name=drae/>
+{{uso|utcs}} y como [[vocativo]] o tratamiento afectuoso [[coloquial]], incluso en casos en que no hay amistad.
+{{wikisauro}}
+
+;2: Que [[gustar|gusta]] mucho de una cosa o tiene gran interés por ella.<ref name=drae/>
+{{uso|utcs}}.
+
+;3: {{adjetivo de sustantivo|la [[amistad]]}}.<ref name=drae>{{DRAE}}</ref>
+{{sinónimo|amistoso}}.
+
+;4: Que [[realizar|realiza]] o [[producir|produce]] un [[bien]]; [[benigno]], [[benéfico]], [[grato]].<ref name=drae/>
+{{uso|poético}}, se aplica más a cosas.<ref name=drae/>
+
+==== {{sustantivo masculino|es}} ====
+{{inflect.es.sust.reg}}
+
+;5: {{plm|hombre}} con quien se tiene trato [[sexual]] habitual sin el vínculo del matrimonio.<ref name=drae/>
+{{relacionado|amante}}.
+
+;6 {{Minería}}: {{plm|palo}} que se [[atravesar|atraviesa]] en la punta del [[tiro]] o [[cintero]] para que, montándose los operarios, bajen y suban por los [[pozo]]s.<ref name=dlc1914>{{DLC1914|62}}</ref>
+
+;7: {{plm|pene}}.{{cita requerida}}
+{{ámbito|rioplatense}}.
+{{uso|lunfardismo|coloquial}}.
+
+==== Vocativo ====
+
+;8: {{impropia|Forma cortés o afectuosa de dirigirse a alguien de quien se ignora el nombre}}.
+{{sinónimos|compadre|hermano|maestro|señor|socio|tío|cuate|camarada|maese|colega|pana|güey}}.
+
+;9: {{impropia|Forma condescendiente de tratar a alguien mientras se le señalan la realidad de un hecho o la opinión propia}}.{{cita requerida}}
+{{sinónimo|amiguito|hijo}}.
+
+{{clear}}
+
+==== Locuciones ====
+{{rel-arriba|Locuciones con ''amigo''}}
+* [[amigo de lo ajeno]]: ladrón, ratero.
+* [[falso amigo]]: palabra que se parece mucho a otra de una lengua diferente, pero con la que no tiene significado afín.
+* [[de pocos amigos]]: que no es muy sociable.
+* [[amigo del asa]] ''(desusado)'': persona con quien se tiene una amistad íntima.
+* [[amigo de pelillo]] o [[amigo de taza de vino]]: persona que finge amistad solamente por interés o conveniencia.
+* [[tan amigos como antes]] o [[tan amigos como siempre]], o [[tan amigos]]: expresiones para indicar voluntad de continuar una buena relación a pesar de alguna desavenencia.
+* [[cara de pocos amigos]]
+* [[números amigos]]
+* [[pie de amigo]]
+{{rel-abajo}}
+
+{{clear}}
+
+==== Refranes ====
+{{rel-arriba|Refranes con ''amigo''}}
+* [[a buen amigo buen abrigo]]
+* [[a casa de mi novia llevé un amigo: él se quedó adentro y yo despedido]]
+* [[a casa del amigo rico, irás siendo requerido, y a casa del necesitado, iras sin ser llamado]]
+* [[a gracias de niño y canto de pájaros, no convides a tu amigo]]
+* [[amigo reconciliado, enemigo doblado]]
+* [[a quien tiene buen vino nunca le faltan amigos]]
+* [[años de higos, años de amigos]]
+* [[amigo en la adversidad, amigo de verdad]]
+* [[amigo de la mujer, enemigo del marido]]
+* [[con amigos así para qué quiero enemigos]]
+* [[cuando hay para tequila, no hay para la amiga]]
+* [[cuentas claras, amigos viejos]]
+* [[cuídate del amigo que fue antes enemigo]]
+* [[en la cárcel y en la pobreza, se conocen los amigos]]
+* [[quien no buscó amigos en la alegría, en la desgracia no los pida]]
+* [[quien tiene un amigo, tiene un tesoro]]
+* [[nuevos amigos, nuevos dolores]]
+* [[mientras hay higos en la huerta, hay amigos en la puerta, se acabaron los higos, se acabaron los amigos]]
+* [[un amigo es un peso en el bolsillo]]
+{{rel-abajo}}
+
+{{clear}}
+
+==== Traducciones ====
+{{trad-arriba|[1] Persona con quien se tiene un vínculo de amistad}}
+{{t+|af|vriend}}
+{{t+|de|Freund|m}}, ''pl'' -e)
+{{t+|ar|صديق|tr|sadīq}}
+{{t+|an|amigo}}
+{{t+|az|dost}}
+{{t+|br|keneil}}
+{{t+|bg|приятел}}
+{{t+|ca|amic|m}} (''f'' amiga)
+{{t+|ch|ga'chong}}
+{{t+|cs|kamarád|,|m|přítel}}
+{{t+|ko|친구|tr|cin-gu}}
+{{t+|hr|prijatelj}}
+{{t+|da|ven|c}}
+{{t+|sk|priateľ|m}}
+{{t+|eo|amiko}} (''f'' amikino)
+{{t+|eu|lagun|,|adiskide}}
+{{t+|sl|prijatelj}}
+{{t+|fr|ami|,|copain}}
+{{t+|fy|freon}}
+{{t+|el|φίλος|tr|fílos}}, ''f'' φίλη (fílī)
+{{t+|got|𐍆𐍂𐌹𐌾𐍉𐌽𐌳𐍃|tr=[[frijonds]]|m}}
+{{t+|gn|irũ}}
+{{t+|en|friend}}
+{{t+|ga|cara}}
+{{trad-centro}}
+{{t+|it|amico}} (''f'' amica)
+{{t+|ja|友達|tr|tomodachi}}
+{{t+|ky|дос|tr=dos}}
+{{t+|la|amicus}}
+{{t+|lt|draugas}}
+{{t+|ln|moninga}} (''pl'' baninga)
+{{t+|zh|朋友|tr|péngyŏu}}
+{{t+|arn|1|weṉüy|,|5|aṉay}}
+{{t+|mxi|habîb}}
+{{t+|nci|icniuhtli}}
+{{t+|nhn|icniuhtli}}
+{{t+|nl|vriend|m}}
+{{t+|no|venn}}
+{{t+|pap|tersio|,|amigu}}
+{{t+|pt|amigo}}
+{{t+|quz|yanasu}}
+{{t+|ro|prieten|m|,|amic|m}}; prietenă {{f}}, amică {{f}}
+{{t+|ru|друг|tr|drug}}, ''pl'' друзья (druz'já), ''f'' подруга (podrúga)
+{{t+|sa|1-3|मित्र}}
+{{t+|sv|vän|c}}
+{{t+|sc|amigu }}
+{{t+|sw|rafiki}} (''pl'' =)
+{{t+|tl|kaibigan}}
+{{t+|ty|hoa}}
+{{t+|th|เพื่อน}} (phÎ:an)
+{{t+|tr|arkadaş|,|tomdaş|,|yoldaş}}
+{{trad-abajo}}
+
+=== Forma flexiva ===
+
+==== Forma verbal ====
+;1: {{f.v|amigar|yo|presente|indicativo|pronominal=s}}.
+
+== {{lengua|an}} ==
+{{pron-graf|leng=an}}
+
+=== Etimología ===
+{{etimología|leng=an|roa-oan|amigo|amigo}}, y este del latín {{l+|la|amicus|amīcum|glosa=amigo}}. Compárense el catalán {{l+|ca|amic}}, el español {{l+|es|amigo}}, el francés {{l+|fr|ami}}, el italiano {{l+|it|amico}} el portugués {{l+|pt|amigo}} y el rumano {{l+|ro|amic}}.
+
+=== {{sustantivo|an|masculino}} ===
+{{inflect.an.sust.reg}}
+
+;1: {{plm}}.
+
+== {{lengua|osp}} ==
+{{pron-graf|leng=osp
+|g=amygo}}
+
+=== Etimología ===
+{{etimología|leng=osp|la|amicus|alt=amīcum|amigo}}. Compárense el francés antiguo {{l+|fro|ami}}, el galaicoportugués {{l+|roa-opt|amigo}} y el provenzal antiguo {{l+|pro|amic}}.
+
+=== {{sustantivo|osp|masculino}} ===
+{{inflect.osp.sust.reg}}
+
+;1: {{plm}}.
+
+== {{lengua|fr}} ==
+{{pron-graf|a.mi.go|leng=fr}}
+
+=== Etimología ===
+{{etimología|leng=fr|es|amigo}}.
+
+=== {{sustantivo|fr|masculino}} ===
+{{inflect.fr.sust.reg}}
+
+;1: {{plm}}.
+{{uso|leng=fr|familiar}}.
+{{wikisauro|leng=fr|ami}}
+
+=== Información adicional ===
+{{anagrama|leng=fr|imago}}.
+
+== {{lengua|roa-opt}} ==
+{{pron-graf|aˈmiɡo|leng=roa-opt
+|v=amig'}}
+
+=== Etimología ===
+{{etimología|leng=roa-opt|la|amicus|alt=amīcum|amigo}}. Compárense el castellano antiguo {{l+|osp|amigo}}, el francés antiguo {{l+|fro|ami}} y el provenzal antiguo {{l+|pro|amic}}.
+
+=== {{sustantivo|roa-opt|masculino}} ===
+{{inflect.roa-opt.sust.reg}}
+
+;1: {{plm}}.
+{{antónimo|leng=roa-opt|ẽemigo}}.
+{{ejemplo|Mvito foi noſſ'''amigo''' / gabriel quando diſſe / maria deus e tigo.|apellidos=Alfonso X of Castile|título=[http://www.pbm.com/~lindahl/cantigas/facsimiles/E/383small.gif Cantigas de Santa Maria]|año=siglo XIII|idioma=galaicoportugués}}
+
+;2: {{plm|amador}}.
+{{ejemplo|Ondas do mar de uigo / ſe uiſtes meu '''amigo'''. / E ay deꝯ ſe uerra cedo.|apellidos=[https://es.wikipedia.org/wiki/Martín_Codax Martín Codax]|título=[https://upload.wikimedia.org/wikipedia/commons/1/11/Martim_Codax_Cantigas_de_Amigo.jpg Ondas do mar de Vigo]|año=siglo XIII|idioma=galaicoportugués}}
+
+== {{lengua|gl}} ==
+{{pron-graf|a.ˈmi.ɡo|leng=gl}}
+
+=== Etimología ===
+{{etimología|leng=gl|roa-opt|amigo|amigo}}, y este del latín {{l+|la|amicus|amīcum|glosa=amigo}}. Compárense el catalán {{l+|ca|amic}}, el español {{l+|es|amigo}}, el francés {{l+|fr|ami}}, el italiano {{l+|it|amico}}, el portugués {{l+|pt|amigo}} y el rumano {{l+|ro|amic}}.
+
+=== {{sustantivo|gl|masculino}} ===
+{{inflect.gl.sust.reg}}
+
+;1: {{plm}}.
+{{antónimo|leng=gl|inimigo}}.
+{{relacionado|leng=gl|amiga}}.
+
+=== {{adjetivo|gl}} ===
+{{inflect.gl.adj.reg|amig}}
+
+;2: {{plm}}.
+{{antónimo|leng=gl|inimigo}}.
+
+== {{lengua|lad}} ==
+{{pron-graf|alt=amígo|leng=lad
+|g=אמיגו}}
+
+=== Etimología ===
+{{etimología|leng=lad|osp|amigo||osp|amygo||glosa2=amigo}}, y estos del latín {{l+|la|amicus|amīcum|glosa=amigo}}. Compárense el catalán {{l+|ca|amic}}, el español {{l+|es|amigo}}, el francés {{l+|fr|ami}}, el italiano {{l+|it|amico}}, el portugués {{l+|pt|amigo}} y el rumano {{l+|ro|amic}}.
+
+=== {{sustantivo|lad|masculino}} ===
+{{inflect.lad.sust.reg}}
+
+;1: {{plm}}.
+{{relacionado|leng=lad|amiga}}.
+
+== {{lengua|roa-oan}} ==
+{{pron-graf|leng=roa-oan}}
+
+=== Etimología ===
+{{etimología|leng=roa-oan|la|amicus|alt=amīcum|amigo}}. Compárense el castellano antiguo {{l+|osp|amigo}}, el francés antiguo {{l+|fro|ami}}, el galaicoportugués {{l+|roa-opt|amigo}} y el provenzal antiguo {{l+|pro|amic}}.
+
+=== {{sustantivo|roa-oan|masculino}} ===
+{{inflect.roa-oan.sust.reg}}
+
+;1: {{plm}}.
+
+== {{lengua|pt}} ==
+{{pron-graf|ɐˈmiɡu|leng=pt
+|pron=Brasil
+|2pron=Brasil|2fone=aˈmiɡu
+|3pron=Brasil meridional|3fone=aˈmiɡo
+|4pron=Portugal|4fone=ɐˈmiɣu}}
+
+=== Etimología ===
+{{etimología|leng=pt|roa-opt|amigo|amigo}}, y este del latín {{l+|la|amicus|amīcum|glosa=amigo}}. Compárense el catalán {{l+|ca|amic}}, el español {{l+|es|amigo}}, el francés {{l+|fr|ami}}, el italiano {{l+|it|amico}} y el rumano {{l+|ro|amic}}.
+
+=== {{sustantivo|pt|masculino}} ===
+{{inflect.pt.sust.reg}}
+
+;1: {{plm|amigo}} ({{l|es|colega}}).
+{{relacionado|leng=pt|amiga}}.
+{{ejemplo|João e Maria são meus '''amigos'''.}}
+::: Juan y María son mis amigos.
+
+;2: Amigo (lo que provedece ayuda).
+{{ejemplo|Sou amigo da natureza.}}
+::: Soy '''amigo''' de la natureza.
+:: Perseverança é a melhor '''amiga''' do conhecimento.
+::: Perseveranza es la mejor amiga del conocimiento.
+
+;3: Amigo ({{l|es|estado}} {{l|es|amicable}}).
+{{ejemplo|O Canadá é '''amigo''' dos Estados Unidos.}}
+::: Canadá es amigo de los Estados Undios.
+
+=== {{adjetivo|pt}} ===
+{{inflect.pt.adj.reg|amig|sup=amiguíssimo|sup2=amicíssimo}}
+
+;4: {{plm|amigo}} ({{l|es|amigable}}).
+{{sinónimo|leng=pt|amigável}}.
+{{ejemplo|Abraço '''amigo'''.}}
+::: Abrazo amigo.
+
+;5 {{Milicia|leng=pt}}: Amigo.
+{{ejemplo|Fogo '''amigo'''!}}
+::: ¡Fuego amigo!
+
+;6: {{plm|favorable}} o {{l|es|beneficio}} (en alguna manera).
+{{sinónimo|leng=pt|benéfico|camarada}}.
+{{ejemplo|Preço '''amigo'''.}}
+::: Precio barato.
+:: Conselho '''amigo'''.
+::: Consejo ayudante.
+
+==== Forma verbal ====
+
+;7: {{f.v|leng=pt|amigar|1s|pres|ind|pron=eu}}.
+
+=== Locuciones ===
+{{rel-arriba}}
+*{{l+|pt|amigo da onça}}
+*{{l+|pt|amigo do peito}}
+*{{l+|pt|amigo oculto}}
+{{rel-centro}}
+*{{l+|pt|amigo secreto}}
+*{{l+|pt|falso amigo}}
+{{rel-abajo}}
+
+=== Información adicional ===
+{{derivad|leng=pt|amigalhão|amigamente|amigaço|amiguinho|amigão}}.
+{{anagrama|leng=pt|gomia|imago}}.
+
+== {{lengua|wa}} ==
+{{pron-graf|leng=wa}}
+
+=== Etimología ===
+{{etimología|leng=wa|es|amigo}}.
+
+=== {{sustantivo|wa|masculino}} ===
+{{inflect.wa.sust.reg}}
+
+;1: {{plm|prisión}}.
+{{sinónimo|leng=wa|cadje|gayole|piole|pote|prijhon|violon}}.
+
+== {{lengua|vec}} ==
+{{pron-graf|a.ˈmi.ɡo|leng=vec}}
+
+=== Etimología ===
+{{etimología|leng=vec|la|amicus|alt=amīcum|amigo}}. Compárense el catalán {{l+|ca|amic}}, el español {{l+|es|amigo}}, el francés {{l+|fr|ami}}, el italiano {{l+|it|amico}} el portugués {{l+|pt|amigo}} y el rumano {{l+|ro|amic}}.
+
+=== {{sustantivo|vec|masculino}} ===
+{{inflect.vec.sust.ad-lib|amigo|{{l|vec|amighi}}/{{l|vec|amisi}}}}
+
+;1: {{plm}}.
+{{relacionado|leng=vec|amiga}}.
+
+== Referencias y notas ==
+<references />

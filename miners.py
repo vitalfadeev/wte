@@ -252,21 +252,23 @@ def t_plus_cb(t):
     # first
     lang = t.arg(0)
     term = t.arg(2)
-    if term is not None:
-        yield (lang, term)
-    
+
     # delimited
     gen = t.args()
     for a in gen:
         value = a.get_value()
-        if value.strip() == ',': # block start
-            try:
-                n = next(gen).get_value()
-                term = next(gen).get_value()
-                if term is not None:
-                    yield (lang, term)
-            except StopIteration:
-                break
+
+        if value:
+            value = value.strip()
+
+            if value == ',': # block start
+                continue
+            elif len(value) > 0 and value[0].isdigit(): # 1-
+                continue
+            elif len(value) == 1: # one char
+                continue
+            else:
+                yield (lang, value)
 
 def alter_cb(t):
     lang = t.arg(0)

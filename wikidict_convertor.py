@@ -19,6 +19,7 @@ from loggers import log, log_non_english, log_no_words, log_unsupported
 
 
 MULTIPROCESSING = True
+MULTIPROCESSING = False
 WORKERS = 10  # N worker processes
 
 

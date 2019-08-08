@@ -1,0 +1,686 @@
+{
+    "amigo": [
+        {
+            "PrimaryKey": "es-amigo§Adjective_UTCS_WIKISAURO_Da_Recibe-0-168",
+            "SelfUrl": "https://es.wiktionary.org/wiki/amigo",
+            "LabelName": "amigo",
+            "LabelType": "Adjective_UTCS_WIKISAURO_Da_Recibe",
+            "LanguageCode": "es",
+            "Type": "adjective",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";1: Que [[dar|da]] o [[recibir|recibe]] un [[afecto]] [[desinteresado]] ([[amistad]]), especialmente si no se basa en lazos de [[parentesco]].<ref name=drae/>\n{{uso|utcs}} y como [[vocativo]] o tratamiento afectuoso [[coloquial]], incluso en casos en que no hay amistad.\n{{wikisauro}}",
+            "ExplainationTxt": "1 Que  da  o  recibe  un  afecto   desinteresado  ( amistad ), especialmente si no se basa en lazos de  parentesco .  \n uso  y como  vocativo  o tratamiento afectuoso  coloquial , incluso en casos en que no hay amistad.\n wikisauro",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "en",
+                "friend"
+            ],
+            "Translation_FR": [
+                "fr",
+                "ami",
+                "copain"
+            ],
+            "Translation_DE": [
+                "de",
+                "Freund"
+            ],
+            "Translation_IT": [
+                "it",
+                "amico"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "ru",
+                "друг",
+                "tr",
+                "drug"
+            ],
+            "Translation_PT": [
+                "pt",
+                "amigo"
+            ]
+        },
+        {
+            "PrimaryKey": "es-amigo§Adjective_UTCS_Gusta-1-54",
+            "SelfUrl": "https://es.wiktionary.org/wiki/amigo",
+            "LabelName": "amigo",
+            "LabelType": "Adjective_UTCS_Gusta",
+            "LanguageCode": "es",
+            "Type": "adjective",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";2: Que [[gustar|gusta]] mucho de una cosa o tiene gran interés por ella.<ref name=drae/>\n{{uso|utcs}}.",
+            "ExplainationTxt": "2 Que  gusta  mucho de una cosa o tiene gran interés por ella.  \n uso .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "en",
+                "friend"
+            ],
+            "Translation_FR": [
+                "fr",
+                "ami",
+                "copain"
+            ],
+            "Translation_DE": [
+                "de",
+                "Freund"
+            ],
+            "Translation_IT": [
+                "it",
+                "amico"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "ru",
+                "друг",
+                "tr",
+                "drug"
+            ],
+            "Translation_PT": [
+                "pt",
+                "amigo"
+            ]
+        },
+        {
+            "PrimaryKey": "es-amigo§Adjective_SUSTANTIVO_DRAE_SINÓNIMO_Amistad-2-113",
+            "SelfUrl": "https://es.wiktionary.org/wiki/amigo",
+            "LabelName": "amigo",
+            "LabelType": "Adjective_SUSTANTIVO_DRAE_SINÓNIMO_Amistad",
+            "LanguageCode": "es",
+            "Type": "adjective",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";3: {{adjetivo de sustantivo|la [[amistad]]}}.<ref name=drae>{{DRAE}}</ref>\n{{sinónimo|amistoso}}.",
+            "ExplainationTxt": "3  adjetivo de sustantivo . drae \n sinónimo .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "amistoso"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "en",
+                "friend"
+            ],
+            "Translation_FR": [
+                "fr",
+                "ami",
+                "copain"
+            ],
+            "Translation_DE": [
+                "de",
+                "Freund"
+            ],
+            "Translation_IT": [
+                "it",
+                "amico"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "ru",
+                "друг",
+                "tr",
+                "drug"
+            ],
+            "Translation_PT": [
+                "pt",
+                "amigo"
+            ]
+        },
+        {
+            "PrimaryKey": "es-amigo§Adjective_POÉTICO_Realiza_Produce_Bien-3-427",
+            "SelfUrl": "https://es.wiktionary.org/wiki/amigo",
+            "LabelName": "amigo",
+            "LabelType": "Adjective_POÉTICO_Realiza_Produce_Bien",
+            "LanguageCode": "es",
+            "Type": "adjective",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";4: Que [[realizar|realiza]] o [[producir|produce]] un [[bien]]; [[benigno]], [[benéfico]], [[grato]].<ref name=drae/>\n{{uso|poético}}, se aplica más a cosas.<ref name=drae/>",
+            "ExplainationTxt": "4 Que  realiza  o  produce  un  bien ;  benigno ,  benéfico ,  grato .  \n uso , se aplica más a cosas.",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "en",
+                "friend"
+            ],
+            "Translation_FR": [
+                "fr",
+                "ami",
+                "copain"
+            ],
+            "Translation_DE": [
+                "de",
+                "Freund"
+            ],
+            "Translation_IT": [
+                "it",
+                "amico"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "ru",
+                "друг",
+                "tr",
+                "drug"
+            ],
+            "Translation_PT": [
+                "pt",
+                "amigo"
+            ]
+        },
+        {
+            "PrimaryKey": "es-amigo§Noun_HOMBRE_RELACIONADO_Sexual-4-714",
+            "SelfUrl": "https://es.wiktionary.org/wiki/amigo",
+            "LabelName": "amigo",
+            "LabelType": "Noun_HOMBRE_RELACIONADO_Sexual",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";5: {{plm|hombre}} con quien se tiene trato [[sexual]] habitual sin el vínculo del matrimonio.<ref name=drae/>\n{{relacionado|amante}}.",
+            "ExplainationTxt": "5  plm  con quien se tiene trato  sexual  habitual sin el vínculo del matrimonio.  \n relacionado .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "amigos",
+            "PopularityOfWord": 2,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [
+                "amante"
+            ],
+            "Coordinate": [],
+            "Translation_EN": [
+                "en",
+                "friend"
+            ],
+            "Translation_FR": [
+                "fr",
+                "ami",
+                "copain"
+            ],
+            "Translation_DE": [
+                "de",
+                "Freund"
+            ],
+            "Translation_IT": [
+                "it",
+                "amico"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "ru",
+                "друг",
+                "tr",
+                "drug"
+            ],
+            "Translation_PT": [
+                "pt",
+                "amigo"
+            ]
+        },
+        {
+            "PrimaryKey": "es-amigo§Noun_MINERÍA_PALO_DLC1914_Atraviesa-5-474",
+            "SelfUrl": "https://es.wiktionary.org/wiki/amigo",
+            "LabelName": "amigo",
+            "LabelType": "Noun_MINERÍA_PALO_DLC1914_Atraviesa",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";6 {{Minería}}: {{plm|palo}} que se [[atravesar|atraviesa]] en la punta del [[tiro]] o [[cintero]] para que, montándose los operarios, bajen y suban por los [[pozo]]s.<ref name=dlc1914>{{DLC1914|62}}</ref>",
+            "ExplainationTxt": "6  minería  plm  que se  atraviesa  en la punta del  tiro  o  cintero  para que, montándose los operarios, bajen y suban por los  pozo s. dlc1914",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "amigos",
+            "PopularityOfWord": 1,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "en",
+                "friend"
+            ],
+            "Translation_FR": [
+                "fr",
+                "ami",
+                "copain"
+            ],
+            "Translation_DE": [
+                "de",
+                "Freund"
+            ],
+            "Translation_IT": [
+                "it",
+                "amico"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "ru",
+                "друг",
+                "tr",
+                "drug"
+            ],
+            "Translation_PT": [
+                "pt",
+                "amigo"
+            ]
+        },
+        {
+            "PrimaryKey": "es-amigo§Noun_PENE_REQUERIDA_RIOPLATENSE_LUNFARDISMO-6-609",
+            "SelfUrl": "https://es.wiktionary.org/wiki/amigo",
+            "LabelName": "amigo",
+            "LabelType": "Noun_PENE_REQUERIDA_RIOPLATENSE_LUNFARDISMO",
+            "LanguageCode": "es",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";7: {{plm|pene}}.{{cita requerida}}\n{{ámbito|rioplatense}}.\n{{uso|lunfardismo|coloquial}}.",
+            "ExplainationTxt": "7  plm . cita requerida \n ámbito .\n coloquial .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": true,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": true,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": "amigos",
+            "PopularityOfWord": 1,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "en",
+                "friend"
+            ],
+            "Translation_FR": [
+                "fr",
+                "ami",
+                "copain"
+            ],
+            "Translation_DE": [
+                "de",
+                "Freund"
+            ],
+            "Translation_IT": [
+                "it",
+                "amico"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "ru",
+                "друг",
+                "tr",
+                "drug"
+            ],
+            "Translation_PT": [
+                "pt",
+                "amigo"
+            ]
+        },
+        {
+            "PrimaryKey": "es-amigo§Vocativo_AFECTUOSA_SINÓNIMOS-7-626",
+            "SelfUrl": "https://es.wiktionary.org/wiki/amigo",
+            "LabelName": "amigo",
+            "LabelType": "Vocativo_AFECTUOSA_SINÓNIMOS",
+            "LanguageCode": "es",
+            "Type": "vocativo",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";8: {{impropia|Forma cortés o afectuosa de dirigirse a alguien de quien se ignora el nombre}}.\n{{sinónimos|compadre|hermano|maestro|señor|socio|tío|cuate|camarada|maese|colega|pana|güey}}.",
+            "ExplainationTxt": "8  impropia .\n hermano .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "compadre",
+                "hermano",
+                "maestro",
+                "señor",
+                "socio",
+                "tío",
+                "cuate",
+                "camarada",
+                "maese",
+                "colega",
+                "pana",
+                "güey"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "en",
+                "friend"
+            ],
+            "Translation_FR": [
+                "fr",
+                "ami",
+                "copain"
+            ],
+            "Translation_DE": [
+                "de",
+                "Freund"
+            ],
+            "Translation_IT": [
+                "it",
+                "amico"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "ru",
+                "друг",
+                "tr",
+                "drug"
+            ],
+            "Translation_PT": [
+                "pt",
+                "amigo"
+            ]
+        },
+        {
+            "PrimaryKey": "es-amigo§Vocativo_CONDESCENDIENTE_REQUERIDA_SINÓNIMO-8-749",
+            "SelfUrl": "https://es.wiktionary.org/wiki/amigo",
+            "LabelName": "amigo",
+            "LabelType": "Vocativo_CONDESCENDIENTE_REQUERIDA_SINÓNIMO",
+            "LanguageCode": "es",
+            "Type": "vocativo",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";9: {{impropia|Forma condescendiente de tratar a alguien mientras se le señalan la realidad de un hecho o la opinión propia}}.{{cita requerida}}\n{{sinónimo|amiguito|hijo}}.",
+            "ExplainationTxt": "9  impropia . cita requerida \n hijo .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "amiguito",
+                "hijo"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "en",
+                "friend"
+            ],
+            "Translation_FR": [
+                "fr",
+                "ami",
+                "copain"
+            ],
+            "Translation_DE": [
+                "de",
+                "Freund"
+            ],
+            "Translation_IT": [
+                "it",
+                "amico"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "ru",
+                "друг",
+                "tr",
+                "drug"
+            ],
+            "Translation_PT": [
+                "pt",
+                "amigo"
+            ]
+        },
+        {
+            "PrimaryKey": "es-amigo§Verb_INDICATIVO-9-113",
+            "SelfUrl": "https://es.wiktionary.org/wiki/amigo",
+            "LabelName": "amigo",
+            "LabelType": "Verb_INDICATIVO",
+            "LanguageCode": "es",
+            "Type": "verb",
+            "TypeLabelName": "",
+            "ExplainationRaw": ";1: {{f.v|amigar|yo|presente|indicativo|pronominal=s}}.",
+            "ExplainationTxt": "1  yo .",
+            "ExplainationExamplesRaw": null,
+            "ExplainationExamplesTxt": null,
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 1,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [
+                "amigar"
+            ],
+            "Synonymy": [],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "en",
+                "friend"
+            ],
+            "Translation_FR": [
+                "fr",
+                "ami",
+                "copain"
+            ],
+            "Translation_DE": [
+                "de",
+                "Freund"
+            ],
+            "Translation_IT": [
+                "it",
+                "amico"
+            ],
+            "Translation_ES": [],
+            "Translation_RU": [
+                "ru",
+                "друг",
+                "tr",
+                "drug"
+            ],
+            "Translation_PT": [
+                "pt",
+                "amigo"
+            ]
+        }
+    ]
+}
