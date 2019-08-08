@@ -8,6 +8,13 @@ from copy import deepcopy
 _cache = {}
 
 
+def clean_surrogates(s):
+    if isinstance(s, str):
+        return s.encode('utf-16', 'surrogatepass').decode('utf-16')
+    else:
+        return s
+
+
 class DBClass:
     DB_NAME = ""
     DB_TABLE_NAME = ""
@@ -258,7 +265,7 @@ class DBClass:
                     value = json.dumps(value, sort_keys=False, ensure_ascii=False, indent=None)
                 
                 fields.append(name)
-                values.append(value)
+                values.append(clean_surrogates(value))
                 placeholders.append("?")
 
         # insert
@@ -276,6 +283,7 @@ class DBClass:
             
         try:
             c.execute(sql, values)
+
         except sqlite3.IntegrityError as e:
             for field in self.DB_PRIMARY:
                 print(field.ljust(30), ":", getattr(self, field))

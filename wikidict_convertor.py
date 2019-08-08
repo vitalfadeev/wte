@@ -360,9 +360,18 @@ def dumpdata(data, level=0):
             dumpdata(d, level)
 
 
-def DumpReader(lang, local_file):
+def DumpReader(lang, local_file, from_point=None):
     with bz2.open(local_file, "rb") as fin:
-        for i, data in enumerate(ijson.items(fin, "item")):
+        reader = enumerate(ijson.items(fin, "item"))
+
+        if from_point:
+            for i, data in reader:
+                if data and isinstance(data, dict) and data.get('id', None) == from_point:
+                    break
+                else:
+                    continue
+
+        for i, data in reader:
             yield (lang, i, data)
 
 
@@ -406,7 +415,7 @@ def process_one(lang, i, data):
         pass
 
 
-def run(outfile, lang="en"):
+def run(outfile, lang="en", from_point=None):
     log_wikidata.info("downloading...")
     local_file = download()
     log_wikidata.info("downloaded.")
@@ -414,12 +423,12 @@ def run(outfile, lang="en"):
     log_wikidata.info("parsing...")
     if MULTIPROCESSING:
         pool = multiprocessing.Pool(WORKERS)
-        pool.imap(process_one_mp, DumpReader(lang, local_file))
+        pool.imap(process_one_mp, DumpReader(lang, local_file, from_point))
         pool.close()
         pool.join()
 
     else:
-        for (lang, i, data) in DumpReader(lang, local_file):
+        for (lang, i, data) in DumpReader(lang, local_file, from_point):
             process_one(lang, i, data)
 
 

@@ -11,9 +11,9 @@ def test_wiktionary(lang):
     wiktionary_parser(lang=lang, limit=0, is_save_txt=False, is_save_json=False, is_save_templates=False)
 
 
-def test_wikidict(lang):
+def test_wikidict(lang, from_point=None):
     from wikidict_convertor import run as wikidict_parser
-    wikidict_parser("./wikidict-out.json", lang)
+    wikidict_parser("./wikidict-out.json", lang, from_point)
 
 
 def test_merger():
@@ -22,8 +22,8 @@ def test_merger():
 
 
 #test_one("es", "amigo")
-#test_wikidict("en")
-test_wiktionary("en")
+test_wikidict("en", "Q177")
+#test_wiktionary("en")
 #test_merger()
 exit(9)
 
