@@ -359,11 +359,20 @@ class Link(Container):
         args = [c for c in self.childs if isinstance(c, Arg)]
 
         if len(args) == 1:
-            return text
+            return self.split_location(text)
         if len(args) > 1:
-            return args[1].get_text()
+            return self.split_location( args[1].get_text() )
 
-        return text
+        return self.split_location(text)
+
+
+    def split_location(self, s):
+        if s:
+            for a in reversed(s.split(":")):
+                for b in reversed(a.split("/")):
+                    return b
+        else:
+            return s
 
     def __repr__(self):
         return "Link()"
@@ -1424,7 +1433,7 @@ def read_link(text, spos):
 
 assert repr(read_link("[[ ]]", 0)) == "(5, Link())"
 assert read_link("[[ http://wikipedia.org/wiki/cat ]]", 0)[0] == len("[[ http://wikipedia.org/wiki/cat ]]")
-assert read_link("[[ http://wikipedia.org/wiki/cat ]]", 0)[1].get_text() == " http://wikipedia.org/wiki/cat "
+assert read_link("[[ http://wikipedia.org/wiki/cat ]]", 0)[1].get_text() == "cat "
 assert read_link("[[ http://wikipedia.org/wiki/cat | abc ]]", 0)[1].get_text() == " abc "
 
 try: read_html("<font size=4%></font size>", 0)

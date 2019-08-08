@@ -1,0 +1,70 @@
+{
+    "frankreich": [
+        {
+            "PrimaryKey": "de-frankreich§Noun_Westeuropa_land-0-376",
+            "SelfUrl": "https://de.wiktionary.org/wiki/frankreich",
+            "LabelName": "frankreich",
+            "LabelType": "Noun_Westeuropa_land",
+            "LanguageCode": "de",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ":[1] Land in [[Westeuropa]]",
+            "ExplainationTxt": "Land in Westeuropa",
+            "ExplainationExamplesRaw": ":[1] ''Frankreichs'' Geschichte ist wechselhaft.",
+            "ExplainationExamplesTxt": "[1] ''Frankreichs'' Geschichte ist wechselhaft.",
+            "IsMale": null,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": null,
+            "PluralVariant": null,
+            "PopularityOfWord": 241,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "Französische Republik",
+                "Frankreich"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [
+                "Land",
+                "Staat"
+            ],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [
+                "Reich",
+                "Franke"
+            ],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "France"
+            ],
+            "Translation_FR": [
+                "France"
+            ],
+            "Translation_DE": [],
+            "Translation_IT": [
+                "Francia"
+            ],
+            "Translation_ES": [
+                "Francia"
+            ],
+            "Translation_RU": [
+                "Франция"
+            ],
+            "Translation_PT": [
+                "França"
+            ]
+        }
+    ]
+}

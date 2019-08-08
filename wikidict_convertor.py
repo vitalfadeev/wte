@@ -5,10 +5,7 @@ import os
 import bz2
 import multiprocessing
 
-try:
-    import ijson.backends.yajl2_cffi as ijson
-except:
-    import ijson.backends.yajl2 as ijson
+import ijson
 import pywikibot
 import downloader
 from pywikibot import Claim

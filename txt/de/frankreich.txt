@@ -1,0 +1,183 @@
+=== {{Wortart|Substantiv|Deutsch}}, {{n}}, {{Wortart|Toponym|Deutsch}} ===
+
+{{Deutsch Toponym Übersicht
+|Bild 1=Flag of France.svg|mini|1|Nationalflagge ''Frankreichs'' - „Tricolore“
+|Bild 2=LocationFrance.png|mini|1|Lage ''Frankreichs'' in Europa}}
+
+{{Worttrennung}}
+:Frank·reich, {{kPl.}}
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ˈfʁaŋkʁaɪ̯ç}}
+:{{Hörbeispiele}} {{Audio|De-Frankreich.ogg}}
+
+{{Bedeutungen}}
+:[1] Land in [[Westeuropa]]
+
+{{Abkürzungen}}
+:[1] [[F]], [[FR]], [[Fr.]], [[FRA]], [[Frankr.]], [[Frkr.]], [[Frk.]]
+
+{{Herkunft}}
+:[[Reich]] der [[Franke]]n{{QS Herkunft|unbelegt}}
+
+{{Synonyme}}
+:[1] {{K|amtlich}} [[Französische Republik]]; ''siehe auch:'' [[Verzeichnis:Deutsch/Frankreich]]
+
+{{Oberbegriffe}}
+:[1] [[Land]], [[Staat]]
+
+{{Teilbegriffe}}
+:[1] [[Mittelfrankreich]], [[Nordfrankreich]], [[Ostfrankreich]], [[Südfrankreich]], [[Westfrankreich]], [[Zentralfrankreich]]
+
+{{Beispiele}}
+:[1] ''Frankreichs'' Geschichte ist wechselhaft.
+:[1] Paris ist die Hauptstadt von ''Frankreich.''
+:[1] Das mittelalterliche ''Frankreich'' kann man noch in Toulouse entdecken.
+:[1] „In Kontinentaleuropa und besonders in ''Frankreich'' betrachtet man die ersten Nachkriegsjahrzehnte, die von starken staatlichen Eingriffen geprägt waren, als eine segensreiche Zeit des Wachstums […].“<ref>{{Literatur | Autor=Thomas Piketty | Titel=Das Kapital im 21. Jahrhundert | Verlag=C.H. Beck Verlag | Ort=München | Jahr=2014 | ISBN=978406671319 | Seiten=137. }}</ref>
+:[1] „In ''Frankreich'' bin ich ein wenig fremd.“<ref>{{Literatur | Autor= Pascale Hugues | Titel= Deutschland à la française |TitelErg= | Auflage=  |Verlag= Rowohlt| Ort= Reinbek| Jahr= 2017 | ISBN=978-3-498-03032-2 | Seiten=7.}} Französisches Original 2017.</ref>
+
+{{Redewendungen}}
+:''[[leben wie Gott in Frankreich]]'' - es sich gut gehen lassen
+
+{{Wortbildungen}}
+:[[Frankreichaufenthalt]], [[Frankreichbesuch]], [[Frankreichfeldzug]], [[Frankreichreise]], [[Frankreichrundfahrt]], [[Neufrankreich]]
+
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{af}}: [1] {{Ü|af|Frankryk}}
+*{{sq}}: [1] {{Ü|sq|Francë}}
+*{{ar}}: [1] {{Üt|ar|فرنسا|Faransā}}
+*{{an}}: [1] {{Ü|an|Franzia}}
+*{{ast}}: [1] {{Ü|ast|Francia}}
+*{{ay}}: [1] {{Ü|ay|Phransiya}}
+*{{ba}}: [1] {{Üt|ba|Франция|Frantsiya}}
+*{{eu}}: [1] {{Ü|eu|Frantzia}}
+*{{bs}}: [1] {{Ü|bs|Francuska}} {{f}}
+*{{br}}: [1] {{Ü|br|Bro-C'hall}}
+*{{bg}}: [1] {{Üt|bg|Франция|Francija}}
+*{{zh}}:
+**{{zh-tw}}: [1] {{Üt|zh|法國|Fǎguó}}
+**{{zh-cn}}: [1] {{Üt|zh|法国|Fǎguó}}
+**{{nan}}: [1] {{Ü|nan|Hoat-kok}}
+*{{da}}: [1] {{Ü|da|Frankrig}}
+*{{en}}: [1] {{Ü|en|France}}
+**{{ang}}: [1] {{Ü|ang|Francland}}
+*{{eo}}: [1] {{Ü|eo|Francio}}, {{Ü|eo|Francujo}}
+*{{et}}: [1] {{Ü|et|Prantsusmaa}}
+*{{fo}}: [1] {{Ü|fo|Frankaríki}}
+*{{fi}}: [1] {{Ü|fi|Ranska}}
+*{{fr}}: [1] {{Ü|fr|France}}
+*{{fur}}: [1] {{Ü|fur|France}}
+*{{gl}}: [1] {{Ü|gl|Francia}}
+*{{ka}}: [1] {{Üt|ka|საფრანგეთი|saprangeti}}
+*{{el}}: [1] {{Üt|el|Γαλλία|Gallía}}
+*{{kl}}: [1] {{Ü|kl|Franskit Nunaat}}
+*{{gn}}: [1] {{Ü|gn|Hyãsia}}
+*{{gu}}: [1] {{Üt|gu|ફ્રાઁસ|Phrāṁs}}
+*{{ht}}: [1] {{Ü|ht|Frans}}
+*{{he}}: [1] {{Üt|he|צרפת|}}
+*{{hi}}: [1] {{Üt|hi|फ़्राँस|Frāṁs}}
+*{{io}}: [1] {{Ü|io|Francia}}
+*{{id}}: [1] {{Ü|id|Perancis}}
+*{{ia}}: [1] {{Ü|ia|Francia}}
+*{{ga}}: [1] {{Ü|ga|An Fhrainc}}
+*{{is}}: [1] {{Ü|is|Frakkland}}
+*{{it}}: [1] {{Ü|it|Francia}}
+*{{sah}}: [1] {{Üt|sah|Франция|Frantsiya}}
+*{{ja}}: [1] {{Üt|ja|フランス|Furansu}}
+*{{yi}}: [1] {{Üt|yi|פֿראַנקרײַך|Frankrjak}}
+*{{kn}}: [1] {{Üt|kn|ಪ್ರಾಂಸ್|Prāṁs}}
+*{{csb}}: [1] {{Ü|csb|Francëjô}}
+*{{ks}}: [1] {{Üt|ks|फ्रांस|Phrāṁs}}
+*{{ca}}: [1] {{Ü|ca|França}}
+*{{kv}}: [1] {{Üt|kv|Франция|Francija}}
+*{{ko}}: [1] {{Üt|ko|프랑스|Peurangseu}}
+*{{kw}}: [1] {{Ü|kw|Pow Frynk}}
+*{{co}}: [1] {{Ü|co|Francia}}
+*{{hr}}: [1] {{Ü|hr|Francuska}}
+*{{lld}}: [1] {{Ü|lld|Franzia}}
+*{{lo}}: [1] {{Üt|lo|ປະເທດຝະລັ່ງ|pathét-falang}}
+*{{la}}: [1] {{Ü|la|Francia}}, {{Ü|la|Francogallia}}
+*{{lv}}: [1] {{Ü|lv|Francija}}
+*{{lt}}: [1] {{Ü|lt|Prancūzija}}
+|Ü-rechts=
+*{{lb}}: [1] {{Ü|lb|Frankräich}}
+*{{mg}}: [1] {{Ü|mg|Frantsa}}
+*{{ms}}: [1] {{Ü|ms|Perancis}}
+*{{mt}}: [1] {{Ü|mt|Franza}} {{f}}
+*{{gv}}: [1] {{Ü|gv|yn Rank}}
+*{{mi}}: [1] {{Ü|mi|Wiiwii}}
+*{{mk}}: [1] {{Üt|mk|Франција|Francija}}
+*{{mn}}: [1] {{Üt|mn|Франц улс|Franz uls}}
+*{{na}}: [1] {{Ü|na|France}}
+*{{nds}}: [1] {{Ü|nds|Frankriek}}
+*{{nl}}: [1] {{Ü|nl|Frankrijk}}
+*{{se}}: [1] {{Ü|se|Frankriika}}
+*{{no}}: [1] {{Ü|no|Frankrike}}
+*{{oc}}: [1] {{Ü|oc|França}}
+*{{os}}: [1] {{Üt|os|Франц|Franc}}
+*{{pap}}: [1] {{Ü|pap|Fransia}}
+*{{fa}}: [1] {{Üt|fa|فرانسه|Frānse}}
+*{{pl}}: [1] {{Ü|pl|Francja}} {{f}}
+*{{pt}}: [1] {{Ü|pt|França}}
+*{{rm}}: [1] {{Ü|rm|Frantscha}}
+*{{ro}}: [1] {{Ü|ro|Franța}}
+*{{ru}}: [1] {{Üt|ru|Франция|Francija}} {{f}}
+*{{sa}}: [1] {{Üt|sa|फ्रांस|Phrāṁsa}}
+*{{sc}}: [1] {{Ü|sc|Frantza}}
+*{{gd}}: [1] {{Ü|gd|An Fhraing}}
+*{{sv}}: [1] {{Ü|sv|Frankrike}}
+*{{sr}}: [1] {{Üt|sr|Француска|Francuska}}
+*{{st}}: [1] {{Ü|st|France}}
+*{{scn}}: [1] {{Ü|scn|Francia}}
+*{{sk}}: [1] {{Ü|sk|Francúzsko}}
+*{{sl}}: [1] {{Ü|sl|Francija}}
+*{{wen}}:
+**{{dsb}}: [1] {{Ü|dsb|Francojska}}
+**{{hsb}}: [1] {{Ü|hsb|Francoska}}
+*{{es}}: [1] {{Ü|es|Francia}}
+*{{sw}}: [1] {{Ü|sw|Ufaransa}}
+*{{tl}}: [1] {{Ü|tl|Pransya}}
+*{{ta}}: [1] {{Üt|ta|பிரான்ஸ்|Pirāṉs}}
+*{{tt}}: [1] {{Üt|tt|Франция|Frantsiya}}
+*{{th}}: [1] {{Üt|th|ประเทศฝรั่งเศส|}}
+*{{tpi}}: [1] {{Ü|tpi|Pranis}}, {{Ü|tpi|Franis}}, {{Ü|tpi|Frans}}, {{Ü|tpi|Prans}}
+*{{cs}}: [1] {{Ü|cs|Francie}}
+*{{ce}}: [1] {{Üt|ce|Франци|Franci}}
+*{{cv}}: [1] {{Üt|cv|Франци|Frantsi}}
+*{{tyv}}: [1] {{Üt|tyv|Франция|Francïya}}
+*{{tr}}: [1] {{Ü|tr|Fransa}}
+*{{uk}}: [1] {{Üt|uk|Франція|Francija}} {{f}}
+*{{hu}}: [1] {{Ü|hu|Franciaország}}
+*{{ur}}: [1] {{Üt|ur|فرانس|Frāns}}
+*{{vi}}: [1] {{Ü|vi|Pháp}}
+*{{vo}}: [1] {{Ü|vo|Fransän}}, {{Ü|vo|Flentän}}
+*{{vro}}: [1] {{Ü|vro|Prantsusmaa}}
+*{{cy}}: [1] {{Ü|cy|Ffrainc}} {{f}}
+*{{wa}}: [1] {{Ü|wa|France}}
+*{{be}}: [1] {{Üt|be|Францыя|Francyja}}
+*{{fy}}: [1] {{Ü|fy|Frankryk}}
+|Dialekttabelle=
+*Alemannisch
+*Elsässisch: [1] {{Ü|als|Frankriich}}
+*Schweizerdeutsch: Frankrych
+|D-rechts=
+*Fränkisch
+*{{lb}}: [1] {{Ü|lb|Frankräich}}
+}}
+
+{{Referenzen}}
+:[1] {{Wikipedia|Frankreich}}
+:[1] {{Ref-Goethe|Frankreich}}
+:[1] {{Ref-Grimm|Frankreich}}
+:[1] {{Ref-DWDS|Frankreich}}
+:[1] {{Ref-Canoo|Frankreich}}
+:[1] {{Ref-UniLeipzig|Frankreich}}
+:[1] {{Ref-Duden|Frankreich}}
+:[1] {{Ref-Länderverzeichnis|35}}.
+
+{{Quellen}}
+
+{{Staaten Europa (Deutsch)}}
+
+{{Ähnlichkeiten 1|[[Frankenreich]]}}

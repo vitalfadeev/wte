@@ -51,6 +51,10 @@ SECTION_NAME_TEMPLATES.update({ # {{-nome-}} -> nome
     '-it-'    : lambda t: "-it-",
 })
 
+SECTION_LEVELS = {s:3 for s in [
+    '-sin-', '-ant-', '-iperon-', '-hyph-', '-ipon-', '-meron-', '-holon-', '-tropon-', '-alter-', '-rel-', '-trad-', '-trad1-', '-trad2-',
+]}
+
 
 def is_lang_template(t):
     pass

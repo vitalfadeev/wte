@@ -1,7 +1,7 @@
 {
     "gatto": [
         {
-            "PrimaryKey": "it-gatto§Noun_ZOOLOGIA_MAMMALOGIA_SILVESTRIS_Piccolo-0-748",
+            "PrimaryKey": "it-gatto§Noun_ZOOLOGIA_MAMMALOGIA_SILVESTRIS_Piccolo-0-252",
             "SelfUrl": "https://it.wiktionary.org/wiki/gatto",
             "LabelName": "gatto",
             "LabelType": "Noun_ZOOLOGIA_MAMMALOGIA_SILVESTRIS_Piccolo",
@@ -19,34 +19,78 @@
             "IsPlural": null,
             "SingleVariant": "gatto",
             "PluralVariant": "gatti",
-            "PopularityOfWord": 0,
+            "PopularityOfWord": 11,
             "MaleVariant": "gatto",
             "FemaleVariant": "gatta",
             "IsVerbPast": null,
             "IsVerbPresent": null,
             "IsVerbFutur": null,
             "Conjugation": [],
-            "Synonymy": [],
+            "Synonymy": [
+                "micio",
+                "felino"
+            ],
             "Antonymy": [],
-            "Hypernymy": [],
+            "Hypernymy": [
+                "animale",
+                "metazoo",
+                "cordato",
+                "vertebrato",
+                "omeotermo",
+                "omotermo",
+                "mammifero",
+                "carnivoro",
+                "felide",
+                "felino"
+            ],
             "Hyponymy": [],
             "Meronymy": [],
             "Holonymy": [],
             "Troponymy": [],
             "Otherwise": [],
-            "AlternativeFormsOther": [],
-            "RelatedTerms": [],
+            "AlternativeFormsOther": [
+                "gattino",
+                "gattone",
+                "gattaccio",
+                "gattuccio"
+            ],
+            "RelatedTerms": [
+                "tigre",
+                "leopardo",
+                "gattopardo",
+                "lince",
+                "giaguaro",
+                "leone",
+                "ozelot",
+                "puma",
+                "ghepardo",
+                "pantera"
+            ],
             "Coordinate": [],
-            "Translation_EN": [],
-            "Translation_FR": [],
-            "Translation_DE": [],
+            "Translation_EN": [
+                "cat"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater"
+            ],
             "Translation_IT": [],
-            "Translation_ES": [],
-            "Translation_RU": [],
-            "Translation_PT": []
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот",
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato"
+            ]
         },
         {
-            "PrimaryKey": "it-gatto§Noun_FIG_Persona_Agilissima-1-745",
+            "PrimaryKey": "it-gatto§Noun_FIG_Persona_Agilissima-1-189",
             "SelfUrl": "https://it.wiktionary.org/wiki/gatto",
             "LabelName": "gatto",
             "LabelType": "Noun_FIG_Persona_Agilissima",
@@ -64,34 +108,78 @@
             "IsPlural": null,
             "SingleVariant": "gatto",
             "PluralVariant": "gatti",
-            "PopularityOfWord": 155,
+            "PopularityOfWord": 166,
             "MaleVariant": "gatto",
             "FemaleVariant": "gatta",
             "IsVerbPast": null,
             "IsVerbPresent": null,
             "IsVerbFutur": null,
             "Conjugation": [],
-            "Synonymy": [],
+            "Synonymy": [
+                "micio",
+                "felino"
+            ],
             "Antonymy": [],
-            "Hypernymy": [],
+            "Hypernymy": [
+                "animale",
+                "metazoo",
+                "cordato",
+                "vertebrato",
+                "omeotermo",
+                "omotermo",
+                "mammifero",
+                "carnivoro",
+                "felide",
+                "felino"
+            ],
             "Hyponymy": [],
             "Meronymy": [],
             "Holonymy": [],
             "Troponymy": [],
             "Otherwise": [],
-            "AlternativeFormsOther": [],
-            "RelatedTerms": [],
+            "AlternativeFormsOther": [
+                "gattino",
+                "gattone",
+                "gattaccio",
+                "gattuccio"
+            ],
+            "RelatedTerms": [
+                "tigre",
+                "leopardo",
+                "gattopardo",
+                "lince",
+                "giaguaro",
+                "leone",
+                "ozelot",
+                "puma",
+                "ghepardo",
+                "pantera"
+            ],
             "Coordinate": [],
-            "Translation_EN": [],
-            "Translation_FR": [],
-            "Translation_DE": [],
+            "Translation_EN": [
+                "cat"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater"
+            ],
             "Translation_IT": [],
-            "Translation_ES": [],
-            "Translation_RU": [],
-            "Translation_PT": []
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот",
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato"
+            ]
         },
         {
-            "PrimaryKey": "it-gatto§Noun_FIG_Persona_Molto_Dolce-2-237",
+            "PrimaryKey": "it-gatto§Noun_FIG_Persona_Molto_Dolce-2-457",
             "SelfUrl": "https://it.wiktionary.org/wiki/gatto",
             "LabelName": "gatto",
             "LabelType": "Noun_FIG_Persona_Molto_Dolce",
@@ -109,34 +197,78 @@
             "IsPlural": null,
             "SingleVariant": "gatto",
             "PluralVariant": "gatti",
-            "PopularityOfWord": 0,
+            "PopularityOfWord": 11,
             "MaleVariant": "gatto",
             "FemaleVariant": "gatta",
             "IsVerbPast": null,
             "IsVerbPresent": null,
             "IsVerbFutur": null,
             "Conjugation": [],
-            "Synonymy": [],
+            "Synonymy": [
+                "micio",
+                "felino"
+            ],
             "Antonymy": [],
-            "Hypernymy": [],
+            "Hypernymy": [
+                "animale",
+                "metazoo",
+                "cordato",
+                "vertebrato",
+                "omeotermo",
+                "omotermo",
+                "mammifero",
+                "carnivoro",
+                "felide",
+                "felino"
+            ],
             "Hyponymy": [],
             "Meronymy": [],
             "Holonymy": [],
             "Troponymy": [],
             "Otherwise": [],
-            "AlternativeFormsOther": [],
-            "RelatedTerms": [],
+            "AlternativeFormsOther": [
+                "gattino",
+                "gattone",
+                "gattaccio",
+                "gattuccio"
+            ],
+            "RelatedTerms": [
+                "tigre",
+                "leopardo",
+                "gattopardo",
+                "lince",
+                "giaguaro",
+                "leone",
+                "ozelot",
+                "puma",
+                "ghepardo",
+                "pantera"
+            ],
             "Coordinate": [],
-            "Translation_EN": [],
-            "Translation_FR": [],
-            "Translation_DE": [],
+            "Translation_EN": [
+                "cat"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater"
+            ],
             "Translation_IT": [],
-            "Translation_ES": [],
-            "Translation_RU": [],
-            "Translation_PT": []
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот",
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato"
+            ]
         },
         {
-            "PrimaryKey": "it-gatto§Noun_ARALDICA_Araldica_Convenzionale_Animale-3-168",
+            "PrimaryKey": "it-gatto§Noun_ARALDICA_Araldica_Convenzionale_Animale-3-448",
             "SelfUrl": "https://it.wiktionary.org/wiki/gatto",
             "LabelName": "gatto",
             "LabelType": "Noun_ARALDICA_Araldica_Convenzionale_Animale",
@@ -154,34 +286,78 @@
             "IsPlural": null,
             "SingleVariant": "gatto",
             "PluralVariant": "gatti",
-            "PopularityOfWord": 0,
+            "PopularityOfWord": 11,
             "MaleVariant": "gatto",
             "FemaleVariant": "gatta",
             "IsVerbPast": null,
             "IsVerbPresent": null,
             "IsVerbFutur": null,
             "Conjugation": [],
-            "Synonymy": [],
+            "Synonymy": [
+                "micio",
+                "felino"
+            ],
             "Antonymy": [],
-            "Hypernymy": [],
+            "Hypernymy": [
+                "animale",
+                "metazoo",
+                "cordato",
+                "vertebrato",
+                "omeotermo",
+                "omotermo",
+                "mammifero",
+                "carnivoro",
+                "felide",
+                "felino"
+            ],
             "Hyponymy": [],
             "Meronymy": [],
             "Holonymy": [],
             "Troponymy": [],
             "Otherwise": [],
-            "AlternativeFormsOther": [],
-            "RelatedTerms": [],
+            "AlternativeFormsOther": [
+                "gattino",
+                "gattone",
+                "gattaccio",
+                "gattuccio"
+            ],
+            "RelatedTerms": [
+                "tigre",
+                "leopardo",
+                "gattopardo",
+                "lince",
+                "giaguaro",
+                "leone",
+                "ozelot",
+                "puma",
+                "ghepardo",
+                "pantera"
+            ],
             "Coordinate": [],
-            "Translation_EN": [],
-            "Translation_FR": [],
-            "Translation_DE": [],
+            "Translation_EN": [
+                "cat"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater"
+            ],
             "Translation_IT": [],
-            "Translation_ES": [],
-            "Translation_RU": [],
-            "Translation_PT": []
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот",
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato"
+            ]
         },
         {
-            "PrimaryKey": "it-gatto§Noun_SPREG_Astuta_persona-4-556",
+            "PrimaryKey": "it-gatto§Noun_SPREG_Astuta_persona-4-520",
             "SelfUrl": "https://it.wiktionary.org/wiki/gatto",
             "LabelName": "gatto",
             "LabelType": "Noun_SPREG_Astuta_persona",
@@ -199,31 +375,75 @@
             "IsPlural": null,
             "SingleVariant": "gatto",
             "PluralVariant": "gatti",
-            "PopularityOfWord": 150,
+            "PopularityOfWord": 161,
             "MaleVariant": "gatto",
             "FemaleVariant": "gatta",
             "IsVerbPast": null,
             "IsVerbPresent": null,
             "IsVerbFutur": null,
             "Conjugation": [],
-            "Synonymy": [],
+            "Synonymy": [
+                "micio",
+                "felino"
+            ],
             "Antonymy": [],
-            "Hypernymy": [],
+            "Hypernymy": [
+                "animale",
+                "metazoo",
+                "cordato",
+                "vertebrato",
+                "omeotermo",
+                "omotermo",
+                "mammifero",
+                "carnivoro",
+                "felide",
+                "felino"
+            ],
             "Hyponymy": [],
             "Meronymy": [],
             "Holonymy": [],
             "Troponymy": [],
             "Otherwise": [],
-            "AlternativeFormsOther": [],
-            "RelatedTerms": [],
+            "AlternativeFormsOther": [
+                "gattino",
+                "gattone",
+                "gattaccio",
+                "gattuccio"
+            ],
+            "RelatedTerms": [
+                "tigre",
+                "leopardo",
+                "gattopardo",
+                "lince",
+                "giaguaro",
+                "leone",
+                "ozelot",
+                "puma",
+                "ghepardo",
+                "pantera"
+            ],
             "Coordinate": [],
-            "Translation_EN": [],
-            "Translation_FR": [],
-            "Translation_DE": [],
+            "Translation_EN": [
+                "cat"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [
+                "Katze",
+                "Kater"
+            ],
             "Translation_IT": [],
-            "Translation_ES": [],
-            "Translation_RU": [],
-            "Translation_PT": []
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот",
+                "кошка"
+            ],
+            "Translation_PT": [
+                "gato"
+            ]
         }
     ]
 }

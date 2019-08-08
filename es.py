@@ -196,7 +196,7 @@ def SingleVariant(search_context, excludes, word):
         for (lang, term) in find_any(search_context, excludes,
              [in_template, "inflect.es.adj.ad-lib", [in_arg, (None, [0, 2])]]
         ):
-            for spited in term.split("/"):
+            for spited in reversed(term.split("/")):
                 word.SingleVariant = spited.strip()
                 break
             break

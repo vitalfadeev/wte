@@ -507,9 +507,11 @@ def try_well_formed_structure(lang, label, tree):
     # (name, childs), childs = (name, childs)
     # [ (LANG, [ (TOS, [ (expl), ] ), ]), ]
     struct = build_struct(lm, label, tree)
+    #wikoo.dump(tree, types=(Section, ))
     #wikoo.dump(tree, types=(Section, Dl, Dt, Dd, Li, Link))
-    dump_struct(struct)
-    exit(2)
+    #wikoo.dump(tree)
+    #dump_struct(struct)
+    #exit(2)
 
     # base word
     word = WikictionaryItem()
@@ -682,7 +684,10 @@ def phase2(lang, tree):
         elif t.name.startswith('-') and t.name.endswith('-'): # -trad-
             header = Header()
             header.name = t.name
-            header.level = 2
+            if hasattr(lm, "SECTION_LEVELS"):
+                header.level = lm.SECTION_LEVELS.get(t.name, 3) # default level
+            else:
+                header.level = 3 # default level
             t.parent.add_child(header, before=t)
             header.add_child(t)
             
