@@ -1,0 +1,59 @@
+{
+    "subordo": [
+        {
+            "PrimaryKey": "de-subordo§Noun_Biologie_fachsprachlich_eine_rangstufe-0-262",
+            "SelfUrl": "https://de.wiktionary.org/wiki/subordo",
+            "LabelName": "subordo",
+            "LabelType": "Noun_Biologie_fachsprachlich_eine_rangstufe",
+            "LanguageCode": "de",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ":[1] ''[[Biologie]], fachsprachlich:'' eine Rangstufe der biologischen Systematik unterhalb der Ordnung, in der enger verwandte Familien zusammengefasst werden",
+            "ExplainationTxt": "''Biologie, fachsprachlich:'' eine Rangstufe der biologischen Systematik unterhalb der Ordnung, in der enger verwandte Familien zusammengefasst werden",
+            "ExplainationExamplesRaw": ":[1] Für die Bezeichnung von ''Subordines'' wird das Suffix -ineae verwendet.",
+            "ExplainationExamplesTxt": "[1] Für die Bezeichnung von ''Subordines'' wird das Suffix -ineae verwendet.",
+            "IsMale": null,
+            "IsFeminine": true,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "Subordo",
+            "PluralVariant": "Subordines",
+            "PopularityOfWord": 386,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "Unterordnung"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [
+                "sub",
+                "unter",
+                "ordo"
+            ],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "suborder"
+            ],
+            "Translation_FR": [
+                "sous-ordre"
+            ],
+            "Translation_DE": [],
+            "Translation_IT": [],
+            "Translation_ES": [],
+            "Translation_RU": [],
+            "Translation_PT": []
+        }
+    ]
+}

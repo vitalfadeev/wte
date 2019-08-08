@@ -1,6 +1,6 @@
 requests
 ijson==2.3
-pywikibot==3.0.dev0
+pywikibot==3.0.20190722
 blist==1.3.6
 wikipedia
 lxml

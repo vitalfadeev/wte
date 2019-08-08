@@ -159,9 +159,14 @@ def has_template(search_context, excludes, tnames, *checkers):
                     params = checker[1:]
                     result = func(t, excludes, *params)
                     if result:
-                        return True # OK                
+                        return True # OK
             else:
                 return True # OK
+
+
+def has_template_here_only(search_context, excludes, tnames, *checkers):
+    sub_excludes = excludes + [c for c in search_context.find_objects(Section, recursive=False)]
+    return has_template(search_context, sub_excludes, tnames, *checkers)
 
 
 def has_flag_in_explaination(search_context, excludes, flags, *args):

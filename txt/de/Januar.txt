@@ -1,0 +1,342 @@
+{{Siehe auch|[[januar]], [[január]], [[janúar]]}}
+== Januar ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Substantiv|Deutsch}}, {{m}} ===
+
+{{Deutsch Substantiv Übersicht
+|Genus=m
+|Nominativ Singular=Januar
+|Nominativ Plural=Januare
+|Genitiv Singular=Januars
+|Genitiv Singular*=Januar
+|Genitiv Plural=Januare
+|Dativ Singular=Januar
+|Dativ Plural=Januaren
+|Akkusativ Singular=Januar
+|Akkusativ Plural=Januare
+}}
+
+{{Anmerkung}}
+:„Die Monatsnamen werden stark flektiert. Besonderheiten: Das Dativ-e tritt nicht mehr auf: ''im Januar'' (nicht: ''im Januare''). Auch der Genitiv ist im heutigen Sprachgebrauch häufig ohne Endung: ''des Januar[s],'' […]; […], ''des 12. Januar[s].'' […] Allgemein gilt: Die endungs- und artikellose Form des Monatsnamens steht vor allem dann, wenn ein Substantiv vorangeht: ''Anfang Januar,'' […]. Auch wenn die Monatsnamen als Apposition bei Monat stehen, bleiben sie ohne Flexionsendung: ''des Monats Januar.''“<ref>{{Lit-Duden: Richtiges und gutes Deutsch|A=7 (elektronisch)}}, Stochwort »Monatsnamen: 1. Kasusbildung«.</ref>
+
+{{Worttrennung}}
+:Ja·nu·ar, {{Pl.}} Ja·nu·a·re
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ˈjanuaːɐ̯}}
+:{{Hörbeispiele}} {{Audio|De-Januar.ogg}}
+
+{{Bedeutungen}}
+:[1] {{K|gemeindeutsch|österr.|t2=_|selten}} erster, 31-tägiger [[Monat]] im [[Kalenderjahr]]
+
+{{Abkürzungen}}
+:[1] [[Jan.]], [[Jr.]]
+:[1] 01., 1., Ⅰ., I.
+
+{{Herkunft}}
+:Seit dem Jahre 153 vor unserer Zeitrechnung wurde das römische Kalenderjahr nicht mehr von März bis Februar, sondern von Januar bis Dezember gerechnet.<ref name="DHW">{{Lit-Duden: Herkunftswörterbuch|A=5 (neu bearbeitet)}}, Stichwort »Januar«, Seite 413.</ref> Demgemäß nannte man den das Jahr eröffnenden Monat ''{{Ü|la|mensis Ianuarius|mēnsis Iānuārius}} / {{Ü|la|Ianuarius|Iānuārius}}'' – wohl nach dem altitalischen Gott [[w:Janus (MYthologie)|Janus]], dem Gott der Türen und Tore, symbolisch auch des Eingangs und (Jahres)anfangs.<ref name="DHW"/><ref name="Pfeifer">{{Ref-Pfeifer|Januar}}</ref><ref name="Kluge">{{Lit-Kluge: Etymologisches Wörterbuch|A=24}}, Stichwort »Januar«, Seite 450.</ref> Mit den anderen römischen Monatsnamen wurde in [[mittelhochdeutsch]]er Zeit auch [[lateinisch]]es ''{{Ü|la|Ianuarius|Iānuārius}}'' [[Entlehnung|entlehnt]].<ref name="DHW"/> Dieses ist im [[Deutsch]]en bis ins 18. Jahrhundert unverändert mit lateinischer Endung gebräuchlich.<ref name="Pfeifer"/> Erst seit der 2. Hälfte des 18. Jahrhunderts setzt sich endungsloses ''Januar'' durch.<ref name="Pfeifer"/>
+
+{{Synonyme}}
+:[1] {{österr.|,}} ''sonst seltener'' {{südd.}} ''sowie'' {{schweiz.}} ''[[mundartlich]]:'' [[Jänner]]
+:[1] {{va.|:}} [[Eismonat]]/[[Eismond]], [[Hartmonat]]/[[Hartmond]], [[Hartung]], [[Schneemonat]]/[[Schneemond]], [[Wintermonat]]/[[Wintermond]]
+
+{{Gegenwörter}}
+:[1] [[Februar]]/[[Feber]], [[März]], [[April]], [[Mai]], [[Juni]]/[[Juno]], [[Juli]]/[[Julei]], [[August]], [[September]], [[Oktober]], [[November]], [[Dezember]]
+
+{{Oberbegriffe}}
+:[1] [[Monat]], [[Wintermonat]]
+
+{{Beispiele}}
+:[1] Der ''Januar'' ist der erste Monat im Jahr.
+:[1] „Mög’ das Leben alle ''Januare'' dir
+::Auch als Mai erſcheinen laſſen!“<ref>{{Literatur | Autor=[[w:Rahel Varnhagen von Ense|<nowiki>[</nowiki>Rahel Varnhagen von Ense<nowiki>]</nowiki>]] | Titel-P=An Erneſtine Robert. Mit einem Strauß und einem Schleier, | TitelErg=zum 1. Januar 1832 | Herausgeber=[[w:Karl August Varnhagen von Ense|Karl August Varnhagen von Ense]] | Sammelwerk=Rahel | WerkErg=Ein Buch des Andenkens für ihre Freunde | Band=Dritter Theil | Verlag=[b]ei Duncker und Humblot | Ort=Berlin | Jahr=1834 | Seiten=547 | Online=Zitiert nach {{DTAW|varnhagen_rahel03_1834|555|Januare}} }}.</ref>
+:[1] „Kalte ''Januare'' von –20 bis –25°, wie sie in {{L|w:Ilulissat|Jakobshavn}} bis 1925 alle zwei bis drei Jahre im Durchschnitt vorkamen, scheinen seitdem einfach nicht mehr möglich zu sein.“<ref>{{Per-Zeit | Autor=Martin Rodewald | Titel=Am Ende der „Kleinen Eiszeit“ | TitelErg=Perspektiven der Klimaschwankung | Nummer=34 | Tag=20 | Monat=08 | Jahr=1953 | Seiten=12 | Archiv-URL=https://www.zeit.de/1953/34/am-ende-der-kleinen-eiszeit/komplettansicht | Zugriff=2018-12-14 }}</ref>
+:[1] „Dieser Mann, Ackerwirt, dort in Tillitz, in dem späteren Rosenhain, liegt auf der Straße, in diesem schneelosen ''Januar,'' tot, mit gänzlich verbrannter Kleidung.“<ref>{{Literatur | Autor=[[w:Johannes Bobrowski|Johannes Bobrowski]] | Titel=Levins Mühle | TitelErg=34 Sätze über meinen Großvater. Roman | Verlag=S. Fischer Verlag | Ort=Frankfurt am Main | Jahr=1964 | Seiten=121 | Kommentar=Lizenz des VOB Union Verlag, Berlin }}.</ref>
+:[1] „Während ich dies notiere, fällt draußen Schnee eines für unsere Verhältnisse strengen ''Januars.''“<ref>{{Per-Spiegel | Autor=[[w:Klaus Modick|Klaus Modick]] | Titel=Cap Tirol in der Arktis | TitelErg=Klaus Modick über [[w:Christoph Ransmayr|Christoph Ransmayr]]: „[[w:Die Schrecken des Eises und der Finsternis|Die Schrecken des Eises und der Finsternis]]“ | Nummer=6 | Tag=04 | Monat=02 | Jahr=1985 | Seiten=189 | Archiv-URL=http://magazin.spiegel.de/EpubDelivery/spiegel/pdf/13511378 | Zugriff=2018-12-14 }}</ref>
+:[1] „Nach sieben Jahren mit milden ''Januaren'' fiel der heurige erstmals wieder deutlich zu kalt aus: Monatsmittel -2,1° (statt -0,4).“<ref>{{Per-Süddeutsche | Titel=Ein Zentimeter - der Rest war Schnee von gestern | Nummer=36 | Tag=13 | Monat=02 | Jahr=1997 | Seiten=14 }}</ref>
+:[1] „Der ''Januar'' war der Monat, der nicht vorbeigehen wollte.“<ref>{{Literatur | Autor=[[w:Martin Suter|Martin Suter]] | Titel=[[w:Lila, Lila|Lila, Lila]] | TitelErg=Roman | Verlag=Diogenes | Ort=Zürich | Jahr=2004 | ISBN=978-3-257-06386-8 | Seiten=84 }}.</ref>
+:[1] „Aber es ist kaltschwarzer ''Januar,'' Jänner, wie Beat und seine Tante Evi so freundlich sagen.“<ref>{{Literatur | Autor=[[w:Regula Venske|Regula Venske]] | Titel=Marthes Vision | TitelErg=Roman | Ort=Frankfurt am Main | Verlag=Eichborn Verlag | Jahr=2006 | ISBN=978-3-8218-5783-1 | Seiten=34 }}.</ref>
+:[1] „Welchen Monat haben wir?
+::Jetzt ist ''Januar.''
+::''Januar.''“<ref>{{Literatur | Autor=[[w:David Grossman|David Grossman]] | Titel=[[w:David_Grossman#„Eine Frau flieht vor einer Nachricht“|Eine Frau flieht vor einer Nachricht]] | TitelErg=Roman | Verlag=Fischer Taschenbuch Verlag | Ort=Frankfurt am Main | Jahr=2011 | ISBN=978-3-596-18430-9 | Seiten=442–443 | Originaltitel={{Hebr|אשה בורחת מבשורה}} | Übersetzer=[[w:Anne Birkenhauer|Anne Birkenhauer]] aus dem Hebräischen }}.</ref>
+:[1] „Es war in der kalten Jahreszeit, genauer gesagt im ''Januar,'' als ich meinen Asylantrag in Deutschland stellte.“<ref>{{Literatur | Autor=Rasha Abbas | Titel-P=Visum?! | Sammelwerk=Die Erfindung der deutschen Grammatik | WerkErg=Geschichten | Auflage=1. | Verlag=mikrotext | Ort=Berlin | Jahr=2016 | ISBN=978-3-944543-30-7 | Seiten=[ohne Seitenangabe] | Übersetzer=Sandra Hetzl aus dem Arabischen | Online=E-Book; zitiert nach {{GBS|hryfCwAAQBAJ|PT93|Hervorhebung=Januar}} }}.</ref>
+:[1] „Aleppo war eine aus Stein gemauerte Stadt mit endlosen Labyrinthen von überdachten Souks, die an die abgeschrägten Mauern einer uneinnehmbaren Zitadelle stießen, und eine moderne Wohnstadt mit Parks und Gärten rings um den Bahnhof am südlichen Zweig der Bagdadbahn, mit der man Aleppo seit ''Januar'' 1913 von Wien aus über Istanbul und Konya in einer Woche erreichen konnte; […].“<ref>{{Literatur | Autor=[[w:Mathias Énard|Mathias Énard]] | Titel=Kompass | TitelErg=Roman | Verlag=Hanser Berlin im Carl Hanser Verlag | Ort=München | Jahr=2016 | ISBN=978-3-446-25315-5 | Seiten=118 | Originaltitel=Boussole | Übersetzer=Holger Fock und Sabine Müller aus dem Französischen }}.</ref>
+:[1] „Noch im ''Januar'' 1964 bezweifelt {{L|w:Peter Weiss|Peter Weiss}}, dass eine künstlerische Darstellung des Themas der Massenvernichtung möglich ist: […].“<ref>{{Literatur | Autor=[[w:Peter Weiss|Peter Weiss]]; mit einem Kommentar von Marita Meyer | Titel=Kommentar | TitelErg=Textgeschichte | Sammelwerk=[[w:Die Ermittlung|Die Ermittlung]] | WerkErg=Oratorium in 11 Gesängen | Auflage=5. | Verlag=Suhrkamp Verlag | Ort=Frankfurt am Main | Jahr=2016 (Suhrkamp BasisBibliothek 65)| ISBN=978-3-518-18865-1 | Seiten=261 | Kommentar=Erstausgabe 1965 }}.</ref>
+:[1] „Das Wetter stellte sich offensichtlich auf den Sohan ein, die jährliche Frostperiode Anfang ''Januar.''“<ref>{{Literatur | Autor=[[w:Bandi (Autor)|Bandi]]; mit einem Vorwort von Thomas Reichart und einem Nachwort von Do Hee-Yoon | Titel-P=Irya Madya, Schatzpferd! | TitelErg=[29. Dezember 1993] | Sammelwerk=Denunziation | WerkErg=Erzählungen aus Nordkorea | Auflage=4. | Verlag=Piper Verlag | Ort=München | Jahr=2017 | ISBN=978-3-492-05822-3 | Seiten=60 | Originaltitel=고발 | Übersetzer=Ki-Hyang Lee aus dem Koreanischen }}.</ref>
+:[1] „Die Oktoberrevolution 1917, die Ermordung von {{L|w:Rosa Luxemburg|Rosa Luxemburg}} und {{L|w:Karl Liebknecht|Karl Liebknecht}} im ''Januar'' 1919 und die nur wenige Monate später erfolgte Niederschlagung der vielfach als »jüdisch« verunglimpften {{L|w:Münchner Räterepublik|Münchner Räterepublik}} waren Ereignisse, die {{L|w:Hannah Arendt|Arendt}} tief prägten.“<ref>{{Literatur | Autor=[[w:Hannah Arendt|Hannah Arendt]]; [m]it einem Nachwort von Thomas Meyer | Titel=Nachwort | Sammelwerk=Die Freiheit, frei zu sein | Auflage=Deutsche Erstausgabe, 5. | Verlag=dtv | Ort=München | Jahr=2018 | ISBN=978-3-423-14651-7 | Seiten=48 | Originaltitel=The freedom to be free | Übersetzer=Andreas Wirthensohn }}.</ref>
+:[1] „Es war Ende ''Januar,'' auf einen Platz in einer Krippe oder einem Hort brauchten sie gar nicht erst zu hoffen.“<ref>{{Literatur | Autor=[[w:Leïla Slimani|Leïla Slimani]] | Titel=Dann schlaf auch du | TitelErg=Roman | Auflage=1. | Verlag=btb Verlag | Ort=München | Jahr=2018 | ISBN=978-3-442-71742-2 | Seiten=20 | Originaltitel=Chanson douce | Übersetzer=Amelie Thoma aus dem Französischen | Kommentar=Genehmigte Taschenbuchausgabe }}.</ref>
+
+{{Sprichwörter}}
+:[1] [[der Januar baut eine Brücke, der Februar reißt sie in Stücke|der ''Januar'' baut eine Brücke, der Februar reißt sie in Stücke]]<ref name="Wander">Nach {{Ref-Wander|id=WJ00066|Januar (Jänner)}}</ref>
+:[1] [[ein schöner Januar bringt ein gutes Jahr|ein schöner ''Januar'' bringt ein gutes Jahr]]<ref name="Wander"/>
+:[1] [[gelinder Januar bringt ein spätes Frühjahr|gelinder ''Januar'' bringt ein spätes Frühjahr]]<ref name="Wander"/>
+:[1] [[gibt’s im Januar viel Regen, bringt’s den Früchten keinen Segen|gibt’s im Januar viel Regen, bringt’s den Früchten keinen Segen]]<ref name="Wander"/>
+:[1] [[ist der Januar feucht und lau, wird das Frühjahr trocken und rau|ist der ''Januar'' feucht und lau, wird das Frühjahr trocken und rau]]<ref name="Wander"/>
+:[1] [[ist der Januar gelind, sich guter Frühling und heißer Sommer findt|ist der ''Januar'' gelind, sich guter Frühling und heißer Sommer findt]]<ref name="Wander"/>
+:[1] [[ist der Januar hell und weiß, wird der Sommer sicher heiß|ist der ''Januar'' hell und weiß, wird der Sommer sicher heiß]]<ref name="Wander"/>
+:[1] [[ist der Januar nicht nass, so füllt sich des Winzers Fass|ist der ''Januar'' nicht nass, so füllt sich des Winzers Fass]]<ref name="Wander"/>
+:[1] [[Januar hart und rau, nützt dem Getreidebau|''Januar'' hart und rau, nützt dem Getreidebau]]<ref name="Wander"/>
+:[1] [[Januar kalt, das gefallt|''Januar'' kalt, das gefallt]]<ref name="Wander"/>
+:[1] [[Januar muss vor Kälte knacken, wenn die Ernte gut soll sacken|''Januar'' muss vor Kälte knacken, wenn die Ernte gut soll sacken]]<ref name="Wander"/>
+:[1] [[lacht der Januar im Kommen und Scheiden, so bringt das Jahr noch viele Freuden|lacht der ''Januar'' im Kommen und Scheiden, so bringt das Jahr noch viele Freuden]]<ref name="Wander"/>
+:[1] [[trockner Januar, nasser Juli|trockner ''Januar,'' nasser Juli]]<ref name="Wander"/>
+:[1] [[wenn der Januar im Hemde steht, der März vor Lachen fast vergeht|wenn der ''Januar'' im Hemde steht, der März vor Lachen fast vergeht]]<ref name="Wander"/>
+:[1] [[wenn der Januar trocken, so füllt sich der Speicher mit Roggen|wenn der ''Januar'' trocken, so füllt sich der Speicher mit Roggen]]<ref name="Wander"/>
+
+{{Charakteristische Wortkombinationen}}
+:[1] [[ein#Artikel|ein]] [[frostig]]er, [[kalt]]er, [[streng]]er, [[verschneit]]er ''Januar;'' [[ein#Artikel|ein]] [[mild]]er, [[schneelos]]er ''Januar;'' [[im]] ''Januar''
+
+{{Wortbildungen}}
+:[[Januarabend]], [[Januarausgabe]], [[Januarflaute]], [[Januarhälfte]], [[Januarheft]], [[Januarmorgen]], [[Januarnacht]], [[Januarsitzung]], [[Januartag]], [[Januarwoche]]
+:{{schweiz.|:}} [[Januarloch]]
+
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{af}}: [1] {{Ü|af|Januarie}}
+*{{sq}}: [1] {{Ü|sq|janar}} {{m}}
+*{{am}} <small>([http://scriptsource.org/cms/scripts/page.php?item_id=entry_detail&uid=vsytndbyev B&D])</small>: [1] {{Üt|am|ጥር|ṭərr}}, {{Üt|am|ጃንዩዌሪ|ǧanyuweri}}
+*{{ar|DMG}}:
+**{{MHA}}: [1] {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir|DMG=0}} {{m}} / ''[[selten]]:'' {{Üxx4|ar|ينائر|v=يَنَائِر|d=yanāʾir|DMG=0}}<ref name="Wehr1450">{{Lit-Wehr: Arabisches Wörterbuch|A=5}}, Stichwort »{{Arab|يناير}}«, Seite 1450.</ref> {{m}}, {{Üxx4|ar|كانون الثاني|v=كَانُون أَلثَّانِيّ|d=kānūn aṯ-ṯānī|DMG=0}}<ref name="Wehr1122">{{Lit-Wehr: Arabisches Wörterbuch|A=5}}, Stichwort »{{Arab|كانون}}«, Seite 1122.</ref> {{m}}
+**[[w:Maghrebinisches Arabisch|Maghrebinisches Arabisch]]:
+***[[w:Hassania|Ḥassāniyya]]: [1] ''[[Mauretanien]]:'' {{Üxx4|ar|يانوار|v=يَانْوَار|d=yānwār; ''mundartnah:'' yānwāṛ|DMG=0}}<ref name="WAD">{{Lit-Brill: Wortatlas der arabischen Dialekte|B=3}}, Stichwort »427 Monat: Januar«, Seite 667–668.</ref> {{m}}, {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir; ''mundartnah:'' yunāyəṛ|DMG=0}}<ref name="WAD"/> {{m}}
+***{{ary}}: [1] {{Üxx4|ar|جانفي|v=جانفي|d=ǧānvī, ǧānfī, žānvī, žānfī; ''mundartnah:'' ǧānvi,<ref name="WAD"/> ǧānfi,<ref name="WAD"/> žānvi,<ref name="WAD"/> žānfi<ref name="WAD"/>|DMG=0}}<ref name="Wehr162">{{Lit-Wehr: Arabisches Wörterbuch|A=5}}, Stichwort »{{Arab|جانفي}}«, Seite 162.</ref> {{m}}, {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir; ''mundartnah:'' yennāyer,<ref name="WAD"/> yennāyr,<ref name="WAD"/><ref name="Moscoso García">Nach {{Literatur | Autor=Francisco Moscoso García | Titel=Diccionario español – árabe marroquí | Verlag=Junta de Andalucía, Dirección General de Coordinación de Políticas Migratorias | Ort=Sevilla | Jahr=2005 | ISBN=84-689-2464-4 }}, Stichwort »Enero«, Seite 115.</ref> yənnāyr,<ref name="WAD"/> yinnāyər,<ref name="WAD"/> yanayer,<ref name="Harrell224"/> yennayer,<ref>Nach {{Literatur | Herausgeber=Harvey Sobleman, Richard S. Harrell; compilation by Thomas Fox, Alan McAninch, Allal Chreibi, Majid Soussane, Mohamed Neheiri | Titel=A Dictionary of Moroccan Arabic | TitelErg=English–Moroccan | Verlag=Georgetown University Press | Ort=Washington, D.C. | Jahr=1963 }}, Stichwort »January«, Seite 107.</ref><ref name="Harrell224">Nach {{Literatur | Herausgeber=Richard S. Harrell; compiled by Thomas Fox, Mohammed Abu-Talib, with the assistance of Ahmed Ben Thami, Allal Chreibi, Habiba Kanouni, Ernest Ligon, Mohammed Mekaoui | Titel=A Dictionary of Moroccan Arabic | TitelErg=Moroccan–English | Verlag=Georgetown University Press | Ort=Washington, D.C. | Jahr=1966 }}, Stichwort »yanayer« und »yennayer«, Seite 224.</ref> yinnayer,<ref name="WAD"/> ynnayr,<ref>Nach {{Literatur | Autor=Ernest T. Abdel-Massih | Titel=Advanced Maroccan Arabic | Verlag=University of Michigan | Ort=Ann Arbor | Jahr=1974 }}, Stichwort »yn:ayr«, Seite 214 (Lexicon, Arabic–English) und Stichwort »January«, Seite 230 (Lexicon, English–Arabic).</ref> innayr<ref name="WAD"/>|DMG=0}} {{m}}, {{Üxx4|ar|ناير|v=نَايِر|d=nāyir; ''mundartnah:'' nnāyər,<ref name="WAD"/> nāyr<ref name="WAD"/>|DMG=0}}<ref>{{Literatur | Autor=B[elqacem]. Tedjini | Titel-P=Dictionnaire arabe-français | TitelErg=[Maroc] | Verlag=Société d’Éditions Géographiques, Maritimes et Coloniales | Ort=Paris | Jahr=1923, Stichwort »{{Arab|يناير}} ou {{Arab|ناير}}« | Seiten=252 | Online=Zitiert nach [http://menadoc.bibliothek.uni-halle.de/ssg/content/pageview/906331?query=janvier Digitalisat] der [[w:Martin-Luther-Universität Halle-Wittenberg|MLU]] }}.</ref> {{m}}
+***{{arq}}: [1] {{Üxx4|ar|جانفي|v=جانفي|d=ǧānvī, ǧānfī, žānvī, žānfī; ''mundartnah:'' ǧānvi,<ref name="WAD"/> ǧānfi,<ref name="WAD"/> žānvi,<ref name="WAD"/> žānfi<ref name="WAD"/>|DMG=0}}<ref name="Wehr162"/> {{m}}, {{Üxx4|ar|شهر ينار|v=شَهْر يَنَّار|d=šahr yannār; ''mundartnah:'' šahar yennār|DMG=0}}<ref>{{Literatur | Autor=Belkassem Ben Sedira | Titel=Dictionnaire français-arabe de la langue parlée en Algérie | Auflage=5. | Verlag=Adolphe Jourdan | Ort=Alger | Jahr=1910, Stichpunkt »LES MOIS« | Seiten=ⅩⅬⅦ | Online=Zitiert nach {{IA|dictionnairefran00abaluoft#page/n57/mode/1up/search/janvier|FB}} }}.</ref> {{m}} / ''[[Kurzwort]]:'' {{Üxx4|ar|ينار|v=يَنَّار|d=yannār; ''mundartnah:'' yennār, yənnār, yənnāṛ|DMG=0}}<ref>Ebenda, Stichwort »Janvier (mois)«, Seite 329 (Zitiert nach {{IA|dictionnairefran00abaluoft#page/329/mode/1up/search/janvier|FB}}).</ref><ref name="WAD"/> {{m}}, {{Üxx4|ar|ينوار|v=يَنْوَار|d=yanwār|DMG=0}}<ref name="WAD"/> {{m}}, {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir; ''mundartnah:'' yənnāyər|DMG=0}}<ref name="WAD"/> {{m}}
+***{{aeb}}: [1] {{Üxx4|ar|جانفي|v=جانفي|d=ǧānvī, ǧānfī, žānvī, žānfī; ''mundartnah:'' ǧānvi,<ref name="WAD"/> ǧānfi,<ref name="WAD"/> žānvi,<ref name="WAD"/> žānfi<ref name="WAD"/>|DMG=0}}<ref name="Wehr162"/> {{m}}, {{Üxx4|ar|ينار|v=يَنَّار|d=yannār; ''mundartnah:'' yannāṛ|DMG=0}}<ref name="WAD"/> {{m}}; {{reg.|:}} ''([[Tunis|Tūnis]])'' {{Üxx4|ar|اينار|v=أَيَنَّار|d=ayannār; ''mundartnah:'' ayinnār, (ä)yinnāṛ|DMG=0}}<ref name="WAD"/> {{m}}
+***{{ayl}}: [1] {{Üxx4|ar|ياناير|v=يَانَايِر|d=yānāyir; ''mundartnah:'' yānāyər|DMG=0}}<ref name="WAD"/> {{m}}, {{Üxx4|ar|ينار|v=يَنَّار|d=yannār; ''mundartnah:'' yinnāṛ|DMG=0}}<ref name="WAD"/> {{m}}, {{Üxx4|ar|اينار|v=أَيَنَّار|d=ayannār; ''mundartnah:'' ayannar, aynār|DMG=0}}<ref name="WAD"/> {{m}}, {{Üxx4|ar|اينور|v=أَيَنَُور|d=ayannūr; ''mundartnah:'' aynūr|DMG=0}}<ref name="WAD"/> {{m}}; {{reg.|:}} {{Üxx4|ar|شهر واحد|v=شَهْر وَاحِد|d=šahr wāḥid; ''mundartnah: ([[Tripolis|Ṭarābulus]])'' šahəṛ wāḥid, ''([[w:Bengasi|Banġāzī]])'' šahar wāḥid|DMG=0}}<ref name="WAD"/> {{m}}
+**[[w:Tschadisch-Arabisch|Tschadisch-Arabisch]]: [1] {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir; ''mundartnah:'' yanāyr|DMG=0}}<ref name="WAD"/> {{m}}, {{Üxx4|ar|جناير|v=جَنَايِر|d=ǧanāyir; ''mundartnah:'' ǧanāyr|DMG=0}}<ref name="WAD"/> {{m}}
+**[[w:Sudanesisch-Arabisch|Sudanesisch-Arabisch]]: [1] {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir|DMG=0}}<ref name="WAD"/> {{m}}
+**{{arz}}: [1] {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir|DMG=0}}<ref>{{Literatur | Autor=El-Said Badawi, Martin Hinds | Titel=A Dictionary of Egyptian Arabic | TitelErg=Arabic-English | Verlag=Librairie du Liban | Ort=Beirut | Jahr=1986 }}, Stichwort »{{Arab|يناير}}«, Seite 965.</ref><ref name="WAD"/> {{m}}; {{reg.|:}} ''([[w:Sinai-Halbinsel|Sīnāʾ-Halbinsel]])'' {{Üxx4|ar|شهر واحد|v=شَهْر وَاحِد|d=šahr wāḥid; ''mundartnah:'' šahaṛ wāḥid|DMG=0}}<ref name="WAD"/> {{m}}
+**[[w:en:Levantine Arabic|Levantinisches Arabisch]]:
+***[[w:Palästinensisch-Arabisch|Palästinensisch-Arabisch]]: [1] {{Üxx4|ar|كانون الثاني|v=كَانُون أَلثَّانِيّ|d=kānūn aṯ-ṯānī; ''mundartnah:'' kānūn eṯ-ṯāni, ''(städtisch)'' kānūn et-tāni<ref name="Bauer178">Nach {{Lit-Bauer: Wörterbuch der arabischen Umgangssprache|A=1}}, Stichwort »Januar«, Seite 178.</ref><ref name="Bauer166">Nach {{Lit-Bauer: Wörterbuch der arabischen Umgangssprache|A=2}}, Stichwort »Januar«, Seite 166.</ref>|DMG=0}}<ref name="Wehr1122"/> {{m}}; ''beduinisch:'' {{Üxx4|ar|كانون الاصم|v=كَانُون أَلْأَصَمّ|d=kānūn al-aṣamm; ''mundartnah:'' kānūn el-aṣamm|DMG=0}}<ref>Nach {{Literatur | Autor=[[w:Gustaf Dalman|Gustaf Dalman]] | Titel=[[w:Arbeit und Sitte in Palästina|Arbeit und Sitte in Palästina]] | Band=Band Ⅰ: Jahreslauf und Tageslauf, 1. Hälfte: Herbst und Winter | Verlag=[sine editio] | Ort=[sine loco] | Jahr=1928 | Seiten=21 }}.</ref><ref name="WAD"/> {{m}}; {{reg.|:}} ''([[Ramallah|Rām Aḷḷāh]])'' {{Üxx4|ar|شهر واحد|v=شَهْر وَاحِد|d=šahr wāḥid; ''mundartnah:'' šahaṛ wāḥid|DMG=0}}<ref name="WAD"/> {{m}}
+***[[w:en:Jordanian Arabic|Jordanisch-Arabisch]]: [1] {{Üxx4|ar|كانون الثاني|v=كَانُون أَلثَّانِيّ|d=kānūn aṯ-ṯānī; ''mundartnah:'' kānūn iṯ-ṯāni<ref name="WAD"/>|DMG=0}}<ref name="Wehr1122"/> {{m}}; {{reg.}} ''auch:'' {{Üxx4|ar|شهر واحد|v=شَهْر وَاحِد|d=šahr wāḥid; ''mundartnah:'' šaher wāḥad|DMG=0}}<ref name="WAD"/> {{m}}
+***[[w:Libanesisch-Arabisch|Libanesisch-Arabisch]]: [1] {{Üxx4|ar|كانون الثاني|v=كَانُون أَلثَّانِيّ|d=kānūn aṯ-ṯānī; ''mundartnah:'' kānūn eṯ-ṯāni, ''(städtisch)'' kānūn et-tāni,<ref name="Bauer178"/><ref name="Bauer166"/> ''([[Beirut|Bayrūt]])'' kēnūn ət-tēne<ref name="WAD"/>|DMG=0}}<ref name="Wehr1122"/> {{m}}; {{reg.}} ''auch:'' {{Üxx4|ar|شهر واحد|v=شَهْر وَاحِد|d=šahr wāḥid; ''mundartnah:'' šahaṛ wāḥad|DMG=0}}<ref name="WAD"/> {{m}}
+***[[w:Syrisch-Arabisch|Syrisch-Arabisch]]: {{Üxx4|ar|كانون الثاني|v=كَانُون أَلثَّانِيّ|d=kānūn aṯ-ṯānī; ''mundartnah:'' kānūn əṯ-ṯāni,<ref name="WAD"/> ''(städtisch)'' kānūn ət-tāni<ref>Nach {{Literatur | Autor=Mary-Jane Liddicoat, Richard Lennane, Iman Abdul Rahim | Titel=Syrian Colloquial Arabic | TitelErg=A Functional Course. Revised Edition | Verlag=M-J Liddicoat, Richard Lenanne | Ort=Griffith ACT (Australia) | Jahr=1999 (Series: Integrated Arabic) | ISBN=0-646-36958-X }}, Stichwort »{{Arab|كانون الثاني}}«, Seite 214.</ref>|DMG=0}}<ref name="Wehr1122"/> {{m}}; {{reg.}} ''auch:'' {{Üxx4|ar|شهر واحد|v=شَهْر وَاحِد|d=šahr wāḥid; ''mundartnah:'' šahaṛ wāḥəd|DMG=0}}<ref name="WAD"/> {{m}}
+**[[w:en:Mesopotamian Arabic|Mesopotamisches Arabisch]]:
+***[[w:Irakisch-Arabisch|Irakisch-Arabisch]]: [1] {{Üxx4|ar|كانون الثاني|v=كَانُون أَلثَّانِيّ|d=kānūn aṯ-ṯānī; ''mundartnah:'' kānūn iṯ-ṯāni,<ref>{{Literatur | Autor=Beverly E. Clarity, Karl Stowasser, Ronald G. Wolfe (Hrsg.) | Titel=A Dictionary of Iraqi Arabic | TitelErg=English–Arabic | Verlag=Georgetown University Press | Ort=Washington, D.C. | Jahr=1964 | ISBN=0-87840-280-2 }}, Stichwort »January«, Seite 96 sowie nach {{Literatur | Herausgeber=Beverly E. Clarity, Karl Stowasser, Ronald G. Wolfe, D.R. Woodhead, Wayne Beene | Titel=A Dictionary of Iraqi Arabic | TitelErg=English–Arabic Arabic–English | Verlag=Georgetown University Press | Ort=Washington, D.C. | Jahr=2003 | ISBN=0-87840-136-9 }}, Stichwort »January«, Seite 96 (englisch-arabischer Teil).</ref>|DMG=0}} {{m}} / {{Üxx4|ar|كانون ثاني|v=كَانُون ثَانِيّ|d=kānūn ṯānī; ''mundartnah:'' kānūn ṯāni<ref>Nach {{Literatur | Autor=D.R. Woodhead, Wayne Beene (Hrsg.); under the technical direction of Karl Stowasser, with the assistance of Majid Damah, Faisal Al-Khalaf, Husain Mustafa, Darrel Smith, Ronald G. Wolfe | Titel=A Dictionary of Iraqi Arabic | TitelErg=Arabic–English | Verlag=Georgetown University Press | Ort=Washington, D.C. | Jahr=1967 | ISBN=0-87840-281-0 }}, Stichwort »k-a-n-w-n, kaanuun θaani«, Seite 398 sowie nach {{Literatur | Herausgeber=Beverly E. Clarity, Karl Stowasser, Ronald G. Wolfe, D.R. Woodhead, Wayne Beene | Titel=A Dictionary of Iraqi Arabic | TitelErg=English–Arabic Arabic–English | Verlag=Georgetown University Press | Ort=Washington, D.C. | Jahr=2003 | ISBN=0-87840-136-9 }}, Stichwort »k-a-n-w-n, kaanuun θaani«, Seite 398 (arabisch-englischer Teil).</ref>|DMG=0}} {{m}}
+***[[w:en:Kuwaiti Arabic|Kuwaitisch-Arabisch]]: [1] {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir|DMG=0}}<ref name="WAD"/> {{m}}
+**[[w:en:Saudi Arabic|Saudisches Arabisch]]: [1] {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir|DMG=0}}<ref name="WAD"/> {{m}}; {{reg.|:}} ''([[w:Nadschd|Naǧd]])'' {{Üxx4|ar|شهر واحد|v=شَهْر وَاحِد|d=šahr wāḥid; ''mundartnah:'' šahar wāḥid|DMG=0}}<ref name="WAD"/> {{m}}
+**[[w:en:Yemeni Arabic|Jemenitisch-Arabisch]]: [1] {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir|DMG=0}}<ref name="WAD"/> {{m}}
+**[[w:en:Omani Arabic|Omanisches Arabisch]]: [1] {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir; ''mundartnah:'' yannāyar|DMG=0}}<ref name="WAD"/> {{m}}; {{reg.|:}} ''([[w:Bahla|Bahlāʾ]])'' {{Üxx4|ar|شهر واحد|v=شَهْر وَاحِد|d=šahr wāḥid|DMG=0}}<ref name="WAD"/> {{m}}
+**[[w:en:Gulf Arabic|Golf-Arabisch]]:
+***[[Vereinigte Arabische Emirate|VAE]]-Arabisch: [1] {{Üxx4|ar|كانون الثاني|v=كَانُون أَلثَّانِيّ|d=kānūn aṯ-ṯānī; ''mundartnah:'' kānūn iṯ-ṯāni|DMG=0}}<ref name="WAD"/> {{m}} / {{Üxx4|ar|كانون ثاني|v=كَانُون ثَانِيّ|d=kānūn ṯānī; ''mundartnah:'' kānūn ṯāni|DMG=0}}<ref name="WAD"/> {{m}}, {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir; ''mundartnah:'' yannāyar|DMG=0}}<ref name="WAD"/> {{m}}
+***[[Qatar|Qaṭar]]-Arabisch: [1] {{Üxx4|ar|كانون الثاني|v=كَانُون أَلثَّانِيّ|d=kānūn aṯ-ṯānī; ''mundartnah:'' kānūn iṯ-ṯāni|DMG=0}}<ref name="WAD"/> {{m}} / {{Üxx4|ar|كانون ثاني|v=كَانُون ثَانِيّ|d=kānūn ṯānī; ''mundartnah:'' kānūn ṯāni|DMG=0}}<ref name="WAD"/> {{m}}, {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir; ''mundartnah:'' yannāyar|DMG=0}}<ref name="WAD"/> {{m}}
+***[[w:Bahraini Arabic|Bahrainisch-Arabisch]]: [1] {{Üxx4|ar|كانون الثاني|v=كَانُون أَلثَّانِيّ|d=kānūn aṯ-ṯānī; ''mundartnah:'' kānūn iṯ-ṯāni|DMG=0}}<ref name="WAD"/> {{m}} / {{Üxx4|ar|كانون ثاني|v=كَانُون ثَانِيّ|d=kānūn ṯānī; ''mundartnah:'' kānūn ṯāni|DMG=0}}<ref name="WAD"/> {{m}}, {{Üxx4|ar|يناير|v=يَنَايِر|d=yanāyir; ''mundartnah:'' yannāyar|DMG=0}}<ref name="WAD"/> {{m}}
+*{{an}}: [1] {{Ü|an|chinero}} {{m}}
+*{{hy}} <small>([[w:Armenisches Alphabet#Buchstaben|DIN 32706]])</small>: [1] {{Üt|hy|հունվար|hownvar}}
+*{{az}}: [1] {{Ü|az|yanvar}}
+*{{ast}}: [1] {{Ü|ast|xineru}} {{m}}
+*{{ba}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|ba|ғинуар|ġinuar}}
+*{{eu}}: [1] {{Ü|eu|ilbeltz}}, {{Ü|eu|izotzil}}, {{Ü|eu|urtarril}}
+*{{bs}}: [1] {{Ü|bs|januar}} {{m}}, {{Ü|bs|siječanj}} {{m}}
+*{{br}}: [1] {{Ü|br|Genver}}
+*{{bg}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|bg|януари|ânuári}} {{m}}
+*{{ceb}}: [1] {{Ü|ceb|enero}}
+*{{zh}}:
+**{{hak}} <small>([[w:en:Pha̍k-fa-sṳ|PFS]])</small>: [1] {{Üt|hak|一月|Yit-ngie̍t, Yit-ngia̍t}}
+**[[Hochchinesisch]]/[[Mandarin]] <small>([[w:Pinyin|Pinyin]])</small>: [1] {{Üt|zh|一月|Yīyuè}}
+**{{yue}} <small>([[w:Jyutping|Jyutping]])</small>: [1] {{Üt|yue|一月|jat<sup>1</sup> jyut<sup>6</sup>}}
+**{{nan}} <small>([[w:Pe̍h-ōe-jī|POJ]])</small>: [1] {{Üt|nan|一月|it--go̍eh, it--ge̍h}}
+*{{da}}: [1] {{Ü|da|januar}} {{u}}; {{va.|:}} {{Ü|da|glugmåned}} {{u}}
+*{{en}}: [1] {{Ü|en|January}}
+**{{ang}}: [1] {{Ü|ang|æftera geola|æftera géóla}} {{m}}, {{Ü|ang|Ianuarius}} {{m}}
+*{{eo}}: [1] {{Ü|eo|januaro}}
+*{{et}}: [1] {{Ü|et|jaanuar}}
+*{{fo}}: [1] {{Ü|fo|januar}} {{m}}
+*{{fi}}: [1] {{Ü|fi|tammikuu}}
+*{{fr}}: [1] {{Ü|fr|janvier}} {{m}}
+*{{fur}}: [1] {{Ü|fur|Zenâr}} {{m}}
+*{{gl}}: [1] {{Ü|gl|xaneiro}} {{m}}
+*{{ka}} <small>([[w:Georgisches Alphabet#Umschrift|DIN 32707]])</small>: [1] {{Üt|ka|იანვარი|ianvari}}
+*[[Griechisch]]<!-- {{grk}} -->:
+**{{grc}} <small>(DIN 31634)</small>: [1] {{Üt|grc|Ἰανουάριος|Ianouários}} {{m}}
+**{{el|iU}}: [1] {{Üt|el|Ιανουάριος|Ianouários}} {{m}}, {{Üt|el|Γενάρης|Genáris}} {{m}}
+*{{kl}}: [1] {{Ü|kl|januaari}}
+*{{gn}}: [1] {{Ü|gn|jasyteĩ}}
+*{{ht}}: [1] {{Ü|ht|janvye}}
+*{{haw}}: [1] {{Ü|haw|Ianuali}}
+*{{he|CHA}}: [1] {{Üxx4|he|ינואר|v=יָנוּאָר|d=yānūʾār|CHA=0}} {{m}}
+*{{hi}} <small>([[w:ISO 15919|ISO 15919]])</small>: [1] {{Üt|hi|जनवरी|janvarī}} {{m}}
+*{{io}}: [1] {{Ü|io|januaro}}
+*{{id}}: [1] {{Ü|id|januari}}
+*{{ia}}: [1] {{Ü|ia|januario}}
+*{{ga}}: [1] {{Ü|ga|Eanáir}} {{m}}
+*{{xh}}: [1] {{Ü|xh|uJanuwari}}
+*{{zu}}: [1] {{Ü|zu|uJanuwali}}, {{Ü|zh|uMasingane}}
+*{{is}}: [1] {{Ü|is|janúar}} {{m}}
+*{{it}}: [1] {{Ü|it|gennaio}} {{m}}; {{va.|:}} {{Ü|it|gennaro}} {{m}}
+**{{nap}}: [1] {{Ü|nap|gennàio}} {{m}}, {{Ü|nap|iennaro}} {{m}} / {{Ü|nap|jennaro}} {{m}}
+**{{scn}}: [1] {{Ü|scn|jinnaru}} {{m}}
+**{{vec}}: [1] {{Ü|vec|dhenàro}} {{m}}, {{Ü|vec|genàr}} {{m}}, {{Ü|vec|genàro}} {{m}}, {{Ü|vec|xenàro}} {{m}}, {{Ü|vec|xenèr}} {{m}}
+*{{sah}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|sah|тохсунньу|tohsunnʹu}}
+*{{ja}} <small>([[Hilfe:Hepburn-System|Hepburn]])</small>: [1] {{Üt|ja|一月|いちがつ, ichigatsu}}; ''[[schriftsprachlich]]:'' {{Üt|ja|太郎月|たろう･づき, tarō·zuki}}
+|Ü-rechts=
+*{{yi|YIVO}}: [1] {{Üxx4|yi|יאַנואַר|d=yanuar|YIVO=0}} {{m}}; {{reg.}} ''(auf dem Gebiet der ehemaligen [[Sowjetunion]]):'' {{Üxx4|yi|יאַנװאַר|d=yanvar|YIVO=0}} {{m}}
+*{{kn}} <small>([[w:ISO 15919|ISO 15919]])</small>: [1] {{Üt|kn|ನಾಲ್ಚಳಿ|nālcaḷi}}
+*{{pam}}: [1] {{Ü|pam|eneru}}
+*{{kk}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|kk|қаңтар|ķaṇtar}}
+*{{csb}}: [1] {{Ü|csb|stëcznik}} {{m}}
+*{{ca}}: [1] {{Ü|ca|gener}} {{m}}; {{reg.|:}} {{Ü|ca|giner}} {{m}}
+*{{kg}}: [1] {{Ü|kg|yanwali}}
+*{{rw}}: [1] {{Ü|rw|Mutarama}}
+*{{ky}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|ky|январь|ânvarʹ}}
+*{{kv}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|kv|январ|ânvar}}
+*{{swb}}: [1] {{Ü|swb|Jâvye}} ''9/10''
+*{{ko}} <small>([[w:Revidierte Romanisierung|RR]])</small>: [1] {{Üt|ko|일월|irwol}}, {{Üt|ko|정월|jeong-wol}}
+*{{kw}}: [1] {{Ü|kw|mis Genver}} {{m}} / ''[[Kurzwort]]:'' {{Ü|kw|Genver}} {{m}}
+*{{co}}: [1] {{Ü|co|ghiennaghiu}} {{m}}, {{Ü|co|ghjennaghju}} {{m}}, {{Ü|co|ghjinnaghju}} {{m}}
+**Galluresisch: [1] {{Ü|co|ghjnnagghju}} {{m}}
+**Sassaresisch: [1] {{Ü|co|ginnàggiu}} {{m}}, {{Ü|co|giunàggiu}} {{m}}
+*{{hr}}: [1] {{Ü|hr|januar}} {{m}}, {{Ü|hr|siječanj}} {{m}}
+*{{ku}}:
+**{{kmr}}: [1] {{Ü|ku|rêbendan}}
+**{{ckb}}: [1] {{Üxx4|ku|رێبەندان|d=rêbendan|DMG=0}}
+*{{lad}}: [1] {{Üxx4|lad|אינירו|d=[[enero#Ladino|enéro]]}} {{m}}
+*{{lo}} <small>(ALA-LC)</small>: [1] {{Üt|lo|ເດື່ອນມັງກອນ|dư̄an mangkǭn}} / ''[[Kurzwort]]:'' {{Üt|lo|ມັງກອນ|mangkǭn}}
+*{{la}}: [1] {{Ü|la|mensis Ianuarius|mēnsis Iānuārius}} {{m}} / ''[[Kurzwort]]:'' {{Ü|la|Ianuarius|Iānuārius}} {{m}}
+*{{lv}}: [1] {{Ü|lv|janvāris}} {{m}}
+*{{ln}}: [1] {{Ü|ln|sánzá ya yambo}} ''9a/10a'', {{Ü|ln|Yanwáli}} ''9a/10a'', {{Ü|ln|Zavié}} ''9a/10a''
+*{{lt}}: [1] {{Ü|lt|sausis}} {{m}}
+*{{jbo}}: [1] {{Ü|jbo|pavma'i}}
+*{{lb}}: [1] {{Ü|lb|Januar}} {{m}}; ''[[selten]]:'' {{Ü|lb|Haartmount}} {{m}}
+*{{mg}}: [1] {{Ü|mg|janoary}}, {{Ü|mg|zanvie}}
+*{{mt}}: [1] {{Ü|mt|Jannar}} {{m}}
+*{{gv}}: [1] {{Ü|gv|Jerrey Gueree}}
+*{{mi}}: [1] {{Ü|mi|Hānuere}}, {{Ü|mi|Maramatahi}}
+*{{mr}} <small>([[w:ISO 15919|ISO 15919]])</small>: [1] {{Üt|mr|जानेवारी|jānēvārī}}
+*{{mk}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|mk|јануари|ǰanuari}} {{m}}
+*{{nds}}: [1] {{Ü|nds|Januar}} {{m}}, {{Ü|nds|Januarmaand}} {{m}}, {{Ü|nds|Hartmaand}} {{m}}
+**{{pdt}}: [1] {{Ü|pdt|Jaunewoa}} {{m}}
+*{{nl}}: [1] {{Ü|nl|januari}} {{m}}; {{va.|:}} {{Ü|nl|hardmaand}} {{m}}, {{Ü|nl|ijsmaand}} {{m}}, {{Ü|nl|louwmaand}} {{m}}, {{Ü|nl|wolfsmaand}} {{m}}
+*{{no}}: [1] {{Ü|no|januar}} {{m}}
+*{{nov}}: [1] {{Ü|nov|januare}}
+*{{oc}}: [1] {{Ü|oc|genièr}} {{m}}
+*{{om}}: [1] {{Ü|om|Amajjii}}
+*{{os}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|os|январь|ânvárʹ}}, {{m}}
+*{{pa}}
+**[[w:Gurmukhi-Schrift|Gurmukhī]] <small>([[w:ISO 15919|ISO 15919]])</small>: [1] {{Üt|pa|ਜਨਵਰੀ|janavarī}} {{f}}
+**[[w:Shahmukhi|Shahmukhī]] <small>([[Hilfe:DMG|DMG]])</small>: [1] {{Üxx4|pnb|جنوری|d=ǧanavarī|DMG=0}} {{f}}
+*{{fa}}:
+**{{prs|DMG}}: [1] {{Üxx4|fa|جنوری|d=ǧanvarī|DMG=0}}
+**Farsi <small>([[Hilfe:DMG|DMG]])</small>: [1] {{Üxx4|fa|ژانویه|d=žānviyä|DMG=0}}
+**{{tg}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|tg|январ|ânvar}}
+*{{pl}}: [1] {{Ü|pl|styczeń}} {{m}}
+*{{pt}}: [1] {{Ü|pt|janeiro}} {{m}}
+*{{qu}}: [1] {{Ü|qu|qhulla puquy killa}}; ''[[Bolivien]]:'' {{Ü|qu|qhaqmiy killa}}, {{Ü|qu|qhapaq raymi killa}}; ''[[Peru]]:'' {{Ü|qu|qhapaq raymi}}
+*{{rm}}: [1] {{Ü|rm|schaner}} {{m}}
+**Surmeirisch: [1] {{Ü|rm|schaner}} {{m}}, {{Ü|rm|schner}} {{m}}
+**Surselvisch: [1] {{Ü|rm|schaner}} {{m}}
+**Sutselvisch: [1] {{Ü|rm|schaner}} {{m}}
+**Oberengadinisch (Puter): [1] {{Ü|rm|schner}} {{m}}
+**Unterengadinisch (Vallader): [1] {{Ü|rm|schner}} {{m}}
+*{{ro}}: [1] {{Ü|ro|ianuarie}} {{m}}; {{ugs.|:}} {{Ü|ro|gerar}} {{m}}, {{Ü|ro|cărindar}} {{m}} / {{Ü|ro|sărindar}} {{m}}
+*{{ru}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|ru|январь|ânvárʹ}} {{m}}
+*{{smi}}:
+**{{smn}}: [1] {{Ü|smn|uđđâivemáánu}} {{n}}
+**Lulesamisch: [1] {{Ü|smi|ådåjakmánno}} {{n}}
+**{{se}}: [1] {{Ü|se|ođđajagimánnu}} {{n}}
+**{{sje}}: [1] {{Ü|sje|årråjakmánno}} {{n}}
+**{{sms}}: [1] {{Ü|sms|ođđeeʹjjmään}} {{n}}
+**{{sma}}: [1] {{Ü|sma|garre-tsïengeles}} {{n}}, {{Ü|sma|tsïengele}} {{n}}
+**{{sju}}: [1] {{Ü|sju|urrajábiemánnuo}} {{n}}
+*{{sc}}: [1] {{Ü|sc|ghennàrgiu}} {{m}}
+**[[w:Campidanesisch|Campidanesisch]]: [1] {{Ü|sc|gennaju}} {{m}}, {{Ü|sc|gennàrgiu}} {{m}}, {{Ü|sc|gennarxu}} {{m}}, {{Ü|sc|gennaxu}} {{m}}, {{Ü|sc|zannarju}} {{m}}
+**Logudoresisch: [1] {{Ü|sc|bennardu}} {{m}}, {{Ü|sc|bennarzu}} {{m}}, {{Ü|sc|bennasu}} {{m}}, {{Ü|sc|gennarzu}} {{m}}, {{Ü|sc|zannarzu}} {{m}}; {{va.|:}} {{Ü|sc|janargiu}} {{m}}
+**Nuoresisch: [1] {{Ü|sc|cennalzu}} {{m}}, {{Ü|sc|gennàgliu}} {{m}}, {{Ü|sc|ghennàgiu}} {{m}}, {{Ü|sc|ghennarzu}} {{m}}, {{Ü|sc|ghenuàggiu}} {{m}}, {{Ü|sc|giannàgliu}} {{m}}, {{Ü|sc|giannàrgiu}} {{m}}, {{Ü|sc|giannarju}} {{m}}, {{Ü|sc|jannarju}} {{m}}, {{Ü|sc|jannarzu}} {{m}}, {{Ü|sc|zannarju}} {{m}}, {{Ü|sc|zennarju}} {{m}}, {{Ü|sc|zennarzu}} {{m}}
+*{{gd}}: [1] {{Ü|gd|Faoilleach|(am) Faoilleach}} {{m}}
+*{{sv}}: [1] {{Ü|sv|januari}}; {{va.|:}} {{Ü|sv|torsmånad}}
+*{{sr}}: [1] {{Üt|sr|јануар|[[januar#Serbisch|januar]]}} {{m}}, {{Üt|sr|сечањ|[[sečanj#Serbisch|sečanj]]}} {{m}}
+*{{sh}}: [1] {{Üt|sh|јануар|[[januar#Serbokroatisch|januar]]}} {{m}}, {{Üt|sh|сечањ|[[sečanj#Serbokroatisch|sečanj]]}} {{m}} / {{Üt|sh|сијечањ|[[siječanj#Serbokroatisch|siječanj]]}} {{m}}
+*{{st}}: [1] {{Ü|st|Pherekgong}}
+*{{sk}}: [1] {{Ü|sk|január}} {{m}}
+*{{sl}}: [1] {{Ü|sl|januar}} {{m}}
+*{{so}}: [1] {{Ü|so|Janaayar}}, {{Ü|so|janaayo}}
+*{{wen}}
+**{{dsb}}: [1] {{Ü|dsb|januar}} {{m}}; {{va.|:}} {{Ü|dsb|wezymski}} {{m}}
+**{{hsb}}: [1] {{Ü|hsb|januar}} {{m}}; {{va.|:}} {{Ü|hsb|wulki róžk}} {{m}}
+*{{es}}: [1] {{Ü|es|enero}} {{m}}
+*{{sw}}: [1] {{Ü|sw|Januari}}, {{Ü|sw|mwezi wa kwanza}}
+*{{tl}}: [1] {{Ü|tl|Enero}}
+*{{ta}} <small>([[w:ISO 15919|ISO 15919]])</small>: [1] {{Üt|ta|ஜனவரி|jaṉavari}}
+*{{tt}}: [1] {{Üt|tt|гыйнвар|[[gıynvar]]}}
+*{{te}} <small>([[w:ISO 15919|ISO 15919]])</small>: [1] {{Üt|te|జనవర|janavari}}
+*{{tet}}: [1] {{Ü|tet|janeiru}}
+*{{th}} <small>([[Hilfe:RTGS|RTGS]])</small>: [1] {{Üt|th|เดือนมกราคม|deuan mók-gà-raa kom}} / ''[[Kurzwort]]:'' {{Üt|th|มกราคม|mók-gà-raa kom}}
+*{{ti}} <small>(ALA-LC)</small>: [1] {{Üt|ti|ጥሪ|ṭerri}}
+*{{tpi}}: [1] {{Ü|tpi|Janueri}}
+*{{cs}}: [1] {{Ü|cs|leden}} {{m}}
+*{{ce}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|ce|январь|ânvarʹ}}
+*{{lua}}: [1] {{Ü|lua|cyongo}} ''7/0'' / {{Ü|lua|cyongu}} ''7/0'', {{Ü|lua|Yanuari}}
+*{{cv}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|cv|кăрлач|kărlač}}
+*{{tr}}: [1] {{Ü|tr|ocak ayı}} / ''übliches [[Kurzwort]]:'' {{Ü|tr|ocak}}; {{va.|:}} {{Ü|tr|ikinci kânun}}, {{Ü|tr|kânunusani}}
+**{{ota}}: [1] {{Üxx4|ota|اوجاق|d=O̲ǧa̲q; <small>{{İA}}</small> Ocak}},<ref>{{Lit-Devellioğlu: Osmanlıca-Türkçe Ansiklopedik Lûgat}}, Stichwort »Ocak {{Arab|اوجاق}}«, Seite 1017.</ref> {{Üxx4|ota|كانون ثانی|d=kānūnu s̱ānī; <small>{{İA}}</small> kânûn-ı sânî}}<ref>Ebenda, Stichwort »kânûn {{Arab|كانون}}«, Seite 586.</ref>
+*{{tk}}: [1] {{Ü|tk|ýanwar}}
+*{{tyv}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|tyv|январь|ânvarʹ}}
+*{{ug|ALA-LC}}: [1] {{Üxx4|ug|يانۋار|d=yanvar|ALA-LC=0}}
+*{{uk}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|uk|січень|sì́čenʹ}} {{m}}
+*{{hu}}: [1] {{Ü|hu|január}}
+*{{ur|ALA-LC}}: [1] {{Üxx4|ur|جنوری|d=janvarī|ALA-LC=0}}
+*{{uz}}: [1] {{Ü|uz|yanvar}}
+*{{vi}}: [1] {{Ü|vi|tháng một}}, {{Ü|vi|tháng giêng}}
+*{{vo}}: [1] {{Ü|vo|yanul}}
+*{{cy}}: [1] {{Ü|cy|Ionawr}} {{m}}, {{Ü|cy|ionor}} {{m}}
+*{{wa}}: [1] {{Ü|wa|djanvî}} {{m}}
+*{{be}} <small>([[w:ISO 9|ISO 9]])</small>: [1] {{Üt|be|студзень|stúdzenʹ}} {{m}}
+*{{vep}}: [1] {{Ü|vep|viluku}}
+*{{fy}}: [1] {{Ü|fy|jannewaris}}
+*{{wo}}: [1] {{Ü|wo|samwie}}
+*{{ts}}: [1] {{Ü|ts|sunguti}}
+*{{yo}}: [1] {{Ü|yo|oṣù kínní}}
+|Dialekttabelle=
+*'''Westnorddeutsch:'''
+*'''Westmitteldeutsch:'''
+**[[Mittelfränkisch]]:
+***[[Moselfränkisch]]: [1] ''([[w:Britten (Losheim am See)|Britten]])'' {{Lautschrift|ˈjanua}}<ref name="Besse34">{{Literatur | Autor=Maria Besse | Titel=Britter Wörterbuch | TitelErg=Moselfränkischer Dialekt am „Tor zum Hochwald“, Britten — Gemeinde Losheim am See (Saarland) | Verlag=Verein für Heimatkunde in der Gemeinde Losheim am See e.&nbsp;V. | Ort=Losheim am See | Jahr=2004 | ISBN=3-00-014131-6 }}, Stichpunkt »Monatsnamen«, Seite 34.</ref>
+****Hunsrückisch:
+*****Riograndenser Hunsrückisch: [1] ''Travessão Dois Irmãos, São José do Inhacorá:'' {{Lautschrift|ˈjanʊvɐ}}<ref>{{Lit-Altenhofen: Hunsrückisch in Rio Grande do Sul}}, Seite 322.</ref>
+****[[Lothringisch]]: [1] [[Jänner]] {{m}}<ref name="LthWB">Nach {{Ref-Lothringisch|Jänner}}</ref>
+**[[Rheinfränkisch]]:
+***[[Lothringisch]]: [1] [[Jänner]] {{m}}<ref name="LthWB"/>
+***{{pfl}}: [1] {{Lautschrift|ˈjanuaʳ}},<ref name="Pfälzisch">{{Ref-Pfälzisch}}<br />Die Transkription wurde an die in diesem Projekt übliche des [[w:Internationales Phonetisches Alphabet|IPA]] angepasst.</ref> {{reg.|:}} ''([[w:Dietschweiler|Dietschweiler]], [[w:Herschweiler-Pettersheim|Herschweiler-Pettersheim]], [[w:Alsenz|Alsenz]], [[w:Siegelbach (Kaiserslautern)|Siegelbach]], [[w:Kallstadt|Kallstadt]], [[w:Niederhochstadt|Niederhochstadt]])'' {{Lautschrift|ˈjanə̆βaʳ}},<ref name="Pfälzisch"/> {{hist.}} ''([[w:Galizien|Galizien]])'' [[Jänner]] {{m}}<ref name="Pfälzisch"/>
+****{{pdc}}: [1] Januâr {{m}},<ref>Nach {{Lit-Bachmann Lambert: Non-English Words of the Pennsylvania-German Dialect}}, Stichwort »Januâr«, Seite 88 ([https://babel.hathitrust.org/cgi/pt?id=uc1.$b1811;view=1up;seq=124 Digitalisat] der [[w:HathiTrust|HathiTrust Digital Library]]).</ref> [[Jänner|Jenner, Yenner, Yenar]] {{m}}<ref>Nach ebenda, Stichwort »Jenner«, Seite 89 ([https://babel.hathitrust.org/cgi/pt?id=uc1.$b1811;view=1up;seq=125 Digitalisat] der [[w:HathiTrust|HathiTrust Digital Library]]).</ref><ref>{{Wikipedia|spr=pdc|Yenner}}</ref><ref>{{Literatur | Titel=A Pennsylvania-Dutch Dictionary | TitelErg=Pennsylvania Dutch Words Translated into English | Auflage=2. | Verlag=Meredith Publishing Co. | Ort=Quakertown (PA) | Jahr=[1949], Stichwort »Yenar« | Seiten=68 | Online=[https://babel.hathitrust.org/cgi/pt?id=wu.89092536275;view=1up;seq=74 Digitalisat] der [[w:HathiTrust|HathiTrust Digital Library]]}}.</ref>
+*'''Westoberdeutsch ([[Alemannisch]]):'''
+**{{swg}}: [1] [[Jänner|Jenner]]{{QS Herkunft|unbelegt}}
+**[[w:Niederalemannisch|Niederalemannisch]]:
+***[[w:Oberrheinalemannisch|Oberrheinalemannisch]]:
+****[[Elsässisch]]: [1] [[Jänner]] {{m}}<ref>Nach {{Ref-Elsässisch|Jänner}}</ref>
+**[[w:Höchstalemannisch|Höchstalemannisch]]:
+***[[w:Senslerdeutsch|Senslerdeutsch]]: [1] [[Jänner|Jenner, Jänner]] {{m}}<ref>Nach {{Literatur | Autor=Christian Schmutz, Walter Haas; unter Mithilfe von Ingrid Hove Seewer und Barbara Bättig; Zeichnungen von Anna Haas | Titel=Senslerdeutsches Wörterbuch | TitelErg=Mundartwörterbuch des Sensebezirks im Kanton Freiburg mit Einschluss der Stadt Freiburg und der Pfarrei Gurmels | Auflage=2., ergänzte und korrigierte | Verlag=Deutschfreiburger Heimatkundeverein/Paulusverlag | Ort=Freiburg, Schweiz | Jahr=2004 (Deutschfreiburger Beiträge zur Heimatkunde; Band 65) | ISBN=978-3-7228-0632-7 }}, Stichwort »Jenner«, Seite 282.</ref>
+|D-rechts=
+*'''Ostnorddeutsch:'''
+*'''Ostmitteldeutsch:'''
+*'''Ostoberdeutsch:'''
+}}
+
+{{Referenzen}}
+:[1] {{Wikipedia}}
+:[1] {{Ref-DWDS}}
+:[*] {{Ref-Canoo}}
+:[*] {{Ref-OWID}}
+:[1] {{Ref-FreeDictionary}}
+:[1] {{Ref-Duden}}
+:[1] {{Ref-wissen.de|Wörterbuch}}
+:[1] {{Ref-wissen.de|Fremdwort}}
+:[1] {{Ref-wissen.de|Lexikon}}
+:[1] {{Ref-Pons}}
+:[*] {{Ref-UniLeipzig}}
+:[1] {{Ref-Grimm}}
+:[1] {{Lit-Wahrig: Fremdwörterlexikon|A=4}}, Stichwort »Januar«, Seite 425.
+:[1] {{Lit-Ammon: Variantenwörterbuch|A=1}}, Stichwort »Januar«, Seite 373.
+:[1] {{Lit-Duden: Fremdwörterbuch|A=9}} (CD-ROM-Ausgabe), Stichwort »Januar«.
+:[1] {{Lit-Duden: Großes Fremdwörterbuch|A=4}}, Stichwort »Januar«, Seite 665.
+:[1] {{Lit-Duden: Rechtschreibung|A=25}} (CD-ROM-Ausgabe), Stichwort »Januar«.
+:[1] {{Lit-Duden: Universalwörterbuch|A=7}} (CD-ROM-Ausgabe), Stichwort »Januar«.
+:[*] {{Lit-Ammon: Variantenwörterbuch|A=2}}, Stichwort »Januar«, Seite 354.
+
+{{Quellen}}
+
+{{Monate (Deutsch)}}
+
+{{Ähnlichkeiten 1|
+::''[[w:Levenshtein-Distanz|Levenshtein-Abstand]] von 1:'' [[Jaguar]]
+}}
+
+[[Kategorie:Entlehnung aus dem Lateinischen (Deutsch)]]

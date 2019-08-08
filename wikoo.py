@@ -144,23 +144,25 @@ class Container:
                     if is_has:
                         return True
 
-    def find_objects(self, cls, recursive=False, exclude=None, callback=None):
+    def find_objects(self, cls, recursive=False, exclude=None, callback=None, exclude_types=None):
         for c in self.childs:
             if (exclude is None) or (c not in exclude):
-                if isinstance(c, cls):
-                    if callback is None or callback(c):
-                        yield c
+                if exclude_types is None or not isinstance(c, exclude_types):
+                    if isinstance(c, cls):
+                        if callback is None or callback(c):
+                            yield c
 
             if recursive:
                 if (exclude is None) or (c not in exclude):
-                    yield from c.find_objects(cls, recursive, exclude)
+                    if exclude_types is None or not isinstance(c, exclude_types):
+                        yield from c.find_objects(cls, recursive, exclude, callback, exclude_types)
 
     # def find_section(self, name, recursive=False):
         # for section in self.find_objects(Section, recursive):
             # if section.has_name(name):
                 # yield section
 
-    def find_top_objects(self, cls, callback, exclude=None, recursive=True):
+    def find_top_objects(self, cls, callback, exclude=None, recursive=True, exclude_types=None):
         for c in self.childs:
             is_found = False
 
@@ -173,7 +175,8 @@ class Container:
             if recursive:
                 if not is_found:
                     if exclude is None or c not in exclude:
-                        yield from c.find_top_objects(cls, callback, exclude, recursive)
+                        if exclude_types is None or isinstance(c, exclude_types):
+                            yield from c.find_top_objects(cls, callback, exclude, recursive, exclude_types)
 
     def find_until(self, cls, recursive=False):
         for c in self.childs:
@@ -2180,7 +2183,6 @@ def pack_sections(root):
                 else:
                     parent.add_child( section )
                     parent = section
-
 
             else:
                 # top section

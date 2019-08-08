@@ -1,0 +1,128 @@
+{
+    "kater": [
+        {
+            "PrimaryKey": "de-kater§Noun_Zoologie_Katze_männliche-0-123",
+            "SelfUrl": "https://de.wiktionary.org/wiki/kater",
+            "LabelName": "kater",
+            "LabelType": "Noun_Zoologie_Katze_männliche",
+            "LanguageCode": "de",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ":[1] ''[[Zoologie]]:'' männliche [[Katze]]",
+            "ExplainationTxt": "''Zoologie:'' männliche Katze",
+            "ExplainationExamplesRaw": ":[1] Der ''Kater'' springt vom Dach.",
+            "ExplainationExamplesTxt": "[1] Der ''Kater'' springt vom Dach.",
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "Kater",
+            "PluralVariant": "Kater",
+            "PopularityOfWord": 181,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [],
+            "Antonymy": [
+                "Kätzin",
+                "Katze"
+            ],
+            "Hypernymy": [
+                "Katze",
+                "Tier"
+            ],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "cat",
+                "tomcat",
+                "tom"
+            ],
+            "Translation_FR": [
+                "chat"
+            ],
+            "Translation_DE": [],
+            "Translation_IT": [
+                "gatto"
+            ],
+            "Translation_ES": [
+                "gato"
+            ],
+            "Translation_RU": [
+                "кот"
+            ],
+            "Translation_PT": []
+        },
+        {
+            "PrimaryKey": "de-kater§Noun_schlechte_körperliche_verfassung_nach-1-470",
+            "SelfUrl": "https://de.wiktionary.org/wiki/kater",
+            "LabelName": "kater",
+            "LabelType": "Noun_schlechte_körperliche_verfassung_nach",
+            "LanguageCode": "de",
+            "Type": "noun",
+            "TypeLabelName": "",
+            "ExplainationRaw": ":[1] schlechte körperliche Verfassung nach Alkoholkonsum",
+            "ExplainationTxt": "schlechte körperliche Verfassung nach Alkoholkonsum",
+            "ExplainationExamplesRaw": ":[1] Ich habe vom Feiern einen mächtigen ''Kater.''",
+            "ExplainationExamplesTxt": "[1] Ich habe vom Feiern einen mächtigen ''Kater.''",
+            "IsMale": true,
+            "IsFeminine": null,
+            "IsNeutre": null,
+            "IsSingle": null,
+            "IsPlural": null,
+            "SingleVariant": "Kater",
+            "PluralVariant": "Kater",
+            "PopularityOfWord": 256,
+            "MaleVariant": null,
+            "FemaleVariant": null,
+            "IsVerbPast": null,
+            "IsVerbPresent": null,
+            "IsVerbFutur": null,
+            "Conjugation": [],
+            "Synonymy": [
+                "Hangover",
+                "Katzenjammer"
+            ],
+            "Antonymy": [],
+            "Hypernymy": [],
+            "Hyponymy": [],
+            "Meronymy": [],
+            "Holonymy": [],
+            "Troponymy": [],
+            "Otherwise": [],
+            "AlternativeFormsOther": [],
+            "RelatedTerms": [],
+            "Coordinate": [],
+            "Translation_EN": [
+                "hangover"
+            ],
+            "Translation_FR": [
+                "gueule de bois"
+            ],
+            "Translation_DE": [],
+            "Translation_IT": [
+                "spranghetta",
+                "dopo sbornia"
+            ],
+            "Translation_ES": [
+                "resaca"
+            ],
+            "Translation_RU": [
+                "похмелье"
+            ],
+            "Translation_PT": [
+                "ressaca"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+== Subordo ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Substantiv|Deutsch}}, {{f}} ===
+
+{{Deutsch Substantiv Übersicht
+|Genus=f
+|Nominativ Singular=Subordo
+|Nominativ Plural=Subordines
+|Genitiv Singular=Subordo
+|Genitiv Plural=Subordines
+|Dativ Singular=Subordo
+|Dativ Plural=Subordines
+|Akkusativ Singular=Subordo
+|Akkusativ Plural=Subordines
+}}
+
+{{Worttrennung}}
+:Sub·or·do, {{Pl.}} Sub·or·di·nes
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ˌzʊpˈʔɔʁdo}}
+:{{Hörbeispiele}} {{Audio|De-Subordo.ogg}}
+
+{{Bedeutungen}}
+:[1] ''[[Biologie]], fachsprachlich:'' eine Rangstufe der biologischen Systematik unterhalb der Ordnung, in der enger verwandte Familien zusammengefasst werden
+
+{{Herkunft}}
+:abgeleitet von den lateinischen Wörtern [[sub]] (= [[unter]]) und [[ordo]] (= die Ordnung)
+
+{{Synonyme}}
+:[1] [[Unterordnung]]
+
+{{Beispiele}}
+:[1] Für die Bezeichnung von ''Subordines'' wird das Suffix -ineae verwendet.
+
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{en}}: [1] {{Ü|en|suborder}}
+*{{fr}}: [1] {{Ü|fr|sous-ordre}} {{m}}
+|Ü-rechts=
+*{{es}}: [1] {{Ü|es|}}
+}}
+
+{{Referenzen}}
+:[1] {{Wikipedia|Subordo}}
+:[1] {{Lit-Wagenitz: Wörterbuch der Botanik|A=1}}, Seite 363, Artikel "Subordo"

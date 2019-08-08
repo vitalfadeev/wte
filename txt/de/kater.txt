@@ -1,0 +1,169 @@
+{{Siehe auch|[[katër]]}}
+== Kater ({{Sprache|Deutsch}}) ==
+=== {{Wortart|Substantiv|Deutsch}}, {{m}}, ''Katze'' ===
+
+{{Deutsch Substantiv Übersicht
+|Genus=m
+|Nominativ Singular=Kater
+|Nominativ Plural=Kater
+|Genitiv Singular=Katers
+|Genitiv Plural=Kater
+|Dativ Singular=Kater
+|Dativ Plural=Katern
+|Akkusativ Singular=Kater
+|Akkusativ Plural=Kater
+|Bild=Cats mating - Yangzhou - P1120883.JPG|mini|1|ein schwarz-weißer ''Kater'' auf rot-weißer Kätzin
+}}
+
+{{Worttrennung}}
+:Ka·ter, {{Pl.}} Ka·ter
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ˈkaːtɐ}}
+:{{Hörbeispiele}} {{Audio|De-Kater.ogg}}, {{Audio|LL-Q188 (deu)-Sebastian Wallroth-Kater.wav}}
+:{{Reime}} {{Reim|aːtɐ|Deutsch}}
+
+{{Bedeutungen}}
+:[1] ''[[Zoologie]]:'' männliche [[Katze]]
+
+{{Herkunft}}
+:mittelhochdeutsch ''kater(e)'', althochdeutsch ''kataro'', belegt seit dem 9. Jahrhundert<ref>{{Lit-Kluge: Etymologisches Wörterbuch|A=24}}, Stichwort: „Kater<sup>1</sup>“, Seite 477.</ref>
+
+{{Gegenwörter}}
+:[1] [[Kätzin]], ''umgangssprachlich:'' [[Katze]]
+
+{{Oberbegriffe}}
+:[1] [[Katze]], [[Tier]]
+
+{{Beispiele}}
+:[1] Der ''Kater'' springt vom Dach.
+
+{{Charakteristische Wortkombinationen}}
+:[1] der [[gestiefelt]]e ''Kater'' ({{Audio|De-der gestiefelte Kater.ogg|Audio}}) (= ein [[Märchen]] der [[Gebrüder Grimm]])<ref>{{Wikipedia|Der gestiefelte Kater|oldid=137009746}}</ref>
+
+{{Wortbildungen}}
+:[1] [[Eichkater]], [[Hauskater]], [[Straßenkater]]
+
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{my}}: [1] {{Üt|my|ကြောင်ထီး|kraunghti:}}
+*{{en}}: [1] {{Ü|en|cat}}, {{Ü|en|tomcat}}, {{Ü|en|tom}}
+*{{eo}}: [1] {{Ü|eo|virkato}}
+*{{fi}}: [1] {{Ü|fi|kolli}}
+*{{fr}}: [1] {{Ü|fr|chat}} {{m}}
+*{{fur}}: [1] {{Ü|fur|gjat}} {{m}}
+*{{el}}: [1] {{Üt|el|γάτος|gatos}}
+*{{io}}: [1] {{Ü|io|katulo}}
+*{{it}}: [1] {{Ü|it|gatto}} {{m}}
+*{{co}}: [1] {{Ü|co|gattu}} {{m}}, {{Ü|co|ghjattu}} {{m}}
+*{{lv}}: [1] {{Ü|lv|runcis}} {{m}}
+*{{mi}}: [1] {{Ü|mi|tame poti}}
+|Ü-rechts=
+*{{no}}: [1] {{Ü|no|hankatt}}  {{m}}
+*{{nov}}: [1] {{Ü|nov|kato}}
+*{{pl}}: [1] {{Ü|pl|kocur}}, {{Ü|pl|kot}}
+*{{ro}}: [1] {{Ü|ro|motan}} {{m}}, {{Ü|ro|cotoi}} {{m}}
+*{{ru}}: [1] {{Üt|ru|кот|kot}} {{m}}
+*{{sv}}: [1] {{Ü|sv|hankatt}}{{u}}
+*{{sco}}: [1] {{Ü|sco|gib}}
+*{{es}}: [1] {{Ü|es|gato}}
+*{{cs}}: [1] {{Ü|cs|kocour}} {{m}}
+*{{hu}}: [1] {{Ü|hu|kandúr}}
+*{{uk}}: [1] {{Üt|uk|кіт|}} {{m}}
+
+*{{vo}}: [1] {{Ü|vo|hikat}}
+|Dialekttabelle=
+*Alemannisch:
+**Schwäbisch: [1] [[Bale]], [[Ralle]], [[Rolle]]
+*Bairisch:
+|D-rechts=
+*Niedersächsisch:
+*Ostmitteldeutsch:
+}}
+
+{{Referenzen}}
+:[1] {{Wikipedia|Katzen}}
+:[1] {{Ref-Grimm|Kater|id=GK02426}}
+:[1] {{Ref-DWDS|Kater}}
+:[1] {{Ref-Canoo|Kater}}
+:[1] {{Ref-UniLeipzig|Kater}}
+:[1] {{Ref-FreeDictionary|Kater}}
+:[1] {{Ref-Duden|Kater Katze Tier|Kater}}
+:[1] {{Ref-PONS|Kater}}
+:[*] {{Ref-OWID|elexiko|51824}}
+
+{{Quellen}}
+
+=== {{Wortart|Substantiv|Deutsch}}, {{m}}, ''Unwohlsein'' ===
+
+{{Deutsch Substantiv Übersicht
+|Genus=m
+|Nominativ Singular=Kater
+|Nominativ Plural=Kater
+|Genitiv Singular=Katers
+|Genitiv Plural=Kater
+|Dativ Singular=Kater
+|Dativ Plural=Katern
+|Akkusativ Singular=Kater
+|Akkusativ Plural=Kater
+|Bild=Die Gartenlaube (1874) b 109.jpg|mini|1|''Kater'', Darstellung aus der Gartenlaube
+}}
+
+{{Worttrennung}}
+:Ka·ter, {{Pl.}} Ka·ter
+
+{{Aussprache}}
+:{{IPA}} {{Lautschrift|ˈkaːtɐ}}
+:{{Hörbeispiele}} {{Audio|De-Kater.ogg}}, {{Audio|LL-Q188 (deu)-Sebastian Wallroth-Kater.wav}}
+:{{Reime}} {{Reim|aːtɐ|Deutsch}}
+
+{{Bedeutungen}}
+:[1] schlechte körperliche Verfassung nach Alkoholkonsum
+
+{{Herkunft}}
+:laut Kluge im 19. Jahrhundert in „Leipziger Studentenkreisen aufgekommen“, wobei ''Kater'' ein „Name für ein Bier“ war<ref>{{Lit-Kluge: Etymologisches Wörterbuch|A=24}}, Stichwort: „Kater<sup>2</sup>“, Seite 477.</ref>
+
+{{Synonyme}}
+:[1] [[Hangover]], [[Katzenjammer]]
+
+{{Beispiele}}
+:[1] Ich habe vom Feiern einen mächtigen ''Kater.''
+:[1] „Högni war tatsächlich einer von diesen Menschen, die keinen Brummschädel bekamen, nur einen ''Kater'', zeigte es aber nie oder ließ sich davon nie die Nerven rauben.“<ref>{{Literatur | Autor=Huldar Breiðfjörð | Titel=Schafe im Schnee | TitelErg=Ein Färöer-Roman|Verlag=Aufbau | Ort=Berlin |Jahr= 2013| Seiten =112.|ISBN=978-3-351-03534-1}} Isländisches Original 2009.</ref>
+:[1] „Aus irgendeinem Grund gelang es ihm, sich zu konzentrieren, wenn der ''Kater'' am schlimmsten war.“<ref>{{Literatur | Autor=Jóanes Nielsen | Titel =Die Erinnerungen|TitelErg=Roman| Verlag= btb Verlag| Ort= München | Jahr=2016 | ISBN=978-3-442-75433-5 | Seiten=406. Original in Färöisch 2011, Übersetzung der dänischen Ausgabe von 2012.}}</ref>
+:[1] „Ich musste innerlich schlucken und schwor mir, mich heute bei dem deutschen Bier etwas zurückzuhalten; ein ''Kater'' würde mir morgen gerade noch fehlen.“<ref>{{Literatur| Autor= Lois Pryce | Titel= Mit 80 Schutzengeln durch Afrika | TitelErg= Die verrückteste, halsbrecherischste, schrecklich-schönste Reise meines Lebens| Auflage=  |Übersetzer= Anja Fülle, Jérôme Mermod| Verlag= DuMont Reiseverlag |Ort= Ostfildern |Jahr= 2018 |  ISBN= 978-3-7701-6687-9 |Seiten= 47.}} Englisches Original 2009. </ref>
+
+{{Wortbildungen}}
+:[1] [[auskatern]], [[Katerfrühstück]], [[katern]], [[Katerstimmung]], [[Muskelkater]], [[verkatert]]
+{{Absatz}}
+==== {{Übersetzungen}} ====
+{{Ü-Tabelle|Ü-links=
+*{{bg}}: [1] {{Üt|bg|махмурлук|machmurlúk}} {{m}}
+*{{en}}: [1] {{Ü|en|hangover}}
+*{{fi}}: [1] {{Ü|fi|krapula}}
+*{{fr}}: [1] {{Ü|fr|gueule de bois}} {{f}}
+*{{it}}: [1] {{Ü|it|spranghetta}} {{f}}, {{Ü|it|dopo sbornia}} {{m}}
+*{{no}}: [1] {{Ü|no|bakrus}} {{m}}
+*{{pl}}: [1] {{Ü|pl|kac}} {{m}}, {{Ü|pl|kacenjamer}} {{m}} ({{Ü|pl|katzenjamer}} {{m}}, {{Ü|pl|katzenjammer}} {{m}}), {{Ü|pl|kociokwik}} {{m}}
+|Ü-rechts=
+*{{pt}}: [1] {{Ü|pt|ressaca}} {{f}}
+*{{ro}}: [1] {{Ü|ro|mahmureală}} {{f}}
+*{{ru}}: [1] {{Üt|ru|похмелье|pochmel'je}} {{n}}
+*{{sv}}: [1] {{Ü|sv|bakrus}}{{n}}, {{Ü|sv|baksmälla}}{{u}}
+*{{es}}: [1] {{Ü|es|resaca}} {{f}}
+*{{cs}}: [1] {{Ü|cs|kocovina}} {{f}}
+*{{hu}}: [1] {{Ü|hu|másnaposság}}
+}}
+
+{{Referenzen}}
+:[1] {{Wikipedia|Kater (Alkoholintoxikation)}}
+:[1] {{Ref-DWDS|Kater}}
+:[1] {{Ref-Canoo|Kater}}
+:[1] {{Ref-UniLeipzig|Kater}}
+:[1] {{Ref-FreeDictionary|Kater}}
+:[1] {{Ref-Duden|Kater Unwohlsein|Kater}}
+:[1] {{Ref-PONS|Kater}}
+:[*] {{Ref-OWID|elexiko|51824}}
+
+{{Quellen}}
+
+{{Ähnlichkeiten 1|[[Cutter]], [[Katar]], [[Krater]], [[Köter]]|Anagramme=[[Karte]], [[karte]], [[Kreta]], [[Rekta]]}}

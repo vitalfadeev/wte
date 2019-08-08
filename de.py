@@ -13,7 +13,7 @@ from miners import \
     has_flag_in_name, has_flag_in_explaination, has_flag_in_text, \
     has_section, has_template, has_template_with_flag, \
     has_arg, has_flag, has_value, has_arg_and_value_contain, has_arg_with_flag_in_name, \
-    has_flag_in_text_recursive, \
+    has_flag_in_text_recursive, has_template_here_only, \
     find_terms, \
     get_label_type, find_explainations, \
     term0_cb, term1_cb, lang0_term1_cb, lang0_term2_cb, t_plus_cb, w_cb, alter_cb, en_conj_cb, \
@@ -54,8 +54,36 @@ SECTION_NAME_TEMPLATES.update({ # {{-nome-}} -> nome
     'übersetzungen': lambda t: t.name,
 })
 SECTION_NAME_TEMPLATES.update({
-    s : lambda t: t.name for s in ['abgeleitete_symbole', 'abkürzungen', 'alle_weiteren_formen', 'alternative_schreibweisen', 'anmerkung', 'anmerkung_keilschrift', 'aussprache', 'bedeutungen', 'beispiele', 'bekannte_namensträger', 'ch&li', 'charakteristische_wortkombinationen', 'dmg', 'entlehnungen', 'erbwörter', 'geflügelte_worte', 'gegenwörter', 'grammatische_merkmale', 'hanja', 'herkunft', 'heteronyme', 'holonyme', 'iso_9', 'koseformen', 'kurzformen', 'lesungen', 'männliche_namensvarianten', 'männliche_wortformen', 'nrs', 'namensvarianten', 'nebenformen', 'nicht_mehr_gültige_schreibweisen', 'oberbegriffe', 'redewendungen', 'runen', 'sinnverwandte_redewendungen', 'sinnverwandte_sprichwörter', 'sinnverwandte_wörter', 'sinnverwandte_zeichen', 'sprichwörter', 'strichreihenfolge', 'symbole', 'synonyme', 'teilbegriffe', 'textbaustein', 'umschrift', 'unterbegriffe', 'verballhornung', 'vergrößerungsformen', 'verkleinerungsformen', 'vokalisierung', 'weibliche_namensvarianten', 'weibliche_wortformen', 'wortbildungen', 'wortfamilie', 'wortschatz-niveau', 'worttrennung', 'yivo', 'in_arabischer_schrift', 'in_hebräischer_schrift', 'in_kyrillischer_schrift', 'in_lateinischer_schrift', 'ähnlichkeiten', 'übersetzungen', 'İa', 'grammatische merkmale']
+    s : lambda t: t.name for s in [
+        'abgeleitete_symbole', 'abkürzungen', 'alle_weiteren_formen', 'alternative_schreibweisen', 'anmerkung',
+        'anmerkung_keilschrift', 'aussprache', 'bedeutungen', 'beispiele', 'bekannte_namensträger', 'ch&li',
+        'charakteristische_wortkombinationen', 'dmg', 'entlehnungen', 'erbwörter', 'geflügelte_worte', 'gegenwörter',
+        'grammatische_merkmale', 'hanja', 'herkunft', 'heteronyme', 'holonyme', 'iso_9', 'koseformen', 'kurzformen',
+        'lesungen', 'männliche_namensvarianten', 'männliche_wortformen', 'nrs', 'namensvarianten', 'nebenformen',
+        'nicht_mehr_gültige_schreibweisen', 'oberbegriffe', 'redewendungen', 'runen', 'sinnverwandte_redewendungen',
+        'sinnverwandte_sprichwörter', 'sinnverwandte_wörter', 'sinnverwandte_zeichen', 'sprichwörter',
+        'strichreihenfolge', 'symbole', 'synonyme', 'teilbegriffe', 'textbaustein', 'umschrift', 'unterbegriffe',
+        'verballhornung', 'vergrößerungsformen', 'verkleinerungsformen', 'vokalisierung', 'weibliche_namensvarianten',
+        'weibliche_wortformen', 'wortbildungen', 'wortfamilie', 'wortschatz-niveau', 'worttrennung', 'yivo',
+        'in_arabischer_schrift', 'in_hebräischer_schrift', 'in_kyrillischer_schrift', 'in_lateinischer_schrift',
+        'ähnlichkeiten', 'übersetzungen', 'İa', 'grammatische merkmale', 'charakteristische Wortkombinationen',
+        'referenzen']
 })
+SECTION_LEVELS = {s:4 for s in [
+        'abgeleitete_symbole', 'abkürzungen', 'alle_weiteren_formen', 'alternative_schreibweisen', 'anmerkung',
+        'anmerkung_keilschrift', 'aussprache', 'bedeutungen', 'beispiele', 'bekannte_namensträger', 'ch&li',
+        'charakteristische_wortkombinationen', 'dmg', 'entlehnungen', 'erbwörter', 'geflügelte_worte', 'gegenwörter',
+        'grammatische_merkmale', 'hanja', 'herkunft', 'heteronyme', 'holonyme', 'iso_9', 'koseformen', 'kurzformen',
+        'lesungen', 'männliche_namensvarianten', 'männliche_wortformen', 'nrs', 'namensvarianten', 'nebenformen',
+        'nicht_mehr_gültige_schreibweisen', 'oberbegriffe', 'redewendungen', 'runen', 'sinnverwandte_redewendungen',
+        'sinnverwandte_sprichwörter', 'sinnverwandte_wörter', 'sinnverwandte_zeichen', 'sprichwörter',
+        'strichreihenfolge', 'symbole', 'synonyme', 'teilbegriffe', 'textbaustein', 'umschrift', 'unterbegriffe',
+        'verballhornung', 'vergrößerungsformen', 'verkleinerungsformen', 'vokalisierung', 'weibliche_namensvarianten',
+        'weibliche_wortformen', 'wortbildungen', 'wortfamilie', 'wortschatz-niveau', 'worttrennung', 'yivo',
+        'in_arabischer_schrift', 'in_hebräischer_schrift', 'in_kyrillischer_schrift', 'in_lateinischer_schrift',
+        'ähnlichkeiten', 'übersetzungen', 'İa', 'grammatische merkmale', 'charakteristische Wortkombinationen',
+        'referenzen']
+}
 
 
 def is_lang_template(t):
@@ -76,7 +104,7 @@ def is_tos_section(sec):
 
 def is_expl_section(sec):
     return sec.name in ["bedeutungen", 'meanings']
-    
+
     
 def Type(search_context, excludes, word):
     sec = search_context
@@ -89,15 +117,17 @@ def Type(search_context, excludes, word):
 
 def IsMale(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_template, ['m', 'männliche namensvarianten', 'männliche wortformen']] ,
+        [has_template_here_only, ["m"]],
+        [has_template, ['männliche namensvarianten', 'männliche wortformen']] ,
         [has_template, 'deutsch substantiv übersicht', [has_arg, 'Genus', [has_value, 'm']]] ,
     ):
         word.IsMale = True
 
 
 def IsFeminine(search_context, excludes, word):
-    if if_any(search_context, excludes, 
-        [has_template, ["f", 'weibliche namensvarianten', 'weibliche wortformen']] ,
+    if if_any(search_context, excludes,
+        [has_template_here_only, ["f"]],
+        [has_template, ['weibliche namensvarianten', 'weibliche wortformen']] ,
         [has_template, 'deutsch substantiv übersicht', [has_arg, 'Genus', [has_value, 'f']]] ,
     ):
         word.IsFeminine = True
@@ -105,7 +135,8 @@ def IsFeminine(search_context, excludes, word):
 
 def IsNeutre(search_context, excludes, word):
     if if_any(search_context, excludes, 
-        [has_template, ['n', 'neutr.'] ] ,
+        [has_template_here_only, ["n"]],
+        [has_template, ['neutr.'] ] ,
     ):
         word.IsNeutre = True
 
@@ -192,6 +223,7 @@ def Conjugation(search_context, excludes, word):
     
     
 def Synonymy(search_context, excludes, word):
+    #print(1, search_context, excludes)
     for (lang, term) in find_all(search_context, excludes,
         [in_section, ['synonyme'],
             [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
@@ -204,7 +236,7 @@ def Synonymy(search_context, excludes, word):
 
 def Antonymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, ['gegenwörter'], 
+        [in_section, ['gegenwörter'],
             [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
             [in_link]
         ],
@@ -215,7 +247,7 @@ def Antonymy(search_context, excludes, word):
 
 def Hypernymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, ['Oberbegriffe'],
+        [in_section, ['oberbegriffe'],
             [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
             [in_link]
         ]
@@ -230,7 +262,7 @@ def Hyponymy(search_context, excludes, word):
 
 def Meronymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, ['Unterbegriffe'],
+        [in_section, ['unterbegriffe'],
             [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
             [in_link]
         ]
@@ -252,7 +284,7 @@ def Holonymy(search_context, excludes, word):
     
 def Troponymy(search_context, excludes, word):
     for (lang, term) in find_all(search_context, excludes,
-        [in_section, ['Herkunft'],
+        [in_section, ['herkunft'],
             [in_template, ['link', 'l'], [in_arg, (0, 1) ]],
             [in_link]
         ]
@@ -314,16 +346,19 @@ def ExplainationTxt(search_context, excludes, word):
     
     
 def ExplainationExamplesRaw(search_context, excludes, word):
-    li = search_context
-    for e in li.find_objects(Li, recursive=True):
-        if e.base.endswith(":"):
-            word.ExplainationExamplesRaw = e.get_raw()
-            break
+    # Beispiele
+    for ex in search_context.find_objects(Section, recursive=True):
+        if ex.name == "beispiele":
+            for e in ex.find_objects(Li, recursive=True):
+                if e.base.endswith(":"):
+                    word.ExplainationExamplesRaw = e.get_raw()
+                    return
 
 
 def ExplainationExamplesTxt(search_context, excludes, word):
-    li = search_context
-    for e in li.find_objects(Li, recursive=True):
-        if e.base.endswith(":"):
-            word.ExplainationExamplesTxt = e.get_text().strip()
-            break
+    for ex in search_context.find_objects(Section, recursive=True):
+        if ex.name == "beispiele":
+            for e in ex.find_objects(Li, recursive=True):
+                if e.base.endswith(":"):
+                    word.ExplainationExamplesTxt = e.get_text()
+                    return
