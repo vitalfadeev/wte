@@ -360,6 +360,25 @@ def dumpdata(data, level=0):
             dumpdata(d, level)
 
 
+def check_one(lang, aid):
+    # get JSOBN from here
+    # https: // www.wikidata.org / w / api.php?action = parse & page = Q20152873
+    import requests
+    import json
+
+    headers = {"Accept": "application/json"}
+    r = requests.get("https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids={}".format(aid), headers=headers)
+    data = json.loads(r.text)
+    print(data)
+    data = data['entities'][aid]
+
+    # delete old record
+    WikidataItem.execute_sql("DELETE FROM {} WHERE CodeInWiki = ?".format(WikidataItem.DB_TABLE_NAME), aid)
+
+    # process
+    process_one(lang, 0, data)
+
+
 def DumpReader(lang, local_file, from_point=None):
     with bz2.open(local_file, "rb") as fin:
         reader = enumerate(ijson.items(fin, "item"))
@@ -367,7 +386,7 @@ def DumpReader(lang, local_file, from_point=None):
         if from_point:
             for i, data in reader:
                 if data and isinstance(data, dict) and data.get('id', None) == from_point:
-                    break
+                    break # OK. found
                 else:
                     continue
 
@@ -434,4 +453,5 @@ def run(outfile, lang="en", from_point=None):
 
 
 if __name__ == "__main__":
-    run("./wikidict-out.json", "en")
+    #run("./wikidict-out.json", "en")
+    check_one("en", "Q2051873")

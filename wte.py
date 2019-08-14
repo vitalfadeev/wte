@@ -246,7 +246,7 @@ def save_to_json(treemap, filename):
     # create_storage(folder)
 
     with open(filename, "w", encoding="UTF-8") as f:
-        json.dump(treemap, f, cls=WordsEncoder, sort_keys=False, indent=4, ensure_ascii=False)
+        json.dump(treemap, f, cls=WordsEncoder, sort_keys=False, indent=None, ensure_ascii=False)
 
 
 def load_from_json(filename):
