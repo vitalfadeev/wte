@@ -373,10 +373,13 @@ def check_one(lang, aid):
     data = data['entities'][aid]
 
     # delete old record
-    WikidataItem.execute_sql("DELETE FROM {} WHERE CodeInWiki = ?".format(WikidataItem.DB_TABLE_NAME), aid)
+    if os.path.isfile(WikidataItem.DB_NAME):
+        WikidataItem.execute_sql("DELETE FROM {} WHERE CodeInWiki = ?".format(WikidataItem.DB_TABLE_NAME), aid)
 
     # process
     process_one(lang, 0, data)
+
+    log.info("All done. [ OK ]")
 
 
 def DumpReader(lang, local_file, from_point=None):
@@ -455,3 +458,4 @@ def run(outfile, lang="en", from_point=None):
 if __name__ == "__main__":
     #run("./wikidict-out.json", "en")
     check_one("en", "Q2051873")
+
