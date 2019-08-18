@@ -12,8 +12,8 @@ def test_wiktionary(lang):
 
 
 def test_wikidict(lang, from_point=None):
-    from wikidict_convertor import run as wikidict_parser
-    wikidict_parser("./wikidict-out.json", lang, from_point)
+    from wdc import run as wikidict_parser
+    wikidict_parser(lang, from_point=from_point)
 
 
 def test_merger():
