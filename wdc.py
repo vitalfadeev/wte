@@ -15,7 +15,7 @@ from loggers import log_wikidata
 CACHE_FOLDER    = "cached"  # folder where stored downloadad dumps
 MULTIPROCESSING = True
 #MULTIPROCESSING = False
-WORKERS = 2   # N worker processes
+WORKERS = multiprocessing.cpu_count()   # N worker processes
 
 
 # WikiDict dump helpers
@@ -417,4 +417,4 @@ if __name__ == "__main__":
     #check_one("Q147", "en")
     #check_one("Q729", "en")
     #check_one("Q4847309", "en")
-    run("en", from_point=None)
+    run("en", from_point="Q6393585")
