@@ -321,3 +321,11 @@ def filterWodsProblems(s, log, context=None):
     
     return s
 
+
+def clean_surrogates(s):
+    return str(s.encode('utf-16', 'surrogatepass').decode('utf-16'))
+
+
+def pprint(*args, **kwarg):
+    from pprint import PrettyPrinter
+    return PrettyPrinter(indent=4).pprint(*args, **kwarg)
