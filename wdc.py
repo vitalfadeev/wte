@@ -226,8 +226,8 @@ def process_one(item, lang, id_, item_type, i):
     # label filter
     label = get_label(item, lang, None)
     label = filter_label(label)
-    if label is None:
-        return None
+    if not label:
+        return
 
     # miners
     aliases          = get_aliases(item, lang, None)
@@ -416,4 +416,5 @@ if __name__ == "__main__":
     #check_one("Q146", "en")
     #check_one("Q147", "en")
     #check_one("Q729", "en")
+    #check_one("Q4847309", "en")
     run("en", from_point=None)

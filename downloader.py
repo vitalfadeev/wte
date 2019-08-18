@@ -86,15 +86,14 @@ def _download_with_resume(url, local_file):
         os.rename(part_file, local_file)
 
 
-def download_with_resume(url, local_file):
-    try:
-        _download_with_resume(url, local_file)
-        return  True
+def download_with_resume(url, local_file, attempts=5):
+    for i in range(attempts):
+        try:
+            _download_with_resume(url, local_file)
+            return  True
 
-    except requests.exceptions.ConnectionError as e:
-        return False
+        except requests.exceptions.ConnectionError as e:
+            pass
 
-    except urllib3.exceptions.ReadTimeoutError as e:
-        return False
-
-    return  False
+        except urllib3.exceptions.ReadTimeoutError as e:
+            pass
